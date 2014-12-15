@@ -57,7 +57,7 @@ copy_file $src_dir_bin/sdbdpsdump $dest_dir_bin
 copy_file $src_dir_bin/sdbexprt $dest_dir_bin
 copy_file $src_dir_bin/sdbfmp $dest_dir_bin
 copy_file $src_dir_bin/sdbimprt $dest_dir_bin
-copy_file $src_dir_bin/sdbinspt $dest_dir_bin
+copy_file $src_dir_bin/sdbinspect $dest_dir_bin
 copy_file $src_dir_bin/sdblist $dest_dir_bin
 copy_file $src_dir_bin/sdbrestore $dest_dir_bin
 copy_file $src_dir_bin/sdbstart $dest_dir_bin
@@ -90,10 +90,10 @@ copy_file $sdb_path/conf/sdbcm.conf $pkg_src_tmp/conf/
 #TODO************************************************
 #TODO**************adjust the folder*****************
 #TODO************************************************
-echo "collect the files of \"doc\""
-mkdir -p $pkg_src_tmp/doc
-copy_folder "$sdb_path/doc/out/*" "$pkg_src_tmp/doc"
-copy_folder "$sdb_path/doc/manual" "$pkg_src_tmp/doc"
+#echo "collect the files of \"doc\""
+#mkdir -p $pkg_src_tmp/doc
+#copy_folder "$sdb_path/doc/out/*" "$pkg_src_tmp/doc"
+#copy_folder "$sdb_path/doc/manual" "$pkg_src_tmp/doc"
 
 #########################################
 # folder: include

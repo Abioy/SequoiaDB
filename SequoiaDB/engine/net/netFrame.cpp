@@ -128,6 +128,24 @@ namespace engine
       return ip ;
    }
 
+   NET_EH _netFrame::getEventHandle( const NET_HANDLE & handle )
+   {
+      NET_EH eh ;
+      _mtx.get_shared() ;
+      map<NET_HANDLE, NET_EH>::iterator itr = _opposite.find( handle ) ;
+      if ( _opposite.end() == itr )
+      {
+         _mtx.release_shared() ;
+      }
+      else
+      {
+         eh = itr->second ;
+      }
+      _mtx.release_shared() ;
+
+      return eh ;
+   }
+
    // PD_TRACE_DECLARE_FUNCTION ( SDB__NETFRAME_LISTEN, "_netFrame::listen" )
    INT32 _netFrame::listen( const CHAR *hostName,
                             const CHAR *serviceName )

@@ -23,7 +23,7 @@ Oma.prototype.help = function( val ) {
    if ( val == undefined )
    {
       println("OMA methods:") ;
-      println("   oma.help(<method>)           help on specified method of oma, e.g. oma.help(\'createData\')");
+      println("   oma.help(<method>)          help on specified method of oma, e.g. oma.help(\'createData\')");
       man( "oma" ) ;
    }
    else

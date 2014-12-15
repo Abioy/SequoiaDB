@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="references_methods_skip">
-  <title>cursor.skip()</title>
+  <title>query.skip()</title>
   <body>
-    <section><title>cursor.skip(&lt;num>)</title>
+    <section><title>query.skip(&lt;num>)</title>
       <p>指定结果集从哪条记录开始返回。</p>
     </section>
     <section><title>参数描述</title>
@@ -25,7 +25,7 @@
     </section>
     <section>
       <title>格式</title>
-      <p>cousor.skip() 方法的定义格式包含 num 参数，它是 int 类型。如果不设定 num 的内容或者设定 num 的值为0，相当于返回所有的结果集；如果想从结果集的第3条记录开始返回，可是设置 num 的值等于2。</p>
+      <p>query.skip() 方法的定义格式包含 num 参数，它是 int 类型。如果不设定 num 的内容或者设定 num 的值为0，相当于返回所有的结果集；如果想从结果集的第3条记录开始返回，可是设置 num 的值等于2。</p>
 
     </section>
     <section><title>示例</title>
@@ -42,7 +42,7 @@
   </body>
   <related-links>
     <link href="hint.dita" format="dita" type="topic"></link>
-    <link href="ccurrent.dita" format="dita" type="topic"></link>
+    <link href="climit.dita" format="dita" type="topic"></link>
     <link href="find.dita" format="dita" type="topic"></link>
     <link href="../../console/topics/gt.dita" format="dita" type="topic"></link>
   </related-links>

@@ -37,6 +37,7 @@
 #include "oss.hpp"
 #include "ossSocket.hpp"
 #include "sdbInterface.hpp"
+#include "pmdExternClient.hpp"
 
 #include <string>
 
@@ -57,6 +58,7 @@ namespace engine
          virtual void            clear() ;
 
          virtual const CHAR*     sessionName() const ;
+         virtual IClient*        getClient() { return &_client ; }
 
       public:
          UINT64      sessionID () const { return _eduID ; }
@@ -93,6 +95,7 @@ namespace engine
          EDUID                            _eduID ;
          ossSocket                        _socket ;
          std::string                      _sessionName ;
+         pmdExternClient                  _client ;
 
       protected:
          CHAR                             *_pBuff ;

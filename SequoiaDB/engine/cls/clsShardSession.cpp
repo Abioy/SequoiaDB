@@ -1014,14 +1014,13 @@ namespace engine
 
             if ( ( flags & FLG_QUERY_WITH_RETURNDATA ) && NULL != pContext )
             {
-               INT64 startPos64 = 0 ;
-               rc = pContext->getMore( -1, buffObj, startPos64, _pEDUCB ) ;
+               rc = pContext->getMore( -1, buffObj, _pEDUCB ) ;
                if ( rc || pContext->eof() )
                {
                   _pRtnCB->contextDelete( contextID, _pEDUCB ) ;
                   contextID = -1 ;
                }
-               startingPos = ( INT32 )startPos64 ;
+               startingPos = ( INT32 )buffObj.getStartFrom() ;
 
                if ( SDB_DMS_EOC == rc )
                {
@@ -1157,7 +1156,6 @@ namespace engine
       INT32 rc = SDB_OK ;
       PD_TRACE_ENTRY ( SDB__CLSSHDSESS__ONGETMOREREQMSG ) ;
       INT32 numToRead = 0 ;
-      INT64 startPos64 = 0 ;
 
       rc = msgExtractGetMore ( (CHAR*)msg, &numToRead, &contextID ) ;
       if ( SDB_OK != rc )
@@ -1174,10 +1172,9 @@ namespace engine
       PD_LOG ( PDDEBUG, "GetMore: contextID:%lld\nnumToRead: %d", contextID,
                numToRead ) ;
 
-      rc = rtnGetMore ( contextID, numToRead, buffObj, startPos64,
-                        _pEDUCB, _pRtnCB ) ;
+      rc = rtnGetMore ( contextID, numToRead, buffObj, _pEDUCB, _pRtnCB ) ;
 
-      startingPos = ( INT32 )startPos64 ;
+      startingPos = ( INT32 )buffObj.getStartFrom() ;
 
    done:
       PD_TRACE_EXITRC ( SDB__CLSSHDSESS__ONGETMOREREQMSG, rc ) ;

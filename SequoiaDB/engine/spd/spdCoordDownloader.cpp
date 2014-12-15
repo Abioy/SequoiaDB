@@ -121,9 +121,7 @@ namespace engine
    INT32 _spdCoordDownloader::next( BSONObj &func )
    {
       INT32 rc = SDB_OK ;
-      INT64 startingPos = 0 ;
-      rc = rtnGetMore( _contextID, 1, _context, startingPos,
-                       _cb, _rtnCB ) ;
+      rc = rtnGetMore( _contextID, 1, _context, _cb, _rtnCB ) ;
       if ( SDB_OK == rc )
       {
          rc = _context.nextObj( func ) ;

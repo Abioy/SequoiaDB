@@ -229,8 +229,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore( contextID, 1, buffObj, startingPos, pEDUCB, pRTNCB ) ;
+         rc = rtnGetMore( contextID, 1, buffObj, pEDUCB, pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )

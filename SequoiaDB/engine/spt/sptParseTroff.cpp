@@ -50,15 +50,19 @@
 
 #define MFILE_SUFFIX ".cli"
 
-#define DB_CATEGORY "db"
-#define CS_CATEGORY "cs"
-#define CL_CATEGORY "cl"
-#define RG_CATEGORY "rg"
-#define NODE_CATEGORY "node"
-#define CURSOR_CATEGORY "cursor"
-#define CLCOUNT_CATEGORY "count"
-#define DOMAIN_CATEGORY "domain"
-#define OMA_CATEGORY "oma"
+#define DB_CATEGORY         "db"
+#define CS_CATEGORY         "cs"
+#define CL_CATEGORY         "cl"
+#define RG_CATEGORY         "rg"
+#define NODE_CATEGORY       "node"
+#define CURSOR_CATEGORY     "cursor"
+#define CLCOUNT_CATEGORY    "count"
+#define DOMAIN_CATEGORY     "domain"
+#define OMA_CATEGORY        "oma"
+#define QUERY_CATEGORY      "query"
+#define QUERY_GEN_CATEGORY  "query_gen"
+#define QUERY_COND_CATEGORY "query_cond"
+#define QUERY_CURS_CATEGORY "query_curs"
 
 #define READ_CHARACTOR_NUM 1024
 #define CMD_NAME_LEN  255
@@ -71,14 +75,17 @@
 #define MARK2 "\\fR"
 #define MARK3 "("
 
-#define INDENT_Widt2H1  3
+#define INDENT_WIDTH1  3
 #define INDENT_WIDTH2  30
 #define CONTENT_LEN    50
 #define FORMAT_LEN     100
 
+#define SPLIT_POINT1 '.'
+#define SPLIT_POINT2 '_'
+
 namespace fs = boost::filesystem ;
 
-#define CATE_SIZE  9
+#define CATE_SIZE  13
 const CHAR* CATE_ARR[ CATE_SIZE ] =
 {
    DB_CATEGORY,
@@ -89,7 +96,11 @@ const CHAR* CATE_ARR[ CATE_SIZE ] =
    CURSOR_CATEGORY,
    CLCOUNT_CATEGORY,
    DOMAIN_CATEGORY,
-   OMA_CATEGORY
+   OMA_CATEGORY,
+   QUERY_CATEGORY,
+   QUERY_GEN_CATEGORY,
+   QUERY_COND_CATEGORY,
+   QUERY_CURS_CATEGORY
  } ;
 
 static INT32 removeMark( CHAR *buffer, INT32 buffer_len, const CHAR *mark ) ;
@@ -129,6 +140,26 @@ manHelp::manHelp( const CHAR *path )
    {
       troffFileNotEixt = TRUE ;
    }
+   _classify.insert( pair< string, ssmap_ref >( string(DB_CATEGORY),
+                                                _db._first ) ) ;
+   _classify.insert( pair< string, ssmap_ref >( string(CS_CATEGORY),
+                                                _cs._first ) ) ;
+   _classify.insert( pair< string, ssmap_ref >( string(CL_CATEGORY),
+                                                _cl._first ) ) ;
+   _classify.insert( pair< string, ssmap_ref >( string(RG_CATEGORY),
+                                                _rg._first ) ) ;
+   _classify.insert( pair< string, ssmap_ref >( string(NODE_CATEGORY),
+                                                _node._first ) ) ;
+   _classify.insert( pair< string, ssmap_ref >( string(CURSOR_CATEGORY),
+                                                _cursor._first ) ) ;
+   _classify.insert( pair< string, ssmap_ref >( string(CLCOUNT_CATEGORY),
+                                                _clcount._first ) ) ;
+   _classify.insert( pair< string, ssmap_ref >( string(DOMAIN_CATEGORY),
+                                                _domain._first ) ) ;
+   _classify.insert( pair< string, ssmap_ref >( string(OMA_CATEGORY),
+                                                _oma._first ) ) ;
+   _classify.insert( pair< string, ssmap_ref >( string(QUERY_CATEGORY),
+                                                _query._first ) ) ;
 }
 
 manHelp::~manHelp() {}
@@ -142,9 +173,11 @@ INT32 manHelp::scanFile()
    CHAR *tmp_buffer = (CHAR *)SDB_OSS_MALLOC( tmp_buf_len + 1 ) ;
    typedef vector<fs::path> vec;
    vec v;
+
    const INT32 file_name_len = OSS_PROCESS_NAME_LEN ;
    fs::path p( _filePath );
    CHAR *pFileName = NULL ;
+
    pFileName = (CHAR *)SDB_OSS_MALLOC( file_name_len + 1 );
    if ( !pFileName )
    {
@@ -165,17 +198,20 @@ INT32 manHelp::scanFile()
    for ( vec::const_iterator it(v.begin()), it_end(v.end());
          it != it_end; it++ )
    {
-      std::string fPath = (*it).string() ;
+      string fPath = (*it).string() ;
       const CHAR *pfPath = fPath.c_str() ;
-      std::string fSuffix = fs::extension(*it);
+      string fSuffix = fs::extension(*it);
       const CHAR *pfSuffix = fSuffix.c_str();
       if ( ossStrncmp( pfSuffix, MFILE_SUFFIX, ossStrlen(MFILE_SUFFIX) ) == 0 )
       {
          INT32 strLen = 0;
-         std::string fileName ;
-         std::string fileNameLower ;
+         string fileName ;
+         string fileNameLower ;
+         string categoryName ; // db, cs, cl ...
+         string funcName ; // createCL, createCS ...
          const CHAR* pLeaf = NULL;
-         CHAR *pSplit = NULL ;
+         CHAR *pSplit      = NULL ;
+         CHAR *pSplit2     = NULL ;
          std::string leaf = (*it).leaf().string();
          pLeaf = leaf.c_str();
          strLen = ossStrlen( pLeaf ) - ossStrlen( MFILE_SUFFIX );
@@ -187,13 +223,13 @@ INT32 manHelp::scanFile()
             goto error;
          }
          ossMemcpy( pFileName, pLeaf, strLen );
-         *(pFileName+ strLen) = 0;
+         *(pFileName + strLen) = 0;
          fileName =  pFileName ;
          fileNameLower = pFileName ;
-         _nset.insert( fileName ) ;
+
          boost::to_lower( fileNameLower ) ;
          _nmap.insert( pair<string, string>(fileNameLower, fileName) ) ;
-         pSplit = ossStrrchr( pFileName, '.' ) ;
+         pSplit = ossStrrchr( pFileName, SPLIT_POINT1 ) ;
          if ( !pSplit )
          {
             ossPrintf( "Invalid arguments, %s:%d "OSS_NEWLINE,
@@ -202,7 +238,7 @@ INT32 manHelp::scanFile()
             goto error ;
          }
          *pSplit = '\0' ;
-         pSplit++ ;
+         funcName = ++pSplit ;
          if ( isCategory( pFileName, CATE_ARR, CATE_SIZE ) )
          {
             std::ifstream fin ;
@@ -310,60 +346,95 @@ INT32 manHelp::scanFile()
             rc = replaceSubStr( tmp_buffer, tmp_buf_len, "\f", " " ) ;
             synopsis = tmp_buffer ;
 
-            if ( 0 == ossMemcmp( pFileName, DB_CATEGORY,
-                                 ossStrlen( pFileName ) ) )
+            pSplit2 = ossStrrchr( pFileName, SPLIT_POINT2 ) ;
+            if ( NULL == pSplit2 )
             {
-               _mdb.insert( std::pair<string, string>(synopsis, cutline) ) ;
+               categoryName = pFileName ;
             }
-            else if ( 0 == ossMemcmp( pFileName, CS_CATEGORY,
-                                      ossStrlen( pFileName ) ) )
+            else
             {
-               _mcs.insert( std::pair<string, string>(synopsis, cutline) ) ;
+               categoryName = string( pFileName,
+                                 ossStrlen(pFileName) - ossStrlen(pSplit2) ) ;
             }
-            else if ( ossMemcmp( pFileName, CL_CATEGORY,
-                                 ossStrlen( pFileName ) ) == 0 )
+            if ( string(DB_CATEGORY) == categoryName )
             {
-               _mcl.insert( std::pair<string, string>(synopsis, cutline) ) ;
+               _db._first.insert( pair<string, string>(funcName, pFileName) ) ;
+               _db._second.insert( pair<string, string>(synopsis, cutline) ) ;
             }
-            else if ( ossMemcmp( pFileName, RG_CATEGORY,
-                                 ossStrlen( pFileName ) ) == 0 )
+            else if ( string(CS_CATEGORY) == categoryName )
             {
-               _mrg.insert( std::pair<string, string>(synopsis, cutline) ) ;
+               _cs._first.insert( std::pair<string, string>(funcName, pFileName) ) ;
+               _cs._second.insert( std::pair<string, string>(synopsis, cutline) ) ;
             }
-            else if ( ossMemcmp( pFileName, NODE_CATEGORY,
-                                 ossStrlen( pFileName ) ) == 0 )
+            else if ( string(CL_CATEGORY) == categoryName )
             {
-               _mnode.insert( std::pair<string, string>(synopsis, cutline) ) ;
+               _cl._first.insert( std::pair<string, string>(funcName, pFileName) ) ;
+               _cl._second.insert( std::pair<string, string>(synopsis, cutline) ) ;
             }
-            else if ( ossMemcmp( pFileName, CURSOR_CATEGORY,
-                                 ossStrlen( pFileName ) ) == 0 )
+            else if ( string(RG_CATEGORY) == categoryName )
             {
-               _mcursor.insert( std::pair<string, string>(synopsis,
-                                cutline) ) ;
+               _rg._first.insert( std::pair<string, string>(funcName, pFileName) ) ;
+               _rg._second.insert( std::pair<string, string>(synopsis, cutline) ) ;
             }
-            else if ( ossMemcmp( pFileName, CLCOUNT_CATEGORY,
-                                 ossStrlen( pFileName ) ) == 0 )
+            else if ( string(NODE_CATEGORY) == categoryName )
             {
-               _mclcount.insert( std::pair<string, string>(synopsis,
-                                 cutline) ) ;
+               _node._first.insert( std::pair<string, string>(funcName, pFileName) ) ;
+               _node._second.insert( std::pair<string, string>(synopsis, cutline) ) ;
             }
-            else if ( ossMemcmp( pFileName, DOMAIN_CATEGORY,
-                                 ossStrlen( pFileName ) ) == 0 )
+            else if ( string(CURSOR_CATEGORY) == categoryName )             
             {
-               _mdomain.insert( std::pair<string, string>(synopsis,
-                                cutline) ) ;
+               _cursor._first.insert( pair<string, string>(funcName, pFileName) ) ;
+               _cursor._second.insert( pair<string, string>(synopsis, cutline) ) ;
             }
-            else if ( ossMemcmp( pFileName, OMA_CATEGORY,
-                                 ossStrlen( pFileName ) ) == 0 )
+            else if ( string(CLCOUNT_CATEGORY) == categoryName )
             {
-               _moma.insert( std::pair<string,string>(synopsis,
-                                 cutline) ) ;
+               _clcount._first.insert( pair<string, string>(funcName, pFileName) ) ;
+               _clcount._second.insert( pair<string, string>(synopsis, cutline) ) ;
             }
-
+            else if ( string(DOMAIN_CATEGORY) == categoryName )
+            {
+               _domain._first.insert( pair<string, string>(funcName, pFileName) ) ;
+               _domain._second.insert( pair<string, string>(synopsis, cutline) ) ;
+            }
+            else if ( string(OMA_CATEGORY) == categoryName )
+            {
+               _oma._first.insert( pair<string, string>(funcName, pFileName) ) ;
+               _oma._second.insert( pair<string,string>(synopsis, cutline) ) ;
+            }
+            else if ( string(QUERY_CATEGORY) == categoryName )
+            {
+               _query._first.insert( std::pair<string, string>(funcName,
+                                                               pFileName) ) ;
+               if ( ossMemcmp( pFileName, QUERY_GEN_CATEGORY,
+                               ossStrlen( pFileName ) ) == 0 )
+               {
+                  _query_gen._second.insert( pair<string,string>(synopsis,
+                                             cutline) ) ;
+               }
+               else if ( ossMemcmp( pFileName, QUERY_COND_CATEGORY,
+                                    ossStrlen( pFileName ) ) == 0 )
+               {
+                  _query_cond._second.insert( pair<string,string>(synopsis,
+                                              cutline) ) ;
+               }
+               else if ( ossMemcmp( pFileName, QUERY_CURS_CATEGORY,
+                                    ossStrlen( pFileName ) ) == 0 )
+               {
+                  _query_curs._second.insert( pair<string,string>(synopsis,
+                                              cutline) ) ;
+               }
+               else
+               {
+                  ossPrintf( "Failed to deal with file %s, for the wrong file "
+                             "name %s"OSS_NEWLINE, pfPath, pFileName ) ;
+                  rc = SDB_INVALIDARG ;
+                  goto exit ;
+               }
+            }
             else
             {
                ossPrintf( "Failed to deal with file %s, for the wrong file "
-                          "name %s"OSS_NEWLINE, pfPath, pFileName ) ;
+                          "name %s"OSS_NEWLINE, pfPath, categoryName.c_str() ) ;
                rc = SDB_INVALIDARG ;
                goto exit ;
             }
@@ -451,7 +522,7 @@ INT32 manHelp::getFileHelp( const CHAR* name )
    else if ( fuzzy_match.size() > 1 )
    {
       ossPrintf( "%d methods related to \"%s\", please fill in the full "
-                 "name: \n", (INT32)fuzzy_match.size(), name );
+                 "name: "OSS_NEWLINE, (INT32)fuzzy_match.size(), name );
       for ( sset::const_iterator it(fuzzy_match.begin()),
             it_end(fuzzy_match.end());
             it != it_end; it++ )
@@ -524,51 +595,66 @@ ssmap& manHelp::getCategoryMap( const CHAR *category )
     if ( ossMemcmp( category, DB_CATEGORY,
                     ossStrlen( category ) ) == 0 )
     {
-       return _mdb ;
+       return _db._second ;
     }
     else if ( ossMemcmp( category, CS_CATEGORY,
                          ossStrlen( category ) ) == 0 )
     {
-       return _mcs ;
+       return _cs._second ;
     }
     else if ( ossMemcmp( category, CL_CATEGORY,
                          ossStrlen( category ) ) == 0 )
     {
-       return _mcl ;
+       return _cl._second ;
     }
     else if ( ossMemcmp( category, RG_CATEGORY,
                          ossStrlen( category ) ) == 0 )
     {
-       return _mrg ;
+       return _rg._second ;
     }
     else if ( ossMemcmp( category, NODE_CATEGORY,
                          ossStrlen( category ) ) == 0 )
     {
-       return _mnode ;
+       return _node._second ;
     }
     else if ( ossMemcmp( category, CURSOR_CATEGORY,
                          ossStrlen( category ) ) == 0 )
     {
-       return _mcursor ;
+       return _cursor._second ;
     }
     else if ( ossMemcmp( category, CLCOUNT_CATEGORY,
                          ossStrlen( category ) ) == 0 )
     {
-       return _mclcount ;
+       return _clcount._second ;
     }
     else if ( ossMemcmp( category, DOMAIN_CATEGORY,
                          ossStrlen( category ) ) == 0 )
     {
-       return _mdomain ;
+       return _domain._second ;
     }
     else if ( ossMemcmp( category, OMA_CATEGORY,
                          ossStrlen( category ) ) == 0 )
     {
-       return _moma ;
+       return _oma._second ;
+    }
+    else if ( ossMemcmp( category, QUERY_GEN_CATEGORY,
+                         ossStrlen( category ) ) == 0 )
+    {
+       return _query_gen._second ;
+    }
+    else if ( ossMemcmp( category, QUERY_COND_CATEGORY,
+                         ossStrlen( category ) ) == 0 )
+    {
+       return _query_cond._second ;
+    }
+    else if ( ossMemcmp( category, QUERY_CURS_CATEGORY,
+                         ossStrlen( category ) ) == 0 )
+    {
+       return _query_curs._second ;
     }
     else
     {
-       return _mempty ;
+       return _empty._second ;
     }
 }
 
@@ -589,8 +675,7 @@ INT32 manHelp::displayMethod( const CHAR *category )
       {
          p_first = (it->first).c_str() ;
          p_second = (it->second).c_str() ;
-         rc =  display( p_first, p_second, INDENT_Widt2H1,
-                        INDENT_WIDTH2 ) ;
+         rc =  display( p_first, p_second, INDENT_WIDTH1, INDENT_WIDTH2 ) ;
          if ( rc )
          {
             goto error ;
@@ -606,9 +691,9 @@ error :
 INT32 manHelp::displayManual( const CHAR *category, const CHAR *cmd )
 {
    INT32 rc = SDB_OK ;
-   CHAR command[ CMD_NAME_LEN + 2 ] = { 0 } ;
-   INT32 cateLen = 0 ;
-   INT32 cmdLen = 0 ;
+   sset fuzzy_match ;
+   smmap::iterator it ;
+   string str ;
    if ( !category || !cmd )
    {
       ossPrintf( "Invalid arguments, %s:%d "OSS_NEWLINE, __FILE__, __LINE__ ) ;
@@ -616,27 +701,48 @@ INT32 manHelp::displayManual( const CHAR *category, const CHAR *cmd )
       goto error ;
    }
 
-   cateLen = ossStrlen( category ) ;
-   cmdLen = ossStrlen( cmd ) ;
-   if ( cateLen + cmdLen > CMD_NAME_LEN )
+   it = _classify.find( string(category) ) ;
+   if ( it != _classify.end() )
    {
-      ossPrintf( "Invalid arguments, %s:%d "OSS_NEWLINE, __FILE__, __LINE__ ) ;
-      rc = SDB_INVALIDARG ;
-      goto error ;
+      ssmap::iterator itr = it->second.begin() ;
+      for( ; itr != it->second.end(); itr++ )
+      {
+         const CHAR *pFunc = itr->first.c_str() ;
+         const CHAR *pPos = ossStrstr( pFunc, cmd );
+         if ( pPos != NULL )
+         {
+            string filename = itr->second + "." + itr->first ;
+            if ( ossStrncmp( pFunc, cmd, ossStrlen( cmd ) + 1 ) == 0 )
+            {
+               fuzzy_match.clear() ;
+               fuzzy_match.insert( filename ) ;
+               break ;
+            }
+            fuzzy_match.insert( filename );
+         }
+      }
    }
-   if ( 0 != cateLen )
+   if ( 0 == fuzzy_match.size() )
    {
-      ossMemcpy( command, category, cateLen ) ;
-      ossMemcpy( command + cateLen, ".", 1 ) ;
-      ossMemcpy( command + cateLen + 1, cmd, cmdLen ) ;
-      command[ cateLen + 1 + cmdLen ] = '\0' ;
+      if ( NULL == category || '\0' == category[0] )
+         fuzzy_match.insert( string(cmd) ) ;
+      else
+         fuzzy_match.insert( string(category) + "." + string(cmd) ) ;
    }
-   else
+   else if ( fuzzy_match.size() > 1 )
    {
-      ossMemcpy( command, cmd, cmdLen ) ;
-      command[ cateLen + cmdLen ] = '\0' ;
+      ossPrintf( "%d methods related to \"%s\" in \"%s\" category, please "
+                 "fill in the full name: "OSS_NEWLINE,
+                 (INT32)fuzzy_match.size(), cmd, category );
+      for ( sset::const_iterator i = fuzzy_match.begin();
+            i != fuzzy_match.end(); i++ )
+      {
+         ossPrintf( "    %s"OSS_NEWLINE, (*i).c_str() );
+      }
+      goto done ;
    }
-   rc = getFileHelp ( command ) ;
+   str = *(fuzzy_match.begin()) ;
+   rc = getFileHelp ( str.c_str() ) ;
    if ( rc )
    {
       goto error ;

@@ -86,6 +86,8 @@ namespace engine
 
          void stop() ;
 
+         NET_EH getEventHandle( const NET_HANDLE &handle ) ;
+
          INT32 listen( const CHAR *hostName,
                        const CHAR *serviceName ) ;
 

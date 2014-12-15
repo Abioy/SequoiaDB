@@ -626,11 +626,9 @@ namespace engine
       INT32 rc = SDB_OK ;
 
       rtnContextBuf buffObj ;
-      INT64 startingPos = 0 ;
       SDB_RTNCB *rtnCB = pmdGetKRCB()->getRTNCB() ;
 
-      rc = rtnGetMore( _contextID, 1, buffObj, startingPos, _eduCB,
-                       rtnCB ) ;
+      rc = rtnGetMore( _contextID, 1, buffObj, _eduCB, rtnCB ) ;
       if ( SDB_OK != rc )
       {
          if ( SDB_DMS_EOC != rc )

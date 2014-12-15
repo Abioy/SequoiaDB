@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_vcr_ty4_44">
+  <title>query.explain()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>explain - Return the access plan of the current query.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>query.explain</apiname>(<parmname>[option]</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Query
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Return the access plan of the current query.</p>
+      <parml>
+        <plentry>
+          <pt>option (Json Object)</pt>
+          <pd>Access plan execution plan, now we have: Run field: whether execute the Access Plan. True is to execute, get data and time information; False represents only get the Access Plan's info, but not executing it.            
+            <parml>
+        <plentry>
+          <pt>Name (string)</pt>
+          <pd>Collection Name.</pd>
+        </plentry>
+        <plentry>
+          <pt>ScanType (string)</pt>
+          <pd>Scanning Type: TableScan: "tbscan"; IndexScan:"ixscan"
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>IndexName (string)</pt>
+          <pd>Index name.</pd>
+        </plentry>
+        <plentry>
+          <pt>UseExtSort (bool)</pt>
+          <pd>Whether use external sort or not.</pd>
+        </plentry>
+        <plentry>
+          <pt>NodeName (string)</pt>
+          <pd>Node Name.</pd>
+        </plentry>
+        <plentry>
+          <pt>ReturnNum (int64)</pt>
+          <pd>Number of returned records.</pd>
+        </plentry>
+        <plentry>
+          <pt>ElapsedTime (float64)</pt>
+          <pd>Elapsed Time(seconds).</pd>
+        </plentry>
+        <plentry>
+          <pt>IndexRead (int64)</pt>
+          <pd>Number of Index read.</pd>
+        </plentry>
+        <plentry>
+          <pt>DataRead (int64)</pt>
+          <pd>Number of data read.</pd>
+        </plentry>
+        <plentry>
+          <pt>UserCPU (float64)</pt>
+          <pd>Time used by cpu in user mode(seconds).</pd>
+        </plentry>
+        <plentry>
+          <pt>SysCPU (float64)</pt>
+          <pd>Time used by cpu in kernel mode(seconds).</pd>
+        </plentry>
+        <plentry>
+          <pt>SubCollections (Json Array)</pt>
+          <pd>The access plan of each sub-collections of the vertical-partitioning collection.</pd>
+        </plentry>
+      </parml>
+          </pd>
+        </plentry>
+      </parml>
+      <note>
+        <ul><li>If the collection is splitted into different replica groups, each replica group will return its own access plan correspondingly.</li>          
+        </ul></note>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Suppose foo.bar is a horizontal-partitioning collection splitted in three replica groups.</p>
+      <codeblock>db.foo.bar.find().sort({b:1}).explain({Run:true})</codeblock>
+      <p>Return:</p>
+      <codeblock>{
+  "Name": "foo.bar",
+  "ScanType": "tbscan",
+  "IndexName": "",
+  "UseExtSort": true,
+  "NodeName": "vmsvr2-cent-x64:40020",
+  "ReturnNum": 38,
+  "ElapsedTime": 0.000477,
+  "IndexRead": 0,
+  "DataRead": 38,
+  "UserCPU": 0,
+  "SysCPU": 0
+}
+{
+  "Name": "foo.bar",
+  "ScanType": "tbscan",
+  "IndexName": "",
+  "UseExtSort": true,
+  "NodeName": "vmsvr2-cent-x64:40000",
+  "ReturnNum": 34,
+  "ElapsedTime": 0.000415,
+  "IndexRead": 0,
+  "DataRead": 34,
+  "UserCPU": 0,
+  "SysCPU": 0
+}
+{
+  "Name": "foo.bar",
+  "ScanType": "tbscan",
+  "IndexName": "",
+  "UseExtSort": true,
+  "NodeName": "vmsvr2-cent-x64:40010",
+  "ReturnNum": 28,
+  "ElapsedTime": 0.000517,
+  "IndexRead": 0,
+  "DataRead": 28,
+  "UserCPU": 0,
+  "SysCPU": 0
+}</codeblock>
+    </section>
+  </body>
+</topic>

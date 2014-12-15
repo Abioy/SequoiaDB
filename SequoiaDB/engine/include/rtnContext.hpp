@@ -87,16 +87,22 @@ namespace engine
       public:
          _rtnObjBuff( const CHAR *pBuff, INT32 buffLen, INT32 recordNum )
          {
-            _pBuff = pBuff ;
-            _buffSize = buffLen ;
-            _recordNum = recordNum ;
-            _curOffset = 0 ;
+            _pBuff      = pBuff ;
+            _buffSize   = buffLen ;
+            _recordNum  = recordNum ;
+            _curOffset  = 0 ;
+            _owned      = FALSE ;
          }
 
          _rtnObjBuff( const _rtnObjBuff &right ) ;
          virtual ~_rtnObjBuff() ;
 
-         _rtnObjBuff& operator=( const _rtnObjBuff &right ) ;
+         /*
+            ensure buff is owned
+         */
+         virtual INT32        getOwned() ;
+
+         _rtnObjBuff&         operator=( const _rtnObjBuff &right ) ;
 
          const CHAR* data () const { return _pBuff ; }
          const CHAR* front() const { return _pBuff + _curOffset; }
@@ -113,6 +119,7 @@ namespace engine
          INT32                _buffSize ;
          INT32                _recordNum ;
          INT32                _curOffset ;
+         BOOLEAN              _owned ;
    } ;
    typedef _rtnObjBuff rtnObjBuff ;
 
@@ -150,20 +157,26 @@ namespace engine
          void  _reference( INT32 *pCounter, ossRWMutex *pMutex ) ;
 
       public:
-         _rtnContextBuf () ;
+         _rtnContextBuf() ;
          _rtnContextBuf( const _rtnContextBuf &right ) ;
          _rtnContextBuf( const CHAR *pBuff, INT32 buffLen, INT32 recordNum ) ;
          _rtnContextBuf( const BSONObj &obj ) ;
          virtual ~_rtnContextBuf () ;
-         _rtnContextBuf& operator=( const _rtnContextBuf &right ) ;
+
+         virtual INT32        getOwned() ;
+
+         _rtnContextBuf&      operator=( const _rtnContextBuf &right ) ;
 
          void        release () ;
+
+         INT64       getStartFrom() const { return _startFrom ; }
 
       private:
          INT32                *_pBuffCounter ;
          ossRWMutex           *_pBuffLock ;
          _rtnContextBase      *_context ;
          BOOLEAN              _released ;
+         INT64                _startFrom ;
 
          BSONObj              _object ;
 
@@ -270,7 +283,7 @@ namespace engine
 
          virtual INT32    getMore( INT32 maxNumToReturn,
                                    rtnContextBuf &buffObj,
-                                   INT64 &startPos, _pmdEDUCB *cb ) ;
+                                   _pmdEDUCB *cb ) ;
 
          OSS_INLINE BOOLEAN  isEmpty () const ;
 
@@ -785,7 +798,7 @@ namespace engine
                   BOOLEAN includeShardingOrder = FALSE );
 
       virtual INT32 getMore( INT32 maxNumToReturn, rtnContextBuf &buffObj,
-                             INT64 &startPos, _pmdEDUCB *cb );
+                             _pmdEDUCB *cb ) ;
 
       INT32 addSubContext( SINT64 contextID );
 
@@ -857,7 +870,7 @@ namespace engine
                   _pmdEDUCB *cb );
 
       virtual INT32 getMore( INT32 maxNumToReturn, rtnContextBuf &buffObj,
-                              INT64 &startPos, _pmdEDUCB *cb );
+                             _pmdEDUCB *cb );
 
    protected:
       virtual INT32 _prepareData( _pmdEDUCB *cb ){ return SDB_DMS_EOC; };
@@ -898,7 +911,7 @@ namespace engine
                   _pmdEDUCB *cb );
 
       virtual INT32 getMore( INT32 maxNumToReturn, rtnContextBuf &buffObj,
-                              INT64 &startPos, _pmdEDUCB *cb );
+                             _pmdEDUCB *cb );
 
    protected:
       virtual INT32 _prepareData( _pmdEDUCB *cb ){ return SDB_DMS_EOC; };
@@ -943,7 +956,7 @@ namespace engine
                   _pmdEDUCB *cb );
 
       virtual INT32 getMore( INT32 maxNumToReturn, rtnContextBuf &buffObj,
-                              INT64 &startPos, _pmdEDUCB *cb );
+                             _pmdEDUCB *cb ) ;
 
    protected:
       virtual INT32 _prepareData( _pmdEDUCB *cb ){ return SDB_DMS_EOC; };

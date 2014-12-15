@@ -46,6 +46,16 @@
 
 using namespace std;
 
+typedef std::set<string> sset ;
+typedef std::map<string, string> ssmap ;
+typedef std::map<string, string>& ssmap_ref ;
+typedef std::map< string, ssmap_ref > smmap ;
+
+struct Classified_info
+{
+   ssmap _first ; // save "funcName, fileName", use them in display manumal
+   ssmap _second ; // save "synopsis, cutline", use them in diaplay functions
+} ;
 
 class manHelp : public SDBObject
 {
@@ -53,10 +63,8 @@ public:
    static manHelp& getInstance( const CHAR *path ) ;
    INT32 getFileHelp( const CHAR *cmd ) ;
    INT32 getFileHelp( const CHAR *category, const CHAR *cmd ) ;
+   
 private:
-   typedef std::set<string> sset ;
-   typedef std::map<string, string> ssmap ;
-
    manHelp( const CHAR* path ) ;
    manHelp( const manHelp& ) ;
    manHelp& operator=( const manHelp& ) ;
@@ -66,19 +74,24 @@ private:
    INT32 displayMethod( const CHAR *category ) ;
    INT32 displayManual( const CHAR *category, const CHAR *cmd ) ;
 
-   sset _nset ;
+private:
    ssmap _nmap ;
    CHAR _filePath[ OSS_MAX_PATHSIZE + 1 ] ;
-   ssmap _mdb ;
-   ssmap _mcs ;
-   ssmap _mcl ;
-   ssmap _mrg ;
-   ssmap _mnode ;
-   ssmap _mcursor ;
-   ssmap _mclcount ;
-   ssmap _mdomain ;
-   ssmap _mempty ;
-   ssmap _moma ;
+   Classified_info _empty ;
+   Classified_info _db ;
+   Classified_info _cs ;
+   Classified_info _cl ;
+   Classified_info _rg ;
+   Classified_info _node ;
+   Classified_info _cursor ;
+   Classified_info _clcount ;
+   Classified_info _domain ;
+   Classified_info _oma ;
+   Classified_info _query ;
+   Classified_info _query_gen ; // general functions in sdbQuery
+   Classified_info _query_cond ; // functions about condition in sdbQuery
+   Classified_info _query_curs ; // functions about cursor in sdbQuery
+   smmap _classify ; 
    BOOLEAN troffFileNotEixt ;
 } ;
 

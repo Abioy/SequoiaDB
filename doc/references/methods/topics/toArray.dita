@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="references_methods_toArray">
-  <title>cursor.toArray()</title>
+  <title>query.toArray()</title>
   <body>
-    <section><title>cursor.toArray()</title>
+    <section><title>query.toArray()</title>
       <p>以数组的形式返回结果集。</p>
     </section>
     <section><title>示例</title>

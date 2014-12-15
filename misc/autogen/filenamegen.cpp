@@ -38,6 +38,7 @@ void FileNameGen::genList ()
          cout << "can not open file: " << FILENAMEPATH << endl ;
          exit(0) ;
       }
+      
       string comment =
          "/* This list file is automatically generated, you MUST NOT \
 modify this file anyway! */" ;

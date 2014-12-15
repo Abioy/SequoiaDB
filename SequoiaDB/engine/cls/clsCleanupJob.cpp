@@ -400,7 +400,6 @@ retry:
       ossStrncpy ( fullName, _clFullName.c_str(), sizeof(fullName)-1 ) ;
 
       rtnContextBuf buffObj ;
-      INT64 startPos = 0 ;
 
       rc = rtnQuery( fullName, selector, matcher, orderBy, hint,
                      0, eduCB(), 0, -1, _dmsCB, rtnCB, contextID ) ;
@@ -425,7 +424,7 @@ retry:
             goto error ;
          }
 
-         rc = rtnGetMore( contextID, -1, buffObj, startPos, eduCB(), rtnCB ) ;
+         rc = rtnGetMore( contextID, -1, buffObj, eduCB(), rtnCB ) ;
          if ( SDB_DMS_EOC == rc ||
               SDB_RTN_CONTEXT_NOTEXIST == rc ||
               SDB_DMS_NOTEXIST == rc )

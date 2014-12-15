@@ -184,7 +184,6 @@ namespace engine
       PD_TRACE_ENTRY( SDB__RTNSORTING__CRTSORTEDBLKS) ;
       rtnContextBuf bufObj ;
       BSONObj obj ;
-      SINT64 startingPos = 0 ;
       BOOLEAN fetchFromContext = TRUE ;
       _internalBlk = SDB_OSS_NEW _rtnInternalSorting( _orderby,
                                                 _sortBuf,
@@ -202,7 +201,7 @@ namespace engine
          {
             if ( fetchFromContext )
             {
-            rc = _context->getMore( -1, bufObj, startingPos, cb ) ;
+            rc = _context->getMore( -1, bufObj, cb ) ;
             if ( SDB_DMS_EOC == rc )
             {
                pmdGetKRCB()->getRTNCB()->

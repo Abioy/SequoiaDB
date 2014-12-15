@@ -40,20 +40,25 @@
 
 namespace engine
 {
-   class _DataProcessor : public _IProcessor
+   /*
+      _pmdDataProcessor define
+   */
+   class _pmdDataProcessor : public _IProcessor
    {
       public:
-         _DataProcessor() ;
-         virtual ~_DataProcessor() ;
+         _pmdDataProcessor() ;
+         virtual ~_pmdDataProcessor() ;
 
       public:
          virtual INT32           processMsg( MsgHeader *msg, 
                                              SDB_DPSCB *dpsCB,
                                              rtnContextBuf &contextBuff, 
-                                             INT64 &contextID, 
-                                             INT32 &startPos ) ;
+                                             INT64 &contextID,
+                                             BOOLEAN &needReply ) ;
 
-         virtual const CHAR *    getName() ;
+         virtual const CHAR*           processorName() const ;
+         virtual SDB_PROCESSOR_TYPE    processorType() const ;
+         virtual ISession*             getSession() ;
 
       public:
          virtual INT32           attachSession( ISession *pSession ) ;
@@ -67,13 +72,11 @@ namespace engine
          INT32                   _onQueryReqMsg( MsgHeader * msg,
                                                  SDB_DPSCB *dpsCB,
                                                  _rtnContextBuf &buffObj,
-                                                 INT32 &startingPos,
                                                  INT64 &contextID ) ;
          INT32                   _onDelReqMsg( MsgHeader * msg, 
                                                SDB_DPSCB *dpsCB ) ;
          INT32                   _onGetMoreReqMsg( MsgHeader * msg,
                                                    rtnContextBuf &buffObj,
-                                                   INT32 &startingPos,
                                                    INT64 &contextID ) ;
          INT32                   _onKillContextsReqMsg( MsgHeader *msg ) ;
          INT32                   _onSQLMsg( MsgHeader *msg, INT64 &contextID ) ;
@@ -92,14 +95,20 @@ namespace engine
          INT32                   _onCloseLobMsg( MsgHeader *msg ) ;
          INT32                   _onRemoveLobMsg( MsgHeader *msg, 
                                                   SDB_DPSCB *dpsCB ) ;
+         INT32                   _onInterruptMsg( MsgHeader *msg,
+                                                  SDB_DPSCB *dpsCB ) ;
+         INT32                   _onInterruptSelfMsg() ;
+         INT32                   _onDisconnectMsg() ;
 
       protected:
          _ISession *             _pSession ;
+         _IClient*               _pClient ;
          _pmdEDUCB *             _pEDUCB ;
-         _SDB_KRCB *             _pKRCB ;
          _SDB_DMSCB *            _pDMSCB ;
          _SDB_RTNCB *            _pRTNCB ;
    } ;
+   typedef _pmdDataProcessor pmdDataProcessor ;
+
 }
 
 #endif  /*PMD_PROCESSOR_HPP_*/

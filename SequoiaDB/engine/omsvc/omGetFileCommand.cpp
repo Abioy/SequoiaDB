@@ -108,8 +108,7 @@ namespace engine
 
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -579,8 +578,7 @@ namespace engine
       {
          BSONObj tmp ;
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -767,7 +765,6 @@ namespace engine
       SINT64 contextID   = -1 ;
       INT32 rc           = SDB_OK ;
       rtnContextBuf buffObj ;
-      SINT64 startingPos = 0 ;
 
       matcher = BSON( OM_HOST_FIELD_IP << ip ) ; ;
       rc = rtnQuery( OM_CS_DEPLOY_CL_HOST, selector, matcher, order, hint, 0, 
@@ -779,7 +776,7 @@ namespace engine
          return false ;
       }
 
-      rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+      rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
       if ( rc )
       {
          if ( SDB_DMS_EOC != rc )
@@ -805,7 +802,6 @@ namespace engine
       SINT64 contextID   = -1 ;
       INT32 rc           = SDB_OK ;
       rtnContextBuf buffObj ;
-      SINT64 startingPos = 0 ;
 
       matcher = BSON( OM_HOST_FIELD_NAME << hostName ) ; ;
       rc = rtnQuery( OM_CS_DEPLOY_CL_HOST, selector, matcher, order, hint, 0, 
@@ -817,7 +813,7 @@ namespace engine
          return false ;
       }
 
-      rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+      rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
       if ( rc )
       {
          if ( SDB_DMS_EOC != rc )
@@ -2436,8 +2432,7 @@ namespace engine
 
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -3032,8 +3027,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -3088,8 +3082,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -3740,8 +3733,7 @@ namespace engine
       {
          rtnContextBuf buffObj ;
          BSONObj tmpConf ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -3866,8 +3858,7 @@ namespace engine
       {
          rtnContextBuf buffObj ;
          BSONObj tmpConf ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -3982,8 +3973,7 @@ namespace engine
          BSONObj config ;
          string hostName ;
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -5051,8 +5041,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -5152,8 +5141,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -5260,8 +5248,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -5431,8 +5418,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -5595,8 +5581,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -5651,8 +5636,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -5806,8 +5790,7 @@ namespace engine
          rtnContextBuf buffObj ;
          string hostName ;
          BSONObjBuilder builder ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -5947,8 +5930,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -6082,8 +6064,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -6279,8 +6260,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -6949,8 +6929,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, 1, buffObj, startingPos, _cb, _pRTNCB ) ;
+         rc = rtnGetMore ( contextID, 1, buffObj, _cb, _pRTNCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )

@@ -114,6 +114,7 @@ namespace engine
       _eduID  = cb->getID() ;
       _pEDUCB->setName( sessionName() ) ;
       _pEDUCB->attachSession( this ) ;
+      _client.attachCB( cb ) ;
 
       _latchOut.try_get () ;
       _latchIn.release () ;
@@ -141,6 +142,7 @@ namespace engine
 
       _onDetach () ;
 
+      _client.detachCB() ;
       _pEDUCB->detachSession() ;
       _latchOut.release () ;
       _pEDUCB = NULL ;
@@ -242,6 +244,8 @@ namespace engine
       if ( _pMeta )
       {
          _netHandle = _pMeta->getHandle() ;
+         _client.setClientInfo( _pSessionMgr->getRouteAgent(),
+                                _netHandle ) ;
       }
       else
       {

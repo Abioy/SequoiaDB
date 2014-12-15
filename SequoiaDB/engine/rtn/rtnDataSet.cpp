@@ -42,8 +42,7 @@ namespace engine
 {
    _rtnDataSet::_rtnDataSet( const rtnQueryOptions &options,
                              _pmdEDUCB *cb )
-   :_startPos( 0 ),
-    _contextID( -1 ),
+   :_contextID( -1 ),
     _cb( cb ),
     _lastErr( SDB_OK ),
     _fetchFromContext( TRUE ),
@@ -60,8 +59,7 @@ namespace engine
 
    _rtnDataSet::_rtnDataSet( SINT64 contextID,
                              _pmdEDUCB *cb )
-   :_startPos( 0 ),
-    _contextID( contextID ),
+   :_contextID( contextID ),
     _cb( cb ),
     _lastErr( SDB_OK ),
     _fetchFromContext( TRUE ),
@@ -91,8 +89,7 @@ namespace engine
    retry:
       if ( _fetchFromContext )
       {
-         rc = rtnGetMore( _contextID, -1, _contextBuf,
-                          _startPos, _cb, _rtnCB ) ;
+         rc = rtnGetMore( _contextID, -1, _contextBuf, _cb, _rtnCB ) ;
          if ( SDB_OK != rc )
          {
             if ( SDB_DMS_EOC != rc )

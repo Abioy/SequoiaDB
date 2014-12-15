@@ -110,7 +110,6 @@ namespace engine
       rtnContextLob *lobContext = NULL ;
       SDB_RTNCB *rtnCB = sdbGetRTNCB() ;
       rtnContextBuf contextBuf ;
-      INT64 startPos = 0 ;
       rtnContext *context = rtnCB->contextFind ( contextID ) ;
       if ( NULL == context )
       {
@@ -147,7 +146,7 @@ namespace engine
          goto error ;
       }
 
-      rc = lobContext->getMore( -1, contextBuf, startPos, cb ) ;
+      rc = lobContext->getMore( -1, contextBuf, cb ) ;
       if ( SDB_OK != rc )
       {
          PD_LOG( PDERROR, "failed to get more from context:%d", rc ) ;

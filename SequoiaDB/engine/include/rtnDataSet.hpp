@@ -57,16 +57,15 @@ namespace engine
       INT32 next( BSONObj &obj ) ;
 
    private:
-      rtnContextBuf _contextBuf ;
-      INT64 _startPos ;
-      SINT64 _contextID ;
-      _pmdEDUCB *_cb ;
-      INT32 _lastErr ;
-      BOOLEAN _fetchFromContext ;
-      _SDB_RTNCB *_rtnCB ;
+      rtnContextBuf     _contextBuf ;
+      SINT64            _contextID ;
+      _pmdEDUCB         *_cb ;
+      INT32             _lastErr ;
+      BOOLEAN           _fetchFromContext ;
+      _SDB_RTNCB        *_rtnCB ;
    } ;
    typedef class _rtnDataSet rtnDataSet ;
 }
 
-#endif
+#endif // RTN_BSONSET_HPP_
 

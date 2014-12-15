@@ -842,7 +842,6 @@ namespace engine
       msg.header.header.requestID = requestID ;
       msg.packet = packet ;
       msg.type = CLS_FS_NOTIFY_TYPE_DOC ;
-      SINT64 start = 0 ;
 
       _mb.clear () ;
       _query = NULL ;
@@ -864,7 +863,7 @@ namespace engine
          {
             break ;
          }
-         rc = _context->getMore( -1, buffObj, start, eduCB() ) ;
+         rc = _context->getMore( -1, buffObj, eduCB() ) ;
          if ( SDB_OK == rc )
          {
             if ( TBSCAN == _scanType() )

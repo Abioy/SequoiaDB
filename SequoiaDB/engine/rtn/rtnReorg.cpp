@@ -393,7 +393,6 @@ namespace engine
        *******************************************************************/
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
          dmsReorgUnit ru ( fullFilePath, su->getPageSize() ) ;
          rc = ru.open ( TRUE ) ;
          if ( rc )
@@ -412,7 +411,7 @@ namespace engine
 
          while ( TRUE )
          {
-            rc = context->getMore( 1, buffObj, startingPos, cb ) ;
+            rc = context->getMore( 1, buffObj, cb ) ;
             if ( rc )
             {
                if ( SDB_DMS_EOC != rc )

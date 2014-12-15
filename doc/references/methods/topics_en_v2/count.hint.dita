@@ -5,11 +5,11 @@
   <body>
     <section>
       <title>NAME</title>
-      <p>hint - Set the maximum amount of records in result set.</p>
+      <p>hint - Use the specified index to get the amount of matching records in current collection.</p>
     </section>
     <section>
       <title>SYNOPSIS</title>
-      <p></p><apiname>count.hint</apiname>(<parmname>[num]</parmname>)
+      <p></p><apiname>count.hint</apiname>(<parmname>[hint]</parmname>)
     </section>
     <section>
       <title>CATEGORY</title>
@@ -17,17 +17,18 @@
     </section>
     <section>
       <title>DESCRIPTION</title> 
-      <p>Set the maximum amount of records in result set.</p>
+      <p>Use the specified index to get the amount of matching records in current collection.</p>
       <parml>
         <plentry>
-          <pt>num (int)</pt>
-          <pd>The parameter "num" sets the maximum amount of records in result set.
+          <pt>hint (json object)</pt>
+          <pd>It specifies the access plan to accelerate query speed.
             <parml>
               <plentry>
                 <pt>Format</pt>
-                <pd>The method "cousor.limit()" contains the parameter "num". It is in the type of "int". If
-                  the value of "num" is not specified, it will return all the records in the result set. If
-                  users need the first 5 records, the value of "num"should be set as 5.</pd>
+                <pd>The method "count.hint()" contains parameter "hint". If it is not specified, the query
+                  will not use index to visit records. The parameter "hint" contains a one-field json object. The field name is ignored. But the
+                  field value is specified as the index which will be visited. When it is null, it will visit all the records in the collection.</pd>
+                <pd>{"":null} or {"":"&lt;indexname>"}</pd>
               </plentry>
             </parml></pd>
         </plentry>        
@@ -35,18 +36,12 @@
     </section>    
     <section>
       <title>Examples</title>
-      <p>Select records with the value of "age" greater than 10 in the collection "bar" and
-        return the first 10 records.</p>
-      <codeblock>db.foo.bar.find({age:{$gt:10}}).limit(10)</codeblock>     
+      <p>Get the amount of records contain field "age" in the collection "bar" according to index "ageIndex".</p>
+      <codeblock>db.foo.bar.count({age:{$exists:1}}).hint({"":"ageIndex"})</codeblock>     
     </section>
-    <note>
-      <p>If the amount of records in the result set is lesser than 10, it will return all the
-        records. It it is greater than 10, it will return the first 10 records.</p>
-    </note>
   </body>
   <related-links>
-    <link href="cursor.hint.dita" format="dita" type="topic"></link>
-    <link href="cursor.skip.dita" format="dita" type="topic"></link>
+    <link href="query_cond.hint.dita" format="dita" type="topic"></link>
     <link href="cl.find.dita" format="dita" type="topic"></link>    
   </related-links>
 </topic>

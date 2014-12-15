@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="topic_j1m_lt3_44">
-  <title>cursor.explain()</title>
+  <title>query.explain()</title>
   <body>
-    <section><title>cursor.explain([option])</title>
+    <section><title>query.explain([option])</title>
       <p>返回查询的访问计划。</p>
     </section>
     <section><title>参数描述</title>

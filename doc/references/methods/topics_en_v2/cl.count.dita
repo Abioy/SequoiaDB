@@ -5,7 +5,7 @@
   <body>
     <section>
       <title>NAME</title>
-      <p>count - Return the total amount of records in a specified collection in a collection space.</p>
+      <p>count - Return the amount of matching records in current collection.</p>
     </section>
     <section>
       <title>SYNOPSIS</title>
@@ -17,7 +17,7 @@
     </section>
     <section>
       <title>DESCRIPTION</title> 
-      <p>Return the total amount of records in a specified collection in a collection space.</p>
+      <p>Return the amount of matching records in current collection.</p>
       <parml>
         <plentry>
           <pt>cond (json object)</pt>

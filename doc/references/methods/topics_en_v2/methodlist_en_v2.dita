@@ -373,7 +373,7 @@
           <stentry>db.foo.bar.find().skip(10)</stentry>
         </strow>
         <strow>
-          <stentry><xref href="cursor.current.dita">cursor.current()</xref></stentry>
+          <stentry><xref href="query_curs.current.dita">cursor.current()</xref></stentry>
           <stentry>Return the record that the current cursor currently pionts to </stentry>
           <stentry>db.foo.bar.find().current()</stentry>
         </strow>
@@ -383,7 +383,7 @@
           <stentry>db.foo.bar.find().deleteCurrent()</stentry>
         </strow>-->
         <strow>
-          <stentry><xref href="cursor.next.dita">cursor.next()</xref></stentry>
+          <stentry><xref href="query_curs.next.dita">cursor.next()</xref></stentry>
           <stentry>Return the next record in the cursor</stentry>
           <stentry>db.foo.bar.find().next()</stentry>
         </strow>

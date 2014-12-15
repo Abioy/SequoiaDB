@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="references_methods_sort">
-  <title>cursor.sort()</title>
+  <title>query.sort()</title>
   <body>
-    <section><title>cursor.sort(&lt;sort>)</title>
+    <section><title>query.sort(&lt;sort>)</title>
       <p>对结果集按指定字段排序。</p>
     </section>
     <section><title>参数描述</title>
@@ -23,7 +23,7 @@
       </simpletable>      
     </section>
     <section><title>格式</title>
-      <p>cursor.sort() 方法的定义格式包含 sort 参数，它是一个 Json 对象。如果不设定 sort 的内容，相当于对返回的结果集不排序。</p>
+      <p>query.sort() 方法的定义格式包含 sort 参数，它是一个 Json 对象。如果不设定 sort 的内容，相当于对返回的结果集不排序。</p>
       <p>设定 sort 参数的话，格式如下：</p>
       <p><codeblock>{&lt;字段名1>:&lt;-1|1>,&lt;字段名2>:&lt;-1|1>,...}</codeblock></p>
     </section>

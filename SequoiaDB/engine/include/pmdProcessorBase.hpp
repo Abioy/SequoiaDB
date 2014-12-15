@@ -40,6 +40,22 @@
 
 namespace engine
 {
+   /*
+      SDB_PROCESSOR_TYPE define
+   */
+   enum SDB_PROCESSOR_TYPE
+   {
+      SDB_PROCESSOR_DATA        = 1,      // data node processor
+      SDB_PROCESSOR_COORD,                // coord node processor
+      SDB_PROCESSOR_CATA,
+      SDB_PROCESSOR_OM,
+
+      SDB_PROCESSOR_MAX         
+   } ;
+
+   /*
+      _IProcessor define
+   */
    class _IProcessor : public SDBObject
    {
       public:
@@ -48,14 +64,20 @@ namespace engine
 
       public:
 
-         virtual INT32           processMsg( MsgHeader *msg, 
-                                             SDB_DPSCB *dpsCB,
-                                             rtnContextBuf &contextBuff, 
-                                             INT64 &contextID, 
-                                             INT32 &startPos ) = 0 ;
+         virtual INT32                 processMsg( MsgHeader *msg, 
+                                                   SDB_DPSCB *dpsCB,
+                                                   rtnContextBuf &contextBuff,
+                                                   INT64 &contextID,
+                                                   BOOLEAN &needReply ) = 0 ;
 
-         virtual const CHAR *    getName() = 0 ;
+         virtual const CHAR*           processorName() const = 0 ;
+         virtual SDB_PROCESSOR_TYPE    processorType() const = 0 ;
+
+         virtual ISession*             getSession() = 0 ;
+
    } ;
+   typedef _IProcessor IProcessor ;
+
 }
 
 #endif /*PMD_PROCESSORBASE_HPP_*/

@@ -358,8 +358,9 @@ namespace engine
             _ctrlFlag |= ( EDU_CTRL_INTERRUPTED | EDU_CTRL_DISCONNECTED ) ;
             ret = TRUE ;
          }
-         else if ( rc >= (INT32)sizeof(header)
-                   && MSG_BS_INTERRUPTE == header.opCode )
+         else if ( rc >= (INT32)sizeof(header) &&
+                   ( MSG_BS_INTERRUPTE == header.opCode ||
+                     MSG_BS_INTERRUPTE_SELF == header.opCode ) )
          {
             _ctrlFlag |= EDU_CTRL_INTERRUPTED ;
             ret = TRUE ;

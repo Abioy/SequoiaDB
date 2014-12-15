@@ -130,13 +130,11 @@ namespace engine
          }
          else
          {
-            SINT64 startingPos = 0 ;
             rtnContextBuf buffObj ;
 
             while ( TRUE )
             {
-               rc = rtnGetMore ( queryContextID, -1, buffObj, startingPos, cb,
-                                 rtnCB ) ;
+               rc = rtnGetMore ( queryContextID, -1, buffObj, cb, rtnCB ) ;
                if ( rc )
                {
                   if ( SDB_DMS_EOC == rc )

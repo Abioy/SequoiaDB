@@ -380,7 +380,6 @@ namespace engine
       INT32 rc = SDB_OK ;
       PD_TRACE_ENTRY( SDB_RTNCOCOM_QUERYONCATAANDPUSHTOVEC ) ;
       SINT64 contextID = -1 ;
-      SINT64 startingPos = 0 ;
       rtnContextBuf bufObj ;
       SDB_RTNCB *rtnCB = sdbGetRTNCB() ;
       rc = queryOnCatalog( options, cb, contextID ) ;
@@ -392,8 +391,7 @@ namespace engine
 
       do
       {
-         rc = rtnGetMore( contextID, -1, bufObj, startingPos,
-                          cb, rtnCB ) ;
+         rc = rtnGetMore( contextID, -1, bufObj, cb, rtnCB ) ;
          if ( SDB_DMS_EOC == rc )
          {
             rc = SDB_OK ;
@@ -2933,8 +2931,7 @@ namespace engine
       pmdKRCB *pKrcb = pmdGetKRCB();
       _SDB_RTNCB *pRtncb = pKrcb->getRTNCB();
       rtnContextBuf buffObj;
-      SINT64 start = 0;
-      rc = rtnGetMore( contextID, -1, buffObj, start, cb, pRtncb ) ;
+      rc = rtnGetMore( contextID, -1, buffObj, cb, pRtncb ) ;
       if ( SDB_DMS_EOC == rc )
       {
          contextID = -1;
@@ -3552,9 +3549,7 @@ namespace engine
          }
 
          rtnContextBuf buffObj ;
-         INT64 startPos = 0 ;
-         rc = rtnGetMore( replyHeader.contextID, -1, buffObj, startPos,
-                          cb, pRtncb ) ;
+         rc = rtnGetMore( replyHeader.contextID, -1, buffObj, cb, pRtncb ) ;
 
          if ( rc )
          {
@@ -3613,9 +3608,7 @@ namespace engine
          }
 
          rtnContextBuf buffObj ;
-         INT64 startPos = 0 ;
-         rc = rtnGetMore( replyHeader.contextID, -1, buffObj, startPos, cb,
-                          pRtncb ) ;
+         rc = rtnGetMore( replyHeader.contextID, -1, buffObj, cb, pRtncb ) ;
          if ( rc )
          {
             replyHeader.contextID = -1 ;
@@ -5467,9 +5460,7 @@ namespace engine
          }
 
          rtnContextBuf buffObj ;
-         INT64 startPos = 0 ;
-         rc = rtnGetMore( replyHeader.contextID, -1, buffObj, startPos, cb,
-                          pRtncb ) ;
+         rc = rtnGetMore( replyHeader.contextID, -1, buffObj, cb, pRtncb ) ;
          if ( rc != SDB_OK )
          {
             replyHeader.contextID = -1 ;
@@ -5625,7 +5616,6 @@ namespace engine
       BSONObj collectionObj ;
       BSONObj dummy ;
       rtnContextBuf buffObj ;
-      INT64 startPos = 0 ;
 
       collectionObj = BSON( FIELD_NAME_COLLECTION << clFullName ) ;
 
@@ -5637,7 +5627,7 @@ namespace engine
       PD_RC_CHECK ( rc, PDERROR, "Failed to getcount from source node, rc = %d",
                     rc ) ;
 
-      rc = pContext->getMore( -1, buffObj, startPos, cb ) ;
+      rc = pContext->getMore( -1, buffObj, cb ) ;
       if ( SDB_OK != rc )
       {
          PD_LOG( PDERROR, "Get count getmore failed, rc: %d", rc ) ;
@@ -6025,7 +6015,6 @@ namespace engine
       BSONObj empty ;
       rtnContext *context = NULL ;
       rtnContextBuf buffObj ;
-      INT64 startPos = 0 ;
       BSONObj obj ;
 
       if ( !condition.okForStorage() )
@@ -6043,7 +6032,7 @@ namespace engine
                                  cb, &context, NULL, flag ) ;
          PD_RC_CHECK ( rc, PDERROR, "Failed to query from data group, rc = %d",
                        rc ) ;
-         rc = context->getMore( -1, buffObj, startPos, cb ) ;
+         rc = context->getMore( -1, buffObj, cb ) ;
          if ( SDB_OK != rc )
          {
             goto error ;
@@ -6564,11 +6553,10 @@ namespace engine
       PD_TRACE_ENTRY ( SDB_RTNCOCMDGETIXS_GENRT ) ;
       CoordIndexMap indexMap ;
       rtnContextBuf buffObj ;
-      INT64 startPos = 0 ;
 
       do
       {
-         rc = pContext->getMore( 1, buffObj, startPos, cb ) ;
+         rc = pContext->getMore( 1, buffObj, cb ) ;
          if ( rc != SDB_OK )
          {
             if ( SDB_DMS_EOC == rc )
@@ -6678,11 +6666,10 @@ namespace engine
       PD_TRACE_ENTRY ( SDB_RTNCOCMDGETCT_GENRT ) ;
       SINT64 totalCount = 0 ;
       rtnContextBuf buffObj ;
-      INT64 startPos = 0 ;
 
       do
       {
-         rc = pContext->getMore( 1, buffObj, startPos, cb ) ;
+         rc = pContext->getMore( 1, buffObj, cb ) ;
          if ( rc != SDB_OK )
          {
             if ( SDB_DMS_EOC == rc )

@@ -111,11 +111,18 @@ namespace engine
    */
    _rtnObjBuff::_rtnObjBuff ( const _rtnObjBuff &right )
    {
+      _owned = FALSE ;
+      _pBuff = NULL ;
       this->operator=( right ) ;
    }
 
    _rtnObjBuff::~_rtnObjBuff ()
    {
+      if ( _pBuff && _owned )
+      {
+         SDB_OSS_FREE( (CHAR*)_pBuff ) ;
+      }
+      _owned = FALSE ;
       _pBuff = NULL ;
       _buffSize = 0 ;
       _recordNum = 0 ;
@@ -124,6 +131,11 @@ namespace engine
 
    _rtnObjBuff& _rtnObjBuff::operator=( const _rtnObjBuff &right )
    {
+      if ( _pBuff && _owned )
+      {
+         SDB_OSS_FREE( (CHAR*)_pBuff ) ;
+      }
+      _owned = FALSE ;
       _pBuff = right._pBuff ;
       _buffSize = right._buffSize ;
       _recordNum = right._recordNum ;
@@ -176,16 +188,37 @@ namespace engine
       goto done ;
    }
 
+   INT32 _rtnObjBuff::getOwned()
+   {
+      INT32 rc = SDB_OK ;
+
+      if ( !_owned && _pBuff )
+      {
+         CHAR *pBuff = ( CHAR* )SDB_OSS_MALLOC( _buffSize ) ;
+         if ( pBuff )
+         {
+            _pBuff = pBuff ;
+            _owned = TRUE ;
+         }
+         else
+         {
+            rc = SDB_OOM ;
+         }
+      }
+      return rc ;
+   }
+
    /*
       _rtnContextBuf implement
    */
-   _rtnContextBuf::_rtnContextBuf ()
+   _rtnContextBuf::_rtnContextBuf()
    :_rtnObjBuff( NULL, 0, 0 )
    {
       _pBuffCounter  = NULL ;
       _pBuffLock     = NULL ;
       _released      = TRUE ;
       _context       = NULL ;
+      _startFrom     = 0 ;
    }
 
    _rtnContextBuf::_rtnContextBuf( const _rtnContextBuf &right )
@@ -196,6 +229,7 @@ namespace engine
       _released     = right._released ;
       _context      = right._context ;
       _object       = right._object ;
+      _startFrom    = right._startFrom ;
 
       if ( !_released )
       {
@@ -211,6 +245,7 @@ namespace engine
       _pBuffLock     = NULL ;
       _released      = TRUE ;
       _context       = NULL ;
+      _startFrom     = 0 ;
    }
 
    _rtnContextBuf::_rtnContextBuf( const BSONObj &obj )
@@ -221,11 +256,23 @@ namespace engine
       _released      = TRUE ;
       _context       = NULL ;
       _object        = obj ;
+      _startFrom     = 0 ;
    }
 
    _rtnContextBuf::~_rtnContextBuf()
    {
       release () ;
+   }
+
+   INT32 _rtnContextBuf::getOwned()
+   {
+      INT32 rc = SDB_OK ;
+
+      if ( !_pBuffCounter )
+      {
+         rc = _rtnObjBuff::getOwned() ;
+      }
+      return rc ;
    }
 
    _rtnContextBuf& _rtnContextBuf::operator=( const _rtnContextBuf &right )
@@ -239,6 +286,7 @@ namespace engine
       _released = right._released ;
       _context  = right._context ;
       _object   = right._object ;
+      _startFrom = right._startFrom ;
 
       if ( !_released && NULL != _pBuffCounter )
       {
@@ -273,6 +321,7 @@ namespace engine
       _buffSize      = 0 ;
       _recordNum     = 0 ;
       _curOffset     = 0 ;
+      _startFrom     = 0 ;
    }
 
    void _rtnContextBuf::_reference( INT32 * pCounter, ossRWMutex *pMutex )
@@ -639,8 +688,9 @@ namespace engine
       goto done ;
    }
 
-   INT32 _rtnContextBase::getMore( INT32 maxNumToReturn, rtnContextBuf &buffObj,
-                                   INT64 &startPos, pmdEDUCB *cb )
+   INT32 _rtnContextBase::getMore( INT32 maxNumToReturn,
+                                   rtnContextBuf &buffObj,
+                                   pmdEDUCB *cb )
    {
       INT32 rc = SDB_OK ;
       BOOLEAN locked = FALSE ;
@@ -699,7 +749,7 @@ namespace engine
       {
          _bufferCurrentOffset = ossAlign4( (UINT32)_bufferCurrentOffset ) ;
          buffObj._pBuff = &_pResultBuffer[ _bufferCurrentOffset ] ;
-         startPos = _totalRecords - _bufferNumRecords ;
+         buffObj._startFrom = _totalRecords - _bufferNumRecords ;
 
          if ( maxNumToReturn < 0 )
          {
@@ -1868,7 +1918,6 @@ namespace engine
    {
       INT32 rc = SDB_OK ;
       rtnContextData *pContext = NULL ;
-      INT64 startPos = 0 ;
       INT64 maxReturnNum = -1 ;
 
       while ( isEmpty() && 0 != _numToReturn )
@@ -1906,7 +1955,7 @@ namespace engine
                maxReturnNum = -1 ;
             }
 
-            rc = pContext->getMore( maxReturnNum, buffObj, startPos, cb ) ;
+            rc = pContext->getMore( maxReturnNum, buffObj, cb ) ;
             if ( rc )
             {
                _removeSubContext( pContext ) ;
@@ -3668,7 +3717,6 @@ namespace engine
 
    INT32 _rtnContextMainCL::getMore( INT32 maxNumToReturn,
                                      rtnContextBuf &buffObj,
-                                     INT64 &startPos,
                                      _pmdEDUCB *cb )
    {
       INT32 rc = SDB_OK;
@@ -3693,7 +3741,7 @@ namespace engine
       if ( !isEmpty() || ( requireOrder() && !_includeShardingOrder ) )
       {
          rc = this->_rtnContextBase::getMore( maxNumToReturn, buffObj,
-                                              startPos, cb );
+                                              cb );
          goto done;
       }
 
@@ -3778,7 +3826,6 @@ namespace engine
                                                 INT32 maxNumToReturn )
    {
       INT32 rc = SDB_OK;
-      INT64 startPos;
       _SDB_RTNCB *pRtnCB = pmdGetKRCB()->getRTNCB();
       rtnContext *pContext = NULL;
       rtnContextBuf contextBuf;
@@ -3793,7 +3840,7 @@ namespace engine
                 "Context %lld does not exist", iterSubCTX->first );
       rc = pContext->getMore( maxNumToReturn,
                               contextBuf,
-                              startPos, cb );
+                              cb );
       if ( rc )
       {
          if ( rc != SDB_DMS_EOC )
@@ -4253,7 +4300,7 @@ namespace engine
 
    INT32 _rtnContextDelCS::getMore( INT32 maxNumToReturn,
                                     rtnContextBuf &buffObj,
-                                    INT64 &startPos, _pmdEDUCB *cb )
+                                    _pmdEDUCB *cb )
    {
       INT32 rc = SDB_OK;
       if ( !isOpened() )
@@ -4449,7 +4496,7 @@ namespace engine
 
    INT32 _rtnContextDelCL::getMore( INT32 maxNumToReturn,
                                     rtnContextBuf &buffObj,
-                                    INT64 &startPos, _pmdEDUCB *cb )
+                                    _pmdEDUCB *cb )
    {
       INT32 rc = SDB_OK ;
       if ( !isOpened() )
@@ -4626,7 +4673,7 @@ namespace engine
 
    INT32 _rtnContextDelMainCL::getMore( INT32 maxNumToReturn,
                                         rtnContextBuf &buffObj,
-                                        INT64 &startPos, _pmdEDUCB *cb )
+                                        _pmdEDUCB *cb )
    {
       INT32 rc = SDB_OK;
       INT32 curVer = -1;
@@ -4674,9 +4721,7 @@ namespace engine
                else
                {
                   rtnContextBuf buffObj;
-                  SINT64 startingPos = 0;
-                  rc = rtnGetMore( iterCtx->second, -1, buffObj, startingPos,
-                                   cb, _pRtncb ) ;
+                  rc = rtnGetMore( iterCtx->second, -1, buffObj, cb, _pRtncb ) ;
                   PD_CHECK( SDB_DMS_EOC == rc || SDB_DMS_NOTEXIST == rc,
                             rc, error, PDERROR,
                             "Failed to del sub-collection, rc: %d",
@@ -4701,9 +4746,7 @@ namespace engine
             while( iterCtx != _subContextList.end() )
             {
                rtnContextBuf buffObj;
-               SINT64 startingPos = 0;
-               rc = rtnGetMore( iterCtx->second, -1, buffObj,
-                                startingPos, cb, _pRtncb );
+               rc = rtnGetMore( iterCtx->second, -1, buffObj, cb, _pRtncb );
                PD_CHECK( SDB_DMS_EOC == rc || SDB_DMS_NOTEXIST == rc,
                          rc, error, PDERROR,
                          "Failed to del sub-collection, rc: %d",
@@ -4943,7 +4986,6 @@ namespace engine
       INT32 rc = SDB_OK ;
       BSONObj dummy ;
       INT64 snapshotContextID = -1 ;
-      INT64 startingPos = 0 ;
       rtnContextBuf ctxBuf ;
       rc = rtnSnapCommandEntry( CMD_SNAPSHOT_SESSIONS_CURRENT,
                                 dummy, dummy, dummy,
@@ -4956,8 +4998,7 @@ namespace engine
          goto error ;
       }
 
-      rc = rtnGetMore( snapshotContextID, 1, ctxBuf,
-                       startingPos, cb, sdbGetRTNCB() ) ;
+      rc = rtnGetMore( snapshotContextID, 1, ctxBuf, cb, sdbGetRTNCB() ) ;
       if ( SDB_OK != rc )
       {
          PD_LOG( PDERROR, "failed to get more from snapshot context:%d", rc ) ;
@@ -4994,14 +5035,11 @@ namespace engine
       INT32 rc = SDB_OK ;
       PD_TRACE_ENTRY( SDB_RTNCONTEXTEXPLAIN__EXPLAINQUERY ) ;
       rtnContextBuf ctxBuf ;
-      SINT64 startingPos = 0 ;
       BSONObj record ;
 
       while ( _needRun )
       {
-         rc = rtnGetMore( _queryContextID,
-                          -1, ctxBuf, startingPos, cb,
-                          sdbGetRTNCB() ) ;
+         rc = rtnGetMore( _queryContextID, -1, ctxBuf, cb, sdbGetRTNCB() ) ;
          if ( SDB_DMS_EOC == rc )
          {
             rc = SDB_OK ;

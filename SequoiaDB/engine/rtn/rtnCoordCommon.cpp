@@ -2252,7 +2252,6 @@ namespace engine
       CHAR *pListReq = NULL;
       SINT64 contextID = -1;
 
-      INT64 startPos = 0 ;
       BSONObj *err = NULL ;
 
       rtnCoordProcesserFactory *pProcesserFactory
@@ -2275,7 +2274,7 @@ namespace engine
       {
          rtnContextBuf buffObj ;
 
-         rc = rtnGetMore( contextID, 1, buffObj, startPos, cb, pRtncb ) ;
+         rc = rtnGetMore( contextID, 1, buffObj, cb, pRtncb ) ;
          if ( rc )
          {
             if ( rc != SDB_DMS_EOC )

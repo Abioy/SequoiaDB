@@ -101,6 +101,17 @@ namespace engine
       SDB_SESSION_MAX
    } ;
 
+   /*
+      SDB_CLIENT_TYPE define
+   */
+   enum SDB_CLIENT_TYPE
+   {
+      SDB_CLIENT_EXTERN    = 1,  // external client,ex: local service
+      SDB_CLIENT_INNER,          // inner client, ex: shard service
+
+      SDB_CLIENT_MAX
+   } ;
+
    class _ISDBRoot
    {
       public:
@@ -175,7 +186,37 @@ namespace engine
    typedef _IConfigHandle IConfigHandle ;
 
    /*
-      _pmdBaseSession define
+      _IClient define
+   */
+   class _IClient : public SDBObject
+   {
+      public:
+         _IClient() {}
+         virtual ~_IClient() {}
+
+      public:
+         virtual SDB_CLIENT_TYPE clientType() const = 0 ;
+         virtual const CHAR*     clientName() const = 0 ;
+
+         virtual INT32        authenticate( MsgHeader *pMsg ) = 0 ;
+         virtual INT32        disconnect() = 0 ;
+
+         virtual BOOLEAN      isAuthed() const = 0 ;
+         virtual BOOLEAN      isConnected() const = 0 ;
+         virtual BOOLEAN      isClosed() const = 0 ;
+
+         virtual UINT16       getLocalPort() const = 0 ;
+         virtual const CHAR*  getLocalIPAddr() const = 0 ;
+         virtual UINT16       getPeerPort() const = 0 ;
+         virtual const CHAR*  getPeerIPAddr() const = 0 ;
+         virtual const CHAR*  getUsername() const = 0 ;
+         virtual const CHAR*  getPassword() const = 0 ;
+
+   } ;
+   typedef _IClient IClient ;
+
+   /*
+      _ISession define
    */
    class _ISession : public SDBObject
    {
@@ -188,6 +229,7 @@ namespace engine
          virtual const CHAR*        sessionName() const = 0 ;
          virtual SDB_SESSION_TYPE   sessionType() const = 0 ;
          virtual INT32              getServiceType() const = 0 ;
+         virtual IClient*           getClient() = 0 ;
 
       protected:
          virtual void               _onAttach () {}

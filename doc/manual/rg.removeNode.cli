@@ -25,7 +25,7 @@ ReplicaGroup
 .SH "DESCRIPTION"
 
 .sp 2
-Delete the specified node in the replica group
+Delete the specified node in the replica group.
 .sp 2
 \fBhost (string)\fR
 .br

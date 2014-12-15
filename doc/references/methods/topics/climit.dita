@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="references_methods_limit">
-  <title>cursor.limit()</title>
+  <title>query.limit()</title>
   <body>
-    <section><title>cursor.limit(&lt;num>)</title>
+    <section><title>query.limit(&lt;num>)</title>
       <p>控制结果集返回记录的条数。</p>
     </section>
     <section><title>参数描述</title>

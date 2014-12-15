@@ -41,6 +41,35 @@ void TraceGen::genList ()
          exit(0) ;
       }
 
+      string comment =
+        "/*    Copyright 2012 SequoiaDB Inc.\n"
+        " *\n"
+        " *    Licensed under the Apache License, Version 2.0 (the \"License\");\n"
+        " *    you may not use this file except in compliance with the License.\n"
+        " *    You may obtain a copy of the License at\n"
+        " *\n"
+        " *    http://www.apache.org/licenses/LICENSE-2.0\n"
+        " *\n"
+        " *    Unless required by applicable law or agreed to in writing, software\n"
+        " *    distributed under the License is distributed on an \"AS IS\" BASIS,\n"
+        " *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n"
+        " *    See the License for the specific language governing permissions and\n"
+        " *    limitations under the License.\n"
+        " */\n"
+        "/*    Copyright (C) 2011-2014 SequoiaDB Ltd.\n"
+        " *    This program is free software: you can redistribute it and/or modify\n"
+        " *    it under the term of the GNU Affero General Public License, version 3,\n"
+        " *    as published by the Free Software Foundation.\n"
+        " *\n"
+        " *    This program is distributed in the hope that it will be useful,\n"
+        " *    but WITHOUT ANY WARRANTY; without even the implied warrenty of\n"
+        " *    MARCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+        " *    GNU Affero General Public License for more details.\n"
+        " *\n"
+        " *    You should have received a copy of the GNU Affero General Public License\n"
+        " *    along with this program. If not, see <http://www.gnu.org/license/>.\n"
+        " */\n";
+      fout1<<std::left<<comment<<endl;
       fout1 << "/* This list file is automatically generated," <<
                "you shoud NOT modify this file anyway! */" << endl ;
       fout1 << "#include \"core.hpp\"" << endl ;
@@ -188,8 +217,37 @@ void TraceGen::_genList ( const CHAR *pPath,
                                       pdGetTraceComponent(i),
                                       TRACEINCLUDESUFFIX ) ;
                         ofstream foutNew ( buffer ) ;
+                        string comment =
+                          "/*    Copyright 2012 SequoiaDB Inc.\n"
+                          " *\n"
+                          " *    Licensed under the Apache License, Version 2.0 (the \"License\");\n"
+                          " *    you may not use this file except in compliance with the License.\n"
+                          " *    You may obtain a copy of the License at\n"
+                          " *\n"
+                          " *    http://www.apache.org/licenses/LICENSE-2.0\n"
+                          " *\n"
+                          " *    Unless required by applicable law or agreed to in writing, software\n"
+                          " *    distributed under the License is distributed on an \"AS IS\" BASIS,\n"
+                          " *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n"
+                          " *    See the License for the specific language governing permissions and\n"
+                          " *    limitations under the License.\n"
+                          " */\n"
+                          "/*    Copyright (C) 2011-2014 SequoiaDB Ltd.\n"
+                          " *    This program is free software: you can redistribute it and/or modify\n"
+                          " *    it under the term of the GNU Affero General Public License, version 3,\n"
+                          " *    as published by the Free Software Foundation.\n"
+                          " *\n"
+                          " *    This program is distributed in the hope that it will be useful,\n"
+                          " *    but WITHOUT ANY WARRANTY; without even the implied warrenty of\n"
+                          " *    MARCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+                          " *    GNU Affero General Public License for more details.\n"
+                          " *\n"
+                          " *    You should have received a copy of the GNU Affero General Public License\n"
+                          " *    along with this program. If not, see <http://www.gnu.org/license/>.\n"
+                          " */\n";
+                        foutNew << std::left<<comment << endl ;
                         foutNew << "/* This list file is automatically generated," <<
-                                   "you shoud NOT modify this file anyway! */" << endl ;
+                                   "you shoud NOT modify this file anyway! test comment*/" << endl ;
                         foutNew << "#ifndef " << pdGetTraceComponent(i) <<
                                    "TRACE_H__" << endl ;
                         foutNew << "#define " << pdGetTraceComponent(i) <<

@@ -191,14 +191,13 @@ namespace engine
                               replyHeader.contextID ) ) &&
                     ( ((MsgOpQuery*)pHead)->flags & FLG_QUERY_WITH_RETURNDATA ) )
                {
-                  INT64 startPos64 = 0 ;
-                  rc = pContext->getMore( -1, buffObj, startPos64, cb ) ;
+                  rc = pContext->getMore( -1, buffObj, cb ) ;
                   if ( rc || pContext->eof() )
                   {
                      pRTNCB->contextDelete( replyHeader.contextID, cb ) ;
                      replyHeader.contextID = -1 ;
                   }
-                  replyHeader.startFrom = ( INT32 )startPos64 ;
+                  replyHeader.startFrom = ( INT32 )buffObj.getStartFrom() ;
                   replyHeader.header.messageLength = sizeof( MsgOpReply ) ;
 
                   if ( SDB_DMS_EOC == rc )
@@ -280,7 +279,6 @@ namespace engine
       INT32 flags          = 0 ;
       SINT64 numToSkip     = -1 ;
       SINT64 numToReturn   = -1 ;
-      SINT64 contextStart  = 0 ;    // startFrom
       SINT64 contextID     = -1 ;   // contextID
       SINT32 numToRead     = 0 ;
       CHAR *pCollectionName= NULL ;
@@ -519,8 +517,7 @@ namespace engine
             MON_SAVE_OP_DETAIL( cb->getMonAppCB(), MSG_BS_GETMORE_REQ,
                         "ContextID:%lld, NumToRead:%d",
                         contextID, numToRead ) ;
-            rc = rtnGetMore ( contextID, numToRead, buffObj, contextStart,
-                              cb, rtnCB ) ;
+            rc = rtnGetMore ( contextID, numToRead, buffObj, cb, rtnCB ) ;
          }
          else if ( MSG_BS_DELETE_REQ == opCode )
          {
@@ -670,7 +667,7 @@ namespace engine
       }
 
       replyHeader.contextID = contextID ;
-      replyHeader.startFrom = contextStart ;
+      replyHeader.startFrom = (INT32)buffObj.getStartFrom() ;
 
    done :
       if ( pCommand )
@@ -1525,15 +1522,15 @@ namespace engine
       pmdLocalSession localSession( s ) ;
       localSession.attach( cb ) ;
 
-      _DataProcessor dataProcessor ;
+      pmdDataProcessor dataProcessor ;
       dataProcessor.attachSession( &localSession ) ;
       localSession.attachProcessor( &dataProcessor ) ;
-      
+
       rc = localSession.run() ;
 
       localSession.detachProcessor() ;
       dataProcessor.detachSession() ;
-      
+
       localSession.detach() ;
 
       PD_TRACE_EXITRC ( SDB_PMDLOCALAGENTENTPNT, rc );

@@ -1,4 +1,4 @@
-.TH COMMAND * 2014-04-08 "SequoiaDB" "Sequoiadb sdb's Manual"
+.TH COMMAND * 2014-04-08 "SequoiaDB" "Sequoiadb Method's Manual"
 .ad l.ll 72.ce 1000
 \fBcount.hint()\fR
 .ce 0
@@ -7,7 +7,8 @@
 .SH "NAME"
 
 .sp 2
-hint - Set the maximum amount of records in result set.
+hint - Use the specified index to get the amount of matching
+records in current collection.
 .SH "SYNOPSIS"
 
 .sp 2
@@ -15,7 +16,7 @@ hint - Set the maximum amount of records in result set.
 .sp 2
 
 .sp 2
-count.hint(\fB[num]\fR)
+count.hint(\fB[hint]\fR)
 .SH "CATEGORY"
 
 .sp 2
@@ -25,30 +26,28 @@ Count
 .SH "DESCRIPTION"
 
 .sp 2
-Set the maximum amount of records in result set.
+Use the specified index to get the amount of matching records in
+current collection.
 .sp 2
-\fBnum (int)\fR
+\fBhint (json object)\fR
 .br
-       The parameter "num" sets the maximum amount of records in
-       result set.
+       It specifies the access plan to accelerate query speed.
 .sp 2
        \fBFormat\fR
 .br
-              The method "cousor.limit()" contains the parameter
-              "num". It is in the type of "int". If the value of
-              "num" is not specified, it will return all the
-              records in the result set. If users need the first
-              5 records, the value of "num"should be set as 5.
+              The method "count.hint()" contains parameter
+              "hint". If it is not specified, the query will not
+              use index to visit records. The parameter "hint"
+              contains a one-field json object. The field name is
+              ignored. But the field value is specified as the
+              index which will be visited. When it is null, it
+              will visit all the records in the collection.
+.br
+              {"":null} or {"":"<indexname>"}
 .SH "Examples"
 
 .sp 2
-Select records with the value of "age" greater than 10 in the
-collection "bar" and return the first 10 records.
+Get the amount of records contain field "age" in the collection
+"bar" according to index "ageIndex".
 .sp 2
-db.foo.bar.find({age:{$gt:10}}).limit(10)
-.sp 2
-\fBNote: \fR
-.sp 2
-If the amount of records in the result set is lesser than 10, it
-will return all the records. It it is greater than 10, it will
-return the first 10 records.
+db.foo.bar.count({age:{$exists:1}}).hint({"":"ageIndex"})

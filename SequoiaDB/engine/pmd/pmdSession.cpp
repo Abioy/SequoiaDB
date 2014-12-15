@@ -51,7 +51,6 @@ namespace engine
    _pmdLocalSession::_pmdLocalSession( SOCKET fd )
    :pmdSession( fd )
    {
-      _authOK  = FALSE ;
       ossMemset( (void*)&_replyHeader, 0, sizeof(_replyHeader) ) ;
       _needReply = TRUE ;
       _needRollback = FALSE ;
@@ -133,7 +132,6 @@ namespace engine
       CHAR *pBuff             = NULL ;
       INT32 buffSize          = 0 ;
       pmdEDUMgr *pmdEDUMgr    = NULL ;
-      _DataProcessor dataProcessor ;
 
       if ( !_pEDUCB )
       {
@@ -264,83 +262,6 @@ namespace engine
       goto done ;
    }
 
-   INT32 _pmdLocalSession::_onAuth( MsgHeader * msg )
-   {
-      INT32 rc = SDB_OK ;
-      BSONObj authObj ;
-      BSONElement user, pass ;
-      rc = extractAuthMsg( msg, authObj ) ;
-      PD_RC_CHECK( rc, PDERROR, "Session[%s] failed to extrace auth msg, "
-                   "rc: %d", sessionName(), rc ) ;
-      user = authObj.getField( SDB_AUTH_USER ) ;
-      pass = authObj.getField( SDB_AUTH_PASSWD ) ;
-
-      if ( SDB_ROLE_STANDALONE == pmdGetDBRole() ) // not auth
-      {
-         _authOK = TRUE ;
-         goto done ;
-      }
-      else if ( SDB_ROLE_OM == pmdGetDBRole() )
-      {
-         rc = sdbGetOMManager()->authenticate( authObj, eduCB() ) ;
-         PD_RC_CHECK( rc, PDERROR, "Session[%s] failed to authenticate, "
-                      "rc: %d", sessionName(), rc ) ;
-         _authOK = TRUE ;
-         eduCB()->setUserInfo( user.valuestrsafe(), pass.valuestrsafe() ) ;
-      }
-      else
-      {
-         MsgHeader *pAuthRes = NULL ;
-         shardCB *pShard = sdbGetShardCB() ;
-         BOOLEAN hasRetry = FALSE ;
-
-         while ( TRUE )
-         {
-            rc = pShard->syncSend( msg, CATALOG_GROUPID, TRUE, &pAuthRes ) ;
-            if ( SDB_OK != rc )
-            {
-               rc = pShard->syncSend( msg, CATALOG_GROUPID, FALSE, &pAuthRes ) ;
-               PD_RC_CHECK( rc, PDERROR, "Session[%s] failed to send auth "
-                            "req to catalog, rc=%d", sessionName(), rc ) ;
-            }
-            if ( NULL == pAuthRes )
-            {
-               rc = SDB_SYS ;
-               PD_LOG( PDERROR, "syncsend return ok but res is NULL" ) ;
-               goto error ;
-            }
-            rc = (( MsgInternalReplyHeader *)pAuthRes)->res ;
-            SDB_OSS_FREE( (BYTE*)pAuthRes ) ;
-            pAuthRes = NULL ;
-
-            if ( SDB_CLS_NOT_PRIMARY == rc && !hasRetry )
-            {
-               hasRetry = TRUE ;
-               pShard->updateCatGroup( TRUE, CLS_SHARD_TIMEOUT ) ;
-               continue ;
-            }
-            else if ( rc )
-            {
-               PD_LOG( PDERROR, "Session[%s] auth failed, rc: %d",
-                       sessionName(), rc ) ;
-               goto error ;
-            }
-            else
-            {
-               _authOK = TRUE ;
-               eduCB()->setUserInfo( user.valuestrsafe(),
-                                     pass.valuestrsafe() ) ;
-            }
-            break ;
-         }
-      }
-
-   done:
-      return rc ;
-   error:
-      goto done ;
-   }
-
    INT32 _pmdLocalSession::_processSysInfoRequest( const CHAR * msg )
    {
       INT32 rc = SDB_OK ;
@@ -380,6 +301,7 @@ namespace engine
       _replyHeader.header.routeID     = pmdGetNodeID() ;
 
       if ( MSG_BS_INTERRUPTE == msg->opCode ||
+           MSG_BS_INTERRUPTE_SELF == msg->opCode ||
            MSG_BS_DISCONNECT == msg->opCode )
       {
          _needReply = FALSE ;
@@ -431,44 +353,24 @@ namespace engine
       rc = _onMsgBegin( msg ) ;
       if ( SDB_OK == rc )
       {
-         if ( MSG_AUTH_VERIFY_REQ == msg->opCode )
+         rc = _processor->processMsg( msg, _pDPSCB, contextBuff, 
+                                      _replyHeader.contextID,
+                                      _needReply ) ;
+         pBody     = contextBuff.data() ;
+         bodyLen   = contextBuff.size() ;
+         _replyHeader.numReturned = contextBuff.recordNum() ;
+         _replyHeader.startFrom = (INT32)contextBuff.getStartFrom() ;
+         if ( SDB_OK != rc )
          {
-            rc = _onAuth( msg ) ;
-         }
-         else if ( !_authOK )
-         {
-            rc = SDB_AUTH_AUTHORITY_FORBIDDEN ;
-         }
-         else if ( MSG_BS_INTERRUPTE == msg->opCode )
-         {
-            rc = _onInterruptMsg( msg ) ;
-         }
-         else if ( MSG_BS_DISCONNECT == msg->opCode )
-         {
-            PD_LOG( PDEVENT, "Session[%s, %d] recv disconnect msg",
-                    sessionName(), eduID() ) ;
-            disconnect() ;
-         }
-         else
-         {
-            rc = _processor->processMsg( msg, _pDPSCB, contextBuff, 
-                                         _replyHeader.contextID, 
-                                         _replyHeader.startFrom ) ;
-            pBody     = contextBuff.data() ;
-            bodyLen   = contextBuff.size() ;
-            _replyHeader.numReturned = contextBuff.recordNum() ;
-            if ( SDB_OK != rc )
+            if ( _needRollback )
             {
-               if ( _needRollback )
+               INT32 rcTmp = rtnTransRollback( eduCB(), _pDPSCB ) ;
+               if ( rcTmp )
                {
-                  INT32 rcTmp = rtnTransRollback( eduCB(), _pDPSCB ) ;
-                  if ( rcTmp )
-                  {
-                     PD_LOG( PDERROR, "Session[%s] failed to rollback trans "
-                             "info, rc: %d", sessionName(), rcTmp ) ;
-                  }
-                  _needRollback = FALSE ;
+                  PD_LOG( PDERROR, "Session[%s] failed to rollback trans "
+                          "info, rc: %d", sessionName(), rcTmp ) ;
                }
+               _needRollback = FALSE ;
             }
          }
       }
@@ -536,29 +438,7 @@ namespace engine
       goto done ;
    }
 
-   INT32 _pmdLocalSession::_onInterruptMsg( MsgHeader * msg )
-   {
-      PD_LOG ( PDEVENT, "Session[%s, %d] recieved interrupt msg",
-               sessionName(), eduID() ) ;
 
-      if ( _pEDUCB )
-      {
-         INT64 contextID = -1 ;
-         while ( -1 != ( contextID = _pEDUCB->contextPeek() ) )
-         {
-            _pRTNCB->contextDelete ( contextID, NULL ) ;
-         }
-
-         INT32 rcTmp = rtnTransRollback( _pEDUCB, _pDPSCB );
-         if ( rcTmp )
-         {
-            PD_LOG ( PDERROR, "Failed to rollback(rc=%d)", rcTmp );
-         }
-         _pEDUCB->clearTransInfo() ;
-      }
-
-      return SDB_OK ;
-   }
 }
 
 

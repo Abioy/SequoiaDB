@@ -43,6 +43,7 @@
 #include "pmdMemPool.hpp"
 #include "ossEvent.hpp"
 #include "sdbInterface.hpp"
+#include "pmdInnerClient.hpp"
 
 #include <map>
 #include <deque>
@@ -141,6 +142,7 @@ namespace engine
          virtual UINT64          identifyID() ;
          virtual const CHAR*     sessionName() const ;
          virtual INT32           getServiceType() const ;
+         virtual IClient*        getClient() { return &_client ; }
 
          virtual EDU_TYPES eduType () const = 0 ;
 
@@ -204,10 +206,11 @@ namespace engine
          NET_HANDLE           _netHandle ;
 
          CHAR                 _name[SESSION_NAME_LEN+1] ;
-         pmdSessionMeta        *_pMeta ;
+         pmdSessionMeta       *_pMeta ;
 
          ossEvent             _detachEvent ;
          _pmdAsycSessionMgr   *_pSessionMgr ;
+         pmdInnerClient       _client ;
 
       private:
          ossSpinXLatch        _latchIn ;

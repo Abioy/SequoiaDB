@@ -307,10 +307,8 @@ namespace engine
       SDB_ASSERT ( _contextID != -1,
                    "context id must be initialized" ) ;
 
-      INT64 startingPos = 0 ;
       rtnContextBuf buffObj ;
-
-      rc = rtnGetMore( _contextID, 1, buffObj, startingPos, _eduCB, _rtnCB ) ;
+      rc = rtnGetMore( _contextID, 1, buffObj, _eduCB, _rtnCB ) ;
       if ( rc )
       {
          if ( SDB_DMS_EOC != rc )

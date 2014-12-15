@@ -7,8 +7,8 @@
 .SH "NAME"
 
 .sp 2
-count - Return the total amount of records in a specified
-collection in a collection space.
+count - Return the amount of matching records in current
+collection.
 .SH "SYNOPSIS"
 
 .sp 2
@@ -26,8 +26,7 @@ Collection
 .SH "DESCRIPTION"
 
 .sp 2
-Return the total amount of records in a specified collection in a
-collection space.
+Return the amount of matching records in current collection.
 .sp 2
 \fBcond (json object)\fR
 .br

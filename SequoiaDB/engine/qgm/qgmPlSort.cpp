@@ -159,7 +159,6 @@ namespace engine
       PD_TRACE_ENTRY( SDB__QGMPLSORT__FETCHNEXT ) ;
       INT32 rc = SDB_OK ;
       rtnContextBuf buffObj ;
-      SINT64 startingPos = 0 ;
       if ( -1 == _contextID )
       {
          PD_LOG( PDERROR, "invalid contextID" ) ;
@@ -167,7 +166,7 @@ namespace engine
          goto error ;
       }
 
-      rc = rtnGetMore ( _contextID, 1, buffObj, startingPos, _eduCB, _rtnCB ) ;
+      rc = rtnGetMore ( _contextID, 1, buffObj, _eduCB, _rtnCB ) ;
       try
       {
          if ( SDB_OK == rc )

@@ -288,8 +288,7 @@ namespace engine
       while ( TRUE )
       {
          rtnContextBuf buffObj ;
-         SINT64 startingPos = 0 ;
-         rc = rtnGetMore ( contextID, -1, buffObj, startingPos, cb, rtnCB ) ;
+         rc = rtnGetMore ( contextID, -1, buffObj, cb, rtnCB ) ;
          if ( rc )
          {
             if ( SDB_DMS_EOC == rc )
@@ -348,7 +347,6 @@ namespace engine
       BSONObj dummyObj ;
 
       rtnContextBuf buffObj ;
-      INT64 startingPos       = 0 ;
 
       PD_TRACE_ENTRY ( SDB_CATGETONEOBJ ) ;
       rc = rtnQuery( collectionName, selector, matcher, dummyObj, hint,
@@ -356,7 +354,7 @@ namespace engine
       PD_RC_CHECK( rc, PDERROR, "Failed to query from %s, rc: %d",
                    collectionName, rc ) ;
 
-      rc = rtnGetMore( contextID, 1, buffObj, startingPos, cb, rtnCB ) ;
+      rc = rtnGetMore( contextID, 1, buffObj, cb, rtnCB ) ;
       if ( rc )
       {
          if ( SDB_DMS_EOC == rc )
@@ -1166,14 +1164,13 @@ namespace engine
       BSONObj orderby = BSON( CAT_TASKID_NAME << -1 ) ;
 
       rtnContextBuf buffObj ;
-      INT64 startingPos       = 0 ;
 
       rc = rtnQuery( CAT_TASK_INFO_COLLECTION, dummyObj, dummyObj, orderby,
                      dummyObj, 0, cb, 0, 1, dmsCB, rtnCB, contextID ) ;
       PD_RC_CHECK( rc, PDWARNING, "Failed to query from %s, rc: %d",
                    CAT_TASK_INFO_COLLECTION, rc ) ;
 
-      rc = rtnGetMore( contextID, 1, buffObj, startingPos, cb, rtnCB ) ;
+      rc = rtnGetMore( contextID, 1, buffObj, cb, rtnCB ) ;
       if ( rc )
       {
          if ( SDB_DMS_EOC == rc )

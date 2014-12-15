@@ -4,11 +4,11 @@ var help = function( val ) {
       println("   var db = new Sdb()                     connect to database use default host 'localhost' and default port 11810");
       println("   var db = new Sdb('localhost',11810)    connect to database use specified host and port");
       println("   var db = new Sdb('ubuntu',11810,\'\',\'\') connect to database with username and password");
-      println("   var oma = new Oma()                     connect to om agent use default host 'localhost' and default port 11810") ;
-      println("   var oma = new Oma('localhost',11810)    connect to om agent use specified host and port") ;
+      println("   var oma = new Oma()                    connect to om agent use default host 'localhost' and default port 11810") ;
+      println("   var oma = new Oma('localhost',11810)   connect to om agent use specified host and port") ;
       println("   var oma = new Oma('ubuntu',11810,\'\',\'\') connect to om agent with username and password") ;
       println("   help(<method>)                         help on specified method, e.g. help(\'createCS\')");
-      println("   oma.help()                              help on om methods");
+      println("   oma.help()                             help on om methods");
       println("   db.help()                              help on db methods");
       println("   db.cs.help()                           help on collection space cs");
       println("   db.cs.cl                               access collection cl on collection space cs");
@@ -21,10 +21,10 @@ var help = function( val ) {
       println("   sleep(ms)                              sleep macro seconds");
       println("   traceFmt(<type>,<in>,<out>)            format trace input(in) to output(out) by type");
       println("   getErr(ret)                            print error description for return code");
-	  println("   getLastError()                         get last error number");
-	  println("   setLastError(<errno>)                  set last error number") ;
+      println("   getLastError()                         get last error number");
+      println("   setLastError(<errno>)                  set last error number") ;
       println("   getLastErrMsg()                        get last error detail information");
-	  println("   setLastErrMsg(<msg>)                   set last error detail information");
+      println("   setLastErrMsg(<msg>)                   set last error detail information");
       println("   clear                                  clear the terminal screen");
       println("   history -c                             clear the history");
       println("   quit                                   exit");
@@ -102,29 +102,48 @@ SdbCollection.prototype.help = function( val ) {
    }
 }
 
-SdbQuery.prototype.help = function( val ) {
+SdbCursor.prototype.help = function( val ) {
    if ( val == undefined )
    {
       println("Cursor methods:") ;
-      println("   db.cs.cl.find().help(<method>) help on cursor methods");
-      man( "cursor" ) ;
+      println("   db.cs.cl.find()._exe().help(<method>) help on cursor methods") ;
+	  // use query_curs
+      man( "query_curs" ) ;
    }
    else
    {
-      man( "cursor", val ) ;
+      man( "query_curs", val ) ;
+   }
+}
+
+SdbQuery.prototype.help = function( val ) {
+   if ( val == undefined )
+   {
+      println("find() methods:") ;
+      println("   db.cs.cl.find().help(<method>) help on find methods") ;
+      println("   --methods for modifiers:") ;
+      man( "query_cond" ) ;
+      println("   --methods for cursor:") ;
+      man( "query_curs" ) ;
+      println("   --methods for general:") ;
+      man( "query_gen" ) ;
+   }
+   else
+   {
+      man( "query", val ) ;
    }
 }
 
 Bson.prototype.help = function() {
-   println("Bson methods:");
-   println("   toObj() - convert to javascript object");
-   println("   toJson() - convert to json string");
+   println("Bson methods:") ;
+   println("   toObj() - convert to javascript object") ;
+   println("   toJson() - convert to json string") ;
 }
 
 CLCount.prototype.help = function( val ) {
    if ( val == undefined )
    {
-      println("count() modifiers:");
+      println("count() methods:");
       println("   db.cs.cl.count().help(<method>) help on specified count methods");
       man( "count" ) ;
    }

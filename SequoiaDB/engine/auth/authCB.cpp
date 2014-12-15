@@ -92,7 +92,6 @@ namespace engine
       SDB_RTNCB *rtnCB = pmdGetKRCB()->getRTNCB() ;
       SINT64 contextID = -1 ;
       rtnContextBuf buffObj ;
-      SINT64 startingPos = 0 ;
 
       PD_TRACE_ENTRY ( SDB_AUTHCB_AUTHENTICATE ) ;
       try
@@ -124,7 +123,7 @@ namespace engine
          goto error ;
       }
 
-      rc = rtnGetMore( contextID, -1, buffObj, startingPos, cb, rtnCB ) ;
+      rc = rtnGetMore( contextID, -1, buffObj, cb, rtnCB ) ;
       if ( SDB_OK != rc && SDB_DMS_EOC != rc)
       {
          PD_LOG( PDERROR, "failed to getmore:%d",rc ) ;

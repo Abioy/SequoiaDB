@@ -43,7 +43,8 @@ namespace engine
       _pmdSession implement
    */
    _pmdSession::_pmdSession( SOCKET fd )
-   :_socket( &fd, SESSION_SOCKET_DFT_TIMEOUT )
+   :_socket( &fd, SESSION_SOCKET_DFT_TIMEOUT ),
+    _client( &_socket )
    {
       _pEDUCB  = NULL ;
       _eduID   = PMD_INVALID_EDUID ;
@@ -91,6 +92,7 @@ namespace engine
       _pEDUCB->attachSession( this ) ;
       _pEDUCB->setName( sessionName() ) ;
       _pEDUCB->setClientSock( socket() ) ;
+      _client.attachCB( cb ) ;
 
       _onAttach() ;
    }
@@ -102,6 +104,7 @@ namespace engine
 
       _onDetach() ;
       clear() ;
+      _client.detachCB() ;
       _pEDUCB->detachSession() ;
       _pEDUCB = NULL ;
    }

@@ -16,8 +16,7 @@
     </section>
   </body>
   <related-links>
-    <link href="hint.dita" format="dita" type="topic"></link>
-    <link href="current.dita" format="dita" type="topic"></link>
+    <link href="next.dita" format="dita" type="topic"></link>
     <link href="find.dita" format="dita" type="topic"></link>
     <link href="../../console/topics/gt.dita" format="dita" type="topic"></link>
   </related-links>

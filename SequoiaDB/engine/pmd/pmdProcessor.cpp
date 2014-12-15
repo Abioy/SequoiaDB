@@ -44,19 +44,26 @@ using namespace bson ;
 
 namespace engine
 {
-   _DataProcessor::_DataProcessor()
+   _pmdDataProcessor::_pmdDataProcessor()
    {
-      _SDB_KRCB *pkrcb = pmdGetKRCB() ;
-      _pDMSCB = pkrcb->getDMSCB() ;
-      _pRTNCB = pkrcb->getRTNCB() ;
+      _SDB_KRCB *pkrcb  = pmdGetKRCB() ;
+      _pDMSCB           = pkrcb->getDMSCB() ;
+      _pRTNCB           = pkrcb->getRTNCB() ;
+      _pSession         = NULL ;
+      _pClient          = NULL ;
+      _pEDUCB           = NULL ;
    }
 
-   INT32 _DataProcessor::attachSession( ISession *session )
+   INT32 _pmdDataProcessor::attachSession( ISession *session )
    {
       _pSession = session ;
+      SDB_ASSERT( _pSession, "Session can't be NULL" ) ;
+      _pClient  = _pSession->getClient() ;
+      SDB_ASSERT( _pClient, "Client can't be NULL" ) ;
+
       SDB_SESSION_TYPE sessionType = _pSession->sessionType() ;
-      SDB_ASSERT( SDB_SESSION_LOCAL == sessionType 
-                  || SDB_SESSION_SHARD == sessionType, "" ) ;
+      SDB_ASSERT( SDB_SESSION_LOCAL == sessionType ||
+                  SDB_SESSION_SHARD == sessionType, "" ) ;
 
       if ( SDB_SESSION_LOCAL == sessionType )
       {
@@ -76,98 +83,125 @@ namespace engine
       return SDB_OK ;
    }
 
-   void _DataProcessor::detachSession()
+   void _pmdDataProcessor::detachSession()
    {
       _pSession = NULL ;
+      _pClient  = NULL ;
       _pEDUCB   = NULL ;
    }
 
-   _DataProcessor::~_DataProcessor()
+   _pmdDataProcessor::~_pmdDataProcessor()
    {
 
    }
 
-   INT32 _DataProcessor::processMsg( MsgHeader *msg, 
-                                     SDB_DPSCB *dpsCB,
-                                     rtnContextBuf &contextBuff, 
-                                     INT64 &contextID, INT32 &startPos )
+   INT32 _pmdDataProcessor::processMsg( MsgHeader *msg, 
+                                        SDB_DPSCB *dpsCB,
+                                        rtnContextBuf &contextBuff, 
+                                        INT64 &contextID,
+                                        BOOLEAN &needReply )
    {
       INT32 rc = SDB_OK ;
 
-      switch( msg->opCode )
+      SDB_ASSERT( _pSession && _pClient, "Must attach session at first" ) ;
+
+      if ( MSG_AUTH_VERIFY_REQ == msg->opCode )
       {
-         case MSG_BS_MSG_REQ :
-            rc = _onMsgReqMsg( msg ) ;
-            break ;
-         case MSG_BS_UPDATE_REQ :
-            rc = _onUpdateReqMsg( msg, dpsCB ) ;
-            break ;
-         case MSG_BS_INSERT_REQ :
-            rc = _onInsertReqMsg( msg ) ;
-            break ;
-         case MSG_BS_QUERY_REQ :
-            rc = _onQueryReqMsg( msg, dpsCB, contextBuff, startPos, 
-                                 contextID ) ;
-            break ;
-         case MSG_BS_DELETE_REQ :
-            rc = _onDelReqMsg( msg, dpsCB ) ;
-            break ;
-         case MSG_BS_GETMORE_REQ :
-            rc = _onGetMoreReqMsg( msg, contextBuff, startPos, contextID ) ;
-            break ;
-         case MSG_BS_KILL_CONTEXT_REQ :
-            rc = _onKillContextsReqMsg( msg ) ;
-            break ;
-         case MSG_BS_SQL_REQ :
-            rc = _onSQLMsg( msg, contextID ) ;
-            break ;
-         case MSG_BS_TRANS_BEGIN_REQ :
-            rc = _onTransBeginMsg() ;
-            break ;
-         case MSG_BS_TRANS_COMMIT_REQ :
-            rc = _onTransCommitMsg( dpsCB ) ;
-            break ;
-         case MSG_BS_TRANS_ROLLBACK_REQ :
-            rc = _onTransRollbackMsg( dpsCB ) ;
-            break ;
-         case MSG_BS_AGGREGATE_REQ :
-            rc = _onAggrReqMsg( msg, contextID ) ;
-            break ;
-         case MSG_BS_LOB_OPEN_REQ :
-            rc = _onOpenLobMsg( msg, dpsCB, contextID, contextBuff ) ;
-            break ;
-         case MSG_BS_LOB_WRITE_REQ:
-            rc = _onWriteLobMsg( msg ) ;
-            break ;
-         case MSG_BS_LOB_READ_REQ:
-            rc = _onReadLobMsg( msg, contextBuff ) ;
-            break ;
-         case MSG_BS_LOB_CLOSE_REQ:
-            rc = _onCloseLobMsg( msg ) ;
-            break ;
-         case MSG_BS_LOB_REMOVE_REQ:
-            rc = _onRemoveLobMsg( msg, dpsCB ) ;
-            break ;
-         default :
-            PD_LOG( PDWARNING, "Session[%s] recv unknow msg[type:[%d]%d, "
-                    "len: %d, tid: %d, routeID: %d.%d.%d, reqID: %lld]",
-                    _pSession->sessionName(), IS_REPLY_TYPE(msg->opCode),
-                    GET_REQUEST_TYPE(msg->opCode), msg->messageLength, msg->TID,
-                    msg->routeID.columns.groupID, msg->routeID.columns.nodeID,
-                    msg->routeID.columns.serviceID, msg->requestID ) ;
-            rc = SDB_INVALIDARG ;
-            break ;
+         rc = _pClient->authenticate( msg ) ;
+      }
+      else if ( MSG_BS_INTERRUPTE == msg->opCode )
+      {
+         rc = _onInterruptMsg( msg, dpsCB ) ;
+      }
+      else if ( MSG_BS_INTERRUPTE_SELF == msg->opCode )
+      {
+         rc = _onInterruptSelfMsg() ;
+      }
+      else if ( MSG_BS_DISCONNECT == msg->opCode )
+      {
+         rc = _onDisconnectMsg() ;
+      }
+      else if ( !_pClient->isAuthed() )
+      {
+         rc = SDB_AUTH_AUTHORITY_FORBIDDEN ;
+      }
+      else
+      {
+         switch( msg->opCode )
+         {
+            case MSG_BS_MSG_REQ :
+               rc = _onMsgReqMsg( msg ) ;
+               break ;
+            case MSG_BS_UPDATE_REQ :
+               rc = _onUpdateReqMsg( msg, dpsCB ) ;
+               break ;
+            case MSG_BS_INSERT_REQ :
+               rc = _onInsertReqMsg( msg ) ;
+               break ;
+            case MSG_BS_QUERY_REQ :
+               rc = _onQueryReqMsg( msg, dpsCB, contextBuff, contextID ) ;
+               break ;
+            case MSG_BS_DELETE_REQ :
+               rc = _onDelReqMsg( msg, dpsCB ) ;
+               break ;
+            case MSG_BS_GETMORE_REQ :
+               rc = _onGetMoreReqMsg( msg, contextBuff, contextID ) ;
+               break ;
+            case MSG_BS_KILL_CONTEXT_REQ :
+               rc = _onKillContextsReqMsg( msg ) ;
+               break ;
+            case MSG_BS_SQL_REQ :
+               rc = _onSQLMsg( msg, contextID ) ;
+               break ;
+            case MSG_BS_TRANS_BEGIN_REQ :
+               rc = _onTransBeginMsg() ;
+               break ;
+            case MSG_BS_TRANS_COMMIT_REQ :
+               rc = _onTransCommitMsg( dpsCB ) ;
+               break ;
+            case MSG_BS_TRANS_ROLLBACK_REQ :
+               rc = _onTransRollbackMsg( dpsCB ) ;
+               break ;
+            case MSG_BS_AGGREGATE_REQ :
+               rc = _onAggrReqMsg( msg, contextID ) ;
+               break ;
+            case MSG_BS_LOB_OPEN_REQ :
+               rc = _onOpenLobMsg( msg, dpsCB, contextID, contextBuff ) ;
+               break ;
+            case MSG_BS_LOB_WRITE_REQ:
+               rc = _onWriteLobMsg( msg ) ;
+               break ;
+            case MSG_BS_LOB_READ_REQ:
+               rc = _onReadLobMsg( msg, contextBuff ) ;
+               break ;
+            case MSG_BS_LOB_CLOSE_REQ:
+               rc = _onCloseLobMsg( msg ) ;
+               break ;
+            case MSG_BS_LOB_REMOVE_REQ:
+               rc = _onRemoveLobMsg( msg, dpsCB ) ;
+               break ;
+            default :
+               PD_LOG( PDWARNING, "Session[%s] recv unknow msg[type:[%d]%d, "
+                       "len: %d, tid: %d, routeID: %d.%d.%d, reqID: %lld]",
+                       _pSession->sessionName(), IS_REPLY_TYPE(msg->opCode),
+                       GET_REQUEST_TYPE(msg->opCode), msg->messageLength,
+                       msg->TID, msg->routeID.columns.groupID,
+                       msg->routeID.columns.nodeID,
+                       msg->routeID.columns.serviceID, msg->requestID ) ;
+               rc = SDB_INVALIDARG ;
+               break ;
+         }
       }
 
       return rc ;
    }
 
-   INT32 _DataProcessor::_onMsgReqMsg( MsgHeader * msg )
+   INT32 _pmdDataProcessor::_onMsgReqMsg( MsgHeader * msg )
    {
       return rtnMsg( (MsgOpMsg*)msg ) ;
    }
 
-   INT32 _DataProcessor::_onUpdateReqMsg( MsgHeader * msg, SDB_DPSCB *dpsCB )
+   INT32 _pmdDataProcessor::_onUpdateReqMsg( MsgHeader * msg, SDB_DPSCB *dpsCB )
    {
       INT32 rc    = SDB_OK ;
       INT32 flags = 0 ;
@@ -216,7 +250,7 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onInsertReqMsg( MsgHeader * msg )
+   INT32 _pmdDataProcessor::_onInsertReqMsg( MsgHeader * msg )
    {
       INT32 rc    = SDB_OK ;
       INT32 flag  = 0 ;
@@ -262,11 +296,10 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onQueryReqMsg( MsgHeader * msg,
-                                         SDB_DPSCB *dpsCB,
-                                         _rtnContextBuf &buffObj,
-                                         INT32 &startingPos,
-                                         INT64 &contextID )
+   INT32 _pmdDataProcessor::_onQueryReqMsg( MsgHeader * msg,
+                                            SDB_DPSCB *dpsCB,
+                                            _rtnContextBuf &buffObj,
+                                            INT64 &contextID )
    {
       INT32 rc = SDB_OK ;
       INT32 flags = 0 ;
@@ -317,14 +350,12 @@ namespace engine
 
             if ( ( flags & FLG_QUERY_WITH_RETURNDATA ) && NULL != pContext )
             {
-               INT64 startPos64 = 0 ;
-               rc = pContext->getMore( -1, buffObj, startPos64, _pEDUCB ) ;
+               rc = pContext->getMore( -1, buffObj, _pEDUCB ) ;
                if ( rc || pContext->eof() )
                {
                   _pRTNCB->contextDelete( contextID, _pEDUCB ) ;
                   contextID = -1 ;
                }
-               startingPos = ( INT32 )startPos64 ;
 
                if ( SDB_DMS_EOC == rc )
                {
@@ -387,7 +418,7 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onDelReqMsg( MsgHeader * msg, SDB_DPSCB *dpsCB )
+   INT32 _pmdDataProcessor::_onDelReqMsg( MsgHeader * msg, SDB_DPSCB *dpsCB )
    {
       INT32 rc    = SDB_OK ;
       INT32 flags = 0 ;
@@ -431,14 +462,12 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onGetMoreReqMsg( MsgHeader * msg,
-                                           rtnContextBuf &buffObj,
-                                           INT32 &startingPos,
-                                           INT64 &contextID )
+   INT32 _pmdDataProcessor::_onGetMoreReqMsg( MsgHeader * msg,
+                                              rtnContextBuf &buffObj,
+                                              INT64 &contextID )
    {
       INT32 rc         = SDB_OK ;
       INT32 numToRead  = 0 ;
-      INT64 startPos64 = 0 ;
 
       rc = msgExtractGetMore ( (CHAR*)msg, &numToRead, &contextID ) ;
       PD_RC_CHECK( rc, PDERROR, "Session[%s] extract get more msg failed, "
@@ -451,10 +480,7 @@ namespace engine
       PD_LOG ( PDDEBUG, "GetMore: contextID:%lld\nnumToRead: %d", contextID,
                numToRead ) ;
 
-      rc = rtnGetMore ( contextID, numToRead, buffObj, startPos64,
-                        _pEDUCB, _pRTNCB ) ;
-
-      startingPos = ( INT32 )startPos64 ;
+      rc = rtnGetMore ( contextID, numToRead, buffObj, _pEDUCB, _pRTNCB ) ;
 
    done:
       return rc ;
@@ -462,7 +488,7 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onKillContextsReqMsg( MsgHeader *msg )
+   INT32 _pmdDataProcessor::_onKillContextsReqMsg( MsgHeader *msg )
    {
       PD_LOG ( PDDEBUG, "session[%s] _onKillContextsReqMsg", 
                _pSession->sessionName() ) ;
@@ -489,7 +515,7 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onSQLMsg( MsgHeader *msg, INT64 &contextID )
+   INT32 _pmdDataProcessor::_onSQLMsg( MsgHeader *msg, INT64 &contextID )
    {
       CHAR *sql = NULL ;
       INT32 rc = SDB_OK ;
@@ -507,7 +533,7 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onTransBeginMsg ()
+   INT32 _pmdDataProcessor::_onTransBeginMsg ()
    {
       INT32 rc = SDB_OK ;
       if ( pmdGetDBRole() != SDB_ROLE_STANDALONE )
@@ -528,7 +554,7 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onTransCommitMsg ( SDB_DPSCB *dpsCB )
+   INT32 _pmdDataProcessor::_onTransCommitMsg ( SDB_DPSCB *dpsCB )
    {
       INT32 rc = SDB_OK ;
       if ( pmdGetDBRole() != SDB_ROLE_STANDALONE )
@@ -549,7 +575,7 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onTransRollbackMsg ( SDB_DPSCB *dpsCB )
+   INT32 _pmdDataProcessor::_onTransRollbackMsg ( SDB_DPSCB *dpsCB )
    {
       INT32 rc = SDB_OK ;
       if ( pmdGetDBRole() != SDB_ROLE_STANDALONE )
@@ -570,7 +596,7 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onAggrReqMsg( MsgHeader *msg, INT64 &contextID )
+   INT32 _pmdDataProcessor::_onAggrReqMsg( MsgHeader *msg, INT64 &contextID )
    {
       INT32 rc    = SDB_OK ;
       CHAR *pObjs = NULL ;
@@ -603,9 +629,9 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onOpenLobMsg( MsgHeader *msg, SDB_DPSCB *dpsCB,
-                                        SINT64 &contextID,
-                                        rtnContextBuf &buffObj )
+   INT32 _pmdDataProcessor::_onOpenLobMsg( MsgHeader *msg, SDB_DPSCB *dpsCB,
+                                           SINT64 &contextID,
+                                           rtnContextBuf &buffObj )
    {
       INT32 rc = SDB_OK ;
       const MsgOpLob *header = NULL ;
@@ -633,7 +659,7 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onWriteLobMsg( MsgHeader *msg )
+   INT32 _pmdDataProcessor::_onWriteLobMsg( MsgHeader *msg )
    {
       INT32 rc         = SDB_OK ;
       UINT32 len       = 0 ;
@@ -661,8 +687,8 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onReadLobMsg( MsgHeader *msg,
-                                        rtnContextBuf &buffObj )
+   INT32 _pmdDataProcessor::_onReadLobMsg( MsgHeader *msg,
+                                           rtnContextBuf &buffObj )
    {
       INT32 rc = SDB_OK ;
       const MsgOpLob *header = NULL ;
@@ -694,7 +720,7 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onCloseLobMsg( MsgHeader *msg )
+   INT32 _pmdDataProcessor::_onCloseLobMsg( MsgHeader *msg )
    {
       INT32 rc = SDB_OK ;
       const MsgOpLob *header = NULL ;
@@ -718,7 +744,7 @@ namespace engine
       goto done ;
    }
 
-   INT32 _DataProcessor::_onRemoveLobMsg( MsgHeader *msg, SDB_DPSCB *dpsCB )
+   INT32 _pmdDataProcessor::_onRemoveLobMsg( MsgHeader *msg, SDB_DPSCB *dpsCB )
    {
       INT32 rc = SDB_OK ;
       BSONObj meta ;
@@ -743,14 +769,56 @@ namespace engine
       goto done ;
    }
 
-   const CHAR* _DataProcessor::getName()
+   INT32 _pmdDataProcessor::_onInterruptMsg( MsgHeader *msg, SDB_DPSCB *dpsCB )
    {
-      return "_DataProcessor" ;
+      PD_LOG ( PDEVENT, "Session[%s, %lld] recieved interrupt msg",
+               _pSession->sessionName(), _pEDUCB->getID() ) ;
+
+      INT64 contextID = -1 ;
+      while ( -1 != ( contextID = _pEDUCB->contextPeek() ) )
+      {
+         _pRTNCB->contextDelete ( contextID, NULL ) ;
+      }
+
+      INT32 rcTmp = rtnTransRollback( _pEDUCB, dpsCB );
+      if ( rcTmp )
+      {
+         PD_LOG ( PDERROR, "Failed to rollback(rc=%d)", rcTmp );
+      }
+      _pEDUCB->clearTransInfo() ;
+
+      return SDB_OK ;
    }
+
+   INT32 _pmdDataProcessor::_onInterruptSelfMsg()
+   {
+      PD_LOG( PDEVENT, "Session[%s, %lld] recv interrupt self msg",
+              _pSession->sessionName(), _pEDUCB->getID() ) ;
+      return SDB_OK ;
+   }
+
+   INT32 _pmdDataProcessor::_onDisconnectMsg()
+   {
+      PD_LOG( PDEVENT, "Session[%s, %lld] recv disconnect msg",
+              _pSession->sessionName(), _pEDUCB->getID() ) ;
+      _pClient->disconnect() ;
+      return SDB_OK ;
+   }
+
+   const CHAR* _pmdDataProcessor::processorName() const
+   {
+      return "DataProcessor" ;
+   }
+
+   SDB_PROCESSOR_TYPE _pmdDataProcessor::processorType() const
+   {
+      return SDB_PROCESSOR_DATA ;
+   }
+
+   ISession* _pmdDataProcessor::getSession()
+   {
+      return _pSession ;
+   }
+
 }
-
-
-
-
-
 

@@ -60,6 +60,8 @@ pmdFiles = [
       "pmd/pmd.cpp",
       "pmd/pmdEDU.cpp",
       "pmd/pmdSessionBase.cpp",
+      "pmd/pmdExternClient.cpp",
+      "pmd/pmdInnerClient.cpp",
       "pmd/pmdSession.cpp",
       "pmd/pmdRemoteSession.cpp",
 	  "pmd/pmdAsyncSession.cpp",
