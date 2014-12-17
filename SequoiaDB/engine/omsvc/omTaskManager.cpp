@@ -1008,18 +1008,21 @@ namespace engine
    {
       INT32 rc = SDB_OK ;
 
-      rc = _removeConfigInfo() ;
-      if ( SDB_OK != rc )
+      if ( _omTaskInfo.taskStatus == OM_TASK_STATUS_ADDHOST )
       {
-         PD_LOG( PDERROR, "remove config info failed:rc=%d", rc ) ;
-         goto error ;
-      }
+         rc = _removeConfigInfo() ;
+         if ( SDB_OK != rc )
+         {
+            PD_LOG( PDERROR, "remove config info failed:rc=%d", rc ) ;
+            goto error ;
+         }
 
-      rc = _removeBusinessInfo() ;
-      if ( SDB_OK != rc )
-      {
-         PD_LOG( PDERROR, "remove business info failed:rc=%d", rc ) ;
-         goto error ;
+         rc = _removeBusinessInfo() ;
+         if ( SDB_OK != rc )
+         {
+            PD_LOG( PDERROR, "remove business info failed:rc=%d", rc ) ;
+            goto error ;
+         }
       }
 
       rc = _saveFinishTask() ;
@@ -1190,12 +1193,14 @@ namespace engine
    INT32 omAddHostTask::_finishAddHostTask()
    {
       INT32 rc = SDB_OK ;
-
-      rc = _storeHostInfo() ;
-      if ( SDB_OK != rc )
+      if ( _omTaskInfo.taskStatus == OM_TASK_STATUS_ADDHOST )
       {
-         PD_LOG( PDERROR, "store host info failed:rc=%d", rc ) ;
-         goto error ;
+         rc = _storeHostInfo() ;
+         if ( SDB_OK != rc )
+         {
+            PD_LOG( PDERROR, "store host info failed:rc=%d", rc ) ;
+            goto error ;
+         }
       }
 
       rc = _saveFinishTask() ;

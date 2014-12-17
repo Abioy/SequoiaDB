@@ -112,6 +112,7 @@ namespace engine
       _pDPSCB           = NULL ;
 
       _wwwRootPath      = pmdGetOptionCB()->getWWWPath() ;
+      _pRestTransfer    = SDB_OSS_NEW RestToMSGTransfer( this ) ;
    }
 
    _pmdRestSession::~_pmdRestSession()
@@ -120,6 +121,12 @@ namespace engine
       {
          sdbGetPMDController()->releaseFixBuf( _pFixBuff ) ;
          _pFixBuff = NULL ;
+      }
+
+      if ( NULL != _pRestTransfer )
+      {
+         SDB_OSS_DEL _pRestTransfer ;
+         _pRestTransfer = NULL ;
       }
    }
 
@@ -288,6 +295,229 @@ namespace engine
       goto done ;
    }
 
+   INT32 _pmdRestSession::run1()
+   {
+      INT32 rc                        = SDB_OK ;
+      pmdEDUMgr *pEDUMgr              = NULL ;
+      HTTP_PARSE_COMMON httpCommon    = COM_GETFILE ;
+      CHAR *pFilePath                 = NULL ;
+      INT32 bodySize                  = 0 ;
+      restAdaptor *pAdptor            = sdbGetPMDController()->getRestAdptor() ;
+
+      if ( !_pEDUCB )
+      {
+         rc = SDB_SYS ;
+         goto error ;
+      }
+
+      pEDUMgr = _pEDUCB->getEDUMgr() ;
+
+      while ( !_pEDUCB->isDisconnected() && !_socket.isClosed() )
+      {
+         rc = sniffData( _pSessionInfo ? OSS_ONE_SEC :
+                         PMD_REST_SESSION_SNIFF_TIMEOUT ) ;
+         if ( rc < 0 )
+         {
+            break ;
+         }
+
+         if ( _pEDUCB->isInterrupted( TRUE ) )
+         {
+            INT64 contextID = -1 ;
+            while ( -1 != ( contextID = _pEDUCB->contextPeek() ) )
+            {
+               _pRTNCB->contextDelete( contextID, NULL ) ;
+            }
+
+            break ;
+         }
+
+         _pEDUCB->resetInterrupt() ;
+         _pEDUCB->resetInfo( EDU_INFO_ERROR ) ;
+
+         rc = pAdptor->recvRequestHeader( this ) ;
+         if ( rc )
+         {
+            PD_LOG( PDERROR, "Session[%s] failed to recv rest header, "
+                    "rc: %d", sessionName(), rc ) ;
+            if ( SDB_REST_EHS == rc )
+            {
+               pAdptor->sendResponse( this, HTTP_BADREQ ) ;
+            }
+            else if ( SDB_APP_FORCED != rc )
+            {
+               _sendOpError2Web( rc, pAdptor, this, _pEDUCB ) ;
+            }
+            break ;
+         }
+
+         rc = pAdptor->recvRequestBody( this, httpCommon, &pFilePath, bodySize ) ;
+         if ( rc )
+         {
+            PD_LOG( PDERROR, "Session[%s] failed to recv rest body, "
+                    "rc: %d", sessionName(), rc ) ;
+            if ( SDB_REST_EHS == rc )
+            {
+               pAdptor->sendResponse( this, HTTP_BADREQ ) ;
+            }
+            else if ( SDB_APP_FORCED != rc )
+            {
+               _sendOpError2Web( rc, pAdptor, this, _pEDUCB ) ;
+            }
+            break ;
+         }
+
+         _pEDUCB->incEventCount() ;
+
+         if ( SDB_OK != ( rc = pEDUMgr->activateEDU( _pEDUCB ) ) )
+         {
+            PD_LOG( PDERROR, "Session[%s] activate edu failed, rc: %d",
+                    sessionName(), rc ) ;
+            break ;
+         }
+
+         rc = _processRestMsg1( pAdptor, httpCommon, pFilePath ) ;
+         if ( rc )
+         {
+            break ;
+         }
+
+         if ( SDB_OK != ( rc = pEDUMgr->waitEDU( _pEDUCB ) ) )
+         {
+            PD_LOG( PDERROR, "Session[%s] wait edu failed, rc: %d",
+                    sessionName(), rc ) ;
+            break ;
+         }
+
+         if ( pFilePath )
+         {
+            releaseBuff( pFilePath, bodySize ) ;
+            pFilePath = NULL ;
+         }
+         rc = SDB_OK ;
+      } // end while
+
+   done:
+      if ( pFilePath )
+      {
+         releaseBuff( pFilePath, bodySize ) ;
+      }
+      disconnect() ;
+      return rc ;
+   error:
+      goto done ;
+   }
+
+   MsgHeader* _pmdRestSession::_translateMSG( restAdaptor *pAdaptor, 
+                                              HTTP_PARSE_COMMON command, 
+                                              const CHAR *pFilePath )
+   {
+      MsgHeader *msg = NULL ;
+      _pRestTransfer->trans( pAdaptor, command, pFilePath, &msg ) ;
+
+      return msg ;
+   }
+
+   INT32 _pmdRestSession::_processRestMsg1( restAdaptor *pAdaptor, 
+                                            HTTP_PARSE_COMMON command, 
+                                            const CHAR *pFilePath ) 
+   {
+      INT32 rc        = SDB_OK ;
+      INT64 contextID = -1 ;
+      rtnContextBuf contextBuff ;
+      BOOLEAN needReplay = FALSE ;
+      MsgHeader *msg = _translateMSG( pAdaptor, command, pFilePath ) ;
+      if ( NULL == msg )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG( PDERROR, "unrecognized command" ) ;
+         _sendOpError2Web( rc, pAdaptor, this, _pEDUCB ) ;
+         goto error ;
+      }
+
+      rc = _processor->processMsg( msg, _pDPSCB, contextBuff, contextID, 
+                                   needReplay ) ;
+      if ( SDB_OK != rc )
+      {
+         BSONObjBuilder builder ;
+         if ( contextBuff.recordNum() != 0 )
+         {
+            BSONObj errorInfo( contextBuff.data() ) ;
+            builder.append( OM_REST_RES_RETCODE, rc ) ;
+            builder.appendElements( errorInfo ) ;
+         }
+         else
+         {
+            BSONObj errorInfo = utilGetErrorBson( rc, 
+                                          _pEDUCB->getInfo( EDU_INFO_ERROR ) ) ;
+            builder.appendElements( errorInfo ) ;
+         }
+
+         BSONObj tmp = builder.obj() ;
+         pAdaptor->setOPResult( this, rc, tmp ) ;
+      }
+      else 
+      {
+         if ( 0 == contextBuff.recordNum() )
+         {
+            rtnContext *pContext = _pRTNCB->contextFind( contextID ) ;
+            if ( NULL != pContext )
+            {
+               rc = pContext->getMore( -1, contextBuff, _pEDUCB ) ;
+               if ( rc || pContext->eof() )
+               {
+                  _pRTNCB->contextDelete( contextID, _pEDUCB ) ;
+                  contextID = -1 ;
+               }
+            }
+
+            if ( SDB_DMS_EOC == rc )
+            {
+               rc = SDB_OK ;
+            }
+         }
+
+         BSONObj tmp = BSON( OM_REST_RES_RETCODE << rc ) ;
+         pAdaptor->setOPResult( this, rc, tmp ) ;
+         if ( 0 != contextBuff.recordNum() )
+         {
+            pAdaptor->appendHttpBody( this, contextBuff.data(), 
+                                      contextBuff.size(), 
+                                      contextBuff.recordNum() ) ;
+         }
+      }
+
+      pAdaptor->sendResponse( this, HTTP_OK ) ;
+
+      rc = SDB_OK ;
+
+   done:
+      if ( -1 != contextID )
+      {
+         _pRTNCB->contextDelete( contextID, _pEDUCB ) ;
+         contextID = -1 ;
+      }
+      if ( NULL != msg )
+      {
+         SDB_OSS_FREE( msg ) ;
+         msg = NULL ;
+      }
+      return rc ;
+   error:
+      goto done ;
+   }
+
+   INT32 _pmdRestSession::attachProcessor( _IProcessor *processor )
+   {
+      _processor = processor ;
+      return SDB_OK ;
+   }
+
+   void _pmdRestSession::detachProcessor()
+   {
+      _processor = NULL ;
+   }
+
    INT32 _pmdRestSession::_processRestMsg( HTTP_PARSE_COMMON command, 
                                            const CHAR *pFilePath )
    {
@@ -354,7 +584,7 @@ namespace engine
          {
             BSONObjBuilder builder ;
             builder.append( OM_REST_RES_RETCODE, 
-                            SDB_AUTH_AUTHORITY_FORBIDDEN ) ;
+                            SDB_PMD_SESSION_NOT_EXIST ) ;
             builder.append( OM_REST_RES_LOCAL, "/"OM_REST_LOGIN_HTML ) ;
             pAdptor->setOPResult( this, SDB_AUTH_AUTHORITY_FORBIDDEN, 
                                   builder.obj() ) ;
@@ -362,7 +592,7 @@ namespace engine
             PD_LOG( PDEVENT, "OM: redirect to:%s", OM_REST_LOGIN_HTML ) ;
             goto error ;
          }
-         
+
          if ( ossStrcasecmp( pSubCommand, OM_LOGIN_REQ ) == 0 )
          {
             commandIf = SDB_OSS_NEW omAuthCommand( pAdptor, this ) ;
@@ -513,7 +743,11 @@ namespace engine
       {
          _pDPSCB = NULL ;
       }
-      sdbGetPMDController()->getRSManager()->registerEDU( eduCB() ) ;
+
+      if ( NULL != sdbGetPMDController()->getRSManager() )
+      {
+         sdbGetPMDController()->getRSManager()->registerEDU( eduCB() ) ;
+      }
    }
 
    void _pmdRestSession::_onDetach()
@@ -543,7 +777,10 @@ namespace engine
          _pSessionInfo = NULL ;
       }
 
-      sdbGetPMDController()->getRSManager()->unregEUD( eduCB() ) ;
+      if ( NULL != sdbGetPMDController()->getRSManager() )
+      {
+         sdbGetPMDController()->getRSManager()->unregEUD( eduCB() ) ;
+      }
    }
 
    INT32 _pmdRestSession::getFixBuffSize() const
@@ -639,5 +876,769 @@ namespace engine
       }
    }
 
+   RestToMSGTransfer::RestToMSGTransfer( pmdRestSession *session )
+                     :_restSession( session )
+   {
+   }
+
+   RestToMSGTransfer::~RestToMSGTransfer()
+   {
+   }
+
+   INT32 RestToMSGTransfer::trans( restAdaptor *pAdaptor, 
+                                   HTTP_PARSE_COMMON command, 
+                                   const CHAR *pFilePath, MsgHeader **msg )
+   {
+      INT32 rc = SDB_OK ;
+      const CHAR *pSubCommand = NULL ;
+      if ( COM_GETFILE == command )
+      {
+         PD_LOG_MSG( PDERROR, "unsupported command:command=%d", command ) ;
+         goto error ;
+      }
+
+      pAdaptor->getQuery( _restSession, OM_REST_FIELD_COMMAND, &pSubCommand ) ;
+      if ( NULL == pSubCommand )
+      {
+         PD_LOG_MSG( PDERROR, "can't resolve field:field=%s", 
+                     OM_REST_FIELD_COMMAND ) ;
+         goto error ;
+      }
+
+      if ( ossStrcasecmp( pSubCommand, REST_CMD_NAME_QUERY ) == 0 )
+      {
+         rc = _convertQuery( pAdaptor, msg ) ;
+      }
+      else if ( ossStrcasecmp( pSubCommand, REST_CMD_NAME_INSERT ) == 0 )
+      {
+         rc = _convertInsert( pAdaptor, msg ) ;
+      }
+      else if ( ossStrcasecmp( pSubCommand, REST_CMD_NAME_DELETE ) == 0 )
+      {
+         rc = _convertDelete( pAdaptor, msg ) ;
+      }
+      else if ( ossStrcasecmp( pSubCommand, REST_CMD_NAME_UPDATE ) == 0 )
+      {
+         rc = _convertUpdate( pAdaptor, msg ) ;
+      }
+      else if ( ossStrcasecmp( pSubCommand, CMD_NAME_CREATE_COLLECTIONSPACE ) == 0 )
+      {
+         rc = _convertCreateCS( pAdaptor, msg ) ;
+      }
+      else if ( ossStrcasecmp( pSubCommand, CMD_NAME_CREATE_COLLECTION ) == 0 )
+      {
+         rc = _convertCreateCL( pAdaptor, msg ) ;
+      }
+      else if ( ossStrcasecmp( pSubCommand, CMD_NAME_DROP_COLLECTIONSPACE ) == 0 )
+      {
+         rc = _convertDropCS( pAdaptor, msg ) ;
+      }
+      else if ( ossStrcasecmp( pSubCommand, CMD_NAME_DROP_COLLECTION ) == 0 )
+      {
+         rc = _convertDropCL( pAdaptor, msg ) ;
+      }
+      else if ( ossStrcasecmp( pSubCommand, CMD_NAME_SPLIT ) == 0 )
+      {
+         rc = _convertSplit( pAdaptor, msg ) ;
+      }
+      else if ( ossStrcasecmp( pSubCommand, CMD_NAME_LIST_GROUPS ) == 0 )
+      {
+         rc = _convertListGroups( pAdaptor, msg ) ;
+      }
+      else
+      {
+         PD_LOG_MSG( PDERROR, "unsupported command:command=%s", pSubCommand ) ;
+         rc = -1 ;
+      }
+
+   done:
+      return rc ;
+   error:
+      goto done ;
+   }
+
+   INT32 RestToMSGTransfer::_convertCreateCS( restAdaptor *pAdaptor, 
+                                              MsgHeader **msg )
+   {
+      INT32 rc              = SDB_OK ;
+      CHAR *pBuff           = NULL ;
+      INT32 buffSize        = 0 ;
+      const CHAR *pCommand  = CMD_ADMIN_PREFIX CMD_NAME_CREATE_COLLECTIONSPACE ;
+      const CHAR *pOption   = NULL ;
+      const CHAR *pCollectionSpace = NULL ;
+      BSONObj option ;
+      BSONObj query ;
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_NAME, 
+                          &pCollectionSpace ) ;
+      if ( NULL == pCollectionSpace )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG_MSG( PDERROR, "get collectionspace's %s failed", 
+                     REST_KEY_NAME_NAME ) ;
+         goto error ;
+      }
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_OPTION, &pOption ) ;
+      if ( NULL != pOption )
+      {
+         rc = fromjson( pOption, option ) ;
+         if ( SDB_OK != rc )
+         {
+            PD_LOG_MSG( PDERROR, "field's format error:field=%s, value=%s", 
+                        REST_KEY_NAME_OPTION, pOption ) ;
+            goto error ;
+         }
+      }
+
+      {
+         BSONObjBuilder builder ;
+         builder.append( FIELD_NAME_NAME, pCollectionSpace ) ;
+         {
+            BSONObjIterator it ( option ) ;
+            while ( it.more() )
+            {
+               builder.append( it.next() ) ;
+            }
+         }
+
+         query = builder.obj() ;
+      }
+
+      rc = msgBuildQueryMsg( &pBuff, &buffSize, pCommand, 0, 0, 0, -1, &query, 
+                             NULL, NULL, NULL ) ;
+      if ( SDB_OK != rc )
+      {
+         PD_LOG_MSG( PDERROR, "build command failed:command=%s, rc=%d", 
+                     pCommand, rc ) ;
+         goto error ;
+      }
+
+      *msg = ( MsgHeader * )pBuff ;
+
+   done:
+      return rc ;
+   error:
+      goto done ;
+   }
+
+   INT32 RestToMSGTransfer::_convertCreateCL( restAdaptor *pAdaptor,
+                                              MsgHeader **msg )
+   {
+      INT32 rc              = SDB_OK ;
+      CHAR *pBuff           = NULL ;
+      INT32 buffSize        = 0 ;
+      const CHAR *pCommand  = CMD_ADMIN_PREFIX CMD_NAME_CREATE_COLLECTION ;
+      const CHAR *pOption   = NULL ;
+      const CHAR *pCollection = NULL ;
+      BSONObj option ;
+      BSONObj query ;
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_NAME, &pCollection ) ;
+      if ( NULL == pCollection )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG_MSG( PDERROR, "get collection's %s failed", 
+                     REST_KEY_NAME_NAME ) ;
+         goto error ;
+      }
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_OPTION, &pOption ) ;
+      if ( NULL != pOption )
+      {
+         rc = fromjson( pOption, option ) ;
+         if ( SDB_OK != rc )
+         {
+            PD_LOG_MSG( PDERROR, "field's format error:field=%s, value=%s", 
+                        REST_KEY_NAME_OPTION, pOption ) ;
+            goto error ;
+         }
+      }
+
+      {
+         BSONObjBuilder builder ;
+         builder.append( FIELD_NAME_NAME, pCollection ) ;
+         {
+            BSONObjIterator it ( option ) ;
+            while ( it.more() )
+            {
+               builder.append( it.next() ) ;
+            }
+         }
+
+         query = builder.obj() ;
+      }
+
+      rc = msgBuildQueryMsg( &pBuff, &buffSize, pCommand, 0, 0, 0, -1, &query, 
+                             NULL, NULL, NULL ) ;
+      if ( SDB_OK != rc )
+      {
+         PD_LOG_MSG( PDERROR, "build command failed:command=%s, rc=%d", 
+                     pCommand, rc ) ;
+         goto error ;
+      }
+
+      *msg = ( MsgHeader * )pBuff ;
+
+   done:
+      return rc ;
+   error:
+      goto done ;
+   }
+
+   INT32 RestToMSGTransfer::_convertDropCS( restAdaptor *pAdaptor, 
+                                            MsgHeader **msg )
+   {
+      INT32 rc              = SDB_OK ;
+      CHAR *pBuff           = NULL ;
+      INT32 buffSize        = 0 ;
+      const CHAR *pCommand  = CMD_ADMIN_PREFIX CMD_NAME_DROP_COLLECTIONSPACE ;
+      const CHAR *pCollectionSpace = NULL ;
+      BSONObj query ;
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_NAME, 
+                          &pCollectionSpace ) ;
+      if ( NULL == pCollectionSpace )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG_MSG( PDERROR, "get collectionspace's %s failed", 
+                     REST_KEY_NAME_NAME ) ;
+         goto error ;
+      }
+
+      {
+         BSONObjBuilder builder ;
+         builder.append( FIELD_NAME_NAME, pCollectionSpace ) ;
+         query = builder.obj() ;
+      }
+
+      rc = msgBuildQueryMsg( &pBuff, &buffSize, pCommand, 0, 0, 0, -1, &query, 
+                             NULL, NULL, NULL ) ;
+      if ( SDB_OK != rc )
+      {
+         PD_LOG_MSG( PDERROR, "build command failed:command=%s, rc=%d", 
+                     pCommand, rc ) ;
+         goto error ;
+      }
+
+      *msg = ( MsgHeader * )pBuff ;
+
+   done:
+      return rc ;
+   error:
+      goto done ;
+   }
+
+   INT32 RestToMSGTransfer::_convertDropCL( restAdaptor *pAdaptor,
+                                            MsgHeader **msg )
+   {
+      INT32 rc              = SDB_OK ;
+      CHAR *pBuff           = NULL ;
+      INT32 buffSize        = 0 ;
+      const CHAR *pCommand  = CMD_ADMIN_PREFIX CMD_NAME_DROP_COLLECTION ;
+      const CHAR *pCollection = NULL ;
+      BSONObj query ;
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_NAME, &pCollection ) ;
+      if ( NULL == pCollection )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG_MSG( PDERROR, "get collection's %s failed", 
+                     REST_KEY_NAME_NAME ) ;
+         goto error ;
+      }
+
+      {
+         BSONObjBuilder builder ;
+         builder.append( FIELD_NAME_NAME, pCollection ) ;
+         query = builder.obj() ;
+      }
+
+      rc = msgBuildQueryMsg( &pBuff, &buffSize, pCommand, 0, 0, 0, -1, &query, 
+                             NULL, NULL, NULL ) ;
+      if ( SDB_OK != rc )
+      {
+         PD_LOG_MSG( PDERROR, "build command failed:command=%s, rc=%d", 
+                     pCommand, rc ) ;
+         goto error ;
+      }
+
+      *msg = ( MsgHeader * )pBuff ;
+
+   done:
+      return rc ;
+   error:
+      goto done ;
+   }
+
+   INT32 RestToMSGTransfer::_convertQuery( restAdaptor *pAdaptor, 
+                                           MsgHeader **msg )
+   {
+      INT32 rc              = SDB_OK ;
+      CHAR *pBuff           = NULL ;
+      INT32 buffSize        = 0 ;
+      const CHAR *pTable    = NULL ;
+      const CHAR *pOrder    = NULL ;
+      const CHAR *pHint     = NULL ;
+      const CHAR *pMatch    = NULL ;
+      const CHAR *pSelector = NULL ;
+      const CHAR *pFlag     = NULL ;
+      const CHAR *pSkip     = NULL ;
+      const CHAR *pReturnRow = NULL ;
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_NAME, &pTable ) ;
+      if ( NULL == pTable )
+      {
+         PD_LOG_MSG( PDERROR, "get field failed:field=%s", 
+                     REST_KEY_NAME_NAME ) ;
+         goto error ;
+      }
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_ORDER, &pOrder ) ;
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_HINT, &pHint ) ;
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_MATCHER, &pMatch ) ;
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_SELECTOR, &pSelector ) ;
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_FLAG, &pFlag ) ;
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_SKIP, &pSkip ) ;
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_RETURN_ROW, 
+                          &pReturnRow ) ;
+      {
+         BSONObj order ;
+         BSONObj hint ;
+         BSONObj match ;
+         BSONObj selector ;
+         INT32 flag = FLG_QUERY_WITH_RETURNDATA ;
+         INT32 skip = 0 ;
+         INT32 returnRow = REST_QUERY_MAX_RETURN_ROW ;
+         if ( NULL != pOrder )
+         {
+            rc = fromjson( pOrder, order ) ;
+            if ( SDB_OK != rc )
+            {
+               PD_LOG_MSG( PDERROR, "field's format error:field=%s, value=%s", 
+                           REST_KEY_NAME_ORDER, pOrder ) ;
+               goto error ;
+            }
+         }
+
+         if ( NULL != pHint )
+         {
+            rc = fromjson( pHint, hint ) ;
+            if ( SDB_OK != rc )
+            {
+               PD_LOG_MSG( PDERROR, "field's format error:field=%s, value=%s", 
+                           REST_KEY_NAME_HINT, pHint ) ;
+               goto error ;
+            }
+         }
+
+         if ( NULL != pMatch )
+         {
+            rc = fromjson( pMatch, match ) ;
+            if ( SDB_OK != rc )
+            {
+               PD_LOG_MSG( PDERROR, "field's format error:field=%s, value=%s", 
+                           REST_KEY_NAME_MATCHER, pMatch ) ;
+               goto error ;
+            }
+         }
+
+         if ( NULL != pSelector )
+         {
+            rc = fromjson( pSelector, selector ) ;
+            if ( SDB_OK != rc )
+            {
+               PD_LOG_MSG( PDERROR, "field's format error:field=%s, value=%s", 
+                           REST_KEY_NAME_SELECTOR, pSelector ) ;
+               goto error ;
+            }
+         }
+
+         if ( NULL != pFlag )
+         {
+            flag = ossAtoi( pFlag ) ;
+            flag = flag | FLG_QUERY_WITH_RETURNDATA ;
+         }
+
+         if ( NULL != pSkip )
+         {
+            skip = ossAtoi( pSkip ) ;
+         }
+
+         if ( NULL != pReturnRow )
+         {
+            returnRow = ossAtoi( pReturnRow ) ;
+            if ( returnRow > REST_QUERY_MAX_RETURN_ROW )
+            {
+               rc = SDB_INVALIDARG ;
+               PD_LOG_MSG( PDERROR, "%s is too long, max is %d", 
+                           REST_KEY_NAME_RETURN_ROW, REST_QUERY_MAX_RETURN_ROW ) ;
+               goto error ;
+            }
+         }
+
+
+         rc = msgBuildQueryMsg( &pBuff, &buffSize, pTable, flag, 0, skip, 
+                                returnRow, &match, &selector, &order, &hint ) ;
+         if ( SDB_OK != rc )
+         {
+            PD_LOG_MSG( PDERROR, "build queryMSG failed:rc=%d", rc ) ;
+            goto error ;
+         }
+      }
+
+      *msg = ( MsgHeader * )pBuff ;
+
+   done:
+      return rc ;
+   error:
+      goto done ;
+   }
+
+   INT32 RestToMSGTransfer::_convertInsert( restAdaptor *pAdaptor, 
+                                            MsgHeader **msg )
+   {
+      INT32 rc              = SDB_OK ;
+      CHAR *pBuff           = NULL ;
+      INT32 buffSize        = 0 ;
+      const CHAR *pFlag     = NULL ;
+      SINT32 flag           = 0 ;
+      const CHAR *pCollection = NULL ;
+      const CHAR *pInsertor   = NULL ;
+      BSONObj insertor ;
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_NAME, &pCollection ) ;
+      if ( NULL == pCollection )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG_MSG( PDERROR, "get collection's %s failed", 
+                     REST_KEY_NAME_NAME ) ;
+         goto error ;
+      }
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_FLAG, &pFlag ) ;
+      if ( NULL != pFlag )
+      {
+         flag = ossAtoi( pFlag ) ;
+      }
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_INSERTOR, &pInsertor ) ;
+      if ( NULL == pInsertor )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG_MSG( PDERROR, "get collection's %s failed", 
+                     REST_KEY_NAME_INSERTOR ) ;
+         goto error ;
+      }
+
+      rc = fromjson( pInsertor, insertor ) ;
+      if ( SDB_OK != rc )
+      {
+         PD_LOG_MSG( PDERROR, "field's format error:field=%s,value=%s", 
+                     REST_KEY_NAME_INSERTOR, pInsertor ) ;
+         goto error ;
+      }
+
+      rc = msgBuildInsertMsg( &pBuff, &buffSize, pCollection, flag, 0, 
+                              &insertor );
+      if ( SDB_OK != rc )
+      {
+         PD_LOG_MSG( PDERROR, "build insertMsg failed:rc=%d", rc ) ;
+         goto error ;
+      }
+
+      *msg = ( MsgHeader * )pBuff ;
+
+   done:
+      return rc ;
+   error:
+      goto done ;
+   }
+
+   INT32 RestToMSGTransfer::_convertUpdate( restAdaptor *pAdaptor,
+                                            MsgHeader **msg )
+   {
+      INT32 rc              = SDB_OK ;
+      CHAR *pBuff           = NULL ;
+      INT32 buffSize        = 0 ;
+      const CHAR *pFlag     = NULL ;
+      SINT32 flag           = 0 ;
+      const CHAR *pCollection = NULL ;
+      const CHAR *pUpdator    = NULL ;
+      const CHAR *pSelector   = NULL ;
+      const CHAR *pHint       = NULL ;
+      BSONObj updator ;
+      BSONObj selector ;
+      BSONObj hint ;
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_NAME, &pCollection ) ;
+      if ( NULL == pCollection )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG_MSG( PDERROR, "get collection's %s failed", 
+                     REST_KEY_NAME_NAME ) ;
+         goto error ;
+      }
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_FLAG, &pFlag ) ;
+      if ( NULL != pFlag )
+      {
+         flag = ossAtoi( pFlag ) ;
+      }
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_SELECTOR, &pSelector ) ;
+      if ( NULL != pSelector )
+      {
+         rc = fromjson( pSelector, selector ) ;
+         if ( SDB_OK != rc )
+         {
+            PD_LOG_MSG( PDERROR, "field's format error:field=%s,value=%s", 
+                        REST_KEY_NAME_SELECTOR, pSelector ) ;
+            goto error ;
+         }
+      }
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_UPDATOR, &pUpdator ) ;
+      if ( NULL == pUpdator )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG_MSG( PDERROR, "get collection's %s failed", 
+                     REST_KEY_NAME_UPDATOR ) ;
+         goto error ;
+      }
+
+      rc = fromjson( pUpdator, updator ) ;
+      if ( SDB_OK != rc )
+      {
+         PD_LOG_MSG( PDERROR, "field's format error:field=%s,value=%s", 
+                     REST_KEY_NAME_UPDATOR, pUpdator ) ;
+         goto error ;
+      }
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_HINT, &pHint ) ;
+      if ( NULL != pHint )
+      {
+         rc = fromjson( pHint, hint ) ;
+         if ( SDB_OK != rc )
+         {
+            PD_LOG_MSG( PDERROR, "field's format error:field=%s,value=%s", 
+                        REST_KEY_NAME_HINT, pHint ) ;
+            goto error ;
+         }
+      }
+
+      rc = msgBuildUpdateMsg( &pBuff, &buffSize, pCollection, flag, 0, 
+                              &selector, &updator, &hint ) ;
+      if ( SDB_OK != rc )
+      {
+         PD_LOG_MSG( PDERROR, "build updateMsg failed:rc=%d", rc ) ;
+         goto error ;
+      }
+
+      *msg = ( MsgHeader * )pBuff ;
+
+   done:
+      return rc ;
+   error:
+      goto done ;
+   }
+
+   INT32 RestToMSGTransfer::_convertDelete( restAdaptor *pAdaptor,
+                                            MsgHeader **msg )
+   {
+      INT32 rc              = SDB_OK ;
+      CHAR *pBuff           = NULL ;
+      INT32 buffSize        = 0 ;
+      const CHAR *pFlag     = NULL ;
+      SINT32 flag           = 0 ;
+      const CHAR *pCollection = NULL ;
+      const CHAR *pDeletor    = NULL ;
+      const CHAR *pHint       = NULL ;
+      BSONObj deletor ;
+      BSONObj hint ;
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_NAME, &pCollection ) ;
+      if ( NULL == pCollection )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG_MSG( PDERROR, "get collection's %s failed", 
+                     REST_KEY_NAME_NAME ) ;
+         goto error ;
+      }
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_FLAG, &pFlag ) ;
+      if ( NULL != pFlag )
+      {
+         flag = ossAtoi( pFlag ) ;
+      }
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_DELETOR, &pDeletor ) ;
+      if ( NULL != pDeletor )
+      {
+         rc = fromjson( pDeletor, deletor ) ;
+         if ( SDB_OK != rc )
+         {
+            PD_LOG_MSG( PDERROR, "field's format error:field=%s,value=%s", 
+                        REST_KEY_NAME_DELETOR, pDeletor ) ;
+            goto error ;
+         }
+      }
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_HINT, &pHint ) ;
+      if ( NULL != pHint )
+      {
+         rc = fromjson( pHint, hint ) ;
+         if ( SDB_OK != rc )
+         {
+            PD_LOG_MSG( PDERROR, "field's format error:field=%s,value=%s", 
+                        REST_KEY_NAME_HINT, pHint ) ;
+            goto error ;
+         }
+      }
+
+      rc = msgBuildDeleteMsg( &pBuff, &buffSize, pCollection, flag, 0, 
+                              &deletor, &hint ) ;
+      if ( SDB_OK != rc )
+      {
+         PD_LOG_MSG( PDERROR, "build deleteMsg failed:rc=%d", rc ) ;
+         goto error ;
+      }
+
+      *msg = ( MsgHeader * )pBuff ;
+
+   done:
+      return rc ;
+   error:
+      goto done ;
+   }
+
+   INT32 RestToMSGTransfer::_convertSplit( restAdaptor *pAdaptor,
+                                           MsgHeader **msg )
+   {
+      INT32 rc              = SDB_OK ;
+      CHAR *pBuff           = NULL ;
+      INT32 buffSize        = 0 ;
+      const CHAR *pCommand  = CMD_ADMIN_PREFIX CMD_NAME_SPLIT ;
+      const CHAR *pSource   = NULL ;
+      const CHAR *pTarget   = NULL ;
+      const CHAR *pAsync    = NULL ;
+      const CHAR *pCollection    = NULL ;
+      const CHAR *pSplitQuery    = NULL ;
+      const CHAR *pSplitEndQuery = NULL ;
+      bool bAsync = false ;
+      BSONObj splitQuery ;
+      BSONObj splitEndQuery ;
+      BSONObj query ;
+
+      pAdaptor->getQuery( _restSession, REST_KEY_NAME_NAME, 
+                          &pCollection ) ;
+      if ( NULL == pCollection )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG_MSG( PDERROR, "get collection's %s failed", 
+                     REST_KEY_NAME_NAME ) ;
+         goto error ;
+      }
+
+      pAdaptor->getQuery( _restSession, FIELD_NAME_SOURCE, &pSource ) ;
+      if ( NULL == pSource )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG_MSG( PDERROR, "get split's %s failed", FIELD_NAME_SOURCE ) ;
+         goto error ;
+      }
+
+      pAdaptor->getQuery( _restSession, FIELD_NAME_TARGET, &pTarget ) ;
+      if ( NULL == pTarget )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG_MSG( PDERROR, "get split's %s failed", FIELD_NAME_TARGET ) ;
+         goto error ;
+      }
+
+      pAdaptor->getQuery( _restSession, FIELD_NAME_SPLITQUERY, &pSplitQuery ) ;
+      if ( NULL == pSplitQuery )
+      {
+         rc = SDB_INVALIDARG ;
+         PD_LOG_MSG( PDERROR, "get split's %s failed", FIELD_NAME_SPLITQUERY ) ;
+         goto error ;
+      }
+
+      rc = fromjson( pSplitQuery, splitQuery ) ;
+      if ( SDB_OK != rc )
+      {
+         PD_LOG_MSG( PDERROR, "field's format error:field=%s,value=%s", 
+                     FIELD_NAME_SPLITQUERY, pSplitQuery ) ;
+         goto error ;
+      }
+
+      pAdaptor->getQuery( _restSession, FIELD_NAME_SPLITENDQUERY, 
+                          &pSplitEndQuery ) ;
+      if ( NULL != pSplitEndQuery )
+      {
+         rc = fromjson( pSplitEndQuery, splitEndQuery ) ;
+         if ( SDB_OK != rc )
+         {
+            PD_LOG_MSG( PDERROR, "field's format error:field=%s,value=%s", 
+                        FIELD_NAME_SPLITENDQUERY, pSplitEndQuery ) ;
+            goto error ;
+         }
+      }
+
+      pAdaptor->getQuery( _restSession, FIELD_NAME_ASYNC, &pAsync ) ;
+      if ( NULL != pAsync )
+      {
+         if ( ossStrcasecmp( pAsync, "TRUE" ) == 0 )
+         {
+            bAsync = true ;
+         }
+      }
+
+      query = BSON( FIELD_NAME_NAME << pCollection << FIELD_NAME_SOURCE
+                    << pSource << FIELD_NAME_TARGET << pTarget 
+                    << FIELD_NAME_SPLITQUERY << splitQuery 
+                    << FIELD_NAME_SPLITENDQUERY << splitEndQuery
+                    << FIELD_NAME_ASYNC << bAsync ) ;
+
+      rc = msgBuildQueryMsg( &pBuff, &buffSize, pCommand, 0, 0, 0, -1, &query, 
+                             NULL, NULL, NULL ) ;
+      if ( SDB_OK != rc )
+      {
+         PD_LOG_MSG( PDERROR, "build command failed:command=%s, rc=%d", 
+                     pCommand, rc ) ;
+         goto error ;
+      }
+
+      *msg = ( MsgHeader * )pBuff ;
+
+   done:
+      return rc ;
+   error:
+      goto done ;
+   }
+
+   INT32 RestToMSGTransfer::_convertListGroups( restAdaptor *pAdaptor,
+                                                MsgHeader **msg )
+   {
+      INT32 rc              = SDB_OK ;
+      CHAR *pBuff           = NULL ;
+      INT32 buffSize        = 0 ;
+      const CHAR *pCommand  = CMD_ADMIN_PREFIX CMD_NAME_LIST_GROUPS ;
+
+      rc = msgBuildQueryMsg( &pBuff, &buffSize, pCommand, 0, 0, 0, -1, NULL, 
+                             NULL, NULL, NULL ) ;
+      if ( SDB_OK != rc )
+      {
+         PD_LOG_MSG( PDERROR, "build command failed:command=%s, rc=%d", 
+                     pCommand, rc ) ;
+         goto error ;
+      }
+
+      *msg = ( MsgHeader * )pBuff ;
+
+   done:
+      return rc ;
+   error:
+      goto done ;
+   }
 }
 

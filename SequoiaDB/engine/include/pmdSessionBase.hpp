@@ -60,6 +60,8 @@ namespace engine
          virtual const CHAR*     sessionName() const ;
          virtual IClient*        getClient() { return &_client ; }
 
+         virtual INT32           run() = 0 ;
+
       public:
          UINT64      sessionID () const { return _eduID ; }
          EDUID       eduID () const { return _eduID ; }

@@ -101,6 +101,7 @@ namespace engine
          INT32                   _onDisconnectMsg() ;
 
       protected:
+         _SDB_KRCB *             _pKrcb ;
          _ISession *             _pSession ;
          _IClient*               _pClient ;
          _pmdEDUCB *             _pEDUCB ;
@@ -109,6 +110,45 @@ namespace engine
    } ;
    typedef _pmdDataProcessor pmdDataProcessor ;
 
+   /*
+      _pmdCoordProcessor define
+   */
+   class _pmdCoordProcessor : public _pmdDataProcessor
+   {
+      public:
+         _pmdCoordProcessor() ;
+         virtual ~_pmdCoordProcessor() ;
+
+      public:
+         virtual INT32           processMsg( MsgHeader *msg, 
+                                             SDB_DPSCB *dpsCB,
+                                             rtnContextBuf &contextBuff, 
+                                             INT64 &contextID,
+                                             BOOLEAN &needReply ) ;
+
+         virtual const CHAR*           processorName() const ;
+         virtual SDB_PROCESSOR_TYPE    processorType() const ;
+         virtual ISession*             getSession() ;
+
+      public:
+         virtual INT32           attachSession( ISession *pSession ) ;
+         virtual void            detachSession() ;
+
+      protected:
+
+      protected:
+         MsgOpReply              _replyHeader ;
+         BSONObj *               _pErrorObj ;
+         CHAR *                  _pResultBuff ;
+
+      private:
+         INT32                   _processCoordMsg( MsgHeader *msg, 
+                                                   MsgOpReply &replyHeader,
+                                                   rtnContextBuf &contextBuff 
+                                                 ) ;
+   } ;
+
+   typedef _pmdCoordProcessor pmdCoordProcessor ;
 }
 
 #endif  /*PMD_PROCESSOR_HPP_*/

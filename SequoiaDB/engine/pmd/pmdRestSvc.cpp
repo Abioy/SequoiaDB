@@ -43,6 +43,7 @@
 #include "pmdRestSession.hpp"
 #include "pdTrace.hpp"
 #include "pmdTrace.hpp"
+#include "pmdProcessor.hpp"
 
 namespace engine
 {
@@ -105,7 +106,9 @@ namespace engine
             continue ;
          }
 
-         if ( SDB_ROLE_OM == pmdGetDBRole() )
+         if ( SDB_ROLE_OM == pmdGetDBRole() || SDB_ROLE_DATA == pmdGetDBRole() 
+              || SDB_ROLE_STANDALONE == pmdGetDBRole() 
+              || SDB_ROLE_COORD == pmdGetDBRole() )
          {
             rc = eduMgr->startEDU ( EDU_TYPE_RESTAGENT, pData, &agentEDU ) ;
          }
@@ -142,7 +145,29 @@ namespace engine
 
       pmdRestSession restSession( s ) ;
       restSession.attach( cb ) ;
-      rc = restSession.run() ;
+      if ( SDB_ROLE_OM == pmdGetDBRole() )
+      {
+         rc = restSession.run() ;
+      }
+      else if ( SDB_ROLE_STANDALONE == pmdGetDBRole() 
+                || SDB_ROLE_DATA == pmdGetDBRole() )
+      {
+         _pmdDataProcessor processor ;
+         restSession.attachProcessor( &processor ) ;
+         processor.attachSession( &restSession ) ;
+         rc = restSession.run1() ;
+         processor.detachSession() ;
+         restSession.detachProcessor() ;
+      }
+      else if ( SDB_ROLE_COORD == pmdGetDBRole() )
+      {
+         _pmdCoordProcessor processor ;
+         restSession.attachProcessor( &processor ) ;
+         processor.attachSession( &restSession ) ;
+         rc = restSession.run1() ;
+         processor.detachSession() ;
+         restSession.detachProcessor() ;
+      }
       restSession.detach() ;
 
       return rc ;

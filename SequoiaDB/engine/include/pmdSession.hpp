@@ -65,7 +65,7 @@ namespace engine
          virtual INT32     getServiceType() const ;
          virtual SDB_SESSION_TYPE sessionType() const ;
 
-         INT32             run() ;
+         virtual INT32     run() ;
 
          INT32          attachProcessor( _IProcessor *processor ) ;
          void           detachProcessor() ;

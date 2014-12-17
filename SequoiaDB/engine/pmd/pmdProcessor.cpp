@@ -35,10 +35,13 @@
 #include "rtn.hpp"
 #include "../bson/bson.h"
 #include "pmdSession.hpp"
-#include "clsShardSession.hpp"
+#include "pmdRestSession.hpp"
 #include "msgMessage.hpp"
 #include "sqlCB.hpp"
 #include "rtnLob.hpp"
+#include "coordCB.hpp"
+#include "rtnCoord.hpp"
+#include "rtnCoordCommands.hpp"
 
 using namespace bson ;
 
@@ -46,12 +49,12 @@ namespace engine
 {
    _pmdDataProcessor::_pmdDataProcessor()
    {
-      _SDB_KRCB *pkrcb  = pmdGetKRCB() ;
-      _pDMSCB           = pkrcb->getDMSCB() ;
-      _pRTNCB           = pkrcb->getRTNCB() ;
-      _pSession         = NULL ;
-      _pClient          = NULL ;
-      _pEDUCB           = NULL ;
+      _pKrcb    = pmdGetKRCB() ;
+      _pDMSCB   = _pKrcb->getDMSCB() ;
+      _pRTNCB   = _pKrcb->getRTNCB() ;
+      _pSession = NULL ;
+      _pClient  = NULL ;
+      _pEDUCB   = NULL ;
    }
 
    INT32 _pmdDataProcessor::attachSession( ISession *session )
@@ -62,8 +65,8 @@ namespace engine
       SDB_ASSERT( _pClient, "Client can't be NULL" ) ;
 
       SDB_SESSION_TYPE sessionType = _pSession->sessionType() ;
-      SDB_ASSERT( SDB_SESSION_LOCAL == sessionType ||
-                  SDB_SESSION_SHARD == sessionType, "" ) ;
+      SDB_ASSERT( SDB_SESSION_LOCAL == sessionType 
+                  || SDB_SESSION_REST == sessionType, "" ) ;
 
       if ( SDB_SESSION_LOCAL == sessionType )
       {
@@ -74,10 +77,10 @@ namespace engine
       }
       else
       {
-         _clsShdSession *pShdSession = 
-                                 dynamic_cast<_clsShdSession*>( _pSession ) ;
-         SDB_ASSERT( NULL != pShdSession, "" ) ;
-         _pEDUCB = pShdSession->eduCB() ;
+         _pmdRestSession *pRestSession = 
+                                 dynamic_cast<_pmdRestSession*>( _pSession ) ;
+         SDB_ASSERT( NULL != pRestSession, "" ) ;
+         _pEDUCB = pRestSession->eduCB() ;
       }
 
       return SDB_OK ;
@@ -120,10 +123,6 @@ namespace engine
       else if ( MSG_BS_DISCONNECT == msg->opCode )
       {
          rc = _onDisconnectMsg() ;
-      }
-      else if ( !_pClient->isAuthed() )
-      {
-         rc = SDB_AUTH_AUTHORITY_FORBIDDEN ;
       }
       else
       {
@@ -818,6 +817,253 @@ namespace engine
    ISession* _pmdDataProcessor::getSession()
    {
       return _pSession ;
+   }
+
+
+   _pmdCoordProcessor::_pmdCoordProcessor()
+   {
+      _pErrorObj   = NULL ;
+      _pResultBuff = NULL ;
+   }
+
+   _pmdCoordProcessor::~_pmdCoordProcessor()
+   {
+      if ( NULL != _pErrorObj )
+      {
+         SDB_OSS_DEL _pErrorObj ;
+         _pErrorObj = NULL ;
+      }
+      if ( NULL != _pResultBuff )
+      {
+         _pResultBuff = NULL ;
+      }
+   }
+
+   const CHAR* _pmdCoordProcessor::processorName() const
+   {
+      return "CoordProcessor" ;
+   }
+
+   SDB_PROCESSOR_TYPE _pmdCoordProcessor::processorType() const
+   {
+      return SDB_PROCESSOR_COORD;
+   }
+
+   ISession* _pmdCoordProcessor::getSession()
+   {
+      return _pSession ;
+   }
+
+   INT32 _pmdCoordProcessor::attachSession( ISession *session )
+   {
+      INT32 rc = SDB_OK ;
+      _pSession = session ;
+      SDB_ASSERT( _pSession, "Session can't be NULL" ) ;
+      _pClient  = _pSession->getClient() ;
+      SDB_ASSERT( _pClient, "Client can't be NULL" ) ;
+
+      SDB_SESSION_TYPE sessionType = _pSession->sessionType() ;
+      SDB_ASSERT( SDB_SESSION_LOCAL == sessionType 
+                  || SDB_SESSION_REST == sessionType, "" ) ;
+
+      if ( SDB_SESSION_LOCAL == sessionType )
+      {
+         _pmdLocalSession *pLocalSession = 
+                                 dynamic_cast<_pmdLocalSession*>( _pSession ) ;
+         SDB_ASSERT( NULL != pLocalSession, "" ) ;
+         _pEDUCB = pLocalSession->eduCB() ;
+      }
+      else
+      {
+         _pmdRestSession *pRestSession = 
+                                 dynamic_cast<_pmdRestSession*>( _pSession ) ;
+         SDB_ASSERT( NULL != pRestSession, "" ) ;
+         _pEDUCB = pRestSession->eduCB() ;
+         netMultiRouteAgent *pRouteAgent 
+                                 = pmdGetKRCB()->getCoordCB()->getRouteAgent() ;
+         rc = pRouteAgent->addSession( _pEDUCB );
+         if ( SDB_OK != rc )
+         {
+            PD_LOG( PDERROR, "add session failed:rc=%d", rc ) ;
+         }
+      }
+
+      return rc ;
+   }
+
+   void _pmdCoordProcessor::detachSession()
+   {
+      if ( NULL != _pEDUCB )
+      {
+         netMultiRouteAgent *pRouteAgent 
+                                 = pmdGetKRCB()->getCoordCB()->getRouteAgent() ;
+         pRouteAgent->delSession( _pEDUCB->getTID() );
+      }
+
+      _pSession = NULL ;
+      _pClient  = NULL ;
+      _pEDUCB   = NULL ;
+   }
+
+   INT32 _pmdCoordProcessor::_processCoordMsg( MsgHeader *msg, 
+                                               MsgOpReply &replyHeader,
+                                               rtnContextBuf &contextBuff )
+   {
+      INT32 rc = SDB_OK ;
+      BSONObj *_pErrorObj = NULL ;
+      CHAR *_pResultBuff  = NULL ;
+      if ( NULL != _pErrorObj )
+      {
+         SDB_OSS_DEL _pErrorObj ;
+         _pErrorObj = NULL ;
+      }
+      if ( NULL != _pResultBuff )
+      {
+         _pResultBuff = NULL ;
+      }
+      CoordCB *pCoordcb  = _pKrcb->getCoordCB();
+      rtnCoordProcesserFactory *pProcesserFactory
+                                        = pCoordcb->getProcesserFactory();
+
+      switch ( msg->opCode )
+      {
+      case MSG_BS_GETMORE_REQ :
+         rc = SDB_COORD_UNKNOWN_OP_REQ ;
+         break ;
+      case MSG_BS_QUERY_REQ:
+         {
+            MsgOpQuery *pQueryMsg   = ( MsgOpQuery * )msg ;
+            CHAR *pQueryName        = pQueryMsg->name ;
+            SINT32 queryNameLen     = pQueryMsg->nameLength ;
+            if ( queryNameLen > 0 && '$' == pQueryName[0] )
+            {
+               rtnCoordCommand *pCmdProcesser = 
+                           pProcesserFactory->getCommandProcesser( pQueryMsg ) ;
+               if ( NULL != pCmdProcesser )
+               {
+                  rc = pCmdProcesser->execute( ( CHAR *)msg, msg->messageLength,
+                                               &_pResultBuff, _pEDUCB,
+                                               replyHeader, &_pErrorObj ) ;
+                  break ;
+               }
+            }
+         }
+      default:
+         {
+            rtnContextBase *pContext = NULL ;
+            rtnCoordOperator *pOperator = 
+                           pProcesserFactory->getOperator( msg->opCode ) ;
+            rc = pOperator->execute( ( CHAR* )msg, msg->messageLength,
+                                     &_pResultBuff, _pEDUCB,
+                                     replyHeader, &_pErrorObj ) ;
+            if ( MSG_BS_QUERY_REQ == msg->opCode 
+                 && ( ((MsgOpQuery*)msg)->flags & FLG_QUERY_WITH_RETURNDATA )
+                 && -1 != replyHeader.contextID 
+                 && NULL != ( pContext = _pRTNCB->contextFind( 
+                                                    replyHeader.contextID ) ) )
+            {
+               rc = pContext->getMore( -1, contextBuff, _pEDUCB ) ;
+               if ( rc || pContext->eof() )
+               {
+                  _pRTNCB->contextDelete( replyHeader.contextID, _pEDUCB ) ;
+                  replyHeader.contextID = -1 ;
+               }
+               replyHeader.startFrom = ( INT32 )contextBuff.getStartFrom() ;
+               replyHeader.header.messageLength = sizeof( MsgOpReply ) ;
+
+               if ( SDB_DMS_EOC == rc )
+               {
+                  rc = SDB_OK ;
+               }
+               else if ( rc )
+               {
+                  PD_LOG( PDERROR, "Failed to query with return data, "
+                          "rc: %d", rc ) ;
+               }
+               replyHeader.flags = rc ;
+            }
+         }
+         break;
+      }
+
+      if ( ( MSG_BS_LOB_OPEN_REQ == msg->opCode 
+             || MSG_BS_LOB_READ_REQ == msg->opCode ) && NULL != _pResultBuff )
+      {
+         INT32 dataLen = replyHeader.header.messageLength 
+                         - sizeof( MsgOpReply ) ;
+         contextBuff   = rtnContextBuf( _pResultBuff, dataLen, 1 ) ;
+      }
+      else
+      {
+         SDB_ASSERT( _pResultBuff == NULL, "Result must be NULL" ) ;
+      }
+
+      if ( rc && contextBuff.size() == 0 )
+      {
+         if ( NULL != _pErrorObj )
+         {
+            contextBuff = rtnContextBuf( *_pErrorObj ) ;
+         }
+         else
+         {
+            BSONObj obj = utilGetErrorBson( rc,
+                                          _pEDUCB->getInfo( EDU_INFO_ERROR ) ) ;
+            contextBuff = rtnContextBuf( obj ) ;
+         }
+      }
+
+      replyHeader.header.messageLength = sizeof( MsgOpReply ) ;
+      replyHeader.flags = rc ;
+
+      return rc ;
+   }
+
+   INT32 _pmdCoordProcessor::processMsg( MsgHeader *msg, 
+                                         SDB_DPSCB *dpsCB,
+                                         rtnContextBuf &contextBuff, 
+                                         INT64 &contextID,
+                                         BOOLEAN &needReply )
+   {
+      INT32 rc = SDB_OK ;
+      ossMemset( &_replyHeader, 0, sizeof( _replyHeader ) ) ;
+      _replyHeader.header.messageLength = sizeof( MsgOpReply ) ;
+      _replyHeader.header.opCode        = MAKE_REPLY_TYPE( msg->opCode ) ;
+      _replyHeader.header.requestID     = msg->requestID ;
+      _replyHeader.header.routeID.value = pmdGetNodeID().value ;
+      _replyHeader.header.TID           = msg->TID ;
+      _replyHeader.contextID            = -1 ;
+      _replyHeader.flags                = SDB_OK ;
+      _replyHeader.numReturned          = 0 ;
+      _replyHeader.startFrom            = 0 ;
+
+      rc = _processCoordMsg( msg, _replyHeader, contextBuff ) ;
+      if ( SDB_COORD_UNKNOWN_OP_REQ == rc )
+      {
+         rc = _pmdDataProcessor::processMsg( msg, dpsCB, contextBuff, contextID, 
+                                             needReply ) ;
+      }
+
+      if ( rc )
+      {
+         if ( SDB_APP_INTERRUPT == rc )
+         {
+            PD_LOG ( PDINFO, "Agent is interrupt" ) ;
+         }
+         else if ( SDB_DMS_EOC != rc )
+         {
+            PD_LOG ( PDERROR, "Error processing Agent request, rc=%d", rc ) ;
+         }
+      }
+
+      if ( contextBuff.recordNum() > 0 )
+      {
+         _replyHeader.numReturned = contextBuff.recordNum() ;
+         _replyHeader.header.messageLength += contextBuff.size() ;
+      }
+
+      contextID = _replyHeader.contextID ;
+
+      return rc ;
    }
 
 }

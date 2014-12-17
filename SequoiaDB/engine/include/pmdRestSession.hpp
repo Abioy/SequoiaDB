@@ -38,7 +38,7 @@
 #include "ossLatch.hpp"
 #include "ossAtomic.hpp"
 #include "../omsvc/omCommandInterface.hpp"
-
+#include "pmdProcessorBase.hpp"
 #include <string>
 
 using namespace bson ;
@@ -48,6 +48,7 @@ namespace engine
 
    class _dpsLogWrapper ;
    class _SDB_RTNCB ;
+   class restAdaptor ;
 
    /*
       global define
@@ -144,6 +145,9 @@ namespace engine
    } ;
    typedef _restSessionInfo restSessionInfo ;
 
+
+   class RestToMSGTransfer ;
+
    /*
       _pmdRestSession define
    */
@@ -157,9 +161,13 @@ namespace engine
          virtual INT32     getServiceType() const ;
          virtual SDB_SESSION_TYPE sessionType() const ;
 
-         INT32             run() ;
+         virtual INT32     run() ;
+
+         INT32             run1() ;
 
       public:
+         INT32             attachProcessor( _IProcessor *processor ) ;
+         void              detachProcessor() ;
          httpConnection*   getRestConn() { return &_restConn ; }
          CHAR*             getFixBuff() ;
          INT32             getFixBuffSize () const ;
@@ -183,6 +191,12 @@ namespace engine
 
          INT32             _processRestMsg( HTTP_PARSE_COMMON command,
                                             const CHAR *pFilePath ) ;
+         INT32             _processRestMsg1( restAdaptor *pAdaptor, 
+                                             HTTP_PARSE_COMMON command, 
+                                             const CHAR *pFilePath ) ;
+         MsgHeader*        _translateMSG( restAdaptor *pAdaptor, 
+                                          HTTP_PARSE_COMMON command, 
+                                          const CHAR *pFilePath ) ;
 
       private:
          omRestCommandBase *_createCommand( HTTP_PARSE_COMMON command,
@@ -198,8 +212,71 @@ namespace engine
          _SDB_RTNCB        *_pRTNCB ;
          _dpsLogWrapper    *_pDPSCB ;
 
+         _IProcessor       *_processor ;
+         RestToMSGTransfer *_pRestTransfer ;
+
    } ;
    typedef _pmdRestSession pmdRestSession ;
+
+
+   #define REST_CMD_NAME_QUERY         "query"
+   #define REST_CMD_NAME_INSERT        "insert"
+   #define REST_CMD_NAME_UPDATE        "update"
+   #define REST_CMD_NAME_DELETE        "delete"
+
+   #define REST_CMD_NAME_CREATE_CS     CMD_NAME_CREATE_COLLECTIONSPACE
+   #define REST_CMD_NAME_CREATE_CL     CMD_NAME_CREATE_COLLECTION
+   #define REST_CMD_NAME_DROP_CS       CMD_NAME_DROP_COLLECTIONSPACE
+   #define REST_CMD_NAME_DROP_CL       CMD_NAME_DROP_COLLECTION
+
+   #define REST_CMD_NAME_SPLIT         CMD_NAME_SPLIT
+
+   #define REST_KEY_NAME_ORDER         "Order"
+   #define REST_KEY_NAME_HINT          "Hint"
+   #define REST_KEY_NAME_SELECTOR      "Selector"
+   #define REST_KEY_NAME_MATCHER       "Matcher"
+   #define REST_KEY_NAME_SKIP          "Skip"
+   #define REST_KEY_NAME_RETURN_ROW    "ReturnRow"
+   #define REST_KEY_NAME_FLAG          "Flag"
+   #define REST_KEY_NAME_OPTION        "Option"
+   #define REST_KEY_NAME_NAME          "Name"
+   #define REST_KEY_NAME_INSERTOR      "Insertor"
+   #define REST_KEY_NAME_UPDATOR       "Updator"
+   #define REST_KEY_NAME_DELETOR       "Deletor"
+
+
+   #define REST_QUERY_MAX_RETURN_ROW   200
+   
+   class RestToMSGTransfer : public SDBObject
+   {
+      public:
+         RestToMSGTransfer( pmdRestSession *session ) ;
+         ~RestToMSGTransfer() ;
+         
+      public:
+         INT32       trans( restAdaptor *pAdaptor, HTTP_PARSE_COMMON command, 
+                            const CHAR *pFilePath, MsgHeader **msg ) ;
+                            
+      private:
+         INT32       _convertCreateCS( restAdaptor *pAdaptor, 
+                                       MsgHeader **msg ) ;
+         INT32       _convertCreateCL( restAdaptor *pAdaptor, 
+                                       MsgHeader **msg ) ;
+         INT32       _convertDropCS( restAdaptor *pAdaptor, MsgHeader **msg ) ;
+         INT32       _convertDropCL( restAdaptor *pAdaptor, MsgHeader **msg ) ;
+
+         INT32       _convertQuery( restAdaptor *pAdaptor, MsgHeader **msg ) ;
+         INT32       _convertInsert( restAdaptor *pAdaptor, MsgHeader **msg ) ;
+         INT32       _convertUpdate( restAdaptor *pAdaptor, MsgHeader **msg ) ;
+         INT32       _convertDelete( restAdaptor *pAdaptor, MsgHeader **msg ) ;
+
+         INT32       _convertSplit( restAdaptor *pAdaptor, MsgHeader **msg ) ;
+         INT32       _convertListGroups( restAdaptor *pAdaptor,
+                                         MsgHeader **msg ) ;
+
+      private:
+         pmdRestSession    *_restSession ;
+   } ;
 
 }
 
