@@ -18,7 +18,8 @@
   <topicref href="topics_en_v2/db.exec.dita"/>
   <topicref href="topics_en_v2/db.execUpdate.dita"/>
   <topicref href="topics_en_v2/db.flushConfigure.dita"/>
-  <topicref href="topics_en_v2/db.interrupt.dita"/>
+  <topicref href="topics_en_v2/db.forceSession.dita"/>
+  <!--<topicref href="topics_en_v2/db.interrupt.dita"/>-->
   <topicref href="topics_en_v2/db.getCS.dita"/>
   <topicref href="topics_en_v2/db.getDomain.dita"/>
   <topicref href="topics_en_v2/db.getRG.dita"/>
@@ -74,7 +75,7 @@
   <topicref href="topics_en_v2/cl.update.dita"/>
   <topicref href="topics_en_v2/cl.upsert.dita"/>
   
-  <topicref href="topics_en_v2/cursor.close.dita"/>
+  <!--<topicref href="topics_en_v2/cursor.close.dita"/>
   <topicref href="topics_en_v2/cursor.current.dita"/>
   <topicref href="topics_en_v2/cursor.explain.dita"/>
   <topicref href="topics_en_v2/cursor.hint.dita"/>
@@ -83,7 +84,20 @@
   <topicref href="topics_en_v2/cursor.size.dita"/>
   <topicref href="topics_en_v2/cursor.skip.dita"/>
   <topicref href="topics_en_v2/cursor.sort.dita"/>
-  <topicref href="topics_en_v2/cursor.toArray.dita"/>
+  <topicref href="topics_en_v2/cursor.toArray.dita"/>-->
+  
+  <topicref href="topics_en_v2/query_cond.hint.dita"/>
+  <topicref href="topics_en_v2/query_cond.limit.dita"/>
+  <topicref href="topics_en_v2/query_cond.skip.dita"/>
+  <topicref href="topics_en_v2/query_cond.sort.dita"/>
+  <topicref href="topics_en_v2/query_curs.close.dita"/>
+  <topicref href="topics_en_v2/query_curs.current.dita"/>
+  <topicref href="topics_en_v2/query_curs.next.dita"/>
+  <topicref href="topics_en_v2/query_gen.[i].dita"/>
+  <topicref href="topics_en_v2/query_gen.count.dita"/>
+  <topicref href="topics_en_v2/query_gen.explain.dita"/>
+  <topicref href="topics_en_v2/query_gen.size.dita"/>
+  <topicref href="topics_en_v2/query_gen.toArray.dita"/>
   
   <topicref href="topics_en_v2/rg.createNode.dita"/>
   <topicref href="topics_en_v2/rg.getDetail.dita"/>

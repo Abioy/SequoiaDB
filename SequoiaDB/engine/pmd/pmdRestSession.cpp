@@ -31,6 +31,7 @@
 *******************************************************************************/
 
 #include "pmdRestSession.hpp"
+#include "pmdController.hpp"
 #include "omManager.hpp"
 #include "pmdEDUMgr.hpp"
 #include "msgDef.h"
@@ -117,7 +118,7 @@ namespace engine
    {
       if ( _pFixBuff )
       {
-         sdbGetOMManager()->releaseFixBuf( _pFixBuff ) ;
+         sdbGetPMDController()->releaseFixBuf( _pFixBuff ) ;
          _pFixBuff = NULL ;
       }
    }
@@ -144,7 +145,7 @@ namespace engine
    INT32 _pmdRestSession::run()
    {
       INT32 rc                         = SDB_OK ;
-      restAdaptor *pAdptor             = sdbGetOMManager()->getRestAdptor() ;
+      restAdaptor *pAdptor             = sdbGetPMDController()->getRestAdptor() ;
       pmdEDUMgr *pEDUMgr               = NULL ;
       const CHAR *pSessionID           = NULL ;
       HTTP_PARSE_COMMON httpCommon     = COM_GETFILE ;
@@ -168,7 +169,7 @@ namespace engine
             if ( _pSessionInfo )
             {
                saveSession() ;
-               sdbGetOMManager()->detachSessionInfo( _pSessionInfo ) ;
+               sdbGetPMDController()->detachSessionInfo( _pSessionInfo ) ;
                _pSessionInfo = NULL ;
                continue ;
             }
@@ -215,7 +216,7 @@ namespace engine
             if ( pSessionID )
             {
                PD_LOG( PDINFO, "Rest session: %s", pSessionID ) ;
-               _pSessionInfo = sdbGetOMManager()->attachSessionInfo(
+               _pSessionInfo = sdbGetPMDController()->attachSessionInfo(
                                   pSessionID ) ;
             }
 
@@ -292,13 +293,13 @@ namespace engine
    {
       restAdaptor *pAdptor          = NULL ;
       omRestCommandBase *pOmCommand = NULL ;
-      pAdptor = sdbGetOMManager()->getRestAdptor() ;
+      pAdptor = sdbGetPMDController()->getRestAdptor() ;
       pOmCommand = _createCommand( command, pFilePath ) ;
       if ( NULL == pOmCommand )
       {
          goto error ;
       }
-      
+
       pOmCommand->init( _pEDUCB ) ;
       pOmCommand->doCommand() ;
 
@@ -320,7 +321,7 @@ namespace engine
       omRestCommandBase *commandIf = NULL ;
       restAdaptor *pAdptor         = NULL ;
       CHAR hostName[ OSS_MAX_HOSTNAME + 1 ] ;
-      pAdptor = sdbGetOMManager()->getRestAdptor() ;
+      pAdptor = sdbGetPMDController()->getRestAdptor() ;
       ossGetHostName( hostName, OSS_MAX_HOSTNAME ) ;
       string localAgentHost = hostName ;
       string localAgentPort = sdbGetOMManager()->getLocalAgentPort() ;
@@ -512,7 +513,7 @@ namespace engine
       {
          _pDPSCB = NULL ;
       }
-      sdbGetOMManager()->getRSManager()->registerEDU( eduCB() ) ;
+      sdbGetPMDController()->getRSManager()->registerEDU( eduCB() ) ;
    }
 
    void _pmdRestSession::_onDetach()
@@ -538,23 +539,23 @@ namespace engine
       if ( _pSessionInfo )
       {
          saveSession() ;
-         sdbGetOMManager()->detachSessionInfo( _pSessionInfo ) ;
+         sdbGetPMDController()->detachSessionInfo( _pSessionInfo ) ;
          _pSessionInfo = NULL ;
       }
 
-      sdbGetOMManager()->getRSManager()->unregEUD( eduCB() ) ;
+      sdbGetPMDController()->getRSManager()->unregEUD( eduCB() ) ;
    }
 
    INT32 _pmdRestSession::getFixBuffSize() const
    {
-      return sdbGetOMManager()->getFixBufSize() ;
+      return sdbGetPMDController()->getFixBufSize() ;
    }
 
    CHAR* _pmdRestSession::getFixBuff ()
    {
       if ( !_pFixBuff )
       {
-         _pFixBuff = sdbGetOMManager()->allocFixBuf() ;
+         _pFixBuff = sdbGetPMDController()->allocFixBuf() ;
       }
       return _pFixBuff ;
    }
@@ -616,7 +617,8 @@ namespace engine
 
       doLogout() ;
 
-      _pSessionInfo = sdbGetOMManager()->newSessionInfo( username, localIP ) ;
+      _pSessionInfo = sdbGetPMDController()->newSessionInfo( username,
+                                                             localIP ) ;
       if ( !_pSessionInfo )
       {
          rc = SDB_OOM ;
@@ -632,7 +634,7 @@ namespace engine
    {
       if ( _pSessionInfo )
       {
-         sdbGetOMManager()->releaseSessionInfo( _pSessionInfo->_id ) ;
+         sdbGetPMDController()->releaseSessionInfo( _pSessionInfo->_id ) ;
          _pSessionInfo = NULL ;
       }
    }

@@ -4610,7 +4610,7 @@ SDB_EXPORT INT32 sdbQuery1 ( sdbCollectionHandle cHandle,
                sizeof(cursor->_collectionFullName) ) ;
 
    if ( ((MsgHeader*)cs->_pReceiveBuffer)->messageLength >
-        ossRoundUpToMultipleX( sizeof(MsgOpReply), 4 ) )
+        (INT32)ossRoundUpToMultipleX( sizeof(MsgOpReply), 4 ) )
    {
       cursor->_pReceiveBuffer = cs->_pReceiveBuffer ;
       cs->_pReceiveBuffer = NULL ;

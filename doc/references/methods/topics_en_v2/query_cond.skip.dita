@@ -25,7 +25,7 @@
             <parml>
               <plentry>
                 <pt>Format</pt>
-                <pd>The method "query.skip()" contains the parameter "num". It is in the type of "int". If the
+                <pd>The method "cursor.skip()" contains the parameter "num". It is in the type of "int". If the
                   value of "num" is null or 0, the method will return the whole result set. If you want to get a result set that begins with the 3rd record, you should set the value of
                   "num" as "2".</pd>
               </plentry>

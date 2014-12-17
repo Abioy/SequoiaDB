@@ -231,7 +231,7 @@ namespace engine
    {
       if ( _isConnect )
       {
-         INT32 tmp = ossDisconnectNamedPipe( _pipeRHandle ) ;
+         ossDisconnectNamedPipe( _pipeRHandle ) ;
 #ifndef _WINDOWS
          ossDisconnectNamedPipe( _pipeWHandle ) ;
 #endif

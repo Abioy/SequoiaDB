@@ -9,7 +9,7 @@
     </section>
     <section>
       <title>SYNOPSIS</title>
-      <p></p><apiname>query.hint</apiname>(<parmname>[hint]</parmname>)
+      <p></p><apiname>cursor.hint</apiname>(<parmname>[hint]</parmname>)
     </section>
     <section>
       <title>CATEGORY</title>

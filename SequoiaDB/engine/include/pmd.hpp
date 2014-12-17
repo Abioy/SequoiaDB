@@ -250,7 +250,7 @@ namespace engine
          return ( _spdFMPMgr* )getOrgPointByType( SDB_CB_FMP ) ;
       }
 
-      INT32 isBusinessOK() const
+      BOOLEAN isBusinessOK() const
       {
          return _businessOK ;
       }

@@ -123,7 +123,7 @@ namespace engine
       }
       else
       {
-         INT32 len = ossStrlen( str ) ;
+         UINT32 len = ossStrlen( str ) ;
          if ( 0 == ossStrncasecmp( str, CLS_SYNC_NONE_STR, len ) &&
               len == ossStrlen( CLS_SYNC_NONE_STR ) )
          {

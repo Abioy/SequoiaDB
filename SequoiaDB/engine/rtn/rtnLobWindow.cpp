@@ -303,12 +303,9 @@ const UINT32 RTN_LOOP_WRITE_LEN = DMS_PAGE_SIZE512K * 4 ;
                                          offsetOfTuple,
                                          NULL ) ) ;
       }
-   done:
+
       PD_TRACE_EXITRC( SDB_RTNLOBWINDOW_PREPARE2READ, rc ) ;
       return rc ;
-   error:
-      tuples.clear() ;
-      goto done ;
    }
 
    

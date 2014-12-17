@@ -121,7 +121,7 @@ INT32 ossWaitChild ( OSSPID pid, ossResultCode &result, BOOLEAN block )
    INT32 options = block ? WUNTRACED : WNOHANG ;
    do
    {
-      rc = waitpid ( pid, &statuslocation, WUNTRACED ) ;
+      rc = waitpid ( pid, &statuslocation, options ) ;
       err = errno ;
    } while ( -1 == rc && EINTR == err ) ;
 

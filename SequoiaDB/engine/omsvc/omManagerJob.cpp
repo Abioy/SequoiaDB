@@ -34,6 +34,7 @@
 #include "omDef.hpp"
 #include "rtn.hpp"
 #include "ossProc.hpp"
+#include "msgMessage.hpp"
 #include "../bson/bson.h"
 #include <string>
 #include <vector>

@@ -35,9 +35,7 @@
 
 #include "omDef.hpp"
 #include "ossLatch.hpp"
-#include "pmdRestSession.hpp"
 #include "pmdObjBase.hpp"
-#include "restAdaptor.hpp"
 #include "sdbInterface.hpp"
 #include "pmdEDU.hpp"
 #include "pmd.hpp"
@@ -109,10 +107,6 @@ namespace engine
          UINT32      setTimer( UINT32 milliSec ) ;
          void        killTimer( UINT32 timerID ) ;
 
-         CHAR*       allocFixBuf() ;
-         INT32       getFixBufSize() const { return _fixBufSize ; }
-         void        releaseFixBuf( CHAR *pBuff ) ;
-
          netRouteAgent* getRouteAgent() ;
          MsgRouteID     updateAgentInfo( const string &host,
                                          const string &service ) ;
@@ -123,14 +117,6 @@ namespace engine
          void           delAgent( MsgRouteID routeID ) ;
          void           delAgent( const string &host ) ;
 
-         restSessionInfo*  attachSessionInfo( const string &id ) ;
-         void              detachSessionInfo( restSessionInfo *pSessionInfo ) ;
-
-         restSessionInfo*  newSessionInfo( const string &userName,
-                                           UINT32 localIP ) ;
-         void              releaseSessionInfo ( const string &sessionID ) ;
-
-         restAdaptor*      getRestAdptor() { return &_restAdptor ; }
          pmdRemoteSessionMgr* getRSManager() { return &_rsManager ; }
 
          INT32             authenticate( BSONObj &obj, _pmdEDUCB *cb ) ;
@@ -149,15 +135,6 @@ namespace engine
          virtual void      onTimer ( UINT64 timerID, UINT32 interval ) ;
 
          MsgRouteID        _incNodeID() ;
-         string            _makeID( restSessionInfo *pSessionInfo ) ;
-
-         void              _add2UserMap( const string &user,
-                                         restSessionInfo *pSessionInfo ) ;
-         void              _delFromUserMap( const string &user,
-                                            restSessionInfo *pSessionInfo ) ;
-
-         void              _invalidSessionInfo( restSessionInfo *pSessionInfo ) ;
-         void              _checkSession( UINT32 interval ) ;
 
          INT32             _initOmTables() ;
 
@@ -184,13 +161,6 @@ namespace engine
       protected:
 
       private:
-         vector< CHAR* >                        _vecFixBuf ;
-         const INT32                            _fixBufSize ;
-
-         map<string, restSessionInfo*>          _mapSessions ;
-         map<string, vector<restSessionInfo*> > _mapUser2Sessions ;
-         UINT32                                 _sequence ;
-         UINT32                                 _checkSessionTimer ;
 
          MAP_ID2HOSTPTR                         _mapID2Host ;
          MAP_HOST2ID                            _mapHost2ID ;
@@ -199,16 +169,12 @@ namespace engine
          ossSpinSLatch                          _omLatch ;
          ossEvent                               _attachEvent ;
 
-         restAdaptor                            _restAdptor ;
          pmdRemoteSessionMgr                    _rsManager ;
 
          omMsgHandler                           _msgHandler ;
          omTimerHandler                         _timerHandler ;
          netRouteAgent                          _netAgent ;
          MsgRouteID                             _myNodeID ;
-
-         INT32                                  _maxRestBodySize ;
-         INT32                                  _restTimeout ;
 
          pmdKRCB*                               _pKrcb ;
          SDB_DMSCB*                             _pDmsCB ;

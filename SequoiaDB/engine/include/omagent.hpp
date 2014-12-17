@@ -157,18 +157,6 @@ namespace engine
    } ;
    typedef struct _AddHostInfo AddHostInfo ;
 
-/*
-   enum OMA_ADDHOST_STATUS
-   {
-      OMA_ADDHOST_INIT         = 1 ,
-      OMA_ADDHOST_RUNNING      = 2 ,
-      OMA_ADDHOST_FINISH       = 3 ,
-      OMA_ADDHOST_FAIL         = 4 ,
-
-      OMA_ADDHOST_END          = 10
-   } ;
-*/
-
    enum OMA_JOB_STATUS
    {
       OMA_JOB_STATUS_INIT         = 1 ,

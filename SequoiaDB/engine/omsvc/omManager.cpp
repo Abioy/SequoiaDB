@@ -38,10 +38,10 @@
 #include "../bson/bsonobj.h"
 #include "../util/fromjson.hpp"
 #include "catCommon.hpp"
-#include "../bson/lib/md5.hpp"
 #include "ossProc.hpp"
 #include "rtn.hpp"
 #include "omManagerJob.hpp"
+#include "pmdController.hpp"
 #include "../omsvc/omGetFileCommand.hpp"
 
 using namespace bson ;
@@ -62,16 +62,10 @@ namespace engine
       implement om manager
    */
    _omManager::_omManager()
-   :_fixBufSize( SDB_PAGE_SIZE ),
-    _rsManager(),
+   :_rsManager(),
     _msgHandler( &_rsManager ),
     _netAgent( &_msgHandler )
    {
-      _maxRestBodySize     = OM_REST_MAX_BODY_SIZE ;
-      _restTimeout         = REST_TIMEOUT ;
-      _sequence            = 1 ;
-      _checkSessionTimer   = NET_INVALID_TIMER_ID ;
-
       _hwRouteID.value     = MSG_INVALID_ROUTEID ;
       _hwRouteID.columns.groupID = 2 ;
       _hwRouteID.columns.nodeID  = 0 ;
@@ -85,7 +79,6 @@ namespace engine
 
    _omManager::~_omManager()
    {
-      SDB_ASSERT( _vecFixBuf.size() == 0, "Fix buff catch must be empty" ) ;
       if ( NULL != _hostVersion )
       {
          SDB_OSS_DEL _hostVersion ;
@@ -111,6 +104,8 @@ namespace engine
 
       _wwwRootPath = pmdGetOptionCB()->getWWWPath() ;
 
+      sdbGetPMDController()->setRSManager( &_rsManager ) ;
+
       rc = _rsManager.init( getRouteAgent() ) ;
       PD_RC_CHECK( rc, PDERROR, "Failed to init remote session manager, rc: %d",
                    rc ) ;
@@ -132,9 +127,6 @@ namespace engine
                     rc ) ;
 
       _readAgentPort() ;
-
-      rc = _restAdptor.init( _fixBufSize, _maxRestBodySize, _restTimeout ) ;
-      PD_RC_CHECK( rc, PDERROR, "Failed to init rest adptor, rc: %d", rc ) ;
 
       _myNodeID.value             = MSG_INVALID_ROUTEID ;
       _myNodeID.columns.serviceID = MSG_ROUTE_LOCAL_SERVICE ;
@@ -413,14 +405,6 @@ namespace engine
       PD_RC_CHECK( rc, PDERROR, "Wait OM Manager edu attach failed, rc: %d",
                    rc ) ;
 
-      _checkSessionTimer = setTimer( 60 * OSS_ONE_SEC ) ;
-      if ( NET_INVALID_TIMER_ID == _checkSessionTimer )
-      {
-         rc = SDB_SYS ;
-         PD_LOG( PDERROR, "Failed to set timer" ) ;
-         goto error ;
-      }
-
       rc = pEDUMgr->startEDU( EDU_TYPE_OMNET, (netRouteAgent*)&_netAgent,
                               &eduID ) ;
       PD_RC_CHECK( rc, PDERROR, "Failed to start om net, rc: %d", rc ) ;
@@ -437,38 +421,12 @@ namespace engine
       _netAgent.closeListen() ;
       _netAgent.stop() ;
 
-      if ( NET_INVALID_TIMER_ID != _checkSessionTimer )
-      {
-         killTimer( _checkSessionTimer ) ;
-         _checkSessionTimer = NET_INVALID_TIMER_ID ;
-      }
-
       return SDB_OK ;
    }
 
    INT32 _omManager::fini ()
    {
       _rsManager.fini() ;
-
-      _omLatch.get() ;
-      for ( UINT32 i = 0 ; i < _vecFixBuf.size() ; ++i )
-      {
-         SDB_OSS_FREE( OM_FIX_BUFF_TO_PTR( _vecFixBuf[i] ) ) ;
-      }
-      _vecFixBuf.clear() ;
-      _omLatch.release() ;
-
-      restSessionInfo *pSessionInfo = NULL ;
-      map<string, restSessionInfo*>::iterator it = _mapSessions.begin() ;
-      while( it != _mapSessions.end() )
-      {
-         pSessionInfo = it->second ;
-         pSessionInfo->releaseMem() ;
-         SDB_OSS_DEL pSessionInfo ;
-         ++it ;
-      }
-      _mapSessions.clear() ;
-      _mapUser2Sessions.clear() ;
 
       _mapID2Host.clear() ;
       _mapHost2ID.clear() ;
@@ -505,10 +463,6 @@ namespace engine
 
    void _omManager::onTimer( UINT64 timerID, UINT32 interval )
    {
-      if ( timerID == _checkSessionTimer )
-      {
-         _checkSession( interval ) ;
-      }
    }
 
    INT32 _omManager::authenticate( BSONObj &obj, pmdEDUCB *cb )
@@ -550,261 +504,6 @@ namespace engine
       return rc ;
    error:
       goto done ;
-   }
-
-   CHAR* _omManager::allocFixBuf()
-   {
-      CHAR *pBuff = NULL ;
-
-      _omLatch.get() ;
-      if ( _vecFixBuf.size() > 0 )
-      {
-         pBuff = _vecFixBuf.back() ;
-         _vecFixBuf.pop_back() ;
-      }
-      _omLatch.release() ;
-
-      if ( pBuff )
-      {
-         goto done ;
-      }
-
-      pBuff = ( CHAR* )SDB_OSS_MALLOC( OM_FIX_PTR_SIZE( _fixBufSize ) ) ;
-      if ( !pBuff )
-      {
-         PD_LOG( PDERROR, "Alloc fix buff failed, size: %d",
-                 OM_FIX_PTR_SIZE( _fixBufSize ) ) ;
-         goto error ;
-      }
-      OM_FIX_PTR_HEADER( pBuff ) = _fixBufSize ;
-      pBuff = OM_FIX_PTR_TO_BUFF( pBuff ) ;
-
-   done:
-      return pBuff ;
-   error:
-      goto done ;
-   }
-
-   void _omManager::releaseFixBuf( CHAR * pBuff )
-   {
-      SDB_ASSERT( pBuff, "Buff can't be NULL" ) ;
-      SDB_ASSERT( OM_FIX_BUFF_HEADER( pBuff ) == _fixBufSize,
-                  "Buff is not alloc by fix buff" ) ;
-
-      _omLatch.get() ;
-      if ( _vecFixBuf.size() < OM_FIX_BUFF_CATCH_NUMBER )
-      {
-         _vecFixBuf.push_back( pBuff ) ;
-         pBuff = NULL ;
-      }
-      _omLatch.release() ;
-
-      if ( pBuff )
-      {
-         SDB_OSS_FREE( OM_FIX_BUFF_TO_PTR( pBuff ) ) ;
-      }
-   }
-
-   restSessionInfo* _omManager::attachSessionInfo( const string &id )
-   {
-      restSessionInfo *pSessionInfo = NULL ;
-
-      _omLatch.get_shared() ;
-      map<string, restSessionInfo*>::iterator it = _mapSessions.find( id ) ;
-      if ( it != _mapSessions.end() )
-      {
-         pSessionInfo = it->second ;
-         if ( pSessionInfo->isValid() )
-         {
-            pSessionInfo->_inNum.inc() ;
-         }
-         else
-         {
-            pSessionInfo = NULL ;
-         }
-      }
-      _omLatch.release_shared() ;
-
-      if ( pSessionInfo )
-      {
-         pSessionInfo->lock() ;
-      }
-
-      return pSessionInfo ;
-   }
-
-   void _omManager::detachSessionInfo( restSessionInfo * pSessionInfo )
-   {
-      SDB_ASSERT( pSessionInfo, "Session can't be NULL" ) ;
-
-      if ( pSessionInfo->isLock() )
-      {
-         pSessionInfo->unlock() ;
-         pSessionInfo->_inNum.dec() ;
-      }
-   }
-
-   void _omManager::_invalidSessionInfo( restSessionInfo *pSessionInfo )
-   {
-      SDB_ASSERT( pSessionInfo, "Session can't be NULL" ) ;
-      pSessionInfo->invalidate() ;
-   }
-
-   void _omManager::_checkSession( UINT32 interval )
-   {
-      map<string, restSessionInfo*>::iterator it  ;
-      restSessionInfo *pInfo = NULL ;
-
-      _omLatch.get() ;
-      it = _mapSessions.begin() ;
-      while ( it != _mapSessions.end() )
-      {
-         pInfo = it->second ;
-         if ( pInfo->isIn() )
-         {
-            ++it ;
-            continue ;
-         }
-
-         if ( pInfo->isValid()  )
-         {
-            pInfo->onTimer( interval ) ;
-            if ( pInfo->isTimeout( OM_REST_SESSION_TIMEOUT ) )
-            {
-               pInfo->invalidate() ;
-            }
-         }
-
-         if ( !pInfo->isValid() )
-         {
-            _delFromUserMap( pInfo->_attr._userName, pInfo ) ;
-            SDB_OSS_DEL pInfo ;
-            _mapSessions.erase( it++ ) ;
-            continue ;
-         }
-         ++it ;
-      }
-      _omLatch.release() ;
-   }
-
-   restSessionInfo* _omManager::newSessionInfo( const string &userName,
-                                                UINT32 localIP )
-   {
-      restSessionInfo *newSession = SDB_OSS_NEW restSessionInfo ;
-      if( !newSession )
-      {
-         PD_LOG( PDERROR, "Alloc rest session info failed" ) ;
-         goto error ;
-      }
-
-      _omLatch.get() ;
-      newSession->_attr._sessionID = ossPack32To64( localIP, _sequence++ ) ;
-      ossStrncpy( newSession->_attr._userName, userName.c_str(),
-                  SESSION_USER_NAME_LEN ) ;
-      _mapSessions[ _makeID( newSession ) ] = newSession ;
-      _add2UserMap( userName, newSession ) ;
-      newSession->_inNum.inc() ;
-      _omLatch.release() ;
-
-      if ( newSession )
-      {
-         newSession->lock() ;
-      }
-
-   done:
-      return newSession ;
-   error:
-      goto done ;
-   }
-
-   void _omManager::releaseSessionInfo ( const string &sessionID )
-   {
-      restSessionInfo *pInfo = NULL ;
-      map<string, restSessionInfo*>::iterator it ;
-
-      _omLatch.get() ;
-      it = _mapSessions.find( sessionID ) ;
-      if ( it != _mapSessions.end() )
-      {
-         pInfo = it->second ;
-         _delFromUserMap( pInfo->_attr._userName, pInfo ) ;
-
-         if ( pInfo->isLock() )
-         {
-            detachSessionInfo( pInfo ) ;
-         }
-
-         if ( !pInfo->isIn() )
-         {
-            SDB_OSS_DEL pInfo ;
-            _mapSessions.erase( it ) ;
-         }
-         else
-         {
-            _invalidSessionInfo( pInfo ) ;
-         }
-      }
-      _omLatch.release() ;
-   }
-
-   void _omManager::_add2UserMap( const string &user,
-                                  restSessionInfo *pSessionInfo )
-   {
-      map<string, vector<restSessionInfo*> >::iterator it ;
-      it = _mapUser2Sessions.find( user ) ;
-      if ( it == _mapUser2Sessions.end() )
-      {
-         vector<restSessionInfo*> vecSession ;
-         vecSession.push_back( pSessionInfo ) ;
-         _mapUser2Sessions.insert( make_pair( user, vecSession ) ) ;
-      }
-      else
-      {
-         it->second.push_back( pSessionInfo ) ;
-      }
-   }
-
-   void _omManager::_delFromUserMap( const string &user,
-                                     restSessionInfo *pSessionInfo )
-   {
-      map<string, vector<restSessionInfo*> >::iterator it ;
-      it = _mapUser2Sessions.find( user ) ;
-      if ( it != _mapUser2Sessions.end() )
-      {
-         vector<restSessionInfo*> &vecSessions = it->second ;
-         vector<restSessionInfo*>::iterator itVec = vecSessions.begin() ;
-         while ( itVec != vecSessions.end() )
-         {
-            if ( *itVec == pSessionInfo )
-            {
-               vecSessions.erase( itVec ) ;
-               break ;
-            }
-            ++itVec ;
-         }
-
-         if ( vecSessions.size() == 0 )
-         {
-            _mapUser2Sessions.erase( it ) ;
-         }
-      }
-   }
-
-   string _omManager::_makeID( restSessionInfo * pSessionInfo )
-   {
-      UINT32 ip = 0 ;
-      UINT32 seq = 0 ;
-      ossUnpack32From64( pSessionInfo->_attr._sessionID, ip, seq ) ;
-      CHAR tmp[9] = {0} ;
-      ossSnprintf( tmp, sizeof(tmp)-1, "%08x", seq ) ;
-      string strValue = md5::md5simpledigest( (const void*)pSessionInfo,
-                                              pSessionInfo->getAttrSize() ) ;
-      UINT32 size = strValue.size() ;
-      strValue = strValue.substr( 0, size - ossStrlen( tmp ) ) ;
-      strValue += tmp ;
-
-      pSessionInfo->_id = strValue ;
-      return strValue ;
    }
 
    netRouteAgent* _omManager::getRouteAgent()

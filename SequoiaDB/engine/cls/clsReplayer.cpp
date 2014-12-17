@@ -1091,7 +1091,6 @@ namespace engine
       }
       else
       {
-         pmdEDUCB *cb = pmdGetThreadEDUCB() ;
          indexJob->doit() ;
          SDB_OSS_DEL indexJob ;
          indexJob = NULL ;

@@ -38,8 +38,6 @@
 #ifndef RTNCONTEXT_HPP_
 #define RTNCONTEXT_HPP_
 
-#include "core.hpp"
-#include "oss.hpp"
 #include "dms.hpp"
 #include "pd.hpp"
 #include "ossMem.hpp"
@@ -58,6 +56,7 @@
 #include "rtnQueryOptions.hpp"
 #include "dmsLobDef.hpp"
 #include "rtnLocalLobStream.hpp"
+#include "rtnContextBuff.hpp"
 
 #include <map>
 
@@ -65,9 +64,6 @@ using namespace bson ;
 
 namespace engine
 {
-
-#define RTN_DFT_BUFFERSIZE                DMS_PAGE_SIZE_MAX
-#define RTN_RESULTBUFFER_SIZE_MAX         DMS_SEGMENT_SZ
 
    class _pmdEDUCB ;
    class _dmsStorageUnit ;
@@ -77,111 +73,6 @@ namespace engine
    class _dmsMBContext ;
    class _rtnContextBase ;
    class netMultiRouteAgent ;
-   class _rtnContextBase ;
-
-   /*
-      _rtnObjBuff define
-   */
-   class _rtnObjBuff : public SDBObject
-   {
-      public:
-         _rtnObjBuff( const CHAR *pBuff, INT32 buffLen, INT32 recordNum )
-         {
-            _pBuff      = pBuff ;
-            _buffSize   = buffLen ;
-            _recordNum  = recordNum ;
-            _curOffset  = 0 ;
-            _owned      = FALSE ;
-         }
-
-         _rtnObjBuff( const _rtnObjBuff &right ) ;
-         virtual ~_rtnObjBuff() ;
-
-         /*
-            ensure buff is owned
-         */
-         virtual INT32        getOwned() ;
-
-         _rtnObjBuff&         operator=( const _rtnObjBuff &right ) ;
-
-         const CHAR* data () const { return _pBuff ; }
-         const CHAR* front() const { return _pBuff + _curOffset; }
-         INT32       size () const { return _buffSize ; }
-         INT32       recordNum () const { return _recordNum ; }
-         BOOLEAN     eof () const { return _curOffset >= _buffSize ; }
-         void        resetItr () { _curOffset = 0 ; }
-         INT32       truncate ( UINT32 num ) ;
-
-         OSS_INLINE   INT32  nextObj ( BSONObj &obj ) ;
-
-      protected:
-         const CHAR           *_pBuff ;
-         INT32                _buffSize ;
-         INT32                _recordNum ;
-         INT32                _curOffset ;
-         BOOLEAN              _owned ;
-   } ;
-   typedef _rtnObjBuff rtnObjBuff ;
-
-   /*
-      _rtnObjBuff OSS_INLINE functions
-   */
-   OSS_INLINE INT32 _rtnObjBuff::nextObj( BSONObj &obj )
-   {
-      if ( eof() )
-      {
-         return SDB_DMS_EOC ;
-      }
-      try
-      {
-         BSONObj objTemp( &_pBuff[_curOffset] ) ;
-         obj = objTemp ;
-         _curOffset += ossAlign4( (UINT32)obj.objsize() ) ;
-      }
-      catch( std::exception &e )
-      {
-         PD_LOG( PDERROR, "Failed to create bson object: %s", e.what() ) ;
-         return SDB_SYS ;
-      }
-      return SDB_OK ;
-   }
-
-   /*
-      _rtnContextBuf define
-   */
-   class _rtnContextBuf : public rtnObjBuff
-   {
-      friend class _rtnContextBase ;
-
-      private:
-         void  _reference( INT32 *pCounter, ossRWMutex *pMutex ) ;
-
-      public:
-         _rtnContextBuf() ;
-         _rtnContextBuf( const _rtnContextBuf &right ) ;
-         _rtnContextBuf( const CHAR *pBuff, INT32 buffLen, INT32 recordNum ) ;
-         _rtnContextBuf( const BSONObj &obj ) ;
-         virtual ~_rtnContextBuf () ;
-
-         virtual INT32        getOwned() ;
-
-         _rtnContextBuf&      operator=( const _rtnContextBuf &right ) ;
-
-         void        release () ;
-
-         INT64       getStartFrom() const { return _startFrom ; }
-
-      private:
-         INT32                *_pBuffCounter ;
-         ossRWMutex           *_pBuffLock ;
-         _rtnContextBase      *_context ;
-         BOOLEAN              _released ;
-         INT64                _startFrom ;
-
-         BSONObj              _object ;
-
-   } ;
-   typedef _rtnContextBuf rtnContextBuf ;
 
    /*
       _rtnPrefWatcher define
@@ -258,7 +149,6 @@ namespace engine
    */
    class _rtnContextBase : public SDBObject
    {
-      friend class _SDB_RTNCB ;
       friend class _rtnContextParaData ;
       public:
          _rtnContextBase ( INT64 contextID, UINT64 eduID ) ;
@@ -296,6 +186,8 @@ namespace engine
          BOOLEAN  isOpened () const { return _isOpened ; }
          BOOLEAN  eof () const { return _hitEnd ; }
 
+         INT32    getReference() const ;
+
       public:
          void     enablePrefetch ( _pmdEDUCB *cb,
                                    rtnPrefWatcher *pWatcher = NULL ) ;
@@ -307,6 +199,7 @@ namespace engine
          }
          INT32    prefetchResult() const { return _prefetchRet ; }
          INT32    prefetch ( _pmdEDUCB *cb, UINT32 prefetchID ) ;
+         void     waitForPrefetch() ;
 
       public:
 
@@ -322,7 +215,6 @@ namespace engine
 
       protected:
          INT32    _reallocBuffer ( SINT32 requiredSize ) ;
-         void     _release () ;
          OSS_INLINE void _empty () ;
          OSS_INLINE void _close () { _isOpened = FALSE ; }
          UINT32   _getWaitPrefetchNum () { return _waitPrefetchNum.peek() ; }
@@ -347,7 +239,6 @@ namespace engine
          INT64                   _totalRecords ;
          ossRWMutex              _dataLock ;
          ossRWMutex              _prefetchLock ;
-         INT32                   _reference ;
          UINT32                  _prefetchID ;
          ossAtomic32             _waitPrefetchNum ;
          BOOLEAN                 _isInPrefetch ;

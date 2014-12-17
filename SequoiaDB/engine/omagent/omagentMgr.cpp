@@ -34,6 +34,8 @@
 #include "omagentMgr.hpp"
 #include "omagentSession.hpp"
 #include "pmd.hpp"
+#include "msgMessage.hpp"
+#include "omagentUtil.hpp"
 
 using namespace bson ;
 
@@ -116,9 +118,9 @@ namespace engine
          ( SDBCM_AUTO_START, po::value<string>(),
          "start sequoiadb node automatically when CM start" )
          ( SDBCM_DIALOG_LEVEL, po::value<INT32>(),
-         "Dialog level" ),
+         "Dialog level" )
          ( SDBCM_CONF_OMADDR, po::value<string>(),
-         "OM address" ),
+         "OM address" )
          ( SDBCM_CONF_ISGENERAL, po::value<string>(),
          "Is general agent" )
       PMD_ADD_PARAM_OPTIONS_END
@@ -435,7 +437,7 @@ namespace engine
       omAgentMgr Message MAP
    */
    BEGIN_OBJ_MSG_MAP( _omAgentMgr, _pmdObjBase )
-      
+      ON_MSG( MSG_BS_QUERY_RES, _onOMQueryTaskRes )
    END_OBJ_MSG_MAP()
 
    /*
@@ -482,6 +484,13 @@ namespace engine
       else
       {
          _primaryPos = -1 ;
+      }
+
+      if ( _options.isGeneralAgent() )
+      {
+         pmdGetKRCB()->setBusinessOK( FALSE ) ;
+         startTaskCheck( BSON( FIELD_NAME_HOST <<
+                               pmdGetKRCB()->getHostName() ) ) ;
       }
 
       nodeID.columns.groupID = OMAGENT_GROUPID ;
@@ -630,7 +639,7 @@ namespace engine
       _netAgent.stop() ;
 
       _sessionMgr.setForced() ;
-      
+
       return SDB_OK ;
    }
 
@@ -695,11 +704,65 @@ namespace engine
       }
    }
 
+   INT32 _omAgentMgr::_prepareTask()
+   {
+      INT32 rc = SDB_OK ;
+      ossScopedLock lock ( &_mgrLatch, SHARED ) ;
+      MAPTASKQUERY::iterator it = _mapTaskQuery.begin () ;
+      while ( it != _mapTaskQuery.end() )
+      {
+         rc = _sendQueryTaskReq ( it->first, OM_CS_DEPLOY_CL_TASKINFO,
+                                  &(it->second) ) ;
+         if ( SDB_OK != rc )
+         {
+            break ;
+         }
+         ++it ;
+      }
+      return rc ;
+   }
+
+   INT32 _omAgentMgr::_sendQueryTaskReq ( UINT64 requestID,
+                                          const CHAR * clFullName,
+                                          const BSONObj* match )
+   {
+      CHAR *pBuff = NULL ;
+      INT32 buffSize = 0 ;
+      MsgHeader *msg = NULL ;
+      INT32 rc = SDB_OK ;
+
+      rc = msgBuildQueryMsg ( &pBuff, &buffSize, clFullName, 0, requestID,
+                              0, -1, match, NULL, NULL, NULL ) ;
+      if ( SDB_OK != rc )
+      {
+         goto error ;
+      }
+      msg = ( MsgHeader* )pBuff ;
+      msg->TID = 0 ;
+      msg->routeID.value = 0 ;
+
+      rc = sendToOM( msg ) ;
+      PD_LOG ( PDDEBUG, "Send query[%s] to om[rc:%d]",
+               match->toString().c_str(), rc ) ;
+
+   done:
+      if ( pBuff )
+      {
+         SDB_OSS_FREE ( pBuff ) ;
+         pBuff = NULL ;
+      }
+      return rc ;
+   error:
+      goto done ;
+   }
+
    void _omAgentMgr::onTimer( UINT64 timerID, UINT32 interval )
    {
       if ( _oneSecTimer == timerID )
       {
          _sessionMgr.onTimer( interval ) ;
+
+         _prepareTask() ;
       }
       else if ( _nodeMonitorTimer == timerID )
       {
@@ -761,7 +824,7 @@ namespace engine
          goto error ;
       }
 
-      if ( tmpPrimary >= 0 && tmpPrimary < _vecOmNode.size() )
+      if ( tmpPrimary >= 0 && (UINT32)tmpPrimary < _vecOmNode.size() )
       {
          rc = _netAgent.syncSend ( _vecOmNode[tmpPrimary],
                                    (void*)msg ) ;
@@ -824,6 +887,190 @@ namespace engine
       _mapTaskQuery[++_taskID] = match.copy() ;
 
       return SDB_OK ;
+   }
+
+   INT32 _omAgentMgr::_onOMQueryTaskRes ( NET_HANDLE handle, MsgHeader *msg )
+   {
+      MsgOpReply *res = ( MsgOpReply* )msg ;
+      PD_LOG ( PDDEBUG, "Recieve omsvc query task response[requestID:%lld, "
+               "flag: %d]", msg->requestID, res->flags ) ;
+
+      INT32 rc = SDB_OK ;
+      INT32 flag = 0 ;
+      INT64 contextID = -1 ;
+      INT32 startFrom = 0 ;
+      INT32 numReturned = 0 ;
+      vector<BSONObj> objList ;
+
+      if ( SDB_DMS_EOC == res->flags ||
+           SDB_CAT_TASK_NOTFOUND == res->flags )
+      {
+         _mgrLatch.get() ;
+         _mapTaskQuery.erase ( msg->requestID ) ;
+         _mgrLatch.release() ;
+         PD_LOG ( PDINFO, "The query task[%lld] has 0 jobs", msg->requestID ) ;
+      }
+      else if ( SDB_OK != res->flags )
+      {
+         PD_LOG ( PDERROR, "Query task[%lld] failed[rc=%d]",
+                  msg->requestID, res->flags ) ;
+         goto error ;
+      }
+      else
+      {
+         rc = msgExtractReply ( (CHAR *)msg, &flag, &contextID, &startFrom,
+                                &numReturned, objList ) ;
+         if ( SDB_OK != rc )
+         {
+            PD_LOG ( PDERROR, "Failed to extract task infos from omsvc, "
+                     "rc = %d", rc ) ;
+            goto error ;
+         }
+         {
+            ossScopedLock lock ( &_mgrLatch, EXCLUSIVE ) ;
+            MAPTASKQUERY::iterator it = _mapTaskQuery.find ( msg->requestID ) ;
+            if ( it == _mapTaskQuery.end() )
+            {
+               PD_LOG ( PDWARNING, "The query task response[%lld] is not exist",
+                        msg->requestID ) ;
+               rc = SDB_INVALIDARG ;
+               goto error ;
+            }
+            _mapTaskQuery.erase ( it ) ;
+         }
+
+         PD_LOG ( PDINFO, "The query task[%lld] has %d jobs", msg->requestID,
+                  numReturned ) ;
+
+         {
+            UINT32 index = 0 ;
+            UINT64 taskID = 0 ;
+            while ( index < objList.size() )
+            {
+               BSONObj tmpObj = objList[index].getOwned() ;
+               BSONElement e = tmpObj.getField( OM_TASKINFO_FIELD_TASKID ) ;
+               if ( !e.isNumber() )
+               {
+                  PD_LOG( PDERROR, "Get taskid from obj[%s] failed",
+                          tmpObj.toString().c_str() ) ;
+                  ++index ;
+                  continue ;
+               }
+               taskID = (UINT64)e.numberLong() ;
+
+               if ( !isTaskInfoExist( taskID ) )
+               {
+                  if ( SDB_OK == _startTask ( tmpObj ) )
+                  {
+                     registerTaskInfo( taskID, tmpObj ) ;
+                  }
+               }
+               ++index ;
+            }
+         }
+      }
+
+   done:
+      return rc ;
+   error:
+      goto done ;
+   }
+
+   BOOLEAN _omAgentMgr::isTaskInfoExist( UINT64 taskID )
+   {
+      ossScopedLock lock( &_mgrLatch, SHARED ) ;
+      MAP_TASKINFO::iterator it = _mapTaskInfo.find( taskID ) ;
+      if ( it == _mapTaskInfo.end() )
+      {
+         return FALSE ;
+      }
+      return TRUE ;
+   }
+
+   void _omAgentMgr::registerTaskInfo( UINT64 taskID, const BSONObj &obj )
+   {
+      ossScopedLock lock( &_mgrLatch, EXCLUSIVE ) ;
+      _mapTaskInfo[ taskID ] = obj.getOwned() ;
+   }
+
+   void _omAgentMgr::submitTaskInfo( UINT64 taskID )
+   {
+      ossScopedLock lock( &_mgrLatch, EXCLUSIVE ) ;
+
+      MAP_TASKINFO::iterator it = _mapTaskInfo.find( taskID ) ;
+      if ( it != _mapTaskInfo.end() )
+      {
+         _mapTaskInfo.erase( it ) ;
+      }
+
+      if ( _mapTaskInfo.size() == 0 && !pmdGetKRCB()->isBusinessOK() )
+      {
+         pmdGetKRCB()->setBusinessOK( TRUE ) ;
+      }
+   }
+
+   INT32 _omAgentMgr::_startTask( const BSONObj &obj )
+   {
+      INT32 rc = SDB_OK ;
+      INT32 taskType = OMA_TASK_UNKNOW ;
+      EDUID eduID = PMD_INVALID_EDUID ;
+      BSONObj data ;
+
+      try
+      {
+         rc = omaGetIntElement( obj, OMA_FIELD_TASKTYPE, taskType ) ;
+         PD_CHECK( SDB_OK == rc, rc, error, PDERROR,
+                   "Get field[%s] failed, rc: %d", OMA_FIELD_TASKTYPE, rc ) ;
+         rc = omaGetObjElement( obj, OMA_FIELD_DETAIL, data ) ;
+         PD_CHECK( SDB_OK == rc, rc, error, PDERROR,
+                   "Get field[%s] failed, rc: %d", OMA_FIELD_DETAIL, rc ) ;
+      }
+      catch ( std::exception &e )
+      {
+         PD_LOG ( PDERROR, "omagent start task exception: %s", e.what() ) ;
+         rc = SDB_SYS ;
+         goto error ;
+      }
+
+      switch ( taskType )
+      {
+         case OMA_TASK_ADD_HOST :
+            rc = startAddHostTaskJob( data.objdata(), &eduID ) ;
+            if ( rc )
+            {
+               PD_LOG( PDERROR, "Failed to start add hosts task "
+                       "rc = %d", rc ) ;
+               goto error ;
+            }
+            break ;
+         case OMA_TASK_INSTALL_DB :
+            rc = startInsDBBusTaskJob( data.objdata(), &eduID ) ;
+            if ( rc )
+            {
+               PD_LOG( PDERROR, "Failed to start install db business task "
+                       "rc = %d", rc ) ;
+               goto error ;
+            }
+            break ;
+         case OMA_TASK_REMOVE_DB :
+            rc = startRmDBBusTaskJob( data.objdata(), &eduID ) ;
+            if ( rc )
+            {
+               PD_LOG( PDERROR, "Failed to start add hosts task "
+                       "rc = %d", rc ) ;
+               goto error ;
+            }
+            break ;
+         default :
+            PD_LOG ( PDERROR, "Unknow task type[%d]", taskType ) ;
+            rc = SDB_INVALIDARG ;
+            break ;
+      }
+
+   done:
+      return rc ;
+   error:
+      goto done ;
    }
 
    /*

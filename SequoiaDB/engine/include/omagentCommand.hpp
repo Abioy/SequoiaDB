@@ -73,6 +73,8 @@ namespace engine
          _omaCommand () ;
          virtual ~_omaCommand () ;
 
+         virtual BOOLEAN needCheckBusiness() const { return TRUE ; }
+
       public:
          virtual const CHAR * name () = 0 ;
 

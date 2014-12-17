@@ -1414,9 +1414,9 @@ namespace engine
       else if ( SDB_DMS_EOC == res->flags ||
                 SDB_CAT_TASK_NOTFOUND == res->flags )
       {
-         _clsLatch.get_shared () ;
+         _clsLatch.get() ;
          _mapTaskQuery.erase ( msg->requestID ) ;
-         _clsLatch.release_shared () ;
+         _clsLatch.release() ;
          PD_LOG ( PDINFO, "The query task[%lld] has 0 jobs", msg->requestID ) ;
       }
       else if ( SDB_OK != res->flags )

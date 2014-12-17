@@ -49,21 +49,6 @@ namespace engine
 
    #define OM_CONF_DETAIL_EX_DG_NAME   "datagroupname"
 
-   /*
-      param define
-   */
-   #define OM_FIX_BUFF_CATCH_NUMBER          ( 100 )
-
-   #define OM_FIX_PTR_SIZE(x)                ( x + sizeof(INT32) )
-   #define OM_FIX_PTR_HEADER(ptr)            (*(INT32*)(ptr))
-   #define OM_FIX_BUFF_TO_PTR(buff)          ((CHAR*)(buff)-sizeof(INT32))
-   #define OM_FIX_PTR_TO_BUFF(ptr)           ((CHAR*)(ptr)+sizeof(INT32))
-   #define OM_FIX_BUFF_HEADER(buff)          (*(INT32*)((CHAR*)(buff)-sizeof(INT32)))
-
-   #define OM_REST_MAX_BODY_SIZE             ( 64 * 1024 * 1024 )
-
-   #define OM_REST_SESSION_TIMEOUT           ( 10 * 60 * 1000 )
-
    #define OM_SIZE_MEGABIT                   ( 1024 * 1024 )
 
    #define OM_INT32_LENGTH                   (20)

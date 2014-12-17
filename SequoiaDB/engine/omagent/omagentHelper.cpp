@@ -32,6 +32,7 @@
 
 #include "omagentHelper.hpp"
 #include "omagentUtil.hpp"
+#include "pmd.hpp"
 
 namespace engine
 {
@@ -102,6 +103,12 @@ namespace engine
       if ( !pCommand )
       {
          rc = SDB_INVALIDARG ;
+         goto error ;
+      }
+      else if ( !pmdGetKRCB()->isBusinessOK() &&
+                pCommand->needCheckBusiness() )
+      {
+         rc = SDBCM_NODE_IS_IN_RESTORING ;
          goto error ;
       }
       try

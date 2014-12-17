@@ -119,6 +119,8 @@
 #define OMA_FIELD_SSHPORT                          "SshPort"
 #define OMA_FIELD_HASERROR                         "HasError"
 #define OMA_FIELD_HASFINISH                        "HasFinish"
+#define OMA_FIELD_TASKTYPE                         "TaskType"
+#define OMA_FIELD_TASKDETAIL                       "TaskDetail"
 
 
 #define OMA_FIELD_HOST                             "Host"

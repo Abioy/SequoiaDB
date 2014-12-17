@@ -39,6 +39,14 @@
 #include "pmdEnv.hpp"
 #include "ossSocket.hpp"
 #include "sdbInterface.hpp"
+#include "pmdRestSession.hpp"
+#include "restAdaptor.hpp"
+#include "pmdRemoteSession.hpp"
+
+#include <string>
+#include <map>
+
+using namespace std ;
 
 namespace engine
 {
@@ -60,6 +68,37 @@ namespace engine
          virtual INT32  deactive () ;
          virtual INT32  fini () ;
 
+         void           onTimer( UINT32 interval ) ;
+
+         void           setFixBuffSize( INT32 buffSize ) { _fixBufSize = buffSize ; }
+         void           setMaxRestBodySize( INT32 bodySize ) { _maxRestBodySize = bodySize ; }
+         void           setRestTimeout( INT32 timeout ) { _restTimeout = timeout ; }
+         void           setRSManager( pmdRemoteSessionMgr *pRSManager ) ;
+
+         restAdaptor*   getRestAdptor() { return &_restAdptor ; }
+         pmdRemoteSessionMgr* getRSManager() { return _pRSManager ; }
+
+      public:
+         void              detachSessionInfo( restSessionInfo *pSessionInfo ) ;
+         restSessionInfo*  attachSessionInfo( const string &id ) ;
+         restSessionInfo*  newSessionInfo( const string &userName,
+                                           UINT32 localIP ) ;
+         void              releaseSessionInfo ( const string &sessionID ) ;
+
+         void              releaseFixBuf( CHAR *pBuff ) ;
+         CHAR*             allocFixBuf() ;
+         INT32             getFixBufSize() const { return _fixBufSize ; }
+
+      protected:
+         string            _makeID( restSessionInfo *pSessionInfo ) ;
+         void              _add2UserMap( const string &user,
+                                         restSessionInfo *pSessionInfo ) ;
+         void              _delFromUserMap( const string &user,
+                                            restSessionInfo *pSessionInfo ) ;
+         void              _invalidSessionInfo( restSessionInfo *pSessionInfo ) ;
+
+         void              _checkSession( UINT32 interval ) ;
+
       public:
 
          virtual void  registerCB( SDB_ROLE dbrole ) ;
@@ -67,6 +106,22 @@ namespace engine
       private:
          ossSocket               *_pTcpListener ;
          ossSocket               *_pHttpListener ;
+
+      private:
+         map<string, restSessionInfo*>          _mapSessions ;
+         map<string, vector<restSessionInfo*> > _mapUser2Sessions ;
+         ossSpinSLatch                          _ctrlLatch ;
+         UINT32                                 _sequence ;
+         UINT32                                 _timeCounter ;
+
+         vector< CHAR* >                        _vecFixBuf ;
+         INT32                                  _fixBufSize ;
+
+         INT32                                  _maxRestBodySize ;
+         INT32                                  _restTimeout ;
+
+         restAdaptor                            _restAdptor ;
+         pmdRemoteSessionMgr                    *_pRSManager ;
 
    } ;
    typedef _pmdController pmdController ;

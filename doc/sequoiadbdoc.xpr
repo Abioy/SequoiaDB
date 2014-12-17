@@ -945,6 +945,8 @@
                     <file name="references/methods/topics/omastartNode.dita"/>
                     <file name="references/methods/topics/omastopNode.dita"/>
                     <file name="references/methods/topics/putlob.dita"/>
+                    <file name="references/methods/topics/query_gen.count.dita"/>
+                    <file name="references/methods/topics/query_gen.index.dita"/>
                     <file name="references/methods/topics/remove_en.dita"/>
                     <file name="references/methods/topics/remove.dita"/>
                     <file name="references/methods/removeBackup_en.dita"/>
@@ -1014,19 +1016,10 @@
                     <file name="references/methods/topics_en_v2/cl.splitAsync.dita"/>
                     <file name="references/methods/topics_en_v2/cl.update.dita"/>
                     <file name="references/methods/topics_en_v2/cl.upsert.dita"/>
+                    <file name="references/methods/topics_en_v2/count.hint.dita"/>
                     <file name="references/methods/topics_en_v2/cs.createCL.dita"/>
                     <file name="references/methods/topics_en_v2/cs.dropCL.dita"/>
                     <file name="references/methods/topics_en_v2/cs.getCL.dita"/>
-                    <file name="references/methods/topics_en_v2/cursor.close.dita"/>
-                    <file name="references/methods/topics_en_v2/cursor.current.dita"/>
-                    <file name="references/methods/topics_en_v2/cursor.explain.dita"/>
-                    <file name="references/methods/topics_en_v2/cursor.hint.dita"/>
-                    <file name="references/methods/topics_en_v2/cursor.limit.dita"/>
-                    <file name="references/methods/topics_en_v2/cursor.next.dita"/>
-                    <file name="references/methods/topics_en_v2/cursor.size.dita"/>
-                    <file name="references/methods/topics_en_v2/cursor.skip.dita"/>
-                    <file name="references/methods/topics_en_v2/cursor.sort.dita"/>
-                    <file name="references/methods/topics_en_v2/cursor.toArray.dita"/>
                     <file name="references/methods/topics_en_v2/db.backupOffline.dita"/>
                     <file name="references/methods/topics_en_v2/db.cancelTask.dita"/>
                     <file name="references/methods/topics_en_v2/db.createCataRG.dita"/>
@@ -1042,6 +1035,7 @@
                     <file name="references/methods/topics_en_v2/db.exec.dita"/>
                     <file name="references/methods/topics_en_v2/db.execUpdate.dita"/>
                     <file name="references/methods/topics_en_v2/db.flushConfigure.dita"/>
+                    <file name="references/methods/topics_en_v2/db.forceSession.dita"/>
                     <file name="references/methods/topics_en_v2/db.getCS.dita"/>
                     <file name="references/methods/topics_en_v2/db.getDomain.dita"/>
                     <file name="references/methods/topics_en_v2/db.getRG.dita"/>
@@ -1090,6 +1084,18 @@
                     <file name="references/methods/topics_en_v2/oma.removeOM.dita"/>
                     <file name="references/methods/topics_en_v2/oma.startNode.dita"/>
                     <file name="references/methods/topics_en_v2/oma.stopNode.dita"/>
+                    <file name="references/methods/topics_en_v2/query_cond.hint.dita"/>
+                    <file name="references/methods/topics_en_v2/query_cond.limit.dita"/>
+                    <file name="references/methods/topics_en_v2/query_cond.skip.dita"/>
+                    <file name="references/methods/topics_en_v2/query_cond.sort.dita"/>
+                    <file name="references/methods/topics_en_v2/query_curs.close.dita"/>
+                    <file name="references/methods/topics_en_v2/query_curs.current.dita"/>
+                    <file name="references/methods/topics_en_v2/query_curs.next.dita"/>
+                    <file name="references/methods/topics_en_v2/query_gen.%5Bi%5D.dita"/>
+                    <file name="references/methods/topics_en_v2/query_gen.count.dita"/>
+                    <file name="references/methods/topics_en_v2/query_gen.explain.dita"/>
+                    <file name="references/methods/topics_en_v2/query_gen.size.dita"/>
+                    <file name="references/methods/topics_en_v2/query_gen.toArray.dita"/>
                     <file name="references/methods/topics_en_v2/rg.createNode.dita"/>
                     <file name="references/methods/topics_en_v2/rg.getDetail.dita"/>
                     <file name="references/methods/topics_en_v2/rg.getMaster.dita"/>
@@ -1120,6 +1126,8 @@
                 <file name="references/methods/methodlist_en_v2.ditamap"/>
                 <file name="references/methods/methodlist_en.ditamap"/>
                 <file name="references/methods/methodlist.ditamap"/>
+                <file name="references/methods/SdbQuery.dita"/>
+                <file name="references/methods/SdbQuery.ditamap"/>
             </folder>
             <folder name="questions">
                 <folder name="topics">

@@ -107,233 +107,6 @@ namespace engine
    #define RTN_CONTEXT_GETNUM_ONCE              (100)
 
    /*
-      _rtnObjBuff implement
-   */
-   _rtnObjBuff::_rtnObjBuff ( const _rtnObjBuff &right )
-   {
-      _owned = FALSE ;
-      _pBuff = NULL ;
-      this->operator=( right ) ;
-   }
-
-   _rtnObjBuff::~_rtnObjBuff ()
-   {
-      if ( _pBuff && _owned )
-      {
-         SDB_OSS_FREE( (CHAR*)_pBuff ) ;
-      }
-      _owned = FALSE ;
-      _pBuff = NULL ;
-      _buffSize = 0 ;
-      _recordNum = 0 ;
-      _curOffset = 0 ;
-   }
-
-   _rtnObjBuff& _rtnObjBuff::operator=( const _rtnObjBuff &right )
-   {
-      if ( _pBuff && _owned )
-      {
-         SDB_OSS_FREE( (CHAR*)_pBuff ) ;
-      }
-      _owned = FALSE ;
-      _pBuff = right._pBuff ;
-      _buffSize = right._buffSize ;
-      _recordNum = right._recordNum ;
-      _curOffset = right._curOffset ;
-
-      return *this ;
-   }
-
-   INT32 _rtnObjBuff::truncate( UINT32 num )
-   {
-      INT32 rc          = SDB_OK ;
-      INT32 offset      = 0 ;
-      INT32 recordNum   = 0 ;
-
-      if ( num >= (UINT32)_recordNum )
-      {
-         goto done ;
-      }
-
-      while( ossAlign4( (UINT32)offset ) < (UINT32)_buffSize &&
-             (UINT32)recordNum < num )
-      {
-         offset = ossAlign4( (UINT32)offset ) ;
-         try
-         {
-            BSONObj objTemp( &_pBuff[_curOffset] ) ;
-            offset += objTemp.objsize() ;
-            ++recordNum ;
-         }
-         catch( std::exception &e )
-         {
-            PD_LOG( PDERROR, "Failed to create bson object: %s", e.what() ) ;
-            rc = SDB_SYS ;
-            goto error ;
-         }
-      }
-
-      if ( offset < _buffSize )
-      {
-         _buffSize = offset ;
-      }
-      if ( recordNum < _recordNum )
-      {
-         _recordNum = recordNum ;
-      }
-
-   done:
-      return rc ;
-   error:
-      goto done ;
-   }
-
-   INT32 _rtnObjBuff::getOwned()
-   {
-      INT32 rc = SDB_OK ;
-
-      if ( !_owned && _pBuff )
-      {
-         CHAR *pBuff = ( CHAR* )SDB_OSS_MALLOC( _buffSize ) ;
-         if ( pBuff )
-         {
-            _pBuff = pBuff ;
-            _owned = TRUE ;
-         }
-         else
-         {
-            rc = SDB_OOM ;
-         }
-      }
-      return rc ;
-   }
-
-   /*
-      _rtnContextBuf implement
-   */
-   _rtnContextBuf::_rtnContextBuf()
-   :_rtnObjBuff( NULL, 0, 0 )
-   {
-      _pBuffCounter  = NULL ;
-      _pBuffLock     = NULL ;
-      _released      = TRUE ;
-      _context       = NULL ;
-      _startFrom     = 0 ;
-   }
-
-   _rtnContextBuf::_rtnContextBuf( const _rtnContextBuf &right )
-   :_rtnObjBuff( right )
-   {
-      _pBuffCounter = right._pBuffCounter ;
-      _pBuffLock    = right._pBuffLock ;
-      _released     = right._released ;
-      _context      = right._context ;
-      _object       = right._object ;
-      _startFrom    = right._startFrom ;
-
-      if ( !_released )
-      {
-         ++(*_pBuffCounter) ;
-      }
-   }
-
-   _rtnContextBuf::_rtnContextBuf( const CHAR *pBuff, INT32 buffLen,
-                                   INT32 recordNum )
-   :_rtnObjBuff( pBuff, buffLen, recordNum )
-   {
-      _pBuffCounter  = NULL ;
-      _pBuffLock     = NULL ;
-      _released      = TRUE ;
-      _context       = NULL ;
-      _startFrom     = 0 ;
-   }
-
-   _rtnContextBuf::_rtnContextBuf( const BSONObj &obj )
-   :_rtnObjBuff( obj.objdata(), obj.objsize(), 1 )
-   {
-      _pBuffCounter  = NULL ;
-      _pBuffLock     = NULL ;
-      _released      = TRUE ;
-      _context       = NULL ;
-      _object        = obj ;
-      _startFrom     = 0 ;
-   }
-
-   _rtnContextBuf::~_rtnContextBuf()
-   {
-      release () ;
-   }
-
-   INT32 _rtnContextBuf::getOwned()
-   {
-      INT32 rc = SDB_OK ;
-
-      if ( !_pBuffCounter )
-      {
-         rc = _rtnObjBuff::getOwned() ;
-      }
-      return rc ;
-   }
-
-   _rtnContextBuf& _rtnContextBuf::operator=( const _rtnContextBuf &right )
-   {
-      release () ;
-
-      _rtnObjBuff::operator=( right ) ;
-
-      _pBuffCounter = right._pBuffCounter ;
-      _pBuffLock = right._pBuffLock ;
-      _released = right._released ;
-      _context  = right._context ;
-      _object   = right._object ;
-      _startFrom = right._startFrom ;
-
-      if ( !_released && NULL != _pBuffCounter )
-      {
-         ++(*_pBuffCounter) ;
-      }
-
-      return *this ;
-   }
-
-   void _rtnContextBuf::release()
-   {
-      if ( !_released )
-      {
-         SDB_ASSERT( *_pBuffCounter >= 0, "Counter must >= 0" ) ;
-         --(*_pBuffCounter) ;
-         if ( 0 == *_pBuffCounter  )
-         {
-            _pBuffLock->release_r() ;
-         }
-         if ( *_pBuffCounter < 0 )
-         {
-            SDB_OSS_DEL _context ;
-         }
-
-         _pBuffCounter  = NULL ;
-         _pBuffLock     = NULL ;
-         _released      = TRUE ;
-         _context       = NULL ;
-      }
-
-      _pBuff         = NULL ;
-      _buffSize      = 0 ;
-      _recordNum     = 0 ;
-      _curOffset     = 0 ;
-      _startFrom     = 0 ;
-   }
-
-   void _rtnContextBuf::_reference( INT32 * pCounter, ossRWMutex *pMutex )
-   {
-      _pBuffCounter = pCounter ;
-      _pBuffLock = pMutex ;
-
-      ++(*_pBuffCounter) ;
-      _released  = FALSE ;
-   }
-
-   /*
       _rtnContextBase implement
    */
    _rtnContextBase::_rtnContextBase( INT64 contextID, UINT64 eduID )
@@ -352,8 +125,6 @@ namespace engine
       _hitEnd              = TRUE ;
       _isOpened            = FALSE ;
 
-      _reference           = 0 ;
-
       _matcher             = NULL ;
       _ownedMatcher        = FALSE ;
 
@@ -366,14 +137,26 @@ namespace engine
 
    _rtnContextBase::~_rtnContextBase()
    {
-      _prefetchLock.lock_w() ;
-      _prefetchLock.release_w() ;
+      _close() ;
 
       if ( _pResultBuffer )
       {
-         SDB_OSS_FREE( _pResultBuffer ) ;
-         _pResultBuffer = NULL ;
+         *RTN_GET_CONTEXT_FLAG( _pResultBuffer ) = 0 ;
+
+         if ( *RTN_GET_REFERENCE( _pResultBuffer ) == 0 )
+         {
+            SDB_OSS_FREE( RTN_BUFF_TO_REAL_PTR( _pResultBuffer ) ) ;
+            _pResultBuffer = NULL ;
+         }
+         else
+         {
+            _dataLock.release_r() ;
+         }
       }
+
+      _prefetchLock.lock_w() ;
+      _prefetchLock.release_w() ;
+
       if ( _matcher && _ownedMatcher )
       {
          SDB_OSS_DEL _matcher ;
@@ -384,6 +167,26 @@ namespace engine
 
       SDB_ASSERT( 0 == _waitPrefetchNum.peek(), "Has wait prefetch jobs" ) ;
       SDB_ASSERT( FALSE == _isInPrefetch, "Has prefetch job run" ) ;
+   }
+
+   void _rtnContextBase::waitForPrefetch()
+   {
+      _close() ;
+
+      if ( _canPrefetch() )
+      {
+         _dataLock.lock_r() ;
+         _dataLock.release_r() ;
+      }
+   }
+
+   INT32 _rtnContextBase::getReference() const
+   {
+      if ( _pResultBuffer )
+      {
+         return *RTN_GET_REFERENCE( _pResultBuffer ) ;
+      }
+      return 0 ;
    }
 
    void _rtnContextBase::enablePrefetch( _pmdEDUCB * cb,
@@ -416,26 +219,6 @@ namespace engine
       _toString( ss ) ;
 
       return ss.str() ;
-   }
-
-   void _rtnContextBase::_release ()
-   {
-      _close() ;
-      _dataLock.lock_r() ;
-
-      if ( _reference > 0 )
-      {
-         --_reference ;
-         if ( 0 == _reference )
-         {
-            _dataLock.release_r() ;
-         }
-      }
-      else
-      {
-         _dataLock.release_r() ;
-         SDB_OSS_DEL this ;
-      }
    }
 
    INT32 _rtnContextBase::newMatcher ()
@@ -484,8 +267,8 @@ namespace engine
          }
       }
 
-      _pResultBuffer = (CHAR*)SDB_OSS_REALLOC(  _pResultBuffer,
-                                                _resultBufferSize ) ;
+      _pResultBuffer = (CHAR*)SDB_OSS_REALLOC( _pResultBuffer,
+                                               RTN_BUFF_TO_PTR_SIZE( _resultBufferSize ) ) ;
       if ( !_pResultBuffer )
       {
          PD_LOG ( PDERROR, "Unable to allocate buffer for %d bytes",
@@ -494,6 +277,16 @@ namespace engine
          _resultBufferSize = originalSize ;
          rc = SDB_OOM ;
          goto error ;
+      }
+      else
+      {
+         _pResultBuffer = RTN_REAL_PTR_TO_BUFF( _pResultBuffer ) ;
+
+         if ( !originalPointer )
+         {
+            *RTN_GET_REFERENCE( _pResultBuffer ) = 0 ;
+            *RTN_GET_CONTEXT_FLAG( _pResultBuffer ) = 1 ;
+         }
       }
 
    done :
@@ -748,6 +541,7 @@ namespace engine
       if ( !isEmpty() )
       {
          _bufferCurrentOffset = ossAlign4( (UINT32)_bufferCurrentOffset ) ;
+         buffObj._pOrgBuff = _pResultBuffer ;
          buffObj._pBuff = &_pResultBuffer[ _bufferCurrentOffset ] ;
          buffObj._startFrom = _totalRecords - _bufferNumRecords ;
 
@@ -791,8 +585,7 @@ namespace engine
             buffObj._buffSize = _bufferCurrentOffset - prevCurOffset ;
          }
 
-         buffObj._reference( &_reference, &_dataLock ) ;
-         buffObj._context = this ;
+         buffObj._reference( RTN_GET_REFERENCE( _pResultBuffer ), &_dataLock ) ;
          locked = FALSE ;
          rc = SDB_OK ;
 
@@ -1637,7 +1430,8 @@ namespace engine
       it = _vecContext.begin() ;
       while ( it != _vecContext.end() )
       {
-         (*it)->_release () ;
+         (*it)->waitForPrefetch() ;
+         SDB_OSS_DEL (*it) ;
          ++it ;
       }
       _vecContext.clear () ;
@@ -1741,7 +1535,8 @@ namespace engine
       {
          if ( *it == pContext )
          {
-            pContext->_release() ;
+            pContext->waitForPrefetch() ;
+            SDB_OSS_DEL pContext ;
             _vecContext.erase( it ) ;
             break ;
          }
@@ -1806,7 +1601,8 @@ namespace engine
          pContext = *it ;
          if ( pContext->eof() && pContext->isEmpty() )
          {
-            pContext->_release() ;
+            pContext->waitForPrefetch() ;
+            SDB_OSS_DEL pContext ;
             it = _vecContext.erase( it ) ;
             continue ;
          }

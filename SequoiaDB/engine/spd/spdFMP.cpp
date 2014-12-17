@@ -381,7 +381,7 @@ found:
       }
       else
       {
-         while ( _itr < _totalRead  && _expect < sizeof( SPD_MAGIC ) )
+         while ( _itr < _totalRead  && (UINT32)_expect < sizeof( SPD_MAGIC ) )
          {
             if ( SPD_MAGIC[_expect] == _readBuf[_itr] )
             {

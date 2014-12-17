@@ -106,8 +106,9 @@ namespace engine
 
       if ( pContext )
       {
-         INT32 reference = pContext->_reference ;
-         pContext->_release () ;
+         INT32 reference = pContext->getReference() ;
+         pContext->waitForPrefetch() ;
+         SDB_OSS_DEL pContext ;
          PD_LOG( PDDEBUG, "delete context(contextID=%lld, reference: %d)",
                  contextID, reference ) ;
       }

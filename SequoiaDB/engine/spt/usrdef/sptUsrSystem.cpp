@@ -407,7 +407,7 @@ namespace engine
          {
             sptHostItem &item = *it ;
             ++it ;
-            if( item._lineType = LINE_HOST && hostname == item._host )
+            if( LINE_HOST == item._lineType && hostname == item._host )
             {
                rval.setStringVal( "", item._ip.c_str() ) ;
                goto done ;

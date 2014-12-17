@@ -33,6 +33,7 @@
 #include "omTaskManager.hpp"
 #include "omDef.hpp"
 #include "rtn.hpp"
+#include "msgMessage.hpp"
 #include "ossVer.hpp"
 
 using namespace bson ;

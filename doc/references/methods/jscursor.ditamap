@@ -5,13 +5,13 @@
  <topicref href="jscursor.dita">
   <topicref href="topics/cclose.dita"/>
   <topicref href="topics/ccurrent.dita"/>
-  <topicref href="topics/explain.dita"/>
+  <!--<topicref href="topics/explain.dita"/>
   <topicref href="topics/hint.dita"/>
-  <topicref href="topics/climit.dita"/>
+  <topicref href="topics/climit.dita"/>-->
   <topicref href="topics/next.dita"/>
-  <topicref href="topics/csize.dita"/>
+  <!--<topicref href="topics/csize.dita"/>
   <topicref href="topics/cskip.dita"/>
   <topicref href="topics/csort.dita"/>
-  <topicref href="topics/toArray.dita"/> 
+  <topicref href="topics/toArray.dita"/>--> 
  </topicref>
 </map>

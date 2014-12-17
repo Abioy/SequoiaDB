@@ -393,11 +393,9 @@ namespace engine
               _oid.str().c_str(),
               _written.size(), failedNum ) ;
       _written.clear() ;
-   done:
+
       PD_TRACE_EXITRC( SDB__RTNCONTEXTSHDOFLOB__ROLLBACK, rc ) ;
       return rc ;
-   error:
-      goto done ;
    }
 
    void _rtnContextShdOfLob::_meta2Obj( bson::BSONObj &obj )

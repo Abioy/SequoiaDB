@@ -255,6 +255,7 @@ size %d, clear bucket data", _bufferSize ) ;
          _column = 1 ;
          if ( isRecordFirst )
          {
+            *pCursor = '\0' ;
             break ;
          }
       }
