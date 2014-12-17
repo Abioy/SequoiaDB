@@ -1,0 +1,61 @@
+<!--@param ${base.path} , where the file's director-->
+<!--@param ${sdbdriver.jar.path} , where the sdbdriver.jar's path is -->
+<!--@param ${javac.base.dir} : The path where the javac.base.dir is -->
+<!--you should ready all the jars for this engineering-->
+<project name="build" default="build">
+  <property name="build.path" value="${base.path}/build"/>
+
+  <target name="clean" depends="">
+    <delete dir="${build.path}" />
+    <delete file="${base.path}/java-app-test.jar" />
+    <copy file="${sdbdriver.jar.path}" tofile="${base.path}/lib/sequoiadb.jar" />
+    <mkdir dir="${build.path}/xml" />
+    <unjar src="${base.path}/lib/sequoiadb.jar" dest="${build.path}" />
+    <unjar src="${base.path}/lib/dom4j-2.0.0-ALPHA-2.jar" dest="${build.path}" />
+    <unjar src="${base.path}/lib/mongo-java-driver-2.11.3.jar" dest="${build.path}" />
+    <copy file="${base.path}/xml/test_rule.xml" todir="${build.path}/xml" />
+  </target>
+
+  <target name="build" depends="clean">
+    <echo message="os.name=${os.name}, os.arch=${os.arch}" />
+    <if>
+      <equals arg1="${os.name}" arg2="Linux" />
+      <then>
+        <property name="jdk.name.os" value="jdk_linux" />
+      </then>
+      <else>
+        <property name="jdk.name.os" value="jdk_win" />
+      </else>
+    </if>
+    <if>
+      <equals arg1="${os.arch}" arg2="ppc64" />
+      <then>
+        <property name="jdk.name" value="jdk_ppclinux64" />
+      </then>
+    </if>
+    <if>
+      <equals arg1="${os.arch}" arg2="amd64" />
+      <then>
+        <property name="jdk.name" value="${jdk.name.os}64" />
+      </then>
+      <else>
+        <property name="jdk.name" value="${jdk.name.os}32" />
+      </else>
+    </if>
+
+    <javac srcdir="${base.path}/src" destdir="${build.path}" debug="true" executable="${javac.base.dir}/java/${jdk.name}/bin/javac" fork="yes">
+      <classpath>
+        <fileset dir="${base.path}/lib" includes="**/*" />
+      </classpath>
+    </javac>
+
+    <jar file="${base.path}/java-app-test.jar" >
+      <manifest>
+        <attribute name="Version" value="1.0" />
+        <attribute name="Main-Class" value="com.sequoiadb.test.testMain" />
+        <attribute name="Class-Path" value="." />
+      </manifest>
+      <fileset dir="${build.path}"/>
+    </jar>
+  </target>
+</project>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ldc_nyk_5n">
+  <title>后台任务</title>
+  <body>
+    <p>后台任务是 SequoiaDB 中的一种特殊任务类型，一般用于将特定用户操作置于后台异步执行。在快照中，后台任务的类型（Type）为“Task”。</p>
+    <p>后台任务类型列表：</p>
+    <simpletable>
+      <sthead>
+        <stentry>任务名</stentry>
+        <stentry>描述</stentry>
+      </sthead>
+      <strow>
+        <stentry>Restore</stentry>
+        <stentry>数据库恢复任务，用于根据日志文件回滚恢复数据库。</stentry>
+      </strow>
+      <strow>
+        <stentry>Job[PageCleaner]</stentry>
+        <stentry>脏页清除任务，用于异步将未写入磁盘的脏页刷入磁盘。可以使用 -numpagecleaners 控制脏页清除任务数量，默认为1。</stentry>
+      </strow>
+      <strow>
+        <stentry>Job[Prefetch]</stentry>
+        <stentry>预取任务，用于在等待客户端接收下一个操作请求时，在后台执行用户接下来可能发生的操作。可以使用 -maxprefpool 控制最大预取任务的数量。</stentry>
+      </strow>
+      <strow>
+        <stentry>CreateIndex</stentry>
+        <stentry>建立索引任务，用于后台建立索引，多用于备节点重做主节点的建立索引操作日志。</stentry>
+      </strow>
+      <strow>
+        <stentry>DropIndex</stentry>
+        <stentry>删除索引任务，用于后台删除索引，多用于备节点重做主节点的删除索引操作日志。</stentry>
+      </strow>
+      <strow>
+        <stentry>CleanUp</stentry>
+        <stentry>数据清理任务，多用于数据切分后，在源数据节点删除被切分数据。</stentry>
+      </strow>
+      <strow>
+        <stentry>Job[ExtendSegment]</stentry>
+        <stentry>扩展集合空间文件任务，用于当集合空间空闲数据页小于特定阀值后，由后台启动异步扩充集合空间。</stentry>
+      </strow>
+    </simpletable>
+  </body>
+</topic>

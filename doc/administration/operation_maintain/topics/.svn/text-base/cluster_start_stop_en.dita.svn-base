@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_25g_2rk_fm">
+  <title>Start and Stop the Cluster</title>
+  <body>
+    <p>The section describes starting and stopping the cluster.</p>
+    <p><xref href="cluster_start_en.dita">Cluster Start</xref></p>
+    <p><xref href="cluster_stop_en.dita">Cluster Stop</xref></p>
+  </body>
+</topic>

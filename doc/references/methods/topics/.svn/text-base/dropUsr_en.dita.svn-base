@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_dropUsr">
+  <title>db.dropUsr()</title>
+  <body>
+    <section>
+      <title>db.dropUsr(&lt;name>,&lt;password>)</title>
+      <p>Delete an existing user and the corresponding password in the database. </p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable 
+        id="references_method_createUsr_table">
+        <sthead>
+          <stentry>Parameter name </stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Not null</stentry>
+        </sthead>
+        <strow>
+          <stentry>name</stentry>
+          <stentry>string</stentry>
+          <stentry>User name</stentry>
+          <stentry>Yes</stentry>
+        </strow>
+        <strow>
+          <stentry>password       </stentry>
+          <stentry>string</stentry>
+          <stentry>Password</stentry>
+          <stentry>Yes</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>Format</title>
+      <p> The method "dropUsr()" contains 2 parameter: "name" and "password". Both of them are in
+        the type of string.</p>
+      <p><codeblock>("&lt;User name>","&lt;password>")</codeblock></p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>Delete a user through the user name "root" and the password "admin". </p>
+          <p><codeblock>db.dropUsr("root","admin")</codeblock></p>
+        </li>
+      </ul>
+      
+    </section>
+  </body>
+  <related-links>
+    <link href="createUsr_en.dita" format="dita" type="topic"></link>    
+  </related-links>
+</topic>

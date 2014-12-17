@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_database_monitoring_snapshot_collections">
+  <title>Collections Snapshot</title>
+  <body>
+    <section><title>Description</title>
+      <p>Collections snapshot contains all the non-temporary collections in current data nodes (It
+        contains user collection in coord node). Each collection is recorded as a record.</p>
+    </section>
+    <section><title>Sign</title>
+      <p>SDB_SNAP_COLLECTIONS</p>
+    </section>
+    
+    <section><title>Field Information</title>
+      <p>Since information stored in data nodes and catalog node is not the same, collections list
+        will return different structures according to the kind of the node:</p>
+    </section>
+    <section><title>Other Node Field Information</title>
+      <simpletable>
+        <sthead>
+          <stentry>Field Name</stentry>
+          <stentry>Type</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry>Name</stentry>
+          <stentry>String</stentry>
+          <stentry>Full name of collection</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.ID</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Collection ID,Range from 0 to 4095, Unique in collection space</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.LogicalID</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Collection logical ID</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.Sequence</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Sequence number</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.Indexes</stentry>
+          <stentry>Integer</stentry>
+          <stentry>The amount of indexes in the collection</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.Status</stentry>
+          <stentry>String</stentry>
+          <stentry>
+            The current status of the collection
+            <ul>
+              <li>Free</li>
+              <li>Normal</li>
+              <li>Dropped</li>
+              <li>Offline Reorg Shadow Copy Phase</li>
+              <li>Offline Reorg Truncate Phase</li>
+              <li>Offline Reorg Copy Back Phase</li>
+              <li>Offline Reorg Rebuild Phase</li>
+            </ul>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>TotalRecords</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Total number of a collection</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalDataPages</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Total number of data pages in a collection</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalIndexPages</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Total number of index pages in a collection</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalLobPages</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Pages number of LOBs in the collection</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalDataFreeSpace</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Free space of data in a collection</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalIndexFreeSpace</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Free space of index in a collection</stentry>
+        </strow>
+      </simpletable>
+    </section>    
+    <section><title>Coord Node Field Information</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.01* 1.99*"
+        id="administration_database_monitoring_snapshot_collections_coord_table">-->
+        <sthead>
+          <stentry>Field Name</stentry>
+          <stentry>Type</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry>Name</stentry>
+          <stentry>String</stentry>
+          <stentry>Full name of collection</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.GroupName</stentry>
+          <stentry>String</stentry>
+          <stentry>Group name where the node in </stentry>
+        </strow>
+        <strow/>
+        <strow>
+          <stentry>Details.Group.ID</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Collection ID, Range 0~4096, Unique in the collectionspace</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.Group.LogicalID</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Collection logical ID</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.Group.Sequence</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Sequence number</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.Group.Indexes</stentry>
+          <stentry>Integer</stentry>
+          <stentry>The number of indexes in the collection</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.Group.Status</stentry>
+          <stentry>String</stentry>
+          <stentry>The current status of the collection<ul id="ul_cmj_t45_ql">
+              <li>Free</li>
+              <li>Normal</li>
+              <li>Dropped</li>
+              <li>Offline Reorg Shadow Copy Phase</li>
+              <li> Offline Reorg Truncate Phase</li>
+              <li> Offline Reorg Copy Back Phase</li>
+              <li> Offline Reorg Rebuild Phase</li>
+            </ul></stentry>
+        </strow>
+        <strow>
+          <stentry>Details.Group.TotalRecords</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Total number of a collection</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.Group.TotalDataPages</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Total number of data pages in a collection</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.Group.TotalIndexPages</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Total number of index pages in a collection</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.Group.TotalDataFreeSpace</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Free space of data in a collection</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.Group.TotalIndexFreeSpace</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Free space of index in a collection</stentry>
+        </strow>
+        <strow>
+          <stentry>Details.Group.NodeName</stentry>
+          <stentry>String</stentry>
+          <stentry>Node name(hostname+port)</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>Other Node Sample</title>
+      <codeblock>> db.snapshot(SDB_SNAP_COLLECTIONS)
+{
+  "Name": "foo.bar",
+  "Details": [
+    {
+      "ID": 0,
+      "LogicalID": 0,
+      "Sequence": 1,
+      "Indexes": 8,
+      "Status": "Normal",
+      "TotalRecords": 0,
+      "TotalDataPages": 0,
+      "TotalIndexPages": 6,
+      "TotalLobPages": 0,
+      "TotalDataFreeSpace": 0,
+      "TotalIndexFreeSpace": 196545
+    }
+  ]
+}</codeblock>
+    </section>
+    <section>
+      <title>Coord Node Sample</title>
+      <codeblock>> coord.snapshot(SDB_SNAP_COLLECTIONS)
+{
+  "Name": "susefoo.susebar",
+  "Details": [
+    {
+      "GroupName": "datagroup1",
+      "Group": [
+        {
+          "ID": 0,
+          "LogicalID": 0,
+          "Sequence": 1,
+          "Indexes": 1,
+          "Status": "Normal",          
+          "TotalRecords": 1,
+          "TotalDataPages": 1,
+          "TotalIndexPages": 2,
+          "TotalLobPages": 0,
+          "TotalDataFreeSpace": 4004,
+          "TotalIndexFreeSpace": 4046,
+          "NodeName": "vmsvr2-suse-x64:11820"
+        }
+      ]
+    }
+  ]
+}</codeblock>
+    </section>
+  </body>
+</topic>

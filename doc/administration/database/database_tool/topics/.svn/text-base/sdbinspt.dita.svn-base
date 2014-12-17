@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_3dn_nln_2l">
+  <title>数据库检测工具 — sdbdmsdump</title>
+  <body>
+    <p>sdbdmsdump（1.8 版本前名为 sdbinspt，1.8 版本后更名为 sdbdmsdump）是一个 SequoiaDB 数据库的数据文件检测工具。它可以检查数据库文件结构的正确性，并且给出结果报告。</p>
+    <section>
+      <title>权限需求</title>
+      <p>运行 sdbdmsdump 命令的用户必须对数据库的数据与索引文件拥有读权限。</p>
+    </section>
+    <section>
+      <title>连接需求</title>
+      <p>sdbdmsdump 不需要与数据库连接。</p>
+    </section>
+    <section>
+      <title>选项</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数</stentry>
+          <stentry>缩写</stentry>
+          <stentry>描述</stentry>
+        </sthead>
+        <strow>
+          <stentry>--help</stentry>
+          <stentry>-h</stentry>
+          <stentry>返回基本帮助和用法文本</stentry>
+        </strow>
+        <strow>
+          <stentry>--dbpath</stentry>
+          <stentry>-d</stentry>
+          <stentry>指定数据库文件所在目录，默认为当前目录 </stentry>
+        </strow>
+        <strow>
+          <stentry>--output</stentry>
+          <stentry>-o</stentry>
+          <stentry>指定输出文件，默认为屏幕输出</stentry>
+        </strow>
+        <strow>
+          <stentry>--verbose</stentry>
+          <stentry>-v</stentry>
+          <stentry>是否进行 ASCII 文本输出（true/false），默认为 true</stentry>
+        </strow>
+        <strow>
+          <stentry>--csname</stentry>
+          <stentry>-c</stentry>
+          <stentry>指定集合空间名，如果未指定则为全部集合空间</stentry>
+        </strow>
+        <strow>
+          <stentry>--clname</stentry>
+          <stentry>-l</stentry>
+          <stentry>指定集合名，如果未指定则为全部集合</stentry>
+        </strow>
+        <strow>
+          <stentry>--action</stentry>
+          <stentry>-a</stentry>
+          <stentry>指定操作，为（inspect/dump/all）之一，<b>必须指定</b><fig></fig>inspect：检测并报告任何数据损坏<fig></fig>dump：将数据页格式化并输出<fig></fig>all：检测数据页损坏，并格式化输出数据页</stentry>
+        </strow>
+        <strow>
+          <stentry>--dumpdata</stentry>
+          <stentry>-t</stentry>
+          <stentry>设定操作数据文件（ture/false），默认为 false</stentry>
+        </strow>
+        <strow>
+          <stentry>--dumpindex</stentry>
+          <stentry>-i</stentry>
+          <stentry>设定操作索引文件（true/false），默认为 false</stentry>
+        </strow>
+        <strow>
+          <stentry>--pagestart</stentry>
+          <stentry>-s</stentry>
+          <stentry>指定起始数据页，默认为-1</stentry>
+        </strow>
+        <strow>
+          <stentry>--numpage</stentry>
+          <stentry>-n</stentry>
+          <stentry>指定需要检测或格式化的数据页数量，当指定 -s 参数为非负值时，该参数生效。默认值为1</stentry>
+        </strow>
+        <strow>
+          <stentry>--record</stentry>
+          <stentry>-p</stentry>
+          <stentry>指定显示格式化输出数据或索引内容（true/false），默认为 false </stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>用法</title>
+      <p>使用 sdbdmsdump 工具时，请务必保证数据库进程已经停止。</p>
+      <p>在下面的例子，sdbdmsdump 在当前目录下检测并格式化输出所有集合空间与集合的数据与索引至 output.txt 文件。</p>
+      <codeblock>sdbdmsdump -d . -o output.txt -v true -a all -t true -i true -p true</codeblock>
+    </section>
+  </body>
+</topic>

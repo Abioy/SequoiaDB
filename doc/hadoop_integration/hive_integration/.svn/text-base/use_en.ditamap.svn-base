@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>Use</title>
+ <topicref href="../hive_integration/use/use_en.dita">
+  <topicref href="../hive_integration/use/create_en.dita"/>
+  <topicref href="../hive_integration/use/insert_en.dita"/>
+  <topicref href="../hive_integration/use/inquiry_en.dita"/>
+ </topicref>
+</map>

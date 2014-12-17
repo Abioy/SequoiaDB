@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_bvx_53q_fm">
+  <title>Use</title>
+  <body>
+    <ul>
+      <li><xref href="./create_en.dita">Create a Table Based SequoiaDB</xref></li>
+      <li><xref href="./insert_en.dita">Importing Data form HDFS Files to SequoiaDB Table</xref></li>
+      <li><xref href="./inquiry_en.dita">Query Data</xref></li>
+    </ul>
+  </body>
+</topic>

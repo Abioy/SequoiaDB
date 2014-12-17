@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_fkw_lgt_5n">
+  <title>query.limit()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>limit - Limit the maximum number of returned records.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>query.limit</apiname>(<parmname>[num]</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Query
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Limit the maximum number of returned records.</p>
+      <parml>
+        <plentry>
+          <pt>num (int)</pt>
+          <pd>The parameter "num" specifies the maximum number of returned records.
+            <parml>
+              <plentry>
+                <pt>Format</pt>
+                <pd>The method "query.limit()" contains the parameter "num". It is in the type of "int". If
+                  the value of "num" is not specified, it will return all the records in the result set. If only the first 5 records are wanted, the value of "num"should be set as 5.</pd>
+              </plentry>
+            </parml></pd>
+        </plentry>        
+      </parml>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Select records with the value of "age" greater than 10 in the collection "bar" and
+        return the first 10 records.</p>
+      <codeblock>db.foo.bar.find({age:{$gt:10}}).limit(10)</codeblock>     
+    </section>
+    <note>
+      <p>If the amount of records in the result set is lesser than 10, it will return all the
+        records. If it is greater than 10, it will return the first 10 records.</p>
+    </note>
+  </body>
+  <related-links>
+    <link href="query_cond.hint.dita" format="dita" type="topic"></link>
+    <link href="query_cond.skip.dita" format="dita" type="topic"></link>
+    <link href="query_cond.limit.dita" format="dita" type="topic"></link>
+    <link href="cl.find.dita" format="dita" type="topic"></link>    
+  </related-links>
+</topic>

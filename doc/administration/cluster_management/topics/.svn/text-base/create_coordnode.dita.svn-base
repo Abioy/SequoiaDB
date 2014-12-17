@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_nps_2jx_tk">
+  <title>新增协调节点</title>
+  <body>
+    <p>当集群规模扩大时，协调节点也需要随着规模的增加而进行增加。建议匹配时，一台物理节点，配置一个协调节点。</p>
+    <p>1. 创建协调节点配置目录；</p><codeblock>mkdir -p /opt/sequoiadb/conf/local/11810</codeblock>
+    <p>其中11810为协调节点的服务端口，可根据需要配置</p>
+    <p>2. 拷贝协调节点样例配置文件；</p><codeblock>cp /opt/sequoiadb/conf/samples/sdb.conf.coord /opt/sequoiadb/conf/local/11810/sdb.conf</codeblock>
+    <p>3. 修改配置文件；<codeblock>vi /opt/sequoiadb/conf/local/11810/sdb.conf</codeblock></p>
+      <p>修改内容</p><codeblock># database path dbpath=/opt/sequoiadb/database/coord</codeblock> 
+      <p>该参数为数据库放置路径，可根据需要修改，请确保路径已经存在（不存在请手工创建）</p>
+      <p>将如下行：</p><codeblock># catalog addr(hostname1:servicename1,hostname2:servicename2,...) 
+# catalogaddr=</codeblock>
+      <p>修改</p><codeblock># catalog addr(hostname1:servicename1,hostname2:servicename2,...)
+catalogaddr=sdbserver1:11803,sdbserver2:11803,sdbserver3:11803</codeblock>  
+      <p>该参数为Catalog服务地址和端口</p>
+    <p>4. 按 :wq，保存退出 vi；</p>
+    <p>5. 创建数据文件存放路径；</p><codeblock>mkdir -p /opt/sequoiadb/database/coord</codeblock>
+    <p>路径为上一步骤配置的路径</p>
+    <p>6. 启动协调节点进程。</p><p><codeblock>/opt/sequoiadb/bin/sdbstart -c /opt/sequoiadb/conf/local/11810/</codeblock></p>
+  </body>
+</topic>

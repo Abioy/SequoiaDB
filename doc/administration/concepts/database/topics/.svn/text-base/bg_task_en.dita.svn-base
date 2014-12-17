@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_1yc_szk_5n">
+  <title>Background Task</title>
+  <body>
+    <p>Background task is SequoiaDB a aprticular type of task, generally for a specific user actions into the background asynchronously. In the snapshot, the background task type(Type) as "Task".</p>
+    <p>Background task list type:</p>
+    <simpletable>
+      <sthead>
+        <stentry>Task Name</stentry>
+        <stentry>Description</stentry>
+      </sthead>
+      <strow>
+        <stentry>Restore</stentry>
+        <stentry>Database recovery task, according to the log file for database rollback recovery.</stentry>
+      </strow>
+      <strow>
+        <stentry>Job[PageCleaner]</stentry>
+        <stentry>Dirty pages cleanup tasks will not be written for asynchronous disk brush dirty pages to disk. You can use the "-numpagecleaners" control the number of dirty pages clear mission, the default is 1.</stentry>
+      </strow>
+      <strow>
+        <stentry>Job[Prefetch]</stentry>
+        <stentry>Prefetch tasks while waiting for the next client receives an operation request to perform the next operation of the user may occur in the background. You can use "-maxprefpool" to control teh maximum number of prefetch task.</stentry>
+      </strow>
+      <strow>
+        <stentry>CreateIndex</stentry>
+        <stentry>Indexing tasks for backgound indexing, multi-node for heavy equipment operation log shots indexing node.</stentry>
+      </strow>
+      <strow>
+        <stentry>DropIndex</stentry>
+        <stentry>Delete indexing task, delete the index for the background, used heavy equipment shots node node to delete the index operation log.</stentry>
+      </strow>
+      <strow>
+        <stentry>CleanUp</stentry>
+        <stentry>Data cleaning tasks, and more after the cut points for data, delete the source data node segmentation data.</stentry>
+      </strow>
+      <strow>
+        <stentry>Job[ExtendSegment]</stentry>
+        <stentry>File extension collection space mission, when a collection of space for free after less than a certain threshold data 
+        pages form the background to start a collection of asynchronous expansion space.</stentry>
+      </strow>
+    </simpletable>
+  </body>
+</topic>
+

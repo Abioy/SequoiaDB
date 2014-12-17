@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_j3r_5jy_wj">
+  <title>SequoiaDB 服务器安装部署</title>
+  <body>    
+    <p>安装部署分为自动化安装和手工安装两种方式，用户可以选择其中一种进行安装：</p>
+    <p><xref href="../autoin_en.dita">自动化安装部署</xref></p>
+    <p><xref href="../manualin_en.dita">手工安装部署</xref></p>   
+  </body>
+</topic>

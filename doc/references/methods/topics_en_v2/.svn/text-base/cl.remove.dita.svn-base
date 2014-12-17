@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_3wp_zgm_5n">
+  <title>db.collectionspace.collection.remove()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>remove - Delete records from the current collection.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.collectionspace.collection.remove</apiname>(<parmname>[cond]</parmname>,<parmname>[hint]</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Collection
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Delete records from the current collection.</p>
+      <parml>
+        <plentry>
+          <pt>cont (json object)</pt>
+          <pd>Selecting condition. If it is null, it will delete all the records. If it is not
+            null, delete the records that match the condition.</pd>
+        </plentry>
+        <plentry>
+          <pt>hint (json object)</pt>
+          <pd>Specify access plan.
+            <parml>
+              <plentry>
+                <pt>Format</pt>
+                <pd>The "cond" is a json object. When it is null (e.g. {} ), delete all records in
+                  the collection. "hint" is a json object that contains a single element. The field name of
+                  this element is ignored. But the value of the field in it is specified as the name of index
+                  which is needed to visit. When the value of field is null, it will visit all the records in
+                  the collection.</pd>
+                <pd>{[{"Field name 1":{"Match Operator 1":"value 1","Field name 2":{"Match Operator 2":"value 2"},...}],[{"":"index name"|null}]}</pd>
+              </plentry>
+            </parml></pd>
+        </plentry>        
+      </parml>            
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Delete all the records in the collection "bar".</p>
+      <codeblock>db.foo.bar.remove()</codeblock>
+      <p>Delete records that match the condition in "cond" according to access plan.</p>
+      <codeblock>db.foo.bar.remove({age:{$gte:20}},{"":"myIndex"})</codeblock>
+      <p>This operation accesses all the records in the current collection according to the index named "myIndex", then it deletes all the records that match the condition(with a value greater than or equal to 20 in "age" field. </p>
+    </section>
+  </body>
+  <related-links>
+    <link href="cl.find.dita" format="dita" type="topic"></link>
+    <link href="cl.createIndex.dita" format="dita" type="topic"></link>    
+  </related-links>
+</topic>

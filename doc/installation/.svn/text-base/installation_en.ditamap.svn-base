@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="Installation">
+ <topicref href="topics/install_overview_en.dita">
+  <anchorref href="deploy/deploy_en.ditamap"/>
+  <anchorref href="system_require/system_require_en.ditamap"/>
+  <topicref href="topics/install_media_en.dita"></topicref>
+  <anchorref href="server_installation/server_installation_en.ditamap"/>
+  <topicref href="topics/startweb_en.dita"></topicref>
+  <anchorref href="configuration_start/configuration_start_en.ditamap"/>
+  <topicref href="topics/testEM_en.dita"></topicref>
+  <anchorref href="uninstall/uninstall_en.ditamap"/>
+  <anchorref href="upgrade/upgrade_en.ditamap"/>
+ </topicref>
+</map>

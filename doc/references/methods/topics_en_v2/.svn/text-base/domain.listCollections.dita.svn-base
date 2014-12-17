@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_cyy_mbb_q4">
+  <title>domain.listCollections()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>listCollections - Enumerate collections.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>domain.listCollections</apiname>()
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Domain
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Enumerate collections. It will return the information of every collection in a domain.</p>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p><codeblock>domain.listCollections()</codeblock></p>
+      <p>Return:</p>
+      <codeblock>    { 
+        "Name": "foo.bar"
+      }</codeblock>
+    </section>
+  </body>
+  <related-links>
+    <link href="domain.listCollectionSpaces.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

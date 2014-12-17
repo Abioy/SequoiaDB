@@ -1,0 +1,575 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/15128/trunk/doc/references/sql_grammar/topics
+END
+sql_grammar_list.dita
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sql_grammar_list.dita
+END
+as.dita
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/as.dita
+END
+insert.dita
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/insert.dita
+END
+sqlimit_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqlimit_en.dita
+END
+sqpush_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqpush_en.dita
+END
+order_by.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/order_by.dita
+END
+min_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/min_en.dita
+END
+max_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/max_en.dita
+END
+squpdate_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/squpdate_en.dita
+END
+left_join.dita
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/left_join.dita
+END
+mergearrayset.dita
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/mergearrayset.dita
+END
+where.dita
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/where.dita
+END
+sqaddtoset.dita
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqaddtoset.dita
+END
+list_cl_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/list_cl_en.dita
+END
+create_index_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/create_index_en.dita
+END
+sqfirst_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqfirst_en.dita
+END
+avg.dita
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/avg.dita
+END
+right_join_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/right_join_en.dita
+END
+select.dita
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/select.dita
+END
+create_cl.dita
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/create_cl.dita
+END
+list_cs_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/list_cs_en.dita
+END
+sqlimit.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqlimit.dita
+END
+delete_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/delete_en.dita
+END
+squpdate.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/squpdate.dita
+END
+sum_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sum_en.dita
+END
+order_by_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/order_by_en.dita
+END
+drop_cs.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/drop_cs.dita
+END
+create_index.dita
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/create_index.dita
+END
+left_join_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/left_join_en.dita
+END
+drop_index.dita
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/drop_index.dita
+END
+avg_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/avg_en.dita
+END
+delete.dita
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/delete.dita
+END
+sqjoin.dita
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqjoin.dita
+END
+create_cl_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/create_cl_en.dita
+END
+drop_cl_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/drop_cl_en.dita
+END
+sqselect_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqselect_en.dita
+END
+sqlast.dita
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqlast.dita
+END
+sqsum.dita
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqsum.dita
+END
+create_cs_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/create_cs_en.dita
+END
+count_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/count_en.dita
+END
+drop_cs_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/drop_cs_en.dita
+END
+join_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/join_en.dita
+END
+drop_cl.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/drop_cl.dita
+END
+sql_grammar_list_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/10338/trunk/doc/references/sql_grammar/topics/sql_grammar_list_en.dita
+END
+sqpush.dita
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqpush.dita
+END
+min.dita
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/min.dita
+END
+insert_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/insert_en.dita
+END
+sqmax.dita
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqmax.dita
+END
+sqfirst.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqfirst.dita
+END
+sqcount.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqcount.dita
+END
+limit_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/limit_en.dita
+END
+update_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/update_en.dita
+END
+addtoset.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/addtoset.dita
+END
+group_by_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/group_by_en.dita
+END
+split_by.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/split_by.html
+END
+sqinsert.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqinsert.dita
+END
+sqmin_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqmin_en.dita
+END
+sqmax_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqmax_en.dita
+END
+buildobj_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/buildobj_en.dita
+END
+limit.dita
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/limit.dita
+END
+sqavg.dita
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqavg.dita
+END
+update.dita
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/update.dita
+END
+sqselect.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqselect.dita
+END
+split_by.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/split_by.dita
+END
+as_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/as_en.dita
+END
+group_by.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/group_by.dita
+END
+sqdelete_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqdelete_en.dita
+END
+buildobj.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/buildobj.dita
+END
+sqsum_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqsum_en.dita
+END
+right_join.dita
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/right_join.dita
+END
+sqaddtoset_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqaddtoset_en.dita
+END
+join.dita
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/join.dita
+END
+list_cs.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/list_cs.dita
+END
+select_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/select_en.dita
+END
+sqavg_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqavg_en.dita
+END
+last.dita
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/last.dita
+END
+sum.dita
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sum.dita
+END
+sqdelete.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqdelete.dita
+END
+split_by_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/split_by_en.dita
+END
+offset_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/offset_en.dita
+END
+drop_index_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/drop_index_en.dita
+END
+sqcount_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqcount_en.dita
+END
+push.dita
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/push.dita
+END
+max.dita
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/max.dita
+END
+sqjoin_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqjoin_en.dita
+END
+offset.dita
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/offset.dita
+END
+first.dita
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/first.dita
+END
+sqmin.dita
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/sqmin.dita
+END
+create_cs.dita
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/create_cs.dita
+END
+count.dita
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/count.dita
+END
+sqlast_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqlast_en.dita
+END
+list_cl.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/13758/trunk/doc/references/sql_grammar/topics/list_cl.dita
+END
+sqinsert_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/sqinsert_en.dita
+END
+mergearrayset_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/mergearrayset_en.dita
+END
+where_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/9949/trunk/doc/references/sql_grammar/topics/where_en.dita
+END

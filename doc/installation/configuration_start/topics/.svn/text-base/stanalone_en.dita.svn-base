@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qh4_p4y_wj">
+  <title>Configuration and Startup of Standalone Mode</title>
+  <body>
+    <p><b>Explanation:</b>
+    </p>
+    <p>&nbsp;&nbsp;(1) This section will take the easiest deployment as an example to introduce
+      configuration and startup steps.</p>
+    <p>&nbsp;&nbsp;(2) The following manipulation supposes that SequoiaDB is installed under the
+      catalog "/opt/sequoiadb".</p><p>&nbsp;&nbsp;(3) All of "sdb" service processes run as "sdbadmin", please ensure all of the
+      database files have the "sdbadmin" read and write permissions.</p>
+    <ul>
+      <li>Switch to "sdbadmin"<codeblock>su sdbadmin </codeblock></li>
+      <li>Start SequoiaDB Shell (the following instruction will set default installing path as /opt/sequoiadb)<p><codeblock>/opt/sequoiadb/bin/sdb</codeblock></p></li>      
+      <li>Connect to local cluster management service process sdbcm<codeblock>var oma = new Oma("localhost", 11790)</codeblock></li>
+      <li>Create data node of standalone mode.<codeblock>oma.createData(11810, "/opt/sequoiadb/database/standalone/11810")</codeblock>(Here 11810 is the port of database service. To avoid port conflicts and other issues, not the database 
+        port configuration in the random port range. Such as: Most linux default random port range of 32768~61000 can be configured in the database port 32767 or less.)<p></p></li>
+      <li>Start the node.<codeblock>oma.startNode(11810)</codeblock></li>      
+      <li>Finish configuration and startup of database</li>
+    </ul>
+  </body>
+</topic>

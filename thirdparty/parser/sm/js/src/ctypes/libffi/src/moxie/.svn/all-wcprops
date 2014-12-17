@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/moxie
+END
+eabi.S
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/moxie/eabi.S
+END
+ffitarget.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/moxie/ffitarget.h
+END
+ffi.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/moxie/ffi.c
+END

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console">
+  <title>Operator</title>
+  <body>
+    <section><title>Matching records</title>
+      <p>
+        <simpletable id="references_console_match_table">
+          <sthead>
+            <stentry>Match</stentry>
+            <stentry>Description</stentry>
+            <stentry>Sample</stentry>
+          </sthead>
+          <strow>
+            <stentry><xref href="gt_en.dita">$gt</xref></stentry>
+            <stentry>Greater than </stentry>
+            <stentry>db.foo.bar.find({age:{$gt:20}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="gte_en.dita">$gte</xref></stentry>
+            <stentry>Greater than or equal to </stentry>
+            <stentry>db.foo.bar.find({age:{$gte:20}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="plt_en.dita">$lt</xref></stentry>
+            <stentry>Lesser than </stentry>
+            <stentry>foo.bar.find({age:{$lt:20}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="lte_en.dita">$lte</xref></stentry>
+            <stentry>Lesser than or equal to </stentry>
+            <stentry>db.foo.bar.find({age:{$lte:20}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="pne_en.dita">$ne</xref></stentry>
+            <stentry>Unequal to </stentry>
+            <stentry>db.foo.bar.find({age:{$ne:20}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="pet_en.dita">$et</xref></stentry>
+            <stentry>equal to </stentry>
+            <stentry>db.foo.bar.find({age:{$et:20}})</stentry>
+          </strow>
+
+              <strow>
+                <stentry><xref href="mod_en.dita">$mod</xref></stentry>
+                <stentry>modulo</stentry>
+                <stentry>db.foo.bar.find({age:{$mod:[6,5]}})</stentry>
+              </strow>
+          <strow>
+            <stentry><xref href="pin_en.dita">$in</xref></stentry>
+            <stentry>Exist in the collection</stentry>
+            <stentry>db.foo.bar.find({age:{$in:[20,21]}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="isnull.dita">$isnull</xref></stentry>
+            <stentry>is "null" or does not exist.</stentry>
+            <stentry>Db.foo.bar.find({$age:{$isnull:1}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="nin_en.dita">$nin</xref></stentry>
+            <stentry>Not exist in the collection</stentry>
+            <stentry>db.foo.bar.find({age:{$nin:[20,21]})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="pall_en.dita">$all</xref></stentry>
+            <stentry>All</stentry>
+            <stentry>db.foo.bar.find({age:{$all:[20,21]}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="and_en.dita">$and</xref></stentry>
+            <stentry>And</stentry>
+            <stentry>db.foo.bar.find({$and:{age:20},{name:"Tom"}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="not_en.dita">$not</xref></stentry>
+            <stentry>Not</stentry>
+            <stentry>db.foo.bar.find({$not:{age:20},{name:"Tom"}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="por_en.dita">$or</xref></stentry>
+            <stentry>Or</stentry>
+            <stentry>db.foo.bar.find({$or:{age:20},{name:"Tom"}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="type_en.dita">$type</xref></stentry>
+            <stentry>Data type</stentry>
+            <stentry>db.foo.bar.find({age:{$type:16}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="exists_en.dita">$exists</xref></stentry>
+            <stentry>Exists</stentry>
+            <stentry>db.foo.bar.find({age:{$exists:1}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="elemMatch_en.dita">$elemMatch</xref></stentry>
+            <stentry>Match elements</stentry>
+            <stentry>db.foo.bar.find({age:{$elemMatch:20}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="special_en.dita">$+Identifier</xref></stentry>
+            <stentry>Matching array elements</stentry>
+            <stentry>db.foo.bar.find({"array.$2":10})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="psize_en.dita">$size</xref></stentry>
+            <stentry>Size</stentry>
+            <stentry>db.foo.bar.find({array:{$size:3}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="pregex_en.dita">$regex</xref></stentry>
+            <stentry>Regular </stentry>
+            <stentry>db.foo.bar.find({str:{$regex:'dh.*fj',$options:'i'}})</stentry>
+          </strow>
+          <!--<strow>
+            <stentry><xref href="regex_en.dita">$options</xref></stentry>
+            <stentry>Regex options</stentry>
+            <stentry>db.foo.bar.find({str:{$regex:'dh.*fj',$options:'i'}})</stentry>
+          </strow>-->
+        </simpletable>
+      </p>
+    </section>
+    <section><title>Update rule</title>
+      <p>
+        <simpletable><!-- id="references_console_update_table" relcolwidth="1.57* 1.0* 4.51* 2.88*">-->
+          <sthead>
+            <stentry>Undate operator</stentry>
+            <stentry>Description</stentry>
+            <stentry>Information</stentry>
+            <stentry>Sample</stentry>
+          </sthead>
+          <strow>
+            <stentry><xref href="inc_en.dita">$inc</xref></stentry>
+            <stentry> Add</stentry>
+            <stentry> Add specified value to the value of specified field.</stentry>
+            <stentry>
+              db.foo.bar.update({$inc:{age:25}})
+            </stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="gset_en.dita">$set</xref></stentry>
+            <stentry> Set </stentry>
+            <stentry>Set the value of specified field as specified value. </stentry>
+            <stentry>
+              db.foo.bar.update({$set:{age:10}})
+            </stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="unset_en.dita">$unset</xref></stentry>
+            <stentry> Delete</stentry>
+            <stentry>Delete specified field in an object.</stentry>
+            <stentry>
+              db.foo.bar.update({$unset:{age:""}})
+            </stentry>
+          </strow>
+          <!--  
+              <row>
+                <entry><xref href="rename_en.dita">$rename</xref></entry>
+                <entry/>
+                <entry/>
+                <entry/>
+              </row>
+              -->
+          <strow>
+            <stentry><xref href="gaddtoset_en.dita">$addtoset</xref></stentry>
+            <stentry>Add to set</stentry>
+            <stentry>If the element to add doesn't exist in the array, the command add it, or it
+              will be ignored. <fig></fig>The target field should be array.</stentry>
+            <stentry>
+              db.foo.bar.update({$addtoset:{array:[3,4,5]}})
+            </stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="pop_en.dita">$pop</xref></stentry>
+            <stentry> Delete the last N value in an array</stentry>
+            <stentry> Delete the last N value in an array. The target field should be array.(If N is
+              lesser than 0, it<fig></fig> will delete the first N elements in the array.)</stentry>
+            <stentry>
+              db.foo.bar.update({$pop:{array:2}})
+            </stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="gpull_en.dita">$pull</xref></stentry>
+            <stentry> Delete value </stentry>
+            <stentry>Delete the specified value in a target array. The target field should be
+              array.</stentry>
+            <stentry>
+              db.foo.bar.update({$pull:{array:2}})
+            </stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="gpull_all_en.dita">$pull_all</xref></stentry>
+            <stentry> Delete array </stentry>
+            <stentry>Delete all the values of a speficied array in a target array. The target field
+              should be array.</stentry>
+            <stentry>
+              db.foo.bar.update({$pull_all:{array:[2,3,4}})
+            </stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="gpush_en.dita">$push</xref></stentry>
+            <stentry> Push value </stentry>
+            <stentry> Insert a value into a target array. The target field should be
+              array.</stentry>
+            <stentry>
+              db.foo.bar.update({$push:{array:2}})
+            </stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="gpush_all_en.dita">$push_all</xref></stentry>
+            <stentry> Push array </stentry>
+            <stentry>Insert all the values in a specified array into a target array. The target
+              field should be array.</stentry>
+            <stentry>
+              db.foo.bar.update({$push_all:{array:[2,3,4}})
+            </stentry>
+          </strow>
+        </simpletable>
+      </p>
+    </section>
+    <section>
+      <title>Aggregation operator</title>
+      <p>
+        <simpletable>
+          <sthead>
+            <stentry>Parameter name </stentry>
+            <stentry>Description </stentry>
+            <stentry>Example </stentry>
+          </sthead>
+          <strow>
+            <stentry><xref href="project_en.dita">$project</xref></stentry>
+            <stentry>Select the field name to be output, "1" indicates that the output "0" means no output, you can also implement fields. </stentry>
+            <stentry>{$project:{field1:1,field:0,aliase:"$field3"}} </stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="match_en.dita">$match</xref></stentry>
+            <stentry>Select the matching criteria to achieve from a collection of records, quite where the SQL statement.</stentry>
+            <stentry>{$match:{field:{$lte:value}}}</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="jlimit_en.dita">$limit</xref></stentry>
+            <stentry>Limit the number of records returned.</stentry>
+            <stentry>{$limit:10} </stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="jskip_en.dita">$skip</xref></stentry>
+            <stentry>Start point control of the result set, the result set that skips the number of records specified.</stentry>
+            <stentry>{$skip:5}</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="jgroup_en.dita">$group</xref></stentry>
+            <stentry>Achieve grouping of records, similar to SQL's group by statement, "_id" designated group field.</stentry>
+            <stentry>{$group:{_id:"$field"}}</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="jsort_en.dita">$sort</xref></stentry>
+            <stentry>Achieve the sort of result set "1" represents Ascending, "-1" for descending.</stentry>
+            <stentry>{$sort:{field1:1,field2:-1,...}}</stentry>
+          </strow>
+        </simpletable>
+      </p>
+      <p>$group Aggregation operator supports the following aggregate functions: <simpletable>
+        <sthead>
+          <stentry> Function name </stentry>
+          <stentry> Description </stentry>
+        </sthead>
+        <strow>
+          <stentry>
+            <xref href="j$addToSet_en.dita">$addtoset</xref>
+          </stentry>
+          <stentry> Adds the specified field values in the array, the same field value will be added once. </stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <xref href="jfirst_en.dita">$first</xref>
+          </stentry>
+          <stentry> Take packet field values in the first record. </stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <xref href="jlast_en.dita">$last</xref>
+          </stentry>
+          <stentry> Take packet field value in the record. </stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <xref href="jmax_en.dita">$max</xref>
+          </stentry>
+          <stentry> Take the maximum value of the packet field.</stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <xref href="jmin_en.dita">$min</xref>
+          </stentry>
+          <stentry> Take the smallest packet field values. </stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <xref href="javg_en.dita">$avg</xref>
+          </stentry>
+          <stentry> Take the average packet field values. </stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <xref href="j$push_en.dita">$push</xref>
+          </stentry>
+          <stentry> Add all the fields to the array, even if the same array of field values that already exist, and continue to add. </stentry>
+        </strow>
+        <strow>
+          <stentry>
+            <xref href="jsum_en.dita">$sum</xref>
+          </stentry>
+          <stentry> Take the sum of packet field values. </stentry>
+        </strow>
+      </simpletable></p>
+    </section>
+    <note>
+      <p> In SequoiaDB, the structure called JSON (field name: value) is used to express "=".Of
+        course , you can use <xref href="pet_en.dita"><i>$et</i></xref> operator.</p>
+      <p> Sample:</p>
+      <p> db.collectionspace.collection.find({a:42}) </p>
+      <p> This command find records that contains the value of "a" equal to 42.</p>
+    </note>
+  </body>
+</topic>

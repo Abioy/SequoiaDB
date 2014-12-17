@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="basic_shell">
+  <title>SequoiaDB shell 中的基本操作</title>
+  <body>
+    <p>在 shell 查看操作数据会用到4个基本操作：创建、读取、更新和删除（CRUD）。</p>
+    <ul>
+      <li><xref href="create.dita">创建</xref></li>
+      <li><xref href="read.dita">读取</xref></li>
+      <li><xref href="update.dita">更新</xref></li>
+      <li><xref href="delete.dita">删除</xref></li>
+    </ul>
+  </body>
+</topic>

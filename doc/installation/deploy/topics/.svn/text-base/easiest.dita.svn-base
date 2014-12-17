@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qvy_nsx_wj">
+  <title>最简部署</title>
+  <body>
+    <p>最简部署方式适用于对数据库要求不高：数据量不大，总吞吐不高，可靠性要求不高的应用。</p>
+    <p>在该部署模式中，SequoiaDB 采用独立模式只启动一个数据库服务进程，业务应用可以与数据库合部，也可以部署在另外一台服务器上。</p>
+    <image href="../images/easiest.jpg"></image>
+  </body>
+</topic>

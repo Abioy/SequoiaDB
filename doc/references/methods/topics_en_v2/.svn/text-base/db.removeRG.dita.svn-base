@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rm3_kkx_tn">
+  <title>db.removeRG()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>removeRG - Delete the specified replica group in the current database.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.removeRG</apiname>(<parmname>&lt;name></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Delete the specified replica group in the current database.</p>
+      <parml>
+        <plentry>
+          <pt>name (string)</pt>
+          <pd>Replica group name, All the replica group names are unique to each other in a database instance.
+            <parml>
+              <plentry>
+                <pt>Format</pt>
+                <pd>removeRG() only has one "name" parameter, it is required and its value should be a string.</pd>
+                <pd>(&lt;"replica group name">)</pd>
+              </plentry>
+            </parml>
+          </pd>          
+        </plentry>        
+      </parml>      
+      <note>
+        <ul><li>Replica group name must exist.</li>
+        </ul></note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Delete the replica group named "group".</p>
+      <codeblock>db.removeRG("group")</codeblock>
+    </section>
+  </body>
+  <related-links>
+    <link href="db.getRG.dita" format="dita" type="topic"></link>
+    <link href="db.list.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11632/trunk/thirdparty/crypto/openssl-1.0.1c/lib/linux64
+END
+libcrypto.a
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/crypto/openssl-1.0.1c/lib/linux64/libcrypto.a
+END
+libssl.a
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11632/trunk/thirdparty/crypto/openssl-1.0.1c/lib/linux64/libssl.a
+END

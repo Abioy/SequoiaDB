@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_l5m_kwj_push">
+  <title>$push</title>
+  <body>
+    <section>
+      <title>描述</title>
+      <p>记录分组后，使用<b>$push</b>将指定字段值添加到数组中，即使数组中已经存在相同的值，也继续添加。对嵌套对象使用点操作符（.）引用字段名。</p>
+    </section>
+    <section>
+      <title>示例</title>
+      <ul>
+        <li>如下操作对记录分组后将指定字段值添加到数组中输出
+              <codeblock>db.collectionspace.collection.aggregate({$group:{_id:"$dep",Dep:{$first:"$dep"},push_age:{$push:"$info.age"}}})</codeblock><p>此操作对记录按dep字段值进行分组，每个分组中嵌套对象age字段的值使用<b>$push</b>放入数组中返回，输出字段名为push_age，如下：
+          </p><codeblock>{
+  "Dep": "物电学院",
+  "push_age": [
+    28,
+    18,
+    20,
+    30,
+    28,
+    20
+  ]
+}
+{
+  "Dep": "计算机学院",
+  "push_age": [
+    25,
+    20,
+    22
+  ]
+}</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="sum.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

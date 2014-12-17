@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_not">
+  <title >$not</title>
+  <body>
+    <section><title>Grammar</title>
+      <p><codeblock>{$not:[{&lt;expression 1>},{&lt;expression 2>},...,{&lt;expression N>}]}</codeblock></p>
+    </section>
+    <section>
+      <title>Description</title>
+      <p>The opration "$not" is a logcal "not". Its role is choose not to match expression(&lt;expression 1>&lt;expression 2>,...,&lt;expression N>) records. As long as it does not meet any one of these expressions, recording will return.</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>Select records that contains the value of "age" unequal to 20 or the value of "price"
+            equal to or greater than 10.</p>
+          <codeblock>db.foo.bar.find({$not:[{age:20},{price:{$lt:10}}]})</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="por_en.dita" format="dita" type="topic"></link>
+    <link href="type_en.dita" format="dita" type="topic"></link>
+    <link href="inc_en.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/find_en.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/dbupdate_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

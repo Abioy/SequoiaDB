@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_dvj_vyz_gm">
+  <title>db.listProcedures()</title>
+  <body>
+    <section><title>db.listProcedures([condition])</title>
+      <p>Enumerate all of the stored procedure fundtion.</p>
+    </section>
+    <section><title>Parameter Sescription</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 5.9* 1.0*"
+        id="references_method_count_table">-->
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Required</stentry>
+        </sthead>
+        <strow>
+          <stentry>condition</stentry>
+          <stentry>json</stentry>
+          <stentry>Conditions is empty, enumerate all the functions, is not empty, the enumeration aualified function.</stentry>
+          <stentry>Yes</stentry>
+        </strow>
+      </simpletable>
+      <p>Defined listProcedures() method, only a json lbject type parameter name condition, the function returns the input value 
+        matches the specified value, otherwise return all functions.</p>
+    </section>
+    <section><title>Example</title>
+      <ul>
+        <li>
+          <p>All functions return information</p>
+          <codeblock>>db.listProcedures()
+{ "_id" : { "$oid" : "52480389f5ce8d5817c4c353" }, "name" : "sum", "func" : "function sum(x, y) {
+    return x + y;
+}", "funcType" : 0 }
+{ "_id" : { "$oid" : "52480d3ef5ce8d5817c4c354" }, "name" : "getAll", "func" : "function getAll() {
+    return db.foo.bar.find();
+}", "funcType" : 0 }
+...</codeblock>
+        </li>
+        <li>
+          <p>Return function named sum specified records</p>
+          <codeblock>>db.listProcedures({name:"sum"})
+{ "_id" : { "$oid" : "52480389f5ce8d5817c4c353" }, "name" : "sum", "func" : "function sum(x, y) {
+    return x + y;
+}", "funcType" : 0 }</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="removeProcedure_en.dita" format="dita" type="topic"></link>
+    <link href="eval_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

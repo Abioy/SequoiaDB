@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ht3_v2x_tk_en">
+  <title>Create New Data Replica Group</title>
+  <body>
+    <note>If creating new nodes relate to create new master, please refer to the section <xref
+        href="../../create_host_en.dita">Add master to cluster</xref> to complete the configuration
+      of host name and params about master.</note>
+    <p>It can configure many data replica groups in a cluster, the max configurable is 60000. By adding
+      replica groups, you can take advantage of the physical device for horizontal
+      expansion, Theoretically, SequoiaDB can do linear horizontal scalability.</p>
+    <p>operation methods: </p>
+    <codeblock>> var dataRG = db.createRG("datagroup1")
+> dataRG.createNode("sdbserver1", 11820, "/opt/sequoiadb/database/data/11820")   
+> dataRG.start()</codeblock>
+    <p>The first command is used to create data replica group, and what different from catalog replica group is
+      that this operation will not create any data node. The param is the name of data replica group. </p>
+    <p>The second command is used to create a new node in the data replica group, many times as needed to
+      execute this command to create more data nodes.</p>
+    <p>amongs:</p>
+    <p><b>host </b>: specify the host name of catalog node.</p>
+    <p><b>service </b>: specify the service port of catalog node, please ensure this port and the next
+      three ports are unoccupied; for example, if set port 11820, then ensure 11820/11821/11822/11823
+      are unoccupied.</p>
+    <p><b>dbpath</b>: data file path, be used to store catalog data files, please ensure that the data
+      administrator user has write access.(created when installed, dafault <i>sdbadmin</i>).</p>
+    <p><b>config </b>: optional param, be used to configure more detail params. the form is json. param
+      list refer to the section <xref
+        href="../../../../database/topics/runtime_configuration_en.dita">database
+        configuration</xref>, for example configure the param of log size {logfilesz:64}.</p>
+    <p>The third command is used to start data replica group, and it will start all the data nodes and
+      provide sercices. </p>
+  </body>
+</topic>

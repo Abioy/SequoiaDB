@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_where">
+  <title>sql where</title>
+  <body>
+    <section><title>where 语句</title>
+      <p>用于规定选择的标准。</p>
+    </section>
+    <section><title>语法</title>
+      <p><codeblock>where field1_name &lt;运算符> value1 [and|or &lt;another condition>...]</codeblock></p>
+      <p>&lt;cs_name>：集合空间名</p>
+      <p>&lt;cl_name>：集合名</p>
+      <p>&lt;运算符>：现在可用的运算符包括：&lt;(小于)，>(大于)，&lt;=(小于等于)，>=(大于等于)，&lt;>(不等于)，=(等于)</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>如果希望选取age>10的记录，可以在select语句添加where子句：</p>
+          <p><codeblock>db.exec("select * from foo.bar where age>10") </codeblock></p>
+        </li>
+        <li>如果希望删除age>10的记录，也可以在delete语句中添加where子句：
+          <codeblock>db.execUpdate("delete from foo.bar where age>10")</codeblock>
+          当然同样能在update语句中添加where子句。</li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="delete.dita" format="dita" type="topic"></link>
+    <link href="group_by.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_in">
+  <title >$in</title>
+  <body>
+    <section><title>Grammar</title>
+      <p><codeblock>{&lt;field name>:{$in:[&lt;value 1>,&lt;value 2>,...&lt;value N>]}}</codeblock></p>
+    </section>
+    <section><title>Description</title>
+      <p>"$in" finds records that match any value of the array ([&lt;value 1>,&lt;value
+        2>,...&lt;value N>]) on the field ("field name") within a collection. If the field ("field
+        name") is in the type of array, records that match any value of the array ([&lt;value
+        1>,&lt;value 2>,...&lt;value N>]) on the field ("field name").</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>Find records with "age" value of 20 or 25 in the collection "bar": </p>
+          <codeblock>db.foo.bar.find({age:{$in:[20,25]}})</codeblock>
+        </li>
+        <li>
+          <p>When manipulating "$in" on array fields, the following expression finds records with
+            "name" value of "Tom" or "Mike" in the collection "bar", then deletes the field of "age"
+            in these records.</p>
+          <codeblock>db.foo.bar.update({<xref href="unset_en.dita">$unset</xref>:{age:""}},{name:{$in:["Tom","Mike"]}})</codeblock>
+        </li>
+      </ul>
+      <note> Array containing one value like {&lt;field name>:{$in:[&lt;value>]}} equals {&lt;field
+        name>:&lt;value>}.</note>
+      <codeblock>db.foo.bar.find({age:{$in:[20]}})is equivalent to db.foo.bar.find({age:20})</codeblock>
+    </section>
+  </body>
+  <related-links>
+    <link href="pne_en.dita" format="dita" type="topic"></link>
+    <link href="nin_en.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/find_en.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/dbupdate_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

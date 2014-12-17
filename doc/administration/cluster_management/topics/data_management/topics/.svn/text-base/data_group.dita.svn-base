@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ht3_v2x_tk">
+  <title>新增数据分区组</title>
+  <body>
+    <note>如果新增节点涉及到新增主机，则请首先按照在<xref href="../../create_host.dita">集群中新增主机</xref>一节完成主机的主机名和参数配置。</note>
+    <p>一个集群中可以配置多个分区组，最大可配置60,000个分区组。通过增加分区组，可以充分利用物理设备进行水平扩展，理论上 SequoiaDB 可以做到线性的水平扩展能力。</p>
+    <p>操作方法：</p><codeblock>> var dataRG = db.createRG("datagroup1")
+> dataRG.createNode("sdbserver1", 11820, "/opt/sequoiadb/database/data/11820")   
+> dataRG.start()</codeblock>
+    <p>第一条命令用于创建数据分区组，与编目分区组不同的是，该操作不会创建任何数据节点，其中参数为数据组名；</p>
+    <p>第二条命令用户在数据组中新增一个数据节点，可以根据需要多次执行该命令来创建多个数据节点。</p>
+    <p>其中：</p>
+    <p><b>host</b>：指定数据节点的主机名；</p>
+    <p><b>service</b>：指定数据节点的服务端口，请确保该端口号，以及往后延续的3个端口号未被占用；如设置为11820，请确保11820/11821/11822/11823端口都未被占用； </p>
+    <p><b>dbpath</b>：数据文件路径，用于存放数据节点的数据文件，请确保数据管理员（安装时创建，默认为 sdbadmin）用户有写权限；</p>
+    <p><b>config</b>：该参数为可选参数，用于配置更多细节参数，格式必须为 json 格式，参数参见<xref href="../../../../database/topics/runtime_configuration.dita">数据库配置</xref>一节；如需要配置日志大小参数｛logfilesz:64｝。</p>
+    <p>第三条命令用于启动数据分区组，该命令将该组的所有节点启动，并提供服务。 </p>
+  </body>
+</topic>

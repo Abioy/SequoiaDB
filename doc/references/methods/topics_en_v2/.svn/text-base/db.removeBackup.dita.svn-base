@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_wd4_bpf_5n">
+  <title>db.removeBackup()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>removeBackup - Delete the database backup.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.removeBackup</apiname>(<parmname>[options]</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Delete the database backup.</p>
+      <parml>
+        <plentry>
+          <pt>options (json object)</pt>
+          <pd>Set the backup name, specify the replica group, the backup path and other parameters.
+            <parml>
+              <plentry>
+                <pt>GroupID</pt>
+                <pd>Specify the ID of the backup replica group needs to be deleted. Delete all replica groups in default.</pd>
+                <pd>GroupID:1000 or GroupID:[1000, 1001]</pd>
+              </plentry>
+              <plentry>
+                <pt>GroupName</pt>
+                <pd>Specify the name of the backup replica group needs to be deleted. Delete all replica groups in default.</pd>
+                <pd>GroupName:"data1" or GroupName:["data1", "data2"]</pd>
+              </plentry>
+              <plentry>
+                <pt>Name</pt>
+                <pd> Backup name, delete all the backups in default.</pd>
+                <pd>Name:"backup-2014-1-1"</pd>
+              </plentry>
+              <plentry>
+                <pt>Path</pt>
+                <pd>Backup path, the default path is the one specified in the configuration. The path supports wildcards(%g%G: group name, %h%H:host name, %s%S:service name).</pd>
+                <pd>Path:"/opt/sequoiadb/backup/%g"</pd>
+              </plentry>
+              <plentry>
+                <pt>IsSubDir</pt>
+                <pd>Whether the path configured in the above Path parameter is a subdirectory of the backup path in the configuration. False in default.</pd>
+                <pd>IsSubDir:false</pd>
+              </plentry>
+              <plentry>
+                <pt>Prefix</pt>
+                <pd>Backup prefix, supports wildcards(%g,%G,%h,%H,%s,%H), default is empty.</pd>
+                <pd>Prefix:"%g_bk_"</pd>
+              </plentry>             
+            </parml>
+          </pd>
+        </plentry>        
+      </parml>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Delete the backup named "backup-2014-1-1" from the database.</p>
+      <codeblock>db.removeBackup({Name:"backup-2014-1-1"})</codeblock>
+    </section>
+  </body>
+</topic>

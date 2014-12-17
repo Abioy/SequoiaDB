@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_split">
+  <title>Split</title>
+  <body>
+    <section><title>Concept</title>
+      <p>A sharded collection is created in a random replset. If users want to horizontally expand
+        the collection and allocate it to more than one replset, data should be splited.</p>
+      <p>Split is an approach to transfer online data from one replset to another replset. In the
+        process of data transference, results of queries may not be consistent, but SequoiaDB can
+        guarantee the consistence of data in disks.</p>
+      <p>Range partitioning and Hash partition contains two kinds of segmentation methods: percentage range segmentation and segmentation. Cut in the range of 
+      time_sharing, Range partition using precise conditions, Hash partition using Partition (number of fragments) conditions. Cut timeshare start condition is 
+      a required field, and the end condition is optional condition, end condition defaults to split the source currently contains the maximum data range.</p>
+      <p>For example: </p><p>Hash: db.foo.bar.split('src', 'dst', {Partition:10}, {Partition:20})</p>
+      <p>Range: db.foo.bar.split('src','dst',{a:10}, {a:20})</p>
+      <p>Data segmentation adn data on the partition range are closed to the left to follow the principle of the right to open. Namely:{Partition:10}, {Partition:20} Migrating data representative of the range of [10, 20).</p>
+      <p>Percentage of segmentation: db.foo.bar.split('src', 'dst', 50)<note>
+                <p>When the split range does not conflict, segmentation can be done concurrently.</p>
+                <p>"src"、"dst" represent "the source partition group," "target partition group."</p>
+              </note></p>
+      <image href="../images/split.jpg"/>
+      <p>In this chart, the upper left part is the initial status of a system. 4 records are stored
+        in the left node. The split is defined to begin with 3, so data 3 and 4 will be splited from
+        the left node, and transferred to the right node (the lower left part of the chart).</p>
+      <p>The upper right part is the 3rd status, two replsets store the same part of data at the
+        same time. At this moment, data is temporarily inconsistent. But the final status is
+        transformed into the 4th one in the lower right part. Data which is successfully transferred
+        is deleted. Data is consistent finally.</p>
+      <p>Two replsets communicate with each other in the process of data split:</p>
+      <ul>
+        <li>source replset: data is originally stored in this replset</li>
+        <li>target replset: data is transferred to this replset</li>
+      </ul>      
+    </section>
+    <section><title>Background Task</title>
+      <p>Data splie is executed by a <xref href="task_en.dita">background task</xref>。</p>
+      <p>This kind of background task contains several special fields:</p>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 2.26*"
+        id="administration_concepts_split_table1">-->
+        <sthead>
+          <stentry>Field Name</stentry>
+          <stentry>Type</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry>SourceName</stentry>
+          <stentry>String</stentry>
+          <stentry>Source replset name</stentry>
+        </strow>
+        <strow>
+          <stentry>TargetName</stentry>
+          <stentry>String</stentry>
+          <stentry>Target replset name</stentry>
+        </strow>
+        <strow>
+          <stentry>SourceID</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Source replset ID</stentry>
+        </strow>
+        <strow>
+          <stentry>TargetID</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Target replset ID</stentry>
+        </strow>
+        <strow>
+          <stentry>SplitValue</stentry>
+          <stentry>Object</stentry>
+          <stentry>Data split key</stentry>
+        </strow>
+      </simpletable>
+      <p>Split is executed through several stages:</p>
+      <dl>
+        <dlentry>
+          <dt>Prepare Phase</dt>
+          <dd>In preparing phase, no task record is inserted into SYSCAT.SYSTASKS of catalog node.
+            The system checks the validity of request in catalog node, and requests the record which
+            meets the specific split condition from source node.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Ready Phase</dt>
+          <dd>In ready phase, coord node gets sharding key corresponding to split condition from
+            source node, and sends it to catalog node. Catalog node inserts background execution
+            records into the collection called SYSCAT.SYSTASKS.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Running Phase</dt>
+          <dd>In running phase, catalog node sends split request to target node. Target node
+            generates a background task, requests data from source node, and sends its status to
+            catalog node. When target node successfully generate a background task, catalog node can
+            immediately continue to work. So catalog node won't be blocked by  target node. </dd>
+        </dlentry>
+        <dlentry>
+          <dt>Clean-up Phase</dt>
+          <dd>In clean-up phase, target node has got all data it needs from source node, so it sends
+            clean-up request to catalog node, then source node clean up data that has transferred. </dd>
+        </dlentry>
+        <dlentry>
+          <dt>Finish Phase</dt>
+          <dd>After source node clean up data that has transferred, it informs catalog node. Catalog
+            deletes the task in the collection SYSCAT.SYSTASKS.</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </body>
+  <related-links>
+    <link href="SYSTASKS_en.dita"/>
+  </related-links>
+</topic>

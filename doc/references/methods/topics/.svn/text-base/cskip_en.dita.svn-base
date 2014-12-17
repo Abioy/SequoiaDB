@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_methods_skip">
+  <title>cursor.skip()</title>
+  <body>
+    <section><title>cursor.skip(&lt;num>)</title>
+      <p>It is used to specify the first returned record.</p>
+    </section>
+    <section><title>Parameter description</title>
+      <simpletable id="references_method_skip_table">
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Not null</stentry>
+        </sthead>
+        <strow>
+          <stentry>num         </stentry>
+          <stentry>int                </stentry>
+          <stentry>Specify the amount of records in returned result set. </stentry>
+          <stentry>No</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section>
+      <title>Format</title>
+      <p>The method "cousor.skip()" contains the parameter "num". It is in the type of "int". If the
+        value of "num" is null, or it is 0, the method will return the whole result set. </p>
+      <p>If you want to get a result set that begin with the 3rd record, you should set the value of
+        "num" as "2".</p>
+
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>Select records with the value of "age" greater than 10 and return records which begin
+            with the 5th record. That's to say, it will skip the fisrt 4 records.</p>
+          <p><codeblock>db.foo.bar.find({age:{<xref href="../../console/topics/gt_en.dita">$gt</xref>:10}}).skip(4)</codeblock></p>
+        </li>
+      </ul>
+      <note>
+        <p>If the amount of records in a result set is lesser than 5, no record will be returned. If
+          the amount of records in a result set is greater than 5, it will return records which
+          starts with the 5th record. </p>
+      </note>
+    </section>
+  </body>
+  <related-links>
+    <link href="hint_en.dita" format="dita" type="topic"></link>
+    <link href="ccurrent_en.dita" format="dita" type="topic"></link>
+    <link href="find_en.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/gt_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

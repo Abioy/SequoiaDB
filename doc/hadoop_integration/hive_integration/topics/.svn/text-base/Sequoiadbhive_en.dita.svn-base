@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_5tr_2hq_fm">
+  <title>SequoiaDB List of The Supported Versions Hive</title>
+  <body>   
+    <ul id="sequoiadb_hadoop">
+      <li>Apache Hive 0.12.0</li>
+      <li>Apache Hive 0.11.0</li>
+      <li>Apache Hive 0.10.0</li>
+      <li>CDH-5.0.0-beta-2 Hive 0.12.0</li>
+    </ul>
+    <note><p>hive-sequoiadb-apache.jar support for the Apache version of Hive Sequoiadb-Hive-Connector.</p>
+      <p>hive-sequoiadb-cdh-5.0.0-beta-2.jar support for the CDH5.0.0-beta-2 version of Hive-0.12 Sequoiadb-Hive-Connector.</p>
+    </note>
+  </body>
+</topic>

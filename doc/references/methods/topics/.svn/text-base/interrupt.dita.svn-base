@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_4mk_ytq_t4">
+  <title>db.forceSession()</title>
+  <body>
+    <section><title>db.forceSession(&lt;sessionID>)</title>
+      <p>终止指定会话的当前操作。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>sessionID</stentry>
+          <stentry>int</stentry>
+          <stentry>会话编号。</stentry>
+          <stentry>是</stentry>
+        </strow>        
+      </simpletable>      
+    </section>       
+      <note>
+        <ul>
+          <li>只有用户会话可以被终止。</li>
+        </ul>
+      </note>    
+    <section><title>示例</title>
+      <ul>
+        <li><p>终止编号为100的会话。</p>
+          <p><codeblock>db.forceSession(100)</codeblock></p>
+        </li>        
+      </ul>
+    </section>
+  </body>
+</topic>

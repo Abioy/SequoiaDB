@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_cluster_node">
+  <title>Node</title>
+  <body>
+    <section><title>Concept</title>
+      <p>In cluster mode of SequoiaDB, there are 2 kinds of nodes: physical nodes and logical
+        nodes</p>
+      <dl>
+        <dlentry>
+          <dt>Logical Node</dt>
+          <dd>
+            <p>Logical node is an independent service, representing the most basic database service
+              logical unit.</p>
+            <p>In Windows OS and Unix OS, a logical node is a sequoiaDB process. There can be
+              mutiple logical nodes running on a compute.</p>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt>Physical Node</dt>
+          <dd>
+            <p>Physical node is a server which runs an OS,  representing the most basic database service physical unit.</p>
+            <p>In virtual environment, a physical node is a vortual machine.</p>
+          </dd>
+        </dlentry>
+      </dl>
+      <p>Multiple logical nodes can run on a physical nodes. Gnerally, each logical node on the same
+        physical node listens to different ports, receives request from their corresponding ports,
+        and returns results.</p>
+      <p><image href="../images/logical_physicalnode_en.jpg" id="administration_concepts_cluster_node_img1"/></p>
+    </section>
+  </body>
+</topic>

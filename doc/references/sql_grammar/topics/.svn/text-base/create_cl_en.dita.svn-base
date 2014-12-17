@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_createCL_en">
+  <title>sql create collection</title>
+  <body>
+    <section><title>create collection </title>
+      <p>Be used to create collectio, must specify the collection in which collectionspace.</p>
+    </section>
+    <section><title>Grammer</title>
+      <p><codeblock>create collection &lt;cs_name>.&lt;cl_name></codeblock></p>
+      <p>&lt;cs_name>：collectionspace in database</p>
+      <p>&lt;cl_name>：collection name.the length of it can't exceed 127Byte,and collection name
+        can't be empty ,and can't exist same collection name in a collectionspace.</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>create collection <i>bar</i> in the collectionspace <i>foo</i></p>
+          <p><codeblock>db.execUpdate("create collection foo.bar") //Equivalent db.foo.createCL("bar")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="drop_cs_en.dita" format="dita" type="topic"></link>
+    <link href="drop_cl_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

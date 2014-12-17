@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/16267/trunk/driver/C%23.Net/Driver/util
+END
+ByteBuffer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/9949/trunk/driver/C%23.Net/Driver/util/ByteBuffer.cs
+END
+SDBMessageHelper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/16267/trunk/driver/C%23.Net/Driver/util/SDBMessageHelper.cs
+END
+Helper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/driver/C%23.Net/Driver/util/Helper.cs
+END
+Logger.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/driver/C%23.Net/Driver/util/Logger.cs
+END

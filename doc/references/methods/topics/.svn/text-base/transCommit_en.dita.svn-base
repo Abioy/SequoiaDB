@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_zyg_p3z_gm">
+  <title>db.transCommit()</title>
+  <body>
+    <section><title>db.transCommit()</title>
+      <p>Transaction commits. After the open transaction, the operation if a single logical unit of work performed without exception, execute transaction commit 
+      command, the data of the database will be update.</p>
+    </section>
+    <section><title>Example</title>
+      <ul>
+        <li><p>Transaction commit command:</p>
+          <p><codeblock>db.transCommit() </codeblock></p></li>
+      </ul>
+      
+    </section>
+  </body>
+  <related-links>
+    <link href="transBegin_en.dita"></link>
+    <link href="transRollback_en.dita"></link>
+  </related-links>
+</topic>

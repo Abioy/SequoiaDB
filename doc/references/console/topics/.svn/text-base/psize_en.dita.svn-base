@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_size">
+  <title >$size</title>
+  <body>
+    <section><title>Grammar</title>
+      <p>{"&lt;field name>":{$size:"&lt;value>"}}</p>
+    </section>
+    <section><title>Description</title>
+      <p>By applying the operator "$size", users can find records that contain an array field named
+        "field name", the length of which should be equal to "value".</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>Return records that contain the array field "arr" </p>
+        <p>db.foo.bar.find({arr:{$size:2}})</p></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="elemMatch_en.dita" format="dita" type="topic"></link>
+    <link href="pregex_en.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/find_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

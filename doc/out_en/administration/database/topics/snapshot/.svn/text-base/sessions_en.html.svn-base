@@ -1,0 +1,356 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Sessions Snapshot"/>
+<meta name="description" content="Description Sessions snapshot contains all the sessions between users and system on current database node. Each session is recorded as one record. Sign SDB_SNAP_SESSIONS Field Information Field ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/database/topics/snapshot/snapshot_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_database_monitoring_snapshot_sessions"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Sessions Snapshot</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_database_monitoring_snapshot_sessions"><a name="administration_database_monitoring_snapshot_sessions"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/database/topics/snapshot/snapshot_en.html" title="Snapshot"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Snapshot</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../monitoring_en.html" title="Monitoring">Monitoring</a> / <a class="navheader_parent_path" href="../../../../administration/database/topics/snapshot/snapshot_en.html" title="Snapshot">Snapshot</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Sessions Snapshot</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Description</h2>
+      <p class="p">Sessions snapshot contains all the sessions between users and system on current database
+        node. Each session is recorded as one record.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Sign</h2>
+      <p class="p">SDB_SNAP_SESSIONS</p>
+
+    </div>
+
+    
+    <div class="section"><h2 class="title sectiontitle">Field Information</h2>
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d56718e34" class="stentry">Field Information</th>
+
+          <th valign="bottom" align="left" id="d56718e37" class="stentry">Type</th>
+
+          <th valign="bottom" align="left" id="d56718e40" class="stentry">Description</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">SessionID</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Integer or long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Session ID(Hostname:Port:ID)</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">TID</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">System thread ID corresponding to the session</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">Status</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">String</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">
+            Session status:
+            <a name="administration_database_monitoring_snapshot_sessions__ul_5pp_znd_zj"><!-- --></a><ul class="ul" id="administration_database_monitoring_snapshot_sessions__ul_5pp_znd_zj">
+              <li class="li">Creating：creating status</li>
+
+              <li class="li">Running：running status </li>
+
+              <li class="li">Waiting：waiting status</li>
+
+              <li class="li">Idle：idle status of thread pool</li>
+
+              <li class="li">Destroying：destroying status</li>
+
+            </ul>
+
+          </td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">Type</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">String</td>
+
+          <td valign="top" headers="d56718e40" class="stentry"><a class="xref" href="../EDU_en.html">EDU Type</a></td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">Name</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">String</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">EDU name. Generally, it is null</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">QueueSize</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">The length of queue of requests waiting to be processed </td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">ProcessEventCount</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">The amount of requests which have been processed</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">Contexts</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer or array</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Context ID array. It is a list containing all contexts in the session</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">TotalDataRead</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Total data read</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">TotalIndexRead</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Total index read</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">TotalDataWrite</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Tota data record write</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">TotalIndexWrite</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Total index write</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">TotalUpdate</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Total amount of updated records</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">TotalDelete</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Total amount of deleted records</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">TotalInsert</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Total amount of inserted records</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">TotalSelect</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Total amount of selected records</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">TotalRead</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Total data read</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">TotalReadTime</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Total data read time (millisecond)</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">TotalWriteTime</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Total data write time (millisecond)</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">ReadTimeSpent</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Time spent of reading a record (ms)</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">WriteTimeSpent</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Time spent of writing a record (ms)</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">ConnectTimestamp</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Timeline</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">The time of beginning connection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">LastOpType</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">String</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Type of the last operation, like: insert, update</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">LastOpBegin</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">String</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Starting time of the last operation</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">LastOpEnd</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">String</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Ending time of the last operation</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">LastOpInfo</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">String</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">Detail of the last operation</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">UserCPU</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Float</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">User CPU (second)</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d56718e34" class="stentry">SysCPU</td>
+
+          <td valign="top" headers="d56718e37" class="stentry">Float</td>
+
+          <td valign="top" headers="d56718e40" class="stentry">System CPU (second)</td>
+
+        </tr>
+<tr class="strow"/>
+</table>
+
+    </div>
+
+    
+    <div class="section"><h2 class="title sectiontitle">Sample</h2>
+      <pre class="pre codeblock">&gt; db.snapshot(SDB_SNAP_SESSIONS)
+{
+  "SessionID": "vmsvr2-suse-x64:11820:1",
+  "TID": 8680,
+  "Status": "Running",
+  "Type": "LogWriter",
+  "Name": "",
+  "QueueSize": 0,
+  "ProcessEventCount": 1,
+  "Contexts": [],
+  "TotalDataRead": 0,
+  "TotalIndexRead": 0,
+  "TotalDataWrite": 0,
+  "TotalIndexWrite": 0,
+  "TotalUpdate": 0,
+  "TotalDelete": 0,
+  "TotalInsert": 0,
+  "TotalSelect": 0,
+  "TotalRead": 0,
+  "TotalReadTime": 0,
+  "TotalWriteTime": 0,
+  "ReadTimeSpent": 0,
+  "WriteTimeSpent": 0,
+  "ConnectTimestamp": "2013-09-27-13.28.38.927465",
+  "LastOpType": "unknow",
+  "LastOpBegin": "--",
+  "LastOpEnd": "--",
+  "LastOpInfo": "",
+  "UserCPU": "0.410000",
+  "SysCPU": "0.150000"
+}</pre>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../administration/database/topics/snapshot/snapshot_en.html" title="Snapshot"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Snapshot</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

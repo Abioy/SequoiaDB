@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\references\sql_grammar\topics?><?path2project ..\..\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="references_sql_listCL" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="title:1">sql list collections</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="title:2">list collections 语句</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="p:1">枚举集合空间中的集合。</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="title:3">语法</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="p:2"><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="codeblock:1">list collections</codeblock></p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="section:3"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="title:4">示例</title>
+      <ul class="- topic/ul " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="ul:1">
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="li:1"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="p:3">本例会返回集合空间中的所有集合</p>
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="p:4"><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="codeblock:2">db.execUpdate("list collections") 
+结果：
+{
+  "Name": "testfoo.testbar"
+  "Name":"big.small"
+  ...
+}</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links class="- topic/related-links " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="related-links:1">
+    <link href="list_cs.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="link:1"><?ditaot gentext?><linktext class="- topic/linktext ">sql list collectionspaces</linktext></link>
+    <link href="insert.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\list_cl.dita" xtrc="link:2"><?ditaot gentext?><linktext class="- topic/linktext ">sql insert into</linktext></link>
+  </related-links>
+</topic>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="administration_concepts_database_array">
+  <title>数组</title>
+  <body>
+    <section>
+      <title>概念</title>
+      <p>SequoiaDB 中的文档为 JSON 格式，一般又被称为记录。</p>
+    </section>
+    <section>
+      <title>格式</title>
+      <p>当记录中的某一字段对应多个数值是，用户可以使用数组结构存放数据。数组由“[”（左中括号）起始，至“]”（右中括号）结束，其中包含零个或多个数值。</p>
+      <codeblock>{ 字段名 : [ &lt;数值1&gt;, &lt;数值2&gt;, &lt;数值3&gt; ... ] }</codeblock>
+    </section>
+    <section>
+      <title>示例</title>
+      <p>数组可以存放完全不相同的数据类型，其中每个记录以从0起始的下标表示。例如：</p>
+      <codeblock>{ "key" : [ "hello", "world" ] }</codeblock>
+      <p>其中“hello”在数组中的下标为0，而“world”在数组中的下标为1。数组之中的数值有序，在进行数据操作时数组中的数值顺序不会改变。表示数组中某个元素时，可以使用“字段名.下标”的方式。</p>
+      <p>例如：如果希望表示 key 中“world”所在的数值，可以使用“key.1”作为字段名。</p>
+    </section>
+  </body>
+  <related-links >
+    <link href="../../../../introduction/topics/datamodel.dita" format="dita" type="topic"/>
+  </related-links>
+</topic>

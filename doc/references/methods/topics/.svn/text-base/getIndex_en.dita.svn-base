@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_getIndex">
+  <title>db.collectionspace.collection.getIndex()</title>
+  <body>
+    <section><title>db.collectionspace.collection.getIndex(&lt;name>)</title>
+      <p>Return the quotation of specified index.</p>
+    </section>
+    <section><title>Parameter description</title>
+      <simpletable>
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Not null</stentry>
+        </sthead>
+        <strow>
+          <stentry>name</stentry>
+          <stentry>string</stentry>
+          <stentry>Index name, all the index name in a collection should be unique to each
+            other.</stentry>
+          <stentry>Yes</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>Format</title>
+      <p> The method "getIndex()" contains the field "name", which is in the type of string.</p>
+      <p>
+        <codeblock>{"name":"&lt;index name>"}</codeblock>
+      </p>
+      <note>
+        <p>
+          <ul>
+            <li>It should be ensured that the index name exists in the collection before users get
+              index quotation.</li>
+            <li>Index name should not contain null string, "." or "$". The length of it should not
+              be greater than 127B.</li>
+          </ul>
+        </p>
+      </note>
+    </section>
+    <section><title>Sample</title>
+
+        <ul>
+          <li><p>Supposing that the index "ageIndex" exists in collection "bar", the following command will return
+            the quotation of it.</p>
+            <codeblock>db.foo.bar.getIndex("ageIndex")</codeblock></li>
+        </ul>
+      
+      
+    </section>
+  </body>
+  <related-links>
+    <link href="../../../administration/concepts/database/topics/index_en.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/concepts/database/topics/collection_en.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/concepts/database/topics/collectionspace_en.dita" format="dita" type="topic"></link>
+    <link href="dropIndex_en.dita" format="dita" type="topic"></link>
+    <link href="listIndexes_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

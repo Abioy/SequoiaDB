@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_database_EDU">
+  <title>Engine Dispatchable Unit</title>
+  <body>
+    <section><title>Concept</title>
+      <p>Engine Dispatchable Unit is the carrier of tasks in SequoiaDB. Generally, EDU is an
+        independent thread.</p>
+      <p>Each EDU can be used to execute users' requests or execute system internal maintenance
+        tasks.</p>
+      <p>EDU is independent to each other. One EDU is charged for one user session. One user session
+        is fixed on one EDU  on one data node.</p>
+      <p>Each EDU has a thread-unique and 64-bit integer ID called "EDU ID".</p>
+      <p>There are two kinds of EDU: user EDU and system EDU, respectively representing threads that
+        executes user task and threads that executes system task.</p>
+    </section>
+    <section><title>User EDU</title>
+      <p>User EDU is a thread executes user task. It is also called Agent </p>
+      <p>In SequoiaDB, ther are differnt kinds of agetns as follow:</p>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 2.0*" id="administration_database_EDU_user">-->
+        <sthead>
+          <stentry>Name</stentry>
+          <stentry>Type</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry>Agent</stentry>
+          <stentry>Agent</stentry>
+          <stentry>Agent thread is charged for requests of <i>svcname</i> service. Generally, the
+            request is directly sent by user.</stentry>
+        </strow>
+        <strow>
+          <stentry>ShardAgent</stentry>
+          <stentry>Shard agent</stentry>
+          <stentry>Shard agent thread is charged for requests of <i>shardname</i> service.
+            Generally, the request is directly sent from coord node to data node.</stentry>
+        </strow>
+        <strow>
+          <stentry>CoordAgent</stentry>
+          <stentry>Coord agent</stentry>
+          <stentry>Coord agent thread is charged for request of svcname service. Generally, the
+            request is directly sent from user to coord node and only acts on coord node.</stentry>
+        </strow>
+        <strow>
+          <stentry>ReplAgent</stentry>
+          <stentry>Replication agent</stentry>
+          <stentry>Replication agent thread is charged for request of <i>replname</i> service.
+            Generally, the request is directly sent from data master node to data slave node and
+            acts <fig></fig>on non-coord node.</stentry>
+        </strow>
+        <strow>
+          <stentry>HTTPAgent</stentry>
+          <stentry>HTTP agent</stentry>
+          <stentry>HTTP agent thread is charged for request of <i>httpname</i> service. Generally,
+            the request is directly sent by user. </stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section><title>System EDU</title>
+      <p>System EDU is a kind of threads that maintains data structures in the system and guarantee
+        the consistency of data and configuration. Generally, it is invisible to users.</p>
+      <p>In SequoiaDB, there are different kinds of EDU. The following EDU are just part of
+        them:</p>
+      <simpletable><!-- frame="all" relcolwidth="1.01* 1.0* 2.0*"
+        id="administration_database_EDU_system">-->
+        <sthead>
+          <stentry>Name</stentry>
+          <stentry>Type</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry>TCPListener</stentry>
+          <stentry>Service listener</stentry>
+          <stentry>The duty of this thread is to listen to  <i>svcname</i> service, and start agent
+            threads.</stentry>
+        </strow>
+        <strow>
+          <stentry>HTTPListener</stentry>
+          <stentry>HTTP listener</stentry>
+          <stentry>The duty of this thread is to listen to  <i>httpname</i> service, and start agent
+            threads.</stentry>
+        </strow>
+        <strow>
+          <stentry>Cluster</stentry>
+          <stentry>Cluster management</stentry>
+          <stentry>Cluster management thread is used to maintain the infrastructure of clusters, and
+            start ReplReader threads and ShardReader threads.</stentry>
+        </strow>
+        <strow>
+          <stentry>ReplReader</stentry>
+          <stentry>Replication listener</stentry>
+          <stentry><i>ReplReader</i> is charged for request of <i>replname</i> service, and start
+            ReplAgent threads.</stentry>
+        </strow>
+        <strow>
+          <stentry>ShardReader</stentry>
+          <stentry>Shard listener</stentry>
+          <stentry><i>ShardReader</i> is charged for request of <i>shardname</i> service, and start
+            ShardAgent threads.</stentry>
+        </strow>
+        <strow>
+          <stentry>LogWriter</stentry>
+          <stentry>Log writer</stentry>
+          <stentry>LogWriter thread is used to write data from log cache to log file.</stentry>
+        </strow>
+        <strow>
+          <stentry>WindowsListener</stentry>
+          <stentry>Windows event listener</stentry>
+          <stentry>It is owned by Windows environment. It is used to listen to  events defined by
+            SequoiaDB.</stentry>
+        </strow>
+        <strow>
+          <stentry>Task</stentry>
+          <stentry>Background task </stentry>
+          <stentry>It is a kind of threads that cope with background tasks. For example, <xref
+              href="../../concepts/cluster/topics/split_en.dita">data split</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>CatalogMC</stentry>
+          <stentry>Catalog main controller</stentry>
+          <stentry>CatalogMC thread is used to receive and send requested sent to catalog
+            nodes.</stentry>
+        </strow>
+        <strow>
+          <stentry>CatalogNM</stentry>
+          <stentry>Catalog node maintainer</stentry>
+          <stentry>CatalogNM thread is used to cope with requests relative to cluster information
+            within catalog nodes.</stentry>
+        </strow>
+        <strow>
+          <stentry>CatalogManager</stentry>
+          <stentry>Catalog manager</stentry>
+          <stentry>CatalogManager thread is used to cope with requests relative to metadata
+            information within catalog nodes.</stentry>
+        </strow>
+        <strow>
+          <stentry>CatalogNetwork</stentry>
+          <stentry>Catalog network listener</stentry>
+          <stentry>CatalogNetwork thread is used to listen to  requests of <i>catalogname</i>
+            service in coord network.</stentry>
+        </strow>
+        <strow>
+          <stentry>CoordNetwork</stentry>
+          <stentry>Coord network listner</stentry>
+          <stentry>CoordNetwork thread is used to listen to  shard requests.</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section><title>Monitorinf</title>
+      <p>Users can use <xref href="snapshot/sessions_en.dita">sessions snapshot</xref> to monitor system
+        and user EDU.</p>
+    </section>
+  </body>
+  <related-links>
+    <link href="snapshot/sessions_en.dita"></link>
+  </related-links>
+</topic>

@@ -1,0 +1,237 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="文档"/>
+<meta name="description" content="概念 SequoiaDB 中的文档为 JSON 格式，一般又被称为记录。在数据库内部使用 BSON，即二进制的方式存放 JSON 数据。 一般来说，一条文档由一个或多个字段构成，每个字段分为键值与数值两个部分，如下为包含两个字段的文档： { &#34;姓名&#34; : &#34;张三&#34;, &#34;性别&#34; : &#34;男&#34; } BSON 文档可能有多个同名的字段，但是，大多数 SequoiaDB ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/database/topics/database.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/database/topics/array.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/database/topics/objectid.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/database/topics/date.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/database/topics/timestamp.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/database/topics/bindata.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/database/topics/regex.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../introduction/topics/datamodel.html"/>
+<meta name="DC.Relation" scheme="URI" content="collection.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_concepts_database_document"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>文档</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_concepts_database_document"><a name="administration_concepts_database_document"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/concepts/database/topics/database.html" title="数据库"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">数据库</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/concepts.html" title="数据库概念">数据库概念</a> / <a class="navheader_parent_path" href="../../../../administration/concepts/database/topics/database.html" title="数据库">数据库</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">文档</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">概念</h2>
+      
+      <p class="p">SequoiaDB 中的文档为 JSON 格式，一般又被称为记录。在数据库内部使用 BSON，即二进制的方式存放 JSON 数据。</p>
+
+      <p class="p">一般来说，一条文档由一个或多个字段构成，每个字段分为键值与数值两个部分，如下为包含两个字段的文档：</p>
+
+      <p class="p">{ "姓名" : "张三", "性别" : "男" }</p>
+
+      <div class="note note"><span class="notetitle">Note:</span> 
+        <p class="p">BSON 文档可能有多个同名的字段，但是，大多数 SequoiaDB 接口不支持重复的字段名，如果需要操作的文档有多个同名的字段，请参阅驱动程序了解更多信息。</p>
+
+        <p class="p">SequoiaDB 内部程序创建的一些文档可能含有重名的字段，但是不会向现有的用户文档添加重名的键。</p>
+
+      </div>
+      
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">字段类型</h2>
+      
+      <p class="p">每个字段的键值为字符串，而数值则可以为数字，字符串，嵌套 JSON，嵌套数组等对象。SequoiaDB 所支持的数值类型见下表：</p>
+
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d11138e46" class="stentry">数值类型</th>
+
+          <th valign="bottom" align="left" id="d11138e49" class="stentry">定义</th>
+
+          <th valign="bottom" align="left" id="d11138e52" class="stentry">用例</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d11138e46" class="stentry">整数</td>
+
+          <td valign="top" headers="d11138e49" class="stentry">整数，范围 -2147483648 至 2147483647</td>
+
+          <td valign="top" headers="d11138e52" class="stentry">{ "key" : 123 }</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d11138e46" class="stentry">长整数</td>
+
+          <td valign="top" headers="d11138e49" class="stentry">整数，范围 -9223372036854775808 至 9223372036854775807<div class="fig fignone"/>
+如果用户指定的数值无法适用于整数，则 SequoiaDB 自动将其转化为长整数</td>
+
+          <td valign="top" headers="d11138e52" class="stentry">{ "key" : 3000000000 }</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d11138e46" class="stentry">浮点数</td>
+
+          <td valign="top" headers="d11138e49" class="stentry">浮点数，范围 1.7E-308 至 1.7E+308</td>
+
+          <td valign="top" headers="d11138e52" class="stentry">{ "key" : 123.456 } 或 { "key" : 123e+50 }</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d11138e46" class="stentry">字符串</td>
+
+          <td valign="top" headers="d11138e49" class="stentry">双引号包含的字符串</td>
+
+          <td valign="top" headers="d11138e52" class="stentry">{ "key" : "value" }</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d11138e46" class="stentry">对象 ID（OID）</td>
+
+          <td valign="top" headers="d11138e49" class="stentry">十二字节对象 ID</td>
+
+          <td valign="top" headers="d11138e52" class="stentry">{ "key" : { "$oid" : "123abcd00ef12358902300ef" } }</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d11138e46" class="stentry">布尔</td>
+
+          <td valign="top" headers="d11138e49" class="stentry">true 或者 false</td>
+
+          <td valign="top" headers="d11138e52" class="stentry">{ "key" : true } 或 { "key" : false }</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d11138e46" class="stentry">日期</td>
+
+          <td valign="top" headers="d11138e49" class="stentry">YYYY-MM-DD 的日期形式</td>
+
+          <td valign="top" headers="d11138e52" class="stentry">{ "key" : { "$date" : "2012-01-01" } }</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d11138e46" class="stentry">时间戳</td>
+
+          <td valign="top" headers="d11138e49" class="stentry">YYYY-MM-DD-HH.mm.ss.ffffff 的形式存取</td>
+
+          <td valign="top" headers="d11138e52" class="stentry">{ "key" : { "$timestamp" : "2012-01-01-13.14.26.124233" } }</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d11138e46" class="stentry">二进制数据</td>
+
+          <td valign="top" headers="d11138e49" class="stentry">Base64 形式的二进制数据</td>
+
+          <td valign="top" headers="d11138e52" class="stentry">{ "key" : { "$binary" : "aGVsbG8gd29ybGQ=", "$type" : 1 } }</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d11138e46" class="stentry">正则表达式</td>
+
+          <td valign="top" headers="d11138e49" class="stentry">正则表达式</td>
+
+          <td valign="top" headers="d11138e52" class="stentry">{ "key" : { "$regex" : "^张", "$options" : "i" } }</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d11138e46" class="stentry">对象</td>
+
+          <td valign="top" headers="d11138e49" class="stentry">嵌套 JSON 文档对象</td>
+
+          <td valign="top" headers="d11138e52" class="stentry">{ "key" : { "subobj" : "value" } }</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d11138e46" class="stentry">数组</td>
+
+          <td valign="top" headers="d11138e49" class="stentry">嵌套数组对象</td>
+
+          <td valign="top" headers="d11138e52" class="stentry">{ "key" : [ "abc", 0, "def" ] }</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d11138e46" class="stentry">空</td>
+
+          <td valign="top" headers="d11138e49" class="stentry">null</td>
+
+          <td valign="top" headers="d11138e52" class="stentry">{ "key" : null }</td>
+
+        </tr>
+</table>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">字段顺序</h2>
+      
+      <p class="p">文档中的各字段无排列顺序，在进行数据操作时字段之间的顺序可能会被调换。</p>
+
+      <p class="p">当表示嵌套对象中的某一个字段时，可以使用“.”（句号）在字段名之间进行分割。例如给定数据：</p>
+
+      <pre class="pre codeblock">{ "姓名" : "张三", "地址" : { "街道" : "水蓝街", "城市" : "xx", "省份" : "yy" } }</pre>
+
+      <p class="p">用户可以使用“地址.城市”字段名表示地址子对象中的城市字段。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">其他</h2>
+      
+      <a name="administration_concepts_database_document__administration_concepts_database_misc"><!-- --></a><ul class="ul" id="administration_concepts_database_document__administration_concepts_database_misc">
+        <li class="li">每个文档的最大尺寸为16MB</li>
+
+        <li class="li">文档中必须包括“_id”字段，如果用户没有提供该字段，系统会自动生成一个对象 ID 类型的字段</li>
+
+        <li class="li">“_id”字段在集合内唯一</li>
+
+        <li class="li">文档的字段名不可以“$”字符起始</li>
+
+        <li class="li">文档的字段名不可以包含“.”字符</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="related-links">
+<ul class="ullinks">
+</ul>
+<div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="../../../../introduction/topics/datamodel.html" title="数据模型">数据模型</a></div>
+<div><a class="navheader_parent_path" href="collection.html" title="集合">集合</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../../administration/concepts/database/topics/database.html" title="数据库"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">数据库</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

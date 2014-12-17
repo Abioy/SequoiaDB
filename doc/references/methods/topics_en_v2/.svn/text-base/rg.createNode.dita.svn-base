@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rfb_sqk_5n">
+  <title>rg.createNode()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>createNode - Create a node in a replica group.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>rg.createNode</apiname>(<parmname>&lt;host></parmname>,<parmname>&lt;service></parmname>,<parmname>&lt;dbpath></parmname>,<parmname>[config]</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>ReplicaGroup
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Create a node in a replica group.</p>
+      <parml>
+        <plentry>
+          <pt>host (string)</pt>
+          <pd>Specify the host name of the node.</pd>
+        </plentry>
+        <plentry>
+          <pt>service (string)</pt>
+          <pd>Node port number.</pd>
+        </plentry>
+        <plentry>
+          <pt>dbpath (string)</pt>
+          <pd>Node path.</pd>
+        </plentry>
+        <plentry>
+          <pt>config (json)</pt>
+          <pd>Node's configuration information, such as, the size of configuration log, whether enable transaction function or not. For more details, please check DATABASE CONFIGURATION.
+            <parml>
+              <plentry>
+                <pt>Format</pt>
+                <pd>The method "rg.createNode()" contains 4 parameters: Host, Service, dbPath, config. The first three parameters in the above list are required and in the type of string, the last one is an optional json object configuration option.</pd>
+                <pd>("&lt;Host>","&lt;service>","&lt;dbpath>",[{&lt;configParam>:value,...}])</pd>
+              </plentry>
+            </parml></pd>
+        </plentry>        
+      </parml>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Create a node with the port of 11800 in a replica group named "group", and specify the size of the log file as 64 MB.</p>
+      <codeblock>rg.createNode("vmsvr2-suse-x64",11800,"/opt/sequoiadb/data/11800",{logfilesz:64})</codeblock>
+      <note><p>More than one nodes can be created within one replica group.</p></note>      
+    </section>
+  </body>
+  <related-links>
+    <link href="rg.getDetail.dita"></link>
+    <link href="rg.getMaster.dita"></link>
+  </related-links>
+</topic>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_min">
+  <title>sql min()</title>
+  <body>
+    <section><title>min() 函数</title>
+      <p>用于返回指定字段名的最小值。</p>
+    </section>
+    <section><title>语法</title>
+      <p><codeblock>min(field_name) as &lt;alisa_name></codeblock></p>
+      <note>1.使用min函数返回字段名的最小值时，必须使用别名。</note>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>对集合bar中age字段返回最小值：</p>
+          <p><codeblock>db.exec("select min(age) as 最小年龄 from foo.bar")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="max.dita" format="dita" type="topic"></link>
+    <link href="first.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

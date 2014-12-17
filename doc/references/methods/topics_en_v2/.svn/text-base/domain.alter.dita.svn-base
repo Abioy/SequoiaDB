@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ggw_4cc_m4">
+  <title>domain.alter()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>alter - Alter the specified fields of the current domain.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>domain.alter</apiname>(<parmname>&lt;options></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Domain
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Alter the specified fields of the current domain.</p>
+      <parml>        
+        <plentry>
+          <pt>options (Json Object)</pt>
+          <pd>Need to modify the list of attributes.
+            <parml>
+              <plentry>
+                <pt>Groups</pt>
+                <pd>The contained replica groups.</pd>
+                <pd>Groups:['data1','data2']</pd>
+              </plentry>
+              <plentry>
+                <pt>AutoSplit</pt>
+                <pd>Automatically splitted.</pd>
+                <pd>AutoSplit:true|false</pd>
+              </plentry>
+            </parml>
+          </pd>          
+        </plentry>        
+      </parml>      
+      <note>
+        <ul><li>Make sure that there is no data in the domain before deleting it.</li>
+          <li>The modification of the "AutoSplit" field will not affect the former created collections and collection spaces.</li>          
+        </ul></note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Create a domain contains two replica groups, and then enable it to auto-split.</p>
+      <codeblock>var domain = db.createDomain('mydomain',['data1','data2'],{AutoSplit:true})</codeblock>
+      <p>Delete a replica group from a domain, and then add another one.</p>
+      <codeblock>domain.alter({Groups:['data1', 'data3']})</codeblock>
+    </section>
+  </body>
+</topic>

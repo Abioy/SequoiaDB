@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_skt_yvh_hm">
+  <title>$skip</title>
+  <body>
+    <section>
+      <title>Description</title>
+      <p><b>$skip</b> Parameter controls the starting point of the result set, the result set that is skipping the number of records specified. If the number of records is 
+      greater than the total number of records to skip, returns 0 records.</p>
+    </section>
+    <section>
+      <title>Example</title>
+      <ul>
+        <li>Skip 10 records returned.
+          <codeblock>db.collectionspace.collection.aggregate( { $skip : 10 } ) ;</codeblock>
+          <p>This operation represents a collection of collection of records read from and skip ahead 10, began to return from the first 11 records.</p></li>
+      </ul>
+    </section>
+    
+  </body>
+  <related-links>
+    <link href="jsort_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

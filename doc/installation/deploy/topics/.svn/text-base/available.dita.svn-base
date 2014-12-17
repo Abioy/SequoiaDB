@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_kyt_psx_wj">
+  <title>高可用部署</title>
+  <body>
+    <p>高可用部署方式适用于对可靠性要求高，但数据量不大、总吞吐要求不高的应用场景。在该部署中，在三台物理服务器上，都部署有数据节点和编目节点，三个数据节点组成一个副本组，三个编目节点组成副本集群。协调节点部署在业务应用的服务器上，也可以将应用/协调节点合部到数据库服务器上。</p>
+    <p>这种部署方式得优势就是高可靠性，任意一个物理服务器故障，数据的读写都不会受到影响。但数据容量与单个服务器的容量相同，且硬件成本相对较高。 </p>
+    <image href="../images/available.jpg"></image>
+  </body>
+</topic>

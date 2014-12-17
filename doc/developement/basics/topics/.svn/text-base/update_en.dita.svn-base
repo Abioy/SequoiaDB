@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="developement_basics_update_en">
+  <title>Update</title>
+  <body>
+    <p>Of the basic database operations(i.e.CRUD), update operation are those that modify the
+      existing records or documents in a collection, using <xref
+        href="../../../references/methods/topics/dbupdate_en.dita"><i>update()</i></xref> method to
+      modify documents in SequoiaDB.</p>
+    <note><p>All of the examples in this document use the sequoiadb shell interface.</p></note>
+    <section>
+      <title>update()</title>
+      <p>the update() method is the primary method used to modify documents in SequoiaDB, it has the
+        following syntax:</p>
+      <codeblock>db.collectionspace.collection.update(&lt;rule&gt;,[cond],[hint])</codeblock>
+      <p>The corresponding opration in sql: the method of <i>update</i> is simalar with
+          <i>update...set</i> statement :</p>
+      <p><b>.</b> the [rule] parameter corresponds to <i>set</i> statement</p>
+      <p><b>.</b> the<i> [cond]</i> parameter corresponds to <i>where</i> statement</p>
+      <p><b>.</b> the [hint] parameter corresponds to the index name in index table </p>
+    </section>
+    <section>
+      <title>modify with update operator </title>
+      <p>If the<i> update()</i> method contains only <i>rule</i> parameter expression(such as the
+        <xref href="../../../references/console/topics/gset_en.dita"><i>$set</i></xref> operator
+        expression ), the <i>update()</i> method updates the corresponding fields in the document.
+        To update fileds in the subdocuments, use dot notation(.).</p>
+      <ul>
+        <li>
+          <p>update a field in a document </p>
+          <p>use <xref href="../../../references/console/topics/gset_en.dita"><i>$set</i></xref> to
+            update a value of a field. The following operation queries the bar collection for the
+            document that has an _id field equal to 1 and sets the value of field <i>first </i>, in
+            the subdocument <i>name</i>, to
+            'Mike':<codeblock>db.foo.bar.update({$set:{"name.first":"Mike"}},{_id:1})</codeblock></p>
+          <p><note>
+              <p>if the <i>rule</i> parameter containas fields not in the current records, the
+                  <i>update()</i> method will add the new fields to the records.</p>
+            </note></p>
+        </li>
+        <li>
+          <p>remove a field from a record</p>
+          <p>use <xref href="../../../references/console/topics/unset_en.dita"><i>$unset</i></xref> to
+            remove the field from a record. The following operation queries the<i> bar</i> collection
+            for all records where contains <i>age</i> field and remove the <i>age</i> filed, if a
+            record doesn't contain the age
+            field, skipping.<codeblock>db.foo.bar.update({$unset:{age:""}})</codeblock></p>
+        </li>
+        <li>
+          <p>Update array</p>
+          <p>if the update operation requires an update of an element in an array field, SequoiaDB
+            use dot notation(.), array are zero-based. The following operation is to update second
+            element in the <i>arr</i> array, it's value will increate 5:</p>
+          <p>
+            <codeblock>db.foo.bar.update({<xref href="../../../references/console/topics/inc_en.dita">$inc</xref>:{"arr.1":5}})</codeblock>
+          </p>
+        </li>
+        <li>
+          <p>hint parameter</p>
+          <p>The following operation will traversal all the records through index, and update the
+            value of field <i>name</i> to 'Tom', the name of index is 'textIndex'</p>
+          <codeblock>db.foo.bar.update({$set:{name:"Tom"}},null,{"":"textIndex"})</codeblock>
+        </li>
+      </ul>
+      <note><xref href="../../../references/console/topics/console_en.dita">more update operator
+        </xref></note>
+    </section>
+  </body>
+  <related-links>
+    <link href="read_en.dita" format="dita" type="topics"></link>
+    <link href="delete_en.dita" format="dita" type="topics"></link>
+  </related-links>
+</topic>

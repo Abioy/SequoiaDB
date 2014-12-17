@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="administration_concepts_database_regex">
+  <title>Regex</title>
+  <body>
+    <section><title>Concept</title>
+    <p>SequoiaDB can search for user data with regex.</p>
+    </section>
+    <section><title>Format</title>
+      <p>The format of input is :</p>
+      <codeblock>{ "$regex" : "regex", "$options" : "optoins" }</codeblock>
+      <p> Regular expression is a regex string. Options can be:</p>
+      
+      <simpletable><!-- frame="all" relcolwidth="1.0* 2.12*"
+        id="simpletable_03c379b3-9e76-4a3d-a251-3c6c68579a1c">-->
+        <sthead>
+          <stentry>Options</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry>i</stentry>
+          <stentry>Case-insensitive.</stentry>
+        </strow>
+        <strow>
+          <stentry>m</stentry>
+          <stentry>Allow mutiple match; when the parameter is set, "^" and "&amp;" respectively
+            matches characters before and after a line break.</stentry>
+        </strow>
+        <strow>
+          <stentry>x</stentry>
+          <stentry>Ignore blank characters matched by regex. When blank character is needed, it
+            should be prefixed with "\", the escape character.</stentry>
+        </strow>
+        <strow>
+          <stentry>s</stentry>
+          <stentry>Allow to match line break with ".".</stentry>
+        </strow>
+      </simpletable>
+      <p>When using optoins, users can choose several options at a time.</p>
+    </section>
+    <section><title>Sample</title>
+      <p>Users can match string that is case-insensitive and begins with the character "W"
+        with:</p>
+      <codeblock>{ "key" : { "$regex" : "^W", "$options" : "i" } }</codeblock>
+    </section>
+    <p>Please refer to <xref href="http://perldoc.perl.org/perlre.html" format="html"
+        scope="external">Perl Regex Manual</xref> for more about rules of regex.</p>
+  </body>
+</topic>

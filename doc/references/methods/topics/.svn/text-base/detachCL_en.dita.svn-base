@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_44m_5jr_kn">
+  <title>db.collectionspace.collection.detachCL()</title>
+  <body>
+    <section><title>db.collectionspace.collection.detachCL(&lt;subCLFullName>)</title>
+      <p>Separated from the main collection of sub-partition partition collection.</p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable>
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Are Required</stentry>
+        </sthead>
+        <strow>
+          <stentry>partitionName</stentry>
+          <stentry>string</stentry>
+          <stentry>Sub-partition name (originally a collection of sub-partition name)</stentry>
+          <stentry>Yes</stentry>
+        </strow>               
+      </simpletable>      
+    </section>    
+    <section><title>Example</title>
+      <ul>
+        <li><p>Specify the partition separating the child from the primary partition collection.</p>
+          <p><codeblock>db.foo.year.detachCL("foo2.January"}</codeblock></p></li>
+      </ul>      
+    </section>
+  </body>
+</topic>

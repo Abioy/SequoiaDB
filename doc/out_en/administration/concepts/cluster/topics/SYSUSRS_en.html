@@ -1,0 +1,100 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="SYSUSRS Collection"/>
+<meta name="description" content="Collection Space SYSAUTH Concept SYSUSRS collection contains information of all registered users in the cluster. Information of a user is saved in a corresponding file. Every file includes： Name Type ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/catalog_node_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_concepts_cluster_node_catalog_sysusrs"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>SYSUSRS Collection</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_concepts_cluster_node_catalog_sysusrs"><a name="administration_concepts_cluster_node_catalog_sysusrs"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/concepts/cluster/topics/catalog_node_en.html" title="Catalog Node"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Catalog Node</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="node_en.html" title="Node">Node</a> / <a class="navheader_parent_path" href="../../../../administration/concepts/cluster/topics/catalog_node_en.html" title="Catalog Node">Catalog Node</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">SYSUSRS Collection</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Collection Space</h2>
+      <p class="p">SYSAUTH</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Concept</h2>
+      <p class="p">SYSUSRS collection contains information of all registered users in the cluster. Information
+        of a user is saved in a corresponding file.</p>
+
+      <p class="p">Every file includes：</p>
+
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d5324e32" class="stentry">Name</th>
+
+          <th valign="bottom" align="left" id="d5324e35" class="stentry">Type</th>
+
+          <th valign="bottom" align="left" id="d5324e38" class="stentry">Description</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d5324e32" class="stentry">User</td>
+
+          <td valign="top" headers="d5324e35" class="stentry">String</td>
+
+          <td valign="top" headers="d5324e38" class="stentry">User name.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d5324e32" class="stentry">Password</td>
+
+          <td valign="top" headers="d5324e35" class="stentry">String</td>
+
+          <td valign="top" headers="d5324e38" class="stentry">MD5 hash value of password. </td>
+
+        </tr>
+</table>
+
+      <div class="note note"><span class="notetitle">Note:</span> 
+        <p class="p">If the collection is empty, it won't provide any connection with identification
+          validation.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../administration/concepts/cluster/topics/catalog_node_en.html" title="Catalog Node"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Catalog Node</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

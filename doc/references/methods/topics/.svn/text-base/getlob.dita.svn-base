@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_wpq_n3k_tp">
+  <title>db.collectionspace.collection.getLob()</title>
+  <body>
+    <section><title>db.collectionspace.collection.getLob(&lt;oid>,&lt;file path>,[forced])</title>
+      <p>读取集合中的大对象。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable id="references_method_createNode_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>oid</stentry>
+          <stentry>string</stentry>
+          <stentry>大对象的唯一描述符。</stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow>
+          <stentry>file path</stentry>
+          <stentry>string</stentry>
+          <stentry>待写入的本地文件全路径。</stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow>
+          <stentry>forced</stentry>
+          <stentry>bool</stentry>
+          <stentry>本地文件如果已经存在是否强制覆盖。</stentry>
+          <stentry>否</stentry>
+        </strow>
+      </simpletable>      
+    </section>
+    <p><note><ul>
+      <li>本地文件不需要事先手工创建。</li>
+      <li>forced 默认为 false。</li>
+    </ul>
+    </note></p>
+    <section><title>示例</title>
+      <ul>
+        <li>将标示符为 5435e7b69487faa663000897 的 lob 写入本地 /opt/newlob 文件<codeblock>db.foo.bar.getLob('5435e7b69487faa663000897','/opt/newlob')</codeblock></li>        
+      </ul>      
+    </section>
+  </body>
+  <related-links>
+    <link href="deleteLob.dita" format="dita" type="topic"></link>    
+    <link href="listLobs.dita" format="dita" type="topic"></link>
+    <link href="putlob.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

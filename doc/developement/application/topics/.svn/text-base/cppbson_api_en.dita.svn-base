@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_2gx_g1z_fm">
+  <title>C++ BSON API</title>
+  <body>
+    <p>This part is related to C++ BSON API documentation.</p>
+    <p><xref href="..\..\..\bsoncpp\html\index.html" format="html">C++ BSON API</xref></p> 
+  </body>
+</topic>

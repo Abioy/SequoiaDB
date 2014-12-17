@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_methods_updateCurrent">
+  <title>cursor.updateCurrent()</title>
+  <body>
+    <section><title>cursor.updateCurrent(&lt;rule>)</title>
+      <p>按指定的索引遍历结果集。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable id="references_method_hint_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>rule</stentry>
+          <stentry>json对象      </stentry>
+          <stentry>更新规则。记录按rule的内容更新。 </stentry>
+          <stentry>是</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section>
+      <title>格式</title>
+      <p> cursor.updateCurrent()的方法定义包含rule参数，它是一个json对象。</p>
+      <p>格式如下： </p>
+      <p>
+        <codeblock>{"字段名1":{<xref href="../../console/topics/console.dita">"更新符1"</xref>:"值1","字段名2":{"更新2":"值2"},...}</codeblock>
+      </p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>选择集合bar下所有age字段值大于10的记录。对返回游标指向的当前记录更新age字段的值。</p>
+          <p><codeblock>db.foo.bar.find({age:{<xref href="../../console/topics/gt.dita">$gt</xref>:10}}).updateCurrent({<xref href="../../console/topics/inc.dita">$inc</xref>:{age:5}})</codeblock></p>
+        </li>
+      </ul>
+      
+    </section>
+  </body>
+  <related-links>
+    <link href="next.dita" format="dita" type="topic"></link>
+    <link href="size.dita" format="dita" type="topic"></link>
+    <link href="find.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

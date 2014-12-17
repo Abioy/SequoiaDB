@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="sequoiadb_datamodel">
+  <title>数据模型</title>
+  <body>
+    <p>SequoiaDB 数据库使用 JSON 数据模型，而非传统的关系型数据模型。</p>
+    <p>JSON 数据结构的全称为 JavaScript Object Notation，是一种轻量级的数据交换格式，非常易于人阅读和编写，同时也易于机器生成和解析。</p>
+    <p>它基于 JavaScript Programming Language, Standard ECMA-262 3rd Edition – December 1999 的一个子集，为纯文本格式，支持嵌套结构与数组。</p>
+    <p>JSON 建构基于两种结构：</p>
+    <ul id="sequoiadb_datamodel_jsonstruct">
+      <li>键值对集合 —— 在键值对集合结构中，每一个数据元素拥有一个名称与一个数值。数值可以包含数字，字符串等常用结构，或嵌套 JSON 对象和数组。</li>
+      <li>数组 —— 在数组中的每一个元素不包含元素名，其值可以为数字，字符串等常用结构，或者嵌套 JSON 对象和数组。</li>
+    </ul>
+    <p>JSON 具有如下形式：</p>
+    <ul id="sequoiadb_datamodel_jsonmodel">
+      <li><p>对象是一个无序的“键值对”集合，以“{”（左大括号）开始，“}”（右大括号）结束。每一个元素名后跟一个“:”（冒号）；而元素之间使用“,”（逗号）分隔；</p>
+        <p><image href="../images/sequoiadb_datamodel_jsonstruct_img1.jpg" id="sequoiadb_datamodel_jsonstruct_img1"/></p></li>
+      <li><p>数组是值的有序集合，以“[”（左中括号）开始，“]”（右中括号）结束。值之间使用“,”（逗号）分隔；</p>
+        <p><image href="../images/sequoiadb_datamodel_jsonstruct_img2.jpg" id="sequoiadb_datamodel_jsonstruct_img2"/></p></li>
+      <li><p>值可以为由双引号包裹的字符串，数值，对象，数组，true，false，null，以及 SequoiaDB 数据库特有的数据结构（例如日期，时间等）组成。</p>
+        <p><image href="../images/sequoiadb_datamodel_jsonstruct_img3.jpg" id="sequoiadb_datamodel_jsonstruct_img3"/></p></li>
+    </ul>
+    <p>一个典型的嵌套式数据结构如下：</p>
+    <p><image href="../images/sequoiadb_datamodel_jsonstruct_img4.jpg" id="sequoiadb_datamodel_jsonstruct_img4"/></p>
+  </body>
+</topic>

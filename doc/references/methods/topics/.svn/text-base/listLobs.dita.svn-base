@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qs5_kkk_tp">
+  <title>db.collectionspace.collection.listLobs()</title>
+  <body>
+    <section><title>db.collectionspace.collection.putLob()</title>
+      <p>枚举集合中的大对象。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable id="references_method_createNode_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>-</stentry>
+          <stentry>-</stentry>
+          <stentry>-</stentry>
+          <stentry>-</stentry>
+        </strow>        
+      </simpletable>      
+    </section>
+    <p><note><ul>
+      <li>此方法暂不支持排序等查询操作。</li>      
+    </ul>
+    </note></p>
+    <section><title>示例</title>
+      <ul>
+        <li>枚举 foo.bar 中的所有大对象<codeblock>db.foo.bar.listLobs()</codeblock></li>        
+      </ul>      
+    </section>
+  </body>
+  <related-links>
+    <link href="deleteLob.dita" format="dita" type="topic"></link>
+    <link href="getlob.dita" format="dita" type="topic"></link>    
+    <link href="putlob.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>
+

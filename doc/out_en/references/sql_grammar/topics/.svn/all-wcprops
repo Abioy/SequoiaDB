@@ -1,0 +1,425 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16548/trunk/doc/out_en/references/sql_grammar/topics
+END
+create_index_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/create_index_en.html
+END
+sqfirst_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqfirst_en.html
+END
+right_join_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/right_join_en.html
+END
+select.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/select.html
+END
+create_cl.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/create_cl.html
+END
+list_cs_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/list_cs_en.html
+END
+sqlimit.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqlimit.html
+END
+delete_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/delete_en.html
+END
+squpdate.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/squpdate.html
+END
+order_by_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/order_by_en.html
+END
+drop_cs.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/drop_cs.html
+END
+create_index.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/create_index.html
+END
+left_join_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/left_join_en.html
+END
+drop_index.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/drop_index.html
+END
+delete.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/delete.html
+END
+create_cl_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/create_cl_en.html
+END
+sqjoin.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqjoin.html
+END
+drop_cl_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/drop_cl_en.html
+END
+sqselect_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqselect_en.html
+END
+sqsum.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqsum.html
+END
+create_cs_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/create_cs_en.html
+END
+drop_cs_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/drop_cs_en.html
+END
+drop_cl.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/drop_cl.html
+END
+sql_grammar_list_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/16548/trunk/doc/out_en/references/sql_grammar/topics/sql_grammar_list_en.html
+END
+insert_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/insert_en.html
+END
+sqmax.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqmax.html
+END
+sqcount.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqcount.html
+END
+limit_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/limit_en.html
+END
+update_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/update_en.html
+END
+group_by_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/group_by_en.html
+END
+sqinsert.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqinsert.html
+END
+sqmin_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqmin_en.html
+END
+sqmax_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqmax_en.html
+END
+buildobj_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/buildobj_en.html
+END
+limit.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/limit.html
+END
+sqavg.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqavg.html
+END
+update.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/update.html
+END
+sqselect.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqselect.html
+END
+as_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/as_en.html
+END
+group_by.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/group_by.html
+END
+sqdelete_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqdelete_en.html
+END
+sqsum_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqsum_en.html
+END
+right_join.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/right_join.html
+END
+sqaddtoset_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqaddtoset_en.html
+END
+list_cs.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/list_cs.html
+END
+select_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/select_en.html
+END
+sqavg_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqavg_en.html
+END
+sqdelete.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqdelete.html
+END
+split_by_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/split_by_en.html
+END
+offset_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/offset_en.html
+END
+drop_index_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/drop_index_en.html
+END
+sqcount_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqcount_en.html
+END
+sqjoin_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqjoin_en.html
+END
+offset.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/offset.html
+END
+sqmin.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqmin.html
+END
+create_cs.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/create_cs.html
+END
+list_cl.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/list_cl.html
+END
+sqlast_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqlast_en.html
+END
+sqinsert_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqinsert_en.html
+END
+mergearrayset_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/mergearrayset_en.html
+END
+where_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/where_en.html
+END
+as.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/as.html
+END
+insert.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/insert.html
+END
+sqlimit_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqlimit_en.html
+END
+order_by.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/order_by.html
+END
+sqpush_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/sqpush_en.html
+END
+squpdate_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/squpdate_en.html
+END
+left_join.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/left_join.html
+END
+where.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/where.html
+END
+list_cl_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16487/trunk/doc/out_en/references/sql_grammar/topics/list_cl_en.html
+END

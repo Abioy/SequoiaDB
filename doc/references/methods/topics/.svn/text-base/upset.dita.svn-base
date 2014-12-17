@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_upset">
+  <title>db.collectionspace.collection.upsert()</title>
+  <body>
+    <section><title>db.collectionspace.collection.upsert(&lt;rule>,[cond],[hint])</title>
+      <p>更新集合记录。upsert方法跟update方法都是对记录进行更新，不同的是当使用cond参数在集合中匹配不到记录时，update</p>
+      <p>不做任何操作，而upsert方法会做一次插入操作。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable id="references_method_update_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>rule</stentry>
+          <stentry>json对象</stentry>
+          <stentry>更新规则。记录按rule的内容更新。</stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow>
+          <stentry>cond</stentry>
+          <stentry>json对象</stentry>
+          <stentry>选择条件。为空时，更新所有记录，不为空时，更新符合条件的记录。</stentry>
+          <stentry>否</stentry>
+        </strow>
+        <strow>
+          <stentry>hint</stentry>
+          <stentry>json对象</stentry>
+          <stentry>指定访问计划。</stentry>
+          <stentry>否</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>格式</title>
+      <p>upsert()方法的定义必须包含rule字段，rule是一个json对象。cond和hint字段可选。hint参数是一个包含一个单一</p>
+      <p>字段的json对象，字段名会被忽略，而其字段值则指定为需要访问索引的名称，当字段值为null时，则遍历集合</p>
+      <p>中所有的记录，它的格式为{"":null}或者{"":"&lt;indexname>"}</p>
+      <p><codeblock>{&lt;{"<xref href="../../console/topics/console.dita">"更新符1"</xref>":{"字段名1":"值"},"更新符2":{"字段名2":"值2"},...}>,[{"字段名1":{<xref href="../../console/topics/console.dita">"匹配符1"</xref>:"值1"},"字段名2":{"匹配符2":"值2"},...}],[{"":"索引名"|null}]}</codeblock></p>
+    </section>
+    <section>
+      <title>示例</title>
+      <p>假设集合bar中有两条记录：</p>
+        <codeblock>{
+    "_id": {
+      "$oid": "516a76a1c9565daf06030000"
+    },
+    "age": 10,
+    "name": "Tom"
+  }
+  {
+    "_id": {
+      "$oid": "516a76a1c9565daf06050000"
+    },
+    "a": 10,
+    "age": 21
+  }</codeblock>
+      <ul>
+        <li>
+          <p>按指定的更新规则更新集合中所有记录，即设置rule参数，不设定cond和hint参数的内容。</p>
+          <p>
+            <codeblock>db.foo.bar.upsert({<xref href="../../console/topics/inc.dita">$inc</xref>:{age:1},<xref href="../../console/topics/set.dita">$set</xref>:{name:"Mike"}})</codeblock>
+          </p>
+          <p>此操作等效于使用update方法，更新集合bar中的所有记录，将记录的age字段值加1，name字段值更改为"Mike"，对不存</p>
+          <p>在name字段的记录，<xref href="../../console/topics/set.dita"
+            >$set</xref>操作符会将name字段和其设定的值插入到记录中，使用find方法返回：</p>
+          <codeblock> {
+    "_id": {
+      "$oid": "516a76a1c9565daf06030000"
+    },
+    "age": 11,
+    "name": "Mike"
+  }
+  {
+    "_id": {
+      "$oid": "516a76a1c9565daf06050000"
+    },
+    "a": 10,
+    "age": 22,
+    "name":"Mike"
+  }</codeblock>
+        </li>
+        <li>
+          <p>选择符合匹配条件的记录，对这些记录按更新规则更新，即设定rule和cond参数。</p>
+          <p>
+            <codeblock>db.foo.bar.upsert({<xref href="../../console/topics/inc.dita">$inc</xref>:{age:3}},{type:{<xref href="../../console/topics/exists.dita">$exists</xref>:1}})</codeblock>
+          </p>
+          <p>此操作更新集合bar中存在type字段的记录，将这些记录的age字段值加3。在上面给出的两条记录中，都没有type字段，</p>
+          <p>此时，upsert操作会插入一条新的记录，新记录只有_id字段和age字段名，_id字段值自动生成，而age字段值为3。<codeblock>{
+    "_id": {
+      "$oid": "516a76a1c9565daf06030000"
+    },
+    "age": 11,
+    "name": "Mike"
+  }
+  {
+    "_id": {
+      "$oid": "516a76a1c9565daf06050000"
+    },
+    "a": 10,
+    "age": 22,
+    "name":"Mike"
+  } 
+{
+  "_id": {
+    "$oid": "516cfc334630a7f338c169b0"
+  },
+  "age": 3
+}</codeblock></p>
+        </li>
+        <li>
+          <p>按访问计划更新记录，假设集合中存在指定的索引名testIndex。</p>
+          <codeblock>db.foo.bar.upsert({<xref href="../../console/topics/inc.dita">$inc</xref>:{age:1}},{age:{<xref href="../../console/topics/gt.dita">$gt</xref>:20}},{"":"testIndex"})></codeblock>
+          <p>此操作等效于使用update方法，使用索引名为testIndex访问集合bar中age字段值大于20的记录，将这些记录的age字段名加1。此时返回：<codeblock> {
+    "_id": {
+      "$oid": "516a76a1c9565daf06050000"
+    },
+    "a": 10,
+    "age": 23,
+    "name":"Mike"
+  } </codeblock></p>
+        </li>
+      </ul>
+    </section>
+    
+  </body>
+  <related-links>
+    <link href="update.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

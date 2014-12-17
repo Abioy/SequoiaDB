@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="database_export">
+  <title>Data Migration — Export</title>
+  <body>
+    <section>
+      <title>sdbexprt</title>
+      <p>sdbexprt is a practical tool, it can export a JSON format or a CSV format data stored file
+        from SequoiaDB database .</p>
+    </section>
+    <section>
+      <title>Options</title>
+      <simpletable>
+        <sthead>
+          <stentry>Param</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry>--help,-h</stentry>
+          <stentry>return the basic help and usage information.</stentry>
+        </strow>
+        <strow>
+          <stentry>--version</stentry>
+          <stentry>returns version information.</stentry>
+        </strow>
+        <strow>
+          <stentry>--hostname,-s</stentry>
+          <stentry>export data from Sequoiadb of the specified hostname. In default, the <b>sdbexprt</b> try to connect to local hostname. </stentry>
+        </strow>
+        <strow>
+          <stentry>--svcname,-p</stentry>
+          <stentry>specify port. In default, the <b>sdbexprt</b> try to connect to the host which port number is 11810.</stentry>
+        </strow>
+        <strow>
+          <stentry>--user,-u</stentry>
+          <stentry>database username.</stentry>
+        </strow>
+        <strow>
+          <stentry>--password,-w</stentry>
+          <stentry>database password.</stentry>
+        </strow>        
+        <strow>
+          <stentry>--delchar,-a</stentry>
+          <stentry>specify the charcater separator. The default is ", "csv" formats. </stentry>
+        </strow>
+        <strow>
+          <stentry>--delfield,-e</stentry>
+          <stentry>specify the field delimiter. "," is default, "csv" formats.</stentry>
+        </strow>
+        <strow>
+          <stentry>--delrecord,-r</stentry>
+          <stentry>specify the record delimiter. "\n" is default.</stentry>
+        </strow>                
+        <strow>
+          <stentry>--csname,-c</stentry>
+          <stentry>specify the collectionspace name of exported data.</stentry>
+        </strow>
+        <strow>
+          <stentry>--clname,-l</stentry>
+          <stentry>specify the collectionspace of exported data. </stentry>
+        </strow>
+        <strow>
+          <stentry>--fields</stentry>
+          <stentry>specify one or more field names to export, separated by commas(,). </stentry>
+        </strow>
+        <strow>
+          <stentry>--included
+          </stentry>
+          <stentry>specify whether to export to csv first line of field names, default true, csv format is valid.</stentry>
+        </strow>
+        <strow>
+          <stentry>
+            --file
+          </stentry>
+          <stentry>specify the name of file want to export.</stentry>
+        </strow>
+        <strow>
+          <stentry>--type</stentry>
+          <stentry>specify the format of export data.It can be CSV or JSON.</stentry>
+        </strow>
+        <strow>
+          <stentry>--errorstop</stentry>
+          <stentry>if you encounter an error stop, default false.</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>Return value</title>
+      <p>0: Succeed</p>
+      <p>1: Succeed but include warnings</p>
+      <p>2: Fail</p>
+      <p>127: Parameters error</p>
+    </section>
+    <section>
+      <title>Usage</title>
+      <p>In the following sample, sdbexport will export data from the local database which port is
+        11810, and collectionspace name is <i>foo</i>, collection name is<i> bar</i>, and export type
+        is csv, export file name is<i> contact</i>, export field are <i>field1</i> and
+        <i>field2</i>.</p>
+      <codeblock>sdbexprt -s localhost -p 11810 --type csv --file contace --fields field1,field2 --c foo -l bar</codeblock>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,233 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema
+END
+topicGrp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/topicGrp.xsd
+END
+metaDeclGrp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/metaDeclGrp.xsd
+END
+bookmapMod.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/bookmapMod.xsd
+END
+mapGroupMod.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/mapGroupMod.xsd
+END
+xnalDomain.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/xnalDomain.xsd
+END
+concept.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/concept.xsd
+END
+conceptMod.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/conceptMod.xsd
+END
+reference.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/reference.xsd
+END
+xml.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/xml.xsd
+END
+taskMod.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/taskMod.xsd
+END
+referenceGrp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/referenceGrp.xsd
+END
+commonElementGrp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/commonElementGrp.xsd
+END
+glossaryGrp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/glossaryGrp.xsd
+END
+metaDeclMod.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/metaDeclMod.xsd
+END
+topicMod.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/topicMod.xsd
+END
+ditaarch.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/ditaarch.xsd
+END
+softwareDomain.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/softwareDomain.xsd
+END
+tblDeclGrp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/tblDeclGrp.xsd
+END
+mapGrp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/mapGrp.xsd
+END
+bookmap.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/bookmap.xsd
+END
+indexingDomain.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/indexingDomain.xsd
+END
+referenceMod.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/referenceMod.xsd
+END
+highlightDomain.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/highlightDomain.xsd
+END
+bookmapGrp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/bookmapGrp.xsd
+END
+commonElementMod.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/commonElementMod.xsd
+END
+task.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/task.xsd
+END
+glossary.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/glossary.xsd
+END
+utilitiesDomain.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/utilitiesDomain.xsd
+END
+glossaryMod.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/glossaryMod.xsd
+END
+conceptGrp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/conceptGrp.xsd
+END
+uiDomain.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/uiDomain.xsd
+END
+tblDeclMod.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/tblDeclMod.xsd
+END
+programmingDomain.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/programmingDomain.xsd
+END
+taskGrp.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/taskGrp.xsd
+END
+ditabase.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/ditabase.xsd
+END
+mapMod.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/mapMod.xsd
+END
+map.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/map.xsd
+END
+topic.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita11/schema/topic.xsd
+END

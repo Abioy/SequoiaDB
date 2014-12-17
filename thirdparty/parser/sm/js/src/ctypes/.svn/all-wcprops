@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes
+END
+Library.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/Library.cpp
+END
+CTypes.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/CTypes.cpp
+END
+libffi.patch
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi.patch
+END
+typedefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/typedefs.h
+END
+Library.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/Library.h
+END
+ctypes.msg
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/ctypes.msg
+END
+CTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/CTypes.h
+END

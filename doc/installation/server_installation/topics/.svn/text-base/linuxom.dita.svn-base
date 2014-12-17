@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_n4j_bbq_vp">
+        <title>安装 OM 服务</title>
+  <body>
+    <section>
+      <title>安装前准备</title>
+      <ul>
+        <li>确保系统满足硬件和软件要求</li>
+        <li>使用 root 用户权限来安装 SequoiaDB 数据库服务</li>
+        <li>检查 SequoiaDB 产品软件包与 OS 系统配套</li>
+        <li>如果需要图形界面模式安装，请确保 X Server 服务正在运行</li>
+        <li>服务器配置了主机名，且与其他服务器之间可通过主机名建立网络连接（如 ssh 主机名）</li>
+      </ul>
+    </section>
+    <note>SequoiaDB 的安装向导需要的参数不接受非英文字符。</note>
+    <section>
+      <title>安装步骤</title>
+      <p><b>说明：</b></p>
+      <p>&nbsp;&nbsp;（1）产品包名字以 sequoiadb-1.0.0-linux-x86_64-installer.run 为例；</p>
+      <p>&nbsp;&nbsp;（2）步骤以命令行方式进行介绍，图形界面按照图像向导提示完成。</p>
+      <note>如果有多台服务器，每台机器都需要重复如下步骤安装服务器程序。</note>
+      <ul>
+        <li><p>参照<xref href="../../system_require/topics/software.dita">系统配置需求</xref>配置好主机名以及修改系统内核参数</p></li>
+        <li><p>运行安装程序<codeblock>./sequoiadb-1.0.0-linux-x86_64-installer.run --mode text --SMS true</codeblock></p>
+          <!--<note>type 参数为 DB 和 SMS。默认值为 DB，当安装 DB 时，type 参数可省略。SMS 为安装 OM 服务。</note>--></li>
+        <li><p>程序提示选择向导语言<codeblock>Language Selection 
+Please select the installation language
+[1] English - English       
+[2] Simplified Chinese - 简体中文         
+Please choose an option [1] :2 </codeblock></p></li>
+        <li><p>输入2，选择中文，显示安装协议，默认忽略阅读，如果需要读取全部文件，输入2<codeblock>------------------------------------------------------------
+由 BitRockInstallBuilder 评估本所建立
+------------------------------------------------------------
+欢迎来到 SequoiaDB Server 安装程序
+
+
+重要信息：请仔细阅读
+
+下面提供了两个许可协议。
+
+1. SequoiaDB 评估程序的最终用户许可协议
+2. SequoiaDB 最终用户许可协议
+
+如果被许可方为了生产性使用目的（而不是为了评估、测试、试用“先试后买”或演示）获得本程序，单击下面的“接受”按钮即表示被许可方接受 SequoiaDB 最终用户许可协议，且不作任何修改。
+
+如果被许可方为了评估、测试、试用“先试后买”或演示（统称为“评估”）目的获得本程序：单击下面的“接受”按钮即表示被许可方同时接受（i）SequoiaDB 评估程序的最终用户许可协议（“评估许可”），且不作任何修改；和（ii）SequoiaDB 最终用户程序许可协议（SELA），且不作任何修改。
+
+在被许可方的评估期间将适用“评估许可”。
+
+如果被许可方通过签署采购协议在评估之后选择保留本程序（或者获得附加的本程序副本供评估之后使用），SequoiaDB 评估程序的最终用户许可协议将自动适用。
+
+“评估许可”和 SequoiaDB 最终用户许可协议不能同时有效；两者之间不能互相修改，并且彼此独立。
+
+这两个许可协议中每个协议的完整文本如下。
+
+评估程序的最终用户许可协议
+
+
+
+[1] 同意以上协议: 了解更多的协议内容，可以在安装后查看协议文件
+[2] 查看详细的协议内容
+请选择选项 [1] :</codeblock></p></li>
+        <li><p>是否同意协议：<codeblock>----------------------------------------------------------------------------
+同意以上协议
+
+按 [Enter] 继续：
+
+您是否接受此软件授权协议？ [y/n]:</codeblock></p></li>
+        <li><p>按 y 表示同意：<codeblock>------------------------------------------------------------ 
+请指定 SequoiaDBServer 将会被安装到的目录 
+安装目录 [/opt/sequoiadb]:</codeblock></p></li> 
+        <li><p>输入安装路径后按回车（默认安装在 /opt/sequoiadb），此时系统提示输入用户名，该用户名用于运行 SequoiaDB 服务<codeblock>------------------------------------------------------------
+数据库管理用户配置 
+配置用于启动 SequoiaDB 的用户名和密码 
+用户名[sdbadmin]:</codeblock></p></li>
+        <li><p>输入用户名后按回车（默认创建 sdbadmin 用户），此时系统提示输入该用户的密码和确认密码<codeblock>密码 [********] :
+确认密码 [********] :</codeblock></p></li>
+        <li><p>输入两次密码后（默认密码为 sdbadmin），此时系统提示输入配置服务端口<codeblock>---------------------------------------------------------------
+集群管理服务端口配置 
+配置SequoiaDB集群管理服务端口，集群管理用于远程启动添加和启停数据库节点 
+端口 [11790]:</codeblock><note>所有服务器的配置服务端口必须相同。</note></p></li>
+        <li><p>输入端口（默认为11790），系统提示开始安装，需要用户确认</p></li>
+        <li><p>询问是否允许 SequoiaDB 相关进程开机自启动<codeblock>----------------------------------------------------------------
+是否允许 SequoiaDB 相关进程开机自启动</codeblock></p></li>
+        <li><p>SequoiaDB 相关进程开机自启动 [Y/n]：Y，输入 Y，按回车，同意 SequoiaDB 相关进程开机自启动<codeblock>正在安装 SequoiaDB Server 于您的电脑中，请稍候。
+安装中
+0% ______________ 50% ______________ 100%
+#########################################
+-----------------------------------------------------------------
+安装程序已经完成安装 SequoiaDB Server 于你的电脑中.</codeblock></p></li>
+      </ul>
+            <p>安装完成后，OM 会自动启动并开启8000端口的 web 服务，用户可以通过浏览器登陆 OM，并进行集群的部署。假设安装 OM 的机器 IP 为192.168.10.10，则在浏览器键入 http://192.168.1.100:8000，访问 OM 服务。</p>
+    </section>
+  </body>
+</topic>
+

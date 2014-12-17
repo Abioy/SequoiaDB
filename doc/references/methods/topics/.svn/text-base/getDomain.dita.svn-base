@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_j4y_r3v_l4">
+  <title>db.getDomain()</title>
+  <body>
+    <section><title>db.getDomain(&lt;name>)</title>
+      <p>获取指定域。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>name</stentry>
+          <stentry>string</stentry>
+          <stentry>域名。</stentry>
+          <stentry>是</stentry>
+        </strow>        
+      </simpletable>      
+    </section>
+    <section><title>格式</title>
+      <p>getDomain() 方法的定义格式必须指定 name 参数，并且 name 的值在系统中存在，否则操作异常。</p>
+      <codeblock>{"name":"&lt;域名>"}</codeblock>       
+      <note>
+        <ul>         
+          <li>不能获取系统域。</li>
+        </ul>
+      </note>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>获取一个之前创建的域。</p>
+          <p><codeblock>var domain = db.getDomain('mydomain')</codeblock></p>
+        </li>        
+      </ul>
+    </section>
+  </body>
+</topic>

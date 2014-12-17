@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/directory
+END
+DirectoryClass_basic_001.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/directory/DirectoryClass_basic_001.phpt
+END
+directory_constants-win32.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/directory/directory_constants-win32.phpt
+END
+directory_constants.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/directory/directory_constants.phpt
+END
+DirectoryClass_error_001.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/directory/DirectoryClass_error_001.phpt
+END

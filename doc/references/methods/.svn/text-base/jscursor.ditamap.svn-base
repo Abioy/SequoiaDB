@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>DITA Topic Map</title>
+ <topicref href="jscursor.dita">
+  <topicref href="topics/cclose.dita"/>
+  <topicref href="topics/ccurrent.dita"/>
+  <!--<topicref href="topics/explain.dita"/>
+  <topicref href="topics/hint.dita"/>
+  <topicref href="topics/climit.dita"/>-->
+  <topicref href="topics/next.dita"/>
+  <!--<topicref href="topics/csize.dita"/>
+  <topicref href="topics/cskip.dita"/>
+  <topicref href="topics/csort.dita"/>
+  <topicref href="topics/toArray.dita"/>--> 
+ </topicref>
+</map>

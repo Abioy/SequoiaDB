@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_3dn_nln_2l_en">
+  <title>Database Detecting Tool — sdbinspt</title>
+  <body>
+    <p><b>sdbinspt</b> is a data file detection tool in SequoiaDB, it can detect the structure of
+      data file  true or false and present the result report.</p>
+    <section>
+      <title>Authorization</title>
+      <p>The user must have read permission for the <b>data</b> and <b>index</b> in database when
+        running <b>sdbinspt</b> command.</p>
+    </section>
+    <section>
+      <title>Required connection </title>
+      <p>None</p>
+    </section>
+    <section>
+      <title>Options</title>
+      <simpletable>
+        <sthead>
+          <stentry>Params</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry>--help, -h </stentry>
+          <stentry>return the basic help and usage information</stentry>
+        </strow>
+        <strow>
+          <stentry>--dbpath, -d </stentry>
+          <stentry>specify the path of data file, If not be specified, the default path is
+              <i>current path</i>. </stentry>
+        </strow>
+        <strow>
+          <stentry>--output, -o </stentry>
+          <stentry>specify the output file, If not be specified, default is <i>screen output</i>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>--verbose, -v </stentry>
+          <stentry>whether for ASCII text output(<i>true/false</i>), default is <i>true</i>. </stentry>
+        </strow>
+        <strow>
+          <stentry>--csname, -c </stentry>
+          <stentry>specify the collectionspace name,If  not be specified,all collectionspaces. </stentry>
+        </strow>
+        <strow>
+          <stentry>--clname, -l </stentry>
+          <stentry>specify the collection name, If not be specified, all collections. </stentry>
+        </strow>
+        <strow>
+          <stentry>--action, -a </stentry>
+          <stentry>specify a action in one of  inspect, dump and all, it can't be null.<fig></fig>inspect: to
+            check and report any data corruption.<fig></fig>dump: to format data page, and output.<fig></fig>all: to check data page corruption and formatted output data page. </stentry>
+        </strow>
+        <strow>
+          <stentry>--dumpdata -t </stentry>
+          <stentry>The set operating data file(t<i>true/false</i>), default is
+              <i>false</i>. </stentry>
+        </strow>
+        <strow>
+          <stentry>--dumpindex, -i </stentry>
+          <stentry>The set operation index file(<i>true/false</i>), <i>false</i> is default. </stentry>
+        </strow>
+        <strow>
+          <stentry>--pagestart, -s </stentry>
+          <stentry>Specifies the starting data pages, <i>1 </i>is default. </stentry>
+        </strow>
+        <strow>
+          <stentry>--numpage, -n </stentry>
+          <stentry>Specifies the data pages need to detect or formatted number, when you specify the -s parameter is non negative, the parameters take effect, default is
+              <i>1</i></stentry>
+        </strow>
+        <strow>
+          <stentry>--record, -p </stentry>
+          <stentry>Specifies the display formatted output data or index content, only the default output data or index metadata. </stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>Usage</title>
+      <p>When using sdbinspt tool, be sure that the database process has stopped.</p>
+      <p>The following sample shows <b>sdbinspt</b> will detect in current directory and formatted
+        output the data and indexes in all of collectionspaces and collections to <i>output.txt</i>
+        file.</p>
+      <codeblock>sdbinspt -d . -o output.txt -v true -a all -t true -i true -p true</codeblock>
+    </section>
+  </body>
+</topic>

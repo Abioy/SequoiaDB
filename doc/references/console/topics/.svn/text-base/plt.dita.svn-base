@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_lt">
+  <title >$lt</title>
+  <body>
+    <section><title>语法</title>
+      <p><codeblock>{&lt;字段名>：{$lt:&lt;值>}}</codeblock></p>
+    </section>
+    <section><title>描述</title>
+      <p>$lt 选择满足“字段名”的值小于（&lt;）指定“值”的记录。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>查询集合 bar 中字段名为 age，其值小于20的记录。</p>
+          <codeblock>db.foo.bar.find({age:{$lt:20}})</codeblock>
+        </li>
+        <li>
+          <p>$lt 匹配嵌套对象中的字段名。使用 <xref href="../../methods/topics/dbupdate.dita">update()</xref> 方法更新嵌套对象 service 中的 ID 字段值小于2的记录，将这些记录的 age 字段值设定为25。</p>
+          <codeblock>db.foo.bar.update({<xref href="gset.dita">$set</xref>:{age:25}},{"service.ID":{$lt:15}})</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="gte.dita" format="dita" type="topic"></link>
+    <link href="lte.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/find.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/dbupdate.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="administration_concepts_database_bindata">
+  <title>Bindata</title>
+  <body>
+    <section><title>Concept</title>
+      <p>In SequoiaDB, data is read in the format of JSON object. So users should encode bindata
+        with Base64, and send it to database in the format of string.</p>
+    </section>
+    <section><title>Format</title>
+      <p>The format of bindat is as follow:</p>
+      <codeblock>{ "$binary" : "&lt;data&gt;", "$type" : &lt;type&gt; }</codeblock>
+      <p>In this format, "data" should be encoded with Base64. "Type" is a decimal value between 0
+        and 255. Users can choose type values in this range to identify types in applications.</p>
+      <p>Base64 is an universal format of transforming data, which is mainly transforming bindata
+        into byte stream in the format of ASCII string. Generally, data becomes longer after
+        transformation.</p>
+      <p>In order to save storage space, in SequioaDB, Base64 data is transformed into original data
+        before being stored in database. When users request to read data, it is transformed and
+        provided in the format of Base64 again.</p>
+    </section>
+    <section><title>Sample</title>
+      <p>For example, string "hello world" is encoded with Base64 into "aGVsbG8gd29ybGQ=". JSON data containing  "hello world" bindata, with type of "1" is:</p>
+      <codeblock>{ "key" : { "$binary" : "aGVsbG8gd29ybGQ=", "$type" : 1 } }</codeblock>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_removeNode">
+  <title>rg.removeNode()</title>
+  <body>
+    <section><title>rg.removeNode(&lt;host>,&lt;service>,[config])</title>
+      <p>删除分区组中的指定节点。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable id="references_method_createNode_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>host</stentry>
+          <stentry>string</stentry>
+          <stentry>节点主机名。</stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow>
+          <stentry>service</stentry>
+          <stentry>string</stentry>
+          <stentry>节点端口号。</stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow>
+          <stentry>config </stentry>
+          <stentry>Json 对象</stentry>
+          <stentry>节点配置信息。</stentry>
+          <stentry>否</stentry>
+        </strow>
+      </simpletable>      
+    </section>
+    <section><title>格式</title>
+      <p>rg.removeNode() 方法的定义格式有三个参数：host，service，config，如上表所示，格式如下：<codeblock>("&lt;主机名>","&lt;端口号>"[,{&lt;configParam>:value,...}])</codeblock></p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>在分区组 group 中删除节点命令如下<codeblock>rg.removeNode("vmsvr2-suse-x64",11800)</codeblock></li>
+      </ul>
+      <p><note>
+        <p>指定删除的节点必须存在，否则出现异常。</p>
+      </note></p>
+    </section>
+  </body>
+  <related-links>
+    <link href="createNode.dita"></link>
+    <link href="getDetail.dita"></link>
+  </related-links>
+</topic>

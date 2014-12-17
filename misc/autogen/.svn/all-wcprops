@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/sequoiadb/!svn/ver/16574/trunk/misc/autogen
+END
+rcgen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/16508/trunk/misc/autogen/rcgen.cpp
+END
+buildgen.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/11730/trunk/misc/autogen/buildgen.h
+END
+ossVer.tmp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/9949/trunk/misc/autogen/ossVer.tmp
+END
+dbConfForWeb.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/11730/trunk/misc/autogen/dbConfForWeb.cpp
+END
+optgen.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/sequoiadb/!svn/ver/11730/trunk/misc/autogen/optgen.h
+END
+optOtherInfoForWeb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/10122/trunk/misc/autogen/optOtherInfoForWeb.xml
+END
+rcgen.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sequoiadb/!svn/ver/14375/trunk/misc/autogen/rcgen.h
+END
+dbConfForWeb.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/11730/trunk/misc/autogen/dbConfForWeb.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/11622/trunk/misc/autogen/SConscript
+END
+filenamegen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/16510/trunk/misc/autogen/filenamegen.cpp
+END
+optlist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/16443/trunk/misc/autogen/optlist.xml
+END
+rclist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/16574/trunk/misc/autogen/rclist.xml
+END
+filenamegen.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/11730/trunk/misc/autogen/filenamegen.h
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/sequoiadb/!svn/ver/11730/trunk/misc/autogen/main.cpp
+END
+SConstruct
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/9949/trunk/misc/autogen/SConstruct
+END
+tracegen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/16530/trunk/misc/autogen/tracegen.cpp
+END
+buildgen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/11745/trunk/misc/autogen/buildgen.cpp
+END
+optgen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/16508/trunk/misc/autogen/optgen.cpp
+END
+tracegen.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/11730/trunk/misc/autogen/tracegen.h
+END

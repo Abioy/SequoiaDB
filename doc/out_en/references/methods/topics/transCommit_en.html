@@ -1,0 +1,80 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="db.transCommit()"/>
+<meta name="description" content="db.transCommit() Transaction commits. After the open transaction, the operation if a single logical unit of work performed without exception, execute transaction commit command, the data of the ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../references/methods/topics/methodlist_en.html"/>
+<meta name="DC.Relation" scheme="URI" content="transBegin_en.html"/>
+<meta name="DC.Relation" scheme="URI" content="transRollback_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_zyg_p3z_gm"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>db.transCommit()</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_zyg_p3z_gm"><a name="topic_zyg_p3z_gm"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../references/methods/topics/methodlist_en.html" title="Sequoiadb javascript Method List"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sequoiadb javascript Method List</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/references_en.html" title="Reference">Reference</a> / <a class="navheader_parent_path" href="../../../references/methods/topics/methodlist_en.html" title="Sequoiadb javascript Method List">Sequoiadb javascript Method List</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">db.transCommit()</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">db.transCommit()</h2>
+      <p class="p">Transaction commits. After the open transaction, the operation if a single logical unit of work performed without exception, execute transaction commit 
+      command, the data of the database will be update.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Example</h2>
+      <ul class="ul">
+        <li class="li"><p class="p">Transaction commit command:</p>
+
+          <div class="p"><pre class="pre codeblock">db.transCommit() </pre>
+</div>
+</li>
+
+      </ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="transBegin_en.html" title="db.transBegin()">db.transBegin()</a></div>
+<div><a class="navheader_parent_path" href="transRollback_en.html" title="db.transRollback()">db.transRollback()</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../references/methods/topics/methodlist_en.html" title="Sequoiadb javascript Method List"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sequoiadb javascript Method List</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.6
+          
+    </div>
+</body>
+</html>

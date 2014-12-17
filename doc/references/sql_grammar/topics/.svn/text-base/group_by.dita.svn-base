@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_group_by">
+  <title>sql group by</title>
+  <body>
+    <section><title>group by 语句</title>
+      <p>用于结合合计函数，根据一个或多个字段名对结果集进行分组。</p>
+    </section>
+    <section><title>语法</title>
+      <p><codeblock>group by &lt;field1_name [ASC|DESC ], ...&gt;  </codeblock></p>
+      <p>&lt;field_name>：字段名</p>
+      <p>[asc|desc]：排序，asc 表示升序，desc 表示降序，默认为 asc</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>希望计算每个部门的员工数，并按字段名 dept_no 分组：</p>
+          <p><codeblock>db.exec("select dept_no，<xref href="sqcount.dita">count</xref>(emp_no) as 员工总数 from foo.bar group by dept_no") </codeblock></p>
+          <note>
+            <p>像 <xref href="sqsum.dita">sum</xref>，<xref href="sqcount.dita">count</xref>，<xref href="sqmin.dita">min</xref>，<xref href="sqmax.dita">max</xref>，<xref href="sqavg.dita">avg</xref> 这样的计数函数必须使用别名。</p>
+          </note>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="sqdelete.dita" format="dita" type="topic"></link>
+    <link href="order_by.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

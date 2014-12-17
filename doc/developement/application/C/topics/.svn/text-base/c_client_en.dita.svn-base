@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_kmr_n2s_wj_en">
+  <title>C Driver</title>
+  <body>
+    <section>
+      <title>Outline</title>
+      <p>C client application is mainly to provide database connection, collectionspaces, collections, cursor, replica group, node, domain, lob. <xref href="..\..\..\..\..\c\html\index.html" format="html"
+        >More refer to the online C API</xref></p>
+    </section>
+    <section>
+      <title>Handle</title>
+      <p>The handle of C client-driven is divided into two types. One is used to operate databases, the other is used to operate clusters.</p>
+      <ul>
+        <li>Database Operation Handle <p>There are 3 degrees of data in SequoiaDB:</p><p>&nbsp;1)
+            Database</p><p>&nbsp;2) Collection space</p><p>&nbsp;3) Collection</p><p>Logically,
+            every collection space in SequoiaDB has no physical upper boundary. Every collection
+            space is stored in a stand-alone file. So the amount of collection space depends on the
+            size of disk and memory. </p><p>A collection space contains at most 4096 collections.
+            Every collection can contain more than one record. In a physical system, the size of a
+            collection space is at most 256GB.</p><p>Compared with relation database, we can regard
+            record as line in relation database. We can regard collection as table in relation
+            database. </p><p>So in client, there are 3 Handles representing connection, collectionspace and collection, including 1 handle represents cursor, 1 handle represents LOB:</p><simpletable>
+            <strow>
+              <stentry>sdbConnectionHandle </stentry>
+              <stentry>Database instance </stentry>
+              <stentry>It represents a stand-alone connection </stentry>
+            </strow>
+            <strow>
+              <stentry>sdbCSHandle </stentry>
+              <stentry>CollectionSpace instance </stentry>
+              <stentry>It represents a stand-alone collection space</stentry>
+            </strow>
+            <strow>
+              <stentry>sdbCollectionHandle</stentry>
+              <stentry>Collection instance </stentry>
+              <stentry>It represents a stand-alone collection</stentry>
+            </strow>
+            <strow>
+              <stentry>sdbCursorHandle</stentry>
+              <stentry>Cursor instance </stentry>
+              <stentry>It represents a result set of a query</stentry>
+            </strow>
+            <strow>
+              <stentry>sdbLobHandle</stentry>
+              <stentry>LOB's handle</stentry>
+              <stentry>Represent a LOB</stentry>
+            </strow>
+          </simpletable><p>C client-driven application operate with different handles. For
+            example, reading data will use Cursor Handle, then creating collectionspace uses database
+            connection Handle.</p><note>
+            <p>1. As for a connection, in its collection space, collections share one socket. So in
+              mutiple-thread system, the system should guarantee that the socket can be used merely
+              by one thread whenever.</p>
+            <p>2. Generally, it is not recommended to manipulate a connection instance and other
+              instance, which it generates, with more than threads.</p>
+            <p> 3、If each thread merely use its own connection instance and other instances it
+              generates, it is thread-safe. </p>
+          </note></li>
+        <li>Cluster Operation Handle<p>There are three degrees of cluster operation in
+          SequoiaDB:</p><p>&nbsp;&nbsp;1) Replica Group</p><p>&nbsp;&nbsp;2) Data Node</p><p>&nbsp;&nbsp;3) Domain</p><note>
+            <p>Replica group contain two tpyes: Catalog ReplicaGroup, Data ReplicaGroup.</p>
+          </note><p>ReplicaGroup instances and Data Node instances can be represented by the following
+            three types of Handles.<simpletable>
+              <strow>
+                <stentry> sdbReplicaGroupHandle </stentry>
+                <stentry>ReplicaGroup Handle </stentry>
+                <stentry> It represents a stand-alone ReplicaGroup </stentry>
+              </strow>
+              <strow>
+                <stentry> sdbNodeHandle </stentry>
+                <stentry>Data Node Handle </stentry>
+                <stentry> It represents a stand-alone Data Node</stentry>
+              </strow>
+              <strow>
+                <stentry> sdbDomainHandle </stentry>
+                <stentry>Domain Handle </stentry>
+                <stentry>It represents a stand-alone Domain</stentry>
+              </strow>
+            </simpletable></p><p>Cluster-related operations need to use ReplicaSet Handle and Data
+            Node Handle.</p><p>The sdbReplicaGroupHandle instants is to manage replica groups, including
+            starting and stopping replica groups, getting the status, name-information and
+            number-information of nodes in the replica group. </p><p>The sdbNodeHandle instants is to
+            manage Data Nodes,including starting and stopping the specified data node,getting the
+            specified data node instants and maste-slave data node instants and address-information
+            of data node. </p><p>The sdbDomainHandle is used to modify, obtain the domain information.</p>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <title>Error Information</title>
+      <p>Each function has its returned value, the definition of the returned value is:</p>      
+      <p>SDB_OK (value is 0): Execution succeeds.</p>
+      <p>&lt; 0: Database error, the detailed error description can be found in the include/ossErr.h directory of the C driver development kit.</p>
+      <p>> 0: System error, please check the related error code information.</p>
+    </section>
+  </body>
+</topic>

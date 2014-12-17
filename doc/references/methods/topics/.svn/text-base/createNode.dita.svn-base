@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_getNode">
+  <title>rg.createNode()</title>
+  <body>
+    <section><title>rg.createNode(&lt;host>,&lt;service>,&lt;dbpath>,[config])</title>
+      <p>在分区组中创建节点。</p>
+      <note><p>只有在分区组启动之后，才能创建节点操作。</p></note>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable id="references_method_createNode_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>host </stentry>
+          <stentry>string                   </stentry>
+          <stentry>指定节点的主机名。 </stentry>
+          <stentry>是                   </stentry>
+        </strow>
+        <strow>
+          <stentry>service</stentry>
+          <stentry>string</stentry>
+          <stentry>节点端口号。</stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow>
+          <stentry>dbpath</stentry>
+          <stentry>string</stentry>
+          <stentry>节点路径。</stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow>
+          <stentry>config</stentry>
+          <stentry>Json 对象</stentry>
+          <stentry>节点配置信息，如配置日志大小，是否打开事务等，具体可参考<xref href="../../../administration/database/topics/runtime_configuration.dita">数据库配置</xref>。</stentry>
+          <stentry>否</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>格式</title>
+      <p>rg.createNode() 方法的定义格式有四个参数：host，service，dbpath，config，如上表所示，前三个参数的类型都是字符串型，必填；最后一个是 Json 对象，选填。<codeblock>("&lt;主机名>","&lt;端口号>","&lt;节点路径>,"[{&lt;configParam>:value,...}])</codeblock></p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>在分区组 group 中创建一个端口号为11800的节点，指定日志文件大小为64MB<codeblock>rg.createNode("vmsvr2-suse-x64",11800,"/opt/sequoiadb/data/11800",{logfilesz:64})</codeblock></li>
+      </ul>
+      <p><note>
+        <p>在一个分区组中能创建多个节点，但是连个节点的端口号必须相差5以上。因为系统为每个节点后台控制了5个通信接口。</p>
+      </note></p>
+    </section>
+  </body>
+  <related-links>
+    <link href="rgstart.dita"></link>
+    <link href="removeNode.dita"></link>
+  </related-links>
+</topic>

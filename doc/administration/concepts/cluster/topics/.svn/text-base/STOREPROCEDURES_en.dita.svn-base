@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_vwd_1s1_fm">
+  <title>STOREPROCEDURES Collection</title>
+  <body>
+    <section>
+      <title>Collection Space</title>
+      <p>STOREPROCEDURES</p>
+    </section>
+    <section>
+      <title>Concept</title>
+      <p>STOREPROCEDURES collection contains all of the stored procedure function, each function is saved as a document, each document contains the following fields:</p>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 2.26*"
+        id="administration_concepts_cluster_node_catalog_sysnodes_table1">-->
+        <sthead>
+          <stentry>Field Name</stentry>
+          <stentry>Type</stentry>
+          <stentry>Descrption</stentry>
+        </sthead>
+        <strow>
+          <stentry>name</stentry>
+          <stentry>String</stentry>
+          <stentry>Function name.</stentry>
+        </strow>
+        <strow>
+          <stentry>func</stentry>
+          <stentry>String</stentry>
+          <stentry>Function body.</stentry>
+        </strow>
+        <strow>
+          <stentry>funcType</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Function type.<ul>
+            <li>0：Representative javascript function.</li>
+          </ul>No other type of.</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>Example</title>
+      <p>A simple stored procedure functions as follows.</p>
+      <codeblock>{ 
+  "_id" : { "$oid" : "5257b115925c31dd16ec4e4a" }, 
+  "name" : "fun", 
+  "func" : "function fun(num) {
+      if (num == 1) {
+          return 1;
+      } else {
+          return fun(num - 1) * num;
+      }
+    }", 
+  "funcType" : 0 }</codeblock>
+    </section>
+  </body>
+</topic>

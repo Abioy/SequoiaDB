@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="developement_basics_read">
+  <title>读取</title>
+  <body>
+    <p>四大基本数据库操作即（CRUD），读操作是从 SequoiaDB 中的集合中检索文档记录，包括所有响应应用程序请求数据并返回游标的操作。</p>
+    <p>本文档描述了应用程序从 SequoiaDB 中请求数据的查询语法和结构，以及不同因素影响效率的读取请求。</p>
+    <note><p>本文档的所有例子都是使用 SequoiaDB 的 shell 接口。</p></note>
+    <section>
+      <title>find()</title>
+      <p>我们使用 <xref href="../../../references/methods/topics/find.dita">find</xref> 方法读取 SequoiaDB 中的记录。find 方法是从集合中选择记录的主要方法，它返回一个包含很多记录的游标。它的语法结构如下：</p>
+      <codeblock>db.collectionspace.collection.find([cond],[sel])</codeblock>
+      <p>在 SQL 中对应的操作：find() 的方法与 SELECT 语句相似：</p>
+      <p><b>.</b> [cond] 参数对应 WHERE 语句</p>
+      <p><b>.</b> [sel] 参数对应从结果集中选择的字段列表</p>
+      <p>现集合中有如下一条记录：</p>
+<codeblock>{
+  "_id":1,
+  "name":{
+     "first" : "Tom",
+     "second":"David"
+       },
+  "age":23
+  "birth":"1990-04-01",
+  "phone":[
+      10086,
+      10010,
+      10000
+     ],
+  "family":[
+      {
+     "Dad":"Kobe",
+     "phone":139123456
+      },
+      {
+      "Mom":"Julie",
+      "phone":189123456
+       }
+    ]
+ }</codeblock>  
+    </section>
+    <section>
+      <title>返回集合所有记录</title>
+      <p>如果没有 cond 参数，方法 db.collectionspace.colletion.find() 选择集合中所有的记录，如下返回集合空间 foo 中集合 bar 的所有记录：</p>
+      <p><codeblock>db.foo.bar.find()</codeblock></p>
+    </section>
+    <section>
+      <title>返回匹配条件的记录</title>
+       <ul>
+         <li>Equality 匹配<p>下面的操作返回集合 bar 中 age 等于23的记录 </p>
+           <p><codeblock> db.foo.bar.find({age:23})</codeblock></p></li>
+         <li><p>使用<xref href="../../../references/console/topics/console.dita">匹配符</xref></p>
+           <p>下面操作返回集合 bar age 字段值大于20的记录</p><p>
+            <codeblock>db.foo.bar.find({age:{<xref href="../../../references/console/topics/gt.dita">$gt</xref>:20}})</codeblock>
+          </p></li>
+         <li><p>嵌套数组匹配</p>
+           <p>1. 数组元素查询，下面的操作操作返回一个游标，指向集合 bar 中所有数组类型字段 phone 含有元素10086的记录：</p>
+           <p><codeblock> db.foo.bar.find({"phone":10086})</codeblock></p>
+           <p>2. 数组元素为 BSON 对象的查询，下面的操作返回一个游标指向集合 bar 中 family 字段包含的子元素 Dad 字段值为“Kobe”，phone 字段值为139123456的记录：</p>
+           <p><codeblock> db.foo.bar.find( 
+  {
+  "family":{
+    $elemMatch: {
+     "Dad":"Kobe",
+     "phone":139123456
+   }
+  }
+  })</codeblock></p>
+         </li>
+         <li><p>嵌套 BSON 对象匹配查询</p>
+           <p>下面的操作返回一个游标指向集合 bar 中嵌套 BSON 对象的 name 字段匹配{"first":"Tom"}的记录</p>
+            <p><codeblock> db.foo.bar.find(
+    {
+     "name":{ 
+     "first":"Tom"
+      }
+    }
+   )</codeblock></p>
+              <p>上面还可以写成：<codeblock> db.foo.bar.find(
+     {
+     "name.first":"Tom"
+     }
+   )</codeblock></p>
+         </li>
+         
+       </ul>
+    </section>    
+    <section>
+      <title>指定返回记录字段</title>
+      <p>如果指定 find 方法的 sel 参数，那么只返回指定的 sel 参数内的字段名。下面的操作返回记录的 name 字段：</p>
+      <p>
+        <codeblock>db.foo.bar.find(null,{name:""})</codeblock>
+      </p>
+      <note><p>如果记录中不存在指定的字段名（如：people），SequoiaDB 默认也返回。如：</p>
+        <codeblock>db.foo.bar.find({},{name:"",people:""})
+返回：{
+       "name":{
+                "fist":"Tom",
+                "second":"David"
+              },
+        "people":""
+        }</codeblock>
+      </note>
+    </section>
+    <section>
+      <title>find() 更多信息</title>
+      <p>执行 db.foo.bar.find().help() , 会看到 find() 的更多使用方法</p>
+      <ul>
+        <li>
+          <p>cursor.sort(&lt;sort>)</p>
+          <p>sort() 方法用来按指定的字段排序，语法格式为：sort({"字段名1"：1|-1,"字段名2"：1|-1,...})，1为升序，-1为降序。如果 find 方法的 sel 参数不设定内容，sort() 方法按指定 sort 参数设定的字段排序，如果 sel 参数设定了返回的字段名，那么 sort() 方法只能对 sel 参数中选定的字段进行排序。如：
+            <codeblock>db.foo.bar.find().sort({age:1})</codeblock>对返回的记录按 age 字段值的升序排序
+            <codeblock>db.foo.bar.find(null,{name:""}).sort({age:1})</codeblock>此操作实际上对返回的记录达不到排序的效果。</p></li>
+        <li>cursor.hint(&lt;hint>)<p>添加索引加快查找速度，假设存在名为“testIndex”的索引：<codeblock>db.foo.bar.find().hint({"":"testIndex"})</codeblock></p></li>
+        <li>cursor.limit(&lt;num>)<p>在结果集中限制返回的记录条数：<codeblock>db.foo.bar.find().limit(3)</codeblock>返回结果集里面的的前三条记录</p></li>
+        <li>cursor.skip(&lt;num>)<p>skip() 方法控制结果集的开始点，即跳过前面的 num 条记录，从 num+1条记录开始返回：<codeblock>db.foo.bar.find().skip(5)</codeblock>从查询的结果集的第6条记录开始返回</p></li>
+      <li>
+        <p>使用游标控制 find() 返回的记录</p>
+          <p><codeblock><xref href="../../../references/methods/topics/ccurrent.dita">db.foo.bar.find().current()</xref>   //返回当前游标指向的记录
+
+<xref href="../../../references/methods/topics/next.dita">db.foo.bar.find().next()</xref>   //返回当前游标指向的下一条记录
+
+<xref href="../../../references/methods/topics/cclose.dita">db.foo.bar.find().close()</xref>   //关闭当前游标，当前游标不再可用          
+            
+<xref href="../../../references/methods/topics/dbcount.dita">db.foo.bar.find().count()</xref>   //返回当前游标的记录总数
+            
+<xref href="../../../references/methods/topics/csize.dita">db.foo.bar.find().size()</xref>   //返回当前游标到最终游标的距离
+            
+<xref href="../../../references/methods/topics/toArray.dita">db.foo.bar.find().toArray()</xref>   //以数组形式返回结果集</codeblock></p>
+      </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="create.dita" format="dita" type="topics"></link>
+    <link href="update.dita" format="dita" type="topics"></link>
+  </related-links>
+</topic>

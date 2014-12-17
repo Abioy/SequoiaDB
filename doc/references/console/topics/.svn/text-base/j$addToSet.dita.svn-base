@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_l5m_kwj_pl">
+  <title>$addtoset</title>
+  <body>
+    <section>
+      <title>描述</title>
+      <p>记录分组后，使用 <b>$addtoset</b> 将指定字段值添加到数组中，相同的字段值只会添加一次。对嵌套对象使用点操作符（.）引用字段名。</p>
+    </section>
+    <section>
+      <title>示例</title>
+      <ul>
+        <li>如下操作对记录分组后将指定字段值添加到数组中输出
+          <codeblock>db.collectionspace.collection.aggregate({$group:{_id:"$dep",dep:{<xref href="jfirst.dita"><b>$first</b></xref>:"$dep"},addtoset_major:{$addtoset:"$major"}}})</codeblock>
+          <p>此操作对记录按 dep 字段值进行分组，并使用 <xref href="jfirst.dita"><b>$first</b></xref> 输出每个组第一条记录的 dep 字段，输出字段名为 Dep；又将 major 字段的值使用 <b>$addtoset</b> 放入数组中返回，输出字段名为 addtoset_major，如下：
+          </p><codeblock>{
+  "Dep": "物电学院",
+  "addtoset_major": [
+    "物理学",
+    "光学",
+    "电学"
+  ]
+}
+{
+  "Dep": "计算机学院",
+  "addtoset_major": [
+    "计算机科学与技术",
+    "计算机软件与理论",
+    "计算机工程"
+  ]
+}</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="jgroup.dita" format="dita" type="topic"></link>
+    <link href="jfirst.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

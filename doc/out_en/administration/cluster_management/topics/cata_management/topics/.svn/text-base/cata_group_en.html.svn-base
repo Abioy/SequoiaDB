@@ -1,0 +1,81 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Create New Catalog Replica Group"/>
+<meta name="description" content="If creating new nodes relate to create new master, please refer to the section Add master to cluster to complete the configuration of host name and params about master. There is only one catalog ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../../administration/cluster_management/topics/cata_management/topics/cata_management_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_jwh_ncx_tk_en"/>
+<link rel="stylesheet" type="text/css" href="../../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../../assets/webhelp_topic.css"/>
+<title>Create New Catalog Replica Group</title>
+<script type="text/javascript" src="../../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_jwh_ncx_tk_en"><a name="topic_jwh_ncx_tk_en"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../../administration/cluster_management/topics/cata_management/topics/cata_management_en.html" title="Catalog Replica Group Management"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Catalog Replica Group Management</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../cluster_management_en.html" title="Cluster Management">Cluster Management</a> / <a class="navheader_parent_path" href="../../../../../administration/cluster_management/topics/cata_management/topics/cata_management_en.html" title="Catalog Replica Group Management">Catalog Replica Group Management</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Create New Catalog Replica Group</h1>
+
+  <div class="body">
+    <div class="note note"><span class="notetitle">Note:</span> If creating new nodes relate to create new master, please refer to the section <a class="xref" href="../../create_host_en.html">Add master to cluster</a> to complete the configuration
+      of host name and params about master.</div>
+
+    <p class="p">There is only one catalog replica group in the database cluster. So create new catalog replica group
+      have already completed in the time of installed and there is no need execute creating new
+      replica group operation after installing. Please refer to the section <a class="xref" href="../../../../../installation/configuration_start/topics/cluster_en.html">Configuration
+        and startup of cluster mode</a>. operation methods: </p>
+
+    <pre class="pre codeblock"> &gt;db.createReplicaCataGroup(&lt;host&gt;,&lt;service&gt;,&lt;dbpath&gt;,[config])</pre>
+
+    <p class="p">This command is to create a new catalog replica group, at the same time create and start a catalog
+      node, amongs:</p>
+
+    <p class="p"><strong class="ph b">host </strong>: specify the host name of catalog node.</p>
+
+    <p class="p"><strong class="ph b">service </strong>: specify the service port of catalog node, please ensure this port and the
+      next three ports are unoccupied; for example, if set port 11800, then ensure
+      11800/11801/11802/11803 are unoccupied.</p>
+
+    <p class="p"><strong class="ph b">dbpath</strong>: data file path, be used to store catalog data files, please ensure that the
+      data administrator user has write access.(created when installed, dafault <em class="ph i">sdbadmin</em>).</p>
+
+    <p class="p"><strong class="ph b">config </strong>: optional param, be used to configure more detail params. the form is json. param
+      list refer to the section <a class="xref" href="../../../../database/topics/runtime_configuration_en.html">database
+        configuration</a>, for example configure the param of log size {logfilesz:64}.</p>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../../administration/cluster_management/topics/cata_management/topics/cata_management_en.html" title="Catalog Replica Group Management"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Catalog Replica Group Management</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

@@ -1,0 +1,647 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/sequoiadb/!svn/ver/16544/trunk/doc/manual
+END
+rg.getDetail.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/rg.getDetail.cli
+END
+db.createCataRG.cli
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.createCataRG.cli
+END
+cl.getLob.cli
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/15959/trunk/doc/manual/cl.getLob.cli
+END
+db.listDomains.cli
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.listDomains.cli
+END
+db.createCS.cli
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/15724/trunk/doc/manual/db.createCS.cli
+END
+cl.find.cli
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.find.cli
+END
+query_gen.[i].cli
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/query_gen.%5Bi%5D.cli
+END
+cl.attachCL.cli
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/16231/trunk/doc/manual/cl.attachCL.cli
+END
+db.dropDomain.cli
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.dropDomain.cli
+END
+rg.createNode.cli
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/rg.createNode.cli
+END
+domain.listCollections.cli
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/domain.listCollections.cli
+END
+query_curs.current.cli
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/query_curs.current.cli
+END
+db.transCommit.cli
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.transCommit.cli
+END
+db.listBackup.cli
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.listBackup.cli
+END
+cl.count.cli
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/cl.count.cli
+END
+db.transRollback.cli
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.transRollback.cli
+END
+query_gen.count.cli
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/query_gen.count.cli
+END
+db.resetSnapshot.cli
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/15724/trunk/doc/manual/db.resetSnapshot.cli
+END
+cl.split.cli
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.split.cli
+END
+cl.listLobs.cli
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.listLobs.cli
+END
+db.removeProcedure.cli
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.removeProcedure.cli
+END
+cl.remove.cli
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.remove.cli
+END
+db.listProcedures.cli
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.listProcedures.cli
+END
+rg.getNode.cli
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/rg.getNode.cli
+END
+cl.deleteLob.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.deleteLob.cli
+END
+db.getRG.cli
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/15724/trunk/doc/manual/db.getRG.cli
+END
+rg.stop.cli
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/rg.stop.cli
+END
+query_gen.explain.cli
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/query_gen.explain.cli
+END
+db.listCollections.cli
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/15724/trunk/doc/manual/db.listCollections.cli
+END
+query_cond.sort.cli
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/query_cond.sort.cli
+END
+db.createProcedure.cli
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.createProcedure.cli
+END
+rg.getMaster.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/rg.getMaster.cli
+END
+cs.getCL.cli
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cs.getCL.cli
+END
+cl.getIndex.cli
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.getIndex.cli
+END
+query_curs.close.cli
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/query_curs.close.cli
+END
+oma.stopNode.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15724/trunk/doc/manual/oma.stopNode.cli
+END
+db.removeRG.cli
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/15724/trunk/doc/manual/db.removeRG.cli
+END
+db.listCollectionSpaces.cli
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/15724/trunk/doc/manual/db.listCollectionSpaces.cli
+END
+db.startRG.cli
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.startRG.cli
+END
+query_curs.next.cli
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/query_curs.next.cli
+END
+query_gen.toArray.cli
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/query_gen.toArray.cli
+END
+db.createDomain.cli
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.createDomain.cli
+END
+db.transBegin.cli
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.transBegin.cli
+END
+node.start.cli
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/node.start.cli
+END
+db.traceStatus.cli
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/15804/trunk/doc/manual/db.traceStatus.cli
+END
+cl.listIndexes.cli
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.listIndexes.cli
+END
+db.invalidateCache.cli
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.invalidateCache.cli
+END
+count.hint.cli
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/count.hint.cli
+END
+db.getCS.cli
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/15724/trunk/doc/manual/db.getCS.cli
+END
+db.cancelTask.cli
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.cancelTask.cli
+END
+db.listReplicaGroups.cli
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/15724/trunk/doc/manual/db.listReplicaGroups.cli
+END
+cl.insert.cli
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.insert.cli
+END
+cl.putLob.cli
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.putLob.cli
+END
+db.flushConfigure.cli
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.flushConfigure.cli
+END
+oma.createData.cli
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/oma.createData.cli
+END
+db.exec.cli
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.exec.cli
+END
+node.stop.cli
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/node.stop.cli
+END
+rg.removeNode.cli
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/rg.removeNode.cli
+END
+oma.createOM.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/oma.createOM.cli
+END
+db.execUpdate.cli
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.execUpdate.cli
+END
+db.eval.cli
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.eval.cli
+END
+db.traceOff.cli
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/16143/trunk/doc/manual/db.traceOff.cli
+END
+domain.alter.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/domain.alter.cli
+END
+db.setSessionAttr.cli
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.setSessionAttr.cli
+END
+cl.update.cli
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.update.cli
+END
+cl.upsert.cli
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.upsert.cli
+END
+db.snapshot.cli
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/15724/trunk/doc/manual/db.snapshot.cli
+END
+node.getServiceName.cli
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/node.getServiceName.cli
+END
+db.forceSession.cli
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.forceSession.cli
+END
+cl.splitAsync.cli
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/15899/trunk/doc/manual/cl.splitAsync.cli
+END
+cs.dropCL.cli
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cs.dropCL.cli
+END
+cl.createIndex.cli
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.createIndex.cli
+END
+cl.dropIndex.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.dropIndex.cli
+END
+db.getDomain.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.getDomain.cli
+END
+db.backupOffline.cli
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.backupOffline.cli
+END
+node.getNodeDetail.cli
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/node.getNodeDetail.cli
+END
+domain.listCollectionSpaces.cli
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/domain.listCollectionSpaces.cli
+END
+rg.start.cli
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/rg.start.cli
+END
+cl.detachCL.cli
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.detachCL.cli
+END
+db.removeBackup.cli
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.removeBackup.cli
+END
+query_cond.hint.cli
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/query_cond.hint.cli
+END
+node.connect.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/node.connect.cli
+END
+query_cond.skip.cli
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/query_cond.skip.cli
+END
+db.dropCS.cli
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/15724/trunk/doc/manual/db.dropCS.cli
+END
+oma.startNode.cli
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/oma.startNode.cli
+END
+db.traceOn.cli
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/16165/trunk/doc/manual/db.traceOn.cli
+END
+cl.findOne.cli
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/15921/trunk/doc/manual/cl.findOne.cli
+END
+db.createRG.cli
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/15724/trunk/doc/manual/db.createRG.cli
+END
+oma.close.cli
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/oma.close.cli
+END
+rg.getSlave.cli
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/rg.getSlave.cli
+END
+db.createUsr.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.createUsr.cli
+END
+db.dropUsr.cli
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.dropUsr.cli
+END
+cl.aggregate.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.aggregate.cli
+END
+query_cond.limit.cli
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/query_cond.limit.cli
+END
+cs.createCL.cli
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cs.createCL.cli
+END
+db.traceFmt.cli
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/16143/trunk/doc/manual/db.traceFmt.cli
+END
+db.waitTasks.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.waitTasks.cli
+END
+db.list.cli
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/15724/trunk/doc/manual/db.list.cli
+END
+oma.removeCoord.cli
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/oma.removeCoord.cli
+END
+oma.removeData.cli
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/oma.removeData.cli
+END
+node.getHostName.cli
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/node.getHostName.cli
+END
+db.traceResume.cli
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/15804/trunk/doc/manual/db.traceResume.cli
+END
+oma.removeOM.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/oma.removeOM.cli
+END
+cl.alter.cli
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/cl.alter.cli
+END
+oma.createCoord.cli
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/oma.createCoord.cli
+END
+db.listTasks.cli
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15731/trunk/doc/manual/db.listTasks.cli
+END
+query_gen.size.cli
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/16543/trunk/doc/manual/query_gen.size.cli
+END

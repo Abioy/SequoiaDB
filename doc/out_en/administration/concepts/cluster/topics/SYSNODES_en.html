@@ -1,0 +1,261 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="SYSNODES Collection"/>
+<meta name="description" content="Collection Space SYSCAT Concept SYSNODES collection contains information of all the nodes in the cluster and of ReplicaGroup. Information of a ReplicaGroup is saved in a corresponding file. Every file ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/catalog_node_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_concepts_cluster_node_catalog_sysnodes"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>SYSNODES Collection</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_concepts_cluster_node_catalog_sysnodes"><a name="administration_concepts_cluster_node_catalog_sysnodes"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/concepts/cluster/topics/catalog_node_en.html" title="Catalog Node"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Catalog Node</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="node_en.html" title="Node">Node</a> / <a class="navheader_parent_path" href="../../../../administration/concepts/cluster/topics/catalog_node_en.html" title="Catalog Node">Catalog Node</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">SYSNODES Collection</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Collection Space</h2>
+      <p class="p">SYSCAT</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Concept</h2>
+      <p class="p">SYSNODES collection contains information of all the nodes in the cluster and of ReplicaGroup.
+        Information of a ReplicaGroup is saved in a corresponding file.</p>
+
+      <p class="p">Every file contains fields as follow: </p>
+
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d3299e32" class="stentry">Field Name</th>
+
+          <th valign="bottom" align="left" id="d3299e35" class="stentry">Type</th>
+
+          <th valign="bottom" align="left" id="d3299e38" class="stentry">Describtion</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d3299e32" class="stentry">GroupName</td>
+
+          <td valign="top" headers="d3299e35" class="stentry">String</td>
+
+          <td valign="top" headers="d3299e38" class="stentry">ReplicaGroup name.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d3299e32" class="stentry">GroupID</td>
+
+          <td valign="top" headers="d3299e35" class="stentry">Integer</td>
+
+          <td valign="top" headers="d3299e38" class="stentry">ReplicaGroup ID. It is unique in the cluster.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d3299e32" class="stentry">PrimaryNode</td>
+
+          <td valign="top" headers="d3299e35" class="stentry">Integer</td>
+
+          <td valign="top" headers="d3299e38" class="stentry">The ID of the master node in a ReplicaGroup.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d3299e32" class="stentry">Role</td>
+
+          <td valign="top" headers="d3299e35" class="stentry">Integer</td>
+
+          <td valign="top" headers="d3299e38" class="stentry">The role of a ReplicaGroup. It can be:
+            <ul class="ul">
+              <li class="li">0: data node</li>
+
+              <li class="li">2: cataloge node</li>
+
+            </ul>
+
+          </td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d3299e32" class="stentry">Status</td>
+
+          <td valign="top" headers="d3299e35" class="stentry">Integer</td>
+
+          <td valign="top" headers="d3299e38" class="stentry">
+            <ul class="ul">
+              <li class="li">1: activate ReplicaGroup</li>
+
+              <li class="li">0: inactive ReplicaGroup</li>
+
+              <li class="li">not exists: inactive ReplicaGroup</li>
+
+            </ul>
+
+          </td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d3299e32" class="stentry">Version</td>
+
+          <td valign="top" headers="d3299e35" class="stentry">Integer</td>
+
+          <td valign="top" headers="d3299e38" class="stentry">Version number. It starts with 1. It increases by 1 after any execution on the
+            ReplicaGroup.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d3299e32" class="stentry">Group</td>
+
+          <td valign="top" headers="d3299e35" class="stentry">Array</td>
+
+          <td valign="top" headers="d3299e38" class="stentry">It contains information of nodes in a ReplicaGroup, as it is shown as follow:</td>
+
+        </tr>
+</table>
+
+      <p class="p">If there are more than one node in a ReplicaGroup, each node is store in Group as an object. Each object contains:</p>
+
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d3299e156" class="stentry">Field Nmae</th>
+
+          <th valign="bottom" align="left" id="d3299e159" class="stentry">Type</th>
+
+          <th valign="bottom" align="left" id="d3299e162" class="stentry">Description</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d3299e156" class="stentry">HostName</td>
+
+          <td valign="top" headers="d3299e159" class="stentry">String</td>
+
+          <td valign="top" headers="d3299e162" class="stentry">The hostname which a node belongs to, should absolutely matches the output of the
+            instruction, "hostname", that runs on the operating system in which the node
+            exists.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d3299e156" class="stentry">dbpath</td>
+
+          <td valign="top" headers="d3299e159" class="stentry">String</td>
+
+          <td valign="top" headers="d3299e162" class="stentry">Database path, is the absolute path of a physical node that the node belongs to.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d3299e156" class="stentry">NodeID</td>
+
+          <td valign="top" headers="d3299e159" class="stentry">Integer</td>
+
+          <td valign="top" headers="d3299e162" class="stentry">Node ID,is unique in the cluster.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d3299e156" class="stentry">Service</td>
+
+          <td valign="top" headers="d3299e159" class="stentry">Array</td>
+
+          <td valign="top" headers="d3299e162" class="stentry">Server name. Every logical node corresponds to 4 services. Every service contains its type and server name (it may be port number of server name in service files). The types <div class="fig fignone"/>
+are as follow:
+            <ul class="ul">
+              <li class="li">0：direct service, corresponds to database argument svcname</li>
+
+              <li class="li">1：replicate service, corresponds to database argument replname</li>
+
+              <li class="li">2：replicate service, corresponds to database argument shardname</li>
+
+              <li class="li">3：catalog service, corresponds to database argument catalogname</li>
+
+            </ul>
+
+          </td>
+
+        </tr>
+</table>
+
+      <div class="note note"><span class="notetitle">Note:</span> 
+        <p class="p">The group name of a catalog ReplicaGroup should be "SYSCatalogGroup". The ID of a catalog ReplicaGroup should be 1.</p>
+
+        <p class="p">Data ReplicaGroup ID starts from 1000.</p>
+
+        <p class="p">Data node ID starts from 1000.</p>
+
+      </div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Sample</h2>
+      
+      <p class="p">A typical catalog ReplicaGroup that contains only one node is:</p>
+
+      <pre class="pre codeblock">{ "Group" : [ 
+              { "NodeID" : 2, 
+                "HostName" : "vmsvr1-rhel-x64", 
+                "Service" : [ 
+                   { "Type" : 3, "Name" : "11803" }, 
+                   { "Type" : 1, "Name" : "11801" },
+                   { "Type" : 2, "Name" : "11802" },
+                   { "Type" : 0, "Name" : "11800" } ],
+                "dbpath" : "/home/sequoiadb/sequoiadb/catalog"
+              } ],
+              "GroupID" : 1, 
+              "GroupName" : "SYSCatalogGroup", 
+              "PrimaryNode" : 2, 
+              "Role" : 2, 
+              "Version" : 1 } }</pre>
+
+      <p class="p">A typical data ReplicaGroup that contains only one node is:</p>
+
+      <pre class="pre codeblock">{ "Group" : [ 
+              { "dbpath" : "/home/sequoiadb/sequoiadb/data3", 
+                "HostName" : "vmsvr1-rhel-x64", 
+                "Service" : [ 
+                   { "Type" : 0, "Name" : "11820" }, 
+                   { "Type" : 1, "Name" : "11821" }, 
+                   { "Type" : 2, "Name" : "11822" }, 
+                   { "Type" : 3, "Name" : "11823" } ],
+                "NodeID" : 1001 } ], 
+                "GroupID" : 1001, 
+                "GroupName" : "foo1", 
+                "PrimaryNode" : 1001, 
+                "Role" : 0, 
+                "Status" : 1, 
+                "Version" : 1 } }</pre>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../administration/concepts/cluster/topics/catalog_node_en.html" title="Catalog Node"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Catalog Node</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

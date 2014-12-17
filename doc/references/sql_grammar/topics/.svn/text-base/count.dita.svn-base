@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_count">
+  <title>sql count()</title>
+  <body>
+    <section><title>count() 函数</title>
+      <p>用于计数，返回匹配指定字段名的条数。</p>
+    </section>
+    <section><title>语法</title>
+      <p><codeblock>count(field_name) as &lt;alisa_name></codeblock></p>
+      <note>1.使用count函数对字段名计数，必须使用别名。</note>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>对集合bar中age字段进行计数：</p>
+          <p><codeblock>db.exec("select count(age) as 数量 from foo.bar")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="sum.dita" format="dita" type="topic"></link>
+    <link href="avg.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

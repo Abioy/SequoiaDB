@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>Integration with Hive</title>
+ <topicref href="../hive_integration/hiveinter_en.dita">
+  <topicref href="../hive_integration/topics/Sequoiadbhive_en.dita"/>
+  <topicref href="../hive_integration/topics/configmethod_en.dita"/>
+  <anchorref href="../hive_integration/use_en.ditamap"/>
+ </topicref>
+</map>

@@ -1,0 +1,119 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Java API"/>
+<meta name="description" content="此部分是相关 Java 的 API 文档。 Java API 历史更新情况： Version 1.10 1. DBCollection 类新添加的接口： createLob，创建一个大对象 openLob，打开一个已存在的大对象 removeLob，删除一个大对象 listLobs，列出所有大对象 explain，获取执行访问计划 2. 新增大对象类 DBLob，用于操作大对象： ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../developement/application/java/topics/java.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_gvk_byy_3k"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Java API</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_gvk_byy_3k"><a name="topic_gvk_byy_3k"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../developement/application/java/topics/java.html" title="Java 驱动"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Java 驱动</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/application.html" title="SequoiaDB 应用程序开发">SequoiaDB 应用程序开发</a> / <a class="navheader_parent_path" href="../../../../developement/application/java/topics/java.html" title="Java 驱动">Java 驱动</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Java API</h1>
+
+  <div class="body">
+    <p class="p">此部分是相关 Java 的 API 文档。</p>
+
+    <p class="p"><a class="xref" href="../../../../java/html/index.html">Java API</a></p>
+
+    <div class="section"><h2 class="title sectiontitle">历史更新情况：</h2>
+      
+      <p class="p"><strong class="ph b">Version 1.10</strong></p>
+
+      <p class="p">1. DBCollection 类新添加的接口：</p>
+<pre class="pre codeblock">createLob，创建一个大对象
+openLob，打开一个已存在的大对象
+removeLob，删除一个大对象
+listLobs，列出所有大对象
+explain，获取执行访问计划</pre>
+
+      <p class="p">2. 新增大对象类 DBLob，用于操作大对象：</p>
+<pre class="pre codeblock">write，向一个大对象写入数据
+read，从大对象中读取数据
+seek，指定读取数据的偏移
+close，关闭一个大对象
+getID，获取大对象的标识ID
+getSize，获取大对象的大小
+getCreateTime，获取大对象的创建时间</pre>
+
+      <p class="p"><strong class="ph b">Version 1.8</strong></p>
+
+      <p class="p">1. Sequoiadb 类新添加的接口：</p>
+<pre class="pre codeblock">isValid，判断当前连接是否有效
+createCollectionSpace，提供一个 BSONObject 的选项，使创建集合空间更加灵活
+backupOffline，离线备份支持更多的选项
+evalJS，执行 js 代码
+createDomain，创建域
+getDomain，获取域
+dropDomain，删除域
+isDomainExist，域是否存在
+listDomain，列出所有域</pre>
+
+      <p class="p">2. DBCollection 类新添加的接口：</p>
+<pre class="pre codeblock">alterCollection，修改集合（表）属性
+setMainKeys，设置主键。此接口只与 save 接口配合使用，它设置的主键并不对其他接口起作用
+save，可使用默认的主键"_id"或者指定其他主键，同时插入或更新多条记录</pre>
+
+      <p class="p">3. 添加 Domain 类用于与域相关的操作</p>
+
+      <p class="p">4. SequoiadbDatasource类新添加的接口：</p>
+<pre class="pre codeblock">SequoiadbDatasource，可提供多个地址的构造器，便于机器负载均衡
+getIdleConnNum，获取当前可用的连接数量
+getUsedConnNum，获取当前已使用的连接数量
+getNormalAddrNum，获取当前正常的地址数量
+getAbnormalAddrNum，获取当前异常的地址数量
+</pre>
+
+      <p class="p">5. SequoiadbOption 类新添加接口：</p>
+<pre class="pre codeblock">setRecaptureConnPeriod，设置周期检测异常地址是否重新可用的时间
+getRecaptureConnPeriod，获取周期检测异常地址是否重新可用的时间</pre>
+
+      <p class="p"><strong class="ph b">Version 1.6</strong></p>
+
+      <p class="p">1. 添加类 Node 来取代原来的类 ReplicaGroup。类 ReplicaNode 以及与它们相关的方法将在 version 2.x 中被弃用。</p>
+
+    <p class="p">详情请查看相关 API。</p>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../developement/application/java/topics/java.html" title="Java 驱动"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Java 驱动</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

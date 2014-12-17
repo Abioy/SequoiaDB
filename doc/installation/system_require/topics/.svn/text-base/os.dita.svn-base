@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_z53_lfy_wj">
+  <title>受支持的操作系统</title>
+  <body>
+    <p>
+      <simpletable>
+        <sthead>
+          <stentry>系统类型</stentry>
+          <stentry>系统列表</stentry>
+        </sthead>
+        <strow>
+          <stentry>Linux</stentry>
+          <stentry><ul>
+            <li>Red Hat Enterprise Linux (RHEL) 6</li>
+            <li>SUSE Linux Enterprise Server (SLES) 11 Service Pack 1 </li>
+            <li>SUSE Linux Enterprise Server (SLES) 11 Service Pack 2 </li>
+            <li>Ubuntu 12</li>
+            <li>CentOS 6</li></ul>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>Power PC Linux</stentry>
+          <stentry><ul>
+              <li>Red Hat Enterprise Linux (RHEL) 6</li>
+              <li>SUSE Linux Enterprise Server (SLES)11 Service Pack 1</li>
+              <li>SUSE Linux Enterprise Server (SLES)11 Service Pack 2</li></ul>
+          </stentry>
+        </strow>
+      </simpletable>
+    </p>
+  </body>
+</topic>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_npk_vkb_m4">
+  <title>db.createDomain()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>createDomain - Create a domain.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.createDomain</apiname>(<parmname>&lt;name></parmname>,<parmname>&lt;groups></parmname>,<parmname>[options]</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Create a domain. A domain can contain multiple replica groups.</p>
+      <parml>
+        <plentry>
+          <pt>name (string)</pt>
+          <pd>Unique domain name in the database.</pd>
+        </plentry>
+        <plentry>
+          <pt>groups (Json Array)</pt>
+          <pd>Replica groups belong to the domain.</pd>
+        </plentry>
+        <plentry>
+          <pt>options (Json Object)</pt>
+          <pd>Configuration options for creating a domain with different given fields.
+            <parml>
+              <plentry>
+                <pt>AutoSplit</pt>
+                <pd>When this field is set to be True, all the hash-partitioning collection spaces created in this domain will be automatically splitted into the replica groups it belong to.</pd>
+                <pd>AutoSplit:true|false</pd>
+              </plentry>
+            </parml>
+          </pd>          
+        </plentry>        
+      </parml>      
+      <note>
+        <ul><li>AutoSplit can only apply to hash-partitioning collections.</li>
+          <li>Cannot create collection spaces in an empty domain(domain with no replica groups).</li>          
+        </ul></note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Create a domain which contains two replica groups.</p>
+      <codeblock>db.createDomain('mydomain', ['datagroup1','datagroup2'])</codeblock>
+      <p>Create a domain which contains two replica groups, and enables its auto-split function.</p>
+      <codeblock>db.createDomain('mydomain', ['datagroup1','datagroup2'],{AutoSplit:true})</codeblock>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ncz_12t_zj">
+  <title>C++ 开发环境搭建</title>
+  <body>
+    <section>
+      <title>获取驱动开发包</title>
+      <p>从 <xref href="http://www.sequoiadb.com" format="html" scope="external">http://www.sequoiadb.com</xref> 下载对应操作系统版本的 SequoiaDB 驱动开发包。</p>
+    </section>
+    <section>
+      <title>配置开发环境</title>
+      <ul>
+        <li>Linux
+          <p>1. 解压下来的驱动开发包；</p>
+          <p>2. 将压缩包中的 driver 目录，拷贝到开发工程目录中（建议放在第三方库目录下），并命名为 sdbdriver。</p>
+          <p>3. 将 sdbdriver/include 目录加入到编译头目录，并将 sdbdriver/lib 目录加入连接目录。</p>
+          <b><i>动态链接：</i></b><p></p>使用 lib 目录下的 libsdbcpp.so 动态库，g++ 编译参数形式如：<p><codeblock>g++ main.cpp -o test -I &lt;PATH>/sdbdriver/include -L &lt;PATH>/sdbdriver/lib -lsdbcpp</codeblock></p>
+          <p>其中：PATH 为 sdbdriver 放置路径；运行程序时，用户需要将 LD_LIBRARY_PATH 路径指定为包含 libsdbcpp.so 动态库的路径。</p>
+          <p><codeblock>export LD_LIBRARY_PATH=&lt;PATH>/sdbdriver/lib</codeblock></p>
+          <ul>
+            <li>
+              <note>
+                <p>如果运行程序时会出现错误提示：</p>
+                <p><codeblock>error while loading shared libraries: libsdbcpp.so: cannot open shared object file: No such file or directory</codeblock></p>
+                <p>表示没有正确设置 LD_LIBRARY_PATH，LD_LIBRARY_PATH 是环境变量，建议设置到 /etc/profile 或者应用程序的启动脚本中，避免每次新开终端都需要重新设置。</p>
+              </note>
+            </li>
+          </ul>
+          <b><i>静态链接：</i></b><p></p>使用 lib 目录下的 libstaticsdbc.a 静态库，g++ 编译参数形式如：<codeblock>g++ main.c -o test -I &lt;path>/sdbdriver/include –L &lt;path>/sdbdriver/lib/libstaticsdbcpp.a –lm -lpthread</codeblock>
+        </li>
+        <li>Windows<p>暂未推出 Windows 驱动开发包。</p></li>
+      </ul>
+    </section>
+    </body>
+  <related-links>
+    <link href="cpp_driver.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

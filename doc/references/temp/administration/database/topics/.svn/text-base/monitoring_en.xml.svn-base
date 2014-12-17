@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\administration\database\topics?><?path2project ..\..\..\out_en\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="administration_database_monitoring" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="title:1">Monitoring</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="title:2">Concept</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="p:1">Monitorting is an approach to monitor the status of current system. In SequoiaDB, users can
+        monitor system with SNAPSHOT command and LIST  command.</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="title:3">Snapshot</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="p:2">Snapshot is a kind of command which can get the current status of system. There are
+        different types of snapshots as follow:</p>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 1.0* 3*" id="administration_database_monitoring_snapshot_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="simpletable:1">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="sthead:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:1">Snapshot Sign</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:2">Snapshot Type</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:3">Proper Nodes</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:4">Description</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:5"><xref href="snapshot/contexts_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:1" type="topic"><?ditaot usertext?>SDB_SNAP_CONTEXTS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:6">Context</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:7">Data node, catalog node</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:8">Context snapshot contains all the contexts corresponding to all the sessions in
+            current data node.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:9"><xref href="snapshot/contexts_current_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:2" type="topic"><?ditaot usertext?>SDB_SNAP_CONTEXTS_CURRENT</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:10">Context of current session</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:11">Data node, catalog node</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:12">Current contexts snapshot contains the session contexts corresponding to current
+            connections in data nodes.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:3">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:13"><xref href="snapshot/sessions_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:3" type="topic"><?ditaot usertext?>SDB_SNAP_SESSIONS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:14">Session</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:15">Data node, catalog node</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:16">Session snapshot contains all the sessions between users and system on current
+            database node. </stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:4">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:17"><xref href="snapshot/sessions_current_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:4" type="topic"><?ditaot usertext?>SDB_SNAP_SESSIONS_CURRENT</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:18">Current session</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:19">Data node, catalog node</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:20">Current session snapshot contains the current sessions on current database
+            node.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:5">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:21"><xref href="snapshot/collections_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:5" type="topic"><?ditaot usertext?>SDB_SNAP_COLLECTIONS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:22">Collection</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:23">All nodes</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:24">Collections snapshot contains all the non-temporary collections in current data
+            nodes or current cluster.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:6">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:25"><xref href="snapshot/collectionspaces_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:6" type="topic"><?ditaot usertext?>SDB_SNAP_COLLECTIONSPACES</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:26">Collection space</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:27">All nodes</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:28">Collection space snapshot contains all the collection space in the current data
+            node or cluster. (expect from catalog collection space)</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:7">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:29"><xref href="snapshot/database_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:7" type="topic"><?ditaot usertext?>SDB_SNAP_DATABASE</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:30">Database</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:31">Data node, catalog node</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:32">Database snapshot contains database monitoring information of current database
+            node.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:8">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:33"><xref href="snapshot/system_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:8" type="topic"><?ditaot usertext?>SDB_SNAP_SYSTEM</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:34">System</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:35">Data node, catalog node</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:36">System snapshot contains system monitoring information of current database
+            node.</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="section:3"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="title:4">List</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="p:3">List is a kind of lightweight command for getting system current status.There are different
+        types of lists as follow:</p>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 1.0* 3*" id="administration_database_monitoring_list_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="simpletable:2">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="sthead:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:37">List Sign</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:38">List Type</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:39">Proper Nodes</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:40">Description</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:9">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:41"><xref href="list/list_contexts_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:9" type="topic"><?ditaot usertext?>SDB_LIST_CONTEXTS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:42">Context</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:43">Data node, catalog node</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:44">Context list contains all the contexts corresponding to all the sessions in
+            current data node.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:10">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:45"><xref href="list/list_contexts_current_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:10" type="topic"><?ditaot usertext?>SDB_LIST_CONTEXTS_CURRENT</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:46">Context of current session</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:47">Data node, catalog node</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:48">Current contexts list contains the session contexts corresponding to current
+            connections in data nodes.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:11">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:49"><xref href="list/list_sessions_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:11" type="topic"><?ditaot usertext?>SDB_LIST_SESSIONS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:50">Session</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:51">Data node, catalog node</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:52">Session list contains all the sessions between users and system on current
+            database node.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:12">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:53"><xref href="list/list_sessions_current_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:12" type="topic"><?ditaot usertext?>SDB_LIST_SESSIONS_CURRENT</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:54">Current session</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:55">Data node, catalog node</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:56">Current session list contains the current sessions on current database
+            node.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:13">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:57"><xref href="list/list_collections_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:13" type="topic"><?ditaot usertext?>SDB_LIST_COLLECTIONS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:58">Collection</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:59">All nodes</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:60">Collections list contains all the non-temporary collections in current data nodes
+            or current cluster.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:14">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:61"><xref href="list/list_collectionspace_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:14" type="topic"><?ditaot usertext?>SDB_LIST_COLLECTIONSPACES</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:62">Collection space</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:63">All nodes</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:64">Collection space snapshot contains all the collection space in the current data
+            node or current cluster. (expect from catalog collection space)</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:15">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:65"><xref href="list/list_storageunits_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:15" type="topic"><?ditaot usertext?>SDB_LIST_STORAGEUNITS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:66">Storage unit</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:67">Data node, catalog node</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:68">Storage unit list contains information of all storage units on current database
+            node.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="strow:16">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:69"><xref href="list/list_groups.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="xref:16" type="topic"><?ditaot usertext?>SDB_LIST_GROUPS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:70">Replset</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:71">Coord node</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring_en.dita" xtrc="stentry:72">Replset list contains infromation of all shards in current cluster.</stentry>
+        </strow>
+      </simpletable>
+    </section>
+  </body>
+</topic>

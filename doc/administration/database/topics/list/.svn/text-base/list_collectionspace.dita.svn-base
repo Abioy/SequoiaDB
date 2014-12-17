@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_database_monitoring_list_collectionspaces">
+  <title>集合空间列表</title>
+  <body>
+    <section>
+      <title>描述</title>
+      <p>集合空间列表列出当前数据库节点中所有的集合空间，每个集合空间为一条记录。</p>
+    </section>
+    <section>
+      <title>标示</title>
+      <p>SDB_LIST_COLLECTIONSPACES</p>
+    </section>
+    
+    <section>
+      <title>字段信息</title>
+      <p>由于数据节点与编目节点保存的集合空间信息不同，集合空间列表在协调节点与其它节点所返回的结构有所不同：</p>
+    </section>
+    <section>
+      <title>非协调节点字段信息</title>
+      <simpletable>
+        <sthead>
+          <stentry>字段名</stentry>
+          <stentry>类型</stentry>
+          <stentry>描述</stentry>
+        </sthead>
+        <strow>
+          <stentry>Name</stentry>
+          <stentry>字符串</stentry>
+          <stentry>集合空间名</stentry>
+        </strow>
+        <strow>
+          <stentry>Collection</stentry>
+          <stentry>字符串数组</stentry>
+          <stentry>集合空间中所包含的所有集合</stentry>
+        </strow>
+        <strow>
+          <stentry>PageSize</stentry>
+          <stentry>整型</stentry>
+          <stentry>集合空间数据页大小</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>协调节点字段信息</title>
+      <simpletable>
+        <sthead>
+          <stentry>字段名</stentry>
+          <stentry>类型</stentry>
+          <stentry>描述</stentry>
+        </sthead>
+        <strow>
+          <stentry>Name</stentry>
+          <stentry>字符串</stentry>
+          <stentry>集合空间名</stentry>
+        </strow>
+        <strow/>
+      </simpletable>
+    </section>
+    <section>
+      <title>非协调节点示例</title>
+      <codeblock>> db.list(SDB_LIST_COLLECTIONSPACES)
+{
+  "Collection": [
+    {
+      "Name": "test"
+    }
+  ],
+  "Name": "foo",
+  "PageSize": 4096
+}</codeblock>
+    </section>
+    <section>
+      <title>协调节点示例</title>
+      <codeblock>> db.list(SDB_LIST_COLLECTIONSPACES)
+{
+  "Name": "foo"
+}</codeblock>
+    </section>
+  </body>
+</topic>

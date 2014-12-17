@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_wyj_3jr_kn">
+  <title>db.collectionspace.collection.attachCL()</title>
+  <body>
+    <section><title>db.collectionspace.collection.attachCL(&lt;subCLFullName>, &lt;options>)</title>
+      <p>Colletion of child partition mounted under the main partition collection.</p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable>
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Are Required</stentry>
+        </sthead>
+        <strow>
+          <stentry>subCLFullName</stentry>
+          <stentry>string</stentry>
+          <stentry>The partition set name(the name that contains a collection of space)</stentry>
+          <stentry>Yes</stentry>
+        </strow>
+        <strow>
+          <stentry>options</stentry>
+          <stentry>json object</stentry>
+          <stentry>The boundaries, contains two fields "LowBound"(the value of the left section) and "UpBound"(R interval value), for example: {LowBound:{a:0},UpBound:{a:100}, means to take the field "a" range interval: [0, 100)</stentry>
+          <stentry>Yes</stentry>
+        </strow>        
+      </simpletable>      
+    </section>    
+    <section><title>Example</title>
+      <ul>
+        <li><p>mount the specified range in the primary partition of the sub-set of partitions collection.</p>
+          <p><codeblock>db.foo.year.attachCL("foo2.January",{LowBound:{date:"20130101"},UpBound:{date:"20130131"}}</codeblock></p></li>
+      </ul>      
+    </section>
+  </body>
+</topic>

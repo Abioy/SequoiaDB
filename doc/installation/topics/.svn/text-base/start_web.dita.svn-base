@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_pyr_psg_2l">
+  <title>SequoiaDB Web 监控</title>
+  <body>
+    <section>
+      <title>启动 SequoiaDB Web 服务器</title>
+    <p>通过启动 SequoiaDB 后台的 Web 服务，也可以对数据库做各种操作，并且方便管理。</p>
+    <!--<section>
+      <title>Windows环境</title>
+      <p><b>步骤：</b></p>
+      <ul>
+        <li>运行cmd.exe</li>
+        <li>进入到sequoiadb的安装目录，例如 <codeblock>cd C:\sequoiadb\tools\server\php\bin</codeblock></li>
+        <li>执行php.exe文件，启动PHP服务<codeblock>php.exe -S &lt;server name:port&gt;</codeblock><b>server
+          name</b>&nbsp;：指定服务器IP地址，如 192.168.10.10 <p><b>port</b>&nbsp;：指定服务器端口号，如 8080 </p><p><b>doc
+            director</b>&nbsp;：服务器指向的跟目录，如 <cmdname>C:\sequoiadb\www</cmdname> 
+              </p><p>最后在浏览器中输入<b>http://192.168.10.10:8080</b> ，即可访问数据库管理页。</p></li>
+      </ul>
+    </section>
+    <section>
+     <title>Linux环境</title>
+     <p><b>步骤：</b></p>-->
+      <ul>
+        <li>进入 /opt/sequoiadb/bin 目录</li>
+        <li>执行命令：<codeblock>./sdbwsart -S &lt;server name:port></codeblock>
+          <p><b>server name</b>&nbsp;：指定服务器IP地址，如 192.168.10.10</p>
+          <p><b>port</b>&nbsp;：指定服务器端口号，如 8080</p>
+          <!--<p><b>doc director</b>&nbsp;：服务器指向的跟目录，如 /opt/sequoiadb/www/</p>-->
+          <p>最后在浏览器中输入<b> http://192.168.10.10:8080</b>，即可访问数据库管理页。</p></li>
+      </ul></section>
+    <section><title>监控管理</title>
+      <p>PHP 监控支持 IE9+、chrome、firefox 等主流浏览器。</p>
+      <ul>
+        <li>1. 启动 PHP 服务
+          <p>1.1 在安装了 SequoiaDB 的主机上，执行 sequoiadb 目录下 bin/sdbwsart。例如：<codeblock>/opt/sequoiadb/bin/sdbwsart</codeblock></p>        
+          <p><image href="../images/o11.jpg"/></p>
+          <p>1.2 在浏览器输入 【步骤1.1】 的地址 http://192.168.1.215:8080/</p>
+          <p><image href="../images/o12.jpg"/></p></li>      
+        <li>2. 连接监控页面
+          <p>2.1 在连接管理 &lt;<b>连接地址</b>> 输入地址，点击 &lt;<b>连接测试</b>>，连接成功后，点击 &lt;<b>连接</b>>；</p>
+          <p><image href="../images/o21.jpg"/></p>
+          <p><image href="../images/o22.jpg"/></p>
+          <p><image href="../images/o23.jpg"/></p>        </li>
+        <li>3. 创建集合空间、集合、插入数据
+          <p>3.1 创建集合空间，点击 &lt;<b>工具栏</b>> 的<image href="../images/o30.jpg"/>按钮，输入 &lt;<b>集合空间名</b>>，点击 &lt;<b>确定</b>>；</p>
+          <p><image href="../images/o311.jpg"/></p>
+          <p><image href="../images/o312.jpg"/></p>
+          <p><image href="../images/o313.jpg"/></p>
+          <p>3.2 创建集合，点击集合空间 foo 的 &lt;<b>属性</b>>，点击 &lt;<b>工具栏</b>> 的<image href="../images/o301.jpg"/>按钮，输入 &lt;<b>集合名</b>>，点击 &lt;<b>确定</b>>；</p>
+          <p><image href="../images/o321.jpg"/></p>
+          <p><image href="../images/o322.jpg"/></p>
+          <p><image href="../images/o323.jpg"/></p>
+          <p><image href="../images/o324.jpg"/></p>
+          <p>3.3 插入数据，点击集合 bar 的 &lt;<b>数据</b>>，点击 &lt;<b>工具栏</b>> 的<image href="../images/o302.jpg"/>按钮，输入 json 记录，点击 &lt;<b>确定</b>>；</p>
+          <p><image href="../images/o331.jpg"/></p>
+          <p><image href="../images/o332.jpg"/></p>
+          <p><image href="../images/o333.jpg"/></p>
+          <p><image href="../images/o334.jpg"/></p>
+          <p>3.4 格式化 Json 记录，点击 &lt;<b>工具栏</b>> 的<image href="../images/o303.jpg"/>按钮。</p>
+          <p><image href="../images/o341.jpg"/></p>
+          <p><image href="../images/o342.jpg"/></p></li>
+        <li>4. 集群管理
+          <p>4.1 查看集群，点击导航 &lt;<b>集群管理</b>>。</p>
+          <p><image href="../images/o41.jpg"/></p>
+          <p><image href="../images/o42.jpg"/></p>
+          <p><image href="../images/o43.jpg"/></p></li>            
+      </ul>
+    </section>    
+  </body>
+</topic>

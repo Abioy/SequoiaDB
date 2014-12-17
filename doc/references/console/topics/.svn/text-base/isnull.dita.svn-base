@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_wxm_y1l_5n">
+  <title >$isnull</title>
+  <body>
+    <section><title>语法</title>
+      <p><codeblock>{&lt;字段名>:{$isnull: &lt;0|1>}}</codeblock></p>
+    </section>
+    <section><title>描述</title>
+      <p>选择集合中指定的“&lt;字段名>”是否为空，或不存在。“0”代表期望该字段存在且不为 null；“1”代表期望该字段不存在或为 null。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>选择集合 bar 中 age 字段不为空且存在的记录。</p>
+          <codeblock>db.foo.bar.find({age:{$isnull:0}})</codeblock>
+        </li>
+        <!--<li>
+          <p>选择集合 bar 中嵌套对象 content.name 不存在或为 null 的记录。</p>
+          <codeblock>db.foo.bar.find({"content.name":{$exists:1}})</codeblock>
+        </li>-->
+      </ul>      
+    </section>
+  </body>
+</topic>

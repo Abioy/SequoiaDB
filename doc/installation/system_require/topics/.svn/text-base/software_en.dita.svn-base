@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_xwd_kfy_wj">
+  <title>Software Requirement</title>
+  <body>
+    <section>
+      <title>Linux System requirement</title>
+      <ul>
+        <li>System configuration requirement <p/><simpletable>
+            <sthead>
+              <stentry>Configuration Item</stentry>
+              <stentry>Configuration method</stentry>
+              <stentry>Verification method</stentry>
+            </sthead>
+            <strow>
+              <stentry>Set hostname</stentry>
+              <stentry> 1. Log in with root privileges, perform hostname sdbserver1(sdbserver1 hostname can be modified as needed);<p></p><ul>
+                <li>For SUSE: <p>2. Open the /etc/HOSTNAME file;</p><p>  vi /etc/HOSTNAME</p>
+                  <p>3. Modify file contents, configured as a hostname;</p><p>  sdbserver1  (hostname)</p><p>4. Press :wq to save and exit;</p></li>
+                <li>For RedHat: <p>2. Open the /etc/sysconfig/network file;</p><p>  vi /etc/sysconfig/network</p><p>3. HOSTNAME line will modify the HOSTNAME=sdbserver1, which sdbserver1 new hostname;</p> <p>4. Press :wq to save and exit;</p></li>
+                <li>For Ubuntu: <p>2. Open the /etc/hostname file;</p><p>  vi /etc/hostname</p><p>3. Modify file contents, configured as a hostname;</p><p>sdbserver1</p>4. Press :wq to save and exit;</li>
+              </ul></stentry>
+              <stentry>Execute hostname command to verify whether the information is printed "sdbserver1" </stentry>
+            </strow>
+            <strow>
+              <stentry>
+                Enable server nodes to visit each other through hostname
+              </stentry>
+              <stentry>
+                <ul>
+                  <li>Log in the system in the role of root, open "/etc/hosts" with the command "vi
+                    /etc/hosts"</li>
+                  <li> Alter "/etc/hosts", set the mapping between hostname of server node and IP in
+                    this file.<p> 192.168.20.200  sdbserver1</p><p> 192.168.20.201 
+                      sdbserver2</p><p> 192.168.20.202  sdbserver3</p></li>
+                  <li>Save and exit</li>
+                </ul>
+              </stentry>
+              <stentry>Check with "ping sdbserver1"<p></p>Check with "ping sdbserver2"</stentry>
+            </strow>
+        </simpletable></li>
+        <li><p>Close the firewall</p> <p/><simpletable>
+          <sthead>
+            <stentry>Configuration Item </stentry>
+            <stentry>Configuration method</stentry>
+            <stentry>Verification method</stentry>
+          </sthead>
+          <strow/>
+          <strow>
+            <stentry> Close the firewall</stentry>
+            <stentry>Close the firewall operation, need administrator privileges.<p></p><ul>
+              <li>For SUSE:<p>1. SuSEfirewall2 stop;</p>
+                <p>2. chkconfig SuSEfirewall2_setup;</p></li>
+              <li>For RedHat:<p>1. service iptables stop;</p><p>2. chkconfig iptables off;</p> </li>
+              <li>For Ubuntu:<p>1. ufw disable;</p></li>
+            </ul></stentry>
+            <stentry><ul>
+              <li>For SUSE:<p> chkconfig -list | grep fire;</p>
+              </li>
+              <li>For RedHat:<p>service iptables status;</p> </li>
+              <li>For Ubuntu:<p>ufw status;</p></li>
+            </ul></stentry>
+          </strow>          
+          <strow/>
+        </simpletable></li>
+      </ul>
+      <note>Each database server should be configured.</note>
+    </section>
+    <section>
+      <title>Recommended configuration in Linux</title>
+      <ul>
+        <li>Adjusting ulimit<p>modify the configuration file "/etc/security/limits.conf
+              ":</p><codeblock>#&lt;domain>      &lt;type>    &lt;item>     &lt;value>
+*               soft      core       0
+*               soft      data       unlimited
+*               soft      fsize      unlimited
+*               soft      rss        unlimited
+*               soft      as         unlimited</codeblock><p><b>Params
+              Description:</b></p><p><b>core</b>: The "core" file is generated as the time of
+            database failure to troubleshooting, you had better close the system for
+              advice.</p><p><b>data</b>: The size of data memory that database processes allow to
+            allocate.</p><p><b> fsize</b>: The size of file that database processes allow to address. </p><p>
+            <b>rss</b>: The max size of resident set that database processes allowed.
+              </p><p><b>as</b>: The max amount of virtual memory addressing space that database
+              processes allowed. </p>
+          Set in the configuration file in /etc/security/limits.d/90-nproc.conf:<p>
+            <codeblock>#&lt;domain>      &lt;type>    &lt;item>     &lt;value>
+*               soft      nproc     unlimited</codeblock></p>
+          <p><b>Explanation of parameters</b>:</p>
+          <b>nproc</b>: The database allows the maximum number of threads limits;
+          <note><p>1. Each database server should be configured.</p><p>2. It need to
+              relogin after changing to be effective.</p></note></li>
+        <li>Adjusting kernel params <p>1. Using the following command to output the current
+            configuration of vm,and be placed on file.
+          </p><codeblock>cat /proc/sys/vm/swappiness
+cat /proc/sys/vm/dirty_ratio
+cat /proc/sys/vm/dirty_background_ratio
+cat /proc/sys/vm/dirty_expire_centisecs
+cat /proc/sys/vm/vfs_cache_pressure
+cat /proc/sys/vm/min_free_kbytes</codeblock>
+          2. Adding the following params to the file of "/etc/sysctl.conf" to adjust kernel params.
+            <codeblock>vm.swappiness = 0
+vm.dirty_ratio = 100
+vm.dirty_background_ratio = 40
+vm.dirty_expire_centisecs = 3000
+vm.vfs_cache_pressure = 200
+vm.min_free_kbytes =  &lt;8% of physical memory size, unit is KB> </codeblock><note>When
+            the available physical memory size of database isn't enough 8GB, doesn't need to set
+            "vm.swappiness = 0". The dirty parameter is only recommended values, the system settings press principle (the control system of flush process using only the dirty page timeout 
+            mechanism to refresh the new dirty page, instead of using a dirty page refresh ratio overruns dirty pages) set.</note> 
+          3. Executing the following command to be
+            effective.<codeblock>/sbin/sysctl -p</codeblock><note>Each database server should be
+            configured.</note></li>
+        <li>Database directory structure<p>The users had better put the directory of data, index, and
+            log in different physical disks, to reduce the competition between sequential I/O and
+            random I/O.</p></li>
+      </ul>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_cluster_replset_vote">
+  <title>Vote</title>
+  <body>
+    <section><title>Concept</title>
+      <p>Vote guarantees that there is a master node in a ReplicaGroup at any time. When the master node in a
+        ReplicaGroup goes down, other nodes will automatically vote for another master node among them. In
+        this way, reading and writing can be executed as usual when the master node goes down. </p>
+      <p>The core of vote is to supervise the statuses of nodes.Each node in a ReplicaGroup regularly
+        sends its status to other nodes. So when the master node goes down, all the slave nodes
+        will vote, and the node that currently matches the former master node will be elected to be
+        the new main node.</p>
+      <image href="../../../../introduction/images/sequoiadb_infrastructure_shard2_en.jpg"/>
+      <p>The precondition of a successful vote is that more than half of nodes take part in the
+        vote, or the vote will be canceled to avoid the problem of double-activation (two main nodes
+        exist at the same time).</p>
+      <p>If there are less than half of nodes in the ReplicaGroup, the current master node will
+        automatically becomes an slave node. Meanwhile, all the user connections to the current
+        node will be disconnected.</p>
+      <p>When a new node joins a ReplicaGroup, or a broken-down node joins a ReplicaGroup again,<xref
+          href="sync_en.dita"> full sync</xref> will be fulfilled.</p>
+    </section>
+  </body>
+  <related-links>
+    <link href="sync_en.dita"/>
+    <link href="replicate_en.dita"/>
+  </related-links>
+</topic>

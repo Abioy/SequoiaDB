@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_upset">
+  <title>db.collectionspace.collection.upsert()</title>
+  <body>
+    <section><title>db.collectionspace.collection.upsert(&lt;rule>,[cond],[hint])</title>
+      <p>Update collection records. The method "upsert" and the method "update" are used to update
+        records. But when no records is </p>
+      <p>matched according to the parameter "cond", "update" does nothing, but "upset" will insert
+        data once.</p>
+    </section>
+    <section><title>Parameter description</title>
+      <simpletable id="references_method_update_table">
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Not null</stentry>
+        </sthead>
+        <strow>
+          <stentry>rule</stentry>
+          <stentry>json object</stentry>
+          <stentry>Update rule. It will update record according to the value of "rule".</stentry>
+          <stentry>Yes</stentry>
+        </strow>
+        <strow>
+          <stentry>cond</stentry>
+          <stentry>json object</stentry>
+          <stentry>Selectable condition. When it is null, update all the records. If it is not null,
+            update records that match the condition in "cond".</stentry>
+          <stentry>No</stentry>
+        </strow>
+        <strow>
+          <stentry>hint</stentry>
+          <stentry>json object</stentry>
+          <stentry>Specify visiting plan.</stentry>
+          <stentry>No</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>Format</title>
+      <p>The method "upsert()" should contians the parameter "rule". The parameter "rule" is a json
+        object. The parameters "cond" </p>
+      <p>and "hint" are selectable.The parameter
+        "cond" and "hint" are selectable. The parameter "hint"</p>
+      <p>contains one json object that contains one field. The "name" in this field is ignored, but
+        the value specify the index to visit records. When the value is</p>
+      <p>null, it will visit all the records in the collection. The format is "{"":null}" or
+        "{"":"&lt;indexname>"}".</p>
+      <p><codeblock>{&lt;{"<xref href="../../console/topics/console_en.dita">"Update character 1"</xref>":{"Field name 1":"value"},"Update character 2":{"Field name 2":"value 2"},...}>,
+        [{"Field name 1":{<xref href="../../console/topics/console_en.dita">"match 1"</xref>:"value 1"},"field name 2":{"match 2":"value 2"},...}],[{"":"index name "|null}]}</codeblock></p>
+    </section>
+    <section>
+      <title>Sample</title>
+      <p>Supposing that there are 2 records in the collection "bar".</p>
+        <codeblock>{
+    "_id": {
+      "$oid": "516a76a1c9565daf06030000"
+    },
+    "age": 10,
+    "name": "Tom"
+  }
+  {
+    "_id": {
+      "$oid": "516a76a1c9565daf06050000"
+    },
+    "a": 10,
+    "age": 21
+  }</codeblock>
+      <ul>
+        <li>
+          <p>Update all the records according to the updating rule. That's to say, we merely set the
+            value of "rule", but not "cond" or "hint".</p>
+          <p>
+            <codeblock>db.foo.bar.upsert({<xref href="../../console/topics/inc_en.dita">$inc</xref>:{age:1},<xref href="../../console/topics/gset_en.dita">$set</xref>:{name:"Mike"}})</codeblock>
+          </p>
+          <p>This operation is equivalent to that of the method "update()". It updates all the
+            records in the collection ''bar". It adds 1 to the value of  "age" and changes the value
+            of "name" into "Mike". If a record doesn't contain the field "name", "<xref
+              href="../../console/topics/gset_en.dita">$set</xref>" will insert the field of "name"
+            and its value into it and return with the method "find".</p>
+          <codeblock> {
+    "_id": {
+      "$oid": "516a76a1c9565daf06030000"
+    },
+    "age": 11,
+    "name": "Mike"
+  }
+  {
+    "_id": {
+      "$oid": "516a76a1c9565daf06050000"
+    },
+    "a": 10,
+    "age": 22,
+    "name":"Mike"
+  }</codeblock>
+        </li>
+        <li>
+          <p>Update all the records according to the updating rule. That's to say, we set the value
+            of "rule",  "cond" and "hint".</p>
+          <p>
+            <codeblock>db.foo.bar.upsert({<xref href="../../console/topics/inc_en.dita">$inc</xref>:{age:3}},{type:{<xref href="../../console/topics/exists_en.dita">$exists</xref>:1}})</codeblock>
+          </p>
+          <p>This operation will update records that contains the field "type" in the collection
+            "bar" and add 3 to the value of "age" in them. The 2 records above don't contain the
+            field "type", so it will insert a new record. This new record contains only the field
+            "_id" and the field "age". The value of "_id" is automatically generated by the system.
+            The value of "age" is 23.
+            <codeblock>{
+    "_id": {
+      "$oid": "516a76a1c9565daf06030000"
+    },
+    "age": 11,
+    "name": "Mike"
+  }
+  {
+    "_id": {
+      "$oid": "516a76a1c9565daf06050000"
+    },
+    "a": 10,
+    "age": 22,
+    "name":"Mike"
+  } 
+{
+  "_id": {
+    "$oid": "516cfc334630a7f338c169b0"
+  },
+  "age": 3
+}</codeblock></p>
+        </li>
+        <li>
+          <p>Update records according to visiting plan, supposing that the index name "testIndex"
+            exists in the collection.</p>
+          <codeblock>db.foo.bar.upsert({<xref href="../../console/topics/inc_en.dita">$inc</xref>:{age:1}},{age:{<xref href="../../console/topics/gt_en.dita">$gt</xref>:20}},{"":"testIndex"})></codeblock>
+          <p>This operation is equal to that of "update". It visits records that contains the value
+            of "age" greater than 20 through the index "testIndex" in collection "bar". Then it adds
+            1 to the value of  the field "age" in these records. Then it returns:
+            <codeblock> {
+    "_id": {
+      "$oid": "516a76a1c9565daf06050000"
+    },
+    "a": 10,
+    "age": 23,
+    "name":"Mike"
+  } </codeblock></p>
+        </li>
+      </ul>
+    </section>
+    
+  </body>
+  <related-links>
+    <link href="dbupdate_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

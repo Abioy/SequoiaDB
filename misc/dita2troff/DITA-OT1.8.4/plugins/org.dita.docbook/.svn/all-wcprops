@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.docbook
+END
+conductor.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.docbook/conductor.xml
+END
+build_dita2docbook.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.docbook/build_dita2docbook.xml
+END
+plugin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.docbook/plugin.xml
+END

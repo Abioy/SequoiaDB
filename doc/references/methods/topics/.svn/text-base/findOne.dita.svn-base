@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_hmp_41w_vp">
+  <title>db.collectionspace.collection.findOne()</title>
+  <body>
+    <section><title>db.collectionspace.collection.findOne([cond],[sel])</title>
+      <p>此方法的使用与 db.collectionspace.collection.find([cond],[sel]) 相同，具体的使用可以参照 find() 方法。但该操作方法只返回符合查询条件的一条记录。</p>
+    </section>    
+  </body>
+  <related-links>
+    <link href="find.dita" format="dita" type="topic"></link>    
+  </related-links>  
+</topic>

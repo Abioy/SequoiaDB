@@ -1,0 +1,196 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Data Migration — Export"/>
+<meta name="description" content="sdbexprt sdbexprt is a practical tool, it can export a JSON format or a CSV format data stored file from SequoiaDB database . Options Param Description --help,-h return the basic help and usage ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/database/database_tool/topics/database_tool_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="database_export"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Data Migration — Export</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="database_export"><a name="database_export"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/database/database_tool/topics/database_tool_en.html" title="DataBase Tool"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">DataBase Tool</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/database_en.html" title="DataBase Management">DataBase Management</a> / <a class="navheader_parent_path" href="../../../../administration/database/database_tool/topics/database_tool_en.html" title="DataBase Tool">DataBase Tool</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Data Migration — Export</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">sdbexprt</h2>
+      
+      <p class="p">sdbexprt is a practical tool, it can export a JSON format or a CSV format data stored file
+        from SequoiaDB database .</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Options</h2>
+      
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d17855e28" class="stentry">Param</th>
+
+          <th valign="bottom" align="left" id="d17855e31" class="stentry">Description</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--help,-h</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">return the basic help and usage information.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--version</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">returns version information.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--hostname,-s</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">export data from Sequoiadb of the specified hostname. In default, the <strong class="ph b">sdbexprt</strong> try to connect to local hostname. </td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--svcname,-p</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">specify port. In default, the <strong class="ph b">sdbexprt</strong> try to connect to the host which port number is 11810.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--user,-u</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">database username.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--password,-w</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">database password.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--delchar,-a</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">specify the charcater separator. The default is ", "csv" formats. </td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--delfield,-e</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">specify the field delimiter. "," is default, "csv" formats.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--delrecord,-r</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">specify the record delimiter. "\n" is default.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--csname,-c</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">specify the collectionspace name of exported data.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--clname,-l</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">specify the collectionspace of exported data. </td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--fields</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">specify one or more field names to export, separated by commas(,). </td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--included
+          </td>
+
+          <td valign="top" headers="d17855e31" class="stentry">specify whether to export to csv first line of field names, default true, csv format is valid.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">
+            --file
+          </td>
+
+          <td valign="top" headers="d17855e31" class="stentry">specify the name of file want to export.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--type</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">specify the format of export data.It can be CSV or JSON.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d17855e28" class="stentry">--errorstop</td>
+
+          <td valign="top" headers="d17855e31" class="stentry">if you encounter an error stop, default false.</td>
+
+        </tr>
+</table>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Return value</h2>
+      
+      <p class="p">0: Succeed</p>
+
+      <p class="p">1: Succeed but include warnings</p>
+
+      <p class="p">2: Fail</p>
+
+      <p class="p">127: Parameters error</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Usage</h2>
+      
+      <p class="p">In the following sample, sdbexport will export data from the local database which port is
+        11810, and collectionspace name is <em class="ph i">foo</em>, collection name is<em class="ph i"> bar</em>, and export type
+        is csv, export file name is<em class="ph i"> contact</em>, export field are <em class="ph i">field1</em> and
+        <em class="ph i">field2</em>.</p>
+
+      <pre class="pre codeblock">sdbexprt -s localhost -p 11810 --type csv --file contace --fields field1,field2 --c foo -l bar</pre>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../administration/database/database_tool/topics/database_tool_en.html" title="DataBase Tool"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">DataBase Tool</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

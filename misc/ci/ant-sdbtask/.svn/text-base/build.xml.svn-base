@@ -1,0 +1,66 @@
+<!--@param ${java.driver.jar} : The path where the java.driver.jar is -->
+<!--@param ${javac.base.dir} : The path where the javac.base.dir is -->
+<!--@param ${base.path} : The root path is-->
+
+<project name="Build-Sdbtasks-Jar" default="Jar-Ant-Sdbtasks">
+	<property name="build.dir" value="${base.path}/build_ant_sdbtask" />
+
+	<target name="Clean-Last-Buildfile">
+		<echo message="Begin to clean last build file" />
+		<delete dir="${build.dir}" />
+		<mkdir dir="${build.dir}/lib" />
+		<echo message="Clean build file completed" />
+	</target>
+
+	<target name="Compile-Ant-Sdbtasks" depends="Clean-Last-Buildfile">
+		<echo message="os.name=${os.name}, os.arch=${os.arch}" />
+		<if>
+			<equals arg1="${os.name}" arg2="Linux" />
+			<then>
+				<property name="jdk.name.os" value="jdk_linux" />
+			</then>
+			<else>
+				<property name="jdk.name.os" value="jdk_win" />
+			</else>
+		</if>
+		<if>
+			<equals arg1="${os.arch}" arg2="ppc64" />
+			<then>
+				<property name="jdk.name" value="jdk_ppclinux64" />
+			</then>
+		</if>
+		<if>
+			<equals arg1="${os.arch}" arg2="amd64" />
+			<then>
+				<property name="jdk.name" value="${jdk.name.os}64" />
+			</then>
+			<else>
+				<property name="jdk.name" value="${jdk.name.os}32" />
+			</else>
+		</if>
+
+		<javac srcdir="${base.path}/src" destdir="${build.dir}" debug="true" debuglevel="lines,vars,source" classpath="" fork="yes" executable="${javac.base.dir}/java/${jdk.name}/bin/javac">
+			<classpath>
+				<fileset dir="${base.path}/lib" includes="*.jar"/>
+				<pathelement location="${java.driver.jar}"/>
+			</classpath>
+		</javac>
+
+		<unjar src="${java.driver.jar}" dest="${build.dir}"  />
+		<unjar src="${base.path}/lib/JSTAF.jar" dest="${build.dir}" />
+		<unjar src="${base.path}/lib/ant-contrib.jar" dest="${build.dir}" />
+		<unjar src="${base.path}/lib/junit.jar" dest="${build.dir}" />
+		<unjar src="${base.path}/lib/junit-suse.jar" dest="${build.dir}" />
+		<unjar src="${base.path}/lib/ant-junit.jar" dest="${build.dir}" />
+		<copy file="${base.path}/src/com/sequoiadb/ant/ant-sdbtasks.xml" tofile="${build.dir}/com/sequoiadb/ant/ant-sdbtasks.xml" />
+	</target>
+
+	<target name="Jar-Ant-Sdbtasks" depends="Compile-Ant-Sdbtasks">
+		<jar file="${base.path}/ant-sdbtasks.jar">
+			<manifest>
+				<attribute name="Version" value="1.0" />
+			</manifest>
+			<fileset dir="${build.dir}" includes="**/*" />
+		</jar>
+	</target>
+</project>

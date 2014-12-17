@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_nodeconnect">
+  <title>node.connect()</title>
+  <body>
+    <section><title>node.connect()</title>
+      <p>将数据库连接到指定节点。连接之后能进行一系列的操作，可以使用 node.connect().help() 查看相关的操作。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>将数据库连接到节点名为 node 上</p>
+          <codeblock>> node.connect()
+返回：
+vmsvr2-suse-x64:11800</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="nodestop.dita"></link>
+    <link href="getHostName.dita"></link>
+  </related-links>
+</topic>

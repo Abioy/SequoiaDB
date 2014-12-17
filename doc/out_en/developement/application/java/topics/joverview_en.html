@@ -1,0 +1,195 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Java Driver"/>
+<meta name="description" content="Outline SequoiaDB Java driver provides an interface database operations, and cluster operations. Includes the following seven levels of operation: database, collection space, collection, cursor, ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../developement/application/java/topics/java_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_2ny_sdd_wj"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Java Driver</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_2ny_sdd_wj"><a name="topic_2ny_sdd_wj"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../developement/application/java/topics/java_en.html" title="Java Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Java Driver</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/application_en.html" title="SequoiaDB Application Development">SequoiaDB Application Development</a> / <a class="navheader_parent_path" href="../../../../developement/application/java/topics/java_en.html" title="Java Driver">Java Driver</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Java Driver</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Outline</h2>
+         
+      <p class="p">SequoiaDB Java driver provides an interface database operations, and cluster operations. Includes the following seven levels of operation: database, collection space, collection, cursor, replica group, node, domain, lob.</p>
+
+      <p class="p">There are two driving Java class instances. A database operation, another operation for the cluster. </p>
+
+      <ul class="ul">
+        <li class="li">
+          <p class="p">Class sample</p>
+
+          <p class="p">There are 3 degree of data  in SequoiaDB:</p>
+
+          <p class="p"> 1) Database</p>
+
+          <p class="p"> 2) Collection space</p>
+
+          <p class="p"> 3) Collection</p>
+
+          <p class="p">Logically, every collection space in SequoiaDB has no physical upper boundary. Every
+            collection space is stored in a stand-alone file. So the amount of collection space
+            depends on the size of disk and memory.</p>
+
+          <p class="p">A collection space contains at most 4096 collections. Every collection can contain more
+            than one record. In a physical system, the size of a collection space is at most
+            256GB.</p>
+
+          <p class="p">Compared with relation database, we can regard record as line in relation database. We
+            can regard collection as table in relation database. </p>
+
+          <p class="p">So in client, there are 3 Handles representing connection, collectionspace and collection, including 1 handle represents cursor, 1 handle represents LOB:</p>
+<table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="strow">
+                <td valign="top" class="stentry">Sequoiadb </td>
+
+                <td valign="top" class="stentry">Database instance </td>
+
+                <td valign="top" class="stentry">It represents a stand-alone connection </td>
+
+              </tr>
+<tr class="strow">
+                <td valign="top" class="stentry">CollectionSpace </td>
+
+                <td valign="top" class="stentry">Collection space instance </td>
+
+                <td valign="top" class="stentry">It represents a stand-alone collection space</td>
+
+              </tr>
+<tr class="strow">
+                <td valign="top" class="stentry">DBCollection</td>
+
+                <td valign="top" class="stentry">Collection instance</td>
+
+                <td valign="top" class="stentry">It represents a stand-alone collection</td>
+
+              </tr>
+<tr class="strow">
+                <td valign="top" class="stentry">DBCursor</td>
+
+                <td valign="top" class="stentry">Cursor Instance</td>
+
+                <td valign="top" class="stentry">It represents a result set of a query</td>
+
+              </tr>
+<tr class="strow">
+              <td valign="top" class="stentry">DBLob</td>
+
+              <td valign="top" class="stentry">LOB instance</td>
+
+              <td valign="top" class="stentry">Represents a LOB</td>
+
+            </tr>
+</table>
+
+            <div class="note note"><span class="notetitle">Note:</span> 
+              <p class="p">SequoiaDB only builds one Socket connection, and it does not lock the network operation internally. If more threads are needed to connect the database, each thread must create a new Sequoiadb object by itself respectively, and also the CollectionSpace/DBColltion/DBCursor objects belong to each Sequoiadb.</p>
+
+            </div>
+          
+        </li>
+
+        <li class="li">Cluster Operation
+          <p class="p">SequoiaDB database mainly has three levels of cluster operations:</p>
+<p class="p">1)	Replica Group</p>
+<p class="p">2) Data Node</p>
+<p class="p">3)	Domain</p>
+
+          <div class="note note"><span class="notetitle">Note:</span> There are two types of replica group: Catalog Replica Group and Data Replica Group.</div>
+
+          <p class="p">Replica group instance and data node instance can be represented by the instance of the following three classes.</p>
+
+          <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="strow">
+              <td valign="top" class="stentry">ReplicaGroup</td>
+
+              <td valign="top" class="stentry">Replica group class</td>
+
+              <td valign="top" class="stentry">Each instance stands for a single replica group</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry">Node</td>
+
+              <td valign="top" class="stentry">Data node class</td>
+
+              <td valign="top" class="stentry">Each instance stands for a single data node</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry">sdbDomain</td>
+
+              <td valign="top" class="stentry">Domain class</td>
+
+              <td valign="top" class="stentry">Each instance stands for a domain which</td>
+
+            </tr>
+</table>
+
+          <p class="p">Replica group and data node instances are needed for the cluster-related operations.</p>
+
+          <p class="p">A ReplicaGroup instance is used to manipulate the replica groups. Its operations include start/stop the replica groups, get the status, name, and amount of the nodes in the replica groups.</p>
+
+          <p class="p">A Node instance is used to manipulate the node. Its operations include start/stop the node, get the specified node instances, obtain the master-slave node example, get data node address information.</p>
+
+          <p class="p">A sdbDomain instance is used to manipulate the domain. Its operations include modify the domains, and get the information of the domains.</p>
+</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Error Information</h2>
+      
+      <ul class="ul">
+        <li class="li"><p class="p">When excecution exceptions occur, most APIs will throw com.sequoiadb.exception.BaseExceptio or java.lang.Exception, correspond to the exception info returned from the database engine or returned from local client respectively.</p>
+</li>
+
+        <li class="li">BaseException’s exception detailed info can be gotten by the class’s getErrorType(), getErrorCode() and getMessage() methods.</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../developement/application/java/topics/java_en.html" title="Java Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Java Driver</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

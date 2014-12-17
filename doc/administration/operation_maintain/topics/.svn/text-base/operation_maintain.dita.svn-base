@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_jtx_zkd_pl">
+  <title>运维</title>
+  <body>
+    <p>目录：</p>
+    <p><xref href="cluster_start_stop.dita">集群启停</xref></p>
+    <p><xref href="bandr.dita">备份恢复</xref></p>    
+    <p><xref href="fault_recovery.dita">故障恢复</xref></p>
+    <p><xref href="monitor.dita">监控</xref></p>
+  </body>
+</topic>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qsv_dlb_m4">
+  <title>db.collectionspace.collection.alter()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>alter - Modify the collection properties.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.collectionspace.collection.alter</apiname>(<parmname>&lt;options></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Collection
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Modify the collection properties.</p>
+      <parml>                
+        <plentry>
+          <pt>options (Json Object)</pt>
+          <pd>Attributes to be modified.
+            <parml>
+              <plentry>
+                <pt>ReplSize</pt>
+                <pd>Number of replica.</pd>
+                <pd>ReplSize:&lt;int32></pd>
+              </plentry>
+              <plentry>
+                <pt>ShardingKey</pt>
+                <pd>Key to shard.</pd>
+                <pd>ShardingKey:{&lt;field 1>:&lt;1|-1>,[&lt;field 2>:&lt;1|-1>, ...]}</pd>
+              </plentry>
+              <plentry>
+                <pt>ShardingType</pt>
+                <pd>Sharding type, the default value is range.</pd>
+                <pd>ShardingType:"hash"|"range"</pd>
+              </plentry>
+              <plentry>
+                <pt>Partition</pt>
+                <pd>Number of partitions. Fill out when there is a hash partitioning. It represents the number of hash partitioning. Its value must be a power of 2, ranging from 2^3 to 2^20.</pd>
+                <pd>Partition:&lt;number of partitioning></pd>
+              </plentry>
+            </parml>
+          </pd>          
+        </plentry>        
+      </parml>      
+      <note>
+        <ul><li>Usage of ShardingKey, ShardingType, Partition, please checkdb.collectionspace.createCL().</li>
+          <li>Partitioning collection cannot alter attributes related to partitioning.</li>
+          <li>After altering to partitioning collection, we must split manually.</li>
+        </ul></note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Create a collection.</p>
+      <codeblock>db.foo.createCL('bar')</codeblock>
+      <p>Alter to partitioning collection.</p>
+      <codeblock>db.foo.bar.alter({ShardingKey:{a:1},ShardingType:"hash"})</codeblock>
+    </section>
+  </body>
+</topic>

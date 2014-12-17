@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_3kz_tkr_kn">
+  <title>db.removeBackup()</title>
+  <body>
+    <section><title>db.removeBackup ([options])</title>
+      <p>  Delete the database backup</p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable>
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Are Required</stentry>
+        </sthead>
+        <strow>
+          <stentry>options</stentry>
+          <stentry>Json object</stentry>
+          <stentry>Set the backup name, specify the replication group, the backup path and other parameters.</stentry>
+          <stentry>No</stentry>
+        </strow>        
+      </simpletable>      
+    </section>
+    <section><title>Options Format</title>
+      <simpletable>
+        <sthead>
+          <stentry>Property name</stentry>
+          <stentry>Description</stentry>
+          <stentry>Format</stentry>
+        </sthead>
+        <strow>
+          <stentry>GroupID</stentry>
+          <stentry>Backup copy group ID specified, the default is all replication groups.</stentry>
+          <stentry>GroupID:1000 or GroupID:[1000, 1001]</stentry>
+        </strow>
+        <strow>
+          <stentry>GroupName</stentry>
+          <stentry>Backup copy group name is specified, the default is all replication groups.</stentry>
+          <stentry>GroupName:"data1" or GroupName:["data1", "data2"]</stentry>
+        </strow>
+        <strow>
+          <stentry>Name</stentry>
+          <stentry>Backup name, the default view all backups.</stentry>
+          <stentry>Name:"backup-2014-1-1"</stentry>
+        </strow>
+        <strow>
+          <stentry>Path</stentry>
+          <stentry>Backup path, the default configuration parameters for the specified backup path. The path supports wildcards(g%: group name, h%: host name, s%:service name)</stentry>
+          <stentry>Path:"/opt/sequoiadb/backup/%g"</stentry>
+        </strow>
+        <strow>
+          <stentry>IsSubDir</stentry>
+          <stentry>The above path "Path" configuration parameters are specified for the backup path configuration parameters subdirectory, the default is false.</stentry>
+          <stentry>IsSubDir:false</stentry>
+        </strow>
+        <strow>
+          <stentry>Prefix</stentry>
+          <stentry>Backup prefix, supports wildcards(g%,h%,s%), default is empty.</stentry>
+          <stentry>Prefix:"%g_bk_"</stentry>
+        </strow>        
+      </simpletable>      
+    </section>
+    <section><title>Example</title>
+      <ul>
+        <li><p>Backup information called "backup-2014-1-1" delete the database.</p>
+          <p><codeblock>db.removeBackup({Name:"backup-2014-1-1"})</codeblock></p></li>
+      </ul>      
+    </section>
+  </body>
+</topic>

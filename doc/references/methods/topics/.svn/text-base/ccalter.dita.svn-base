@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_tkq_1w1_m4">
+  <title>db.collectionspace.collection.alter()</title>
+  <body>
+    <section><title>db.collectionspace.collection.alter(&lt;options>)</title>
+      <p>修改集合的属性。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>        
+        <strow>
+          <stentry>options</stentry>
+          <stentry>Json 对象</stentry>
+          <stentry>修改的属性。</stentry>
+          <stentry>是</stentry>
+        </strow>
+      </simpletable>      
+    </section>
+    <section><title>options 中可选的属性格式</title>
+      <simpletable>
+        <sthead>
+          <stentry>属性名</stentry>
+          <stentry>描述</stentry>
+          <stentry>格式</stentry>
+        </sthead>
+        <strow>
+          <stentry>ReplSize</stentry>
+          <stentry>一次写请求完成副本数。</stentry>
+          <stentry>ReplSize:&lt;int32></stentry>
+        </strow>
+        <strow>
+          <stentry>ShardingKey</stentry>
+          <stentry>分区键</stentry>
+          <stentry>ShardingKey:{&lt;字段1>:&lt;1|-1>,[&lt;字段2>:&lt;1|-1>, ...]}</stentry>
+        </strow>
+        <strow>
+          <stentry>ShardingType</stentry>
+          <stentry>分区方式，默认为 range 分区。</stentry>
+          <stentry>ShardingType:"hash"|"range"</stentry>
+        </strow>
+        <strow>
+          <stentry>Partition</stentry>
+          <stentry>分区数，hash 分区时填写，代表了 hash 分区的个数。其值必须是2的幂。范围在[2^3,2^20]。</stentry>
+          <stentry>Partition:&lt;分区数></stentry>
+        </strow>
+      </simpletable>      
+      <note>
+        <ul>
+          <li>ShardingKey，ShardingType，Partition 的使用方式见 db.collectionspace.createCL()。</li>
+          <li>分区集合不能修改与分区相关的属性。</li>
+          <li>修改为分区集合后需要手动进行 split。</li>          
+        </ul>
+      </note>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>创建一个普通集合；</p>
+          <p><codeblock>db.foo.createCL('bar')</codeblock></p>
+        </li>
+        <li>
+          <p>修改为分区集合</p>
+          <p><codeblock>db.foo.bar.alter({ShardingKey:{a:1},ShardingType:"hash"})</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+</topic>

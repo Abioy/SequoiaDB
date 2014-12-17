@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_database_monitoring">
+  <title>监控</title>
+  <body>
+    <section>
+      <title>概念</title>
+      <p>监控是一种监视当前系统状态的方式。在 SequoiaDB 中，用户可以使用快照（SNAPSHOT）与列表（LIST）命令进行系统监控。</p>
+      <note>如果在集群环境下查询快照，连接协调节点就可以获取。</note>
+      <p>连接协调节点，默认是获取整个集群的快照信息，如：<codeblock>snapshot(SDB_SNAP_SYSTEM )</codeblock></p>
+      <p>要获取指定分区组的快照信息，使用条件查询，如：<codeblock>snapshot(SDB_SNAP_SYSTEM,{ GroupName: "group1" } )</codeblock></p>
+      <p>要获取指定节点的快照信息，如：<codeblock>snapshot(SDB_SNAP_SYSTEM,{ HostName: "host1", svcname: "11820' } )</codeblock></p>
+    </section>
+    <section>
+      <title>快照</title>
+      <p>快照是一种得到系统当前状态的命令，主要分为以下类型：</p>
+      <simpletable>
+        <sthead>
+          <stentry>快照标示</stentry>
+          <stentry>快照类型</stentry>          
+          <stentry>描述</stentry>
+        </sthead>
+        <strow>
+          <stentry><xref href="snapshot/contexts.dita">SDB_SNAP_CONTEXTS</xref></stentry>
+          <stentry>上下文</stentry>
+          <stentry>上下文快照列出当前数据库节点中所有的会话所对应的上下文</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/contexts_current.dita">SDB_SNAP_CONTEXTS_CURRENT</xref></stentry>
+          <stentry>当前会话上下文</stentry>
+          <stentry>当前上下文快照列出当前数据库节点中当前会话所对应的上下文</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/sessions.dita">SDB_SNAP_SESSIONS</xref></stentry>
+          <stentry>会话</stentry>
+          <stentry>会话快照列出当前数据库节点中所有的会话</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/sessions_current.dita">SDB_SNAP_SESSIONS_CURRENT</xref></stentry>
+          <stentry>当前会话</stentry>
+          <stentry>当前会话快照列出当前数据库节点中当前的会话</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/collections.dita">SDB_SNAP_COLLECTIONS</xref></stentry>
+          <stentry>集合</stentry>
+          <stentry>集合快照列出当前数据库节点或集群中所有非临时集合</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/collectionspaces.dita">SDB_SNAP_COLLECTIONSPACES</xref></stentry>
+          <stentry>集合空间</stentry>
+          <stentry>集合空间快照列出当前数据库节点或集群中所有集合空间（编目集合空间除外）</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/database.dita">SDB_SNAP_DATABASE</xref></stentry>
+          <stentry>数据库</stentry>
+          <stentry>数据库快照列出当前数据库节点的数据库监视信息</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/system.dita">SDB_SNAP_SYSTEM</xref></stentry>
+          <stentry>系统</stentry>
+          <stentry>系统快照列出当前数据库节点的系统监视信息</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/catalog.dita">SDB_SNAP_CATALOG</xref></stentry>
+          <stentry>编目信息</stentry>
+          <stentry>用于查看编目信息</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>列表</title>
+      <p>列表是一种轻量级的得到系统当前状态的命令，主要分为以下类型：</p>
+      <simpletable>
+        <sthead>
+          <stentry>列表标示</stentry>
+          <stentry>列表类型</stentry>
+          <stentry>描述</stentry>
+        </sthead>
+        <strow>
+          <stentry><xref href="list/list_contexts.dita">SDB_LIST_CONTEXTS</xref></stentry>
+          <stentry>上下文</stentry>
+          <stentry>上下文列表列出当前数据库节点中所有的会话所对应的上下文</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_contexts_current.dita">SDB_LIST_CONTEXTS_CURRENT</xref></stentry>
+          <stentry>当前会话上下文</stentry>
+          <stentry>当前上下文列表列出当前数据库节点中当前会话所对应的上下文</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_sessions.dita">SDB_LIST_SESSIONS</xref></stentry>
+          <stentry>会话</stentry>
+          <stentry>会话列表列出当前数据库节点中所有的会话</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_sessions_current.dita">SDB_LIST_SESSIONS_CURRENT</xref></stentry>
+          <stentry>当前会话</stentry>
+          <stentry>当前会话列表列出当前数据库节点中当前的会话</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_collections.dita">SDB_LIST_COLLECTIONS</xref></stentry>
+          <stentry>集合</stentry>
+          <stentry>集合列表列出当前数据库节点或集群中所有非临时集合</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_collectionspace.dita">SDB_LIST_COLLECTIONSPACES</xref></stentry>
+          <stentry>集合空间</stentry>
+          <stentry>集合空间列表列出当前数据库节点或集群中所有集合空间（编目集合空间除外）</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_storageunits.dita">SDB_LIST_STORAGEUNITS</xref></stentry>
+          <stentry>存储单元</stentry>
+          <stentry>存储单元列表列出当前数据库节点的全部存储单元信息</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_groups.dita">SDB_LIST_GROUPS</xref></stentry>
+          <stentry>分区组</stentry>
+          <stentry>分区组列表列出当前集群中的所有分区信息</stentry>
+        </strow>
+      </simpletable>
+    </section>
+  </body>
+</topic>

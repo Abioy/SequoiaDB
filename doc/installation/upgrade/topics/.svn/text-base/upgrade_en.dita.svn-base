@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_t2t_c23_x4">
+  <title>Upgrade</title>
+  <body>
+    <section>
+      <title>Uninstall the Old Version</title>
+      <ul>
+        <li><p>Login the database server as a root user.</p></li>
+        <li>Execute the following command to stop the SequoiaDB configuration program service.<codeblock>service sdbcm stop</codeblock></li>
+        <li>Execute the following command to stop the SequoiaDB cluster management service.<codeblock>/opt/sequoiadb/bin/sdbstop</codeblock></li>
+        <li>Execute the following command to backup the SequoiaDB executive program and the configuration file.<codeblock>scp /opt/sequoiadb/bin/sequoiadb /home/sequoiadb_bak
+scp -rf /opt/sequoiadb/conf /home/sequoiadb_conf_bak</codeblock></li>
+        <li>Execute the following command to uninstall the SequoiaDB software<codeblock>/opt/sequoiadb/uninstall</codeblock></li>      
+      </ul>
+      <p><note>please make sure to execute the above operations on all the database servers before executing the following operations:</note></p>
+    </section>
+    <section>
+      <title>Install the New Version</title>
+      <ul>
+        <li><p>For the detailed installation steps, please refer to <xref href="../../../installation/server_installation/topics/server_installation.dita">Installation of SequoiaDB Server</xref> section.</p></li>
+        <li><p>Execute the following commands to delete the backup files after the new version has been successfully installed.<codeblock>rm -rf /home/sequoiadb_bak
+rm -rf /home/sequoiadb_conf_bak</codeblock></p></li>
+      </ul>
+    </section> 
+  </body>
+</topic>

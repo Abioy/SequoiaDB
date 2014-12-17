@@ -1,0 +1,107 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="C++ Environment to Build"/>
+<meta name="description" content="Get Driver Development Kit Download SequoiaDB Driver Development kit for the corresponding operating systems from http://www.sequoiadb.com . Configure development environment Linux 1. Extract the ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../developement/application/CPP/topics/cpp_en.html"/>
+<meta name="DC.Relation" scheme="URI" content="cpp_driver.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_ncz_12t_zj_en"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>C++ Environment to Build</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_ncz_12t_zj_en"><a name="topic_ncz_12t_zj_en"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../developement/application/CPP/topics/cpp_en.html" title="C++ Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">C++ Driver</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/application_en.html" title="SequoiaDB Application Development">SequoiaDB Application Development</a> / <a class="navheader_parent_path" href="../../../../developement/application/CPP/topics/cpp_en.html" title="C++ Driver">C++ Driver</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">C++ Environment to Build</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Get Driver Development Kit</h2>
+      
+      <p class="p">Download SequoiaDB Driver Development kit for the corresponding operating systems from <a class="xref" href="http://www.sequoiadb.com" target="_blank">http://www.sequoiadb.com</a>.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Configure development environment</h2>
+      
+      <ul class="ul">
+        <li class="li">Linux <p class="p">1. Extract the Driver Development kit from the downloaded archive. </p>
+<p class="p">2. Copy folder named driver from the downloaded archive to development directory(suggest to put on third-party directory), and rename it as "sdbdriver".
+        </p>
+<p class="p">3. Add directory named "sdbdriver/include" into compiled directory.</p>
+<strong class="ph b"><em class="ph i">Dynamic Link:</em></strong><p class="p"/>
+Use lib directory libsdbcpp.so dynamic library, g++ compiler parameters forms such as:<div class="p">
+          <pre class="pre codeblock">g++ main.cpp -o test -I &lt;PATH&gt;/sdbdriver/include -L &lt;PATH&gt;/sdbdriver/lib -lsdbcpp </pre>
+
+        </div>
+<p class="p">Where: PATH is sdbdriver placed path, When you run the program, you need to specify the path to the LD_LIBRARY_PATH contains libsdbcpp.so dynamic library.</p>
+<div class="p">
+          <pre class="pre codeblock">export LD_LIBRARY_PATH=&lt;PATH&gt;/sdbdriver/lib </pre>
+
+        </div>
+<ul class="ul"><li class="li"><div class="note note"><span class="notetitle">Note:</span> 
+          <p class="p">If there will be an error message when you run the program:  </p>
+
+          <p class="p">error while loading shared libraries: libsdbcpp.so: cannot open shared object file:
+            No such file or directory </p>
+
+          <p class="p">Said LD_LIBRARY_PATH environment variable is not set properly, it is recommmended to set to /etc/profile or application startup script, avoiding each new terminal will need to re-open setting. </p>
+
+        </div>
+</li>
+</ul>
+
+          <strong class="ph b"><em class="ph i">Static Link:</em></strong><p class="p"/>
+Use lib directory libstaticsdbc.a static library, g++ compiler parameters forms such as:<pre class="pre codeblock">g++ main.c -o test -I &lt;path&gt;/sdbdriver/include –L &lt;path&gt;/sdbdriver/lib/libstaticsdbcpp.a –lm -lpthread</pre>
+</li>
+
+        <li class="li">Windows <p class="p">Windows driver development kit is not released yet. </p>
+</li>
+
+      </ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="cpp_driver.html" title="C++ 开发基础">C++ 开发基础</a></div>
+</div>
+</div>
+  
+<div class="navfooter"><a class="link" href="../../../../developement/application/CPP/topics/cpp_en.html" title="C++ Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">C++ Driver</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

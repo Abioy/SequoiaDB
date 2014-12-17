@@ -1,0 +1,154 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="编目节点"/>
+<meta name="description" content="概念 编目节点为一种逻辑节点，其中保存了数据库的元数据信息，而不保存其他用户数据。 编目节点中包含4个集合空间： SYSCAT 系统编目集合空间，包含4个系统集合： 集合名 描述 SYSCOLLECTIONS 保存了该集群中所有的用户集合信息 SYSCOLLECTIONSPACES 保存了该集群中所有的用户集合空间信息 SYSNODES 保存了该集群中所有的逻辑节点与复制组信息 SYSTASKS ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/node.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/SYSCOLLECTIONS.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/SYSCOLLECTIONSPACES.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/SYSNODES.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/SYSTASKS.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/SYSUSRS.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/STOREPROCEDURES.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_concepts_cluster_node_catalog"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>编目节点</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_concepts_cluster_node_catalog"><a name="administration_concepts_cluster_node_catalog"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/concepts/cluster/topics/node.html" title="节点"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">节点</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="cluster.html" title="集群">集群</a> / <a class="navheader_parent_path" href="../../../../administration/concepts/cluster/topics/node.html" title="节点">节点</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">编目节点</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">概念</h2>
+      
+      <p class="p">编目节点为一种逻辑节点，其中保存了数据库的元数据信息，而不保存其他用户数据。</p>
+
+      <p class="p">编目节点中包含4个集合空间：</p>
+
+      <ul class="ul">
+        <li class="li"><p class="p">SYSCAT 系统编目集合空间，包含4个系统集合：</p>
+
+          <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+              <th valign="bottom" align="left" id="d4953e31" class="stentry">集合名</th>
+
+              <th valign="bottom" align="left" id="d4953e34" class="stentry">描述</th>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" headers="d4953e31" class="stentry"><a class="xref" href="SYSCOLLECTIONS.html">SYSCOLLECTIONS</a></td>
+
+              <td valign="top" headers="d4953e34" class="stentry">保存了该集群中所有的用户集合信息</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" headers="d4953e31" class="stentry"><a class="xref" href="SYSCOLLECTIONSPACES.html">SYSCOLLECTIONSPACES</a></td>
+
+              <td valign="top" headers="d4953e34" class="stentry">保存了该集群中所有的用户集合空间信息</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" headers="d4953e31" class="stentry"><a class="xref" href="SYSNODES.html">SYSNODES</a></td>
+
+              <td valign="top" headers="d4953e34" class="stentry">保存了该集群中所有的逻辑节点与复制组信息</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" headers="d4953e31" class="stentry"><a class="xref" href="SYSTASKS.html">SYSTASKS</a></td>
+
+              <td valign="top" headers="d4953e34" class="stentry">保存了该集群中所有正在运行的后台任务信息</td>
+
+            </tr>
+</table>
+
+        </li>
+
+        <li class="li"><p class="p">SYSTEMP 系统临时集合空间，可以创建最多4096个临时集合</p>
+</li>
+
+        <li class="li"><p class="p">SYSAUTH 系统认证集合空间，包含一个用户集合，保存当前系统中所有的用户信息</p>
+
+          <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+              <th valign="bottom" align="left" id="d4953e96" class="stentry">集合名</th>
+
+              <th valign="bottom" align="left" id="d4953e99" class="stentry">描述</th>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" headers="d4953e96" class="stentry"><a class="xref" href="SYSUSRS.html">SYSUSRS</a></td>
+
+              <td valign="top" headers="d4953e99" class="stentry">保存了该集群中所有的用户信息</td>
+
+            </tr>
+</table>
+
+        </li>
+
+        <li class="li"><p class="p">SYSPROCEDURES 系统存储过程集合空间，包含一个集合，用于存储所有的存储过程函数信息</p>
+
+          <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+              <th valign="bottom" align="left" id="d4953e124" class="stentry">集合名</th>
+
+              <th valign="bottom" align="left" id="d4953e127" class="stentry">描述</th>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" headers="d4953e124" class="stentry"><a class="xref" href="STOREPROCEDURES.html">STOREPROCEDURES</a></td>
+
+              <td valign="top" headers="d4953e127" class="stentry">保存所有存储过程函数信息</td>
+
+            </tr>
+</table>
+
+        </li>
+
+      </ul>
+
+      <p class="p">除了编目节点外，集群中所有其他的节点不在磁盘中保存任何全局元数据信息。当需要访问其他节点上的数据时，除编目节点外的其他节点需要从本地缓存中寻找集合信息，如果不存在则需要从编目节点获取。</p>
+
+      <p class="p">编目节点与其它节点之间主要使用编目服务端口（catalogname参数）进行通讯。</p>
+
+    </div>
+
+  </div>
+
+<div class="related-links">
+<ul class="ullinks">
+</ul>
+</div>
+<div class="navfooter"><a class="link" href="../../../../administration/concepts/cluster/topics/node.html" title="节点"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">节点</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

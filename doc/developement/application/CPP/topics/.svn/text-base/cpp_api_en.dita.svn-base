@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_3q1_c1z_3k">
+  <title>C++ API</title>
+  <body>
+    <p>This part is related to the C++ API document.</p>
+    <p><xref href="..\..\..\..\cpp\html\index.html" format="html">C++ API</xref></p>
+    <section>
+      <title>History Updates:</title>
+      <p><b>Version 1.10</b></p>
+      <p>1. SdbCollection class's new interfaces:</p><codeblock>Explain, Get the access plan of the queries.
+createLob, create a new LOB 
+openLob, open an existed LOB
+removeLob, remove a LOB
+listLobs, list all the LOBs in the collection</codeblock>
+      <p>2. Add class 'sdbLob' for big data operations, here are interfaces:</p><codeblock>read, read LOB from data
+write, write and insert LOB
+seek, specifies the migration of the data to be read
+close, close a LOB
+getOid, get the oid of a LOB
+getSize, get the size of a LOB
+getCreateTime, get the time of creation of a LOB</codeblock>
+      <p><b>Version 1.8</b></p>
+      <p>1. New APIs in sdb Class:</p><codeblock>connect, multiple connection address can be provided, one of the random valid addresses will be used to connect to database
+createCollectionSpace, a BSON parameter is provided to make the creating of a collection space more flexible
+backupOffline, more options are supported by backupOffline()
+createDomain, creates a domain
+getDomain, gets a domain
+dropDomain, drops a domain
+listDomain, enumerates and lists the domains</codeblock>
+      <p>2. New APIs in sdbCollection Class:</p><codeblock>alterCollection, alters the attributes of a domain</codeblock>
+      <p>3. A Domain Class is added to support the domain-related operations</p>
+      <p><b>Version 1.6</b></p>
+      <p>1. Add a class Node to replace the original class ReplicaNode. Class ReplicaNode and methods associated with it will be abandoned in the version 2.x.</p>
+      <p>For details, please see the relevant API.</p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_join_en">
+  <title>sql inner join</title>
+  <body>
+    <section><title>inner join </title>
+      <p>According to two or more collections in the relationship between the field name,inner join
+        is used to query data from those collections.</p>
+    </section>
+    <section><title>Grammar</title>
+      <p><codeblock>&lt;collection1_name | (select_set1) as &lt;alias1_name>
+inner join
+&lt;collection2_name | (select_set2)> as &lt;alias2_name>
+[ON condition]</codeblock></p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>There have employee information table <i>foo.emp</i> and depatmenrt information table
+              <i>foo.dept</i>, query the employee number filed <i>emp_no</i> in which department
+            name field <i>dept_name</i>.</p>
+          <p><codeblock>db.exec("select E.emp_no,D.dept_name from foo.emp as E inner join foo.dept as D on E.dept_no=D.dept_no")</codeblock></p>
+        </li>
+      </ul>
+      <note>
+        <p>1.can't contain non-union conditions,the following is a wrong way.</p>
+        <p><codeblock>select T1.a,T2.b from foo.bar1 as T1 inner join foo.bar2 as T2 on T1.a&lt;10</codeblock></p>
+        <p>2.can't use 'select *' statement in join layer.</p>
+      </note>
+    </section>
+  </body>
+  <related-links>
+    <link href="as_en.dita" format="dita" type="topic"></link>
+    <link href="left_join_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

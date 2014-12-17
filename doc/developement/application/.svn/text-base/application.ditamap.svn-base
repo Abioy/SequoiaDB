@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>application_map</title>
+ <topicref href="topics/application.dita">
+  <anchorref href="C/c.ditamap"/>
+  <anchorref href="CPP/cpp.ditamap"/>
+  <anchorref href="java/java.ditamap"/>
+  <anchorref href="PHP/php.ditamap"/>
+  <anchorref href="CS/cs.ditamap"/>
+  <anchorref href="Python/python.ditamap"/>
+  <topicref href="C/topics/bson.dita"/>
+  <topicref href="CPP/topics/cpp_bson.dita"/>
+  <topicref href="topics/bson_api.dita"/>
+  <topicref href="topics/cppbson_api.dita"/>
+ </topicref>
+</map>

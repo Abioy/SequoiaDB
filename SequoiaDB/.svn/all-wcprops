@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/sequoiadb/!svn/ver/16588/trunk/SequoiaDB
+END
+SConscriptShell
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/SConscriptShell
+END
+SConscriptTool
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/SConscriptTool
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/SConscript
+END
+SConscriptClientC
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/SConscriptClientC
+END
+SConscriptClientCpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/SConscriptClientCpp
+END
+SConscriptFmp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/SConscriptFmp
+END

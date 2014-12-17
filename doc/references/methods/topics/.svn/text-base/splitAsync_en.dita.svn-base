@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_11z_zkr_kn">
+  <title>db.collectionspace.collection.splitAsync()</title>
+  <body>
+    <section><title>db.collectionspace.collection. splitAsync(&lt;source group>,&lt;target group>,&lt;percent(0~100)|&lt;condition>, [endcondition])</title>
+      <p>Interview operation "db.collectionspace.collection.split" the same function, but it operates as an asynchronous partition operation, the task ID 
+returned immediately after the partition created task.</p>
+    </section>    
+  </body>  
+</topic>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>DITA Topic Map</title>
+ <topicref href="topics/python_en.dita">
+  <topicref href="topics/pydrive_en.dita"/>
+  <topicref href="topics/pybuilt_en.dita"/>
+  <topicref href="topics/pybasic_en.dita"/>
+  <topicref href="topics/pysql_en.dita"/>
+  <topicref href="topics/py_api_en.dita"/>
+ </topicref>
+</map>

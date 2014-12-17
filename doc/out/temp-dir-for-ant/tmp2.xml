@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/map.dtd">
+<map title="SequoiaDB信息中心">
+    <anchorref href="introduction/introduction.ditamap"/>
+    <anchorref href="administration/concepts/concepts.ditamap"/>
+    <anchorref href="installation/installation.ditamap"/>
+    <anchorref href="administration/administration.ditamap"/>
+    <anchorref href="developement/developement.ditamap"/>
+    <anchorref href="references/references.ditamap"/>
+</map>

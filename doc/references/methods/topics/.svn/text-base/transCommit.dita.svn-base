@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_transCommit">
+  <title>db.transCommit()</title>
+  <body>
+    <section><title>db.transCommit()</title>
+      <p>事务提交。在开启事务之后，如果单个逻辑工作单元执行的操作无异常，执行事务提交命令，那么数据库的数据将被更新。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>事务提交命令：</p>
+          <p><codeblock>db.transCommit() </codeblock></p></li>
+      </ul>      
+    </section>
+  </body>
+  <related-links>
+    <link href="transBegin.dita"></link>
+    <link href="transRollback.dita"></link>
+  </related-links>
+</topic>

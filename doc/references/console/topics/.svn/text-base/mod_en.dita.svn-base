@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_mod_en">
+  <title >$mod</title>
+  <body>
+    <section><title>Grammar</title>
+      <p><codeblock>{&lt;field>：{$mod:[value1,value2]},...}</codeblock></p>
+    </section>
+    <section><title>Description</title>
+      <p><b>$mod</b> is a modulo operator,to return the records which the value of specified
+          <b>field</b>  count modulo <b>value1</b> is equal to <b>value2</b>.</p>
+      <note>
+        <p>1.Param <b>value1</b> is a integer except 0;if it is filled with float,then only the
+          integer part is effective;in addition,it can't be other types.</p>
+        <p>2.Param <b>value2</b> is a integer;if it is filled with float,then only the integer part
+          is effective;other types are treated with <b>0</b>.</p>
+      </note>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>Return the records that the value of field <b>age</b> count modulo <b>5</b> is equal to
+              <b>3</b> in collection <b>bar</b></p>
+          <codeblock>db.foo.bar.find({age:{$mod:[5,3]}})
+return
+{
+  "_id": {
+    "$oid": "521d5446e2d3c4e31c000000"
+  },
+  "age": 3
+}...</codeblock>
+          <codeblock>db.foo.bar.find({age:{$mod:[2.3,1.5]}})
+return
+{
+  "_id": {
+    "$oid": "521d5446e2d3c4e31c000000"
+  },
+  "age": 3
+}
+{
+  "_id": {
+    "$oid": "521d544ee2d3c4e31c000002"
+  },
+  "age": 5
+  }...</codeblock>
+          <p>Only the integer part are valid for the two elments in the array[2.3,1.5] .</p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="pet_en.dita" format="dita" type="topic"></link>
+    <link href="pin_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

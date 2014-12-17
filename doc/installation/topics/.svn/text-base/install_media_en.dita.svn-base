@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rnh_mpx_wj">
+  <title>Install Media</title>
+  <body>
+    <p>Please go to official website to download the appropriate version of SequoiaDB.</p>
+    <p>Download address: <xref href="http://www.sequoiadb.com/index.php?p=downserver" format="html" scope="external">http://www.sequoiadb.com/index.php?p=downserver</xref></p>
+    <!--<p>The table below is a look-up table of  SequoiaDB product package and OS. Please choose proper
+      package according to the type of your server OS.</p>
+    <simpletable>
+      <sthead>
+        <stentry></stentry>
+        <stentry>Linux 64-bit</stentry>
+        <stentry>Windows 32-bit</stentry>
+        <stentry>Windows 64-bit</stentry>
+      </sthead>
+      <strow>
+        <stentry>Product package</stentry>
+      </strow>
+      <strow>
+        <stentry> 1.0.0<p>4/16/2013</p> </stentry>
+        <stentry> sequoiadb_1.0.0_linux_x86_64_installer.run<p><u>download</u></p></stentry>
+        <stentry>
+          sequoiadb_1.0.0_windows_i586_installer.run
+          <p><u>download</u></p>
+        </stentry>
+        <stentry>
+         sequoiadb_1.0.0_windows_x86_64_installer.run
+          <p><u>download</u></p>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry> Driver(C/C++/Java/C#/PHP)</stentry>
+      </strow>
+      <strow>
+        <stentry> 1.0.0 <p>4/16/2013</p></stentry>
+        <stentry>
+          sequoiadb_driver_1.0.0_linux_x86_64.tar.gz
+          <p><u>download</u></p>
+        </stentry>
+        <stentry>
+         sequoiadb_driver_1.0.0_window_i586.tar.gz
+          <p><u>download</u></p>
+        </stentry>
+        <stentry>
+          sequoiadb_driver_1.0.0_windows_x86_64.zip
+          <p><u>download</u></p>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>Kit</stentry>
+      </strow>
+      <strow>
+        <stentry>apache and php </stentry>
+        <stentry>
+          apache2-linux-x64-installer.tar.gz
+          <p><u>download</u></p>
+        </stentry>
+        <stentry>
+         apache2-windows-i586-installer.tar.gz
+          <p><u>download</u></p>
+        </stentry>
+        <stentry>
+       apache2-windows-x86_64-installer.zip
+          <p><u>download</u></p>
+        </stentry>
+      </strow>
+    </simpletable>-->
+  </body>
+</topic>

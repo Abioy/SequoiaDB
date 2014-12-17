@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_myy_ncx_tk">
+  <title>Create New Node In Catalog Replica Group</title>
+  <body>
+    <note>If creating new nodes relate to create new master, please refer to the section <xref
+        href="../../create_host_en.dita">Add master to cluster</xref> to complete the configuration
+      of host name and params about master.</note>
+    <p>With the expansion of physical devices in the cluster, it can create more catalog nodes to
+      improve the reliability of catalog service.</p>
+    <p>operation methods: </p>
+    <codeblock>> var cataRG = db.getRG("SYSCatalog");
+> var node1 = cataRG.createNode(&lt;host&gt;,&lt;service&gt;,&lt;dbpath&gt;,[config]); 
+> node1.start()</codeblock>
+    <p>The first command is used to get catalog replica group, "SYSCatalogGroup" is the name of catalog
+      replica group.</p>
+    <p>The second command is used to create a new catalog node, amongs:</p>
+    <p>params:</p>
+    <p><b>host </b>: specify the host name of catalog node.</p>
+    <p><b>service </b>: specify the service port of catalog node, please ensure this port and the next
+      three ports are unoccupied; for example, if set port 11800, then ensure 11800/11801/11802/11803
+      are unoccupied.</p>
+    <p><b>dbpath</b>: data file path, be used to store catalog data files, please ensure that the data
+      administrator user has write access.(created when installed, dafault <i>sdbadmin</i>).</p>
+    <p><b>config </b>: optional param, be used to configure more detail params. the form is json. param
+      list refer to the section <xref
+        href="../../../../database/topics/runtime_configuration_en.dita">database
+        configuration</xref>, for example configure the param of log size {logfilesz:64}.</p>
+    <p>The third command is used to start the added catalog node.</p> 
+  </body>
+</topic>

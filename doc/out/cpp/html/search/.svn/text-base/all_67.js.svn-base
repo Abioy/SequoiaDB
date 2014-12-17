@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['getcollection',['getCollection',['../classsdbclient_1_1sdbCollectionSpace.html#a445ea66b691b527c8cc69d953e8141f5',1,'sdbclient::sdbCollectionSpace::getCollection()'],['../classsdbclient_1_1sdb.html#a3bf440b551fcc12eb7b04de01be67d70',1,'sdbclient::sdb::getCollection()']]],
+  ['getcollectionname',['getCollectionName',['../classsdbclient_1_1sdbCollection.html#a9de62c9d26baa45e3c82d00a4528218f',1,'sdbclient::sdbCollection']]],
+  ['getcollectionspace',['getCollectionSpace',['../classsdbclient_1_1sdb.html#af8e86fe77eebbec8ae3bc1786c259b17',1,'sdbclient::sdb']]],
+  ['getcount',['getCount',['../classsdbclient_1_1sdbCollection.html#ac2a4d640622d115cf726626f15e5329b',1,'sdbclient::sdbCollection']]],
+  ['getcreatetime',['getCreateTime',['../classsdbclient_1_1sdbLob.html#aee8d67f23dcc0955d6e26990157de66f',1,'sdbclient::sdbLob']]],
+  ['getcsname',['getCSName',['../classsdbclient_1_1sdbCollection.html#a1b8f0ce34cbacba60fcf4012d0987bc9',1,'sdbclient::sdbCollection::getCSName()'],['../classsdbclient_1_1sdbCollectionSpace.html#a19abc1d2fec9c9196a0ad602df107bec',1,'sdbclient::sdbCollectionSpace::getCSName()']]],
+  ['getdetail',['getDetail',['../classsdbclient_1_1sdbReplicaGroup.html#a5b3c659c793be0f56bc4702495559b2f',1,'sdbclient::sdbReplicaGroup']]],
+  ['getdomain',['getDomain',['../classsdbclient_1_1sdb.html#ac869176932b4251ff276736996e9c875',1,'sdbclient::sdb']]],
+  ['getfullname',['getFullName',['../classsdbclient_1_1sdbCollection.html#a0ccbae19cc6beac4a3cd0fe4f4993214',1,'sdbclient::sdbCollection']]],
+  ['gethostname',['getHostName',['../classsdbclient_1_1sdbNode.html#a71def49d24cab598331f7bbc44f3d75b',1,'sdbclient::sdbNode']]],
+  ['getindexes',['getIndexes',['../classsdbclient_1_1sdbCollection.html#adad2164c2e7f259d93859f31b49dedc1',1,'sdbclient::sdbCollection']]],
+  ['getlist',['getList',['../classsdbclient_1_1sdb.html#aeea45d0324323901f01f9d6fed6573a1',1,'sdbclient::sdb']]],
+  ['getmaster',['getMaster',['../classsdbclient_1_1sdbReplicaGroup.html#afc5bf017a09cf3e919dad70ccca32b74',1,'sdbclient::sdbReplicaGroup']]],
+  ['getname',['getName',['../classsdbclient_1_1sdbReplicaGroup.html#a810fa83e611ddd773370b48906fcfd95',1,'sdbclient::sdbReplicaGroup::getName()'],['../classsdbclient_1_1sdbDomain.html#a81faf2aea84005ea27b1d7755fe1f00c',1,'sdbclient::sdbDomain::getName()']]],
+  ['getnode',['getNode',['../classsdbclient_1_1sdbReplicaGroup.html#a5b99c70ccbf8f57151ca2fb9e8892f90',1,'sdbclient::sdbReplicaGroup::getNode(const CHAR *pNodeName, sdbNode &amp;node)'],['../classsdbclient_1_1sdbReplicaGroup.html#a2a4842ee95abb03d955c381316e2f71e',1,'sdbclient::sdbReplicaGroup::getNode(const CHAR *pHostName, const CHAR *pServiceName, sdbNode &amp;node)']]],
+  ['getnodename',['getNodeName',['../classsdbclient_1_1sdbNode.html#ac2e97745d21a2a3b6e671218e4ff7b3d',1,'sdbclient::sdbNode']]],
+  ['getnodenum',['getNodeNum',['../classsdbclient_1_1sdbReplicaGroup.html#ad1ebb2af0f8f8f6cac68e5b20d1b5607',1,'sdbclient::sdbReplicaGroup']]],
+  ['getoid',['getOid',['../classsdbclient_1_1sdbLob.html#af841b8424e9877e2214ab6ea85ef3766',1,'sdbclient::sdbLob']]],
+  ['getquerymeta',['getQueryMeta',['../classsdbclient_1_1sdbCollection.html#ad81f17ef5bbe4447ffa1edde10c13ccf',1,'sdbclient::sdbCollection']]],
+  ['getreplicagroup',['getReplicaGroup',['../classsdbclient_1_1sdb.html#a58d0bc33aa136c21ead0b0fea747fe42',1,'sdbclient::sdb::getReplicaGroup(const CHAR *pName, sdbReplicaGroup &amp;result)'],['../classsdbclient_1_1sdb.html#ae580ee35cce39c18b54e54cc91c2089e',1,'sdbclient::sdb::getReplicaGroup(INT32 id, sdbReplicaGroup &amp;result)']]],
+  ['getservicename',['getServiceName',['../classsdbclient_1_1sdbNode.html#a749ce008ae045fbcf5980d15784adea5',1,'sdbclient::sdbNode']]],
+  ['getsize',['getSize',['../classsdbclient_1_1sdbLob.html#ad2e972c51839b77291c41249ce26b368',1,'sdbclient::sdbLob']]],
+  ['getslave',['getSlave',['../classsdbclient_1_1sdbReplicaGroup.html#a97234239d6503d93a6cb5cf028dd6b8a',1,'sdbclient::sdbReplicaGroup']]],
+  ['getsnapshot',['getSnapshot',['../classsdbclient_1_1sdb.html#a55951b2e82b306a098e92b1dbfa70898',1,'sdbclient::sdb']]],
+  ['getstatus',['getStatus',['../classsdbclient_1_1sdbNode.html#a8e5e1175be1eb5e1928aa87a7a3ebb2f',1,'sdbclient::sdbNode']]]
+];

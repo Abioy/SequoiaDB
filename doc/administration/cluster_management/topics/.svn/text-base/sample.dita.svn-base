@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_syz_qkx_tk">
+  <title>案例</title>
+  <body>
+    <section>
+      <title>案例一：新增主机，在当前数据分区中新增一个数据副本节点</title>
+      <ul>
+        <li>当前环境：<p/>
+          <simpletable>
+            <sthead>
+              <stentry>配置项</stentry>
+              <stentry>配置情况</stentry>
+            </sthead>
+            <strow>
+              <stentry>主机</stentry>
+              <stentry>包含一台主机：<fig></fig>主机一：OS 为 SUSE 11 SP2 64位，主机名为 vmsvr1-suse-x64，IP 为192.168.1.10</stentry>
+            </strow>
+            <strow>
+              <stentry>编目分区组</stentry>
+              <stentry>分区组包含一个编目节点，服务端口为11800</stentry>
+            </strow>
+            <strow>
+              <stentry>数据分区组</stentry>
+              <stentry>一个数据分区组，组名为 datagroup1，其中包含一个数据节点：<fig/>数据节点一：服务主机名为 vmsvr1-suse-x64，端口为11820</stentry>
+            </strow>
+            <strow>
+              <stentry>协调节点</stentry>
+              <stentry>一个协调节点，端口为11810</stentry>
+            </strow>
+          </simpletable><p/></li>
+        <li>调整后的预期结果<p/>
+          <simpletable>
+            <sthead>
+              <stentry>配置项</stentry>
+              <stentry>配置情况</stentry>
+            </sthead>
+            <strow>
+              <stentry>主机</stentry>
+              <stentry>包含两台主机：<fig></fig>主机一：OS 为 SUSE 11 SP2 64位，主机名为 vmsvr1-suse-x64，IP 为192.168.1.10<fig></fig>主机二：OS 为 SUSE 11 SP2 64位，主机名为 vmsvr2-suse-x64，IP 为192.168.1.11</stentry>
+            </strow>
+            <strow>
+              <stentry>编目分区组 </stentry>
+              <stentry>分区组包含一个编目节点，服务端口为11800</stentry>
+            </strow>
+            <strow>
+              <stentry>数据分区组</stentry>
+              <stentry> 一个数据分区组，组名为 datagroup1，其中包含两个数据节点：<fig/>数据节点一：服务主机名为 vmsvr1-suse-x64，端口为11820<fig/>数据节点二：服务主机名为 vmsvr2-suse-x64，端口为11820</stentry>
+            </strow>
+            <strow>
+              <stentry>协调节点</stentry>
+              <stentry>一个协调节点，端口为11810</stentry>
+            </strow>
+          </simpletable>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <title>操作步骤</title>
+      <ul>
+        <li>步骤一：配置新增的主机
+          <p>1. 安装操作系统 SUSE 11 SP2 64位（保持与原系统一致）；</p>
+          <p>2. 使用 root 用户登录系统；</p>
+          <p>3. 配置 IP 地址为 192.168.1.11；</p>
+          <p>4. 执行如下命令，配置主机名为 vmsvr2-suse-x64：<codeblock>hostname vmsvr2-suse-x64</codeblock>修改 /etc/hosts文件，新增两行：<codeblock>192.168.1.10 vmsvr1-suse-x64 
+192.168.1.11 vmsvr2-suse-x64</codeblock>按 :wq 保存退出；</p>
+          <p>5. 执行如下命令，检查主机配置是否生效：<codeblock>ping vmsvr1-suse-x64   //检查是否 ping 通；
+ping vmsvr2-suse-x64   //检查是否 ping 通；</codeblock></p>
+          <p>6. 配置系统内核参数：</p>
+          <p>打开 /etc/profile 文件，在该文件末尾增加如下行：</p><p><codeblock>ulimit -Sf unlimited   //文件大小限制 
+ulimit -St unlimited   //CPU时间限制 
+ulimit -Sv unlimited   //虚拟内存限制 
+ulimit -Sn 64000       //文件个数限制 
+ulimit -Sm unlimited   //内存大小限制 
+ulimit -Su 32000       //线程个数限制</codeblock>按 :wq 保存退出；</p><p>执行 source /etc/profile，使得配置生效；</p>
+          <p>7. 执行如下命令，检查系统内核参数配置是否生效：<codeblock>ulimit -a;   //查看配置是否正确；</codeblock></p></li>
+        <li>步骤二：配置原集群的主机
+          <p>修改原主机 vmsvr1-suse-x64 的 /etc/hosts 配置文件，在配置文件中新增一行：</p><codeblock>192.168.1.11   vmsvr2-suse-x64</codeblock><p>按 :wq 保存退出；</p></li>
+        <li>步骤三：在新增主机上安装 SequoiaDB 软件<p>参考 <xref href="../../../installation/server_installation/topics/linux.dita">SequoiaDB 服务器安装</xref>一节进行软件安装。</p></li>
+        <li>步骤四：在当前分区中新增数据节点
+          <p>1. 在 vmsvr2-suse-x64 上执行如下命令，启动 SequoaiDB Shell 命令行：</p><codeblock>/opt/sequoiadb/bin/sdb</codeblock>
+          <p>2. 在 SequoiaDB Shell 命令行中，执行如下命令在当前数据分区组新增一副本节点：</p><codeblock>> var db = new Sdb("localhost",11810)
+> var datarg = db.getRG("datagroup1")
+> node=rg.createNode("vmsvr2-suse-x64",11820,"/opt/sequoiadb /database/data/11820")
+> node.start()</codeblock>
+          <p>3. 在SequoiaDB Shell命令行中，执行如下命令检查分区组配置情况，可以看到数据组新增了一个数据节点：</p><codeblock>> db.listReplicaGroups();
+…
+{
+  "Group": [
+    {
+      "dbpath": "/opt/sequoiadb/database/data/11820",
+      "HostName": " vmsvr1-suse-x64",
+      "Service": [
+        {
+          "Type": 0,
+        {
+          "Type": 1,
+          "Name": "11821"
+        },
+        {
+          "Type": 2,
+          "Name": "11822"
+        },
+        {
+          "Type": 3,
+          "Name": "11823"
+        }
+      ],
+      "NodeID": 1000
+    },
+    {
+      "dbpath": "/opt/sequoiadb/database/data/11820",
+      "HostName": " vmsvr2-suse-x64",
+      "Service": [
+        {
+          "Type": 0,
+          "Name": "11820"
+        },
+        {
+          "Type": 1,
+          "Name": "11821"
+        },
+        {
+          "Type": 2,
+          "Name": "11822"
+        },
+        {
+          "Type": 3,
+          "Name": "11823"
+        }
+      ],
+      "NodeID": 1001
+    }
+  ],
+  "GroupID": 1000,
+  "GroupName": "datagroup1",
+  "PrimaryNode": 1000,
+  "Role": 0,
+  "Status": 1,
+  "Version": 3,
+  "_id": {
+    "$oid": "51d673c1fde96799fbac6aad"
+  }
+}</codeblock></li>
+      </ul>
+    </section>
+  </body>
+</topic>

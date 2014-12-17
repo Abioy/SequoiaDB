@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_resetSnapshot">
+  <title>db.resetSnapshot()</title>
+  <body>
+    <section><title>db.resetSnapshot([cond])</title>
+      <p>重置快照。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>con</stentry>
+          <stentry>Json 对象</stentry>
+          <stentry>选择条件，只重置符合 cond 条件的快照记录，为 null 时，重置所有。</stentry>
+          <stentry>否</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>格式</title>
+      <p>resetSnapshot() 方法定义格式有 cond 参数，它是一个 Json 对象。</p>
+      <p><codeblock>{["cond":"{"字段名1":{<xref href="../../console/topics/console.dita">"匹配符1"</xref>:"值1"},"字段名2":{"匹配符2":"值2"}...}"]}</codeblock></p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>重置 SessionID 大于1的快照。</p>
+          <p><codeblock>db.resetSnapshot({SessionID:{$gt:1}})</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+</topic>

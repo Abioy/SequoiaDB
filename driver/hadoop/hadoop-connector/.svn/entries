@@ -1,0 +1,77 @@
+10
+
+dir
+16591
+http://192.168.20.11/sequoiadb/trunk/driver/hadoop/hadoop-connector
+http://192.168.20.11/sequoiadb
+
+
+
+2014-12-17T08:45:11.917266Z
+16589
+longyang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6121f079-4a18-41d3-8c30-8870a322f2c2
+
+conf
+dir
+
+lib
+dir
+
+src
+dir
+
+hadoop1.2
+dir
+
+hadoop2.2
+dir
+
+build.xml
+file
+
+
+
+
+2014-12-17T09:12:49.154878Z
+3139463ca3c5f72bf7cb3c14ab6174f4
+2014-12-17T08:45:11.917266Z
+16589
+longyang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1999
+

@@ -1,0 +1,84 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="最终一致性策略"/>
+<meta name="description" content="为了提升数据的可靠性和实现数据的读写分离，SequoiaDB 中，对于复制组间的数据采用“最终一致性”策略，在读写分离时读取的数据某一个时期内可能不是最新的，但最终是一致的。 名词解释 W ：副本写入个数 R ：副本读取个数 N ：副本个数 在 SequoiaDB 中，设置 R 的值为1，且不可配置。 默认情况下，复制组中的主节点在处理完一个写请求后会立即返回，即 W = ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/database/topics/database.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_fpn_s1n_2l"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>最终一致性策略</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_fpn_s1n_2l"><a name="topic_fpn_s1n_2l"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/concepts/database/topics/database.html" title="数据库"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">数据库</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/concepts.html" title="数据库概念">数据库概念</a> / <a class="navheader_parent_path" href="../../../../administration/concepts/database/topics/database.html" title="数据库">数据库</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">最终一致性策略</h1>
+
+  <div class="body">
+    <p class="p">为了提升数据的可靠性和实现数据的读写分离，SequoiaDB 中，对于复制组间的数据采用“最终一致性”策略，在读写分离时读取的数据某一个时期内可能不是最新的，但最终是一致的。</p>
+
+    <div class="section"><h2 class="title sectiontitle">名词解释</h2>
+      
+      <p class="p"><strong class="ph b">W</strong>：副本写入个数</p>
+
+      <p class="p"><strong class="ph b">R</strong>：副本读取个数</p>
+
+      <p class="p"><strong class="ph b">N</strong>：副本个数</p>
+
+      <p class="p">在 SequoiaDB 中，设置 R 的值为1，且不可配置。</p>
+
+      <p class="p">默认情况下，复制组中的主节点在处理完一个写请求后会立即返回，即 W = 1。数据同步会在后台异步完成（<a class="xref" href="../../../database/topics/synlog.html">同步日志</a>）并达到最终一致。此时外部的读请求获得的数据可能不是最新的。在对数据一致性要求不高的场景中，这种方式可以提供最优的写入性能。</p>
+
+      <p class="p">当我们<a class="xref" href="../../../../references/methods/topics/createCL.html">创建集合</a>时，可以通过 ReplSize 属性指定集合的 W 值。</p>
+
+      <ul class="ul">
+        <li class="li">默认情况下 W = 1。</li>
+
+        <li class="li">当 ReplSize 等于0时，W 的个数会根据当前复制组的 N 变化而变化。即，如果开始组内有三个节点，则 W 等于3。当新增加一个入节点时，W 会自动变为4。</li>
+
+        <li class="li">当手动指定 W 的个数时，不能超出当前复制组内节点个数。</li>
+
+      </ul>
+
+      <p class="p">增大 W 可以有效提高数据的一致性和可靠性。当 W = N 并且写请求处理成功后，后续读到的数据一定是当前组内最新的。但是这样会降低复制组的写入性能。值得注意的是，虽然我们可以将 W 设为 N，但这并不代表 SequoiaDB中 的数据拥有强一致性。当某个副本写入失败（如磁盘满）时，复制组内可能存在多个版本的数据。此时既可能读到新的数据，也可能读到旧的数据。当失败副本恢复正常后，会继续从主节点上同步最新的数据并达到最终一致。</p>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../administration/concepts/database/topics/database.html" title="数据库"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">数据库</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

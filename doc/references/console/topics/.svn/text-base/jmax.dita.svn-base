@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_hm1_mwj_pl_max">
+  <title>$max</title>
+  <body>
+    <section>
+      <title>描述</title>
+      <p>记录分组后，取分组中指定字段的最大值返回，对嵌套对象使用点操作符（.）引用字段名。</p>
+    </section>
+    <section>
+      <title>示例</title>
+      <ul>
+        <li>对记录分组后，返回分组中指定字段的最大值<codeblock>db.collectionspace.collection.aggregate({$group:{_id:"$dep",max_score:{$max:"$score"},Name:{$last:"$info.name"}}})</codeblock>
+          此操作对记录按 dep 字段分组，使用 <b>$max</b> 返回每个分组中 score 字段的最大值，输出字段名为 max_score，又使用 <xref href="jlast.dita"><b>$last</b></xref> 取每个分组中最后一条记录嵌套对象 name 字段值，输出字段名为 Name。记录返回如下：<codeblock>{
+  "max_score": 93,
+  "Name": "Kate"
+}
+{
+  "max_score": 90,
+  "Name": "Jim"
+}</codeblock></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="jlast.dita" format="dita" type="topic"></link>
+    <link href="jmin.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/com.sophos.tocjs/sample/concepts
+END
+license.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/com.sophos.tocjs/sample/concepts/license.xml
+END
+install.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/com.sophos.tocjs/sample/concepts/install.xml
+END
+anttasks.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/com.sophos.tocjs/sample/concepts/anttasks.xml
+END
+css.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/com.sophos.tocjs/sample/concepts/css.xml
+END
+customization.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/com.sophos.tocjs/sample/concepts/customization.xml
+END
+knownissues.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/com.sophos.tocjs/sample/concepts/knownissues.xml
+END
+about.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/com.sophos.tocjs/sample/concepts/about.xml
+END
+basefiles.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/com.sophos.tocjs/sample/concepts/basefiles.xml
+END
+paths.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/com.sophos.tocjs/sample/concepts/paths.xml
+END

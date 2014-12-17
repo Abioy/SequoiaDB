@@ -1,0 +1,123 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="db.listProcedures()"/>
+<meta name="description" content="db.listProcedures([cond]) 枚举所有的存储过程函数。 参数描述 参数名 参数类型 描述 是否必填 cond Json 对象 条件为空时，枚举所有的函数，不为空时，枚举符合条件函数。 是 listProcedures() 方法的定义，只有一个 Json 对象类型的参数名 cond，输入值时返回符合指定值的函数，否则的话返回所有的函数。 示例 返回所有的函数信息 &gt;db ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../references/methods/jssequoiadb.html"/>
+<meta name="DC.Relation" scheme="URI" content="removeProcedure.html"/>
+<meta name="DC.Relation" scheme="URI" content="eval.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_y4l_dpw_ql"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>db.listProcedures()</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_y4l_dpw_ql"><a name="topic_y4l_dpw_ql"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../references/methods/jssequoiadb.html" title="Sdb"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sdb</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="methodlist.html" title="SequoiaDB JavaScript 方法">SequoiaDB JavaScript 方法</a> / <a class="navheader_parent_path" href="../../../references/methods/jssequoiadb.html" title="Sdb">Sdb</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">db.listProcedures()</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">db.listProcedures([cond])</h2>
+      <p class="p">枚举所有的存储过程函数。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">参数描述</h2>
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d129331e26" class="stentry">参数名</th>
+
+          <th valign="bottom" align="left" id="d129331e29" class="stentry">参数类型</th>
+
+          <th valign="bottom" align="left" id="d129331e32" class="stentry">描述</th>
+
+          <th valign="bottom" align="left" id="d129331e35" class="stentry">是否必填</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d129331e26" class="stentry">cond</td>
+
+          <td valign="top" headers="d129331e29" class="stentry">Json 对象</td>
+
+          <td valign="top" headers="d129331e32" class="stentry">条件为空时，枚举所有的函数，不为空时，枚举符合条件函数。</td>
+
+          <td valign="top" headers="d129331e35" class="stentry">是</td>
+
+        </tr>
+</table>
+
+      <p class="p">listProcedures() 方法的定义，只有一个 Json 对象类型的参数名 cond，输入值时返回符合指定值的函数，否则的话返回所有的函数。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">示例</h2>
+      <ul class="ul">
+        <li class="li">
+          <p class="p">返回所有的函数信息</p>
+
+          <pre class="pre codeblock">&gt;db.listProcedures()
+{ "_id" : { "$oid" : "52480389f5ce8d5817c4c353" }, "name" : "sum", "func" : "function sum(x, y) {
+    return x + y;
+}", "funcType" : 0 }
+{ "_id" : { "$oid" : "52480d3ef5ce8d5817c4c354" }, "name" : "getAll", "func" : "function getAll() {
+    return db.foo.bar.find();
+}", "funcType" : 0 }
+...</pre>
+
+        </li>
+
+        <li class="li">
+          <p class="p">指定返回函数名为 sum 的记录</p>
+
+          <pre class="pre codeblock">&gt;db.listProcedures({name:"sum"})
+{ "_id" : { "$oid" : "52480389f5ce8d5817c4c353" }, "name" : "sum", "func" : "function sum(x, y) {
+    return x + y;
+}", "funcType" : 0 }</pre>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="removeProcedure.html" title="removeProcedure.html">removeProcedure.html</a></div>
+<div><a class="navheader_parent_path" href="eval.html" title="db.eval()">db.eval()</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../references/methods/jssequoiadb.html" title="Sdb"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sdb</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

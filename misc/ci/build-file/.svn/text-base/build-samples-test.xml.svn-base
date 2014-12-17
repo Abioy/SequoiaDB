@@ -1,0 +1,186 @@
+<!--@param ${build.testcases}: The path where test had builded path .-->
+<!--@param ${WORKSPACE} : The path where jenkins user's path .-->
+<!--@param ${lib.dir} : The path where all lib's directory .-->
+<!--@param ${antTask.jar.path} : The path where the ant task jar is it -->
+
+<project name="build-samples-test" default="build-samples-test">	
+	<property name="antTask.jar.path" value="${WORKSPACE}/deploy/ant-sdbtasks" />
+	<property name="junit4.jar.dir" value="/usr/share/java/junit4.jar" />
+	<property name="sequoiadb.jar.dir" value="${lib.dir}/java/sequoiadb.jar" />
+	<!-- <property name="STAF.PATH" value="/usr/local/staf" /> -->
+	<property name="build.testcases.CPP" value="${build.testcases}/CPP" />
+	<property name="build.testcases.C" value="${build.testcases}/C" />
+	<property name="build.testcases.Java" value="${build.testcases}/Java" />
+	<property name="build.testcases.C#" value="${build.testcases}/C#" />
+	<property name="build.testcases.PHP" value="${build.testcases}/PHP" />
+	<property name="build.testcases.Python" value="${build.testcases}/Python" />
+	<property name="build.testcases.JS" value="${build.testcases}/JS" />
+	<property name="deploy.path" value="${WORKSPACE}/deploy" />
+	<taskdef resource="com/sequoiadb/ant/ant-sdbtasks.xml" >
+		<classpath>
+			<fileset dir="${antTask.jar.path}" includes="*.jar" />
+		</classpath>
+	</taskdef>
+	
+	<target name="clean-samples-test">		
+		<echo message="Begin to clean client sample C env.." />
+		<delete dir="${deploy.path}/hlt/samples_testcases/" failonerror="false" />
+		<delete dir="${build.testcases}"  failonerror="false" />
+		<mkdir dir="${build.testcases}" />
+		<copy todir="${build.testcases}">
+			<fileset dir="${WORKSPACE}/sequoiadb/client/samples/" includes="**/*" />
+		</copy>
+		<chmod perm="a+x">
+			<fileset dir="${build.testcases}" includes="**/*buildApp.sh*" />
+		</chmod>
+		<mkdir dir="${deploy.path}/hlt/samples_testcases/C" />
+		<mkdir dir="${deploy.path}/hlt/samples_testcases/CPP" />
+
+		<mkdir dir="${deploy.path}/hlt/samples_testcases/Java" />
+		<mkdir dir="${deploy.path}/hlt/samples_testcases/C#" />
+		<mkdir dir="${deploy.path}/hlt/samples_testcases/PHP" />
+		<mkdir dir="${deploy.path}/hlt/samples_testcases/Python" />
+		<mkdir dir="${deploy.path}/hlt/samples_testcases/JS" />
+
+		<echo message="Clean driver client sample env completed." />	
+	</target>
+
+	<target name="build-samples-test" depends="clean-samples-test">
+	    <echo message="...Begin to build the C and C++ test code ..." />
+
+	    <echo message="exec build ${build.testcases.C} " />
+		<foreach target="build_c_samples" param="build.name.C">
+		   <fileset dir="${build.testcases.C}">
+		   	  <include name="*.c" />
+		   	  <exclude name="*common*" />
+		   	  <exclude name="*old*.c" />
+		   </fileset>
+		</foreach>	
+		<copy todir="${deploy.path}/hlt/samples_testcases/C">
+			<fileset dir="${build.testcases.C}/build">
+				<include name="**/*" />
+                <exclude name="**/*.c" />
+                <exclude name="**/*.h" />
+                <exclude name="**/*.bat" />
+                <!-- <exclude name="**/*.static" /> -->
+                <exclude name="**/*.sh" />
+                <exclude name="**/*.txt" />
+			</fileset>
+		</copy>
+		<copy todir="${deploy.path}/hlt/samples_testcases/C" file="${build.testcases.C}/sampledb.dat" />
+
+		<echo message="exec build ${build.testcases.CPP} " />
+		<foreach target="build_cpp_samples" param="build.name.CPP">
+		   <fileset dir="${build.testcases.CPP}">
+		   	  <include name="*.cpp" />
+		   	  <exclude name="*common*" />
+		   	  <exclude name="*old*.cpp" />
+		   </fileset>
+		</foreach>
+		<copy todir="${deploy.path}/hlt/samples_testcases/CPP">
+			<fileset dir="${build.testcases.CPP}/build" includes="*" />
+		</copy>
+	    <echo message="...over build the C and C++ ..." />
+
+	    <echo message="...Begin to build the C# test code ..." />
+	    <copy todir="${deploy.path}/hlt/samples_testcases/C#">
+	    	<fileset dir="${build.testcases.C#}" includes="*" />
+	    </copy>
+	    <echo message="...over build the C# ..." />
+
+	    <echo message="...Begin to build the Python test code ..." />
+	    <copy todir="${deploy.path}/hlt/samples_testcases/Python">
+	    	<fileset dir="${build.testcases.Python}" includes="*" />
+	    </copy>
+	    <echo message="...over build the Python ..." />
+
+	    <echo message="...Begin to build the Java test code ..." />
+	    <antcall target="build_java_samples" />
+	    <echo message="...over build the Java ..." />
+
+	    <echo message="...Begin to build the PHP test code ..." />
+	    <copy todir="${deploy.path}/hlt/samples_testcases/PHP">
+	    	<fileset dir="${build.testcases.PHP}" includes="*" />
+	    </copy>
+	    <echo message="...over build the PHP ..." />
+
+	    <echo message="...Begin to build the JS test code ..." />
+	    <copy todir="${deploy.path}/hlt/samples_testcases/JS">
+	    	<fileset dir="${build.testcases.JS}" includes="*" />
+	    </copy>
+	    <echo message="...over build the JS ..." />
+	</target>
+
+	<target name="build_java_samples" depends="">
+		<echo message="os.name=${os.name}, os.arch=${os.arch}" />
+		<if>
+			<equals arg1="${os.name}" arg2="Linux" />
+			<then>
+				<property name="jdk.name.os" value="jdk_linux" />
+			</then>
+			<else>
+				<property name="jdk.name.os" value="jdk_win" />
+			</else>
+		</if>
+		<if>
+			<equals arg1="${os.arch}" arg2="ppc64" />
+			<then>
+				<property name="jdk.name" value="jdk_ppclinux64" />
+			</then>
+		</if>
+		<if>
+			<equals arg1="${os.arch}" arg2="amd64" />
+			<then>
+				<property name="jdk.name" value="${jdk.name.os}64" />
+			</then>
+			<else>
+				<property name="jdk.name" value="${jdk.name.os}32" />
+			</else>
+		</if>
+
+		<mkdir dir="${deploy.path}/hlt/samples_testcases/Java/build" />
+		<mkdir dir="${deploy.path}/hlt/samples_testcases/Java/lib" />
+		
+		<javac srcdir="${build.testcases.Java}" destdir="${deploy.path}/hlt/samples_testcases/Java/build" fork="yes" debug="true" executable="${WORKSPACE}/sequoiadb/java/${jdk.name}/bin/javac" includeAntRuntime="false" includeJavaRuntime="false" >
+			<classpath>
+				<pathelement location="${junit4.jar.dir}" />
+				<pathelement location="${sequoiadb.jar.dir}" />
+			</classpath>
+		</javac>
+		<jar file="${deploy.path}/hlt/samples_testcases/Java/lib/java_samples.jar">
+			<manifest>
+				<attribute name="Version" value="1.0" />
+			</manifest>
+			<fileset dir="${deploy.path}/hlt/samples_testcases/Java/build" includes="**/*" />
+		</jar>
+		<copy file="${sequoiadb.jar.dir}" tofile="${WORKSPACE}/deploy/hlt/samples_testcases/Java/lib/sequoiadb.jar" />
+	</target>
+	
+	<target name="build_c_samples" depends="" >
+		<sdbBaseName property="build.real.name.c" file="${build.name.C}" suffix=".c" />
+		<echo message="${build.name.C}" />
+		<echo message="building the ${build.real.name.c} in C" />
+		<exec dir="${build.testcases.C}" executable="sh" failonerror="true">
+			<arg line="-c '${build.testcases.C}/buildApp.sh ${build.real.name.c}'" />
+		</exec>
+	</target>
+  
+	<target name="build_cpp_samples" depends="">
+		<sdbBaseName property="build.real.name.cpp" file="${build.name.CPP}" suffix=".cpp" />
+		<echo message="building the ${build.real.name.cpp} in CPP" />
+		<exec dir="${build.testcases.CPP}" executable="sh" failonerror="true">
+			<arg line="-c '${build.testcases.CPP}/buildApp.sh ${build.real.name.cpp}'" />
+		</exec>
+	</target>
+</project>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\references\methods\topics?><?path2project ..\..\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="references_methods_toArray" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="title:1">cursor.toArray()</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="title:2">cursor.toArray()</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="p:1">Return result set in the type of array.</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="title:3">Sample</title>
+      <ul class="- topic/ul " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="ul:1">
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="li:1">
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="p:2">Select records with the value of "age" greater than 5 in the collection "bar" and
+            return the amount of record in the range from current cursor to final cursor.</p>
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="p:3"><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="codeblock:1">db.foo.bar.find({age:{<xref href="../../console/topics/gt_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="xref:1" type="topic"><?ditaot usertext?>$gt</xref>:10}}).size()</codeblock></p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="codeblock:2">Return:{
+  "_id": {
+    "$oid": "516a76a1c9565daf06030000"
+  },
+  "age": 10,
+  "name": "Tom"
+},{
+  "_id": {
+    "$oid": "516a76a1c9565daf06050000"
+  },
+  "age": 20,
+  "a": 10
+},{
+  "_id": {
+    "$oid": "516a76a1c9565daf06040000"
+  },
+  "age": 15
+}
+</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links class="- topic/related-links " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="related-links:1"><linkpool class="- topic/linkpool " xtrc="topicref:52" xtrf="C:\SequoiaDB\doc\references\methods\methodlist_en.ditamap"><link class="- topic/link " mapclass="+ map/topicref mapgroup-d/anchorref " type="topic" xtrc="topicref:1" xtrf="C:\SequoiaDB\doc\references\methods\methodlist_en.ditamap" href="../../methods/topics/methodlist_en.xml" role="parent"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Sequoiadb javascript Method List</linktext></link></linkpool>
+    <link href="size_en.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="link:1"><?ditaot gentext?><linktext class="- topic/linktext ">cursor.size()</linktext></link>
+    <link href="find_en.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="link:2"><?ditaot gentext?><linktext class="- topic/linktext ">db.collectionspace.collection.find()</linktext></link>
+    <link href="../../console/topics/gt_en.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\methods\topics\toArray_en.dita" xtrc="link:3"><?ditaot gentext?><linktext class="- topic/linktext ">$gt</linktext></link>
+  </related-links>
+</topic>

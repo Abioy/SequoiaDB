@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_z4v_s5h_ml">
+  <title>$project</title>
+  <body>
+    <section>
+      <title>描述</title>
+      <p><b>$project</b> 类似 SQL 中的 select 语句，通过使用 <b>$project</b> 操作可以从记录中筛选出所需字段，字段名的值如果为1，表示选出，为0表示不选；还可以实现字段的重命名。</p>
+      <note>如果记录不存在所选字段，则以如下格式输出：<b>"field":null</b>，field 为不存在的字段名。对嵌套对象使用点操作符（.）引用字段名。</note>
+    </section>
+    <section>
+      <title>示例</title>
+      <ul>
+        <li>使用 <b>$project</b> 快速地从结果集中选取所需字段
+            <codeblock>db.collectionspace.collection.aggregate({ $project : {title: 0,author: 1}})</codeblock><p>此操作是选出 author 字段，而 title 字段在结果集中不输出。</p></li>
+        <li>使用 <b>$project</b> 重命名字段名，如下：
+            <codeblock>db.collectionspace.collection.aggregate({ $project : {author: 1,name:"$studentName",dep:"$info.department"}})</codeblock><p>此操作将字段名 studentName 重命名为 name 输出，将 info 对象中的子对象 department 字段重命名为 dep。对嵌套对象，字段引用使用点操作符（.）指向。</p></li>
+        <li>下面的示例使用 $project 选择输出字段，然后使用 <xref href="match.dita">$match</xref> 按条件匹配记录
+            <codeblock>db.collectionspace.collection.aggregate({ $project: {score:1,author:1}},{<xref href="match.dita">$match</xref>:{score:{$gt:80}}})</codeblock><p>此操作使用 $project 输出所有记录的 score 和 author 字段值，然后按 $match 输出匹配条件的记录。
+              <note>由于 $project 选取了输出字段名，所以 <xref href="match.dita">$match</xref> 中字段名必须是 $project 中选出的字段名。</note></p>
+        </li>
+      </ul>
+    </section>    
+  </body>
+  <related-links>
+    <link href="match.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

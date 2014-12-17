@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_pull_all">
+  <title >$pull_all</title>
+  <body>
+    <section><title>Grammer</title>
+      <p><i>{$pull_all:{&lt;field name1>:[&lt;value1>,&lt;value2>,...,&lt;valueN>],&lt;field
+          name2>:[&lt;value1>,&lt;value2>,...,&lt;valueN>],...}}</i></p>
+    </section>
+    <section><title>Description</title>
+      <p>$pull_all is to pull the given values([&lt;value1>,&lt;value2>,...,&lt;valueN>]) of the
+        specified array object(&lt;field name1>),the operation object must be array type field.</p>
+      <p>if the specified array object does not exist in the records,skipping with no operations; if
+        the specified values don't exist in array object,nor do any operation.</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>delete the elements which have the value <i>2</i> or<i> 3 </i>from the array object
+              <i>arr</i> and have the value<i> "Tom" </i>from array object<i> name </i> in the
+            collection <i>bar</i>, as the following
+              record:<i>{arr[1,2,4,5],age:10,name:["Tom","Mike"]}</i></p>
+          <p>
+            <codeblock>db.foo.bar.update({$pull_all:{arr:[2,3],name:["Tom"]}})</codeblock>
+          </p>
+          <p>after this operation,the record update as:<i>{arr[1,4,5],age:10,name:["Mike"]}</i></p>
+        </li>
+        <li>
+          <p>delete the elements which have the value<i> 4 </i>or <i>5</i> from array object
+              <i>arr</i> in the collection <i>bar</i>.as the following
+              record:<i>{arr[1,3,4,5],age:10,name:["Tom","Mike"]}</i></p>
+          <p><codeblock>db.foo.bar.update({$pull_all:{arr:[4,5]}})</codeblock></p>
+          <p>after this operation,the record update
+            as:<i>{arr[1,3],age:10,name:["Tom","Mike"]}</i>.</p>
+        </li>
+      </ul>
+      
+    </section>
+  </body>
+  <related-links>
+    <link href="pull_en.dita" format="dita" type="topic"></link>
+    <link href="push_en.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/update_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

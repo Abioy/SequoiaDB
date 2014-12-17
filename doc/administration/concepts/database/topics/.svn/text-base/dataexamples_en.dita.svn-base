@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_thb_4lj_kn">
+  <title>Examples</title>
+  <body>
+    <p><b>Replica Group Examples</b> Copy each data node in the group is a complete data stored in the replication group, and therefore also called copy group copy for each node instance. 
+      Examples of replication group can be divided into "main", "prepared" or "0~7" logo based on the node position in the replication group.</p>
+    <p><b>Database instance</b> All instances of copy group copy group together constitute the same position database instance, the database instance can also be divided into "main", "prepared" or "0~7"logo.</p>
+  </body>
+</topic>

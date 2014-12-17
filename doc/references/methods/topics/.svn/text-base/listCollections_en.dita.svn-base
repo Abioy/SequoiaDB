@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_listCollections">
+  <title>db.listCollections()</title>
+  <body>
+    <section><title>db.listCollections()</title>
+      <p>Enumerate collection. It will show information of all collections in a collection
+        space.</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p><codeblock>db.listCollections()</codeblock></p>
+          <p>Return：</p>
+          <codeblock>    { 
+        "Name": "foo.bar",
+        "Details": [ 
+          { 
+            "ID": 0,
+            "Logical ID": 1, 
+            "Sequence": 1, 
+            "Indexes": 2,
+            "Status": "Normal" 
+           }
+        ]
+      }</codeblock>  
+        </li>
+      </ul>
+      
+    </section>
+  </body>
+  <related-links>
+    <link href="listCollectionSpaces_en.dita" format="dita" type="topic"></link>
+    <link href="listReplicaGroups_en.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/concepts/database/topics/collection_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

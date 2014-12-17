@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_gh3_tvh_hm">
+  <title>$limit</title>
+  <body>
+    <section>
+      <title>Description</title>
+      <p><b>$limit</b>Achieved in the result set returned by limiting the number of reords. If the specified number of records is greater than the actual total number of records, 
+        then return the actual total number of records.</p>
+    </section>
+    <section>
+      <title>Example</title>
+      <ul>
+        <li>Limit the result set returned the first 10 records.
+          <codeblock>db.collectionspace.collection.aggregate( { $limit : 10 } ) </codeblock><p>This operation represents a collection of collection to read the first 10 records.</p>
+        </li>
+      </ul>
+    </section>
+    
+  </body>
+  <related-links>
+    <link href="jgroup_en.dita" format="dita" type="topic"></link>
+    <link href="jsort_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

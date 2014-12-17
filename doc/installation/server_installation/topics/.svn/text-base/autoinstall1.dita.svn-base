@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_1fw_tjn_xp">
+  <title>通过 OM 部署集群</title>
+  <body>
+    <p>OM 支持 IE7/8/9+、chrome、firefox 等主流浏览器。</p>
+    <ul>
+      <li>步骤一：登录 OM
+        <p>1.1 浏览器访问，访问地址为 OM 的地址，访问端口默认8000</p>
+        <p>1.2 例如 http://192.168.1.100:8000/login.html</p>
+        <p>1.3 登录用户名默认 admin，初始密码 admin</p>
+        <p>1.4 输入默认密码 admin</p>
+        <p>1.5 点击 &lt;<b>登录</b>> 按钮</p>
+        <p><image href="../images/s1.jpg"/></p></li>
+      <li>步骤二：开始部署
+        <p>2.1 点击导航栏的 &lt;<b>部署引导</b>></p>
+        <p><image href="../images/s21.jpg"/></p>
+        <p>2.2 集群的参数都有默认值，除了 &lt;<b>集群名</b>> 和 &lt;<b>业务名</b>>，基本上不需要修改其他参数，点击 &lt;<b>高级选项</b>>，可以设置更多的参数。修改后点击 &lt;<b>确定</b>>。</p>
+        <p><image href="../images/s22.jpg"/></p></li>
+      <li>步骤三：添加主机
+        <p>3.1 在左边操作栏，输入 &lt;<b>地址</b>>、&lt;<b>用户名</b>>、&lt;<b>密码</b>>、&lt;<b>SSH 端口</b>>，可以扫描出添加的主机。&lt;<b>地址</b>> 不仅支持 IP、HostName 扫描主机，还可以通过 IP 段和 HostName 段，&lt;<b>地址</b>> 可以参考左边操作栏的提示，点击 &lt;<b>帮助</b>>。</p>
+        <p><image href="../images/s31.jpg"/></p>
+        <p>3.2 在左边操作栏，输入 &lt;<b>地址</b>>、&lt;<b>用户名</b>>、&lt;<b>密码</b>>、&lt;<b>SSH 端口</b>>，然后点击 &lt;<b>扫描</b>>。</p>
+        <p><image href="../images/s32.jpg"/></p>
+        <p>3.3 扫描完成后，扫描结果会在右边显示出来，默认正常连接的主机都会选上，有问题的主机不会选择，点击有问题的主机，可以重新输入参数，点击输入框以外的地方，自动重新扫描主机。</p>
+        <p><image href="../images/s331.jpg"/></p>
+        <p><image href="../images/s332.jpg"/></p>
+        <p>3.4 在主机列表选择要添加的主机，图中3台主机都添加，因此全选。点击 &lt;<b>下一步</b>>。</p>
+        <p><image href="../images/s34.jpg"/></p>
+        <p>3.5 等待 OM 获取主机信息。</p>
+        <p><image href="../images/s35.jpg"/></p>
+        <p>3.6 左边是主机列表栏，右边是主机的详细信息，点击左边列表的主机，可以显示该主机信息。</p>
+        <p><image href="../images/s36.jpg"/></p>
+        <p>3.7 主机列表，蓝色提示已选择的磁盘数，黄色提示该主机有4个警告，当鼠标移到提示中，会自动显示内容。（注意：图中3台主机都有1个磁盘是满足容量的）</p>
+        <p><image href="../images/s37.jpg"/></p>
+        <p>3.8 检查主机没有问题，点击 &lt;<b>下一步</b>>，等待完成。完成后会自动进入下一步操作。</p>
+        <p><image href="../images/s381.jpg"/></p>
+        <p><image href="../images/s382.jpg"/></p></li>
+      <li>步骤四：创建业务
+        <p>4.1 配置业务信息，可以通过下拉菜单选择 &lt;<b>集群模式</b>> 和 &lt;<b>独立模式</b>>。</p>
+        <p><image href="../images/s41.jpg"/></p>
+        <p>4.2 &lt;<b>高级选项</b>>，可以选择指定的1台或多台主机安装业务，默认由系统自动分配。</p>
+        <p><image href="../images/s42.jpg"/></p>
+        <p>4.3 设置好参数后，点击 &lt;<b>下一步</b>>。</p>
+        <p><image href="../images/s43.jpg"/></p>
+        <p>4.4 左边是业务和每一个分区组信息，可以通过业务添加分区组，通过分区组添加删除节点、删除分区组。（注意：协调组和编目组是不能删除的）</p>
+        <p><image href="../images/s441.jpg"/></p>
+        <p><image href="../images/s442.jpg"/></p>
+        <p><image href="../images/s443.jpg"/></p>
+        <p><image href="../images/s444.jpg"/></p>
+        <p>4.5 右边是节点列表，点击列表每一行，都可以修改该行节点的配置。</p>
+        <p><image href="../images/s45.jpg"/></p>
+        <p>4.6 批量修改节点配置，可以在节点列表每一行的方框打勾来指定要修改的节点，也可以点击 &lt;<b>选择操作</b>> - &lt;<b>全选</b>> - &lt;<b>反选</b>> 来选择，然后点击 &lt;<b>已选定操作</b>> - &lt;<b>修改节点配置</b>>进行修改。</p>
+        <p><image href="../images/s46.jpg"/></p>
+        <p>4.7 节点列表第二行是查找条件，通过输入参数，可以快速找到指定条件的节点。</p>
+        <p><image href="../images/s471.jpg"/></p>
+        <p><image href="../images/s472.jpg"/></p>
+        <p><image href="../images/s473.jpg"/></p>
+        <p>4.8 批量修改节点配置，&lt;<b>数据路径</b>> 和 &lt;<b>服务名</b>> 可以通过规则来设置。点击左边 &lt;<b>提示</b>> - &lt;<b>帮助</b>>，有详细说明。</p>
+        <p><image href="../images/s481.jpg"/></p>
+        <p><image href="../images/s482.jpg"/></p>
+        <p>4.9 业务配置修改完成后，点击 &lt;<b>下一步</b>>，开始安装业务。</p>
+        <p><image href="../images/s49.jpg"/></p></li>
+      <li>步骤五：安装业务
+        <p>	5.1 开始安装业务</p>
+        <p><image href="../images/s511.jpg"/></p>
+        <p><image href="../images/s512.jpg"/></p>
+        <p><image href="../images/s513.jpg"/></p>
+        <p><image href="../images/s514.jpg"/></p>
+        <p>5.2 安装完成，点击 &lt;<b>返回</b>>。</p>
+        <p><image href="../images/s52.jpg"/></p>
+        <p>5.3 业务安装完成。</p>
+        <p><image href="../images/s53.jpg"/></p></li>
+      <li>步骤六：主页左边是集群列表，右边是集群实时监控信息        
+        <p><image href="../images/m1.jpg"/></p></li>
+      <li>步骤七：创建集群
+        <p>7.1 点击 &lt;<b>状态</b>> 旁边的下拉菜单；</p>
+        <p><image href="../images/m21.jpg"/></p>
+        <p>7.2 点击 &lt;<b>创建集群</b>>；</p>
+        <p><image href="../images/m22.jpg"/></p>
+        <p>7.3 输入集群参数，点击 &lt;<b>高级选项</b>> 可以设置更多参数；</p>
+        <p><image href="../images/m231.jpg"/></p>
+        <p><image href="../images/m232.jpg"/></p>
+        <p>7.4 点击 &lt;<b>确定</b>>，完成创建。</p>
+        <p><image href="../images/m24.jpg"/></p></li>
+      <li>步骤八：查看业务信息和删除业务
+        <p>8.1 查看当前已安装的业务（图中 myBusiness 是已经安装的一个业务，myBusiness 是业务名）；</p>
+        <p><image href="../images/m31.jpg"/></p>
+        <p>8.2 点击表格 &lt;<b>业务</b>> 查看业务信息（一）；</p>
+        <p><image href="../images/m321.jpg"/></p>
+        <p><image href="../images/m322.jpg"/></p>
+        <p>8.3 点击业务名旁边的下拉菜单，点击 &lt;<b>业务列表</b>> 看业务信息（二）；</p>
+        <p><image href="../images/m331.jpg"/></p>
+        <p><image href="../images/m332.jpg"/></p>
+        <p><image href="../images/m333.jpg"/></p>
+        <p>8.4 删除业务，在业务列表，点击业务对应的 &lt;<b>删除业务</b>> 按钮，弹出警告窗口，点击 &lt;<b>确定</b>> 开始删除业务，等待卸载完成，完成后弹出提示，点击 &lt;<b>返回</b>>。</p>
+        <p><image href="../images/m341.jpg"/></p>
+        <p><image href="../images/m342.jpg"/></p>
+        <p><image href="../images/m343.jpg"/></p>
+        <p><image href="../images/m344.jpg"/></p>
+        <p><image href="../images/m345.jpg"/></p>
+        <p><image href="../images/m346.jpg"/></p></li>
+      <li>步骤九：查看集群主机数量和主机详细信息，删除主机
+        <p>9.1 点击要查看的集群名；</p>
+        <p><image href="../images/m41.jpg"/></p>
+        <p>9.2 鼠标移动到主机旁边蓝色的徽章，徽章上面的数字就是当前主机数量；</p>
+        <p><image href="../images/m42.jpg"/></p>
+        <p>9.3 表格第二列是显示当前状态信息，黄色表示 warning，红色表示 danger；</p>
+        <p><image href="../images/m431.jpg"/></p>
+        <p><image href="../images/m432.jpg"/></p>
+        <p>9.4 主页右边的 &lt;<b>实时监控</b>>，监控集群的平均 CPU 使用率， 平均内存使用率， 平均磁盘使用率，网络入口流量，网络出口流量，网络每秒接收数据包个数，网络每秒发送数据包个数；</p>
+        <p><image href="../images/m44.jpg"/></p>        
+        <p>9.5 点击表格 &lt;<b>主机</b>>，查看主机列表；</p>
+        <p><image href="../images/m451.jpg"/></p>
+        <p><image href="../images/m452.jpg"/></p>
+        <p>9.6 点击业务名旁边的下拉菜单，点击 &lt;<b>主机列表</b>>查看主机列表；</p>
+        <p><image href="../images/m461.jpg"/></p>
+        <p><image href="../images/m462.jpg"/></p>
+        <p><image href="../images/m463.jpg"/></p>
+        <p>9.7 删除主机，选择要删除的主机，点击 &lt;<b>已选定操作</b>>，点击 &lt;<b>删除主机</b>>，弹出警告窗口，点击 &lt;<b>确定</b>> 开始删除主机，等待完成，完成后弹出删除结果，点击 &lt;<b>关闭</b>>。</p>
+        <p><image href="../images/m471.jpg"/></p>
+        <p><image href="../images/m472.jpg"/></p>
+        <p><image href="../images/m473.jpg"/></p>
+        <p><image href="../images/m474.jpg"/></p>
+        <p><image href="../images/m475.jpg"/></p>
+        <p><image href="../images/m476.jpg"/></p></li>
+      <li>步骤十：删除集群
+        <p>10.1 回到主页，点击要删除的集群旁边下拉菜单；</p>
+        <p><image href="../images/m51.jpg"/></p>        
+        <p>10.2 点击菜单的 &lt;<b>删除集群</b>>；</p>
+        <p><image href="../images/m52.jpg"/></p>
+        <p>10.3 删除完成。</p>
+        <p><image href="../images/m53.jpg"/></p></li>      
+    </ul>
+  </body>
+</topic>

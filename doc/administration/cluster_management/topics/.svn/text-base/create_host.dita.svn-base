@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_xln_p1x_tk">
+  <title>集群中新增主机</title>
+  <body>
+    <p>如果需要在数据库集群中新增一台主机（物理机或者虚拟机），用于部署编目节点或者数据节点，则必须需要按照如下步骤配置好主机系统：</p>
+    <p>1. 安装好与其他主机相同的操作系统，并配置好IP地址；</p>
+    <p>2. 按照<xref href="../../../installation/system_require/topics/software.dita">系统配置需求</xref>一节配置好主机名/内核参数，并将其他的主机名和 IP 对应关系加入到 /etc/hosts 中；</p>
+    <p>3. 修改每台集群主机上 /etc/hosts 文件，将新增的主机IP地址与主机对应关系加入到 /etc/hosts 文件中；</p>
+    <p>4. 按照<xref href="../../../installation/system_require/topics/software.dita">系统配置需求</xref>一节验证配置的正确性；</p>
+    <p>5. 按照 <xref href="../../../installation/server_installation/topics/linux.dita">SequoiaDB 服务器安装</xref>一节，安装 SequoiaDB 软件。安装时，注意配置管理服务端口与现有系统的端口保持一致。</p>
+  </body>
+</topic>

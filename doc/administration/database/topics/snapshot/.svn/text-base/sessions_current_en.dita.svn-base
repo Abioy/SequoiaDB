@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_database_monitoring_snapshot_sessions_current">
+  <title>Current Sessions Snapshot</title>
+  <body>
+    <section><title>Description</title>
+      <p>Current sessions snapshot contains the current sessions on current database node. Each
+        session is recorded as one record.</p>
+    </section>
+    <section><title>Sign</title>
+      <p>SDB_SNAP_SESSIONS_CURRENT</p>
+    </section>
+    
+    <section><title>Field Information</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 2.0*" id="administration_database_monitoring_snapshot_sessions_current_table">-->
+        <sthead>
+          <stentry>Field Name</stentry>
+          <stentry>Type</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry>SessionID</stentry>
+          <stentry>Integer or long integer</stentry>
+          <stentry>Session ID(Hostname:Port:ID)</stentry>
+        </strow>
+        <strow>
+          <stentry>TID</stentry>
+          <stentry>Integer</stentry>
+          <stentry>System thread ID corresponding to the session</stentry>
+        </strow>
+        <strow>
+          <stentry>Status</stentry>
+          <stentry>String</stentry>
+          <stentry>
+            Session status:
+            <ul id="ul_5l4_kyj_yj">
+              <li>Creating：creating status</li>
+              <li>Running：running status </li>
+              <li>Waiting：waiting status</li>
+              <li>Idle：idle status of thread pool</li>
+              <li>Destroying：destroying status</li>
+            </ul>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>Type</stentry>
+          <stentry>String</stentry>
+          <stentry><xref href="../EDU_en.dita">EDU Type</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>Name</stentry>
+          <stentry>String</stentry>
+          <stentry>EDU name. Generally, it is null</stentry>
+        </strow>
+        <strow>
+          <stentry>QueueSize</stentry>
+          <stentry>Integer</stentry>
+          <stentry>The length of queue of requests waiting to be processed </stentry>
+        </strow>
+        <strow>
+          <stentry>ProcessEventCount</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>The amount of requests which have been processed</stentry>
+        </strow>
+        
+        <strow>
+          <stentry>Contexts</stentry>
+          <stentry>Long integer or array</stentry>
+          <stentry>Context ID array. It is a list containing all contexts in the session</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalDataRead</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Total data read</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalIndexRead</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Total index read</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalDataWrite</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Tota data record write</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalIndexWrite</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Total index write</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalUpdate</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Total amount of updated records</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalDelete</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Total amount of deleted records</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalInsert</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Total amount of inserted records</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalSelect</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Total amount of selected records</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalRead</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Total data read</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalReadTime</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Total data read time (millisecond)</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalWriteTime</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Total data write time (millisecond)</stentry>
+        </strow>
+        <strow>
+          <stentry>ReadTimeSpent</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Time spent of reading a record (ms)</stentry>
+        </strow>
+        <strow>
+          <stentry>WriteTimeSpent</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Time spent of writing a record (ms)</stentry>
+        </strow>
+        <strow>
+          <stentry>ConnectTimestamp</stentry>
+          <stentry>Timeline</stentry>
+          <stentry>The time of beginning connection</stentry>
+        </strow>
+        <strow>
+          <stentry>LastOpType</stentry>
+          <stentry>String</stentry>
+          <stentry>Type of the last operation, like: insert, update</stentry>
+        </strow>
+        <strow>
+          <stentry>LastOpBegin</stentry>
+          <stentry>String</stentry>
+          <stentry>Starting time of the last operation</stentry>
+        </strow>
+        <strow>
+          <stentry>LastOpEnd</stentry>
+          <stentry>String</stentry>
+          <stentry>Ending time of the last operation</stentry>
+        </strow>
+        <strow>
+          <stentry>LastOpInfo</stentry>
+          <stentry>String</stentry>
+          <stentry>Detail of the last operation</stentry>
+        </strow>
+        <strow>
+          <stentry>UserCPU</stentry>
+          <stentry>Float</stentry>
+          <stentry>User CPU (second)</stentry>
+        </strow>
+        <strow>
+          <stentry>SysCPU</stentry>
+          <stentry>Float</stentry>
+          <stentry>System CPU (second)</stentry>
+        </strow>
+        <strow/>
+      </simpletable>
+    </section>
+    
+    <section><title>Sample</title>
+      <codeblock>> db.snapshot(SDB_SNAP_SESSIONS_CURRENT)
+{
+  "SessionID": "vmsvr2-suse-x64:11820:28",
+  "TID": 9430,
+  "Status": "Running",
+  "Type": "Agent",
+  "Name": "127.0.0.1:60309",
+  "QueueSize": 0,
+  "ProcessEventCount": 12,
+  "Contexts": [
+    15
+  ],
+  "TotalDataRead": 0,
+  "TotalIndexRead": 0,
+  "TotalDataWrite": 0,
+  "TotalIndexWrite": 0,
+  "TotalUpdate": 0,
+  "TotalDelete": 0,
+  "TotalInsert": 0,
+  "TotalSelect": 0,
+  "TotalRead": 0,
+  "TotalReadTime": 0,
+  "TotalWriteTime": 0,
+  "ReadTimeSpent": 10,
+  "WriteTimeSpent": 0,
+  "ConnectTimestamp": "2013-09-27-18.06.25.961090",
+  "LastOpType": "unknow",
+  "LastOpBegin": "2014-08-07-14.25.23.550216",
+  "LastOpEnd": "--",
+  "LastOpInfo": "",
+  "UserCPU": "0.910000",
+  "SysCPU": "2.060000"
+}</codeblock>
+    </section>
+  </body>
+</topic>

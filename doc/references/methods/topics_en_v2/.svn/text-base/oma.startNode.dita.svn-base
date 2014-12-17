@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_hf3_5ws_5p">
+  <title>oma.startNode()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>startNode - Start a OM node.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>oma.startNode</apiname>(<parmname>&lt;svcname></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Oma
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Start a node.</p>
+      <parml>
+        <plentry>
+          <pt>svcname (string)</pt>
+          <pd>Port number of the node.</pd>
+        </plentry>        
+      </parml>
+      <note>
+        <p>
+          <ul>
+            <li>The node you chose to start must exist, or the system will occur exception.</li>           
+          </ul>
+        </p>
+      </note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Start a node in the cluster that port number is 11830.</p>
+      <codeblock>oma.startNode(11830)</codeblock>      
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_pull">
+  <title >$pull</title>
+  <body>
+    <section><title>语法</title>
+      <p>{$pull:{&lt;字段名1>:&lt;值1>,&lt;字段名2>:&lt;值2>,...}}</p>
+    </section>
+    <section><title>描述</title>
+      <p>$pull 清除指定数组对象（&lt;字段名1>,&lt;字段名2>,...）的指定值（&lt;值1>,&lt;值2>,...）。操作对象必须为数组类型的字段。如果记录中不存在指定的数组对象，跳过不做任何操作；如果指定的值不存在数组对象中，也不做任何操作。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>清除集合 bar 下数组对象 arr 值为2的元素以及数组对象 name 中元素值为“Tom”的元素。如有记录：</p>
+          <codeblock>{arr[1,2,4,5],age:10,name:["Tom","Mike"]}</codeblock>
+          <p><codeblock>db.foo.bar.update({$pull:{arr:2,name:"Tom"}})</codeblock></p>
+          <p>此操作后，记录更新为：<codeblock>{arr[1,4,5],age:10,name:["Mike"]}</codeblock></p>
+        </li>
+        <li>
+          <p>清除集合 bar 下数组对象 arr 中元素值等于2的元素以及数组对象 name 中元素值为“Tom”的元素。如有记录：</p>
+          <codeblock>{arr[1,3,4,5],age:10,name:["Tom","Mike"]}</codeblock>
+          <p><codeblock>db.foo.bar.update({$pull:{arr:2,name:"Tom"}})</codeblock></p>
+          <p>此操作后，记录更新为：<codeblock>{arr[1,3,4,5],age:10,name:["Mike"]}</codeblock>由于 arr 数组对象没有元素值为2的元素，因此对 arr 对象不做任何操作。</p>
+        </li>
+      </ul>      
+    </section>
+  </body>
+  <related-links>
+    <link href="pop.dita" format="dita" type="topic"></link>
+    <link href="gpull_all.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/dbupdate.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

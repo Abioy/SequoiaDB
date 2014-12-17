@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_methods_size">
+  <title>query.count()</title>
+  <body>
+    <section><title>query.count()</title>
+      <p>返回符合匹配条件的记录条数。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>选择集合 bar 下 age 大于10的记录，返回符合匹配条件{age:{<xref href="../../console/topics/gt.dita">$gt</xref>:10}}的记录条数。</p>
+          <p><codeblock>db.foo.bar.find({age:{<xref href="../../console/topics/gt.dita">$gt</xref>:10}}).count()</codeblock></p>
+        </li>
+      </ul>
+      <note>
+        <p>query.count()返回的结果忽略query.skip()及query.limit()的影响。</p>
+      </note>      
+    </section>
+  </body>
+  <related-links>
+    <link href="toArray.dita" format="dita" type="topic"></link>
+    <link href="find.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/gt.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

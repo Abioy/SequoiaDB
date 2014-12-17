@@ -1,0 +1,85 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="$min"/>
+<meta name="description" content="描述 记录分组后，取分组中指定字段的最小值返回，对嵌套对象使用点操作符（.）引用字段名。 示例 对记录分组后，返回分组中指定字段的最小值 db.collectionspace.collection.aggregate({$group:{_id:&#34;$dep&#34;,min_score:{$min:&#34;$score&#34;},Name:{$last:&#34;$info.name&#34;}}}) 此操作对记录按 dep ..."/>
+<meta name="DC.Relation" scheme="URI" content="jmax.html"/>
+<meta name="DC.Relation" scheme="URI" content="javg.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_hm1_mwj_pl_min"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>$min</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_hm1_mwj_pl_min"><a name="topic_hm1_mwj_pl_min"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span></div></td><td width="50%"/></tr></tbody></table>
+
+  <h1 class="title topictitle1">$min</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">描述</h2>
+      
+      <p class="p">记录分组后，取分组中指定字段的最小值返回，对嵌套对象使用点操作符（.）引用字段名。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">示例</h2>
+      
+      <ul class="ul">
+        <li class="li">对记录分组后，返回分组中指定字段的最小值<pre class="pre codeblock">db.collectionspace.collection.aggregate({$group:{_id:"$dep",min_score:{$min:"$score"},Name:{$last:"$info.name"}}})</pre>
+
+          此操作对记录按 dep 字段分组，使用 <strong class="ph b">$min</strong> 返回每个分组中 score 字段的最小值，输出字段名为 min_score，又使用 <a class="xref" href="jlast.html"><strong class="ph b">$last</strong></a> 取每个分组中最后一条记录嵌套对象 name 字段值，输出字段名为 Name。记录返回如下：<pre class="pre codeblock">{
+  "min_score": 72,
+  "Name": "Kate"
+}
+{
+  "min_score": 69,
+  "Name": "Jim"
+}</pre>
+</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="jmax.html" title="$max">$max</a></div>
+<div><a class="navheader_parent_path" href="javg.html" title="$avg">$avg</a></div>
+</div>
+</div>
+<div class="navfooter"><script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

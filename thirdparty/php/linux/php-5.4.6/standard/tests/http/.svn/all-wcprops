@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/http
+END
+bug53198.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/http/bug53198.phpt
+END
+bug43510.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/http/bug43510.phpt
+END
+bug48929.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/http/bug48929.phpt
+END
+bug60570.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/http/bug60570.phpt
+END
+ignore_errors.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/http/ignore_errors.phpt
+END
+bug38802.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/http/bug38802.phpt
+END
+server.inc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/http/server.inc
+END

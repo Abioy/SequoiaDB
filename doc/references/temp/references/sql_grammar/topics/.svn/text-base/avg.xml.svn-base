@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\references\sql_grammar\topics?><?path2project ..\..\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="references_sql_avg" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="title:1">sql avg()</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="title:2">avg() 函数</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="p:1">用于求指定字段名的平均值。</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="title:3">语法</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="p:2"><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="codeblock:1">avg(field_name) as &lt;alisa_name&gt;</codeblock></p>
+      <note class="- topic/note " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="note:1">1.使用avg函数对字段名求平均值，必须使用别名。<p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="p:3">2.对非数值型字段自动跳过。</p></note>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="section:3"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="title:4">示例</title>
+      <ul class="- topic/ul " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="ul:1">
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="li:1"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="p:4">对集合bar中age字段进行求平均值：</p>
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="p:5"><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="codeblock:2">db.exec("select avg(age) as 平均年龄 from foo.bar")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links class="- topic/related-links " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="related-links:1">
+    <link href="count.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="link:1"><?ditaot gentext?><linktext class="- topic/linktext ">sql count()</linktext></link>
+    <link href="max.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\avg.dita" xtrc="link:2"><?ditaot gentext?><linktext class="- topic/linktext ">sql max()</linktext></link>
+  </related-links>
+</topic>

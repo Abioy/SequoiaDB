@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_t34_bwh_hm">
+  <title>Mapping Table fromSQL to Aggregate</title>
+  <body>
+    <p>The following table describes the main SQL keywords SequoiaDB aggregation operator table.</p>
+    <simpletable>
+      <sthead>
+        <stentry>SQL keywords</stentry>
+        <stentry>SequoiaDB aggregation operator</stentry>
+      </sthead>
+      <strow>
+        <stentry>where</stentry>
+        <stentry>$match </stentry>
+      </strow>
+      <strow>
+        <stentry>group by</stentry>
+        <stentry>$group</stentry>
+      </strow>
+      <strow>
+        <stentry>having</stentry>
+        <stentry>$match</stentry>
+      </strow>
+      <strow>
+        <stentry>select</stentry>
+        <stentry>$project</stentry>
+      </strow>
+      <strow>
+        <stentry>order by</stentry>
+        <stentry>$sort</stentry>
+      </strow>
+      <strow>
+        <stentry>top</stentry>
+        <stentry>$limit</stentry>
+      </strow>
+      <strow>
+        <stentry>offset</stentry>
+        <stentry>$skip</stentry>
+      </strow>
+      <strow/>
+    </simpletable>
+    <p>The following table describes the standard SQL statements and control statements SequoiaDB gathered between.</p>
+    <simpletable>
+      <sthead>
+        <stentry>SQL statement</stentry>
+        <stentry>SequoiaDB gather statement</stentry>
+        <stentry>Description</stentry>
+      </sthead>
+      <strow>
+        <stentry>select product_id as p_id, price  from table </stentry>
+        <stentry>db.cs.table.aggregate({$project:{p_id:"$product_id",price:1,date:0}})</stentry>
+        <stentry>Return product_id and price fields for all records where product_id rename p_id, on the record date field is not returned.</stentry>
+      </strow>
+      <strow>
+        <stentry>select sum(price) as total from table</stentry>
+        <stentry>db.cs.table.aggregate({$group:{_id:null,total:{$sum:"$price"}}})</stentry>
+        <stentry>Price for table summing the values in the field, and rename total.</stentry>
+      </strow>
+      <strow>
+        <stentry>select product_id, sum(price) as total from table group by product_id</stentry>
+        <stentry>db.cs.table.aggregate({$group:{_id:"$product_id",product_id:{$first:"$product_id"},total:{$sum:"$price"}}})</stentry>
+        <stentry>Table of records grouped by product_id field.<fig></fig>Find field in each packet accumulation and price value, and rename total.</stentry>
+      </strow>
+      <strow>
+        <stentry>select product_id, sum(price) as total from table group by product_id order by total</stentry>
+        <stentry>db.cs.table.aggregate({$group:{_id:"$product_id",product_id:{$first:"$product_id"},total:{$sum:"$price"}}},{$sort:{total:1}})</stentry>
+        <stentry>Table of records grouped by product_id field. <fig></fig>Find the value of the field in each packet price and accumulated, and rename total.<fig></fig>The result set by the total value of the field names in ascending order.</stentry>
+      </strow>
+      <strow>
+        <stentry>select product_type_id, product_id, sum(price) as total from table group by product_type_id, product_id</stentry>
+        <stentry>db.cs.table.aggregate({$group:{_id:{product_type_id:"$product_type_id",product_id:"$product_id"},product_id:{$first:"$product_id"},total:{$sum:"$price"}}})</stentry>
+        <stentry>Table records in a field by first grouping by product_type_id press product_id field grouping. <fig></fig>Find the value of the field in each packet price and accumulated, and rename total.</stentry>
+      </strow>
+      <strow>
+        <stentry>select product_id, sum(price) as total from table group by product_id having total > 1000</stentry>
+        <stentry>db.cs.table.aggregate({$group:{_id:"$product_id",product_id:{$first:"$product_id"},total:{$sum:"$price"}}},{$match:{total:{$gt:1000}}})</stentry>
+        <stentry>Table of records grouped by product_id field.<fig></fig>Find the value of the field in each packet price and accumulated, and rename total.<fig></fig>Total retrun only to meet the conditions grouped field values greater than 1000.</stentry>
+      </strow>
+      <strow>
+        <stentry>select product_id, sum(price) as total from table where product_type_id = 1001 group by product_id</stentry>
+        <stentry>db.cs.table.aggregate({$match:{product_type_id:1001}},{$group:{_id:"$product_id",product_id:{$first:"$product_id"},total:{$sum:"$price"}}})</stentry>
+        <stentry>Select product_type_id = 1001 qualifying record.<fig></fig>For the selected records are grouped by product_id.<fig></fig>The price for each packet field values on and, and rename total.</stentry>
+      </strow>
+      <strow>
+        <stentry>select product_id, sum(price) as total from table where product_type_id = 1001 group by product_id having total > 1000</stentry>
+        <stentry>db.cs.table.aggregate({$match:{product_type_id:1001}},{$group:{_id:"$product_id",product_id:{$first:"$product_id"},total:{$sum:"$price"}}},{$match:{total:{$gt:1000}}})</stentry>
+        <stentry>Select product_type_id = 1001 qualifying record.<fig></fig>For the selected records are grouped by product_id.<fig></fig>The price for each packet field values on and, and rename total.<fig></fig>Total return only to meet the conditions grouped field values greater than 1000.</stentry>
+      </strow>
+      <strow>
+        <stentry>select top 10 * from table</stentry>
+        <stentry>db.cs.table.aggregate({$group:{_id:null}},{$limit:10})</stentry>
+        <stentry>Returns the result set before 10 records.</stentry>
+      </strow>
+      <strow>
+        <stentry>select * from table offset 50 rows fetch next 10</stentry>
+        <stentry>db.cs.table.aggregate({$group:{_id:null}},{$skip:50},{$limit:10})</stentry>
+        <stentry>After skipping the results of 50 focus before recording, return the next 10 records.</stentry>
+      </strow>
+      <!--<strow>
+        <stentry>select product_id as p_id,price<p> from table </p></stentry>
+        <stentry>
+          db.cs.table.aggregate(
+          <p>&nbsp;{$project:{p_id:"$product_id",</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;price:1,</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;date:0}})</p>
+        </stentry>
+        <stentry>Return product_id and price fields for all records where product_id rename p_id, on the record date field is not returned.</stentry>
+      </strow>
+      <strow>
+        <stentry>select sum(price) as total <p> from table </p></stentry>
+        <stentry>
+          db.cs.table.aggregate(
+          <p>&nbsp;{$group:{_id:null,</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;total:{$sum:"$price"}}})</p>
+        </stentry>
+        <stentry>Price for table summing the values in the field, and rename total.</stentry>
+      </strow>
+      <strow>
+        <stentry>select product_id,sum(price) as total<p>from table group by
+          product_id</p></stentry>
+        <stentry>
+          db.cs.table.aggregate(
+          <p>&nbsp;{$group:{_id:"$product_id",</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;product_id:{$first:"$product_id"},</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;total:{$sum:"$price"}}})</p>
+        </stentry>
+        <stentry>
+          Table of records grouped by product_id field.
+          <p>Find field in each packet accumulation and price value, and rename total.</p>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>select product_id,sum(price) as total<p>from table group by product_id </p><p>order
+          by total</p></stentry>
+        <stentry>
+          db.cs.table.aggregate(
+          <p>&nbsp;{$group:{_id:"$product_id",</p>
+          <p>&nbsp;&nbsp;&nbsp;product_id:{$first:"$product_id"},</p>
+          <p>&nbsp;&nbsp;&nbsp;total:{$sum:"$price"}}},</p>
+          <p>&nbsp;{$sort:{total:1}})</p>
+        </stentry>
+        <stentry>
+          Table of records grouped by product_id field.
+          <p>Find the value of the field in each packet price and accumulated, and rename total.</p>
+          <p>The result set by the total value of the field names in ascending order.</p>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>
+          select product_type_id,product_id,
+          <p>sum(price) as total from table </p>
+          <p>group by product_type_id,product_id</p>
+        </stentry>
+        <stentry>
+          db.cs.table.aggregate(
+          <p>&nbsp;{$group:{_id:{product_type_id:"$product_type_id",product_id:"$product_id"},</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;product_id:{$first:"$product_id"},</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;total:{$sum:"$price"}}})</p>
+        </stentry>
+        <stentry>
+          Table records in a field by first grouping by product_type_id press product_id field grouping.
+          <p>Find the value of the field in each packet price and accumulated, and rename total.</p>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>select product_id,sum(price) as total<p>from table group by product_id
+        </p><p>having total>1000</p></stentry>
+        <stentry>
+          db.cs.table.aggregate(
+          <p>&nbsp;{$group:{_id:"$product_id",</p>
+          <p>&nbsp;&nbsp;&nbsp;product_id:{$first:"$product_id"},</p>
+          <p>&nbsp;&nbsp;&nbsp;total:{$sum:"$price"}}},</p>
+          <p>&nbsp;{$match:{total:{$gt:1000}}})</p>
+        </stentry>
+        <stentry>
+          Table of records grouped by product_id field.
+          <p>Find the value of the field in each packet price and accumulated, and rename total.</p>
+          <p>Total retrun only to meet the conditions grouped field values greater than 1000.</p>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>select product_id,sum(price) as total<p>from table where
+          product_type_id=1001</p><p>group by product_id </p></stentry>
+        <stentry>
+          db.cs.table.aggregate(
+          <p>&nbsp;{$match:{product_type_id:1001}},</p>
+          <p>&nbsp;{$group:{_id:"$product_id",</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;product_id:{$first:"$product_id"},</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;total:{$sum:"$price"}}})</p>
+        </stentry>
+        <stentry>Select product_type_id=1001 qualifying record.<p>For the selected records are grouped by product_id.</p><p>The price for each packet field values on and, and rename total.</p></stentry>
+      </strow>
+      <strow>
+        <stentry>select product_id,sum(price) as total<p>from table where product_type_id=1001 group
+          by product_id </p><p>having total>1000</p></stentry>
+        <stentry>
+          db.cs.table.aggregate(
+          <p>&nbsp;{$match:{product_type_id:1001}},</p>
+          <p>&nbsp;{$group:{_id:"$product_id",</p>
+          <p>&nbsp;&nbsp;&nbsp;product_id:{$first:"$product_id"},</p>
+          <p>&nbsp;&nbsp;&nbsp;total:{$sum:"$price"}}},</p>
+          <p>&nbsp;{$match:{total:{$gt:1000}}})</p>
+        </stentry>
+        <stentry>
+          Select product_type_id=1001 qualifying record.
+          <p>For the selected records are grouped by product_id.</p>
+          <p>The price for each packet field values on and, and rename total.</p>
+          <p>Total return only to meet the conditions grouped field values greater than 1000.</p>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>select top 10 * from table </stentry>
+        <stentry>
+          db.cs.table.aggregate(
+          <p>&nbsp;{$group:{_id:null}},</p>
+          <p>&nbsp;{$limit:10})</p>
+        </stentry>
+        <stentry>Returns the result set before 10 records.</stentry>
+      </strow>
+      <strow>
+        <stentry>select * from table offset 50 rows <p>fetch next 10</p></stentry>
+        <stentry>
+          db.cs.table.aggregate(
+          <p>&nbsp;{$group:{_id:null}},</p>
+          <p>&nbsp;{$skip:50},</p>
+          <p>&nbsp;{$limit:10})</p>
+        </stentry>
+        <stentry>After skipping the results of 50 focus before recording, return the next 10 records.</stentry>
+        </strow>-->
+      <strow/>
+    </simpletable>
+  </body>
+</topic>

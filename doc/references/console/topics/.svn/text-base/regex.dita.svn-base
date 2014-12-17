@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_regex">
+  <title >$regex</title>
+  <body>
+    <section><title>描述</title>
+      <p> $regex操作提供正则表达式模式匹配字符串查询功能。SequoiaDB使用的是PCRE正则表达式。 </p>
+    </section>
+    <section>
+      <title>$options</title>
+      <p>$regex提供四种选择标志：</p>
+      <ul>
+        <li><b>i</b>：设置这个修饰符，模式中的字母进行大小写不敏感匹配。</li>
+        <li>
+          <p><b>m</b>：默认情况下，pcre认为目标字符串是由单行字符组成的，“行首”元字符（^）仅匹配字符串的开始位置，而“行末”元字符（$）仅匹配字符串末尾，或者最后的换行符。
+当这个修饰符设置之后，“行首”和“行末”就会匹配目标字符串中任意换行符之前或之后，另外，还分别匹配目标字符串的最开始和最末尾位置，如果目标字符串中没有“\n”，或者模式中没出现^或$，设置这个修饰符不产生任何影响。</p>
+        </li>
+        <li><p><b>x</b>：设置这个修饰符，模式中没有经过转义的或不在字符类中的空白数据字符总会被忽略，并且位于一个未转义的字符类外部的#字符和下一行换行符之间的字符也被忽略。</p></li>
+        <li>
+          <p><b>s</b>：设置这个修饰符，模式中的点号元字符匹配所有字符，包含换行符，如果没有这个修饰符，点号不匹配换行符。</p>
+        </li>
+      </ul>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>返回集合bar下str字段值匹配不区分大小写的正则表达式dh.*fj的记录</p>
+        <p>db.foo.bar.find({str:{$regex:'dh.*fj',$options:'i'}})</p></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="size.dita" format="dita" type="topic"></link>
+    <link href="inc.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/find.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

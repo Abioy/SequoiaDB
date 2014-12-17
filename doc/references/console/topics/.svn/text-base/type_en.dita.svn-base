@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_type">
+  <title>$type</title>
+  <body>
+    <section><title>Grammar</title>
+      <p>{&lt;field name>:{<xref
+          href="../../../administration/concepts/database/topics/document_en.dita"
+        >$type</xref>$type:&lt;BSON type>}}</p>
+    </section>
+    <section><title>Description</title>
+      <p>Match the records which the value of the "&lt;field name>" equals to the specified value of
+        "&lt;BSON type>" in the collection.</p>
+    </section>
+    <section><title>BSON Type</title>
+      <simpletable><!-- frame="all" relcolwidth="2.02* 16.28* 1.0*">-->
+        <sthead>
+          <stentry>Type</stentry>
+          <stentry>Decription</stentry>
+          <stentry>value</stentry>
+        </sthead>
+        <strow>
+          <stentry>32-bit integer</stentry>
+          <stentry>Integer,range -2147483648 to 2147483647 </stentry>
+          <stentry>16</stentry>
+        </strow>
+        <strow>
+          <stentry>64-bit integer</stentry>
+          <stentry>Long Integer,range -9223372036854775808 to 9223372036854775807. <p>if the users
+            specify a value can't be applied to an Integer,then SequoiaDB will converted to a Long
+            Integer automatically.</p></stentry>
+          <stentry>18</stentry>
+        </strow>
+        <strow>
+          <stentry>double</stentry>
+          <stentry>Float,range 1.7E-308 to 1.7E+308</stentry>
+          <stentry>1</stentry>
+        </strow>
+        <strow>
+          <stentry>string</stentry>
+          <stentry>String</stentry>
+          <stentry>2</stentry>
+        </strow>
+        <strow>
+          <stentry>ObjectID</stentry>
+          <stentry>12Byte object ID</stentry>
+          <stentry>7</stentry>
+        </strow>
+        <strow>
+          <stentry>boolean</stentry>
+          <stentry>Boolean(true|false)</stentry>
+          <stentry>8</stentry>
+        </strow>
+        <strow>
+          <stentry>date</stentry>
+          <stentry>Date(YYYY-MM-DD )</stentry>
+          <stentry>9</stentry>
+        </strow>
+        <strow>
+          <stentry>timestamp </stentry>
+          <stentry>Timestamp(YYYY-MM-DD-HH.mm.ss.ffffff )</stentry>
+          <stentry>17</stentry>
+        </strow>
+        <strow>
+          <stentry>Binary data </stentry>
+          <stentry>Base64 binary form</stentry>
+          <stentry>5</stentry>
+        </strow>
+        <strow>
+          <stentry>Regular expression </stentry>
+          <stentry>Regular Expression</stentry>
+          <stentry>11</stentry>
+        </strow>
+        <strow>
+          <stentry>Object</stentry>
+          <stentry>Nested JSON Document Object </stentry>
+          <stentry>3</stentry>
+        </strow>
+        <strow>
+          <stentry>Array</stentry>
+          <stentry>Nested Array Object</stentry>
+          <stentry>4</stentry>
+        </strow>
+        <strow>
+          <stentry>null</stentry>
+          <stentry>Null</stentry>
+          <stentry>10</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section><title>Samples</title>
+      <ul>
+        <li>
+          <p>Select records which the type of <i>age</i> field is Integer .</p>
+          <codeblock>db.foo.bar.find({age:{$type:16}})</codeblock>
+        </li>
+        <li>
+          <p>Select records which the type of nested field <i>arr</i> is Array.</p>
+          <codeblock>db.foo.bar.find({"content.arr":{$type:4}})</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="not_en.dita" format="dita" type="topic"></link>
+    <link href="exists_en.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/find_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

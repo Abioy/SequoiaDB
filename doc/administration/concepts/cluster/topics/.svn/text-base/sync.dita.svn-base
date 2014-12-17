@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_cluster_replset_sync">
+  <title>全量同步</title>
+  <body>
+    <section>
+      <title>概念</title>
+      <p>在分区组内，当一个新的节点加入分区组，或者故障节点重新加入分区组，需要进行数据全量同步，以保障新的节点与现有节点之间数据的一致性。</p>
+      <p>在进行数据全量同步时有两个节点参与：</p>
+      <dl>
+        <dlentry>
+          <dt>源节点</dt>
+          <dd>为包含有效数据的节点。主节点并不一定永远是同步的源节点。任何与主节点处于同步状态的从节点均可作为源节点进行数据同步。（目前只能主节点作为同步源节点）</dd>
+        </dlentry>
+        <dlentry>
+          <dt>目标节点</dt>
+          <dd>为新加入组，或重新入组的故障节点。同步时该节点下原有的数据会被废弃。</dd>
+        </dlentry>
+      </dl>
+      <image href="../../../../introduction/images/sequoiadb_infrastructure_shard3.jpg"/>
+      <p>全量同步发生时，目标节点会定期向源节点请求数据。源节点将数据打包后作为大数据块发送给目标节点。当目标节点重做该数据块内所有数据后，向源节点请求新的数据块。</p>
+      <p>为保障源节点在同步时可进行写操作，所有已经被发送给目标节点的数据页如果被更改，其更新会被同步到目标节点，以保障全量同步过程中更新的数据不会损失。</p>
+    </section>
+  </body>
+  <related-links>
+    <link href="vote.dita"/>
+    <link href="replicate.dita"/>
+  </related-links>
+</topic>

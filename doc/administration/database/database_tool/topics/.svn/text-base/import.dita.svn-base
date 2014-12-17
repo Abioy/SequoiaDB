@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_gfd_ttv_tj">
+  <title>数据迁移 — 导入</title>
+  <body>
+    <section>
+      <title>sdbimprt</title>
+      <p>sdbimprt 是一个 SequoiaDB 数据库导入工具，它可以实现从 JSON 格式或 CSV 格式的数据存储文件导入到 SequoiaDB 数据库。</p>
+      <p>JSON 格式的记录必须符合 Json 的定义，以左右花括号作为记录的分界符，并且字符串类型的数据必须包含在两个双引号之间，转义字符定义为反斜杠。</p>
+      <p>CSV 为 Comma-Separated Value 格式，为逗号分割数值。默认情况下每条记录以0x0D分割，字段之间以逗号分割。用户能够指定字段之间的分隔符与记录之间的分隔符。</p>
+      <p>分隔符定义（只支持ASCII字符）：</p>
+      <p><simpletable>
+        <sthead>
+          <stentry>用途</stentry>
+          <stentry>默认</stentry>
+          <stentry>可配</stentry>
+        </sthead>
+        <strow>
+          <stentry>字符串分隔符</stentry>
+          <stentry>"</stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow>
+          <stentry>字符分隔符</stentry>
+          <stentry>,</stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow>
+          <stentry>记录分割符</stentry>
+          <stentry>'\n'（0X0D）</stentry>
+          <stentry>是</stentry>
+        </strow>
+        </simpletable></p>
+    </section>
+    <section>
+      <title>选项</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数</stentry>
+          <stentry>缩写</stentry>
+          <stentry>描述</stentry>
+        </sthead>
+        <strow>
+          <stentry>--help</stentry>
+          <stentry>-h</stentry>
+          <stentry>返回基本帮助和用法文本。</stentry>
+        </strow>
+        <strow>
+          <stentry>--version</stentry>
+          <stentry></stentry>
+          <stentry>返回版本信息。</stentry>
+        </strow>
+        <strow>
+          <stentry>--hostname</stentry>
+          <stentry>-s</stentry>
+          <stentry>从指定主机（主机名或者 ip 地址）的 SequoiaDB 中导入数据。默认情况下 sdbimprt 尝试连接到本地主机。 </stentry>
+        </strow>
+        <strow>
+          <stentry>--svcname</stentry>
+          <stentry>-p</stentry>
+          <stentry>指定的端口号。默认情况下 sdbimprt 尝试连接到端口号11810的主机。</stentry>
+        </strow>
+        <strow>
+          <stentry>--user</stentry>
+          <stentry>-u</stentry>
+          <stentry>数据库用户名。</stentry>
+        </strow>
+        <strow>
+          <stentry>--password</stentry>
+          <stentry>-w</stentry>
+          <stentry>数据库密码。</stentry>
+        </strow>
+        <strow>
+          <stentry>--delchar</stentry>
+          <stentry>-a</stentry>
+          <stentry>指定字符分隔符。默认是（"）， csv 格式有效。</stentry>
+        </strow>
+        <strow>
+          <stentry>--delfield</stentry>
+          <stentry>-e</stentry>
+          <stentry>指定字段分隔符。默认是（,），csv 格式有效。</stentry>
+        </strow>
+        <strow>
+          <stentry>--delrecord</stentry>
+          <stentry>-r</stentry>
+          <stentry>指定记录分隔符。默认是（\n），csv 格式有效。</stentry>
+        </strow>
+        <strow>
+          <stentry>--csname</stentry>
+          <stentry>-c</stentry>
+          <stentry>指定导入数据的集合空间名。</stentry>
+        </strow>
+        <strow>
+          <stentry>--clname</stentry>
+          <stentry>-l</stentry>
+          <stentry>指定导入数据的集合名。</stentry>
+        </strow>
+        <strow>
+          <stentry>--insertnum</stentry>
+          <stentry>-n</stentry>
+          <stentry>批量导入记录，如果设置1，使用普通方式导入，如果大于1，则使用批量方式，设置范围是1~100000。 </stentry>
+        </strow>
+        <strow>
+          <stentry>--file</stentry>
+          <stentry></stentry>
+          <stentry>指定要导入的文件名。</stentry>
+        </strow>
+        <strow>
+          <stentry>--type</stentry>
+          <stentry></stentry>
+          <stentry>指定的导入数据格式。默认 csv，数据格式可以是 csv 或是 json。</stentry>
+        </strow>
+        <strow>
+          <stentry>--fields</stentry>
+          <stentry></stentry>
+          <stentry>指定导入数据的字段名。csv 格式有效。</stentry>
+        </strow>
+        <strow>
+          <stentry>--headerline</stentry>
+          <stentry></stentry>
+          <stentry>指定导入数据首行是否作为字段名，默认 false，csv 格式有效。</stentry>
+        </strow>
+        <strow>
+          <stentry>--sparse</stentry>
+          <stentry></stentry>
+          <stentry>指定导入数据时，自动添加字段名，默认 true，csv 格式有效。</stentry>
+        </strow>
+        <strow>
+          <stentry>--extra</stentry>
+          <stentry></stentry>
+          <stentry>指定导入数据时，自动添加值，默认 false，csv 格式有效。</stentry>
+        </strow>
+        <strow>
+          <stentry>--linepriority</stentry>
+          <stentry></stentry>
+          <stentry>当前分隔符默认的优先级为：记录分隔符，字符分隔符，字段分隔符，默认值是 true；如果设置为 false，那么分隔符的优先级为：字符分隔符，记录分隔符，字段分隔符。</stentry>
+        </strow>
+        <strow>
+          <stentry>--force</stentry>
+          <stentry></stentry>
+          <stentry>如果数据中有非 utf8 的数据，强制导入数据，默认 false。</stentry>
+        </strow>
+        <strow>
+          <stentry>--errorstop</stentry>
+          <stentry></stentry>
+          <stentry>如果遇到错误就停止。默认 false。</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <note>linepriority 参数需要被特别关注，如果设置不当，可能会导入数据失败。当记录中包含“记录分隔符”并且 linepriority 为 true 时，工具会优先按照“记录分隔符”解析，而导致导入失败。比如：如果记录为 {"name": "Mike\n"}，应当选择 linepriority 为 false 模式。</note>
+    <section>
+      <title>返回值</title>
+      <p>0：成功</p>
+      <p>1：成功但有警告</p>
+      <p>2：失败</p>
+      <p>127：参数错误</p>
+    </section>
+    <section>
+      <title>用法</title>
+      <p>在下面的例子，sdbimprt 将数据导入到本地数据库端口11810中对应集合空间 foo 和集合 bar，导入类型是 csv，导入文件为 test.csv。</p>
+      <codeblock>sdbimprt -s localhost -p 11810 --type csv --file test.csv -c foo -l bar</codeblock>
+    </section>
+    <section>
+      <title>sdbimprt 自动判断的类型：</title>
+      <simpletable>
+        <sthead>
+          <stentry>CSV 数据</stentry>
+          <stentry>sdbimprt 自动判断的类型</stentry>
+          <stentry>实际数据</stentry>
+        </sthead>
+        <strow>
+          <stentry>123</stentry>
+          <stentry>数值</stentry>
+          <stentry>123</stentry>
+        </strow>
+        <strow>
+          <stentry>123.1</stentry>
+          <stentry>数值</stentry>
+          <stentry>123.1</stentry>
+        </strow>
+        <strow>
+          <stentry>+123</stentry>
+          <stentry>数值</stentry>
+          <stentry>123</stentry>
+        </strow>
+        <strow>
+          <stentry>-123</stentry>
+          <stentry>数值</stentry>
+          <stentry>-123</stentry>
+        </strow>
+        <strow>
+          <stentry>2E+2</stentry>
+          <stentry>数值</stentry>
+          <stentry>200</stentry>
+        </strow>
+        <strow>
+          <stentry>-2E+2</stentry>
+          <stentry>数值</stentry>
+          <stentry>-200</stentry>
+        </strow>
+        <strow>
+          <stentry>0123</stentry>
+          <stentry>数值</stentry>
+          <stentry>123</stentry>
+        </strow>
+        <strow>
+          <stentry>"123"</stentry>
+          <stentry>字符串</stentry>
+          <stentry>123</stentry>
+        </strow>
+        <strow>
+          <stentry>123a</stentry>
+          <stentry>字符串</stentry>
+          <stentry>123a</stentry>
+        </strow>
+        <strow>
+          <stentry>"ab""c"</stentry>
+          <stentry>字符串</stentry>
+          <stentry>ab"c</stentry>
+        </strow>
+        <strow>
+          <stentry>"{a:1}"</stentry>
+          <stentry>字符串</stentry>
+          <stentry>{a:1}</stentry>
+        </strow>
+        <strow>
+          <stentry>"true"</stentry>
+          <stentry>字符串</stentry>
+          <stentry>true</stentry>
+        </strow>
+        <strow>
+          <stentry>"false"</stentry>
+          <stentry>字符串</stentry>
+          <stentry>false</stentry>
+        </strow>
+        <strow>
+          <stentry>"null"</stentry>
+          <stentry>字符串</stentry>
+          <stentry>null</stentry>
+        </strow>
+        <strow>
+          <stentry>true</stentry>
+          <stentry>布尔</stentry>
+          <stentry>true</stentry>
+        </strow>
+        <strow>
+          <stentry>false</stentry>
+          <stentry>布尔</stentry>
+          <stentry>false</stentry>
+        </strow>
+        <strow>
+          <stentry>null</stentry>
+          <stentry>空</stentry>
+          <stentry>null</stentry>
+        </strow>
+      </simpletable>
+    </section>    
+    <p>从1.8版本开始支持指定类型和默认值：</p>
+    <p>语法：field [type] [default &lt;default value ]</p>
+    <p>支援数据类型（type）：int（integer），long，bool（boolean），double，string，null</p>
+    <p>支援特殊数据类型：timestamp，date</p>
+    <p>例子：<codeblock>name string default "Jack", age int default 18, phone string</codeblock></p>
+    <p>数据类型是可选的，不填则程序自动判断类型，判断以上面表格为准。</p>
+    <section>
+      <title>用法</title>
+      <p>在下面的例子，sdbimprt 将数据导入到本地数据库端口11810中对应集合空间 foo 和集合 bar，导入类型是 csv，导入文件为 test.csv。
+        <codeblock>sdbimprt -s localhost -p 11810 --type csv --file test.csv -c foo -l bar --fields 'name string default "Jack", age int default 18, phone string'</codeblock>
+        <note>指定字段可以用命令行指定，也可以在导入文件的首行指定。如果在命令行指定了--fields，--headerline 设为 true，导入工具将会优先使用命令行的指定字段并且跳过导入文件的首行。</note></p>
+      <ul>
+        <li><p>例子一：导入文件是 csv，文件名是 test.csv，导入至集合空间 foo 的集合 bar 中。</p>
+          <p>以下是导入文件的内容：</p><codeblock>"Jack",18,"China"
+"Mike",20,"USA"</codeblock>
+          <p>导入命令：</p><codeblock>sdbimprt -s localhost -p 11810 --type csv --file test.csv -c foo -l bar --fields 'name string default "Anonymous", age int, country'</codeblock></li>
+        <li><p>例子二：导入文件是 csv，文件名是 test.csv，导入至集合空间 foo 的集合 bar 中。</p>
+          <p>以下是导入文件的内容：</p><codeblock>name, age, country
+"Jack",18,"China"
+"Mike",20,"USA"</codeblock>
+          <p>导入命令：</p><codeblock>sdbimprt -s localhost -p 11810 --type csv --file test.csv -c foo -l bar --fields 'name string default "Anonymous", age int, country' --headerline true</codeblock></li>        
+      </ul>
+      <note><p>由于例子二首行已经指定字段，但是要重新指定字段，那么在命令行中设置--headerline true，并且设置--fields 'name string default "Anonymous", age int, country'，那么导入工具会使用--fields 为指定字段并忽略文件首行的字段了。</p></note>      
+    </section>    
+    <section>
+      <title>指定的类型与数据：</title>
+      <simpletable>
+        <sthead>
+          <stentry>指定的类型</stentry>
+          <stentry>支援的数据类型</stentry>
+          <stentry>注意</stentry>
+        </sthead>
+        <strow>
+          <stentry>int（integer）</stentry>
+          <stentry>int，string，bool</stentry>
+          <stentry>bool 类型，true 转换1，false 转换0</stentry>
+        </strow>
+        <strow>
+          <stentry>long</stentry>
+          <stentry>long，string，int，bool</stentry>
+          <stentry>bool 类型，true 转换1，false 转换0</stentry>
+        </strow>
+        <strow>
+          <stentry>bool（boolean）</stentry>
+          <stentry>bool，string，int，long</stentry>
+          <stentry>int 和 long 类型，0转换 false，不等于0转换 true</stentry>
+        </strow>
+        <strow>
+          <stentry>double</stentry>
+          <stentry>double，string，int</stentry>
+          <stentry></stentry>
+        </strow>
+        <strow>
+          <stentry>string</stentry>
+          <stentry>int，long，bool，double，string，timestamp，date，null</stentry>
+          <stentry></stentry>
+        </strow>
+        <strow>
+          <stentry>timestamp</stentry>
+          <stentry>string，long</stentry>
+          <stentry>如果数据是 string，如“2014-01-01-10.30.00.000000”，“1388543400000”，如果是 long，如 1388543400000，这两种格式是正确的，数值代表的是毫秒单位</stentry>
+        </strow>
+        <strow>
+          <stentry>date</stentry>
+          <stentry>string，long</stentry>
+          <stentry>如果数据是 string，如“2014-01-01”，“1388543400”，如果是 long，如1388543400，这两种格式是正确的，数值代表的秒单位</stentry>
+        </strow>
+        <strow>
+          <stentry>null</stentry>
+          <stentry></stentry>
+          <stentry>指定了数据类型为 null，那么无论数据是什么，都是 null</stentry>
+        </strow>        
+      </simpletable>
+    </section>        
+    <p>数据类型优先级：</p>
+    <p>1. 不指定数据类型（不支援特殊数据类型）：程序自动判断类型，优先级是 null > bool > int > double > long > string</p>
+    <p>2. 指定数据类型：优先级是指定的类型 > 支援的类型（参考指定的类型与数据表格） > null</p>
+    <p>3. 指定数据类型，并且带默认值：优先级是指定的类型 > 支援的类型（参考指定的类型与数据表格） > 默认值 > null</p>    
+  </body>
+</topic>

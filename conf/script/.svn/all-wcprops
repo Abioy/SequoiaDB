@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/sequoiadb/!svn/ver/16466/trunk/conf/script
+END
+queryHostStatus.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/15696/trunk/conf/script/queryHostStatus.js
+END
+basicCheckHost.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/16113/trunk/conf/script/basicCheckHost.js
+END
+scanHost.js
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/16446/trunk/conf/script/scanHost.js
+END
+addHost.js
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/16466/trunk/conf/script/addHost.js
+END
+common.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/sequoiadb/!svn/ver/16380/trunk/conf/script/common.js
+END
+error.js
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sequoiadb/!svn/ver/16380/trunk/conf/script/error.js
+END
+define.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/sequoiadb/!svn/ver/16466/trunk/conf/script/define.js
+END
+checkHostItem.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/15696/trunk/conf/script/checkHostItem.js
+END
+addHostRollback.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16342/trunk/conf/script/addHostRollback.js
+END
+uninstallRemoteAgent.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16380/trunk/conf/script/uninstallRemoteAgent.js
+END
+removeStandalone.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/15696/trunk/conf/script/removeStandalone.js
+END
+addHost2.js
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/16405/trunk/conf/script/addHost2.js
+END
+removeTempCoord.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16063/trunk/conf/script/removeTempCoord.js
+END
+checkHost.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/16121/trunk/conf/script/checkHost.js
+END
+createStandalone.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/16113/trunk/conf/script/createStandalone.js
+END
+removeCoordRG.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/15696/trunk/conf/script/removeCoordRG.js
+END
+updateHostsInfo.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16063/trunk/conf/script/updateHostsInfo.js
+END
+rollbackCoord.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/15696/trunk/conf/script/rollbackCoord.js
+END
+createTempCoord.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16098/trunk/conf/script/createTempCoord.js
+END
+removeDataRG.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/15696/trunk/conf/script/removeDataRG.js
+END
+removeCatalogRG.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/15696/trunk/conf/script/removeCatalogRG.js
+END
+addHostRollback2.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/16405/trunk/conf/script/addHostRollback2.js
+END
+rollbackCatalog.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/15696/trunk/conf/script/rollbackCatalog.js
+END
+queryHostStatusItem.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/15417/trunk/conf/script/queryHostStatusItem.js
+END
+rollbackDataNode.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/15696/trunk/conf/script/rollbackDataNode.js
+END
+createCoord.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/16113/trunk/conf/script/createCoord.js
+END
+removeHost.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/16113/trunk/conf/script/removeHost.js
+END
+func.js
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/sequoiadb/!svn/ver/16466/trunk/conf/script/func.js
+END
+createCatalog.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/16113/trunk/conf/script/createCatalog.js
+END
+checkAddHostInfo.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/16388/trunk/conf/script/checkAddHostInfo.js
+END
+installRemoteAgent.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/16466/trunk/conf/script/installRemoteAgent.js
+END
+createDataNode.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/16113/trunk/conf/script/createDataNode.js
+END

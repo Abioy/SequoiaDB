@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_dkx_p4y_tn">
+  <title>db.listReplicaGroups()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>listReplicaGroups - List replica groups.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.listReplicaGroups</apiname>()
+    </section>    
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>List replica groups.</p>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      Return the information of every replica group:
+      <codeblock>> db.listReplicaGroups()
+Return: {
+  "Group": [
+    {
+      "dbpath": "/opt/sequoiadb/data/11800",
+      "HostName": "vmsvr2-suse-x64",
+      "Service": [
+        {
+          "Type": 0,
+          "Name": "11800"
+        },
+        {
+          "Type": 1,
+          "Name": "11801"
+        },
+        {
+          "Type": 2,
+          "Name": "11802"
+        },
+        {
+          "Type": 3,
+          "Name": "11803"
+        }
+      ],
+      "NodeID": 1000
+    },
+    {
+      "dbpath": "/opt/sequoiadb/data/11850",
+      "HostName": "vmsvr2-suse-x64",
+      "Service": [
+        {
+          "Type": 0,
+          "Name": "11850"
+        },
+        {
+          "Type": 1,
+          "Name": "11851"
+        },
+        {
+          "Type": 2,
+          "Name": "11852"
+        },
+        {
+          "Type": 3,
+          "Name": "11853"
+        }
+      ],
+      "NodeID": 1001
+    }
+  ],
+  "GroupID": 1001,
+  "GroupName": "group",
+  "PrimaryNode": 1001,
+  "Role": 0,
+  "Status": 1,
+  "Version": 5,
+  "_id": {
+    "$oid": "517b2fc33d7e6f820fc0eb57"
+  }
+  }</codeblock>
+      This replica group has 2 nodes: 11800 and 11850. Node 11850 is the master node.
+    </section>
+  </body>
+  <related-links>
+    <link href="db.listCollections.dita" format="dita" type="topic"></link>
+    <link href="db.snapshot.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

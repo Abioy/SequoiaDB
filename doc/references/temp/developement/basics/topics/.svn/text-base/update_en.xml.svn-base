@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\developement\basics\topics?><?path2project ..\..\..\out_en\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="developement_basics_update_en" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="title:1">Update</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="body:1">
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:1">Of the basic database operations(i.e.CRUD),update operation are those that modify the
+      existing records or documents in a collection, using <xref href="../../../references/methods/topics/update_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="xref:1" type="topic"><?ditaot usertext?><i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:1">update()</i></xref> method to
+      modify documents in Sequoiadb.</p>
+    <note class="- topic/note " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="note:1"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:2">All of the examples in this document use the sequoiadb shell interface.</p></note>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="section:1">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="title:2">update()</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:3">the update() method is the primary method used to modify documents in Sequoiadb, it has the
+        following syntax：</p>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="codeblock:1">db.collectionspace.collection.update(&lt;rule&gt;,[cond],[hint])</codeblock>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:4">The corresponding opration in sql: the method of <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:2">update</i> is simalar with
+          <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:3">update...set</i> statement :</p>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:5"><b class="+ topic/ph hi-d/b " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="b:1">.</b>the [rule] parameter corresponds to <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:4">set</i> statement</p>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:6"><b class="+ topic/ph hi-d/b " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="b:2">.</b>the<i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:5"> [cond]</i> parameter corresponds to <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:6">where</i> statement</p>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:7"><b class="+ topic/ph hi-d/b " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="b:3">.</b>the [hint] parameter corresponds to the index name in index table </p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="section:2">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="title:3">modify with  update operator </title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:8">If the<i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:7"> update()</i> method contains only <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:8">rule</i> parameter expression(such as the
+        <xref href="../../../references/console/topics/set_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="xref:2" type="topic"><?ditaot usertext?><i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:9">$set</i></xref> operator
+        expression ), the <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:10">update()</i> method updates the corresponding fields in the document.
+        To update fileds in the subdocuments,use dot notation(.).</p>
+      <ul class="- topic/ul " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="ul:1">
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="li:1">
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:9">update a field in a document </p>
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:10">use<xref href="../../../references/console/topics/set_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="xref:3" type="topic"><?ditaot usertext?><i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:11">$set</i></xref> to
+            update a value of a field. The following operation queries the bar collection for the
+            document that has an _id field equal to 1 and sets the value of field <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:12">first </i> ,in
+            the subdocument <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:13">name</i>, to
+            'Mike':<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="codeblock:2">db.foo.bar.update({$set:{"name.first":"Mike"}},{_id:1})</codeblock></p>
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:11"><note class="- topic/note " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="note:2">
+              <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:12">if the <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:14">rule</i> parameter containas fields not in the current records,the
+                  <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:15">update()</i> method will add the new fields to the records.</p>
+            </note></p>
+        </li>
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="li:2">
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:13">remove a field from a record</p>
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:14">use<xref href="../../../references/console/topics/unset_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="xref:4" type="topic"><?ditaot usertext?><i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:16">$unset</i></xref> to
+            remove the field from a record.The following operation queries the<i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:17"> bar</i> collection
+            for all records where contains <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:18">age</i> field and remove the <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:19">age</i> filed , if a
+            record doesn't contain the age
+            field,skipping.<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="codeblock:3">db.foo.bar.update({$unset:{age:""}})</codeblock></p>
+        </li>
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="li:3">
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:15">Update array</p>
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:16">如果需要更新数组中的元素，sequoiadb使用点操作符(.)，数组下标从0开始。下面的操作是修改数组字段arr的第二个元素的值，将它的值添加为5,：</p>
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:17">if the update operation requires an update of an element in an array field, SequoiaDB
+            use dot notation(.), array are zero-based. The following operation is to update  second
+            element in the <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:20">arr</i> array, it's value will increate 5:</p>
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:18">
+            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="codeblock:4">db.foo.bar.update({<xref href="../../../references/console/topics/inc_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="xref:5" type="topic"><?ditaot usertext?>$inc</xref>:{"arr.1":5}})</codeblock>
+          </p>
+        </li>
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="li:4">
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:19">hint parameter</p>
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="p:20">The following operation will traversal all the records through index,and update the
+            value of field <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="i:21">name</i> to 'Tom', the name of index is 'textIndex'</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="codeblock:5">db.foo.bar.update({$set:{name:"Tom"}},null,{"":"textIndex"})</codeblock>
+        </li>
+      </ul>
+      <note class="- topic/note " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="note:3"><xref href="../../../references/console/topics/console_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="xref:6" type="topic"><?ditaot usertext?>more update operator
+        </xref></note>
+    </section>
+  </body>
+  <related-links class="- topic/related-links " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="related-links:1">
+    <link href="read_en.xml" format="dita" type="topics" class="- topic/link " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="link:1"><?ditaot gentext?><linktext class="- topic/linktext ">Read</linktext></link>
+    <link href="delete_en.xml" format="dita" type="topics" class="- topic/link " xtrf="C:\SequoiaDB\doc\developement\basics\topics\update_en.dita" xtrc="link:2"><?ditaot gentext?><linktext class="- topic/linktext ">Delete</linktext></link>
+  </related-links>
+</topic>

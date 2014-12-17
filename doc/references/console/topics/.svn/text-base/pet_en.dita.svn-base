@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_ne">
+  <title>$et</title>
+  <body>
+    <section><title>Grammar</title>
+      <p><codeblock>{&lt;field name>：{$et:&lt;value>}}</codeblock></p>
+    </section>
+    <section><title>Description</title>
+      <p>"$et" finds records that contain value equal to the specific value "value" on the field
+        "field name".</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>Find records that contains value equal to 20 on the field "age" in the collection "bar"
+            of the collection space "foo".</p>
+          <codeblock>db.foo.bar.find({age:{$et:20}})</codeblock>
+        </li>
+        <li>When "$et" manipulates records with nested objects, the function<xref
+            href="../../methods/topics/dbupdate_en.dita">update()</xref> will update records that
+          contains "age" value of 25 with records which conatins a "type" value equal to 15 under
+          the field
+          "service".<codeblock>db.foo.bar.update({<xref href="gset_en.dita">$set</xref>:{age:25}},{"service.type":{$et:15}})</codeblock></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="pne_en.dita" format="dita" type="topic"></link>
+    <link href="pin_en.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/find_en.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/dbupdate_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

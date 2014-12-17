@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_pdc_q51_yl">
+  <title>sql addtoset()</title>
+  <body>
+    <section><title>addtoset()函数</title>
+      <p>将多个记录中的字段合并为一个没有重复值的数组。</p>
+    </section>
+    <section><title>语法</title>
+      <p><codeblock>addtoset（field name）</codeblock></p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>将表中多个记录中的字段合并为一个没有重复值的数组</p>
+          <p><codeblock>表中原始记录
+{a:1, b:1}
+{a:2, b:2)
+{a:2, b:3}
+{a:2, b:3}
+
+SELECT a, ADDTOSET(b) AS b FROM foo.bar GROUP BY a
+
+得到记录
+{a:1, b:[1]}
+{a:2, b:[2,3]}</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="push.dita" format="dita" type="topic"></link>
+    <link href="buildobj.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

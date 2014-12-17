@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/sequoiadb/!svn/ver/16424/trunk/SequoiaDB/engine/rest
+END
+restAdaptorold.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16424/trunk/SequoiaDB/engine/rest/restAdaptorold.cpp
+END
+restAdaptor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16424/trunk/SequoiaDB/engine/rest/restAdaptor.cpp
+END
+http_parser.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16424/trunk/SequoiaDB/engine/rest/http_parser.cpp
+END

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_getIndex">
+  <title>db.collectionspace.collection.getIndex()</title>
+  <body>
+    <section><title>db.collectionspace.collection.getIndex(&lt;name>)</title>
+      <p>返回指定索引的引用。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>name</stentry>
+          <stentry>strsing</stentry>
+          <stentry>索引名，同一个集合中的索引名必须唯一。</stentry>
+          <stentry>是</stentry>
+        </strow>
+      </simpletable>      
+    </section>
+    <section><title>格式</title>
+      <p> getIndex() 方法的定义格式必须包含 name 字段。其中 name 的值必须为字符串。</p>
+      <p>
+        <codeblock>{"name":"&lt;索引名>"}</codeblock>
+      </p>
+      <note>
+        <p>
+          <ul>
+            <li>在做返回索引引用操作时，索引名必须在集合中存在。</li>
+            <li>索引名不能是空串，含点（.）或者美元符号（$），且长度不超过127B。</li>
+          </ul>
+        </p>
+      </note>
+    </section>
+    <section><title>示例</title>
+        <ul>
+          <li><p>返回集合 bar 下名为 ageIndex 索引的引用，假设 ageIndex 已存在。</p>
+            <codeblock>db.foo.bar.getIndex("ageIndex")</codeblock></li>
+        </ul>      
+    </section>
+  </body>
+  <related-links>
+    <link href="../../../administration/concepts/database/topics/index.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/concepts/database/topics/collection.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/concepts/database/topics/collectionspace.dita" format="dita" type="topic"></link>
+    <link href="dropIndex.dita" format="dita" type="topic"></link>
+    <link href="listIndexes.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

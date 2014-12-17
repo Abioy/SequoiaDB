@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_mod">
+  <title >$mod</title>
+  <body>
+    <section><title>语法</title>
+      <p><codeblock>{&lt;字段名>：{$mod:[value1,value2]},...}</codeblock></p>
+    </section>
+    <section><title>描述</title>
+      <p><b>$mod</b> 是取模匹配符，返回指定<b>字段名</b>的值对 <b>value1</b> 取模的值等于 <b>value2</b> 的记录。</p>
+      <note>
+        <p>1. 参数 <b>value1</b> 是除0以外的整型数；如果是浮点型，那只会截取整数部分；不能为其他基础类型。</p>
+        <p>2. 参数 <b>value2</b> 是整型数；如果是浮点型，也只截取整数部分；其他类型以0处理。</p>
+      </note>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>返回集合 <b>bar</b> 中 <b>age</b> 字段值对<b>5</b>取模后的值等于<b>3</b>的记录。</p>
+          <codeblock>db.foo.bar.find({age:{$mod:[5,3]}})
+返回
+{
+  "_id": {
+    "$oid": "521d5446e2d3c4e31c000000"
+  },
+  "age": 3
+}...</codeblock>
+          <codeblock>db.foo.bar.find({age:{$mod:[2.3,1.5]}})
+返回
+{
+  "_id": {
+    "$oid": "521d5446e2d3c4e31c000000"
+  },
+  "age": 3
+}
+{
+  "_id": {
+    "$oid": "521d544ee2d3c4e31c000002"
+  },
+  "age": 5
+  }</codeblock>
+          <p>对数组[2.3,1.5]中的两个元素只截取了整数部分。</p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="pet.dita" format="dita" type="topic"></link>
+    <link href="pin.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

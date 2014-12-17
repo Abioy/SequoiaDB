@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_tpj_3wy_tp">
+  <title>oma.stopNode()</title>
+  <body>
+    <section><title>oma.stopNode(&lt;svcname>)</title>
+      <p>停止一个节点。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable id="references_method_createNode_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>svcname</stentry>
+          <stentry>string</stentry>
+          <stentry>节点端口号。</stentry>
+          <stentry>是</stentry>
+        </strow>        
+      </simpletable>      
+    </section>
+    <p><note><ul>
+      <li>指定停止的节点必须存在，否则出现异常。</li>      
+    </ul>
+    </note></p>
+    <section><title>示例</title>
+      <ul>
+        <li>在集群中停止一个端口号为11830的节点<codeblock>oma.stopNode(11830)</codeblock></li>        
+      </ul>      
+    </section>
+  </body>
+  <related-links>
+    <link href="omaclose.dita" format="dita" type="topic"></link>
+    <link href="omacreateCoord.dita" format="dita" type="topic"></link>
+    <link href="omacreateData.dita" format="dita" type="topic"></link>
+    <link href="omacreateOM.dita" format="dita" type="topic"></link>        
+    <link href="omaremoveCoord.dita" format="dita" type="topic"></link>
+    <link href="omaremoveData.dita" format="dita" type="topic"></link>
+    <link href="omaremoveOM.dita" format="dita" type="topic"></link>        
+    <link href="omastartNode.dita" format="dita" type="topic"></link>   
+  </related-links>
+</topic>

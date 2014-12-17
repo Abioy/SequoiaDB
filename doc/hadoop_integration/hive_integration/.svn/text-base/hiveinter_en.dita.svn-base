@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_dll_ljq_fm">
+  <title>Integration with Hive</title>
+  <body>
+    <ul>
+      <li><xref href="./topics/Sequoiadbhive_en.dita">SequoiaDB List of The Supported Versions Hive</xref></li>
+      <li><xref href="./topics/configmethod_en.dita">Configuration Method</xref></li>
+    </ul>
+  </body>
+</topic>

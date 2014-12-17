@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="administration_concepts_database_regex">
+  <title>正则表达式</title>
+  <body>
+    <section>
+      <title>概念</title>
+      <p>SequoiaDB 可以使用正则表达式检索用户数据。</p>
+    </section>
+    <section>
+      <title>格式</title>
+      <p>正则表达式输入的格式如下：</p>
+      <codeblock>{ "$regex" : "正则表达式", "$options" : "选项" }</codeblock>
+      <p>其中“正则表达式”为一个正则表达式字符串，“选项”则参见下表：</p>
+      <simpletable>
+        <sthead>
+          <stentry>选项</stentry>
+          <stentry>描述</stentry>
+        </sthead>
+        <strow>
+          <stentry>i</stentry>
+          <stentry>匹配时不区分大小写。</stentry>
+        </strow>
+        <strow>
+          <stentry>m</stentry>
+          <stentry>允许进行多行匹配；当该参数打开时，字符“^”与“&amp;”匹配换行符的之后与之前的字符。</stentry>
+        </strow>
+        <strow>
+          <stentry>x</stentry>
+          <stentry>忽略正则表达式匹配中的空白字符；如果需要使用空白字符，在空白字符之前使用反斜线“\”进行转意。</stentry>
+        </strow>
+        <strow>
+          <stentry>s</stentry>
+          <stentry>允许“.”字符匹配换行符。</stentry>
+        </strow>
+      </simpletable>
+      <p>当使用选项时，用户可以使用任意组合指定其中的选项。</p>
+    </section>
+    <section>
+      <title>示例</title>
+      <p>使用正则表达式进行大小写忽略，匹配以字符“W”起始的字符串，可以使用：</p>
+      <codeblock>{ "key" : { "$regex" : "^W", "$options" : "i" } }</codeblock>
+    </section>
+    <p>关于正则表达式规则，请参阅 <xref href="http://perldoc.perl.org/perlre.html" format="html" scope="external">Perl 正则表达式手册</xref>。</p>
+  </body>
+</topic>

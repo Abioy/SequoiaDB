@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_database_database">
+  <title>Database Server</title>
+  <body>
+    <section><title>Concept</title>
+    <p>Database server provides software services for the purpose of managing information securely
+        and efficiently.</p>
+    <p>A database server is a computer that has installed SequoiaDB database engine. SequoiaDB
+        engine is the basic unit of  access to data. In distributed architecture, every database is
+        regarded as a node. These nodes share nothing.</p>
+    <p>In a computer, every SequoiaDB engine has a database path. All the collection spaces of the
+        database is located in the directory.</p>
+    <p>Database path contains one or more collection spaces. In a data node or a coord node, there
+        should be at least one SYSTEMP system temporary collection space. In a catalog node, there
+        should be at least one SYSTEMP system temporary collection space, SYSAUTH system permissions collection space, SYSPROCEDURES system stored procedure collections space and one SYSCAT system
+        catalog collection space.</p>
+    <p>A database engine contains 4096 collection spaces at most.</p>
+    </section>
+  </body>
+  <related-links >
+    <link href="collectionspace_en.dita" format="dita" type="topic"/>
+  </related-links>
+</topic>

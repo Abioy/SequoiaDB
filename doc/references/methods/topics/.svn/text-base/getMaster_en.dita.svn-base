@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_getMaster">
+  <title>rg.getMaster()</title>
+  <body>
+    <section><title>rg.getMaster()</title>
+      <p>Return the master node of a replset.</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>Return the master node of a replset.</p>
+          <codeblock>> rg.getMaster()
+Return：vmsvr2-suse-x64:11850</codeblock></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="getNode_en.dita"></link>
+    <link href="getSlave_en.dita"></link>
+  </related-links>
+</topic>

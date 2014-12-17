@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_vvk_dfy_wj">
+  <title>SequoiaDB 产品安装的系统要求</title>
+  <body>
+    <p>在安装 SequoiaDB 产品之前，请确保您选择的系统满足必须的操作系统，硬件，通信，磁盘和内存的要求。sdbpreck 命令将检查系统是否满足安全先决条件。</p>
+    <p><xref href="hardware.dita">硬件要求</xref></p>
+    <p><xref href="os.dita">受支持的操作系统</xref></p>
+    <p><xref href="software.dita">软件要求</xref></p>
+  </body>
+</topic>

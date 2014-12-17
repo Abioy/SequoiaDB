@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_dzk_gbs_5n">
+  <title>node.connect()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>connect - Connect the database to the current node.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>node.connect</apiname>()
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Node
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Connect the database to the current node. After connecting them, users can execute a set of
+        operations. Users can check relative manipulations with the method
+        "node.connect().help()".</p>            
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Connect the database to the current node.</p>
+      <codeblock>> node.connect()
+Return: vmsvr2-suse-x64:11800</codeblock>   
+    </section>
+  </body>
+  <related-links>
+    <link href="node.stop.dita"></link>
+    <link href="node.getHostName.dita"></link>
+  </related-links>
+</topic>

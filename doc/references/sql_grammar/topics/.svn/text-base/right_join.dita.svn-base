@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_right_join">
+  <title>sql right outer join</title>
+  <body>
+    <section><title>right outer join 语句</title>
+      <p>right outer join 会从右边的集合名（collection2_name）中返回所有的记录，即使在左边的集合名（collection1_name）中没有匹配的记录。</p>
+    </section>
+    <section><title>语法</title>
+      <p><codeblock>&lt;collection1_name | (select_set1) as &lt;alias1_name>
+right outer join
+&lt;collection2_name | (select_set2)> as &lt;alias2_name>
+[ON condition]</codeblock></p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>有员工信息表 foo.emp 和部门信息表 foo.dept，查询员工号 emp_no &lt; 10 所在的部门名 dept_name：</p>
+          <p><codeblock>db.exec("select E.emp_no,D.dept_name from foo.emp as E right outer join foo.dept as D on E.dept_no=D.dept_no where E.emp_no&lt;10")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="left_join.dita" format="dita" type="topic"></link>
+    <link href="sqsum.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

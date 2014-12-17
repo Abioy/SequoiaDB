@@ -1,0 +1,299 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo
+END
+add_tries.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/add_tries.c
+END
+lib_data.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_data.c
+END
+comp_hash.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/comp_hash.c
+END
+hashed_db.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/hashed_db.c
+END
+lib_ti.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_ti.c
+END
+lib_napms.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_napms.c
+END
+free_ttype.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/free_ttype.c
+END
+comp_error.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/comp_error.c
+END
+make_keys.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/make_keys.c
+END
+lib_tparm.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_tparm.c
+END
+init_keytry.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/init_keytry.c
+END
+lib_baudrate.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_baudrate.c
+END
+lib_raw.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_raw.c
+END
+make_hash.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/make_hash.c
+END
+lib_options.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_options.c
+END
+lib_print.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_print.c
+END
+captoinfo.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/captoinfo.c
+END
+lib_ttyflags.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_ttyflags.c
+END
+lib_has_cap.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_has_cap.c
+END
+lib_setup.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_setup.c
+END
+read_termcap.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/read_termcap.c
+END
+lib_longname.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_longname.c
+END
+setbuf.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/setbuf.c
+END
+comp_parse.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/comp_parse.c
+END
+strings.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/strings.c
+END
+home_terminfo.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/home_terminfo.c
+END
+parse_entry.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/parse_entry.c
+END
+name_match.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/name_match.c
+END
+comp_expand.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/comp_expand.c
+END
+db_iterator.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/db_iterator.c
+END
+lib_termname.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_termname.c
+END
+access.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/access.c
+END
+comp_scan.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/comp_scan.c
+END
+lib_tputs.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_tputs.c
+END
+trim_sgr0.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/trim_sgr0.c
+END
+lib_kernel.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_kernel.c
+END
+lib_cur_term.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_cur_term.c
+END
+getenv_num.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/getenv_num.c
+END
+entries.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/entries.c
+END
+alloc_entry.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/alloc_entry.c
+END
+write_entry.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/write_entry.c
+END
+doalloc.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/doalloc.c
+END
+alloc_ttype.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/alloc_ttype.c
+END
+lib_termcap.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_termcap.c
+END
+lib_tgoto.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_tgoto.c
+END
+tinfo_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/tinfo_driver.c
+END
+use_screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/use_screen.c
+END
+read_entry.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/read_entry.c
+END
+lib_acs.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11158/trunk/SequoiaDB/engine/ncurses/tinfo/lib_acs.c
+END

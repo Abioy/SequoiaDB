@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_dropCS">
+  <title>sql drop collectionspace</title>
+  <body>
+    <section><title>drop collectionspace 语句</title>
+      <p>用于删除数据库中的集合空间。</p>
+    </section>
+    <section><title>语法</title>
+      <p><codeblock>drop collectionspace &lt;cs_name></codeblock></p>
+      <p>&lt;cs_name>：集合空间名，集合空间名必须在数据库中存在。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>删除名为 foo 的集合空间</p>
+          <p><codeblock>db.execUpdate("drop collectionspace foo") //等价于 db.dropCS("foo")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="create_cs.dita" format="dita" type="topic"></link>
+    <link href="create_cl.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

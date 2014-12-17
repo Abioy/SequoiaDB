@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_plt_dpz_gm">
+  <title>db.removeProcedure()</title>
+  <body>
+    <section><title>db.removeProcedure(&lt;function name>)</title>
+      <p>Deletes the specified function name, function name must exist, otherwise an exception message.</p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 5.9* 1.0*"
+        id="references_method_count_table">-->
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Required</stentry>
+        </sthead>
+        <strow>
+          <stentry>function name</stentry>
+          <stentry>string</stentry>
+          <stentry>function name </stentry>
+          <stentry>Yes</stentry>
+        </strow>
+      </simpletable>
+      <p>Defined removeProcedure() method, only one string type parameter name function name, its value must already exits, otherwise an exception.</p>
+    </section>
+    <section><title>Example</title>
+      <ul>
+        <li><p>Delete the sum function</p><codeblock>db.removeProcedure("sum")</codeblock>Function must be guaranteed and consistent definition of the function name. 
+          Such as db.removeProcedure('sum') call will return a failure.</li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="createProcedure_en.dita" format="dita" type="topic"></link>
+    <link href="listProcedures_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

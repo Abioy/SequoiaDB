@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rnh_mpx_wj">
+  <title>准备安装介质</title>
+  <body>
+    <p>请到 SequoiaDB 官方网站下载相应的版本。</p>
+    <p>下载地址：<xref href="http://www.sequoiadb.com/index.php?p=downserver" format="html" scope="external">http://www.sequoiadb.com/index.php?p=downserver</xref></p>    
+    <!--<p>下表为SequoiaDB 产品发布包与操作系统对照表，请根据服务器OS类型，选择下载软件包。</p>
+    <simpletable frame="all">
+      <sthead>
+        <stentry></stentry>
+        <stentry>Linux 64-bit</stentry>
+        <stentry>Windows 32-bit</stentry>
+        <stentry>Windows 64-bit</stentry>
+      </sthead>
+      <strow>
+        <stentry>产品包</stentry>
+      </strow>
+      <strow>
+        <stentry>1.0.0<p>4/16/2013</p></stentry>
+        <stentry>
+          sequoiadb_1.0.0_linux
+          _x86_64_installer.run
+          <p><u>download</u></p>
+        </stentry>
+        <stentry>
+          sequoiadb_1.0.0_windows
+          _i586_installer.run
+          <p><u>download</u></p>
+        </stentry>
+        <stentry>
+          sequoiadb_1.0.0_windows
+          _x86_64_installer.run
+          <p><u>download</u></p>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>驱动（C/C++/Java/C#/PHP）</stentry>
+      </strow>
+      <strow>
+        <stentry>1.0.0<p>4/16/2013</p></stentry>
+        <stentry>
+          sequoiadb_driver_1.0.0_linux
+          _x86_64.tar.gz
+          <p><u>download</u></p>
+        </stentry>
+        <stentry>
+          sequoiadb_driver_1.0.0_window
+          _i586.tar.gz
+          <p><u>download</u></p>
+        </stentry>
+        <stentry>
+          sequoiadb_driver_1.0.0_windows
+          _x86_64.zip
+          <p><u>download</u></p>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>工具包</stentry>
+      </strow>
+      <strow>
+        <stentry>apache and php </stentry>
+        <stentry>
+          apache2-linux-x64-installer.tar.gz
+          <p><u>download</u></p>
+        </stentry>
+        <stentry>
+          apache2-windows-i586-installer.tar.gz
+          <p><u>download</u></p>
+        </stentry>
+        <stentry>
+          apache2-windows-x86_64-installer.zip
+          <p><u>download</u></p>
+        </stentry>
+      </strow>
+    </simpletable>-->
+  </body>
+</topic>

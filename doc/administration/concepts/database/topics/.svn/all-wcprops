@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16487/trunk/doc/administration/concepts/database/topics
+END
+date_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/date_en.dita
+END
+document_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/16487/trunk/doc/administration/concepts/database/topics/document_en.dita
+END
+timestamp.dita
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/13661/trunk/doc/administration/concepts/database/topics/timestamp.dita
+END
+database.dita
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/16043/trunk/doc/administration/concepts/database/topics/database.dita
+END
+objectid_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/9949/trunk/doc/administration/concepts/database/topics/objectid_en.dita
+END
+transaction_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/transaction_en.dita
+END
+collectionspace.dita
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/13661/trunk/doc/administration/concepts/database/topics/collectionspace.dita
+END
+index.dita
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/13667/trunk/doc/administration/concepts/database/topics/index.dita
+END
+read_write_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/read_write_en.dita
+END
+aggregate_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/aggregate_en.dita
+END
+dataexamples.dita
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/dataexamples.dita
+END
+bg_task.dita
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/13661/trunk/doc/administration/concepts/database/topics/bg_task.dita
+END
+regex.dita
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/regex.dita
+END
+lob.dita
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/16043/trunk/doc/administration/concepts/database/topics/lob.dita
+END
+databaseserver_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/databaseserver_en.dita
+END
+document.dita
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/16487/trunk/doc/administration/concepts/database/topics/document.dita
+END
+bindata_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/16487/trunk/doc/administration/concepts/database/topics/bindata_en.dita
+END
+timestamp_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/timestamp_en.dita
+END
+aggregate.dita
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/13661/trunk/doc/administration/concepts/database/topics/aggregate.dita
+END
+index_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/index_en.dita
+END
+collectionspace_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/11093/trunk/doc/administration/concepts/database/topics/collectionspace_en.dita
+END
+collection.dita
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/13661/trunk/doc/administration/concepts/database/topics/collection.dita
+END
+array_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/array_en.dita
+END
+consistency.dita
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/consistency.dita
+END
+bindata.dita
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16487/trunk/doc/administration/concepts/database/topics/bindata.dita
+END
+date.dita
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/13661/trunk/doc/administration/concepts/database/topics/date.dita
+END
+collection_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/collection_en.dita
+END
+array.dita
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/13661/trunk/doc/administration/concepts/database/topics/array.dita
+END
+objectid.dita
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/13661/trunk/doc/administration/concepts/database/topics/objectid.dita
+END
+consistency_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/consistency_en.dita
+END
+transaction.dita
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/13667/trunk/doc/administration/concepts/database/topics/transaction.dita
+END
+read_write.dita
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/13661/trunk/doc/administration/concepts/database/topics/read_write.dita
+END
+database_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/9949/trunk/doc/administration/concepts/database/topics/database_en.dita
+END
+dataexamples_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11405/trunk/doc/administration/concepts/database/topics/dataexamples_en.dita
+END
+databaseserver.dita
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/13661/trunk/doc/administration/concepts/database/topics/databaseserver.dita
+END
+bg_task_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/bg_task_en.dita
+END
+regex_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/concepts/database/topics/regex_en.dita
+END

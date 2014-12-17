@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map><title>application_cpp_map</title>
+ <topicref href="topics/cpp_en.dita">
+  <topicref href="topics/cpp_client_en.dita"/>
+  <topicref href="topics/cpp_built_en.dita"/>
+  <topicref href="topics/cpp_driver_en.dita"/>
+  <topicref href="topics/cpp_sql_en.dita"/>
+  <topicref href="topics/cpp_api_en.dita"/>
+ </topicref>
+ 
+</map>

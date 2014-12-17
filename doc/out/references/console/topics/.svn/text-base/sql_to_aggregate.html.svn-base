@@ -1,0 +1,212 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="SQL to Aggregate 映射表"/>
+<meta name="description" content="下表主要是描述 SQL 关键字与 SequoiaDB 聚集操作符的对照表。 SQL 关键字 SequoiaDB 聚集操作符 where $match group by $group having $match select $project order by $sort top $limit offset $skip 下表主要描述标准 SQL 语句与 SequoiaDB 聚集语句之间的对照。 ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../references/console/topics/aggregate.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_wnq_qkz_pl"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>SQL to Aggregate 映射表</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_wnq_qkz_pl"><a name="topic_wnq_qkz_pl"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../references/console/topics/aggregate.html" title="聚集符"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">聚集符</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="console.html" title="操作符">操作符</a> / <a class="navheader_parent_path" href="../../../references/console/topics/aggregate.html" title="聚集符">聚集符</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">SQL to Aggregate 映射表</h1>
+
+  <div class="body">
+    <p class="p">下表主要是描述 SQL 关键字与 SequoiaDB 聚集操作符的对照表。</p>
+
+    <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+        <th valign="bottom" align="left" id="d92247e17" class="stentry">SQL 关键字</th>
+
+        <th valign="bottom" align="left" id="d92247e20" class="stentry">SequoiaDB 聚集操作符</th>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e17" class="stentry">where</td>
+
+        <td valign="top" headers="d92247e20" class="stentry">$match </td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e17" class="stentry">group by</td>
+
+        <td valign="top" headers="d92247e20" class="stentry">$group</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e17" class="stentry">having</td>
+
+        <td valign="top" headers="d92247e20" class="stentry">$match</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e17" class="stentry">select</td>
+
+        <td valign="top" headers="d92247e20" class="stentry">$project</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e17" class="stentry">order by</td>
+
+        <td valign="top" headers="d92247e20" class="stentry">$sort</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e17" class="stentry">top</td>
+
+        <td valign="top" headers="d92247e20" class="stentry">$limit</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e17" class="stentry">offset</td>
+
+        <td valign="top" headers="d92247e20" class="stentry">$skip</td>
+
+      </tr>
+<tr class="strow"/>
+</table>
+
+    <p class="p">下表主要描述标准 SQL 语句与 SequoiaDB 聚集语句之间的对照。</p>
+
+    <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+        <th valign="bottom" align="left" id="d92247e98" class="stentry">SQL 语句</th>
+
+        <th valign="bottom" align="left" id="d92247e101" class="stentry">SequoiaDB 聚集语句</th>
+
+        <th valign="bottom" align="left" id="d92247e104" class="stentry">描述</th>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e98" class="stentry">select product_id as p_id, price  from table </td>
+
+        <td valign="top" headers="d92247e101" class="stentry">db.cs.table.aggregate({$project:{p_id:"$product_id",price:1,date:0}})</td>
+
+        <td valign="top" headers="d92247e104" class="stentry">返回所有记录的 product_id 和 price 字段，其中 product_id 重命名为 p_id，对记录中的 date 字段不返回。</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e98" class="stentry">select sum(price) as total from table</td>
+
+        <td valign="top" headers="d92247e101" class="stentry">db.cs.table.aggregate({$group:{_id:null,total:{$sum:"$price"}}})</td>
+
+        <td valign="top" headers="d92247e104" class="stentry">对 table 中的字段 price 值求和，并重命名为 total。</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e98" class="stentry">select product_id, sum(price) as total from table group by product_id</td>
+
+        <td valign="top" headers="d92247e101" class="stentry">db.cs.table.aggregate({$group:{_id:"$product_id",product_id:{$first:"$product_id"},total:{$sum:"$price"}}})</td>
+
+        <td valign="top" headers="d92247e104" class="stentry">对表 table 中的记录按 product_id 字段分组；<div class="fig fignone"/>
+求每个分组中字段 price 值的累加和，并重命名为 total。</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e98" class="stentry">select product_id, sum(price) as total from table group by product_id order by total</td>
+
+        <td valign="top" headers="d92247e101" class="stentry">db.cs.table.aggregate({$group:{_id:"$product_id",product_id:{$first:"$product_id"},total:{$sum:"$price"}}},{$sort:{total:1}})</td>
+
+        <td valign="top" headers="d92247e104" class="stentry">对表 table 中的记录按 product_id 字段分组；<div class="fig fignone"/>
+求每个分组中字段 price 值的累加和，并重命名为 total；<div class="fig fignone"/>
+对结果集按字段名 total 的值升序排序。</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e98" class="stentry">select product_type_id, product_id, sum(price) as total from table group by product_type_id, product_id</td>
+
+        <td valign="top" headers="d92247e101" class="stentry">db.cs.table.aggregate({$group:{_id:{product_type_id:"$product_type_id",product_id:"$product_id"},product_id:{$first:"$product_id"},total:{$sum:"$price"}}})</td>
+
+        <td valign="top" headers="d92247e104" class="stentry">对表 table 中的记录按首先按 product_type_id 字段分组，再按 product_id 字段分组；<div class="fig fignone"/>
+求每个分组中字段 price 值的累加和，并重命名为 total。</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e98" class="stentry">select product_id, sum(price) as total from table group by product_id having total &gt; 1000</td>
+
+        <td valign="top" headers="d92247e101" class="stentry">db.cs.table.aggregate({$group:{_id:"$product_id",product_id:{$first:"$product_id"},total:{$sum:"$price"}}},{$match:{total:{$gt:1000}}})</td>
+
+        <td valign="top" headers="d92247e104" class="stentry">对表 table 中的记录按 product_id 字段分组；<div class="fig fignone"/>
+求每个分组中字段 price 值的累加和，并重命名为 total；<div class="fig fignone"/>
+只返回满足条件 total 字段值大于1000的分组。</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e98" class="stentry">select product_id, sum(price) as total from table where product_type_id = 1001 group by product_id</td>
+
+        <td valign="top" headers="d92247e101" class="stentry">db.cs.table.aggregate({$match:{product_type_id:1001}},{$group:{_id:"$product_id",product_id:{$first:"$product_id"},total:{$sum:"$price"}}})</td>
+
+        <td valign="top" headers="d92247e104" class="stentry">选择符合条件 product_type_id = 1001 的记录；<div class="fig fignone"/>
+对选出的记录按 product_id 进行分组；<div class="fig fignone"/>
+对每个分组中的 price 字段值就和，并重命名为 total。</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e98" class="stentry">select product_id, sum(price) as total from table where product_type_id = 1001 group by product_id having total &gt; 1000</td>
+
+        <td valign="top" headers="d92247e101" class="stentry">db.cs.table.aggregate({$match:{product_type_id:1001}},{$group:{_id:"$product_id",product_id:{$first:"$product_id"},total:{$sum:"$price"}}},{$match:{total:{$gt:1000}}})</td>
+
+        <td valign="top" headers="d92247e104" class="stentry">选择符合条件 product_type_id = 1001 的记录；<div class="fig fignone"/>
+对选出的记录按 product_id 进行分组；<div class="fig fignone"/>
+对每个分组中的 price 字段值就和，并重命名为 total；<div class="fig fignone"/>
+只返回满足条件 total 字段值大于1000的分组。</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e98" class="stentry">select top 10 * from table</td>
+
+        <td valign="top" headers="d92247e101" class="stentry">db.cs.table.aggregate({$group:{_id:null}},{$limit:10})</td>
+
+        <td valign="top" headers="d92247e104" class="stentry">返回结果集中的前10条记录。</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" headers="d92247e98" class="stentry">select * from table offset 50 rows fetch next 10</td>
+
+        <td valign="top" headers="d92247e101" class="stentry">db.cs.table.aggregate({$group:{_id:null}},{$skip:50},{$limit:10})</td>
+
+        <td valign="top" headers="d92247e104" class="stentry">跳过结果集中前50条记录之后，返回接下来的10条记录。</td>
+
+      </tr>
+<tr class="strow"/>
+</table>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../references/console/topics/aggregate.html" title="聚集符"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">聚集符</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

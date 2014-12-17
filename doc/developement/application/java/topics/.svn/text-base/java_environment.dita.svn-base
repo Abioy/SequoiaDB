@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_b51_z3v_jl">
+  <title>Java 开发环境搭建</title>
+  <body>
+    <section>
+      <title>获取驱动开发包</title>
+      <p>从 <xref href="http://www.sequoiadb.com" format="html" scope="external">http://www.sequoiadb.com</xref> 下载对应操作系统版本的 SequoiaDB 驱动开发包；解压驱动开发包，从 <i>driver/java/</i> 目录中获取 sequoiadb.jar 文件。</p>
+    </section>
+    <section>
+      <title>配置 Eclipse 开发环境</title>
+      <ol>
+        <li>将 SequoiaDB 驱动开发包中的 sequoiadb.jar 文件拷贝到工程文件目录下（建议将其放置在其他所有依赖库目录，如 lib 目录）；</li>
+        <li>在 Eclipse 界面中，创建/打开开发工程；</li>
+        <li>在 Eclipse 主窗口左侧的“Package Explore”窗口中，选择开发工程，并点击鼠标右键；</li>
+        <li>在菜单中选择“properties”菜单项；</li>
+        <li>在弹出的“property for project …”窗口中，选择“Java Build Path”->“Libraries”，如下图所示：<p><image href="../image/eclipse.jpg" width="400" height="350"/></p></li>
+        <li>点击“Add JARs..”按钮，选择添加 sequoiadb.jar 到工程中；</li>
+        <li>点击“OK”完成环境配置。</li>
+      </ol>
+      <p>更多操作请参考<xref href="jbase_operations.dita">Java 开发基础</xref></p>
+    </section>
+  </body>
+</topic>

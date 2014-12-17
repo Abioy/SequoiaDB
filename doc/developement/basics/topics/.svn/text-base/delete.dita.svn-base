@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="developement_basics_delete">
+  <title>删除</title>
+  <body>
+    <p>四大基本数据库操作即（CRUD），删除操作即移除集合中的记录。SequoiaDB 中使用 <xref href="../../../references/methods/topics/remove.dita">remove()</xref> 方法做删除操作。</p>
+    <note>
+      <p>本文档的所有例子都是使用 SequoiaDB 的 shell 接口。</p>
+    </note>
+    <section>
+      <title>remove()</title>
+      <p>remove() 方法是删除集合中记录主要方法，它的语法结构为：</p>
+      <codeblock>db.collectionspace.collection.remove([cond],[hint])</codeblock>
+      <p>在 SQL 中对应的操作：remove() 的方法与 DELETE 语句相似：</p>
+      <p><b>.</b> [cond] 参数对应 where 语句</p>
+      <p><b>.</b> [hint] 参数是对应索引表里的名称 </p>
+    </section>
+    <section>
+      <title>删除集合记录</title>
+      <ul>
+        <li>
+          <p>删除集合中的所有记录</p>
+          <p>以下操作会删除集合 bar 中所有的记录。</p>
+          <codeblock>db.foo.bar.remove()</codeblock>
+        </li>
+        <li>
+          <p>删除集合中匹配条件的记录</p>
+          <p>以下操作会删除集合 bar 中所有匹配 name 字段值为“Tom”的记录。</p>
+          <codeblock>db.foo.bar.remove({name:"Tom"})</codeblock>
+        </li>
+        <li>
+          <p>hint 参数</p>
+          <p>以下操作会通过索引遍历快速删除匹配条件的记录，“textIndex”为索引名称。</p>
+          <codeblock>db.foo.bar.remove({name:"Tom"},{"":"testIndex"})</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="update.dita" format="dita" type="topics"></link>
+  </related-links>
+</topic>

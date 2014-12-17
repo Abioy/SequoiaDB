@@ -1,0 +1,77 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="时间戳"/>
+<meta name="description" content="概念 SequoiaDB 中的时间戳使用 YYYY-MM-DD-HH.mm.ss.ffffff 的形式存取，在存储时将其转换为8字节的整数。 格式 时间戳的表达形式如下： { &#34;$timestamp&#34; : &#34;&lt;YYYY-MM-DD-HH.mm.ss.ffffff&gt;&#34; } 示例 例如： { &#34;createTime&#34; : { &#34;$timestamp&#34; : &#34;2012-05-12-13.15.21 ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/database/topics/document.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_concepts_database_timestamp"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>时间戳</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_concepts_database_timestamp"><a name="administration_concepts_database_timestamp"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/concepts/database/topics/document.html" title="文档"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">文档</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="database.html" title="数据库">数据库</a> / <a class="navheader_parent_path" href="../../../../administration/concepts/database/topics/document.html" title="文档">文档</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">时间戳</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">概念</h2>
+      
+      <p class="p">SequoiaDB 中的时间戳使用 YYYY-MM-DD-HH.mm.ss.ffffff 的形式存取，在存储时将其转换为8字节的整数。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">格式</h2>
+      
+      <p class="p">时间戳的表达形式如下：</p>
+
+      <pre class="pre codeblock">{ "$timestamp" : "&lt;YYYY-MM-DD-HH.mm.ss.ffffff&gt;" }</pre>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">示例</h2>
+      
+      <p class="p">例如：</p>
+
+      <pre class="pre codeblock">{ "createTime" : { "$timestamp" : "2012-05-12-13.15.21.241523" } }</pre>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../administration/concepts/database/topics/document.html" title="文档"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">文档</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

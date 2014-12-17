@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\administration\database\topics\snapshot?><?path2project ..\..\..\..\out_en\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="administration_database_monitoring_snapshot_system" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="title:1">操作系统快照</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="title:2">描述</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="p:1">操作系统快照列出当前数据库节点所在操作系统中主要的状态与性能监控参数，输出一条记录。</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="title:3">标示</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="p:2">SDB_SNAP_SYSTEM</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="section:3"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="title:4">适用节点</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="p:3">数据、编目</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="section:4"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="title:5">字段信息</title>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 2.0*" id="administration_database_monitoring_snapshot_system_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="simpletable:1">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="sthead:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:1">字段名</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:2">类型</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:3">描述</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:4">HostName</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:5">字符串</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:6">数据库节点所在物理节点的主机名</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:7">ServiceName</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:8">字符串</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:9">svcname所指定的服务名，与HostName共同作为一个逻辑节点的标示</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:3">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:10">NodeName</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:11">字符串</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:12">节点名，为&lt;HostName&gt;:&lt;ServiceName&gt;</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:4">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:13">GroupName</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:14">字符串</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:15">该逻辑节点所属的分区组名，独立模式下该字段不存在</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:5">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:16">IsPrimary</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:17">布尔</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:18">该节点是否为主节点，独立模式下该字段不存在</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:6">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:19">ServiceStatus</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:20">布尔</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:21">是否为可提供服务状态。一些特殊状态，例如<xref href="../../../concepts/cluster/topics/sync.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="xref:1" type="topic"><?ditaot usertext?>全量同步</xref>会使该状态为false</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:7">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:22">CurrentLSN.Offset</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:23">长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:24">当前LSN的偏移</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:8">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:25">CurrentLSN.Version</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:26">整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:27">当前LSN的版本号</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:9">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:28">CPU.User</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:29">浮点数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:30">操作系统启动后所消耗的总用户CPU（秒）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:10">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:31">CPU.Sys</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:32">浮点数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:33">操作系统启动后所消耗的总系统CPU（秒）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:11">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:34">CPU.Idle</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:35">浮点数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:36">操作系统启动后所消耗的总空闲CPU（秒）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:12">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:37">CPU.Other</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:38">浮点数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:39">操作系统启动后所消耗的总其它CPU（秒）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:13">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:40">Memory.LoadPercent</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:41">整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:42">当前操作系统的内存使用百分比（包括文件系统缓存）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:14">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:43">Memory.TotalRAM</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:44">长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:45">当前操作系统的总内存空间（字节）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:15">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:46">Memory.FreeRAM</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:47">长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:48">当前操作系统的空闲内存空间（字节）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:16">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:49">Memory.TotalSwap</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:50">长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:51">当前操作系统的总交换空间（字节）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:17">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:52">Memory.FreeSwap</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:53">长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:54">当前操作系统的空闲交换空间（字节）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:18">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:55">Memory.TotalVirtual</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:56">长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:57">当前操作系统的总虚拟空间（字节）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:19">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:58">Memory.FreeVirtual</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:59">长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:60">当前操作系统的空闲虚拟空间（字节）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:20">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:61">Disk.DatabasePath</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:62">字符串</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:63">数据库路径</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:21">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:64">Disk.LoadPercent</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:65">整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:66">数据库路径所在文件系统的空间占用百分比</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:22">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:67">Disk.TotalSpace</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:68">长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:69">数据库路径总空间（字节）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="strow:23">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:70">Disk.FreeSpace</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:71">长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="stentry:72">数据库路径空闲空间（字节）</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="section:5"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="title:6">示例</title>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\system.dita" xtrc="codeblock:1">&gt; db.snapshot(SDB_SNAP_SYSTEM)
+{
+  "HostName": "vmsvr1-rhel-x64",
+  "ServiceName": "51000",
+  "GroupName": "foo",
+  "NodeName": "vmsvr1-rhel-x64:51000",
+  "IsPrimary": true,
+  "ServiceStatus": false,
+  "CurrentLSN": {
+    "Offset": 84,
+    "Version": 1
+  },
+  "CPU": {
+    "User": 311820.32,
+    "Sys": 255338.68,
+    "Idle": 4377809.05,
+    "Other": 8900.13
+  },
+  "Memory": {
+    "LoadPercent": 97,
+    "TotalRAM": 8256643072,
+    "FreeRAM": 170143744,
+    "TotalSwap": 4194295808,
+    "FreeSwap": 4162007040,
+    "TotalVirtual": 12450938880,
+    "FreeVirtual": 4332150784
+  },
+  "Disk": {
+    "DatabasePath": "/home/sequoiadb/sequoiadb/data1",
+    "LoadPercent": 84,
+    "TotalSpace": 37939249152,
+    "FreeSpace": 5734297600
+  }
+}</codeblock>
+    </section>
+  </body>
+</topic>

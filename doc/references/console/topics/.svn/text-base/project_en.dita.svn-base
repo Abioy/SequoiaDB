@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_31z_35h_hm">
+  <title>$project</title>
+  <body>
+    <section>
+      <title>Description</title>
+      <p><b>$project</b> similar to thd SQL select statement, by using <b>$project</b> operations can filter out the required fields from the record, the value is 1 if ghe field name, 
+      which means that elected to 0 means no election, can also be achieved rename fields.</p>
+      <note>If the record does not exist for the selected field, then the following output format: <b>"field":null</b>, field to field name does not exist. Nested object using the dot 
+        operator(.)</note>
+    </section>
+    <section>
+      <title>Example</title>
+      <ul>
+        <li>Use <b>$project</b> quickly select from a focus on the results of field Related information required. 
+          <codeblock>db.collectionspace.collection.aggregate({ $project : {title: 0,author: 1}})</codeblock><p>This operation is selected author field, while title field in the result set is not output.</p></li>
+        <li>Use <b>$project</b> rename the field name, as follows: 
+          <codeblock>db.collectionspace.collection.aggregate({ $project : {author: 1,name:"$studentName",dep:"$info.department"}})</codeblock><p>This operation will rename the field names studentName 
+            name to output, the info object in the field of child objects department rename dep. Nested object field references using the dot operator (.) Point.</p></li>
+        <li>The following example uses $project to select the output field, then use <xref href="match_en.dita">$match</xref> conditional matching records.
+          <codeblock>db.collectionspace.collection.aggregate({ $project: {score:1,author:1}},{<xref href="match_en.dita">$match</xref>:{score:{$gt:80}}})</codeblock><p>This output using $project 
+            and author of all score field values, and then press the $match record output matching conditions.
+            <note>Due $project selected output field names, field names so <xref href="match_en.dita">$match</xref> $project must be selected field name.</note></p>
+        </li>
+      </ul>
+    </section>
+    
+  </body>
+  <related-links>
+    <link href="match_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

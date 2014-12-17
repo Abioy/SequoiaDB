@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_right_join_en">
+  <title>sql right outer join</title>
+  <body>
+    <section><title>right outer join </title>
+      <p>right outer join will return all the records from the right collection
+        name(collection2_name),even though there is no matched records in the left collection
+        name(collection1_name).</p>
+    </section>
+    <section><title>Grammar</title>
+      <p><codeblock>&lt;collection1_name | (select_set1) as &lt;alias1_name>
+right outer join
+&lt;collection2_name | (select_set2)> as &lt;alias2_name>
+[ON condition]</codeblock></p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>There have employee information table <i>foo.emp</i> and depatmenrt information table
+              <i>foo.dept</i>, query the employee number filed <i>emp_no&lt;10</i> in which
+            department name field <i>dept_name</i>.</p>
+          <p><codeblock>db.exec("select E.emp_no,D.dept_name from foo.emp as E right outer join foo.dept as D on E.dept_no=D.dept_no where E.emp_no&lt;10")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="left_join.dita" format="dita" type="topic"></link>
+    <link href="sqsum.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.xhtml/xsl/map2htmtoc
+END
+map2htmtocImpl.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.xhtml/xsl/map2htmtoc/map2htmtocImpl.xsl
+END
+map2htmlImpl.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.xhtml/xsl/map2htmtoc/map2htmlImpl.xsl
+END

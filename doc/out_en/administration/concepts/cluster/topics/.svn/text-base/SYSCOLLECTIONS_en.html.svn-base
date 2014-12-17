@@ -1,0 +1,163 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="SYSCOLLECTIONS Collection"/>
+<meta name="description" content="Collection Space SYSCAT Concept SYSTASKS collection contains information of all user collections. Information of a user collection is saved in a corresponding file. Every file contains the following ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/catalog_node_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_concepts_cluster_node_catalog_syscollections"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>SYSCOLLECTIONS Collection</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_concepts_cluster_node_catalog_syscollections"><a name="administration_concepts_cluster_node_catalog_syscollections"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/concepts/cluster/topics/catalog_node_en.html" title="Catalog Node"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Catalog Node</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="node_en.html" title="Node">Node</a> / <a class="navheader_parent_path" href="../../../../administration/concepts/cluster/topics/catalog_node_en.html" title="Catalog Node">Catalog Node</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">SYSCOLLECTIONS Collection</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Collection Space</h2>
+      <p class="p">SYSCAT</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Concept</h2>
+      <p class="p">SYSTASKS collection contains information of all user collections. Information of a user
+        collection is saved in a corresponding file. </p>
+
+      <p class="p">Every file contains the following fields:</p>
+
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d2841e32" class="stentry">Field Name</th>
+
+          <th valign="bottom" align="left" id="d2841e35" class="stentry">Type</th>
+
+          <th valign="bottom" align="left" id="d2841e38" class="stentry">Descrption</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d2841e32" class="stentry">Name</td>
+
+          <td valign="top" headers="d2841e35" class="stentry">String</td>
+
+          <td valign="top" headers="d2841e38" class="stentry">Full name of a collection. The form is &lt;collection space&gt;.&lt;collection
+            name&gt;.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d2841e32" class="stentry">Version</td>
+
+          <td valign="top" headers="d2841e35" class="stentry">Integer</td>
+
+          <td valign="top" headers="d2841e38" class="stentry">Version number of the collection, starts with 1. It increases by 1 after any
+            metadata alteration on the collection.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d2841e32" class="stentry">ReplSize</td>
+
+          <td valign="top" headers="d2841e35" class="stentry">Integer</td>
+
+          <td valign="top" headers="d2841e38" class="stentry">The minimum replica group, to ensure that any write operation must be copied to at least return after a specified number of nodes success.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d2841e32" class="stentry">ShardingKey</td>
+
+          <td valign="top" headers="d2841e35" class="stentry">Object</td>
+
+          <td valign="top" headers="d2841e38" class="stentry">ShardingKey is in sharding collections. It contains one or more fields. The field
+            name is its sharding field name. The value is 1 or -1, which represents forward or
+            reserve sequencing.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d2841e32" class="stentry">ShardingType</td>
+
+          <td valign="top" headers="d2841e35" class="stentry">String</td>
+
+          <td valign="top" headers="d2841e38" class="stentry">Partition types: the presence in the partition collection. Partition types: range partitioning(Range) and hash partitioning(Hash) two.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d2841e32" class="stentry">Partition</td>
+
+          <td valign="top" headers="d2841e35" class="stentry">Integer</td>
+
+          <td valign="top" headers="d2841e38" class="stentry">The partition size of the hash value must be a power of 2.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d2841e32" class="stentry">CataInfo</td>
+
+          <td valign="top" headers="d2841e35" class="stentry">Array</td>
+
+          <td valign="top" headers="d2841e38" class="stentry">Information of logical nodes of a collection. In a single sharding collection,
+            the arrary contains only one element, which represents the replset of the collection. In
+            a multiple sharding collection, the array contains one or more elements, which represent
+            the replset which covers all the ranges of values in the collection. Every range of
+            values includes two value: LowBound and UpBound, which respectively represent floor and
+            ceiling. The interval  is left-close and right-open.</td>
+
+        </tr>
+</table>
+    
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Sample</h2>
+      <p class="p">A typical single sharding collection is as follow:</p>
+
+      <pre class="pre codeblock">{ "Name" : "test.foo", "Version" : 1, "CataInfo" : [ { "GroupID" : 1000 } ] }</pre>
+
+      <p class="p">A typical multiple sharding collection is as follow:</p>
+
+      <pre class="pre codeblock">{ "Name" : "foo.test", 
+  "Version" : 1, 
+  "ShardingKey" : { "Field1" : 1, "Field2" : -1 },
+  "ShardingType" : "range" ,
+  "ReplSize": 3,
+  "CataInfo" : [ 
+     { "GroupID" : 1000, 
+       "LowBound" : { "" : MinKey, "" : MaxKey },
+       "UpBound" : { "" : MaxKey, "" : MinKey } } ] 
+  }</pre>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../administration/concepts/cluster/topics/catalog_node_en.html" title="Catalog Node"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Catalog Node</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

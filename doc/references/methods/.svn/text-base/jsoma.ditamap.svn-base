@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>DITA Topic Map</title>
+ <topicref href="jsoma.dita">
+  <topicref href="topics/omaclose.dita"/>
+  <topicref href="topics/omacreateCoord.dita"/>
+  <topicref href="topics/omacreateData.dita"/>
+  <topicref href="topics/omacreateOM.dita"/>
+  <topicref href="topics/omaremoveCoord.dita"/>
+  <topicref href="topics/omaremoveData.dita"/>
+  <topicref href="topics/omaremoveOM.dita"/>
+  <topicref href="topics/omastartNode.dita"/>
+  <topicref href="topics/omastopNode.dita"/>
+ </topicref>
+</map>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_jpx_dr1_yj">
+  <title>Snapshot</title>
+  <body>
+    <p>This section introduces information of all kinds of snapshots: </p>
+    <p><xref href="contexts_en.dita">Contexts Snapshot</xref></p>
+    <p><xref href="contexts_current_en.dita">Current Contexts Snapshot</xref>
+    </p>
+    <p><xref href="sessions_en.dita">Sessions Snapshot</xref>
+    </p>
+    <p><xref href="sessions_current_en.dita">Current Sessions Snapshot</xref>
+    </p>
+    <p><xref href="collections_en.dita">Collections Snapshot</xref>
+    </p>
+    <p><xref href="collectionspaces_en.dita">Collection Spaces Snapshot</xref>
+    </p>
+    <p><xref href="database_en.dita">Database Snapshot</xref>
+    </p>
+    <p><xref href="system_en.dita">System Snapshot</xref>
+    </p>
+    <p><xref href="catalog_en.dita">Catalog Snapshot</xref>
+    </p>
+  </body>
+</topic>

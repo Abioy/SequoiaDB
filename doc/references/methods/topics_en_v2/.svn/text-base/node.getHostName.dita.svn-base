@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_g3y_zbs_5n">
+  <title>node.getHostName()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>getHostName - Return the hostname of  a node.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>node.getHostName</apiname>()
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Node
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Return the hostname of  a node.</p>            
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Return the hostname of the current node.</p>
+      <codeblock>> node.getHostName()
+Return: vmsvr2-suse-x64</codeblock>   
+    </section>
+  </body>
+  <related-links>
+    <link href="node.connect.dita"></link>
+    <link href="node.getServiceName.dita"></link>
+  </related-links>
+</topic>

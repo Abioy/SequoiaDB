@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/Makefile.in
+END
+testlirc.sh
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/testlirc.sh
+END
+LInsClasses.tbl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/LInsClasses.tbl
+END
+lirasm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/lirasm.cpp
+END

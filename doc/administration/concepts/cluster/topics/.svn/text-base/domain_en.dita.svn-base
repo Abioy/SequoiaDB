@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_mjf_hvy_r4">
+  <title>Domain</title>
+  <body>
+    <section><title>Concept</title>
+      <p>Domain is the logical unit composed of several replica group composed. Each domain can automatically manage data based on defined policies belongs, such as data slice and data isolation.</p>
+      <p>When the replica group domain is 0 when called airspace. Airspace can not create a collection space.</p>
+      <p>A replica group can belong to multiple domains.</p>
+      <p>There is a system known as domain "SYSDOMAIN" logically. The current system all replica groups are part of the system domain. When you create a domain user can not use the "SYSDOMAIN" as a domain name, it can not directly operate the system domain.</p>
+      <p>Domain has the following attributes in addition to names:</p>
+      <simpletable>
+        <sthead>
+          <stentry>Property name</stentry>
+          <stentry>Description</stentry>          
+        </sthead>
+        <strow>
+          <stentry>AutoSplit</stentry>
+          <stentry>When this property is True, hash partitions on the domain to create a collection of all the replica group will be automatic segmentation to contain.</stentry>          
+        </strow>        
+      </simpletable>
+    </section>
+  </body>
+</topic>

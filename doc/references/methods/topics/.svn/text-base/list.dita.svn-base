@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_createRG">
+  <title>db.list()</title>
+  <body>
+    <section><title>db.list(&lt;listType>,[con],[sel],[sort])</title>
+      <p>枚举列表。列表是一种轻量级得到当前系统状态的命令。<xref href="../../../administration/database/topics/monitoring.dita"
+          >查看更多有关列表信息</xref>
+      </p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable><!-- frame="all" relcolwidth="1.23* 1.52* 7.32* 1.0*"
+        id="references_method_list_table">-->
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>listType</stentry>
+          <stentry>枚举</stentry>
+          <stentry><xref href="../../../administration/database/topics/monitoring.dita"
+            >列表类型</xref>，列表类型的值为0到7。</stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow>
+          <stentry>con</stentry>
+          <stentry>json对象</stentry>
+          <stentry>选择条件，只返回符合con字段值的记录，为null时，返回所有。</stentry>
+          <stentry>否</stentry>
+        </strow>
+        <strow>
+          <stentry>sel</stentry>
+          <stentry>json对象</stentry>
+          <stentry>选择返回字段名。为null时，返回所有的字段名。</stentry>
+          <stentry>否</stentry>
+        </strow>
+        <strow>
+          <stentry>sort</stentry>
+          <stentry>json对象</stentry>
+          <stentry>对返回的记录按选定的字段排序。1为升序；-1为降序。</stentry>
+          <stentry>否</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>格式</title>
+      <p>list()方法定义格式有listType、con、sel、sort四个参数，listType为枚举类型，其他全部为json对象，格式如下：</p>
+      <codeblock>{"listType":"&lt;列表类型>",["con":"{"字段名1":{"操作符1":"值1"},"字段名2":{"操作符2":"值2"}...}"],
+["sel":"{"字段名1":"","字段名2":"",...}"],["sort":"{"字段名1":-1|1,"字段名2":1|-1,...}"]}</codeblock>
+      <note>
+        <ul>
+          <li>listType字段的值为0到7</li>
+          <li>sel参数是一个json结构，字段名的值一般指定为空串。如果指定为如下结构：{"字段名1":"值1","字段名2":"值2",...}，对于记录中存在所选字段名的话，设定的值其实无效；对于记录中不存在所选字段名的话，返回{"字段名1":"值1","字段名2":"值2",...}</li>
+          <li>字段的值是数组的话，我们用"."操作符引用数组内的元素。并加上双引号("")</li>
+        </ul>
+      </note>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>指定listType的值为0：<codeblock>db.list(0)</codeblock></p>
+          <p>返回：</p>
+          <codeblock>     {
+        "SessionID": 4,
+        "Contexts": [ 0 ]
+      } ...</codeblock>
+        </li>
+        <li>
+          <p>指定listType的值为SDB_LIST_STORAGEUNITS：<codeblock>db.list(SDB_LIST_STORAGEUNITS)</codeblock></p>
+          <p>返回：</p>
+          <codeblock>    {
+        "Name": "foo", 
+        "ID": 4094,
+        "Logical ID": 1,
+        "PageSize": 4096, 
+        "Sequence": 1, 
+        "NumCollections": 1,
+        "CollectionHWM": 3,
+        "Size": 172032000 
+      } </codeblock>
+        </li>
+        <li>
+          <p>
+            <codeblock>db.list(SDB_LIST_STORAGEUNITS,{"Logical ID":{$gt:1}},{Name:"space",ID:2},{Name：1})</codeblock>
+          </p>
+          <p>返回符合条件Logical ID大于1的记录，并且每条记录只返回Name和ID这两个字段，记录按Name字段的值升序排序</p>
+          <codeblock>      {
+        "ID": 4091,
+        "Name": "foo" 
+      } 
+      {
+        "ID": 4093,
+        "Name": "name"
+       }...</codeblock> 
+        </li>
+      </ul>
+
+    </section>
+  </body>
+  <related-links>
+    <link href="removeRG.dita" format="dita" type="topic"></link>
+    <link href="listCollectionSpaces.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/database/topics/EDU.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/console.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

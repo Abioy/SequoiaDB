@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_mlq_mjr_kn">
+  <title>db.backupOffline()</title>
+  <body>
+    <section><title>backupOffline([options])</title>
+      <p>Backup Database.</p>
+    </section>
+    <p><b>Parameter Descripation</b></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<b>Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;Parameter Type&nbsp;&nbsp;&nbsp;&nbsp;Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Are Required</b></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;options&nbsp;&nbsp;&nbsp;&nbsp;Json Object&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the backup name, specify the replication group, backup and other parameters.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No</p>
+    <!--<section><title>Parameter Descripation</title>
+      <simpletable>
+        <sthead>
+          <stentry>Parameter Name</stentry>
+          <stentry>Parameter Type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Are Required</stentry>
+        </sthead>
+        <strow>
+          <stentry>options</stentry>
+          <stentry>Json Object</stentry>
+          <stentry>Set the backup name, specify the replication group, backup and other parameters.</stentry>
+          <stentry>No</stentry>
+        </strow>       
+      </simpletable>      
+      </section>-->
+    <!--<section><title>Options formats</title>
+      <simpletable>
+        <sthead>
+          <stentry>Property Name</stentry>
+          <stentry>Description</stentry>
+          <stentry>Format</stentry>
+        </sthead>
+        <strow>
+          <stentry>GroupID</stentry>
+          <stentry>Backup copy group ID specified, the default is all replication groups.</stentry>
+          <stentry>GroupID:1000 or GroupID:[1000, 1001]</stentry>
+        </strow>
+        <strow>
+          <stentry>GroupName</stentry>
+          <stentry>Backup copy group name is specified, the default is all replication groups.</stentry>
+          <stentry>GroupName:"data1" or GroupName:["data1", "data2"]</stentry>
+        </strow>
+        <strow>
+          <stentry>Name</stentry>
+          <stentry>Backup name, default "YYYY-MM-DD-HH:mm:SS" Backup name time format.</stentry>
+          <stentry>Name:"backup-2014-1-1"</stentry>
+        </strow>
+        <strow>
+          <stentry>Path</stentry>
+          <stentry>Backup path, the default configuration parameters for the specified backup path.The path supports wildcards (g%: group name, h%: host name, s%:service name).</stentry>
+          <stentry>Path:"/opt/sequoiadb/backup/%g"</stentry>
+        </strow>
+        <strow>
+          <stentry>IsSubDir</stentry>
+          <stentry>The above Path configuration parameter configuration parameters are specified for the backup path subdircetory, the default is false.</stentry>
+          <stentry>IsSubDir:false</stentry>
+        </strow>
+        <strow>
+          <stentry>Prefix</stentry>
+          <stentry>Backup prefix, support wildcards (g%,h%,s%), The default is empty.</stentry>
+          <stentry>Prefix:"%g_bk_"</stentry>
+        </strow>
+        <strow>
+          <stentry>EnableDataDir</stentry>
+          <stentry>Date subdirectories feature is turned on, if the current date is automatically rurned on create a subdirectory "YYYY-MM-DD", the default according to false.</stentry>
+          <stentry>EnableDataDir:false</stentry>
+        </strow>
+        <strow>
+          <stentry>Description</stentry>
+          <stentry>Backup description</stentry>
+          <stentry>Description:"First backup"</stentry>
+        </strow>
+        <strow>
+          <stentry>EnsureInc</stentry>
+          <stentry>Whether to open an incremental backup, the default is false.</stentry>
+          <stentry>EnsureInc:false</stentry>
+        </strow>
+        <strow>
+          <stentry>OverWrite</stentry>
+          <stentry>Backup is covered with the same name exists, the default is false.</stentry>
+          <stentry>OverWrite:false</stentry>
+        </strow>
+      </simpletable>      
+      </section>-->
+    <p>&nbsp;&nbsp;<b>Options formats&nbsp;&nbsp;&nbsp;&nbsp;[GroupID]&nbsp;&nbsp;[GroupName]&nbsp;&nbsp;[Name]&nbsp;&nbsp;[Path]&nbsp;&nbsp;[IsSubDir]&nbsp;&nbsp;[Prefis]&nbsp;&nbsp;[EnableDataDir]&nbsp;&nbsp;[Description]&nbsp;&nbsp;[EnsureInc]&nbsp;&nbsp;[OverWrite]</b></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<b>GroupID</b></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; Backup copy group ID specified, the default is all replication groups. Example: GroupID:1000 or GroupID:[1000, 1001]</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<b>GroupName</b> </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; Backup copy group name is specified, the default is all replication groups. Example: GroupName:"data1" or GroupName:["data1", "data2"]</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<b>Name</b> </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; Backup name, default "YYYY-MM-DD-HH:mm:SS" Backup name time format. Example: Name:"backup-2014-1-1"</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<b>Path</b> </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; Backup path, the default configuration parameters for the specified backup path.The path supports wildcards (g%: group name, h%: host name, s%:service name). Example: Path:"/opt/sequoiadb/backup/%g"</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<b>IsSubDir</b> </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; The above Path configuration parameter configuration parameters are specified for the backup path subdircetory, the default is false. Example: GroupID:1000 or GroupID:[1000, 1001]</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<b>Prefix</b> </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; Backup prefix, support wildcards (g%,h%,s%), The default is empty. Example: Prefix:"%g_bk_"</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<b>EnableDataDir</b> </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; Date subdirectories feature is turned on, if the current date is automatically rurned on create a subdirectory "YYYY-MM-DD", the default according to false. Example: EnableDataDir:false</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<b>Description</b> </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; Backup description. Example: Description:"First backup"</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<b>EnsureInc</b> </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; Whether to open an incremental backup, the default is false. Example: EnsureInc:false</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<b>OverWrite</b> </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; Backup is covered with the same name exists, the default is false. Example: OverWrite:false</p>
+    <section><title>Example</title>
+      <ul>
+        <li><p>The entire database full backup.</p>
+          <p><codeblock>db.backupOffline({Name:"FullBackup1"})</codeblock></p></li>
+      </ul>
+      
+    </section>
+  </body>
+</topic>

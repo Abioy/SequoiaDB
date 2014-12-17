@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_dzh_3vh_hm">
+  <title>$min</title>
+  <body>
+    <section>
+      <title>Description</title>
+      <p>After recording the minimum packet, take pakcet returns the specified field of nested objects useing the dot operator(.) Reference field names.</p>
+    </section>
+    <section>
+      <title>Example</title>
+      <ul>
+        <li>After the recording of the group, return the minimum packet specified field. <codeblock>db.collectionspace.collection.aggregate({$group:{_id:"$dep",min_score:{$min:"$score"},Name:{$last:"$info.name"}}})</codeblock>
+          This grouping records by dep field, use <b>$min</b> returns the minimum value in each packet, the output field score a field named in_score, 
+          and use <xref
+          href="jlast_en.dita"
+          ><b>$last</b></xref> taken the last record in each group nested object name field value, the output field called name. Records are returned as follows: <codeblock>{
+  "min_score": 72,
+  "Name": "Kate"
+}
+{
+  "min_score": 69,
+  "Name": "Jim"
+}</codeblock></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="jmax_en.dita" format="dita" type="topic"></link>
+    <link href="javg_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

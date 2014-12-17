@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_kxr_njz_gm">
+  <title> db.createProcedure() </title>
+  <body>
+    <section><title>db.createProcedure(&lt;code>)</title>
+      <p>Create a stord procedure in the database object.</p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 5.9* 1.0*"
+        id="references_method_count_table">-->
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Required</stentry>
+        </sthead>
+        <strow>
+          <stentry>code</stentry>
+          <stentry>Custom Functions</stentry>
+          <stentry>Standard function definition, not a string type, input parameters can not use quotation marks. </stentry>
+          <stentry>Yes</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>Format</title>
+      <p>Definition Format createProcedure() method contains the code parameter, the parameter value is the standard fuction definition.</p>
+      <p><codeblock>createProcedure(&lt;code>)</codeblock></p>
+      <p><b>Description:</b><ul id="ul_p2q_bmw_ql">
+        <li> Recommended direct use stored procedures have been initialized global db, and the global db using authentication information currently executing the stored procedure session. such as:  <b>db.createProcedure( function getAll(){return
+          db.foo.bar.find();} )</b>.</li>
+        <li> Db initialization own form of <b>var db=new Sdb()</b>. DB the authentication information for the current session to execute the stored procedure. If you need to add other user name and password, as <b>var db=new Sdb('usrname','passwd')</b>. 
+          It should be noted that when the stored procedure can only be run on a connected db, db does not provide remote connection to other methods. Without 
+          the need for authentication, even if <b>var db = new Sdb('hostname', 'servicename')</b> statement is executed normally. Db still get local db.</li>
+        <li>Db role must be coordinated nodes. standalone mode does not provide the stored procedure functionality.</li>
+      </ul></p>
+    </section>
+    <section>
+      <title>Function definition</title>
+      <ul id="ul_rnt_h4w_ql">
+        <li><p>Function definition</p>
+          <p>1. function must contain the tunction name. Can not be used as: <b>function(x,y){return x+y;}</b></p>
+          <p>2. In the function definition can call other functions or function does not exist. But need to ensure the operation of all fuctions already exist.</p>
+          <p>3. globally unique function name. No overloading. </p>
+          <p>4. Each fuction are available in the whole system. Feel free to delete a stored procedure may cause others to fail.</p></li>
+        <li>Function parameters <p>native type of JS</p></li>
+        <li>Function outputs <p>Function for all standard output, standard error will be masked. While not recommend adding output statements in the function
+        definition or execution. The output may result in large number of stored procedures fail.</p></li>
+        <li>function return values <p>Function return value can be any type of data except for db. Such as: <b>function getCL(){return db.foo.bar;}</b></p></li>
+      </ul>
+    </section>
+    <section><title>Example</title>
+      <ul>
+        <li><p>Create a sum function</p>
+          <codeblock>db.createProcedure(function sum(x,y){return x+y;})</codeblock>
+          <p>After you crdate can be used <xref href="listProcedures_en.dita">db.listProcedures()</xref> function to view the information.</p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="listProcedures_en.dita" format="dita" type="topic"></link>
+    <link href="removeProcedure_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

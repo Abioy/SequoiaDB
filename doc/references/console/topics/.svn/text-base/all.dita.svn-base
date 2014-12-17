@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_all">
+  <title >$all</title>
+  <body>
+    <section><title>语法</title>
+      <p><codeblock>{&lt;字段名>:{$all:[&lt;值1>,&lt;值2>,...&lt;值N>]}}</codeblock></p>
+    </section>
+    <section><title>描述</title>
+      <p>$all的操作对象是数组类型的字段名，选择“&lt;字段名>”包含所有给定数组（[&lt;值1>,&lt;值2>,...&lt;值N>]）中的值。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>选择集合bar下name字段的值包含“Tom”和“Mike”的记录。</p>
+          <codeblock>db.foo.bar.find({name:{$all:["Tom","Mike"]}})</codeblock>
+          <p>因此，上面的语句会匹配集合bar中有name字段，且值形如下面数组的记录：</p>
+          <codeblock>["Tom","Mike",..]
+["Tom","Jhon","Mike",...]</codeblock>
+          <p>但是不会匹配集合bar下name字段值形如下面数组的记录</p>
+          <codeblock>["Tom","Jhon"]</codeblock>
+        </li>
+      </ul>
+      <note>
+        <p>使用$all操作一个非数组类型的字段的话，例如：db.foo.bar.find(age:{$all:[20]})，它等价于db.foo.bar.find({age:20})</p>
+      </note>
+    </section>
+  </body>
+  <related-links>
+    <link href="nin.dita" format="dita" type="topic"></link>
+    <link href="and.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/find.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/update.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

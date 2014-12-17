@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_vky_nvh_hm">
+  <title>$sum</title>
+  <body>
+    <section>
+      <title>Description</title>
+      <p>after recording group, returns the sum of each group in the specified field values for nested objects using the dot operator(.) Reference field names.</p>
+    </section>
+    <section>
+      <title>Example</title>
+      <ul>
+        <li>After recording the sum of the packet, the packet returns the specified field values. <codeblock>db.collectionspace.collection.aggregate({$group:{_id:"$dep",sum_score:{$sum:"$score"},Dep:{$first:"$dep"}}})</codeblock>
+          This sum dep field grouping records by using <b>$sum</b> return score in each grouping field value, the output field named sum_score, then use <xref href="jfirst_en.dita"><b>$first</b></xref>
+          take each packet dep first record field value, the output field name to Dep. Records are returned as follows: <codeblock>{
+  "sum_score": 888,
+  "Dep": "Electrospray Academy"
+}
+{
+  "sum_score": 476,
+  "Dep": "Computer Academy"
+}</codeblock></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="javg_en.dita" format="dita" type="topic"></link>
+    <link href="j$push_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

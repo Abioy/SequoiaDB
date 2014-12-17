@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_pww_bs1_yl">
+  <title>sql first()</title>
+  <body>
+    <section><title>first() 函数</title>
+      <p>选择范围内第一条数据。</p>
+    </section>
+    <section><title>语法</title>
+      <p><codeblock>first(field name)</codeblock></p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>选择表中第一条数据</p>
+          <p><codeblock>表中原始记录
+{a:1, b:2}
+{a:2, b:3}
+{a:3, b:3)
+
+SELECT FIRST(a) AS a, b FROM foo.bar GROUP BY b
+
+得到记录
+{a:1, b:2}
+{a:2, b:3)</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="sqmin.dita" format="dita" type="topic"></link>
+    <link href="sqlast.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

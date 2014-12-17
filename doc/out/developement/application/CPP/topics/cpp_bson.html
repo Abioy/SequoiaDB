@@ -1,0 +1,143 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="C++ BSON 简介"/>
+<meta name="description" content="C++ BSON 主要类 C++ BSON 用到4个类： bson::BSONObj ：创建 BSONObj 对象。 bson::BSONElement ：BSONObj对象由 BSONElement 对象组成，即 BSONElement 对象为 BSONObj 对象的字段或者元素，它是键值对。 bson::BSONObjBuilder ：BSONObjBuilder 用来实例化 BSONObj ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../developement/application/topics/application.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_l3k_vdn_jl"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>C++ BSON 简介</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_l3k_vdn_jl"><a name="topic_l3k_vdn_jl"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../developement/application/topics/application.html" title="SequoiaDB 应用程序开发"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB 应用程序开发</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../../topics/developement.html" title="开发指南">开发指南</a> / <a class="navheader_parent_path" href="../../../../developement/application/topics/application.html" title="SequoiaDB 应用程序开发">SequoiaDB 应用程序开发</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">C++ BSON 简介</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">C++ BSON 主要类</h2>
+      
+      <p class="p">C++ BSON 用到4个类：</p>
+
+      <p class="p"><strong class="ph b">bson::BSONObj</strong>：创建 BSONObj 对象。</p>
+
+      <p class="p"><strong class="ph b">bson::BSONElement</strong>：BSONObj对象由 BSONElement 对象组成，即 BSONElement 对象为 BSONObj 对象的字段或者元素，它是键值对。</p>
+
+      <p class="p"><strong class="ph b">bson::BSONObjBuilder</strong>：BSONObjBuilder 用来实例化 BSONObj 对象。</p>
+
+      <p class="p"><strong class="ph b">bson::BSONObjlterator</strong>：BSONObjlterator 用来遍历 BSONObj 对象中的元素。</p>
+
+      命名空间 bson 中定义了这些类的类型为：
+      <p class="p"><strong class="ph b">typedef bson::BSONElement be</strong>;</p>
+
+      <p class="p"><strong class="ph b">typedef bson::BSONObj bo</strong>;</p>
+
+      <p class="p"><strong class="ph b">typedef bson::BSONObjBuilder bob</strong>;</p>
+
+      <p class="p">另外，可以使用 bo::iterator 代替 BSONObjlterator。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">建立对象</h2>
+      
+      <p class="p">以下简单介绍如何创建用 CPP BSON 实例。详细内容请查阅 <a class="xref" href="../../../../bsoncpp/html/index.html">C++ BSON API</a></p>
+
+      <ul class="ul">
+        <li class="li">使用 BSONObject，BSONObjBuilder 建立对象<pre class="pre codeblock">#include "client.hpp"
+…
+using namespace bson ;
+BSONObj obj ;
+BSONObjBuilder b ;
+
+b.append("name","sam") ;
+b.append("age","24") ;
+obj = b.obj() ;
+或者
+obj = BSONObjBuilder().genOID().append("name","sam").append("age",24).obj() ;</pre>
+
+          <p class="p">另外，可以使用数据流的方法建立 BSONObj 对象。</p>
+<pre class="pre codeblock">BSONObj obj ;
+BSONObjBuilder b ;
+b&lt;&lt;"name"&lt;&lt;"sam"&lt;&lt;"age"&lt;&lt;"24" ;
+obj = b.obj() ;</pre>
+
+        </li>
+
+        <li class="li">使用宏 BSON 建立对象 <p class="p">C++ BSON 中定义还定义了一个 BSON 的宏，可以用它来快速地建立 BSONObj 对象。</p>
+<pre class="pre codeblock">BSONObj obj ;
+// int
+obj = BSON( "a"&lt;&lt;1 ) ; 
+// float
+obj = BSON( "b"&lt;&lt;3.14159265359 ) ; 
+// string
+obj = BSON( "foo"&lt;&lt;"bar" ) ; 
+// OID
+obj = BSON( GENOID ) ; 
+// bool
+obj = BSON( "flag"&lt;&lt;true"ret"&lt;&lt;false ) ;
+// object
+obj = BSON( "d"&lt;&lt;BSON("e"&lt;&lt;"hi!") ) ; 
+// array
+obj = BSON( "phone" &lt;&lt; BSON_ARRAY( "13800138123" &lt;&lt; "13800138124" ) ) ;
+// others, less then, greater then, etc
+obj = BSON( "g"&lt;&lt;LT&lt;&lt;99 ) ; </pre>
+
+        </li>
+
+        <li class="li">使用 fromjson 接口建立对象
+          <p class="p">此外，可以使用 fromjson.hpp 中的 fromjson() 将 json 字符串转换成 BSONObj 对象。</p>
+<pre class="pre codeblock">string s("{name:\"sam\"}") ;
+fromjson ( s, obj ) ;
+或者
+const char *r ="{
+                   firstName:\"Sam\",\
+                   lastName:\"Smith\",age:25,id:\"count\",\
+                   address:{streetAddress: \"25 3ndStreet\",\
+                   city:\"NewYork\",state:\"NY\",postalCode:\"10021\"},\
+                   phoneNumber:[{type: \"home\",number:\"212555-1234\"}]}" ;
+fromjson ( r, obj ) ;</pre>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../developement/application/topics/application.html" title="SequoiaDB 应用程序开发"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB 应用程序开发</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

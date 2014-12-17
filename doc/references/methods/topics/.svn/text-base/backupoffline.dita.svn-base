@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_4hb_z2k_kn">
+  <title>db.backupOffline()</title>
+  <body>
+    <section><title>backupOffline([options])</title>
+      <p>备份数据库。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>options</stentry>
+          <stentry>Json 对象</stentry>
+          <stentry>设定备份名，指定复制组，备份方式等参数</stentry>
+          <stentry>否</stentry>
+        </strow>       
+      </simpletable>      
+    </section>
+        
+    <section><title>Options格式</title>
+      <simpletable>
+        <sthead>
+          <stentry>属性名</stentry>
+          <stentry>描述</stentry>
+          <stentry>格式</stentry>
+        </sthead>
+        <strow>
+          <stentry>GroupID</stentry>
+          <stentry>指定备份的复制组 ID，缺省为所有复制组</stentry>
+          <stentry>GroupID:1000 或 GroupID:[1000, 1001]</stentry>
+        </strow>
+        <strow>
+          <stentry>GroupName</stentry>
+          <stentry>指定备份的复制组名，缺省为所有复制组</stentry>
+          <stentry>GroupName:"data1" 或 GroupName:["data1", "data2"]</stentry>
+        </strow>
+        <strow>
+          <stentry>Name</stentry>
+          <stentry>备份名称，缺省为“YYYY-MM-DD-HH:mm:SS”时间格式的备份名</stentry>
+          <stentry>Name:"backup-2014-1-1"</stentry>
+        </strow>
+        <strow>
+          <stentry>Path</stentry>
+          <stentry>备份路径，缺省为配置参数指定的备份路径。<fig></fig>该路径支持通配符（%g/%G: group name, %h/%H: host name, %s/%S:service name）</stentry>
+          <stentry>Path:"/opt/sequoiadb/backup/%g"</stentry>
+        </strow>
+        <strow>
+          <stentry>IsSubDir</stentry>
+          <stentry>上述 Path 参数所配置的路径是否为配置参数指定的备份路径的子目录，缺省为 false</stentry>
+          <stentry>IsSubDir:false</stentry>
+        </strow>
+        <strow>
+          <stentry>Prefix</stentry>
+          <stentry>备份前缀名，支持通配符（%g,%G,%h,%H,%s,%S），缺省为空</stentry>
+          <stentry>Prefix:"%g_bk_"</stentry>
+        </strow>
+        <strow>
+          <stentry>EnableDataDir</stentry>
+          <stentry>是否开启日期子目录功能，如果开启则会自动根据当前日期创建“YYYY-MM-DD”的子目录，缺省为 false</stentry>
+          <stentry>EnableDataDir:false</stentry>
+        </strow>
+        <strow>
+          <stentry>Description</stentry>
+          <stentry>备份描述</stentry>
+          <stentry>Description:"First backup"</stentry>
+        </strow>
+        <strow>
+          <stentry>EnsureInc</stentry>
+          <stentry>是否开启增量备份，缺省为 false</stentry>
+          <stentry>EnsureInc:false</stentry>
+        </strow>
+        <strow>
+          <stentry>OverWrite</stentry>
+          <stentry>存在同名备份是否覆盖，缺省为 false</stentry>
+          <stentry>OverWrite:false</stentry>
+        </strow>
+      </simpletable>      
+      </section>
+    
+    <section><title>示例</title>
+      <ul>
+        <li><p>对整个数据库进行全量备份</p>
+          <p><codeblock>db.backupOffline({Name:"FullBackup1"})</codeblock></p></li>
+      </ul>      
+    </section>
+  </body>
+</topic>

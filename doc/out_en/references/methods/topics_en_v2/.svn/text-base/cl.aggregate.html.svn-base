@@ -1,0 +1,232 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="db.collectionspace.collection.aggregate()"/>
+<meta name="description" content="NAME aggregate - retrieve the documents from the collection in the SequoiaDB and return a cursor. SYNOPSIS db.collectionspace.collection.aggregate ( &lt;subOp&gt;... ) CATEGORY Collection DESCRIPTION The ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../references/methods/topics_en_v2/methodlist_en_v2.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_fzj_qdm_5n"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>db.collectionspace.collection.aggregate()</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_fzj_qdm_5n"><a name="topic_fzj_qdm_5n"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../references/methods/topics_en_v2/methodlist_en_v2.html" title="SequoiaDB JavaScript Method List"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB JavaScript Method List</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/references_en.html" title="Reference">Reference</a> / <a class="navheader_parent_path" href="../../../references/methods/topics_en_v2/methodlist_en_v2.html" title="SequoiaDB JavaScript Method List">SequoiaDB JavaScript Method List</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">db.collectionspace.collection.aggregate()</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">NAME</h2>
+      
+      <p class="p">aggregate - retrieve the documents from the collection in the SequoiaDB and return a cursor.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">SYNOPSIS</h2>
+      
+      <p class="p"/>
+<span class="keyword apiname">db.collectionspace.collection.aggregate</span>(<span class="keyword parmname">&lt;subOp&gt;...</span>)
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">CATEGORY</h2>
+      
+      <p class="p"/>
+Collection
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">DESCRIPTION</h2>
+       
+      <p class="p">The functions of aggregate() and find() are pretty similar to each other. It also retrieves the documents from the collection in the SequoiaDB and return a cursor.</p>
+
+      <dl class="dl parml">        
+        
+          <dt class="dt pt dlterm">subOp (json object)</dt>
+
+          <dd class="dd pd">Sub-operation, 1 to N sub-operations can be filled in the aggregate() method.
+            <p class="p">aggregate() method has only one parameter subOp, which represents 1~N sub-operations,each sub-operation is a json 
+              object, separated by commas sub-operation. Aggregation framework supports the following Sub-operation parameters:</p>
+
+            <dl class="dl parml">              
+              
+                <dt class="dt pt dlterm">$project</dt>
+
+                <dd class="dd pd">Select the output fields by specifying field names, 1 stands for output, 0 means do not output. The rename of fields can be realized.</dd>
+
+                <dd class="dd pd">{$project:{field1:1,field:0,aliase:"$field3"}}</dd>
+
+              
+              
+                <dt class="dt pt dlterm">$match</dt>
+
+                <dd class="dd pd">Select records which match the criteria from the collection, equivalent to the "WHERE" command in SQL.</dd>
+
+                <dd class="dd pd">{$match:{field:{$lte:value}}}</dd>
+                
+              
+              
+                <dt class="dt pt dlterm">$limit</dt>
+
+                <dd class="dd pd">Limit the number of returned records.</dd>
+
+                <dd class="dd pd">{$limit:10}</dd>
+
+              
+              
+                <dt class="dt pt dlterm">$skip</dt>
+
+                <dd class="dd pd">Control the starting point of the result set, in other words, skip specified number of records in the result set.</dd>
+
+                <dd class="dd pd">{$skip:5}</dd>
+
+              
+              
+                <dt class="dt pt dlterm">$group</dt>
+
+                <dd class="dd pd">Divide the records into groups, similar to the "group by" command in SQL, specify the grouping field by "_id".</dd>
+
+                <dd class="dd pd">{$group:{_id:"$field"}}</dd>
+
+              
+              
+                <dt class="dt pt dlterm">$sort</dt>
+
+                <dd class="dd pd">Sort the result set. 1 for ascending while 0 for descending.</dd>
+
+                <dd class="dd pd">{$sort:{field1:1,field2:-1,...}}</dd>
+
+              
+            </dl>
+</dd>
+
+                
+      </dl>
+
+      <div class="note note"><span class="notetitle">Note:</span> 
+        <ul class="ul">
+          <li class="li"><strong class="ph b">Description: </strong>aggregate() can have any number of sub-operations, but please be careful about the syntax of the parameters.</li>
+
+        </ul>
+
+      </div>
+      
+    </div>
+    
+    <div class="section"><h2 class="title sectiontitle">Examples</h2>
+      
+      <p class="p">Assume a collection stores records in following format:</p>
+
+      <pre class="pre codeblock">{
+  no:1000,
+  score:80,
+  interest:["basketball","football"],
+  major:"Computer Science and Technology",
+  dep:"Computer Academy",
+  info:{
+        name:"Tom",
+        age:25,
+        gender:"male"
+        }
+        }</pre>
+
+      <p class="p">Select records according to the criteria, and specify the returned field name.</p>
+
+      <pre class="pre codeblock">db.collectionspace.collection.aggregate({$match:{$and:[{no:{$gt:1002}},{no:{$lt:1015}},{dep:"Computer Academy"}]}},
+{$project:{no:1,"info.name":1,major:1}})</pre>
+
+      <p class="p">This aggregate operation firstly uses $match to select the records match the criteria, then uses $project to specify the names of the returned fields.</p>
+
+      <pre class="pre codeblock">{
+  "no": 1003,
+  "info.name": "Sam",
+  "major": "Computer Software and Theory"
+}
+{
+  "no": 1004,
+  "info.name": "Coll",
+  "major": "Computer Engineering"
+}
+{
+  "no": 1005,
+  "info.name": "Jim",
+  "major": "Computer Engineering"
+  }</pre>
+
+      <p class="p">Select records by criteria and divide the selected records into groups.</p>
+
+      <pre class="pre codeblock">db.collectionspace.collection.aggregate({$match:{dep:"Computer Academy"}},{$group:{_id:"$major",Major:{$first:"$major"},
+avg_age:{$avg:"$info.age"}}})</pre>
+
+      <p class="p">This operation firstly uses $match to select records that match the selecting criteria, then uses $group to divide the selected records by field "major", and uses $avg to return the average of the "age" field in each group.</p>
+
+      <pre class="pre codeblock">{
+  "Major": "Computer Engineering",
+  "avg_age": 25
+}
+{
+  "Major": "Computer Science and Technology",
+  "avg_age": 22.5
+}
+{
+  "Major": "Computer Software and Theory",
+  "avg_age": 26
+  }</pre>
+
+      <p class="p">Select records by criteria, then group and sort the selected records, limit the starting point of the result set and the number of returned records.</p>
+
+      <pre class="pre codeblock">db.collectionspace.collection.aggregate({$match:{interest:{$exists:1}}},{$group:{_id:"$major",avg_age:{$avg:"$info.age"},
+major:{$first:"$major"}}},{$sort:{avg_age:-1,major:-1}},{$skip:2},{$limit:3})</pre>
+
+      <p class="p">This aggregate operation firstly uses $match to select records match the criteria, then uses $group to group the records by "major", uses $avg to return the average of "age" field in each group, and sort the records in descending order, uses $skip to specify the starting point of the returned result, and $limit to limit the number of returned records.</p>
+
+      <pre class="pre codeblock">{
+  "avg_age": 25,
+  "major": "Computer Science and Technology"
+}
+{
+  "avg_age": 22,
+  "major": "Computer Software and Theory"
+}
+{
+  "avg_age": 22,
+  "major": "Physics"
+}</pre>
+
+    </div>
+
+  </div>
+  
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../references/methods/topics_en_v2/methodlist_en_v2.html" title="SequoiaDB JavaScript Method List"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB JavaScript Method List</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

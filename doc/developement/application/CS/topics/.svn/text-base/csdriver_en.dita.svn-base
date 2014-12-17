@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="application_cs_driver_en">
+  <title>C# Driver</title>
+    <body>
+        <section>
+            <title>Outline</title>
+            <p>SequoiaDB C# driver provides an interface database operations, and cluster operations. Database operations, including connectivity, users create 
+                a database to delete, add or delete data to the investigation, remove the index is created, the snapshot acquisition and replacement, as well as 
+                the creation of collections adn collection space deletion operations. Cluster operations including operations management and data nodes replica 
+                groups, such as starting, stopping replica groups, start, stop data nodes, obtain data from the master node, a collection off films.</p>        
+        </section>
+        <!--<section>
+            <title>下载和使用</title>
+            <p>首先，从官网上下载C#驱动包“sdbcs.dll”，然后，在Visual Studio中引用该驱动包，或者命令行编译时指定引用的外部链接库，比如“csc /target:exe /reference:sdbcs.dll Find.cs Common.cs”，即可使用相关API。在安装目录下的smaples\C#目录可以找到C#驱动的完整示例。</p>
+            </section>
+            <section>
+            <title>命名空间</title>
+            <p>在使用C#驱动的相关API之前，你必须在源代码中添加如下的using申明：</p>
+            <p>using SequoiaDB;</p>
+            <p>using SequoiaDB.Bson;</p>
+            </section>
+            <section>
+            <title>BSON库API</title>
+            <p>SequoiaDB数据库C#驱动使用了MongoDB的BSON库，详细介绍可以参照MongoDB官方文档：<xref href="http://docs.mongodb.org/ecosystem/tutorial/use-csharp-driver/#the-bson-library"></xref></p>
+            </section></section>-->
+        
+        <section>
+            <title>C# class instance</title>
+            <p>C# class instance two drives. A database operation, another operation for the cluster.</p>
+            <ul>
+                <li>Examples of database operations
+                    <lines>SequoiaDB stored in the database in divided into three levels:
+  1) database
+  2) collection of space
+  3) collection</lines>
+                    <!--<p>每一个中的集合空间没有物理上限，每个集合空间在单系统内存放为一个单独的文件，因此集合空间的数量取决于磁盘和内存的大小。每个集合空间可以包含最多4096个集合。每个集合可以包含多条记录。在一台物理系统内，每个集合空间最大256GB。</p>-->
+                    <p>Therefore, database operations, respectively, connected by three class represents a collection space, a collection of instances of a class 
+                    represents another cursor.</p>
+                    <simpletable>
+                        <strow>
+                            <stentry>SequoiaDB</stentry>
+                            <stentry>Database instance</stentry>
+                            <stentry>Represents a single database connection</stentry>
+                        </strow>
+                        <strow>
+                            <stentry>CollectionSpace</stentry>
+                            <stentry>Examples of the collection space</stentry>
+                            <stentry>Represents a separate set of space</stentry>
+                        </strow>
+                        <strow>
+                            <stentry>DBCollection</stentry>
+                            <stentry>Collection instance</stentry>
+                            <stentry>A separate set of representatives</stentry>
+                        </strow>
+                        <strow>
+                            <stentry>DBCursor</stentry>
+                            <stentry>Cursor instance</stentry> 
+                            <stentry>Represents a query result sets generated</stentry> 
+                        </strow>              
+                    </simpletable>
+                    <p>C# driver needs to use a different instance to operate. For example, the operation requires a cursor to read the data instances, and 
+                    create a table space is required database instance.</p>
+                </li>
+                <li>Examples of cluster operation <lines>SequoiaDB database cluseer operations are divided into two levels:
+  1) Replica Group
+  2) Data Node</lines>
+                    <note>Replica group contains three types: Coordination replica group,
+                        cataloging replica group, the data replica group.</note>
+                    <p>Replica group instance and instance data node instances can be expressed in
+                        two classes.</p>
+                    <simpletable>
+                        <strow>
+                            <stentry>Shard</stentry>
+                            <stentry>Replica group class</stentry>
+                            <stentry>Replica group instance represents a separate replica
+                                group</stentry>
+                        </strow>
+                        <strow>
+                            <stentry>Node</stentry>
+                            <stentry>Data node class</stentry>
+                            <stentry>Data node instance represents a single data node</stentry>
+                        </strow>
+                    </simpletable>
+                    <p>Undoubtedly related to the cluster operation requires the use of replica
+                        groups and data node instance.</p>
+                    <p>Examples Shard for management replica group. Its operations include start,
+                        stop replica groups, access to state replica group node name
+                        information, the number of messages.</p>
+                    <p>Examples Node for managing node. Its operations include start, stop specified
+                        node for the specified node instance, to obtain a master-slave node
+                        instance, access to data node address information.</p></li>
+            </ul>
+        </section>      
+        <section>
+            <title>Thread safety</title>
+            <p>For each connection, which produces a set of space, a collection of utilities a socket. Therefore, in a multi-threaded system, you must ensure 
+                that each thread is not the same tim for the same socket, send or receive data at the same time. Generally it is not recommended to use multiple 
+                threads to operate together with its other instance of a connection instance generated. If each thread uses its own connection as well as other examples of 
+                instances generated, you can ensure thread safety.</p>          
+        </section>
+        <section>
+            <title>Error Messages</title>
+            <p>Each interface will throw SequoiaDB.BaseException and System.Exception exception, corresponding to the exception information and client-side local 
+                database engine to return exception information, which can be obtained by exception information BaseException the exception class ErrorCode, 
+                ErrorType and Message properties get.</p>          
+        </section>      
+        <!--    
+            <section>
+            <title>数据库操作</title>
+            <ul>
+            <li>连接数据库和身份验证
+            <p>若数据库没有创建用户，则可以匿名连接到数据库：</p><codeblock>string addr = "127.0.0.1:50000";
+            Sequoiadb sdb = newSequoiadb(addr);
+            try
+            {
+            sdb.Connect();
+            }
+            catch (BaseException e)
+            {
+            Console.WriteLine("ErrorCode:{0}, ErrorType:{1}", e.ErrorCode, e.ErrorType);
+            Console.WriteLine(e.Message);
+            }
+            catch (System.Exception e)
+            {
+            Console.WriteLine(e.StackTrace);
+            }</codeblock><p>否则，连接的时候必须指定用户名和密码：</p><codeblock>string addr = "127.0.0.1:50000";
+            Sequoiadb sdb = newSequoiadb(addr);
+            try
+            {
+            sdb.Connect("testusr", "testpwd");
+            }
+            catch (BaseException e)
+            {
+            Console.WriteLine("ErrorCode:{0}, ErrorType:{1}", e.ErrorCode, e.ErrorType);
+            Console.WriteLine(e.Message);
+            }
+            catch (System.Exception e)
+            {
+            Console.WriteLine(e.StackTrace);
+            }</codeblock><p>这里给出了异常信息的try和catch块，下面的所有操作都会抛出同样的异常信息，因此不再给出相关的try和catch块。</p></li>
+            <li>断开与数据库连接
+            <codeblock>// do not forget to disconnect from sdb
+            sdb.Disconnect();</codeblock>
+            </li>
+            <li>得到或创建集合空间和集合
+            <p>根据名字，得到对应的CollectionSpace，如果不存在，则创建：</p><codeblock>// create collectionspace, if collectionspace exists get it
+            string csName = "TestCS";
+            CollectionSpace cs = sdb.GetCollecitonSpace(csName);
+            if (cs == null)
+            cs = sdb.CreateCollectionSpace(csName);
+            // or sdb.CreateCollectionSpace(csName, pageSize), need to specify the pageSize</codeblock><p>根据名字，得到对应的Collection，如果不存在，则创建：</p><codeblock>// create collection, if collection exists get it
+            string clName = "TestCL";
+            DBCollection dbc = cs.GetCollection(clName);
+            if (dbc == null)
+            dbc = cs.CreateCollection(clName);
+            //or cs.createCollection(collectionName, options), create collection with some options</codeblock>
+            </li>
+            <li>插入操作 <p>创建需要插入的数据BsonDocument并插入：</p>
+            <codeblock>BsonDocument insertor = newBsonDocument();
+            string date = DateTime.Now.ToString();
+            insertor.Add("operation", "Insert");
+            insertor.Add("date", date);
+            ObjectId id = dbc.Insert(insertor);
+            </codeblock><p>当然，BsonDocument中还可以嵌套BsonDocument对象；而且你还可以直接new一个完整的BsonDocument，而不需要通过Add方法：</p><codeblock>BsonDocumentinsertor = newBsonDocument
+            {
+            {"FirstName","John"},
+            {"LastName","Smith"},
+            {"Age",50},
+            {"id",i},
+            {"Address",
+            newBsonDocument
+            {
+            {"StreetAddress","212ndStreet"},
+            {"City","NewYork"},
+            {"State","NY"},
+            {"PostalCode","10021"}
+            }
+            },
+            
+            {"PhoneNumber",
+            newBsonDocument
+            {
+            {"Type","Home"},
+            {"Number","212555-1234"}
+            }
+            }
+            };
+            插入多条数据：
+            //bulkinsert
+            List&lt;BsonDocument> insertor=newList &lt;BsonDocument> ();
+            for(inti=0;i&lt;10;i++)
+            {
+            BsonDocumentobj=newBsonDocument();
+            obj.Add("operation","BulkInsert");
+            obj.Add("date",DateTime.Now.ToString());
+            insertor.Add(obj);
+            }
+            dbc.BulkInsert(insertor,0);</codeblock></li>
+            <li>索引操作
+            <p>创建索引：</p><codeblock>//createindexkey,indexonattribute'Id'byASC(1)/DESC(-1)
+            BsonDocument key = newBsonDocument();
+            key.Add("id", 1);
+            string name = "index name";
+            bool isUnique = true;
+            bool isEnforced = true;
+            dbc.CreateIndex(name, key, isUnique, isEnforced);</codeblock><p>删除索引：</p><codeblock>string name = "index name";
+            dbc.DropIndex(name);</codeblock></li>
+            <li>查询操作 <p>进行查询操作，需要使用游标对查询结果进行遍历，而且可以先得到当前Collection的索引，如果不为空，可作为制定访问计划(hint)用于查询：
+            </p><codeblock>DBCursor icursor = dbc.GetIndex(name);
+            BsonDocument index = icursor.Current();   </codeblock><p>
+            构建相应的BsonDocument对象用于查询，包括：查询匹配规则(matcher，包含相应的查询条件)、域选择(selector)、排序规则(orderBy，增序或降序)、制定访问计划(hint)、跳过记录个数(0)，返回记录个数(-1：返回所有数据)。查询后，得到对应的Cursor，用于遍历查询得到的结果：
+            </p><codeblock>BsonDocument matcher = newBsonDocument();
+            BsonDocument conditon = newBsonDocument();
+            conditon.Add("$gte", 0);
+            conditon.Add("$lte", 9);
+            matcher.Add("id", conditon);
+            BsonDocument selector = newBsonDocument();
+            selector.Add("id", null);
+            selector.Add("Age", null);
+            BsonDocument orderBy = newBsonDocument();
+            orderBy.Add("id", -1);
+            BsonDocument hint = null;
+            if (index != null)
+            hint = index;
+            else
+            hint = newBsonDocument();
+            DBCursor cursor = dbc.Query(matcher, selector, orderBy, hint, 0, -1);    </codeblock><p>使用DBCursor游标进行遍历：</p><codeblock>while (cursor.Next() != null)
+            Console.WriteLine(cursor.Current());</codeblock></li>
+            <li>删除操作
+            <p>构建相应的BsonDocument对象，用于设置删除的条件：</p><codeblock>//createthedeletecondition
+            BsonDocument drop = newBsonDocument();
+            drop.Add("Last Name", "Smith");
+            coll.Delete(drop);</codeblock></li>
+            <li>更新操作
+            <p>构建相应的BsonDocument对象，用于设置更新条件，你还可以创建DBQuery对象封装所有的查询或更新规则：</p><codeblock>DBQuery query = newDBQuery();
+            BsonDocument updater = newBsonDocument();
+            BsonDocument matcher = newBsonDocument();
+            BsonDocument modifier = newBsonDocument();
+            updater.Add("Age", 25);
+            modifier.Add("$set", updater);
+            matcher.Add("First Name", "John");
+            query.Matcher = matcher;
+            query.Modifier = modifier;
+            dbc.Update(query);       </codeblock><p>更新操作，如果没有满足matcher的条件，则插入此记录：</p><codeblock>dbc.Upsert(query);</codeblock></li>
+            
+            </ul>
+            </section>-->
+    </body>
+  <!--<body>
+    <section>
+      <title>Introduction</title>
+      <p>This page is a brief introduction to C# driver of Sequoiadb. Please refer to <xref href="..\..\..\..\..\cs\html\index.html" format="html">C# online API</xref> for more.</p>
+    </section>
+    <section>
+      <title>Load and Using</title>
+      <p>At fiesr,loading C# driver library "sdbcs.dll" from website,then recommending it to Visual
+        Studio or specifying external-linking library when command-line compiler,such as "csc
+        /target:exe /reference:sdbcs.dll Find.cs Common.cs".You can find the complete C# samples in
+        the installation directory "smaples\C#".</p>
+    </section>
+    <section>
+      <title>NameSpace</title>
+      <p>Before using related API about C# driver,you must add the following "using" in the source
+        code:</p>
+      <p>using SequoiaDB;</p>
+      <p>using SequoiaDB.Bson;</p>
+    </section>
+    <section>
+      <title>Database Operations</title>
+      <ul>
+        <li>Connecting Database and Authentication<p>If the database doesnot create users,then it
+            can connect to database
+            anonymously:</p><codeblock>string addr = "127.0.0.1:50000";
+Sequoiadb sdb = newSequoiadb(addr);
+try
+    {
+        sdb.Connect();
+    }
+catch (BaseException e)
+    {
+Console.WriteLine("ErrorCode:{0}, ErrorType:{1}", e.ErrorCode, e.ErrorType);
+Console.WriteLine(e.Message);
+    }
+catch (System.Exception e)
+    {
+Console.WriteLine(e.StackTrace);
+}</codeblock><p>Otherwise,you
+            must specify the usename and
+            password:</p><codeblock>string addr = "127.0.0.1:50000";
+Sequoiadb sdb = newSequoiadb(addr);
+try
+    {
+sdb.Connect("testusr", "testpwd");
+    }
+catch (BaseException e)
+    {
+Console.WriteLine("ErrorCode:{0}, ErrorType:{1}", e.ErrorCode, e.ErrorType);
+Console.WriteLine(e.Message);
+    }
+catch (System.Exception e)
+    {
+Console.WriteLine(e.StackTrace);
+}</codeblock><p>"try"
+            and "catch" are the execption information,the following operations will throw the same
+            execption as well,so no longer giving relevant execptions.</p></li>
+        <li>Close
+          Connection<codeblock>// do not forget to disconnect from sdb
+sdb.Disconnect();</codeblock></li>
+        <li>Get and Create collectionspaces and collections<p>According the name to get
+            collectionspace,if it does not exist,then
+            create:</p><codeblock>// create collectionspace, if collectionspace exists get it
+string csName = "TestCS";
+CollectionSpace cs = sdb.GetCollecitonSpace(csName);
+if (cs == null)
+cs = sdb.CreateCollectionSpace(csName);
+// or sdb.CreateCollectionSpace(csName, pageSize), need to specify the pageSize</codeblock><p>According
+            the name to get collection,if it does not exist,then
+          create:</p><codeblock>// create collection, if collection exists get it
+string clName = "TestCL";
+DBCollection dbc = cs.GetCollection(clName);
+if (dbc == null)
+dbc = cs.CreateCollection(clName);
+//or cs.createCollection(collectionName, options), create collection with some options</codeblock></li>
+        <li>Insert<p>create BsonDocument object and
+            insert:</p><codeblock>BsonDocument insertor = newBsonDocument();
+string date = DateTime.Now.ToString();
+    insertor.Add("operation", "Insert");
+    insertor.Add("date", date);
+ObjectId id = dbc.Insert(insertor);
+           </codeblock><p>Of
+            course,BsonDocument object can be nested, and you can create a new complete BsonDocument
+            directly,not use the method
+          "Add":</p><codeblock>BsonDocumentinsertor = newBsonDocument
+{
+  {"FirstName","John"},
+  {"LastName","Smith"},
+  {"Age",50},
+  {"id",i},
+  {"Address",
+     newBsonDocument
+       {
+          {"StreetAddress","212ndStreet"},
+          {"City","NewYork"},
+          {"State","NY"},
+          {"PostalCode","10021"}
+            }
+         },
+
+  {"PhoneNumber",
+     newBsonDocument
+         {
+           {"Type","Home"},
+           {"Number","212555-1234"}
+              }
+           }
+};
+//insert multiple records
+//bulkinsert
+List&lt;BsonDocument> insertor=newList &lt;BsonDocument> ();
+for(inti=0;i&lt;10;i++)
+{
+BsonDocumentobj=newBsonDocument();
+obj.Add("operation","BulkInsert");
+obj.Add("date",DateTime.Now.ToString());
+insertor.Add(obj);
+}
+dbc.BulkInsert(insertor,0);</codeblock></li>
+        <li>Index<p>create
+            index:</p><codeblock>//createindexkey,indexonattribute'Id'byASC(1)/DESC(-1)
+BsonDocument key = newBsonDocument();
+key.Add("id", 1);
+string name = "index name";
+bool isUnique = true;
+bool isEnforced = true;
+dbc.CreateIndex(name, key, isUnique, isEnforced);</codeblock><p>drop
+            index:</p><codeblock>string name = "index name";
+dbc.DropIndex(name);</codeblock></li>
+        <li>Query<p>In a query,a cursor object is used to store the result set of a query,and it can
+            get the index of current collection at first,if the index is not null,you can specify
+            the access plan(hint) for
+            query:</p><codeblock>DBCursor icursor = dbc.GetIndex(name);
+BsonDocument index = icursor.Current();   </codeblock><p>Built
+            BsonDocument object for query,including:query matching rules(matcher)、fields
+            select(selector)、ordering(orderBy,asc or desc)、access plan(hint)、the number of skipped
+            records(0),the number of returned records(-1:return all records).after querying,get the
+            corresponding cursor to iterate the result set:
+            </p><codeblock>BsonDocument matcher = newBsonDocument();
+BsonDocument conditon = newBsonDocument();
+    conditon.Add("$gte", 0);
+    conditon.Add("$lte", 9);
+    matcher.Add("id", conditon);
+BsonDocument selector = newBsonDocument();
+    selector.Add("id", null);
+    selector.Add("Age", null);
+BsonDocument orderBy = newBsonDocument();
+    orderBy.Add("id", -1);
+BsonDocument hint = null;
+if (index != null)
+        hint = index;
+else
+        hint = newBsonDocument();
+DBCursor cursor = dbc.Query(matcher, selector, orderBy, hint, 0, -1);    </codeblock><p>Using
+            DBCursor to
+          iterate:</p><codeblock>while (cursor.Next() != null)
+Console.WriteLine(cursor.Current());</codeblock></li>
+        <li>Drop <p>Built BsonDocument object to set the conditions for drop
+          operation:</p><codeblock>//createthedeletecondition
+BsonDocument drop = newBsonDocument();
+drop.Add("Last Name", "Smith");
+coll.Delete(drop);</codeblock></li>
+        <li>Update<p>Built BsonDocument object to set the conditions for update operation,you can
+            also create DBQuery object to encapsulate all quering or updating
+            rules:</p><codeblock>DBQuery query = newDBQuery();
+BsonDocument updater = newBsonDocument();
+BsonDocument matcher = newBsonDocument();
+BsonDocument modifier = newBsonDocument();
+updater.Add("Age", 25);
+modifier.Add("$set", updater);
+matcher.Add("First Name", "John");
+query.Matcher = matcher;
+query.Modifier = modifier;
+dbc.Update(query);       </codeblock><p>If
+            it does not match the "matcher" condition,then insert the
+          record:</p><codeblock>dbc.Upsert(query);</codeblock></li>
+        
+      </ul>
+    </section>
+  </body>-->
+</topic>

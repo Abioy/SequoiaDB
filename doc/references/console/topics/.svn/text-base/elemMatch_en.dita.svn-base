@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_elemMatch">
+  <title >$elemMatch</title>
+  <body>
+    <section><title>Grammar</title>
+      <p>{&lt;filed>:{$elemMatch:&lt;value>}}</p>
+    </section>
+    <section><title>Description</title>
+      <p>return all record in collection where the '&lt;field name>'  match the specified
+        '&lt;value>'.</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>array object match</p>
+          <codeblock>db.foo.bar.find({"add.0":{$elemMatch:"china"},"add.1":{$elemMatch:"ABC"}})</codeblock>
+          <p>return all records in the collection <i>bar</i> where the value of first element is
+            "china" and the value of second element is "ABC" in the array <i>add</i>.</p>
+        </li>
+        <li>
+          <p> json object match </p>
+          <p><codeblock>db.foo.bar.find({content:{$elemMatch:{name:"Tom",phone:123}}})</codeblock></p>
+          <p>field <i>content</i> is a nested json object,this operation is to match all records in
+            the collection <i>bar </i>where the field <i>name</i> has the value <i>"Tom"</i> and the
+            field <i>phone</i> has the value <i>"123"</i> in the nested object <i>content</i>.</p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="exists_en.dita" format="dita" type="topic"></link>
+    <link href="size_en.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/find_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

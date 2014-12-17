@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd
+END
+mapgroup.ent
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/mapgroup.ent
+END
+tbl_xml.mod
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/tbl_xml.mod
+END
+task.mod
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/task.mod
+END
+meta_xml.mod
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/meta_xml.mod
+END
+software-domain.ent
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/software-domain.ent
+END
+ditabase.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/ditabase.dtd
+END
+map.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/map.dtd
+END
+topic.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/topic.dtd
+END
+topic_class.ent
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/topic_class.ent
+END
+highlight-domain.mod
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/highlight-domain.mod
+END
+map.mod
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/map.mod
+END
+topic.mod
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/topic.mod
+END
+utilities-domain.mod
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/utilities-domain.mod
+END
+topic_defn.ent
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/topic_defn.ent
+END
+ui-domain.mod
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/ui-domain.mod
+END
+highlight-domain.ent
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/highlight-domain.ent
+END
+programming-domain.mod
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/programming-domain.mod
+END
+concept.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/concept.dtd
+END
+utilities-domain.ent
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/utilities-domain.ent
+END
+ui-domain.ent
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/ui-domain.ent
+END
+reference.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/reference.dtd
+END
+mapgroup.mod
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/mapgroup.mod
+END
+concept.mod
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/concept.mod
+END
+reference.mod
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/reference.mod
+END
+programming-domain.ent
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/programming-domain.ent
+END
+task.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/task.dtd
+END
+software-domain.mod
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.specialization.dita132/dtd/software-domain.mod
+END

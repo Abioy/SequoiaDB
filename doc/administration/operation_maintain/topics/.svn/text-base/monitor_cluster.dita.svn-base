@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_fw2_ygd_pl">
+  <title>监控集群</title>
+  <body>
+    <ol>
+      <li>连接到协调节点<codeblock>$ /opt/sequoiadb/bin/sdb
+> var db = new Sdb("localhost", 11810) ;</codeblock></li>
+      <li>得到集群状态<codeblock>> db.listReplicaGroups()
+{
+  "Group": [
+    {
+      "dbpath": "/home/sequoiadb/sequoiadb/cata",
+      "HostName": "vmsvr1-rhel-x64",
+      "Service": [
+        {
+          "Type": 0,
+          "Name": "11800"
+        },</codeblock></li>
+    </ol>
+  </body>
+</topic>

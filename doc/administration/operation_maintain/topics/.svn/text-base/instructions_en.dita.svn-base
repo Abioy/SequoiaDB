@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_btw_st3_y4">
+  <title>SequoiaDB Backup Recovery Instruction</title>
+  <body>
+    <p>Detail and examples of backup and recovery of SequoiaDB.</p>
+    <section>
+      <title>Backup Operations</title>
+      <p>The backup of SequoiaDB is executed on the sdb client with specific schema. Related functions include: <xref href="../../../references/methods/topics_en_v2/db.backupoffline.dita">db.backupOffline()</xref>, <xref href="../../../references/methods/topics_en_v2/db.listBackup.dita">db.listBackup()</xref>, <xref href="../../../references/methods/topics_en_v2/db.removeBackup.dita">db.removeBackup()</xref>. Off-line backup is supported, but add, update, delete actions will be suspend during the backup process, only query is available.</p>
+      <p>There are two types of back up:</p>
+      <ul>
+        <li><b>Full Backup</b>: back up the whole database with data, settings and logs.</li>
+        <li><b>Incremental Backup</b>: back up the new updated data, log or settings after the last backup.</li>
+      </ul>      
+    </section>
+    <section>
+      <title><i>Backup Instructions:</i></title>
+      <ol>
+        <li><p>Confirm that there is no current add, update, delete or other alteration actions before backup operation.</p></li>
+        <li><p>Enter sdb client:<codeblock># /opt/sequoiadb/bin/sdb</codeblock></p></li>
+        <li><p>Connect coord nodes:<codeblock>> var db = new Sdb('htest1', 11810)</codeblock></p></li>
+        <li><p>Check whether there is any backup:</p><p>Check all the data in the database cluster:<codeblock>> db.list(4)
+{
+  "Name": "foo.bar"
+}
+Return 1 row(s).
+Takes 0.2882s.
+> db.foo.bar.count()
+2880000
+Takes 0.2586s.
+> db.listBackup()
+Return 0 row(s).
+Takes 0.6483s.</codeblock></p></li>
+        <li><p>Execute database backup.</p><p>The cluster backup is executing by groups, so we must set the group first. Following action is to backup a CatalogNode, and will check when backup complete. The backup file is saved at host htest1, under /opt/sequoiadb/database/cata/30000/bakfile path.<codeblock>> db.backupOffline({Name:"catalogBackup",GroupName:"SYSCatalogGroup"})
+Takes 1.762381s.
+> db.listBackup()
+{
+      "Name": "catalogBackup",
+      "NodeName": "<b>htest1:30000</b>",
+      "GroupName": "SYSCatalogGroup",
+      "EnsureInc": false,
+      "BeginLSNOffset": 0,
+      "EndLSNOffset": 9716,
+      "StartTime": "2014-07-29-22:34:40",
+      "HasError": false
+}
+Return 1 row(s).
+Takes 0.7994s.</codeblock></p>
+          <p>DataNodes are using the same backup type, the file is saved at host htest3, under /opt/sequoiadb/database/data/41000/bakfile/ content.<codeblock>> db.backupOffline({Name:"datagroupG1Backup",GroupName:"g1"})
+Takes 12.85741s.  
+> db.listBackup({Name:"datagroupG1Backup",GroupName:"g1"})
+{
+      "Name": "datagroupG1Backup",
+      "NodeName": "<b>htest3:41000</b>",
+      "GroupName": "g1",
+      "EnsureInc": false,
+      "BeginLSNOffset": 0,
+      "EndLSNOffset": 460800544,
+      "StartTime": "2014-07-29-22:41:40",
+      "HasError": false
+}</codeblock></p>
+          <note>If you want to backup the whole database, you don’t need to set any parameters. Then it will backup the whole database including CatalogNodes and DataNodes. The backup files are saved at the local main node’s  /opt/sequoiadb/database/../../dialog/bakfile cotent.<codeblock>> db.backupOffline()</codeblock></note></li>
+        <li><p>See the backup file:<codeblock>> db.listBackup()
+{
+  "Name": "catalogBackup",
+  "NodeName": "<b>htest1:30000</b>",
+  "GroupName": "SYSCatalogGroup",
+  "EnsureInc": false,
+  "BeginLSNOffset": 0,
+  "EndLSNOffset": 9716,
+  "StartTime": "2014-07-29-22:34:40",
+  "HasError": false
+}
+{
+  "Name": "datagroupG1Backup",
+  "NodeName": "<b>htest3:41000</b>",
+  "GroupName": "g1",
+  "EnsureInc": false,
+  "BeginLSNOffset": 0,
+  "EndLSNOffset": 460800544,
+  "StartTime": "2014-07-29-22:41:40",
+  "HasError": false
+}
+Return2 row(s).
+Takes 0.16428s.</codeblock></p>
+          <p>If not set the path, the database will be automatically saved to the main node's cotent bakfile. If saved in other specific content, queries need the content for a backup file.</p></li>
+      </ol>
+    </section>
+    <section>
+      <title>Data Recovery</title>
+      <p>Using backup files to recovery data of a data shred, the data shred must be stopped from any current actions. The recovery process will clear all the record and logs in the data node, then copy the data and others from the backup files to data node. The recovery tools are at content  /opt/sequoiadb/bin/sdbrestore, Use command ./sdbrestore --help to see all the parameters.</p>
+    </section>
+    <section>
+      <title><i>Recovery Processes:</i></title>
+      <ol>
+        <li><p>Stop any group service process:</p>
+          <p>It's better to stop database service with sdb client, then we don't need to access the node's host to stop it. (Warning: If the group you are going to stop has a catalog Node, it must be stopped last.)<codeblock>sdbadmin@htest1:~$ /opt/sequoiadb/bin/sdb
+> var db = new Sdb('localhost',11810)
+> datarg = db.getRG('g1')
+> datarg.stop()</codeblock></p></li>
+        <li><p>Copy the database backup to the shared cotent:</p>
+          <p>Because SequoiaDB can only recover one host at once, we need to copy the backup file to the shared content where the cluster at. Like /mnt/xiaojun/BACKUP then :<codeblock>sdbadmin@htest1:/opt/sequoiadb$ cp -r /opt/sequoiadb/database/cata/30000/bakfile/ /mnt/xiaojun/BACKUP/bakfile.30000.htest1
+sdbadmin@htest3:/opt/sequoiadb$ cp -r /opt/sequoiadb/database/data/41000/bakfile/ /mnt/xiaojun/BACKUP/bakfile.41000.htest3</codeblock></p>
+          <p>Copying backup file to the shared content will only share the same shared content, not need to copy the backup file to each host when recovering.</p></li>
+        <li><p>Data recovery steps:</p>
+          <p>The recovery tools are under SequoiaDB's bin content /opt/sequoiadb/bin .Use sdb shell to access the datanode to execute the revocery. When recovering, more than half of the nodes in group must be recovered, you may better recover all the nodes. The cluster shown below consists of 2 groups, a CatalogGroup 'SYSCatalogGroup' and a DataGroup 'G1', deployed on 3 hosts respectively: htest1/htest2/htest3. Recovering the node need to access the host, like htest1, we need to do following commands:<codeblock>sdbadmin@htest1:/opt/sequoiadb/bin$ ./sdbrestore -p /mnt/xiaojun/BACKUP/bakfile.30000.htest1/ -n catalogBackup --dbpath \
+> /opt/sequoiadb/database/cata/30000/ --confpath /opt/sequoiadb/conf/local/30000/ --svcname 30000
+2014-07-29-23.09.19.382036               Level:EVENT
+PID:9556                                 TID:9556
+Function:pmdRestoreThreadMain            Line:491
+File:SequoiaDB/engine/pmd/sdbrestore.cpp
+Message:
+Start sdbrestore [Ver: 1.8, Release: 13673, Build: 2014-07-22-00.11.23(Debug)]...
+                   <b>.</b>
+                   <b>.</b>
+                   <b>.</b>
+*****************************************************
+Restore succeed!
+*****************************************************</codeblock></p>
+          <p>Then do the same to htest2 and htest3.</p>
+          <p>After access the CataLog Nodes, now we can recover the data of G1, similar to CatalogNodes, we need to recover all 3 hosts:<codeblock>sdbadmin@htest1:/opt/sequoiadb/bin$ ./sdbrestore -p /mnt/xiaojun/BACKUP/bakfile.41000.htest3/ -n datagroupG1Backup --dbpath \
+> /opt/sequoiadb/database/data/41000/ --confpath /opt/sequoiadb/conf/local/41000/ --svcname 41000
+2014-07-29-23.18.08.966708               Level:EVENT
+PID:9590                                 TID:9590
+Function:pmdRestoreThreadMain            Line:491
+File:SequoiaDB/engine/pmd/sdbrestore.cpp
+Message:
+Start sdbrestore [Ver: 1.8, Release: 13673, Build: 2014-07-22-00.11.23(Debug)]...
+                   <b>.</b>
+                   <b>.</b>
+                   <b>.</b>
+*****************************************************
+Restore succeed!
+*****************************************************</codeblock></p></li>
+        <li><p>Check if the recovery succeed:</p>
+          <p>Use sdb client to check if the result is right:<codeblock>sdbadmin@htest1:~$ /opt/sequoiadb/bin/sdb
+> var db = new Sdb('htest1',11810)
+Takes 0.8073s.
+> db.list(4)
+{
+  "Name": "foo.bar"
+}
+Return 1 row(s).
+Takes 0.47547s.
+> db.foo.bar.count()
+2880000
+Takes 0.164788s.
+> db.foo.bar.find().limit(1)
+{
+  "_id": 4000000,
+  "id": 4000000,
+  "ID": "http://www.sequoiadb.com",
+  "change": "ccc",
+  "info": "email:contact@sequoiadb.com"
+}
+Return 1 row(s).
+Takes 0.28824s.
+> db.foo.bar.insert({testing:"testingBackup"})
+Takes 0.296942s.
+> db.foo.bar.find({testing:"testingBackup"})
+{
+  "_id": {
+    "$oid": "53d7c4f9c6e6fab31f000000"
+  },
+  "testing": "testingBackup"
+}
+Return 1 row(s).
+Takes 4.311792s.</codeblock></p>
+          <p>Then we may confirm the recovery is successful in the end.</p></li>
+      </ol>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,275 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="C# Development Foundation"/>
+<meta name="description" content="Here's how to use the driver interface written in C# using SequoiaDB database program. This document describes a simple C# sample SequoiaDB database-driver, detailed specification can refer to the ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../developement/application/CS/topics/cs_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_kj2_43z_fm"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>C# Development Foundation</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_kj2_43z_fm"><a name="topic_kj2_43z_fm"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../developement/application/CS/topics/cs_en.html" title="C# Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">C# Driver</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/application_en.html" title="SequoiaDB Application Development">SequoiaDB Application Development</a> / <a class="navheader_parent_path" href="../../../../developement/application/CS/topics/cs_en.html" title="C# Driver">C# Driver</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">C# Development Foundation</h1>
+
+  <div class="body">
+    <p class="p">Here's how to use the driver interface written in C# using SequoiaDB database program. This document describes a simple C# sample SequoiaDB 
+        database-driver, detailed specification can refer to the official use of <a class="xref" href="../../../../cs/html/index.html">C# API</a> documentation.</p>
+
+    <div class="section"><h2 class="title sectiontitle">Namespace</h2>
+      
+      <p class="p">Before using C# driver related API, you must add the following using declaration in source code:</p>
+
+      <p class="p">using SequoiaDB;</p>
+
+      <p class="p">using SequoiaDB.Bson;</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Data Manipulation</h2>
+      
+    </div>
+      
+    <div class="section">      
+      <ul class="ul">
+        <li class="li">Connect to the database and authentication <p class="p">If the database does not create a user,
+                        you can anonymously connect to the
+                        database:</p>
+<pre class="pre codeblock">string addr = "127.0.0.1:11810";
+Sequoiadb sdb = new Sequoiadb(addr);
+try
+{
+    sdb.Connect();
+}
+catch (BaseException e)
+{
+    Console.WriteLine("ErrorCode:{0}, ErrorType:{1}", e.ErrorCode, e.ErrorType);
+    Console.WriteLine(e.Message);
+}
+catch (System.Exception e)
+{
+    Console.WriteLine(e.StackTrace);
+}</pre>
+<p class="p">Otherwise,
+                        when the connection must specify a user name and
+                        password:</p>
+<pre class="pre codeblock">string addr = "127.0.0.1:11810";
+Sequoiadb sdb = new Sequoiadb(addr);
+try
+{
+    sdb.Connect("testusr", "testpwd");
+}
+catch (BaseException e)
+{
+    Console.WriteLine("ErrorCode:{0}, ErrorType:{1}", e.ErrorCode, e.ErrorType);
+    Console.WriteLine(e.Message);
+}
+catch (System.Exception e)
+{
+    Console.WriteLine(e.StackTrace);
+    }</pre>
+<p class="p">Here
+                        are the exception information try and catch blocks, all operations following
+                        will throw the same exception information, it is no longer relevant given
+                        the try and catch blocks.</p>
+</li>
+
+        <li class="li">Disconnect from the database
+          <pre class="pre codeblock">// do not forget to disconnect from sdb
+sdb.Disconnect();</pre>
+
+        </li>
+
+        <li class="li">Get or create a collection space and collections
+          <p class="p">By name, to give the corresponding CollectionSpace, if not, create: </p>
+<pre class="pre codeblock">// create collectionspace, if collectionspace exists get it
+string csName = "TestCS";
+CollectionSpace cs = sdb.GetCollecitonSpace(csName);
+if (cs == null)
+cs = sdb.CreateCollectionSpace(csName);
+// or sdb.CreateCollectionSpace(csName, pageSize), need to specify the pageSize</pre>
+<p class="p">By name, to give the corresponding Collection, and if not, create:</p>
+<pre class="pre codeblock">// create collection, if collection exists get it
+string clName = "TestCL";
+DBCollection dbc = cs.GetCollection(clName);
+if (dbc == null)
+dbc = cs.CreateCollection(clName);
+//or cs.createCollection(collectionName, options), create collection with some options</pre>
+
+        </li>
+
+        <li class="li">Insert operation for Collection <p class="p">Need to insert data BsonDocument create and
+                        insert:</p>
+
+                    <pre class="pre codeblock">BsonDocument insertor = new BsonDocument();
+string date = DateTime.Now.ToString();
+insertor.Add("operation", "Insert");
+insertor.Add("date", date);
+ObjectId id = dbc.Insert(insertor);</pre>
+<p class="p">Of
+                        course, BsonDocument BsonDocument can also be nested object, And you can
+                        also directly a complete new  BsonDocument, without going through the Add
+                        method:</p>
+<pre class="pre codeblock">BsonDocumentinsertor = new BsonDocument
+{
+    {"FirstName","John"},
+    {"LastName","Smith"},
+    {"Age",50},
+    {"id",i},
+    {"Address",
+        new BsonDocument
+        {
+            {"StreetAddress","212ndStreet"},
+            {"City","new York"},
+            {"State","NY"},
+            {"PostalCode","10021"}
+        }
+    },
+    {"PhoneNumber",
+        new BsonDocument
+        {
+            {"Type","Home"},
+            {"Number","212555-1234"}
+        }
+    }
+};
+Insert the number of data:
+//bulkinsert
+List&lt;BsonDocument&gt; insertor=new List &lt;BsonDocument&gt; ();
+for(inti=0;i&lt;10;i++)
+{
+    BsonDocumentobj=new BsonDocument();
+    obj.Add("operation","BulkInsert");
+    obj.Add("date",DateTime.Now.ToString());
+    insertor.Add(obj);
+}
+dbc.BulkInsert(insertor,0);</pre>
+</li>
+
+        <li class="li">Index-related operations <p class="p">Create an
+                        index:</p>
+<pre class="pre codeblock">//createindexkey,indexonattribute'Id'byASC(1)/DESC(-1)
+BsonDocument key = new BsonDocument();
+key.Add("id", 1);
+string name = "index name";
+bool isUnique = true;
+bool isEnforced = true;
+dbc.CreateIndex(name, key, isUnique, isEnforced);</pre>
+<p class="p">Delete
+                        Index:</p>
+<pre class="pre codeblock">string name = "index name";
+dbc.DropIndex(name);</pre>
+</li>
+
+        <li class="li">Query operation<p class="p">Query, you need to use a cursor to traverse the query results, but can
+                        first get the index of the current Collection, if not empty, as the
+                        development of an access plan (hint) for inquiries:
+                        </p>
+<pre class="pre codeblock">DBCursor icursor = dbc.GetIndex(name);
+BsonDocument index = icursor.Current();   </pre>
+<p class="p">
+                        BsonDocument objects are used to construct the corresponding queries,
+                        including: Query matching rules (matcher, include the appropriate query),
+                        domain selection (selector), sorting rules (oredrBy, in increasing order or
+                        descending), to develop access plans (hint), skip record number (0), the
+                        number of records returned (-1:return all data). After the inquiry, to
+                        obtain the corresponding Cursor, for the results obtained by traversing the
+                        query:
+                        </p>
+<pre class="pre codeblock">BsonDocument matcher = new BsonDocument();
+BsonDocument conditon = new BsonDocument();
+conditon.Add("$gte", 0);
+conditon.Add("$lte", 9);
+matcher.Add("id", conditon);
+BsonDocument selector = new BsonDocument();
+selector.Add("id", null);
+selector.Add("Age", null);
+BsonDocument orderBy = new BsonDocument();
+orderBy.Add("id", -1);
+BsonDocument hint = null;
+if (index != null)
+    hint = index;
+else
+    hint = new BsonDocument();
+DBCursor cursor = dbc.Query(matcher, selector, orderBy, hint, 0, -1);    </pre>
+<p class="p">Use
+                        DBCursor cursor to
+                    traverse:</p>
+<pre class="pre codeblock">while (cursor.Next() != null)
+Console.WriteLine(cursor.Current());</pre>
+</li>
+
+        <li class="li">Delete operation <p class="p">Construct the corresponding BsonDocument object, set the conditions
+                        for
+                    deletion:</p>
+<pre class="pre codeblock">//createthedeletecondition
+BsonDocument drop = new BsonDocument();
+drop.Add("Last Name", "Smith");
+coll.Delete(drop);</pre>
+</li>
+
+        <li class="li">Update operation <p class="p">Construct the corresponding BsonDocument object used to set the
+                        update condition, you can also create DBQuery object encapsulates all of the
+                        query or update
+                        rules:</p>
+<pre class="pre codeblock">DBQuery query = new DBQuery();
+BsonDocument updater = new BsonDocument();
+BsonDocument matcher = new BsonDocument();
+BsonDocument modifier = new BsonDocument();
+updater.Add("Age", 25);
+modifier.Add("$set", updater);
+matcher.Add("First Name", "John");
+query.Matcher = matcher;
+query.Modifier = modifier;
+dbc.Update(query);       </pre>
+<p class="p">Update
+                        operation, if the conditions are not met matcher, then insert this
+                        record:</p>
+<pre class="pre codeblock">dbc.Upsert(query);</pre>
+</li>
+
+        
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../developement/application/CS/topics/cs_en.html" title="C# Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">C# Driver</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

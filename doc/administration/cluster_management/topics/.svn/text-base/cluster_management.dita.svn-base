@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_w4s_kyw_tk">
+  <title>集群管理</title>
+  <body>
+    <p>本章描述了集群的一些管理概念和操作，包括编目/数据分区组的创建/删除、协调节点的增加。</p>
+    <p>通过理解这些概念和操作方法，更好地实现集群规模的扩展或调整。</p>
+    <p><b>目录：</b></p>
+    <p><xref href="create_host.dita">集群中新增主机</xref></p>
+    <p><xref href="cata_management/topics/cata_management.dita">编目分区组管理</xref></p>
+    <p><xref href="data_management/topics/data_management.dita">数据分区组管理</xref></p>
+    <p><xref href="create_coordnode.dita">协调分区管理</xref></p>
+    <p><xref href="sample.dita">案例</xref></p>
+  </body>
+</topic>

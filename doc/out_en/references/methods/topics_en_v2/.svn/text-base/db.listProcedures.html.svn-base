@@ -1,0 +1,117 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="db.listProcedures()"/>
+<meta name="description" content="NAME listProcedures - Enumerate the stored procedure functions. SYNOPSIS db.listProcedures ( [cond] ) CATEGORY Sequoiadb DESCRIPTION Enumerate the stored procedure functions. cond (json) If cond is ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../references/methods/topics_en_v2/methodlist_en_v2.html"/>
+<meta name="DC.Relation" scheme="URI" content="db.removeProcedure.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_jnd_fx2_5n"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>db.listProcedures()</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_jnd_fx2_5n"><a name="topic_jnd_fx2_5n"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../references/methods/topics_en_v2/methodlist_en_v2.html" title="SequoiaDB JavaScript Method List"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB JavaScript Method List</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/references_en.html" title="Reference">Reference</a> / <a class="navheader_parent_path" href="../../../references/methods/topics_en_v2/methodlist_en_v2.html" title="SequoiaDB JavaScript Method List">SequoiaDB JavaScript Method List</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">db.listProcedures()</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">NAME</h2>
+      
+      <p class="p">listProcedures - Enumerate the stored procedure functions.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">SYNOPSIS</h2>
+      
+      <p class="p"/>
+
+      <span class="keyword apiname">db.listProcedures</span>(<span class="keyword parmname">[cond]</span>)
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">CATEGORY</h2>
+      
+      <p class="p"/>
+Sequoiadb
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">DESCRIPTION</h2>
+       
+      <p class="p">Enumerate the stored procedure functions.</p>
+
+      <dl class="dl parml">
+        
+          <dt class="dt pt dlterm">cond (json)</dt>
+
+          <dd class="dd pd">If cond is "", enumerate  all the functions. Otherwise, enumerate all the functions satisfy the criteria.</dd>
+          
+                
+      </dl>
+
+      <p class="p">listProcedures() has only one parameter 'cond' which is a json object. It returns the all the functions if there is no given criteria, otherwise all the functions satisfy the criteria will be returned.</p>
+
+    </div>
+    
+    <div class="section"><h2 class="title sectiontitle">Examples</h2>
+      
+      <p class="p">Return the information of all the functions.</p>
+
+      <pre class="pre codeblock">&gt;db.listProcedures()
+{ "_id" : { "$oid" : "52480389f5ce8d5817c4c353" }, "name" : "sum", "func" : "function sum(x, y) {
+    return x + y;
+}", "funcType" : 0 }
+{ "_id" : { "$oid" : "52480d3ef5ce8d5817c4c354" }, "name" : "getAll", "func" : "function getAll() {
+    return db.foo.bar.find();
+}", "funcType" : 0 }
+...</pre>
+
+      <p class="p">Returns the information of the function named "sum".</p>
+
+      <pre class="pre codeblock">&gt;db.listProcedures({name:"sum"})
+{ "_id" : { "$oid" : "52480389f5ce8d5817c4c353" }, "name" : "sum", "func" : "function sum(x, y) {
+    return x + y;
+}", "funcType" : 0 }</pre>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="db.removeProcedure.html" title="db.removeProcedure()">db.removeProcedure()</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../references/methods/topics_en_v2/methodlist_en_v2.html" title="SequoiaDB JavaScript Method List"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB JavaScript Method List</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

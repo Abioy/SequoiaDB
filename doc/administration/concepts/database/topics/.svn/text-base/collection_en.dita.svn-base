@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="administration_concepts_database_collection" >
+  <title>Collection</title>
+  <body>
+    <section><title>Concept</title>
+    <p>Collection a logical object where documents are stored. Every document belongs to one and
+        only one collection. </p>
+    <p>Collection consists of "&lt;collection space name&gt;.&lt;collection name&gt;". The length of
+        a collection name is at most 127 bytes, encoded with UTF-8. A collection contains zero or
+        more documents. (The max amount of documents depends on the size of collection space.) </p>
+    <p>In sharding enviroment, apart from name, every collection contains three attributes.</p>
+    <simpletable><!-- frame="all" relcolwidth="1.0* 1.99*"
+      id="administration_concepts_database_collection_table1">-->
+      <sthead>
+        <stentry>Field Name</stentry>
+        <stentry>Description</stentry>
+      </sthead>
+      <strow>
+        <stentry>ShardingKey</stentry>
+        <stentry>Specified sharding key. In collections, the field specified by sharding key is used
+            as sharding information of document. Every document is put in its corresponding
+            sharding.</stentry>
+      </strow>
+      <strow>
+        <stentry>ShardingType</stentry>
+        <stentry>Specified set partition type:range partitioning (Range) or hash partitioning (Hash).</stentry>
+      </strow>
+      <strow>
+        <stentry>ReplSize</stentry>
+        <stentry>It specifies the default  replicaiton size in the collection. If its value is less
+            than 1, write request will return when one copy is written successfully. If its value is
+            more than 1, write request will return when the amount of successfully written copies
+            euqals at least the value of ReplSize.</stentry>
+      </strow>
+      <strow>
+        <stentry>Compressed</stentry>
+        <stentry>Specified the value of "Compressed" means whether stored data in compressed form,
+            it has two values:true and false, false is in default.</stentry>
+      </strow>
+    </simpletable>
+    </section>
+  </body>  
+  <related-links >
+    <link href="document_en.dita" format="dita" type="topic"/>
+    <link href="collectionspace_en.dita" format="dita" type="topic"/>
+    <link href="index_en.dita" format="dita" type="topic"/>
+  </related-links>  
+</topic>

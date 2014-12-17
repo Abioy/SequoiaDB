@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_methodlist">
+  <title>SQL 语法</title>
+  <body>
+    <p>Sequoiadb是一种面向文档型的非关系型数据库，在本节中主要介绍如何使用SQL访问和处理sequoiaDB数据库系统中的数据。</p>
+    <note>sequoiaDB中，SQL语句不区分大小写。</note>
+    <section><title>SQL语法表</title>
+      <p>
+        <simpletable 
+        id="references_sqlmethod_databasemethod_table">
+        <sthead>
+          <stentry>语句</stentry>
+          <stentry>描述</stentry>
+          <stentry>示例</stentry>
+        </sthead>
+        <strow>
+          <stentry><xref href="create_cs.dita">create collectionspace &lt;cs_name></xref></stentry>
+          <stentry>创建集合空间</stentry>
+          <stentry>db.exec("create collectionspace foo")</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="drop_cs.dita">drop collectionspace &lt;cs_name></xref></stentry>
+          <stentry>删除集合空间</stentry>
+          <stentry>db.exec("drop collectionspace foo")</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="create_cl.dita">create collection &lt;cl_name></xref></stentry>
+          <stentry>创建集合</stentry>
+          <stentry>db.exec("create collection foo.bar")</stentry>
+        </strow>
+          
+        <strow>
+          <stentry><xref href="drop_cl.dita">drop collection &lt;cl_name></xref></stentry>
+          <stentry>删除集合</stentry>
+          <stentry>db.exec("drop collection foo.bar")</stentry>
+        </strow>
+      </simpletable>
+      </p>
+    </section>
+    
+  </body>
+</topic>

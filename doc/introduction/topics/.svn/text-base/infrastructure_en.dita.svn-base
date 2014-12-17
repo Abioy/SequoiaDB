@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="sequoiadb_infrastructure">
+  <title>Infrastructure</title>
+  <body>
+    <p>SequoiaDB applies distributed structure. The picture below describes a general summary of
+      SequoiaDB system architecture. </p>
+    <p><image href="../images/sequoiadb_infrastructure_shard_en.jpg" id="sequoiadb_infrastructure_shard"/></p>
+    <p>In a client terminal (or an application terminal), local or/and remote applications are
+      linked to SequoiaDB client libary. Local or/and remote applications communicate with catalog
+      node under TCP/IP protocol.</p>
+    <p>Catalog node doesn't store any user data. It is only a node that receive requests and
+      distribute them to target data nodes.</p>
+    <p>Catalog nodes store system metadata information. Coord nodes get the location of data on data
+      nodes by communicating with catalog nodes. One or more catalog nodes can constitute replset
+      cluster.</p>
+    <p>Data nodes are used to store users' data information, One or more data nodes can constitute a
+      replset. In a replset, data in all data node is eventually consistent. Data replset is also
+      called shard. Different shards store different data.</p>
+    <p>Every shard contains one or more data nodes. When there are several nodes in it, asynchronous
+      replication is fulfilled. In a shard, there are master node and several slave nodes. Main
+      nodes allows read and write operations. Slave nodes allows read operations. </p>
+    <p><image href="../images/sequoiadb_infrastructure_shard1_en.jpg" id="sequoiadb_infrastructure_shard1"/></p>
+    <p>If slave nodes are off-line, master node can work well as usual. When master node goes down,
+      slave nodes will automatically vote and elect a new master node to cope with write
+      requests.</p>
+    <p><image href="../images/sequoiadb_infrastructure_shard2_en.jpg" id="sequoiadb_infrastructure_shard2"/></p>
+    <p>When broken-down nodes recover or new nodes join a shard, replication will be fulfilled
+      between data nodes in order to guarantee the consistency of master node and slave nodes.</p>
+    <p><image href="../images/sequoiadb_infrastructure_shard3_en.jpg" id="sequoiadb_infrastructure_shard3"/></p>
+    <p>The architechture of a single node is as follow:</p>
+    <p><image href="../images/sequoiadb_infrastructure_data_en.jpg" id="sequoiadb_infrastructure_data"/></p>
+    <p> In data nodes, activities are controlled by EDU. Every node is a process in operating
+      system. Every EDU is a thread in data nodes. Agent thread copes with user request from
+      outside. Synchoronous agent thread copes with synchoronized transaction within shards in
+      cluster. Shard agent thread copes with synchoronized transaction between shards in cluster. </p>
+    <p>All write operations are recorded in log cache. Log recorder will asynchronously write them
+      into disk.</p>
+    <p>User data is written into file system cache pool by agent thread. Then operating system will
+      asynchronously write them into underlying disk.</p>
+  </body>
+</topic>

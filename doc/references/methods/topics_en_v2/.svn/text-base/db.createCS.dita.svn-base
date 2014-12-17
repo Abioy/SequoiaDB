@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_knp_ytc_tn">
+  <title>db.createCS()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>createCS - Create a collection space in a database instance.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.createCS</apiname>(<parmname>&lt;name></parmname>,<parmname>[options]</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Create a collection space in a database instance.</p>
+      <parml>
+        <plentry>
+          <pt>name (string)</pt>
+          <pd>Collection space name. Collection space name should be unique to each other in a database instance.</pd>
+        </plentry>
+        <plentry>
+          <pt>options (Json object)</pt>
+          <pd>Optional in a collection space.
+            <parml>
+              <plentry>
+                <pt>PageSize</pt>
+                <pd>Size of a data page. The default value is 65536B.</pd>
+                <pd>PageSize:&lt;int32></pd>
+              </plentry>
+              <plentry>
+                <pt>Domain</pt>
+                <pd>Domain that collection space belongs to.</pd>
+                <pd>Domain:&lt;string></pd>
+              </plentry>
+              <plentry>
+                <pt>LobPageSize</pt>
+                <pd>Lob size of data page. The default value is 262144B.</pd>
+                <pd>LobPageSize:&lt;int32></pd>
+              </plentry>
+            </parml>
+          </pd>          
+        </plentry>        
+      </parml>      
+      <note>
+        <ul><li>The parameter "name" should not be a null string. It should not contain "." or "$". The length of it should not be greater than 127B.</li>
+          <li>Collection space names should be unique to each other in a database instance.</li>
+          <li>When creating a collection space, users can specify the size of data page. It is unchangeable afterward. The default value of it is 65536B.</li>
+          <li>PageSize can only be one of the following six: 0, 4096, 8192, 16384, 32768, and 65536. The default value is 0.</li>
+          <li>Domain must already exist, and cannot be SYSDOMAIN.</li>
+          <li>It is compatible with earlier version interface, and function db.createCS(&lt;name>, [PageSize]) can alsobe used.</li>
+          <li>LobPageSize can only be one of the following nine: 0, 4096, 8192, 16384, 32768, 65536, 131072, 262144 and 524288, The default value is 262144.</li>
+        </ul></note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Create a collection space named "foo" without specifying the size of data page, so its default page size will be 65536B.</p>
+      <codeblock>db.createCS("foo")</codeblock>
+      <p>Create a collection space named "foo", specify the size of the data page as 4096 and its domain as "mydomain".</p>
+      <codeblock>db.createCS("foo",{PageSize:4096,Domain:"mydomain"})</codeblock>
+    </section>
+  </body>
+  <related-links>    
+    <link href="db.dropCS.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

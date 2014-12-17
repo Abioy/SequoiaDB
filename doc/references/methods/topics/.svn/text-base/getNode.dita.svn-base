@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_getNode">
+  <title>rg.getNode()</title>
+  <body>
+    <section><title>rg.getNode(&lt;nodename|hostname>,&lt;servicename>)</title>
+      <p>返回指定节点信息。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable id="references_method_getNode_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>nodename</stentry>
+          <stentry>string</stentry>
+          <stentry>节点名称。</stentry>
+          <stentry>nodename 与 hostname 二选一</stentry>
+        </strow>
+        <strow>
+          <stentry>hostname</stentry>
+          <stentry>string</stentry>
+          <stentry>主机名。</stentry>
+          <stentry>hostname 与 nodename 二选一</stentry>
+        </strow>
+        <strow>
+          <stentry>servicename</stentry>
+          <stentry>string</stentry>
+          <stentry>服务器名称。</stentry>
+          <stentry>是</stentry>
+        </strow>
+      </simpletable>      
+    </section>
+    <section><title>格式</title>
+      <p>rg.getNode() 方法定义了两个参数，第一个参数可是节点名称也可以是主机名，第二个参数为服务器名称。两个参数的类型都是字符串型，且必填。<codeblock>("&lt;节点名称>|&lt;主机名>","&lt;服务器名称>")</codeblock></p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>返回指定主机名和服务器名的节点<codeblock>> rg.getNode("vmsvr2-suse-x64","11800")
+返回：
+vmsvr2-suse-x64:11800</codeblock></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="createNode.dita"></link>
+    <link href="getMaster.dita"></link>
+  </related-links>
+</topic>

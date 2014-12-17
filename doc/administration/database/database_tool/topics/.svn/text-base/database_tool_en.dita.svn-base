@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qtj_nb1_ql">
+  <title>DataBase Tool</title>
+  <body>
+    <p><b>catalog:</b></p>
+    <p><xref href="import_en.dita">Data Migration — sdbimport</xref></p>
+    <p><xref href="export_en.dita">Data Migration — sdbexport</xref></p>
+    <p><xref href="sdbinspt_en.dita">Database Detecting Tool — sdbdmsdump</xref></p>
+    <p><xref href="tool_sdbtop_en.dita">Database Performance Monitoring Tool — sdbtop</xref></p>
+    <p><xref href="sdbinspect_en.dita">Database Cluster Nodes'Data Consistency Inspection Tool — sdbinspect</xref></p>
+    <p><xref href="sdbsupport_en.dita">Database Information Collection Tool — sdbsupport</xref></p>
+  </body>
+</topic>

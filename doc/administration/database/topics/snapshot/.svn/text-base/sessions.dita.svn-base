@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_database_monitoring_snapshot_sessions">
+  <title>会话快照</title>
+  <body>
+    <section>
+      <title>描述</title>
+      <p>会话快照列出当前数据库节点中所有的用户与系统会话，每一个会话为一条记录。</p>
+    </section>
+    <section>
+      <title>标示</title>
+      <p>SDB_SNAP_SESSIONS</p>
+    </section>
+    
+    <section>
+      <title>字段信息</title>
+      <simpletable>
+        <sthead>
+          <stentry>字段名</stentry>
+          <stentry>类型</stentry>
+          <stentry>描述</stentry>
+        </sthead>
+        <strow>
+          <stentry>SessionID</stentry>
+          <stentry>整型或长整型</stentry>
+          <stentry>会话 ID（主机名：端口号：ID）</stentry>
+        </strow>
+        <strow>
+          <stentry>TID</stentry>
+          <stentry>整型</stentry>
+          <stentry>该会话所对应的系统线程 ID</stentry>
+        </strow>
+        <strow>
+          <stentry>Status</stentry>
+          <stentry>字符串</stentry>
+          <stentry>会话状态
+            <ul>
+              <li>Creating：创建状态</li>
+              <li>Running：运行状态</li>
+              <li>Waiting：等待状态</li>
+              <li>Idle：线程池待机状态</li>
+              <li>Destroying：销毁状态</li>
+            </ul>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>Type</stentry>
+          <stentry>字符串</stentry>
+          <stentry><xref href="../EDU.dita">EDU 类型</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>Name</stentry>
+          <stentry>字符串</stentry>
+          <stentry>EDU 名，一般系统 EDU 名为空</stentry>
+        </strow>
+        <strow>
+          <stentry>QueueSize</stentry>
+          <stentry>整型</stentry>
+          <stentry>等待处理请求的队列长度</stentry>
+        </strow>
+        <strow>
+          <stentry>ProcessEventCount</stentry>
+          <stentry>长整型</stentry>
+          <stentry>已经处理请求的数量</stentry>
+        </strow>
+        <strow>
+          <stentry>Contexts</stentry>
+          <stentry>长整型数组</stentry>
+          <stentry>上下文 ID 数组，为该会话所包含的所有上下文列表</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalDataRead</stentry>
+          <stentry>长整型</stentry>
+          <stentry>数据记录读</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalIndexRead</stentry>
+          <stentry>长整型</stentry>
+          <stentry>索引读</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalDataWrite</stentry>
+          <stentry>长整型</stentry>
+          <stentry>数据记录写</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalIndexWrite</stentry>
+          <stentry>长整型</stentry>
+          <stentry>索引写</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalUpdate</stentry>
+          <stentry>长整型</stentry>
+          <stentry>总更新记录数量</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalDelete</stentry>
+          <stentry>长整型</stentry>
+          <stentry>总删除记录数量</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalInsert</stentry>
+          <stentry>长整型</stentry>
+          <stentry>总插入记录数量</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalSelect</stentry>
+          <stentry>长整型</stentry>
+          <stentry>总选取记录数量</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalRead</stentry>
+          <stentry>长整型</stentry>
+          <stentry>总数据读</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalReadTime</stentry>
+          <stentry>长整型</stentry>
+          <stentry>总数据读时间（毫秒）</stentry>
+        </strow>
+        <strow>
+          <stentry>TotalWriteTime</stentry>
+          <stentry>长整型</stentry>
+          <stentry>总数据写时间（毫秒）</stentry>
+        </strow>
+        <strow>
+          <stentry>ReadTimeSpent</stentry>
+          <stentry>长整型</stentry>
+          <stentry>读取记录的时间（毫秒）</stentry>
+        </strow>
+        <strow>
+          <stentry>WriteTimeSpent</stentry>
+          <stentry>长整型</stentry>
+          <stentry>写入记录的时间（毫秒）</stentry>
+        </strow>
+        <strow>
+          <stentry>ConnectTimestamp</stentry>
+          <stentry>时间戳</stentry>
+          <stentry>连接发起时间</stentry>
+        </strow>
+        <strow>
+          <stentry>LastOpType</stentry>
+          <stentry>字符串</stentry>
+          <stentry>最后一次操作的类型，如：insert，update</stentry>
+        </strow>
+        <strow>
+          <stentry>LastOpBegin</stentry>
+          <stentry>字符串</stentry>
+          <stentry>最后一次操作的起始时间</stentry>
+        </strow>
+        <strow>
+          <stentry>LastOpEnd</stentry>
+          <stentry>字符串</stentry>
+          <stentry>最后一次操作的结束时间</stentry>
+        </strow>
+        <strow>
+          <stentry>LastOpInfo</stentry>
+          <stentry>字符串</stentry>
+          <stentry>最后一次操作的详细信息</stentry>
+        </strow>        
+        <strow>
+          <stentry>UserCPU</stentry>
+          <stentry>浮点数</stentry>
+          <stentry>用户 CPU（秒）</stentry>
+        </strow>
+        <strow>
+          <stentry>SysCPU</stentry>
+          <stentry>浮点数</stentry>
+          <stentry>系统 CPU（秒）</stentry>
+        </strow>
+        <strow/>
+      </simpletable>
+    </section>    
+    <section>
+      <title>示例</title>
+      <codeblock>> db.snapshot(SDB_SNAP_SESSIONS)
+{
+  "SessionID": "vmsvr2-suse-x64:11820:1",
+  "TID": 8680,
+  "Status": "Running",
+  "Type": "LogWriter",
+  "Name": "",
+  "QueueSize": 0,
+  "ProcessEventCount": 1,
+  "Contexts": [],
+  "TotalDataRead": 0,
+  "TotalIndexRead": 0,
+  "TotalDataWrite": 0,
+  "TotalIndexWrite": 0,
+  "TotalUpdate": 0,
+  "TotalDelete": 0,
+  "TotalInsert": 0,
+  "TotalSelect": 0,
+  "TotalRead": 0,
+  "TotalReadTime": 0,
+  "TotalWriteTime": 0,
+  "ReadTimeSpent": 0,
+  "WriteTimeSpent": 0,
+  "ConnectTimestamp": "2013-09-27-13.28.38.927465",
+  "LastOpType": "unknow",
+  "LastOpBegin": "--",
+  "LastOpEnd": "--",
+  "LastOpInfo": "",
+  "UserCPU": "0.410000",
+  "SysCPU": "0.150000"
+}
+<!--{
+  "SessionID": "vmsvr2-suse-x64:11820:2",
+  "TID": 8681,
+  "Status": "Waiting",
+  "Type": "DpsRollbackTask",
+  "Name": "",
+  "QueueSize": 0,
+  "ProcessEventCount": 1,
+  "Contexts": [],
+  "TotalDataRead": 0,
+  "TotalIndexRead": 0,
+  "TotalDataWrite": 0,
+  "TotalIndexWrite": 0,
+  "TotalUpdate": 0,
+  "TotalDelete": 0,
+  "TotalInsert": 0,
+  "TotalSelect": 0,
+  "TotalRead": 0,
+  "TotalReadTime": 0,
+  "TotalWriteTime": 0,
+  "ConnectTimestamp": "2013-09-27-13.28.38.927406",
+  "UserCPU": "0.300000",
+  "SysCPU": "0.130000"
+}
+{
+  "SessionID": "vmsvr2-suse-x64:11820:3",
+  "TID": 8682,
+  "Status": "Waiting",
+  "Type": "Cluster",
+  "Name": "",
+  "QueueSize": 0,
+  "ProcessEventCount": 71977,
+  "Contexts": [],
+  "TotalDataRead": 0,
+  "TotalIndexRead": 0,
+  "TotalDataWrite": 0,
+  "TotalIndexWrite": 0,
+  "TotalUpdate": 0,
+  "TotalDelete": 0,
+  "TotalInsert": 0,
+  "TotalSelect": 0,
+  "TotalRead": 0,
+  "TotalReadTime": 0,
+  "TotalWriteTime": 0,
+  "ConnectTimestamp": "2013-09-27-13.28.39.127611",
+  "UserCPU": "2.050000",
+  "SysCPU": "1.010000"
+}...
+{
+  "SessionID": "vmsvr2-suse-x64:11820:28",
+  "TID": 9430,
+  "Status": "Running",
+  "Type": "Agent",
+  "Name": "127.0.0.1:60309",
+  "QueueSize": 0,
+  "ProcessEventCount": 9,
+  "Contexts": [
+    14
+  ],
+  "TotalDataRead": 0,
+  "TotalIndexRead": 0,
+  "TotalDataWrite": 0,
+  "TotalIndexWrite": 0,
+  "TotalUpdate": 0,
+  "TotalDelete": 0,
+  "TotalInsert": 0,
+  "TotalSelect": 0,
+  "TotalRead": 0,
+  "TotalReadTime": 0,
+  "TotalWriteTime": 0,
+  "ConnectTimestamp": "2013-09-27-18.06.25.961090",
+  "UserCPU": "0.030000",
+  "SysCPU": "0.060000"
+}--></codeblock>
+    </section>
+  </body>
+</topic>

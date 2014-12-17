@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_update">
+  <title>sql update</title>
+  <body>
+    <section><title>update 语句</title>
+      <p>用于修改集合中的记录。</p>
+    </section>
+    <section><title>语法</title>
+      <p><codeblock>update &lt;cs_name>.&lt;cl_name> set (&lt;field1_name>=&lt;value1>,...) [where &lt;condition>]</codeblock></p>
+      <p>&lt;cs_name>：集合空间名</p>
+      <p>&lt;cl_name>：集合名</p>
+      <p>&lt;condition>：条件，只对符合条件的记录更新</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>本例会修改集合中全部的记录，将记录中的 age 字段值修改为20，如果记录中不存在 age 字段，则将 age：20添加到记录中：</p>
+          <p><codeblock>db.execUpdate("update foo.bar set age=20") </codeblock></p>
+        </li>
+        <li>本例会修改符合条件的记录，只对符合条件 age &lt; 10 的记录做修改操作：<codeblock>db.execUpdate("update foo.bar set age=20 where age&lt;10")</codeblock></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="list_cs.dita" format="dita" type="topic"></link>
+    <link href="sqinsert.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

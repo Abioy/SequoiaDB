@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_hm1_mwj_pl_avg">
+  <title>$avg</title>
+  <body>
+    <section>
+      <title>描述</title>
+      <p>记录分组后，取分组中指定字段的平均值返回，对嵌套对象使用点操作符（.）引用字段名。</p>
+    </section>
+    <section>
+      <title>示例</title>
+      <ul>
+        <li>对记录分组后，返回分组中指定字段的平均值<codeblock>db.collectionspace.collection.aggregate({$group:{_id:"$dep",avg_age:{$avg:"$info.age"},max_age:{$max:"$info.age"},min_age:{$min:"$info.age"}}})</codeblock>此操作对记录按dep字段分组，使用<b>$avg</b>返回每个分组中的嵌套对象age字段的平均值，输出字段名为avg_age；又使用<xref
+            href="min.dita"><b>$min</b></xref>返回每个分组中嵌套对象age字段的最小值，输出字段名为min_age，使用<xref
+            href="max.dita"
+          ><b>$max</b></xref>返回每个分组中嵌套对象age字段的最大值，输出字段名为max_age。记录返回如下：<codeblock>{
+  "avg_age": 23.727273,
+  "max_age": 36,
+  "min_age": 15
+}
+{
+  "avg_age": 24.5,
+  "max_age": 30,
+  "min_age": 20
+}</codeblock></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="min.dita" format="dita" type="topic"></link>
+    <link href="sum.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

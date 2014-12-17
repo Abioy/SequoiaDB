@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="administration_concepts_database_date">
+  <title>日期</title>
+  <body>
+    <section>
+      <title>概念</title>
+      <p>SequoiaDB 中的日期使用 YYYY-MM-DD 的形式存取，在存储时将其转换为4字节的整数。</p>
+    </section>
+    <section>
+      <title>格式</title>
+      <p>日期的表达形式如下：</p>
+      <codeblock>{ "$date" : "&lt;YYYY-MM-DD>" }</codeblock>
+    </section>
+    <section>
+      <title>示例</title>
+      <p>例如：</p>
+      <codeblock>{ "createTime" : { "$date" : "2012-05-12" } }</codeblock>
+    </section>
+  </body>
+</topic>

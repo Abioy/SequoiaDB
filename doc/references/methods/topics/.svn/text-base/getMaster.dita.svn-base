@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_getMaster">
+  <title>rg.getMaster()</title>
+  <body>
+    <section><title>rg.getMaster()</title>
+      <p>返回分区组的主节点。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>返回分区组的主节点</p>
+          <codeblock>> rg.getMaster()
+返回：
+vmsvr2-suse-x64:11850</codeblock></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="getNode.dita"></link>
+    <link href="getSlave.dita"></link>
+  </related-links>
+</topic>

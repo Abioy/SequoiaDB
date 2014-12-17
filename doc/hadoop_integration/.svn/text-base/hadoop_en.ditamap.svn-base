@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="hdoop_integration">
+ <topicref href="hadooproot_en.dita">
+  <topicref href="topics/hadoop_en.dita"/>
+  <topicref href="topics/map_reduce_en.dita"/>
+  <anchorref href="./hive_integration/hive_en.ditamap"/>
+  <topicref href="./pig/pig_en.dita"/>
+  
+  
+  
+  
+  <!--  <anchorref href="system_require/system_require.ditamap"/>
+   <topicref href="topics/install_media.dita"></topicref>
+   <anchorref href="server_installation/server_installation.ditamap"/>
+   <topicref href="topics/start_web.dita"></topicref>
+   <anchorref href="configuration_start/configuration_start.ditamap"/>
+   <anchorref href="uninstall/uninstall.ditamap"/>-->
+ </topicref>
+</map>

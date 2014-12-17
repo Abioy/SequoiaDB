@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\administration\database\topics\snapshot?><?path2project ..\..\..\..\out_en\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="administration_database_monitoring_snapshot_sessions" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="title:1">Session Snapshot</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="title:2">Description</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="p:1">Session snapshot contains all the sessions between users and system on current database
+        node. Each session is recorded as one record.</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="title:3">Sign</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="p:2">SDB_SNAP_SESSIONS</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="section:3"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="title:4">Proper Node</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="p:3">data node,catalog node</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="section:4"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="title:5">Field Information</title>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 2.0*" id="administration_database_monitoring_snapshot_sessions_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="simpletable:1">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="sthead:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:1">Field Information</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:2">Type</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:3">Description</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:4">SessionID</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:5">Integer or long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:6">Session ID</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:7">TID</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:8">Integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:9">System thread ID corresponding to the session</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:3">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:10">Status</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:11">String</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:12">
+            <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="p:4">Session status:</p>
+            <ul id="ul_5pp_znd_zj" class="- topic/ul " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="ul:1">
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="li:1">Creating：creating status</li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="li:2">Running：running status </li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="li:3">Waiting：waiting status</li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="li:4">Idle：idle status of thread pool</li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="li:5">Destroying：destroying status</li>
+            </ul>
+          </stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:4">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:13">Type</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:14">String</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:15"><xref href="../EDU_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="xref:1" type="topic"><?ditaot usertext?>EDU Type</xref></stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:5">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:16">Name</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:17">String</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:18">EDU name. Generally, it is null.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:6">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:19">QueueSize</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:20">Integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:21">The length of queue of requests waiting to be processed </stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:7">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:22">ProcessEventCount</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:23">Long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:24">The amount of requests which have been processed.</stentry>
+        </strow>
+        
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:8">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:25">Contexts</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:26">Long integer or array</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:27">Context ID array. It is a list containing all contexts in the session.</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:9">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:28">TotalDataRead</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:29">Long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:30">Total data read</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:10">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:31">TotalIndexRead</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:32">Long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:33">Total index read</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:11">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:34">TotalDataWrite</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:35">Long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:36">Tota data record write</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:12">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:37">TotalIndexWrite</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:38">Long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:39">Total index write</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:13">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:40">TotalUpdate</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:41">Long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:42">Total amount of updated records</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:14">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:43">TotalDelete</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:44">Long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:45">Total amount of deleted records</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:15">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:46">TotalInsert</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:47">Long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:48">Total amount of inserted records</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:16">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:49">TotalSelect</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:50">Long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:51">Total amount of selected records</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:17">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:52">TotalRead</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:53">Long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:54">Total data read</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:18">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:55">TotalReadTime</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:56">Long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:57">Total data read time (millisecond)</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:19">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:58">TotalWriteTime</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:59">Long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:60">Total data write time (millisecond)</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:20">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:61">ConnectTimestamp</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:62">Timeline</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:63">The time of beginning connection</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:21">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:64">UserCPU</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:65">Float</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:66">User CPU (second)</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="strow:22">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:67">SysCPU</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:68">Float</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="stentry:69">System CPU (second)</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="section:5"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="title:6">Sample</title>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\sessions_en.dita" xtrc="codeblock:1">&gt; db.snapshot(SDB_SNAP_SESSIONS)
+{
+  "SessionID": 1,
+  "TID": 872,
+  "Status": "Running",
+  "Type": "TCPListener",
+  "Name": "",
+  "QueueSize": 0,
+  "ProcessEventCount": 1,
+  "Contexts": [],
+  "TotalDataRead": 0,
+  "TotalIndexRead": 0,
+  "TotalDataWrite": 0,
+  "TotalIndexWrite": 0,
+  "TotalUpdate": 0,
+  "TotalDelete": 0,
+  "TotalInsert": 0,
+  "TotalSelect": 0,
+  "TotalRead": 0,
+  "TotalReadTime": 0,
+  "TotalWriteTime": 0,
+  "ConnectTimestamp": "2013-04-03-14.07.19.918592",
+  "UserCPU": "48.510000",
+  "SysCPU": "141.610000"
+}
+{
+  "SessionID": 2,
+  "TID": 873,
+  "Status": "Waiting",
+  "Type": "Cluster",
+  "Name": "",
+  "QueueSize": 0,
+  "ProcessEventCount": 770997,
+  "Contexts": [],
+  "TotalDataRead": 0,
+  "TotalIndexRead": 0,
+  "TotalDataWrite": 0,
+  "TotalIndexWrite": 0,
+  "TotalUpdate": 0,
+  "TotalDelete": 0,
+  "TotalInsert": 0,
+  "TotalSelect": 0,
+  "TotalRead": 0,
+  "TotalReadTime": 0,
+  "TotalWriteTime": 0,
+  "ConnectTimestamp": "2013-04-03-14.07.20.421617",
+  "UserCPU": "12.670000",
+  "SysCPU": "3.900000"
+}
+...
+{
+  "SessionID": 14,
+  "TID": 18513,
+  "Status": "Running",
+  "Type": "Agent",
+  "Name": "127.0.0.1:58269",
+  "QueueSize": 0,
+  "ProcessEventCount": 21,
+  "Contexts": [
+    17
+  ],
+  "TotalDataRead": 4,
+  "TotalIndexRead": 0,
+  "TotalDataWrite": 0,
+  "TotalIndexWrite": 0,
+  "TotalUpdate": 0,
+  "TotalDelete": 0,
+  "TotalInsert": 0,
+  "TotalSelect": 4,
+  "TotalRead": 4,
+  "TotalReadTime": 0,
+  "TotalWriteTime": 0,
+  "ConnectTimestamp": "2013-04-06-11.53.34.712787",
+  "UserCPU": "1.500000",
+  "SysCPU": "4.940000"
+}</codeblock>
+    </section>
+  </body>
+</topic>

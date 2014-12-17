@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\administration\database\topics\list?><?path2project ..\..\..\..\out_en\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="administration_database_monitoring_snapshot_sessions_current" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="title:1">Current Session List</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="title:2">Description</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="p:1">Current session list contains the current sessions on current database node. Each session
+        is recorded as one record.</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="title:3">Sign</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="p:2">SDB_LIST_SESSIONS_CURRENT</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="section:3"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="title:4">Proper Node</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="p:3">data node,catalog node</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="section:4"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="title:5">Field Information</title>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 2.0*" id="administration_database_monitoring_snapshot_sessions_current_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="simpletable:1">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="sthead:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:1">Field Name</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:2">Type</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:3">Description</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="strow:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:4">SessionID</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:5">Integer or long integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:6">Session ID</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="strow:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:7">TID</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:8">Integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:9">System thread ID corresponding to the session</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="strow:3">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:10">Status</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:11">String</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:12">
+            <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="p:4">Session status:</p>
+            <ul id="ul_5l4_kyj_yj" class="- topic/ul " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="ul:1">
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="li:1">Creating：creating status</li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="li:2">Running：running status </li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="li:3">Waiting：waiting status</li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="li:4">Idle：idle status of thread pool</li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="li:5">Destroying：destroying status</li>
+            </ul>
+          </stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="strow:4">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:13">Type</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:14">String</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:15"><xref href="../EDU_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="xref:1" type="topic"><?ditaot usertext?>EDU type</xref></stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="strow:5">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:16">Name</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:17">String</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="stentry:18">EDU name. Generally, it is null.</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="section:5"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="title:6">Sample</title>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions_current_en.dita" xtrc="codeblock:1">&gt; db.list(SDB_LIST_SESSIONS_CURRENT)
+{
+  "SessionID": 21,
+  "TID": 6691,
+  "Status": "Running",
+  "Type": "Agent",
+  "Name": "192.168.20.101:52741"
+}</codeblock>
+    </section>
+  </body>
+</topic>

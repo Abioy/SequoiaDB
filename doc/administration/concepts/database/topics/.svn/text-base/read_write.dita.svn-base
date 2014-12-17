@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_gz5_rfn_2l">
+  <title>读写分离</title>
+  <body>
+    <section>
+      <title>写请求处理</title>
+      <p>所有写请求都只会发往主节点，如果没有主节点则当前复制组不可处理写请求。</p>
+    </section>
+    <section>
+      <title>读请求处理</title>
+      <p>读请求会按照会话（连接）随机选择组内任意一个节点（对外透明），或按照当前会话（连接）配置的优先实例策略选取相应复制组的数据节点。在一次会话中如果上一次查询（包括 query 和 fetch）返回成功，则下一次查询不会重选节点；如果上一次查询发生失败，则下一次查询将重选节点。如果没有可用节点则返回失败。一次查询中不会重选节点。</p>
+    </section>
+  </body>
+</topic>

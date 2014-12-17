@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre
+END
+pcre.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/pcre.h
+END
+ucptable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/ucptable.cpp
+END
+pcre.pri
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/pcre.pri
+END
+pcre_compile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/pcre_compile.cpp
+END
+dftables
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/dftables
+END
+pcre_tables.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/pcre_tables.cpp
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/AUTHORS
+END
+pcre_ucp_searchfuncs.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/pcre_ucp_searchfuncs.cpp
+END
+pcre_xclass.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/pcre_xclass.cpp
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/COPYING
+END
+chartables.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/chartables.c
+END
+ucpinternal.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/ucpinternal.h
+END
+pcre_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/pcre_internal.h
+END
+pcre_exec.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/yarr/pcre/pcre_exec.cpp
+END

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\references\sqlmapping\topics?><?path2project ..\..\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="references_sqlmapping" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="title:1"> Mapping Table from SQL to sequoiadb</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="title:2">Concepts and terms</title>
+      <simpletable id="references_method_count_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="simpletable:1">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="sthead:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:1">SQL</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:2">SequoiaDB</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:3">database</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:4">database</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:5">table</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:6">collection</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:3">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:7">row</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:8">document / BSON document</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:4">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:9">column</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:10">field</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:5">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:11">index</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:12">index</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:6">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:13">table joins</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:14">embedded documents</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:7">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:15">primary key<p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:1">(Users can take any unique column as primary key.)</p></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:16">primary key <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:2">In Sequoiadb, primary key is automatically as the field called
+              "_id".</p></stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="section:2">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="title:3">Create and Alter</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:3">The following table shows create and alter statements on table level in SQL and the
+        corresponding ones in Sequoiadb.</p>
+      <simpletable id="sqlpping_ceate_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="simpletable:2">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="sthead:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:17">SQL Statements</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:18">Sequoiadb Statements</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:19">Relative Link</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:8">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:20">create table student (<p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:4">id not null,</p><p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:5">stu_id varchar(50), age
+              number</p><p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:6">primary key(id) )</p></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:21">The system will automatically generate a collection when data is firstly
+            inserted. If the value on "_id" is not specified, the system will automatically generate
+            a "_id" value.<p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:7">db.collectionspace.student({stu_id:"01",age:20})</p><p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:8">Of course, you
+              can also create a collection
+            manually</p><p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:9">db.collectionspace.createCL("student")</p></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:22">
+            <xref href="../../methods/topics/insert_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:1" type="topic"><?ditaot usertext?>insert() ,</xref>
+            <xref href="../../methods/topics/createCL_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:2" type="topic"><?ditaot usertext?>createCL()</xref>
+            
+          </stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:9">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:23">alter table student add name varchar(50)</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:24">In a collection, the structure is not changable, because there is no relative
+            manipulation to describe or change the structure. But the method update() can add new
+            field to document record with "$set".
+              <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:10">db.collectionspace.student.update({},{$set:{name:"Tom"}})</p></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:25"><xref href="../../methods/topics/update_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:3" type="topic"><?ditaot usertext?>update() ,</xref>
+            <xref href="../../console/topics/set_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:4" type="topic"><?ditaot usertext?>$set</xref>
+            </stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:10">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:26">alter table student drop column name                                 </stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:27">In a collection, the structure is not changable, because there is no relative
+            manipulation to describe or change the structure. But the method update() can delete
+            existing field from document record with "$unset".
+              <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:11">db.collectionspace.student.update({},{$unset:{name:"Tom"}})</p></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:28"><xref href="../../methods/topics/update_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:5" type="topic"><?ditaot usertext?>update() ,</xref>
+            <xref href="../../console/topics/unset_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:6" type="topic"><?ditaot usertext?>$unset</xref>
+            </stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:11">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:29">create index index_stu_id<p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:12">on student (stu_id)</p></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:30">db.collectionspace.student.createIndex("index_stu_id",{stu_id:-1})</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:31">
+            <xref href="../../methods/topics/createIndex_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:7" type="topic"><?ditaot usertext?>createIndex() ,</xref>
+            <xref href="../../../administration/concepts/database/topics/index_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:8" type="topic"><?ditaot usertext?>index</xref>
+            </stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:12">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:32">drop table student</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:33">db.collectionspace.dropCL("student")</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:34"><xref href="../../methods/topics/dropCL_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:9" type="topic"><?ditaot usertext?>dropCL()</xref></stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="section:3">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="title:4">Insert</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:13">The following table shows insert statement on table level in SQL and the corresponding one
+        in Sequoiadb.</p>
+      <simpletable id="sqlmapping_insert_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="simpletable:3">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="sthead:3">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:35">SQL Statements</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:36">Sequoiadb Statements</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:37">Relative Link</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:13">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:38">insert into student(stu_id,age)<p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:14">values("01",20)</p></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:39">db.collectionspace.student.insert({stu_id:"01",age:20})</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:40"><xref href="../../methods/topics/insert_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:10" type="topic"><?ditaot usertext?>insert()</xref></stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="section:4">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="title:5">Select</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:15">The following table shows read statement on table level in SQL and the corresponding one in
+        Sequoiadb.</p>
+      <simpletable id="sqlmapping_read_table" frame="all" relcolwidth="1.0* 1.6* 1.0*" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="simpletable:4">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="sthead:4">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:41">SQL Statements</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:42">Sequoiadb Statements</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:43">Relative Link</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:14">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:44">select * from student</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:45">db.collectionspace.student.find()</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:46"><xref href="../../methods/topics/find_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:11" type="topic"><?ditaot usertext?>find()</xref></stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:15">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:47">select stu_id,age from student</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:48">db.collectionspace.student.find({},{stu_id:"01",age:20})</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:49"><xref href="../../methods/topics/find_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:12" type="topic"><?ditaot usertext?>find()</xref></stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:16">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:50">select * from student where age&gt;25</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:51">db.collectionspace.student.find({age:{$gt:25}})</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:52"><xref href="../../methods/topics/find_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:13" type="topic"><?ditaot usertext?>find()</xref>
+            <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:16">
+              <xref href="../../console/topics/gt_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:14" type="topic"><?ditaot usertext?>$gt</xref>
+            </p></stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:17">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:53">select age from student where age=25 and stu_id="01"</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:54">db.collectionspace.student.find({age:25,stu_id="01"},{age:25})</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:55"><xref href="../../methods/topics/find_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:15" type="topic"><?ditaot usertext?>find()</xref></stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:18">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:56">select count(*) from student</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:57">db.collectionspace.student.count()</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:58"><xref href="../../methods/topics/count_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:16" type="topic"><?ditaot usertext?>count()</xref></stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:19">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:59">select count(stu_id) from student</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:60">db.collectionspace.student.count({stu_id:{$exists:1}})</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:61"><xref href="../../methods/topics/count_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:17" type="topic"><?ditaot usertext?>count() ,</xref>
+            <xref href="../../console/topics/exists_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:18" type="topic"><?ditaot usertext?>$exists</xref>
+            </stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="section:5">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="title:6">Update</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:17">The following table shows update statement on table level in SQL and the corresponding one
+        in Sequoiadb.</p>
+      <simpletable id="sqlmapping_update_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="simpletable:5">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="sthead:5">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:62">SQL Statements</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:63">Sequoiadb Statements</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:64">Relative Link</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:20">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:65">update student set age=25 where stu_id="01"</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:66">db.collectionspace.student.update({stu_id:"01"},{$set:{age:25}})</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:67"><xref href="../../methods/topics/update_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:19" type="topic"><?ditaot usertext?>update() ,</xref>
+            <xref href="../../console/topics/set_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:20" type="topic"><?ditaot usertext?>$set</xref>
+          </stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:21">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:68">update student set age=age+2 where stu_id="01"</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:69">db.collectionspace.student.update({stu_id:"01"},{$inc:{age:2}})</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:70"><xref href="../../methods/topics/update_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:21" type="topic"><?ditaot usertext?>update() ,</xref>
+            <xref href="../../console/topics/inc_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:22" type="topic"><?ditaot usertext?>$inc</xref>
+          </stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="section:6">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="title:7">delete</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="p:18">The following table shows delete statement on table level in SQL and the corresponding one
+        in Sequoiadb.</p>
+      <simpletable id="sqlmapping_delete_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="simpletable:6">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="sthead:6">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:71">SQL Statements</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:72">Sequoiadb Statements</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:73">Relative Link</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:22">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:74">delete from student where age=20</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:75">db.collectionspace.student.remove({age:20})</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:76"><xref href="../../methods/topics/remove_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:23" type="topic"><?ditaot usertext?>remove()</xref>
+          </stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="strow:23">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:77">delete from student</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:78">db.collectionspace.student.remove()</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="stentry:79"><xref href="../../methods/topics/remove_en.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\sqlmapping\topics\sqlmapping_en.dita" xtrc="xref:24" type="topic"><?ditaot usertext?>remove()</xref>
+          </stentry>
+        </strow>
+      </simpletable>
+    </section>
+  </body>
+<related-links class="- topic/related-links "><linkpool class="- topic/linkpool " xtrc="topicref:1" xtrf="C:\SequoiaDB\doc\references\sqlmapping\sqlmapping_en.ditamap"><link class="- topic/link " mapclass="- map/topicref " type="topic" xtrc="topicref:1" xtrf="C:\SequoiaDB\doc\references\references_en.ditamap" href="../../topics/references_en.xml" role="parent"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Reference</linktext></link></linkpool></related-links>
+</topic>

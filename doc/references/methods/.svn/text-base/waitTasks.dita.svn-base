@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_jdg_2kk_kn">
+  <title>db.waitTasks()</title>
+  <body>
+    <section><title>db.waitTasks(&lt;id1>,[id2],...)</title>
+      <p>同步等待指定任务结束或取消</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>        
+        <strow>
+          <stentry>id1, id2…</stentry>
+          <stentry>整数</stentry>
+          <stentry>任务 ID</stentry>
+          <stentry>是</stentry>
+        </strow>        
+      </simpletable>      
+    </section>    
+    <section><title>示例</title>
+      <ul>
+        <li><p>同步等待数据切分任务完成</p>
+          <p><codeblock>var taskid1 = db.test.test.splitAsync("db1", "db2", 50);
+var taskid2 = db.my.my.splitAsync("db3", "db4", 50) ;
+db.waitTasks( taskid1, taskid2 )</codeblock></p></li>
+      </ul>      
+    </section>
+  </body>
+</topic>

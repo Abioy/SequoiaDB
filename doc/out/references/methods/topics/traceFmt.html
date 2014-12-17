@@ -1,0 +1,124 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="traceFmt()"/>
+<meta name="description" content="traceFmt(&lt;formatType&gt;,&lt;input&gt;,&lt;output&gt;) 将 db.traceOff() 导出来的二进制文件格式化为文本文件输出。 参数描述 参数名 参数类型 描述 是否必填 formatType int 格式类型。 是 input string 输入文件。 是 output string 输出文件。 是 示例 格式化输出文件： traceFmt(0, ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../references/methods/global.html"/>
+<meta name="DC.Relation" scheme="URI" content="traceOff.html"/>
+<meta name="DC.Relation" scheme="URI" content="traceOn.html"/>
+<meta name="DC.Relation" scheme="URI" content="traceResume.html"/>
+<meta name="DC.Relation" scheme="URI" content="traceStatus.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_fcp_xzm_zj"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>traceFmt()</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_fcp_xzm_zj"><a name="topic_fcp_xzm_zj"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../references/methods/global.html" title="Global"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Global</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="methodlist.html" title="SequoiaDB JavaScript 方法">SequoiaDB JavaScript 方法</a> / <a class="navheader_parent_path" href="../../../references/methods/global.html" title="Global">Global</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">traceFmt()</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">traceFmt(&lt;formatType&gt;,&lt;input&gt;,&lt;output&gt;)</h2>
+      <p class="p">将 db.traceOff() 导出来的二进制文件格式化为文本文件输出。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">参数描述</h2>
+      <a name="topic_fcp_xzm_zj__references_method_createNode_table"><!-- --></a><table cellpadding="4" cellspacing="0" summary="" id="topic_fcp_xzm_zj__references_method_createNode_table" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d140862e26" class="stentry">参数名</th>
+
+          <th valign="bottom" align="left" id="d140862e29" class="stentry">参数类型</th>
+
+          <th valign="bottom" align="left" id="d140862e32" class="stentry">描述</th>
+
+          <th valign="bottom" align="left" id="d140862e35" class="stentry">是否必填</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d140862e26" class="stentry">formatType</td>
+
+          <td valign="top" headers="d140862e29" class="stentry">int</td>
+
+          <td valign="top" headers="d140862e32" class="stentry">格式类型。</td>
+
+          <td valign="top" headers="d140862e35" class="stentry">是</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d140862e26" class="stentry">input</td>
+
+          <td valign="top" headers="d140862e29" class="stentry">string</td>
+
+          <td valign="top" headers="d140862e32" class="stentry">输入文件。</td>
+
+          <td valign="top" headers="d140862e35" class="stentry">是</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d140862e26" class="stentry">output</td>
+
+          <td valign="top" headers="d140862e29" class="stentry">string</td>
+
+          <td valign="top" headers="d140862e32" class="stentry">输出文件。</td>
+
+          <td valign="top" headers="d140862e35" class="stentry">是</td>
+
+        </tr>
+</table>
+      
+    </div>
+    
+    <div class="section"><h2 class="title sectiontitle">示例</h2>
+      <ul class="ul">
+        <li class="li">格式化输出文件：<pre class="pre codeblock">traceFmt(0, "/opt/sequoiadb/trace.dump", "/opt/sequoiadb/trace.flw")</pre>
+</li>
+        
+      </ul>
+      
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="traceOff.html" title="db.traceOff()">db.traceOff()</a></div>
+<div><a class="navheader_parent_path" href="traceOn.html" title="db.traceOn()">db.traceOn()</a></div>
+<div><a class="navheader_parent_path" href="traceResume.html" title="db.traceResume()">db.traceResume()</a></div>
+<div><a class="navheader_parent_path" href="traceStatus.html" title="db.traceStatus()">db.traceStatus()</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../references/methods/global.html" title="Global"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Global</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Tips When Using Shell"/>
+<meta name="description" content="SequoiaDB shell has built-in help documents. It can be accessed by the help() command. For more details on each method, please refer to the SeuoiaDB JavaScript Method List in the Reference section of ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../developement/console/topics/console_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="developement_console_knack"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>Tips When Using Shell</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="developement_console_knack"><a name="developement_console_knack"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../developement/console/topics/console_en.html" title="SequoiaDB Shell"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB Shell</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/developement_en.html" title="Development Instruction">Development Instruction</a> / <a class="navheader_parent_path" href="../../../developement/console/topics/console_en.html" title="SequoiaDB Shell">SequoiaDB Shell</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Tips When Using Shell</h1>
+
+  <div class="body">
+    <p class="p">SequoiaDB shell has built-in help documents. It can be accessed by the help() command. For more details on each method, please refer to the SeuoiaDB JavaScript Method List in the Reference section of SequoiaDB Information Center.</p>
+
+    <ul class="ul">
+      <li class="li">Help<p class="p">See Use description:</p>
+
+        <pre class="pre codeblock">&gt; help()
+   var db = new Sdb()                     connect to database use default host 'localhost' and default port 11810
+   var db = new Sdb('localhost',11810)    connect to database use specified host and port
+   var db = new Sdb('ubuntu',11810,'','') connect to database with username and password
+   help(&lt;method&gt;)                         help on specified method, e.g. help('createCS')
+   db.help()                              help on db methods
+   db.cs.help()                           help on collection space cs
+   db.cs.cl                               access collection cl on collection space cs
+   db.cs.cl.help()                        help on collection cl
+   db.cs.cl.find()                        list all records
+   db.cs.cl.find({a:1})                   list records where a=1
+   db.cs.cl.find().help()                 help on find methods
+   db.cs.cl.count().help()                help on count methods
+   print(x), println(x)                   print out x
+   traceFmt(&lt;type&gt;,&lt;in&gt;,&lt;out&gt;)            format trace input(in) to output(out) by type
+   getErr(ret)                            print error description for return code
+   clear                                  clear the terminal screen
+   history -c                             clear the history
+   quit                                   exit
+   Takes 0.2993s.</pre>
+
+        <div class="note note"><span class="notetitle">Note:</span> <p class="p">SequoiaDB shell mainly includes 7 levels of operations: database (db), collection space (cs), collection (cl), cursor (cur), replica group (rg), node (nd), and domain (dm). Users need to understand the relationship between different levels. The operations of each level have its own help command:</p>
+</div>
+</li>
+            
+      <li class="li">Database Help <p class="p">Database level's main operations are user group management, collection space, replica group, domain, snapshot, storage process, backup, transaction, SQL, and error tracing.</p>
+
+        <p class="p">Assume the database has been connected, and there is a javascript object named db which is an instance of the database.</p>
+
+        <p class="p">Check all the methods of a database:</p>
+<pre class="pre codeblock">db.help()</pre>
+
+        <p class="p">Check a specific method of a database:</p>
+<pre class="pre codeblock">db.help("method")</pre>
+</li>
+
+      <li class="li">CollectionSpace Help<p class="p">Collection Space level's main operation is the management on the collections.</p>
+
+        <p class="p">Assume there is a collection space named "foo".</p>
+
+        <p class="p">Check all the methods of a collection space:</p>
+<pre class="pre codeblock">db.foo.help()</pre>
+
+        <p class="p">Check a specific method of a collection space:</p>
+<pre class="pre codeblock">db.foo.help("method")</pre>
+</li>
+
+      <li class="li">Collection Help<p class="p">Collection level's main operations are CRUD, index management, data sharding, and management on the vertical partition table.</p>
+
+        <p class="p">Assume "foo" hypothesis in the set space exists in name as "bar" collection.</p>
+
+        <p class="p">Check all the methods of a collection:</p>
+<pre class="pre codeblock">db.foo.bar.help()</pre>
+
+        <p class="p">Check a specific method of a collection:</p>
+<pre class="pre codeblock">db.foo.bar.help("method")</pre>
+</li>
+
+      <li class="li">Cursor Help<p class="p">Cursor level's main operations are on the returned data.</p>
+
+        <p class="p">All the data are returned in the form of cursor when interacting with SequoiaDB engine in the shell command. For example, when execute a query using db.foo.bar.<a class="xref" href="../../../references/methods/topics_en_v2/cl.find.html">find()</a> method, a cursor object will be returned with all the query results in it.</p>
+
+        <pre class="pre codeblock">db.foo.bar.find()</pre>
+<p class="p">or</p>
+<pre class="pre codeblock">var cur = db.foo.bar.find()</pre>
+
+        <p class="p">The first one directly display all the results on the screen, the second one put the results into a cursor.</p>
+
+        <p class="p">Check all the methods of a cursor:</p>
+<pre class="pre codeblock">db.foo.bar.find().help()</pre>
+<p class="p">or</p>
+<pre class="pre codeblock">cur.help()</pre>
+
+        <p class="p">Check a specific method of a cursor:</p>
+<pre class="pre codeblock">db.foo.bar.find().help("method")</pre>
+<p class="p">or</p>
+<pre class="pre codeblock">cur.help("method")</pre>
+
+        <p class="p">The methods similar to find() that also return cursor are list(), snapshot(), etc.</p>
+</li>
+
+      <li class="li">Replica Group Help<p class="p">Replica group level's main operation is the management on the data node.</p>
+
+        <p class="p">Assume there is a replica group named "group1" in the database, a javascript object named rg which is a instance of a replica group is obtained by using "var rg = db.getRG("group1")" command.</p>
+
+        <p class="p">Check all the methods of a replica group:</p>
+<pre class="pre codeblock">rg.help()</pre>
+
+        <p class="p">Check a specific method of a replica group:</p>
+<pre class="pre codeblock">rg.help("method")</pre>
+</li>
+
+      <li class="li">Node Help<p class="p">Node level's main operation is the obtaining of the status information of data nodes.</p>
+
+        <p class="p">Assume creating a data node in the replica group named "group1" using "var rn = rg.createNode("ubuntu-dev1", 51000, "/opt/sequoiadb/database/data/51000")", a javascript object named rn which is an instance of the data node will be obtained.</p>
+
+        <p class="p">Check all the methods of a node:</p>
+<pre class="pre codeblock">rn.help()</pre>
+
+        <p class="p">Check all the moethds of a node:</p>
+<pre class="pre codeblock">rn.help("method")</pre>
+</li>
+
+      <li class="li">Domain Help<p class="p">Domain level's main operations are the modification of domains and the obtaining of the domain information.</p>
+
+        <p class="p">Assume creating a domain named "domain1" in the database using "var dm = db.createDomain("domain1",["group1","group2"],{AutoSplit:true})" command, a javascript object named dm which is an instance of domain will be obtained.</p>
+
+        <p class="p">Check all the methods of a domain:</p>
+<pre class="pre codeblock">dm.help()</pre>
+
+        <p class="p">Check a specific method of a domain:</p>
+<pre class="pre codeblock">dm.help("method")</pre>
+</li>
+    
+    </ul>
+
+    <div class="note note"><span class="notetitle">Note:</span> SequoiaDB's man page was added in Version 1.8. The previous versions do not support the help("method") function. Moreover, please make sure that there is a "troff" file under /opt/sequoiadb/doc/manual directory; otherwise, man page will not be displayed.</div>
+
+    <p class="p">Please visit <a class="xref" href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Language_Resources">https://developer.mozilla.org//en-US/docs/Web/JavaScript/Language_Resources</a> to check all the automatically generated javascript function API documents provide by shell.</p>
+
+  </div>
+
+  
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../developement/console/topics/console_en.html" title="SequoiaDB Shell"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB Shell</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

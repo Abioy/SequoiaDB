@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_database_index">
+  <title>Index</title>
+  <body>
+    <section><title>Concept</title>
+    <p>In SequoiaDB database, indexes are a kind of special objects. Instead of being used to store
+        user data, indexes, a kind of special metadata, optimize speed and performance in finding
+        relevant documents for a search query. </p>
+    <p>Every index is put in a colleciotn. A collection contains 64 indexes at most.</p>
+    <p>Indexing is regarded as an approach to sort data based on one or more fields, and rapidly get
+        results which match users' query statements from it as soon as queries are submitted. In
+        SequoiaDB, indexes are stored in structures called B-trees.</p>
+    <p>A typical index structure is as follow：</p>
+    <p><image href="../images/index_concept.jpg" id="administration_concepts_database_index_img1"/></p>
+    <p>In this figure, the data is on the left, the indexes are on the right in the triangle.
+        Indexes are sorted in the structure of  trees in ascending order. every document will have a
+        unique index value. </p>
+    <p>Through tree tranversal, the position of specific data can be rapidly found. </p>
+    <p>SequoiaDB can create indexes to any type of data. An index contains:</p>
+    <simpletable><!-- frame="all" relcolwidth="1.0* 1.57*"
+        id="administration_concepts_database_index_table">-->
+        <sthead>
+          <stentry>Attribute</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry>name</stentry>
+          <stentry>Index name. Index name is unique in a collection.</stentry>
+        </strow>
+        <strow>
+          <stentry>key</stentry>
+          <stentry>Index key, as a JSON object, contains one or multiple indexes field and direction
+            field. If direction field is 1 or -1, the order is ascending or descending.</stentry>
+        </strow>
+        <strow>
+          <stentry>unique</stentry>
+          <stentry>"Unique", a optonal parameter, shows that whether an index is unique. The default
+            value of it is "false". When its value is "true", the index is unique. As for unique
+            index, there should not be repetitive records in a collection.</stentry>
+        </strow>
+        <strow>
+          <stentry>enforced</stentry>
+          <stentry>"Enforced" shows that whether an index is enforced to be unique. The default
+            value is "false". If its value is "true", with "unique" set "true", there is no more
+            than one null index key.</stentry>
+        </strow>
+      </simpletable>
+    <p>In SequoiaDB, every collection contains an enforced unique index named "$id". The index
+        contains a  index key of "_id".</p>
+    <p>An index named "$shard" is automatically is generated when sharding collection is created.
+        The index key of it is the sharding key specified by users.</p>
+    <note>
+      <p>In sharding collection, all unique indexes should contain all the fields specified by
+          collection sharding  key. </p>
+      <p>In sharding collection, "$id" index merely ensure the uniqueness of records within a single
+          node. If users plan to create a globally unique field, they have to create an extra unique
+          field, which contains all the fileds specified by  collection sharding  key.   </p>
+    </note>
+    </section>
+    <section>
+      <title>Format</title>
+      <p>The format of index contains two fields: "name" and "key". The type of "name" is string.
+        The type of "key" is JSON object.</p>
+      <codeblock>{ "name" : "&lt;index name&gt;", "key" : "{ "&lt;index field1&gt;" : &lt;direction&gt; [, "&lt;index field2&gt;" : &lt;direction&gt; ...] }, 
+        [ "unique" : &lt;true|false&gt; ], [ "enforced" : &lt;true|false&gt; ] }</codeblock>
+      <p>The object of "key" contains at least one field. The field name of it is the field name
+        that user search for. Its value is "1" or "-1". "1" represents ascending sequence of data.
+        "-1" represents descending sequence of data.</p>
+    </section>
+    <section>
+      <title>Sample</title>
+      <ul id="administration_concepts_database_index_example">
+        <li><p>Non-unique index, index name: "employee_id_key", index field is forward "employee_id".</p>
+          <codeblock>{ "name" : "employee_id_key", "key" : { "employee_id" : 1 } }</codeblock></li>
+        <li><p>Unique index, index name is "record_id_index", index field is forward "product_key" and reverse
+            "record_key".</p>
+          <codeblock>{ "name" : "record_id_index", "key" : { "product_key" : 1, "record_key" : -1 }, "unique" : true }</codeblock>
+          <p>In this index, there
+            are no two records with the same "product_key" and the same "record_key". (But if either
+            of them is the same, it is still regarded as an unique index.)</p></li>
+        <li><p>Enforced unique index. The index name is "test index". The index field is ascending "test case
+            name".</p>
+          <codeblock>{ "name" : "test index", "key" : { "test case name" : 1 }, "unique" : true, "enforced" : true }</codeblock>
+          <p>In an enforced unique index, all records should follow the rule of unique index. There
+            should not be more than one record that contains a null value of "test case name" field. </p></li>
+      </ul>
+    </section>
+  </body>
+  <related-links >
+    <link href="collection_en.dita" format="dita" type="topic"/>
+  </related-links>
+</topic>

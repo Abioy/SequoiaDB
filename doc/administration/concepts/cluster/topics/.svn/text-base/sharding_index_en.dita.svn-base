@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_sharding_index">
+  <title>Sharding Index</title>
+  <body>
+    <section><title>Concept</title>
+      <p>There is a default index named "$shard" in every sharded collection. This is sharding
+        index.</p>
+      <p>Only sharded collections have sharding index.</p>
+      <p>Sharding index exists in every sharding group in a sharded collection. The order of field
+        definations and the order of fields are the same as that of sharding key.</p>
+      <note>
+        <p>Any unique index defined by user should contain all the fields in sharding index. But the
+          order of fields of them may not be the same.</p>
+        <p>In sharded collection, the field of "_id" is unique in the sharding, but not globally
+          unique.</p>
+      </note>
+    </section>
+    <section>
+      <title>Sample</title>
+      <p>A typical sharding index is as follow:</p>
+      <codeblock>  { 
+        "IndexDef" : { 
+           "name" : "$shard", 
+           "_id" : { "$oid" : "515954bfa88873112fa6bd3a" }, 
+           "key" : { "Field1" : 1, "Field2" : -1 }, 
+           "v" : 0, 
+           "unique" : false, 
+           "dropDups" : false, 
+           "enforced" : false 
+        }, 
+        "IndexFlag" : "Normal" 
+  }</codeblock>
+    </section>
+  </body>
+  <related-links>
+    <link href="../../database/topics/index_en.dita"/>
+  </related-links>
+</topic>

@@ -1,0 +1,150 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="List Backup Information"/>
+<meta name="description" content="List backup information manually through the client and see. List backup information Parameter Description Parameter Description Name Backup name, and then list the default directory for all backup ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../administration/operation_maintain/topics/bandr_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_rkw_wx4_fm"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>List Backup Information</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_rkw_wx4_fm"><a name="topic_rkw_wx4_fm"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../administration/operation_maintain/topics/bandr_en.html" title="Backup and Recovery"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Backup and Recovery</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="operation_maintain_en.html" title="Operation and Maintain">Operation and Maintain</a> / <a class="navheader_parent_path" href="../../../administration/operation_maintain/topics/bandr_en.html" title="Backup and Recovery">Backup and Recovery</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">List Backup Information</h1>
+
+  <div class="body">
+    <p class="p">List backup information manually through the client and see.</p>
+
+    <div class="section"><h2 class="title sectiontitle">List backup information Parameter Description</h2>
+      
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d65863e22" class="stentry">Parameter</th>
+
+          <th valign="bottom" align="left" id="d65863e25" class="stentry">Description</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d65863e22" class="stentry">Name</td>
+
+          <td valign="top" headers="d65863e25" class="stentry">Backup name, and then list the default directory for all backup information.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d65863e22" class="stentry">Path</td>
+
+          <td valign="top" headers="d65863e25" class="stentry">Check the backup path is specified, the default for the configuration parameter "bkuppath" in the path specified.</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d65863e22" class="stentry">GroupName</td>
+
+          <td valign="top" headers="d65863e25" class="stentry">Specifies a group of backup information, which defaults to list full system backup information, when you need to list multiple set of backup information can be 
+            specified as an array type, such as: ["datagroup1","datagroup2"]。</td>
+
+        </tr>
+</table>
+</div>
+
+    <div class="section"><h2 class="title sectiontitle">List full system backup information</h2>
+      
+      <p class="p">1. Connect to the coord node</p>
+<pre class="pre codeblock">$ /opt/sequoiadb/bin/sdb
+&gt; var db = new Sdb("localhost",11810);</pre>
+
+      <p class="p">2. Do list backup information command</p>
+<pre class="pre codeblock">&gt; db.listBackup()
+{
+  "Name": "test_bk",
+  "NodeName": "vmsvr2-suse-x64-1:11800",
+  "GroupName": "SYSCatalogGroup",
+  "EnsureInc": false,
+  "BeginLSNOffset": 0,
+  "EndLSNOffset": 18744,
+  "StartTime": "2013-11-13-16:06:31",
+  "HasError": false
+}
+{
+  "Name": "test_bk",
+  "NodeName": "vmsvr2-suse-x64-1:11820",
+  "GroupName": "db1",
+  "EnsureInc": false,
+  "BeginLSNOffset": 0,
+  "EndLSNOffset": 920424,
+  "StartTime": "2013-11-13-16:06:31",
+  "HasError": false
+}</pre>
+      
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">List backup information specified name</h2>
+      
+      <p class="p">1. Connect to the coord node</p>
+<pre class="pre codeblock">$ /opt/sequoiadb/bin/sdb
+&gt; var db = new Sdb("localhost",11810);</pre>
+
+      <p class="p">2. Do list backup information command</p>
+<pre class="pre codeblock">&gt; db.listBackup({Name:"backup1"})
+{
+  "Name": "backup1",
+  "NodeName": "vmsvr2-suse-x64-1:11820",
+  "GroupName": "group1",
+  "EnsureInc": false,
+  "BeginLSNOffset": 0,
+  "EndLSNOffset": 108744,
+  "StartTime": "2013-11-13-16:06:31",
+  "HasError": false
+}</pre>
+      
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Hand-list backup information</h2>
+      
+      <p class="p">Hand-list backup information directly through the terminal login specified machine and into the appropriate backup directory, run "ls -l"</p>
+
+      <pre class="pre codeblock">use@vmsvr2-suse-x64-1:/opt/sequoiadb/database/11820/bakfile&gt; ls -l
+total 37328
+-rw-r----- 1 sdbadmin sdbadmin  38157784 Nov 13 16:06 test_bk.1
+-rw-r----- 1 sdbadmin sdbadmin     65536 Nov 13 16:06 test_bk.bak</pre>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../administration/operation_maintain/topics/bandr_en.html" title="Backup and Recovery"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Backup and Recovery</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

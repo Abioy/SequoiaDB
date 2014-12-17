@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_cluster">
+  <title>Cluster</title>
+  <body>
+    <p>SequoiaDB cluster is a mode designed to improve the efficience of data request by achieving
+      parallel computing multiplied database servers. </p>
+    <p>Using SequoiaDB cluster, a user can get: </p>
+    <section><title>High-qualified Data Visit</title>
+      <p>With parallel computing and executing distributed tasks on more than one data server, the
+        system saves resource consumption on every nodes, gets higher throughput and improves the
+        quality of data visit.</p>
+    </section>
+    <section><title>24x7 High Usability</title>
+      <p>Data replication in replsets guarantees data userability, so if any server doesn't works
+        accidently, data can be visited as well.</p>
+    </section>
+    <section><title>Horizon dilation ability of database </title>
+      <p>Database can contain more data by adding more replsets. Database can cope with more
+        requests by adding more nodes in a replset. The more database nodes, the higher global
+        throughput.</p>
+    </section>
+  </body>
+</topic>

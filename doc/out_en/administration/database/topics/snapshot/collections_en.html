@@ -1,0 +1,389 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Collections Snapshot"/>
+<meta name="description" content="Description Collections snapshot contains all the non-temporary collections in current data nodes (It contains user collection in coord node). Each collection is recorded as a record. Sign ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/database/topics/snapshot/snapshot_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_database_monitoring_snapshot_collections"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Collections Snapshot</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_database_monitoring_snapshot_collections"><a name="administration_database_monitoring_snapshot_collections"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/database/topics/snapshot/snapshot_en.html" title="Snapshot"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Snapshot</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../monitoring_en.html" title="Monitoring">Monitoring</a> / <a class="navheader_parent_path" href="../../../../administration/database/topics/snapshot/snapshot_en.html" title="Snapshot">Snapshot</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Collections Snapshot</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Description</h2>
+      <p class="p">Collections snapshot contains all the non-temporary collections in current data nodes (It
+        contains user collection in coord node). Each collection is recorded as a record.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Sign</h2>
+      <p class="p">SDB_SNAP_COLLECTIONS</p>
+
+    </div>
+
+    
+    <div class="section"><h2 class="title sectiontitle">Field Information</h2>
+      <p class="p">Since information stored in data nodes and catalog node is not the same, collections list
+        will return different structures according to the kind of the node:</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Other Node Field Information</h2>
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d40419e42" class="stentry">Field Name</th>
+
+          <th valign="bottom" align="left" id="d40419e45" class="stentry">Type</th>
+
+          <th valign="bottom" align="left" id="d40419e48" class="stentry">Description</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e42" class="stentry">Name</td>
+
+          <td valign="top" headers="d40419e45" class="stentry">String</td>
+
+          <td valign="top" headers="d40419e48" class="stentry">Full name of collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e42" class="stentry">Details.ID</td>
+
+          <td valign="top" headers="d40419e45" class="stentry">Integer</td>
+
+          <td valign="top" headers="d40419e48" class="stentry">Collection ID,Range from 0 to 4095, Unique in collection space</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e42" class="stentry">Details.LogicalID</td>
+
+          <td valign="top" headers="d40419e45" class="stentry">Integer</td>
+
+          <td valign="top" headers="d40419e48" class="stentry">Collection logical ID</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e42" class="stentry">Details.Sequence</td>
+
+          <td valign="top" headers="d40419e45" class="stentry">Integer</td>
+
+          <td valign="top" headers="d40419e48" class="stentry">Sequence number</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e42" class="stentry">Details.Indexes</td>
+
+          <td valign="top" headers="d40419e45" class="stentry">Integer</td>
+
+          <td valign="top" headers="d40419e48" class="stentry">The amount of indexes in the collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e42" class="stentry">Details.Status</td>
+
+          <td valign="top" headers="d40419e45" class="stentry">String</td>
+
+          <td valign="top" headers="d40419e48" class="stentry">
+            The current status of the collection
+            <ul class="ul">
+              <li class="li">Free</li>
+
+              <li class="li">Normal</li>
+
+              <li class="li">Dropped</li>
+
+              <li class="li">Offline Reorg Shadow Copy Phase</li>
+
+              <li class="li">Offline Reorg Truncate Phase</li>
+
+              <li class="li">Offline Reorg Copy Back Phase</li>
+
+              <li class="li">Offline Reorg Rebuild Phase</li>
+
+            </ul>
+
+          </td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e42" class="stentry">TotalRecords</td>
+
+          <td valign="top" headers="d40419e45" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d40419e48" class="stentry">Total number of a collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e42" class="stentry">TotalDataPages</td>
+
+          <td valign="top" headers="d40419e45" class="stentry">Integer</td>
+
+          <td valign="top" headers="d40419e48" class="stentry">Total number of data pages in a collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e42" class="stentry">TotalIndexPages</td>
+
+          <td valign="top" headers="d40419e45" class="stentry">Integer</td>
+
+          <td valign="top" headers="d40419e48" class="stentry">Total number of index pages in a collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e42" class="stentry">TotalLobPages</td>
+
+          <td valign="top" headers="d40419e45" class="stentry">Integer</td>
+
+          <td valign="top" headers="d40419e48" class="stentry">Pages number of LOBs in the collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e42" class="stentry">TotalDataFreeSpace</td>
+
+          <td valign="top" headers="d40419e45" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d40419e48" class="stentry">Free space of data in a collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e42" class="stentry">TotalIndexFreeSpace</td>
+
+          <td valign="top" headers="d40419e45" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d40419e48" class="stentry">Free space of index in a collection</td>
+
+        </tr>
+</table>
+
+    </div>
+    
+    <div class="section"><h2 class="title sectiontitle">Coord Node Field Information</h2>
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d40419e233" class="stentry">Field Name</th>
+
+          <th valign="bottom" align="left" id="d40419e236" class="stentry">Type</th>
+
+          <th valign="bottom" align="left" id="d40419e239" class="stentry">Description</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e233" class="stentry">Name</td>
+
+          <td valign="top" headers="d40419e236" class="stentry">String</td>
+
+          <td valign="top" headers="d40419e239" class="stentry">Full name of collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e233" class="stentry">Details.GroupName</td>
+
+          <td valign="top" headers="d40419e236" class="stentry">String</td>
+
+          <td valign="top" headers="d40419e239" class="stentry">Group name where the node in </td>
+
+        </tr>
+<tr class="strow"/>
+<tr class="strow">
+          <td valign="top" headers="d40419e233" class="stentry">Details.Group.ID</td>
+
+          <td valign="top" headers="d40419e236" class="stentry">Integer</td>
+
+          <td valign="top" headers="d40419e239" class="stentry">Collection ID, Range 0~4096, Unique in the collectionspace</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e233" class="stentry">Details.Group.LogicalID</td>
+
+          <td valign="top" headers="d40419e236" class="stentry">Integer</td>
+
+          <td valign="top" headers="d40419e239" class="stentry">Collection logical ID</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e233" class="stentry">Details.Group.Sequence</td>
+
+          <td valign="top" headers="d40419e236" class="stentry">Integer</td>
+
+          <td valign="top" headers="d40419e239" class="stentry">Sequence number</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e233" class="stentry">Details.Group.Indexes</td>
+
+          <td valign="top" headers="d40419e236" class="stentry">Integer</td>
+
+          <td valign="top" headers="d40419e239" class="stentry">The number of indexes in the collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e233" class="stentry">Details.Group.Status</td>
+
+          <td valign="top" headers="d40419e236" class="stentry">String</td>
+
+          <td valign="top" headers="d40419e239" class="stentry">The current status of the collection<a name="administration_database_monitoring_snapshot_collections__ul_cmj_t45_ql"><!-- --></a><ul class="ul" id="administration_database_monitoring_snapshot_collections__ul_cmj_t45_ql">
+              <li class="li">Free</li>
+
+              <li class="li">Normal</li>
+
+              <li class="li">Dropped</li>
+
+              <li class="li">Offline Reorg Shadow Copy Phase</li>
+
+              <li class="li"> Offline Reorg Truncate Phase</li>
+
+              <li class="li"> Offline Reorg Copy Back Phase</li>
+
+              <li class="li"> Offline Reorg Rebuild Phase</li>
+
+            </ul>
+</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e233" class="stentry">Details.Group.TotalRecords</td>
+
+          <td valign="top" headers="d40419e236" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d40419e239" class="stentry">Total number of a collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e233" class="stentry">Details.Group.TotalDataPages</td>
+
+          <td valign="top" headers="d40419e236" class="stentry">Integer</td>
+
+          <td valign="top" headers="d40419e239" class="stentry">Total number of data pages in a collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e233" class="stentry">Details.Group.TotalIndexPages</td>
+
+          <td valign="top" headers="d40419e236" class="stentry">Integer</td>
+
+          <td valign="top" headers="d40419e239" class="stentry">Total number of index pages in a collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e233" class="stentry">Details.Group.TotalDataFreeSpace</td>
+
+          <td valign="top" headers="d40419e236" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d40419e239" class="stentry">Free space of data in a collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e233" class="stentry">Details.Group.TotalIndexFreeSpace</td>
+
+          <td valign="top" headers="d40419e236" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d40419e239" class="stentry">Free space of index in a collection</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d40419e233" class="stentry">Details.Group.NodeName</td>
+
+          <td valign="top" headers="d40419e236" class="stentry">String</td>
+
+          <td valign="top" headers="d40419e239" class="stentry">Node name(hostname+port)</td>
+
+        </tr>
+</table>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Other Node Sample</h2>
+      
+      <pre class="pre codeblock">&gt; db.snapshot(SDB_SNAP_COLLECTIONS)
+{
+  "Name": "foo.bar",
+  "Details": [
+    {
+      "ID": 0,
+      "LogicalID": 0,
+      "Sequence": 1,
+      "Indexes": 8,
+      "Status": "Normal",
+      "TotalRecords": 0,
+      "TotalDataPages": 0,
+      "TotalIndexPages": 6,
+      "TotalLobPages": 0,
+      "TotalDataFreeSpace": 0,
+      "TotalIndexFreeSpace": 196545
+    }
+  ]
+}</pre>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Coord Node Sample</h2>
+      
+      <pre class="pre codeblock">&gt; coord.snapshot(SDB_SNAP_COLLECTIONS)
+{
+  "Name": "susefoo.susebar",
+  "Details": [
+    {
+      "GroupName": "datagroup1",
+      "Group": [
+        {
+          "ID": 0,
+          "LogicalID": 0,
+          "Sequence": 1,
+          "Indexes": 1,
+          "Status": "Normal",          
+          "TotalRecords": 1,
+          "TotalDataPages": 1,
+          "TotalIndexPages": 2,
+          "TotalLobPages": 0,
+          "TotalDataFreeSpace": 4004,
+          "TotalIndexFreeSpace": 4046,
+          "NodeName": "vmsvr2-suse-x64:11820"
+        }
+      ]
+    }
+  ]
+}</pre>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../administration/database/topics/snapshot/snapshot_en.html" title="Snapshot"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Snapshot</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

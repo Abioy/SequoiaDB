@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_7/lexical
+END
+shell.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_7/lexical/shell.js
+END
+regress-351515.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_7/lexical/regress-351515.js
+END
+jstests.list
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_7/lexical/jstests.list
+END
+regress-346642-03.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_7/lexical/regress-346642-03.js
+END
+regress-336376-01.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_7/lexical/regress-336376-01.js
+END
+regress-346642-04.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_7/lexical/regress-346642-04.js
+END
+browser.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_7/lexical/browser.js
+END

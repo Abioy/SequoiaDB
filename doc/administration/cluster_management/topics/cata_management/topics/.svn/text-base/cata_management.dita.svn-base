@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_hky_qcx_tk">
+  <title>编目分区组管理</title>
+  <body>
+    <p>本小结介绍在编目分区中新增分区组和新增节点。</p>
+    <p><b>目录：</b></p>
+    <p><xref href="cata_group.dita">新建编目分区组</xref></p>
+    <p><xref href="cata_node.dita">编目分区组中新增节点</xref></p>
+  </body>
+</topic>

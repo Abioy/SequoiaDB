@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_gsm_rcp_fm">
+  <title>Coord Node</title>
+  <body>
+    <p>As the coord node user data does not exist, so you can directly after a failure to restart, do not participate in any additional recovery steps.</p>
+  </body>
+</topic>

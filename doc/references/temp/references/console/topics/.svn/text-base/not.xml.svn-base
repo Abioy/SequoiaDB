@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\references\console\topics?><?path2project ..\..\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="references_console_not" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="title:1">$not</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="title:2">语法</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="p:1"><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="codeblock:1">{$not:[{&lt;表达式1&gt;},{&lt;表达式2&gt;},...,{&lt;表达式N&gt;}]}</codeblock></p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="section:2">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="title:3">描述</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="p:2">$not是一个逻辑"非"操作。选择不匹配表达式(&lt;表达式1&gt;&lt;表达式2&gt;,...,&lt;表达式N&gt;)的记录。</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="section:3"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="title:4">示例</title>
+      <ul class="- topic/ul " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="ul:1">
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="li:1">
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="p:3">选择集合bar下age字段值不等于20或price字段值不小于10的记录。</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="codeblock:2">db.foo.bar.find({$not:[{age:20},{price:{$lt:10}}]})</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links class="- topic/related-links " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="related-links:1">
+    <link href="or.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="link:1"><?ditaot gentext?><linktext class="- topic/linktext ">$or</linktext></link>
+    <link href="type.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="link:2"><?ditaot gentext?><linktext class="- topic/linktext ">$type</linktext></link>
+    <link href="inc.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="link:3"><?ditaot gentext?><linktext class="- topic/linktext ">$inc</linktext></link>
+    <link href="../../methods/topics/find.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="link:4"><?ditaot gentext?><linktext class="- topic/linktext ">db.collectionspace.collection.find()</linktext></link>
+    <link href="../../methods/topics/update.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\console\topics\not.dita" xtrc="link:5"><?ditaot gentext?><linktext class="- topic/linktext ">db.collectionspace.collection.update()</linktext></link>
+  </related-links>
+</topic>

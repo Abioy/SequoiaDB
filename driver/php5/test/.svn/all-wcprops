@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/sequoiadb/!svn/ver/9949/trunk/driver/php5/test
+END
+clienttest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/9949/trunk/driver/php5/test/clienttest.cpp
+END
+test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/9949/trunk/driver/php5/test/test.cpp
+END
+test.bat
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/9949/trunk/driver/php5/test/test.bat
+END

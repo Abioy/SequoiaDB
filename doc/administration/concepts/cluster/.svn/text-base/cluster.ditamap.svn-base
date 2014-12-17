@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="Administration_Concepts_Cluster">
+ <topicref href="topics/cluster.dita">
+  <topicref href="topics/mode.dita"/>
+  <topicref href="topics/node.dita">
+   <topicref href="topics/catalog_node.dita">
+    <topicref href="topics/SYSCOLLECTIONS.dita"/>
+    <topicref href="topics/SYSCOLLECTIONSPACES.dita"/>
+    <topicref href="topics/SYSNODES.dita"/>
+    <topicref href="topics/SYSTASKS.dita"/>
+    <topicref href="topics/SYSUSRS.dita"/>
+    <topicref href="topics/STOREPROCEDURES.dita"></topicref>
+   </topicref>
+   <topicref href="topics/coord_node.dita"/>
+   <topicref href="topics/data_node.dita"/>
+  </topicref>
+  <topicref href="topics/replset.dita">
+   <topicref href="topics/vote.dita"/>
+   <topicref href="topics/replicate.dita"/>
+   <topicref href="topics/sync.dita"/>
+  </topicref>
+  <topicref href="topics/sharding.dita">
+   <topicref href="topics/shardingkey.dita"/>
+   <topicref href="topics/sharded_collection.dita"/>
+   <topicref href="topics/sharding_index.dita"/>
+   <topicref href="topics/task.dita"/>
+   <topicref href="topics/split.dita"/>
+  </topicref>
+  <topicref href="topics/domain.dita"/>
+   <!--<topicref href="topics/split.dita"/>
+  </topicref>-->
+ </topicref>
+</map>

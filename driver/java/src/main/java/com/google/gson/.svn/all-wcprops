@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson
+END
+JsonSyntaxException.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonSyntaxException.java
+END
+FieldNamingStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/FieldNamingStrategy.java
+END
+JsonObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonObject.java
+END
+JsonStreamParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonStreamParser.java
+END
+TreeTypeAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/TreeTypeAdapter.java
+END
+JsonPrimitive.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonPrimitive.java
+END
+JsonSerializer.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonSerializer.java
+END
+JsonNull.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonNull.java
+END
+Gson.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/Gson.java
+END
+JsonArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonArray.java
+END
+TypeAdapterFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/TypeAdapterFactory.java
+END
+JsonSerializationContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonSerializationContext.java
+END
+JsonDeserializer.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonDeserializer.java
+END
+LongSerializationPolicy.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/LongSerializationPolicy.java
+END
+GsonBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/GsonBuilder.java
+END
+JsonIOException.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonIOException.java
+END
+TypeAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/TypeAdapter.java
+END
+JsonElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonElement.java
+END
+JsonParseException.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonParseException.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/package-info.java
+END
+InstanceCreator.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/InstanceCreator.java
+END
+DefaultDateTypeAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/DefaultDateTypeAdapter.java
+END
+JsonDeserializationContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonDeserializationContext.java
+END
+JsonParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/JsonParser.java
+END
+FieldAttributes.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/FieldAttributes.java
+END
+ExclusionStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/ExclusionStrategy.java
+END
+FieldNamingPolicy.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/google/gson/FieldNamingPolicy.java
+END

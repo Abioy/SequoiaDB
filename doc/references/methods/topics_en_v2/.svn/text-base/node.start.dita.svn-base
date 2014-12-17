@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_bbq_2wk_5n">
+  <title>node.start()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>start - Start the current node.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>node.start</apiname>(<parmname></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Node
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Start the current node.</p>           
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Start a current node named "node".</p>
+      <codeblock>node.start()</codeblock>            
+    </section>
+  </body>
+  <related-links>    
+    <link href="rg.stop.dita"></link>
+    <link href="node.stop.dita"></link>
+  </related-links>
+</topic>

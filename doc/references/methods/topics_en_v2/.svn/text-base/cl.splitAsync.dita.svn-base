@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_pj1_l1n_5n">
+  <title>db.collectionspace.collection.splitAsync()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>splitAsync - This method has the same function as db.collection.collection.split, but this is a asynchronous operation, a task ID will be returned immediately after the task is created.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.collectionspace.collection.splitAsync</apiname>(<parmname>&lt;source group></parmname>,<parmname>&lt;target group></parmname>,<parmname>&lt;percent(0~100)|cond></parmname>,<parmname>[endcondition]</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Collection
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>This method has the same function as db.collection.collection.split, but this is a asynchronous operation, a task ID will be returned immediately after the task is created.</p>           
+    </section>    
+  </body>
+</topic>

@@ -1,0 +1,95 @@
+10
+
+dir
+16591
+http://192.168.20.11/sequoiadb/trunk/client/admin/admintpl
+http://192.168.20.11/sequoiadb
+
+
+
+2014-10-23T06:47:28.672295Z
+15871
+jwhe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6121f079-4a18-41d3-8c30-8870a322f2c2
+
+smarty
+dir
+
+templates_c
+dir
+
+cache
+dir
+
+dist
+dir
+
+images
+dir
+
+php
+dir
+
+shell
+dir
+
+css
+dir
+
+js
+dir
+
+index.php
+file
+
+
+
+
+2014-12-03T03:44:15.739300Z
+3572a2fe86dee46f813375393ffd004e
+2014-01-07T08:40:20.781097Z
+10133
+jwhe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+337
+
+templates
+dir
+
+user
+dir
+

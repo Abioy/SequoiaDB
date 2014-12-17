@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_zc4_llk_kn">
+  <title>db.flushConfigure()</title>
+  <body>
+    <section><title>db.flushConfigure(&lt;rule>)</title>
+      <p>刷盘配置至配置文件</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>        
+        <strow>
+          <stentry>rule</stentry>
+          <stentry>Json 对象</stentry>
+          <stentry>刷盘规则</stentry>
+          <stentry>是</stentry>
+        </strow>        
+      </simpletable>      
+    </section>
+    <section><title>rule 格式</title>
+      <simpletable>
+        <sthead>
+          <stentry>属性名</stentry>
+          <stentry>描述</stentry>
+          <stentry>格式</stentry>
+        </sthead>        
+        <strow>
+          <stentry>Global</stentry>
+          <stentry>true 表示否刷盘全系统配置，false 表示只刷盘本节点配置</stentry>
+          <stentry>Global:true</stentry>
+        </strow>        
+      </simpletable>      
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>刷盘数据库配置</p>
+          <p><codeblock>db.flushConfigure({Global:true})</codeblock></p></li>
+      </ul>      
+    </section>
+  </body>
+</topic>

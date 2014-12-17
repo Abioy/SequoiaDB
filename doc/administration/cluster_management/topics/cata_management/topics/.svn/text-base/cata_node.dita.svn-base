@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_myy_ncx_tk">
+  <title>编目分区组中新增节点</title>
+  <body>
+    <note>如果新增节点涉及到新增主机，则请首先按照在<xref href="../../create_host.dita">集群中新增主机</xref>一节完成主机的主机名和参数配置。</note>
+    <p>随着整个集群中的物理设备的扩展，可以通过增加更多的编目节点来提高编目服务的可靠性。</p>
+    <p>操作方法：</p><codeblock>> var cataRG = db.getRG("SYSCatalog");
+> var node1 = cataRG.createNode(&lt;host&gt;,&lt;service&gt;,&lt;dbpath&gt;,[config]); 
+> node1.start()</codeblock>
+    <p>第一条命令用于获取编目分区组，“SYSCatalogGroup”为编目分区组组名；</p>
+    <p>第二条命令用于创建一个新的编目节点，其中：</p>
+    <p>参数：</p>
+    <p><b>host</b>：指定编目节点的主机名；</p>
+    <p><b>service</b>：指定编目节点的服务端口，请确保该端口号，以及往后延续的3个端口号未被占用；如设置为11800，请确保11800/11801/11802/11803端口都未被占用；</p>
+    <p><b>dbpath</b>：数据文件路径，用于存放编目数据文件，请确保数据管理员（安装时创建，默认为 sdbadmin）用户有写权限；</p>
+    <p><b>config</b>：该参数为可选参数，用于配置更多细节参数，格式必须为 json 格式，参数参见<xref href="../../../../database/topics/runtime_configuration.dita">数据库配置</xref> 一节；如需要配置日志大小参数｛logfilesz:64｝。</p>
+    <p>第三条命令用于启动新增的编目节点。</p> 
+  </body>
+</topic>

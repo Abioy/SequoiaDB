@@ -1,0 +1,93 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="sql update"/>
+<meta name="description" content="update 语句 用于修改集合中的记录。 语法 update &lt;cs_name&gt;.&lt;cl_name&gt; set (&lt;field1_name&gt;=&lt;value1&gt;,...) [where &lt;condition&gt;] &lt;cs_name&gt;：集合空间名 &lt;cl_name&gt;：集合名 &lt;condition&gt;：条件，只对符合条件的记录更新 示例 本例会修改集合中全部的记录，将记录中的 age ..."/>
+<meta name="DC.Relation" scheme="URI" content="list_cs.html"/>
+<meta name="DC.Relation" scheme="URI" content="sqinsert.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="references_sql_update"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>sql update</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="references_sql_update"><a name="references_sql_update"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span></div></td><td width="50%"/></tr></tbody></table>
+
+  <h1 class="title topictitle1">sql update</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">update 语句</h2>
+      <p class="p">用于修改集合中的记录。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">语法</h2>
+      <div class="p"><pre class="pre codeblock">update &lt;cs_name&gt;.&lt;cl_name&gt; set (&lt;field1_name&gt;=&lt;value1&gt;,...) [where &lt;condition&gt;]</pre>
+</div>
+
+      <p class="p">&lt;cs_name&gt;：集合空间名</p>
+
+      <p class="p">&lt;cl_name&gt;：集合名</p>
+
+      <p class="p">&lt;condition&gt;：条件，只对符合条件的记录更新</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">示例</h2>
+      <ul class="ul">
+        <li class="li"><p class="p">本例会修改集合中全部的记录，将记录中的 age 字段值修改为20，如果记录中不存在 age 字段，则将 age：20添加到记录中：</p>
+
+          <div class="p"><pre class="pre codeblock">db.execUpdate("update foo.bar set age=20") </pre>
+</div>
+
+        </li>
+
+        <li class="li">本例会修改符合条件的记录，只对符合条件 age &lt; 10 的记录做修改操作：<pre class="pre codeblock">db.execUpdate("update foo.bar set age=20 where age&lt;10")</pre>
+</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="list_cs.html" title="sql list collectionspaces">sql list collectionspaces</a></div>
+<div><a class="navheader_parent_path" href="sqinsert.html" title="sql insert into">sql insert into</a></div>
+</div>
+</div>
+<div class="navfooter"><script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

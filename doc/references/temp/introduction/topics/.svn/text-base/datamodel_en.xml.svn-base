@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\introduction\topics?><?path2project ..\..\out_en\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="sequoiadb_datamodel" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="title:1">Data Model</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="body:1">
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="p:1">SequoiaDB use the data model called JSON rather than traditional relation data module.</p>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="p:2">The full name of  JSON is <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="i:1">Javascript Object Notation</i>. It is a kind of lightweight
+      data-exchange format. It is easy for human to read and write JSON. It is also easy for machine
+      to generate and parse JSON.</p>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="p:3">It is based on a subset of <i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="i:2">JavaScript Programming Language, Standard ECMA-262 3rd Edition
+        – December 1999</i>. It is in type of text. JSON supports nesting structure and array.</p>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="p:4">The generation of JSON is based on two kinds of structure:</p>
+    <ul id="sequoiadb_datamodel_jsonstruct" class="- topic/ul " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="ul:1">
+      <li class="- topic/li " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="li:1">Key-value pair collection. In the structure of key-value pair collection, aevery data
+        element contains a name and a value. The value in it can be in the type of figure, string
+        and other common types, or nested JSON object and array. </li>
+      <li class="- topic/li " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="li:2">Array. Every element in a array doesn't contain element name.The value in it can be in the
+        type of figure, string and other common types, or nested JSON object and array. </li>
+    </ul>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="p:5">The format of JSON may be:</p>
+    <ul id="sequoiadb_datamodel_jsonmodel" class="- topic/ul " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="ul:2">
+      <li class="- topic/li " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="li:3"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="p:6">The object is a unordered "key-value pair" collection. It begins with "{" (left brace), and ends
+          with "}" (right brace). Every element name is followed with a ":" (colon). Elements are
+          seperated with "," (comma).</p>
+        <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="p:7"><image href="../images/sequoiadb_datamodel_jsonstruct_img1.jpg" id="sequoiadb_datamodel_jsonstruct_img1" placement="inline" class="- topic/image " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="image:1"/></p></li>
+      <li class="- topic/li " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="li:4"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="p:8">Array is a ordered value collection. It begins with a "[" (left bracket), and ends with "]"
+          (right bracket). Values are seperate with "." (comma).</p>
+        <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="p:9"><image href="../images/sequoiadb_datamodel_jsonstruct_img2.jpg" id="sequoiadb_datamodel_jsonstruct_img2" placement="inline" class="- topic/image " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="image:2"/></p></li>
+      <li class="- topic/li " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="li:5"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="p:10">Value is in type of string, figure, true, false, null, objdect, array, and special data
+          structures in SequoiaDB (such as date, time .etc). It is surrounded with double
+          quotations.</p>
+        <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="p:11"><image href="../images/sequoiadb_datamodel_jsonstruct_img3.jpg" id="sequoiadb_datamodel_jsonstruct_img3" placement="inline" class="- topic/image " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="image:3"/></p></li>
+    </ul>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="p:12">A typical nesting structure is as follow:</p>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="p:13"><image href="../images/sequoiadb_datamodel_jsonstruct_img4.jpg" id="sequoiadb_datamodel_jsonstruct_img4" placement="inline" class="- topic/image " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel_en.dita" xtrc="image:4"/></p>
+  </body>
+</topic>

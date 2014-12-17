@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_task">
+  <title>后台任务</title>
+  <body>
+    <section>
+      <title>概念</title>
+      <p>后台任务是一种不阻塞前端会话的任务，并不会随着前端会话的中断而停止。</p>
+      <p>所有的后台任务都会在编目节点的 SYSCAT.SYSTASKS 集合中跟踪，不同类型的后台任务可能包含不同的字段。</p>
+      <p>以下字段存在于所有后台任务中：</p>
+      <simpletable>
+        <sthead>
+          <stentry>字段名</stentry>
+          <stentry>类型</stentry>
+          <stentry>描述</stentry>
+        </sthead>
+        <strow>
+          <stentry>JobType</stentry>
+          <stentry>整数</stentry>
+          <stentry>任务类型，分别代表：
+            <ul>
+              <li>0：数据切分</li>
+            </ul>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>Status</stentry>
+          <stentry>整数</stentry>
+          <stentry>任务状态，分别代表：
+            <ul>
+              <li>0：准备</li>
+              <li>1：运行</li>
+              <li>2：暂停</li>
+              <li>3：取消</li>
+              <li>4：变更元数据</li>
+              <li>9：完成</li>
+            </ul>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>CollectionSpace</stentry>
+          <stentry>字符串</stentry>
+          <stentry>集合空间名</stentry>
+        </strow>
+        <strow>
+          <stentry>Collection</stentry>
+          <stentry>字符串</stentry>
+          <stentry>集合名</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>后台任务类型包括：</title>
+      <ul>
+        <li><xref href="split.dita">数据切分</xref></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="SYSTASKS.dita"/>
+  </related-links>
+</topic>

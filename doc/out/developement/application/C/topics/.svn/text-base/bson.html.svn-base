@@ -1,0 +1,147 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="C BSON 简介"/>
+<meta name="description" content="BSON 是 JSON 的二进制表现形式，通过记录每个对象，元素，以及嵌套元素和数组的类型以及长度，能够高速有效地进行某个元素的查找。因此，在 C 和 C++ 中使用 BSON 官方提供的 BSON 接口进行数据存储。更多参考 C BSON 在线 API 。 与普通的 JSON 不同，BSON 提供更多的数据类型，以满足 C/C++ 语言多种多样的需求。SequoiaDB ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../developement/application/topics/application.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="developement_application_C"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>C BSON 简介</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="developement_application_C"><a name="developement_application_C"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../developement/application/topics/application.html" title="SequoiaDB 应用程序开发"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB 应用程序开发</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../../topics/developement.html" title="开发指南">开发指南</a> / <a class="navheader_parent_path" href="../../../../developement/application/topics/application.html" title="SequoiaDB 应用程序开发">SequoiaDB 应用程序开发</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">C BSON 简介</h1>
+
+  <div class="body">
+    <p class="p">BSON 是 JSON 的二进制表现形式，通过记录每个对象，元素，以及嵌套元素和数组的类型以及长度，能够高速有效地进行某个元素的查找。因此，在 C 和 C++ 中使用 BSON 官方提供的 BSON 接口进行数据存储。更多参考 <a class="xref" href="../../../../bson/html/index.html">C BSON 在线 API</a>。</p>
+
+    <p class="p">与普通的 JSON 不同，BSON 提供更多的数据类型，以满足 C/C++ 语言多种多样的需求。SequoiaDB 提供了包括8字节浮点数（DOUBLE），字符串，嵌套对象，嵌套数组，对象 ID（数据库中每个集合中每条记录都有一个唯一 ID），布尔值，日期，NULL，正则表达式，4字节整数（INT），时间戳，以及8字节整数等数据类型。这些类型的定义可以在 bson.h 中的 bson_type 找到。注意：使用 C BSON API 函数在建立 BSON 出错时，将返回错误码，应当适当检测函数返回值。详情请查看 C BSON API。</p>
+
+    <p class="p">在用户程序使用 BSON 对象时，主要分为建立对象和读取对象两个操作。</p>
+
+    <div class="section"><h2 class="title sectiontitle"> 建立对象</h2>
+    
+      <p class="p">总的来说，一个 BSON 对象的创建主要分为三大步操作：</p>
+
+      <p class="p"> 1）创建对象（bson_create ; bson_init）</p>
+
+      <p class="p"> 2）使用对象</p>
+
+      <p class="p"> 3）清除对象（bson_dispose ; bson_destory）</p>
+
+      <ul class="ul">
+        <li class="li"><div class="p">创建一个简单的 BSON 对象{age:20}。<pre class="pre codeblock">INT32 rc = SDB_OK;
+bson obj;
+bson_init(&amp;obj);
+bson_appent_int(obj,"age",20);
+if ( bson_finish(obj) != SDB_OK )
+printf("Error.") ;
+bson_destory(obj);</pre>
+</div>
+</li>
+
+        <li class="li">创建一个复杂的 BSON 对象
+          <pre class="pre codeblock">/* 创建一个包含{name:"tom",colors:["red","blue","green"], address: {city:"Toronto, province: "Ontario"}}的对象 */
+bson_iterator bi ;
+bson *newobj = bson_create () ;
+bson_append_string ( newobj, "name", "tom" ) ;
+bson_append_start_object ( newobj, "address" ) ;
+bson_append_string ( newobj, "city", "Toronto" ) ;
+bson_append_string ( newobj, "provice", "Ontario" ) ;
+bson_append_start_array(newobj,"colors");
+bson_appent_string(newobj,"0","red");
+bson_appent_string(newobj,"1","blue");
+bson_appent_string(newobj,"2","green");
+bson_append_finish_object ( newobj ) ;
+if( bson_finish ( newobj ) != BSON_OK )
+   printf("Error.") ;</pre>
+</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">读取对象</h2>
+      
+      <p class="p">读取 BSON 对象使用一个 bson_iterator，对一个完整的例子，可以使用 bson_print_raw 方法来读取。但是首先得初始化 bson_iterator 对象，然后使用 bson_iterator_next 遍历每一个元素。</p>
+
+      <p class="p">例如：</p>
+<pre class="pre codeblock">bson_iterator i[1] ;
+bson_type type ;
+const char * key;
+
+bson_iterator_init(i, newobj) ;
+
+type = bson_iterator_next (i);
+key = bson_iterator_key (i);
+
+printf( "Type: %d, Key: %s\n", type, key) ;</pre>
+
+      <p class="p">对于每个 bson_iterator，使用 bson_iterator_type 函数可以得到其类型，使用 bson_iterator_string 等函数可以得到其相对应类型的数值。</p>
+
+      <pre class="pre codeblock">printf( "Value: %s, bson_iterator_string(i)) ;</pre>
+
+      <ul class="ul">
+        <li class="li">
+          <p class="p">遍历每个连续的 BSON 对象元素，可以使用 bson_find 函数直接跳转得到元素的名称。如果该元素不存在于 bson 之内，则 bson_find 函数返回 BSON_EOO。</p>
+
+          <p class="p">例如想得到 name 元素名可以这样使用：</p>
+
+          <pre class="pre codeblock">bson_iterator i[1] ,sub[i] ;
+bson_type type ;
+
+bson_find ( i, newobj, "name" )</pre>
+
+        </li>
+
+        <li class="li">读取数组元素或嵌套对象，因为“address”是一个嵌套对象，需要特殊遍历。首先得到 address 值，再初始化一个新的 BSON 迭代器：<pre class="pre codeblock">type = bson_find(i,newobj,"address");
+bson_iterator_subiterator(i,sub);</pre>
+
+          <p class="p">方法 bson_iterator_subiterator 初始化迭代器 sub，并且指向子对象的开始位置，从这里开始可以遍历 sub
+            中的所有元素，直到子对象的结束位置。</p>
+</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../developement/application/topics/application.html" title="SequoiaDB 应用程序开发"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB 应用程序开发</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

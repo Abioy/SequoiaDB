@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="administration_concepts_database_document">
+  <title>Document</title>
+  <body>
+    <section><title>Concept</title>
+    <p>In SequoiaDB, document is in the format of JSON, also named as record. In database, JSON data
+        is stored in the format of BSON after transformation. Generally, a document is consisted of
+        one or more fields. Every field is consisted of 2 parts: key and value.This is a document
+        containing 2 fields:</p>
+    <p>{ "name" : "Zhangsan", "gender" : "male" }</p>
+      <note>
+        <p>BSON documents may have more than one field with the same name; however, most SequoiaDB interfaces represent SequoiaDB 
+with a structure(e.g a hash table) that does not support duplicate field names, if you need to manipulate documents that have more 
+than one fiels with the same name, see your driver's documentation for more information.</p>
+        <p>Some documents created by internal SequoiaDB processes may have duplicate fields, but no SequoiaDB process will ever add duplicate keys to an existing user document.</p>
+      </note>
+    </section>
+    <section>
+      <title>Field type</title>
+     <p>The key of a field is in the format of string, but value can be in the format of figure,
+        string, nested JSON project, nestd array.etc. SequoiaDB support these types:</p>
+     <simpletable><!-- frame="all" relcolwidth="1.0* 2.27* 2.95*"
+        id="administration_concepts_database_document_table1">-->
+        <sthead>
+          <stentry>Type</stentry>
+          <stentry>Definition</stentry>
+          <stentry>Sample</stentry>
+        </sthead>
+        <strow>
+          <stentry>Integer</stentry>
+          <stentry>Integer, range from -2147483648 to 2147483647</stentry>
+          <stentry>{ "key" : 123 }</stentry>
+        </strow>
+        <strow>
+          <stentry>Long</stentry>
+          <stentry>Integer, range from -9223372036854775808 to 9223372036854775807.<fig></fig>If a value is not
+            suitible to an Integer, it is automatically transform into Long by SequoiaDB.</stentry>
+          <stentry>{ "key" : 3000000000 }</stentry>
+        </strow>
+        <strow>
+          <stentry>Float</stentry>
+          <stentry>Float, range from 1.7E-308 to 1.7E+308</stentry>
+          <stentry>{ "key" : 123.456 } or { "key" : 123e+50 }</stentry>
+        </strow>
+        <strow>
+          <stentry>String</stentry>
+          <stentry>String within double quotations</stentry>
+          <stentry>{ "key" : "value" }</stentry>
+        </strow>
+        <strow>
+          <stentry>Object ID（OID）</stentry>
+          <stentry>12-byte object ID</stentry>
+          <stentry>{ "key" : { "$oid" : "123abcd00ef12358902300ef" } }</stentry>
+        </strow>
+        <strow>
+          <stentry>Bool</stentry>
+          <stentry>true or false</stentry>
+          <stentry>{ "key" : true } or { "key" : false }</stentry>
+        </strow>
+        <strow>
+          <stentry>Date</stentry>
+          <stentry>In the format of YYYY-MM-DD</stentry>
+          <stentry>{ "key" : { "$date" : "2012-01-01" } }</stentry>
+        </strow>
+        <strow>
+          <stentry>Timeline</stentry>
+          <stentry>In the format of YYYY-MM-DD-HH.mm.ss.ffffff</stentry>
+          <stentry>{ "key" : { "$timestamp" : "2012-01-01-13.14.26.124233" } }</stentry>
+        </strow>
+        <strow>
+          <stentry>Bindata</stentry>
+          <stentry>Base64 binary data</stentry>
+          <stentry>{ "key" : { "$binary" : "aGVsbG8gd29ybGQ=", "$type" : 1 } }</stentry>
+        </strow>
+        <strow>
+          <stentry>Regex</stentry>
+          <stentry>Regular expression</stentry>
+          <stentry>{ "key" : { "$regex" : "^Zhang", "$options" : "i" } }</stentry>
+        </strow>
+        <strow>
+          <stentry>Object</stentry>
+          <stentry>Nested JSON document object</stentry>
+          <stentry>{ "key" : { "subobj" : "value" } }</stentry>
+        </strow>
+        <strow>
+          <stentry>Array</stentry>
+          <stentry>Nested array object</stentry>
+          <stentry>{ "key" : [ "abc", 0, "def" ] }</stentry>
+        </strow>
+        <strow>
+          <stentry>NULL</stentry>
+          <stentry>null</stentry>
+          <stentry>{ "key" : null }</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>Field order</title>
+      <p>Fields are unordered. The order of fields may be changed in the process of data
+        manipulation.</p>
+      <p>Within a nested object, fields are invoked in the format of  "object.field". For
+        example,</p>
+      <codeblock>{ "name" : "zhangsan", "address" : { "street" : "shuilan street", "city" : "xx", "block" : "yy" } }</codeblock>
+      <p>The field of "city" is invoked as "address.city".</p>
+    </section>
+    <section>
+      <title>Others</title>
+      <ul id="administration_concepts_database_misc">
+        <li>The max size of each document is 16MB.</li>
+        <li>Document should contains "_id" field. If users do not offer it, syetem will automatically generate a field in the type of object ID.</li>
+        <li>"_id" is unique in a collection.</li>
+        <li>Field name in document should not begin with the character "$".</li>
+        <li>Field name in document should not contain ".".</li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="../../../../introduction/topics/datamodel_en.dita" format="dita" type="topic"/>
+    <link href="collection_en.dita" format="dita" type="topic"/>
+  </related-links>
+</topic>

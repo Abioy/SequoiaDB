@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_database_monitoring_snapshot_system">
+  <title>Operating System Snapshot</title>
+  <body>
+    <section><title>Description</title>
+      <p>Operating system snapshot contains main status and performance monitoring parameter of
+        operating system of current database node. It returns one record.</p>
+    </section>
+    <section><title>Sign</title>
+      <p>SDB_SNAP_SYSTEM</p>
+    </section>
+    
+    <section><title>Other Node Field Information</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.06* 1.93*"
+        id="administration_database_monitoring_snapshot_system_table">-->
+        <sthead>
+          <stentry>Field Name</stentry>
+          <stentry>Type</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry>HostName</stentry>
+          <stentry>String</stentry>
+          <stentry>The host name of physical node of database node.</stentry>
+        </strow>
+        <strow>
+          <stentry>ServiceName</stentry>
+          <stentry>String</stentry>
+          <stentry>Service name specified by svcname. HostName and service name are the sign of a
+            logical node.</stentry>
+        </strow>
+        <strow>
+          <stentry>NodeName</stentry>
+          <stentry>String</stentry>
+          <stentry>Node name, in the format of &lt;HostName&gt;:&lt;ServiceName&gt;</stentry>
+        </strow>
+        <strow>
+          <stentry>GroupName</stentry>
+          <stentry>String</stentry>
+          <stentry>The name of replset of the logical node. There is no this field under independent
+            mode.</stentry>
+        </strow>
+        <strow>
+          <stentry>IsPrimary</stentry>
+          <stentry>Bool</stentry>
+          <stentry>IsPrimary shows whether the node is a main node.There is no this field under
+            independent mode.</stentry>
+        </strow>
+        <strow>
+          <stentry>ServiceStatus</stentry>
+          <stentry>Bool</stentry>
+          <stentry>ServiceStatus represents the status of whether it is availible to serve. For
+              example, <xref href="../../../concepts/cluster/topics/sync_en.dita">Full Sync</xref> will
+            make it <i>false</i>.</stentry>
+        </strow>
+        <strow>
+          <stentry>BeginLSN.Offset</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Offset of the starting of LSN</stentry>
+        </strow>
+        <strow>
+          <stentry>BeginLSN.Version</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Version number of a starting LSN</stentry>
+        </strow>
+        <strow>
+          <stentry>CurrentLSN.Offset</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Excursion of current LSN</stentry>
+        </strow>        
+        <strow>
+          <stentry>TransInfo.BeginLSN</stentry>
+          <stentry>Long integer</stentry>
+          <stentry>Transaction's offset of the starting LSN</stentry>
+        </strow>
+        <strow>
+          <stentry>NodeID</stentry>
+          <stentry>Array</stentry>
+          <stentry>[ ReplicaGroup ID, Node ID ], while in standalone mode this field is [ 0, 0 ]</stentry>
+        </strow>                
+        <strow>
+          <stentry>CurrentLSN.Version</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Verssion number of the current LSN.</stentry>
+        </strow>
+        <strow>
+          <stentry>CPU.User</stentry>
+          <stentry>Float Integer</stentry>
+          <stentry>Total user CPU time (seconds) cost after OS is started.</stentry>
+        </strow>
+        <strow>
+          <stentry>CPU.Sys</stentry>
+          <stentry>Float Integer</stentry>
+          <stentry>Total system CPU time (seconds) cost after OS is started.</stentry>
+        </strow>
+        <strow>
+          <stentry>CPU.Idle</stentry>
+          <stentry>Float Integer</stentry>
+          <stentry>Total free CPU time (seconds) cost after OS is started.</stentry>
+        </strow>
+        <strow>
+          <stentry>CPU.Other</stentry>
+          <stentry>Float Integer</stentry>
+          <stentry>Total other CPU time (seconds) cost after OS is started.</stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.LoadPercent</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Percentage of used memory of the current operating system (including file system
+            cache) <b>Ipmortant: This field only display in data node </b></stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.TotalRAM</stentry>
+          <stentry>Long In teger</stentry>
+          <stentry>Total memory space of the current operating system (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.FreeRAM</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Free memory space of the current operating system (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.TotalSwap</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Total swap space of the current operating system (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.FreeSwap</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Free swap space of the current operating system (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.TotalVirtual</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Total virtual space of the current operating system (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.FreeVirtual</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Free virtual space of the current operating system (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Disk.DatabasePath</stentry>
+          <stentry>String</stentry>
+          <stentry>Database Path <b>Ipmortant: This field  only display in data node </b></stentry>
+        </strow>
+        <strow>
+          <stentry>Disk.LoadPercent</stentry>
+          <stentry>Integer</stentry>
+          <stentry>The percentage of space of file system of data path . <b>Ipmortant: This field
+              only display in data node </b></stentry>
+        </strow>
+        <strow>
+          <stentry>Disk.TotalSpace</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Total space in database path (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Disk.FreeSpace</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Free space in database path (byte)</stentry>
+        </strow>        
+      </simpletable>
+    </section>
+    <section>
+      <title>Coord Node Field Information</title>
+      <simpletable>
+        <sthead>
+          <stentry>Field Name</stentry>
+          <stentry>Type</stentry>
+          <stentry>Description</stentry>
+        </sthead>        
+        <strow>
+          <stentry>CPU.User</stentry>
+          <stentry>Float Integer</stentry>
+          <stentry>Total user CPU time (seconds) cost after OS is started.</stentry>
+        </strow>
+        <strow>
+          <stentry>CPU.Sys</stentry>
+          <stentry>Float Integer</stentry>
+          <stentry>Total system CPU time (seconds) cost after OS is started.</stentry>
+        </strow>
+        <strow>
+          <stentry>CPU.Idle</stentry>
+          <stentry>Float Integer</stentry>
+          <stentry>Total free CPU time (seconds) cost after OS is started.</stentry>
+        </strow>
+        <strow>
+          <stentry>CPU.Other</stentry>
+          <stentry>Float Integer</stentry>
+          <stentry>Total other CPU time (seconds) cost after OS is started.</stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.LoadPercent</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Percentage of used memory of the current operating system (including file system
+            cache) <b>Ipmortant: This field only display in data node </b></stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.TotalRAM</stentry>
+          <stentry>Long In teger</stentry>
+          <stentry>Total memory space of the current operating system (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.FreeRAM</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Free memory space of the current operating system (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.TotalSwap</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Total swap space of the current operating system (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.FreeSwap</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Free swap space of the current operating system (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.TotalVirtual</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Total virtual space of the current operating system (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Memory.FreeVirtual</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Free virtual space of the current operating system (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Disk.DatabasePath</stentry>
+          <stentry>String</stentry>
+          <stentry>Database Path <b>Ipmortant: This field  only display in data node </b></stentry>
+        </strow>
+        <strow>
+          <stentry>Disk.LoadPercent</stentry>
+          <stentry>Integer</stentry>
+          <stentry>The percentage of space of file system of data path . <b>Ipmortant: This field
+            only display in data node </b></stentry>
+        </strow>
+        <strow>
+          <stentry>Disk.TotalSpace</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Total space in database path (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>Disk.FreeSpace</stentry>
+          <stentry>Long Integer</stentry>
+          <stentry>Free space in database path (byte)</stentry>
+        </strow>
+        <strow>
+          <stentry>ErrNodes.NodeName</stentry>
+          <stentry>String</stentry>
+          <stentry>Exception node name (hostname+port)<b>Ipmortant: This field only display in coord
+            node node and existing exception node </b></stentry>
+        </strow>
+        <strow>
+          <stentry>ErrNodes.Flag</stentry>
+          <stentry>Int</stentry>
+          <stentry>Rrror code <b>Ipmortant: This field only display in coord node and existing
+            exception node </b></stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section><title>Other node Sample</title>
+      <codeblock>> db.snapshot(SDB_SNAP_SYSTEM)
+{
+  "NodeName": "vmsvr2-suse-x64:11820",
+  "HostName": "vmsvr2-suse-x64",
+  "ServiceName": "11820",
+  "GroupName": "datagroup1",
+  "IsPrimary": false,
+  "ServiceStatus": true,
+  "BeginLSN": {
+    "Offset": 0,
+    "Version": 1
+  },
+  "CurrentLSN": {
+    "Offset": 3764,
+    "Version": 1
+  },
+  "NodeID": [
+    1000,
+    1000
+  ],
+  "TransInfo": {
+    "BeginLSN": -1
+    },
+  "NodeID": [
+    0,
+    0
+    ],
+  "CPU": {
+    "User": 3947.31,
+    "Sys": 715.11,
+    "Idle": 331196.41,
+    "Other": 771.14
+  },
+  "Memory": {
+    "LoadPercent": 95,
+    "TotalRAM": 4155072512,
+    "FreeRAM": 202219520,
+    "TotalSwap": 2153771008,
+    "FreeSwap": 2137071616,
+    "TotalVirtual": 6308843520,
+    "FreeVirtual": 2339291136
+  },
+  "Disk": {
+    "DatabasePath": "/opt/sequoiadb/database/data/11820",
+    "LoadPercent": 78,
+    "TotalSpace": 40704466944,
+    "FreeSpace": 8615747584
+  }
+}</codeblock>
+    </section>
+    <section>
+      <title>Coord Node Sample</title>
+      <codeblock>> db.snapshot(SDB_SNAP_SYSTEM)
+{
+  "CPU": {
+    "User": 36280.72,
+    "Sys": 5046.23,
+    "Idle": 7560242.4,
+    "Other": 5887.24
+  },
+  "Memory": {
+    "TotalRAM": 8403730432,
+    "FreeRAM": 3075035136,
+    "TotalSwap": 25757204480,
+    "FreeSwap": 25663799296,
+    "TotalVirtual": 34160934912,
+    "FreeVirtual": 28738834432
+  },
+  "Disk": {
+    "TotalSpace": 338172772352,
+    "FreeSpace": 181331296256
+  },
+  "ErrNodes": []
+}</codeblock>
+    </section>
+  </body>
+</topic>

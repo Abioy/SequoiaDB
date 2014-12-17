@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_getCL">
+  <title>db.collectionspace.getCL()</title>
+  <body>
+    <section><title>db.collectionspace.getCL(&lt;name>)</title>
+      <p>Returns the quotation of collection in a collection space.</p>
+    </section>
+    <section><title>Parameter description</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.13* 5.63* 1.19*"
+        id="references_method_getCL_table">-->
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Not null</stentry>
+        </sthead>
+        <strow>
+          <stentry>name</stentry>
+          <stentry>string</stentry>
+          <stentry>Collection name. In a collection space, collection name should be unique to each
+            other.</stentry>
+          <stentry>Yes</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>Format</title>
+      <p> The parameter "name" in the method "getCL()" should be specified and the "name" should be
+        valid, or exception will occur.</p>
+      <p><codeblock>{"name":"&lt;collection name>"}</codeblock></p>
+      <note>
+        <ul>
+          <li>The value of "name" should not be null string. It should not contain "." or "$". The
+            length of should not be greater than 127B. If the value of "name" is invalid, exception
+            will occur. </li>
+          <li>Make sure that the collection name exists in the collection space, or operation
+            exception will occur. </li>
+        </ul>
+      </note>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>Supposing that the collection name "bar", the command returns the quotation of the collection
+            "bar" in the collection space "foo".</p>
+          <codeblock>db.foo.getCL("bar")</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="createCL_en.dita" format="dita" type="topic"></link>
+    <link href="dropCL_en.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/concepts/database/topics/collection_en.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/concepts/database/topics/collectionspace_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

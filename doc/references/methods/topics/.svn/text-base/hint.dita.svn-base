@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="reference_method_hint">
+  <title>query.hint()</title>
+  <body>
+    <section><title>query.hint(&lt;hint>)</title>
+      <p>按指定的索引遍历结果集。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable id="references_method_hint_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>hint</stentry>
+          <stentry>Json 对象</stentry>
+          <stentry>指定访问计划，加快查询速度。</stentry>
+          <stentry>否</stentry>
+        </strow>
+      </simpletable>      
+    </section>
+    <section>
+      <title>格式</title>
+      <p>query.hint() 的方法定义包含 hint 参数，如果不设定 hint 参数的内容相当于不使用索引遍历结果集。hint 参数是一个包含一个单一字段的 Json 对象，字段名会被忽略，而其字段值则指定为需要访问索引的名称，当字段值为 null 时，则遍历集合中所有的记录。</p>
+      <p>格式如下：</p>
+      <p>
+        <codeblock>{"":null} 或者 {"":"&lt;indexname>"}</codeblock>
+      </p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>使用索引 ageIndex 遍历集合 bar 下存在 age 字段的记录，并返回。</p>
+          <p><codeblock>db.foo.bar.find({age:{$exists:1}}).hint({"":"ageIndex"})</codeblock></p>
+        </li>
+      </ul>      
+    </section>
+  </body>
+  <related-links>
+    <link href="csort.dita" format="dita" type="topic"></link>
+    <link href="climit.dita" format="dita" type="topic"></link>
+    <link href="find.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/exists.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

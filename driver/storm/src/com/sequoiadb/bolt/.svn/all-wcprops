@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11485/trunk/driver/storm/src/com/sequoiadb/bolt
+END
+SequoiaBoltBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11485/trunk/driver/storm/src/com/sequoiadb/bolt/SequoiaBoltBase.java
+END
+SequoiaBoltTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11485/trunk/driver/storm/src/com/sequoiadb/bolt/SequoiaBoltTask.java
+END
+SequoiaUpdateBolt.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11485/trunk/driver/storm/src/com/sequoiadb/bolt/SequoiaUpdateBolt.java
+END
+SequoiaInsertBolt.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11485/trunk/driver/storm/src/com/sequoiadb/bolt/SequoiaInsertBolt.java
+END

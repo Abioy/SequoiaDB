@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="administration_concepts_database_collectionspace">
+  <title>Collection Space</title>
+  <body>
+    <section><title>Concept</title>
+    <p>Collection Space is physical object where collections store. Every collection belongs to onre
+        and only one collection space.</p>
+    <p>The length of collection space name is at most 127 bytes, encoded with UTF-8. A collection
+        space contains at most 4096 collections. Every data node contains at most 4096 collection
+        spaces.</p>
+    <p>Every collection space has a corresponding file on the data node. The format of file name is
+        &lt;collection space name&gt;.1”。</p>
+    </section>
+    <section><title>Page</title>
+     <p>A file is departed in to several fixed-size pages by space collection. When creating a
+        collection space, users can specify the size of a page in it, which is unchangeable.</p>
+     <p>In every sharding node, a collection space can visit at most 16777216 different pages.
+        According to pages of different sizes, the max size of a single sharding  is:</p>
+     <simpletable><!-- frame="all" relcolwidth="1.0* 1.0*"
+       id="administration_concepts_database_collectionspace_table1">-->
+       <sthead>
+         <stentry>Size of page（byte）</stentry>
+         <stentry>Collection space max capacity（GB）</stentry>
+       </sthead>
+       <strow>
+         <stentry>4096</stentry>
+         <stentry>512</stentry>
+       </strow>
+       <strow>
+         <stentry>8192</stentry>
+         <stentry>1024</stentry>
+       </strow>
+       <strow>
+         <stentry>16384</stentry>
+         <stentry>2048</stentry>
+       </strow>
+       <strow>
+         <stentry>32768</stentry>
+         <stentry>4096</stentry>
+       </strow>
+       <strow>
+         <stentry>65536</stentry>
+         <stentry>8192</stentry>
+       </strow>
+     </simpletable>
+    </section>
+    <section><title>Block</title>
+      <p>A block is consisted of one or more pages. Every collection in collection spaces is
+        consisted of zero or more blocks. The size of block is changeable according to the length of
+        data. Every document is stored in only one block.</p>
+      <p>Blocks in a collection space are stored as follow:</p>
+      <p><image href="../images/collectionspace_extent.jpg" id="administration_concepts_database_collectionspace_img1"/></p>
+      <p>In this chart, there are 3 collection in a collection space, represented by 3 colors. Data
+        of every collection is stored in its corresponding page. Data block is consisted of one or
+        more sequential data pages. A document cannot be divided and stored in different data
+        blocks.</p>
+    </section>
+  </body>
+  <related-links >
+    <link href="collection_en.dita" format="dita" type="topic"/>
+    <link href="databaseserver_en.dita" format="dita" type="topic"/>
+  </related-links>
+</topic>

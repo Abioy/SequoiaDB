@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_pop">
+  <title >$pop</title>
+  <body>
+    <section><title>语法</title>
+      <p>{$pop:{&lt;字段名1>:&lt;N>,&lt;字段名2>:&lt;N>,...}}</p>
+    </section>
+    <section>
+      <title>描述</title>
+      <p>$pop 操作是删除指定数组对象（&lt;字段名1>,&lt;字段名2>,...）最后 N 个元素，操作对象必须为数组类型的字段。如果记录中不存在指定的数组对象，跳过不做任何操作；如果指定的 N 值大于数组对象的长度，数组对象的长度更新为0，即它的元素全部被删除；如果指定的 N 值 &lt; 0，意味着从数组起始删除第 -N 个元素。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>删除集合 bar 下数组对象 arr 的最后两个元素。如有记录：<codeblock>{arr:[1,2,3,4],age:20,name:"Tom"}</codeblock></p>
+          <codeblock>db.foo.bar.update({$pop:{arr:2}})</codeblock>
+          <p>此操作后，记录更新为：<codeblock>{arr:[1,2],age:20,name:"Tom"}</codeblock></p>
+        </li>
+        <li>
+          <p>删除集合 bar 下数组对象 arr 的最后10个元素。如有记录：<codeblock>{arr:[1,2,3,4],age:20,name:"Tom"}</codeblock></p>
+          <codeblock>db.foo.bar.update({$pop:{arr:10}})</codeblock>
+          <p>此操作后，记录更新为：<codeblock>{arr:[],age:20,name:"Tom"}</codeblock></p>
+        </li>
+        <li>
+          <p>删除集合 bar 下数组对象 arr 的前两个元素，即设置N的值为-2。如有记录：<codeblock>{arr:[1,2,3,4],age:20,name:"Tom"}</codeblock></p>
+          <codeblock>db.foo.bar.update({$pop:{arr:-2}})</codeblock>
+          <p>此操作后，记录更新为：<codeblock>{arr:[3,4],age:20,name:"Tom"}</codeblock></p>
+        </li>
+      </ul>      
+    </section>
+  </body>
+  <related-links>
+    <link href="gaddtoset.dita" format="dita" type="topic"></link>
+    <link href="gpull.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/dbupdate.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

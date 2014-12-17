@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/modules
+END
+org-netbeans-lib-profiler.jar
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/modules/org-netbeans-lib-profiler.jar
+END
+org-netbeans-lib-profiler-charts.jar
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/modules/org-netbeans-lib-profiler-charts.jar
+END
+org-netbeans-modules-profiler.jar
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/modules/org-netbeans-modules-profiler.jar
+END
+org-netbeans-lib-profiler-common.jar
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/modules/org-netbeans-lib-profiler-common.jar
+END
+org-netbeans-lib-profiler-ui.jar
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/modules/org-netbeans-lib-profiler-ui.jar
+END
+org-netbeans-modules-profiler-oql.jar
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/modules/org-netbeans-modules-profiler-oql.jar
+END

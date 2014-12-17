@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_select_en">
+  <title>sql select </title>
+  <body>
+    <section><title>select </title>
+      <p>Be used to select data from collection,the result will be storage as a result set.</p>
+    </section>
+    <section><title>Grammar</title>
+      <p><codeblock>select * from &lt;cs_name>.&lt;cl_name>
+or
+select &lt;field1_name,field2_name,...> from &lt;cs_name>.&lt;cl_name></codeblock></p>
+      <p>&lt;cs_name>：collectionspace name</p>
+      <p>&lt;cl_name>：collection name</p>
+      <p>&lt;field_name>：field name</p>
+      
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>This sample will return the select field name.if a match record doesnot contain the specified
+            field name,then return <i>null </i>value .</p>
+          <p><codeblock>db.exec("select age,name from foo.bar") 
+result:
+{
+  "age": 10,
+  "name": null
+}
+{
+  "age": 10,
+  "name": "Tom"
+}
+}...</codeblock></p>
+        </li>
+        <li>This sample will return all records of all the field name
+          .<codeblock>db.exec("select * from foo.bar")
+result:
+{
+  "_id": {
+    "$oid": "51c909b0c5b855e029000000"
+  },
+  "age": 10
+}
+{
+  "_id": {
+    "$oid": "51c909b9c5b855e029000001"
+  },
+  "age": 10,
+  "name": "Tom"
+}
+{
+  "_id": {
+    "$oid": "51c909c2c5b855e029000002"
+  },
+  "age": 10,
+  "name": "Tom",
+  "phone": 123456
+}...     </codeblock></li>
+      </ul>
+      <note>
+        <p>1.you can select like<xref href="where_en.dita">where</xref>、<xref href="group_by_en.dita"
+          >group by</xref>、<xref href="order_by_en.dita">order by</xref>、<xref href="sqlimit_en.dita"
+            >limit</xref>、<xref href="offset_en.dita">offset</xref>keywords to select those records you
+          want.</p>
+        <p>2.if the query source is not collection,then all the field name in this layer query need
+          to use alias (* except)</p>
+        <p>example:select T.a , T.b from (select * from foo.bar) as T where T.a&lt;10</p>
+        <p>3.subquery must use alias.the alias appear in subquery only act on upper layer.</p>
+      </note>
+    </section>
+  </body>
+  <related-links>
+    <link href="sqinsert_en.dita" format="dita" type="topic"></link>
+    <link href="squpdate_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

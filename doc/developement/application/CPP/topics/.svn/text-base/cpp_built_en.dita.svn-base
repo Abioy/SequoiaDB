@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ncz_12t_zj_en">
+  <title>C++ Environment to Build</title>
+  <body>
+    <section>
+      <title>Get Driver Development Kit</title>
+      <p>Download SequoiaDB Driver Development kit for the corresponding operating systems from <xref href="http://www.sequoiadb.com" format="html" scope="external">http://www.sequoiadb.com</xref>.</p>
+    </section>
+    <section>
+      <title>Configure development environment</title>
+      <ul>
+        <li>Linux <p>1. Extract the Driver Development kit from the downloaded archive. </p><p>2. Copy folder named driver from the downloaded archive to development directory(suggest to put on third-party directory), and rename it as "sdbdriver".
+        </p><p>3. Add directory named "sdbdriver/include" into compiled directory.</p><b><i>Dynamic Link:</i></b><p></p>Use lib directory libsdbcpp.so dynamic library, g++ compiler parameters forms such as:<p>
+          <codeblock>g++ main.cpp -o test -I &lt;PATH>/sdbdriver/include -L &lt;PATH>/sdbdriver/lib -lsdbcpp </codeblock>
+        </p><p>Where: PATH is sdbdriver placed path, When you run the program, you need to specify the path to the LD_LIBRARY_PATH contains libsdbcpp.so dynamic library.</p><p>
+          <codeblock>export LD_LIBRARY_PATH=&lt;PATH>/sdbdriver/lib </codeblock>
+        </p><ul><li><note>
+          <p>If there will be an error message when you run the program:  </p>
+          <p>error while loading shared libraries: libsdbcpp.so: cannot open shared object file:
+            No such file or directory </p>
+          <p>Said LD_LIBRARY_PATH environment variable is not set properly, it is recommmended to set to /etc/profile or application startup script, avoiding each new terminal will need to re-open setting. </p>
+        </note></li></ul>
+          <b><i>Static Link:</i></b><p></p>Use lib directory libstaticsdbc.a static library, g++ compiler parameters forms such as:<codeblock>g++ main.c -o test -I &lt;path>/sdbdriver/include –L &lt;path>/sdbdriver/lib/libstaticsdbcpp.a –lm -lpthread</codeblock></li>
+        <li>Windows <p>Windows driver development kit is not released yet. </p></li>
+      </ul>
+      
+    </section>
+  </body>
+  <related-links>
+    <link href="cpp_driver.dita" format="dita" type="topic"></link>
+  </related-links>
+  <!--<body>
+    <p>First,press here to load <u>C++ client-driven</u>.</p>
+    <p>C++ Client development interface is in the directory "sequoiadb/client/CPP"(corresponding
+      windows "sequoiadb\client\CPP"),including following files:
+      <codeblock>./include:
+     base64.h
+     bson/
+     client.hpp
+     core.h
+     core.hpp
+     jstobs.h
+     ossErr.h
+     ossFeat.h
+     ossFeat.hpp
+     ossTypes.h
+     ossTypes.hpp
+     
+     ./include/bson:
+     bcon.h
+     bson.h
+     encoding.h
+     
+     ./lib:
+     in Linux
+     libsdbcpp.so
+     in Windous
+     sdbcpp.dll
+     sdbcpp.exp
+     sdbcpp.lib</codeblock></p>
+    <p> Illustrating:in the above files,".h" and ".hpp" are head files,".so" are dynamic runtime
+      files in Linux,".dll" and ".lib" are dynamic runtime files in Windows. </p>
+    <section><title>Compiling and linking in Linux</title><p>Please add the "include" directory to
+        head directory when compiling programs,and add the "lib" directory to link diretory when
+        linking,at the same time,add the "lib" directory to the environment variables
+        "LD_LIBRARY_PATH".The following shows how to compile a C++ program in Linux:
+        </p><codeblock>cc testClient.c -o testClientC -I/path/C/include -L /path/C/lib -lsdbc</codeblock><p>
+        "-o" assign the output file,"-I" specify the head path,"-L" specify the runtime library
+        path,"-l" assign the runtime library name. </p> When running the programs,users can specify
+      the path of <i>LD_LIBRARY_PATH</i> as the path which contain <i>libsdbcpp.so</i> dynamic
+      library.If the path is specified uncorrectly,run-time errors message will appear like this:
+        <codeblock>[sequoiadb@vmsvr1-rhel-x64 test]$ export | grep LD_LIBRARY_PATH
+[sequoiadb@vmsvr1-rhel-x64 test]$ ldd testClient
+        linux-vdso.so.1 =>  (0x00007fff099ff000)
+        libsdbcpp.so => not found
+        libc.so.6 => /lib64/libc.so.6 (0x00000033c1200000)
+        /lib64/ld-linux-x86-64.so.2 (0x00000033c0a00000)
+[sequoiadb@vmsvr1-rhel-x64 test]$ ./testClientC
+./testClient: error while loading shared libraries: libsdbcpp.so: cannot open shared object file: No such file or directory</codeblock><p>Using
+        the command "ldd" can list the dynamic libraries which the executable program needed.In the
+        above example,program "testClientC" need four dynamic libraries,including
+        linux-vdso,libsdbcpp,libc and ld-linux-x86-64.Except the "libsdbcpp" library,the other two
+        linux library are system library,"libc" is run-time library for C program.</p><p>As in the
+        above example is not defined "LD_LIBRARY_PATH",so the program can't find "libsdbcpp"
+        library,as shown above in italics tag:"libsdbcpp.so =&gt; not found".so set
+        "LD_LIBRARY_PATH"：</p><codeblock>$ export LD_LIBRARY_PATH=/home/sequoiadb/sequoiadb/client/CPP/lib
+$ ldd testClient
+        linux-vdso.so.1 =>  (0x00007fffe45c1000)
+        libsdbcpp.so => /home/sequoiadb/sequoiadb/client/CPP/lib/libsdbcpp.so (0x00007f00ff0b9000)
+        libc.so.6 => /lib64/libc.so.6 (0x00000033c1200000)
+        libm.so.6 => /lib64/libm.so.6 (0x00000033c1e00000)
+        libdl.so.2 => /lib64/libdl.so.2 (0x00000033c0e00000)
+        libpthread.so.0 => /lib64/libpthread.so.0 (0x00000033c1600000)
+        libcrypto.so.10 => /usr/lib64/libcrypto.so.10 (0x00000033c7e00000)
+        /lib64/ld-linux-x86-64.so.2 (0x00000033c0a00000)
+        libz.so.1 => /lib64/libz.so.1 (0x00000033c1a00000)
+$ ls /home/sequoiadb/sequoiadb/client/CPP/lib
+libsdbcpp.so
+[sequoiadb@vmsvr1-rhel-x64 test]$ ./testClient
+        name : 2         tom
+        address : 3
+                city : 2         Toronto
+                provice : 2      Ontario</codeblock><p>
+        When referring to the libsdbcpp library,you can run the program successfully. </p></section>
+    <section><title>Compiling and linking in Windows</title> Please add the "include" directory to
+      head directory when compiling programs,and add the "lib" directory to link diretory when
+      linking，before running,copy the file "sdbcpp.dll" in the "lib" directory to the directory
+      which generated the file ".exe".The following shows how to compile a C++ program: in Windows:
+        <codeblock>cl /Fo testClient.obj /c testClient.cpp /I <i>&lt;PATH></i>\sequoiadb\client\CPP\include /wd4047
+link /OUT:testClient.exe /LIBPATH:<i>&lt;PATH></i>\sequoiadb\client\CPP \lib sdbcpp.lib testClient.obj 
+copy <i>&lt;PATH></i>\sequoiadb\client\CPP\lib\sdbcpp.dll .</codeblock><p>"/Fo"
+        represents creating-object file,"/c" means compiling but not link,"/I" expresses searching
+        needed file in the specified directory,"/OUT" specifies the output file,"/LIBPATH" specified
+        the environment-library path. </p></section>
+  </body>-->
+</topic>

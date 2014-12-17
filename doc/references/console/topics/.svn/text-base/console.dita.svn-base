@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console">
+  <title>操作符</title>
+  <body>
+    <section>
+      <title>匹配规则</title>
+      <p>
+        <simpletable id="references_console_match_table">
+          <sthead>
+            <stentry>匹配符</stentry>
+            <stentry>描述</stentry>
+            <stentry>示例</stentry>
+          </sthead>
+          <strow>
+            <stentry><xref href="gt.dita">$gt</xref></stentry>
+            <stentry>大于</stentry>
+            <stentry>db.foo.bar.find({age:{$gt:20}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="gte.dita">$gte</xref></stentry>
+            <stentry>大于等于</stentry>
+            <stentry>db.foo.bar.find({age:{$gte:20}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="plt.dita">$lt</xref></stentry>
+            <stentry>小于</stentry>
+            <stentry>foo.bar.find({age:{$lt:20}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="lte.dita">$lte</xref></stentry>
+            <stentry>小于等于</stentry>
+            <stentry>db.foo.bar.find({age:{$lte:20}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="pne.dita">$ne</xref></stentry>
+            <stentry>不等于</stentry>
+            <stentry>db.foo.bar.find({age:{$ne:20}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="pet.dita">$et</xref></stentry>
+            <stentry>等于</stentry>
+            <stentry>db.foo.bar.find({age:{$et:20}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="mod.dita">$mod</xref></stentry>
+            <stentry>取模</stentry>
+            <stentry>db.foo.bar.find({age:{$mod:[6,5]}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="pin.dita">$in</xref></stentry>
+            <stentry>集合内存在</stentry>
+            <stentry>db.foo.bar.find({age:{$in:[20,21]}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="isnull.dita">$isnull</xref></stentry>
+            <stentry>为 null 或不存在</stentry>
+            <stentry>Db.foo.bar.find({$age:{$isnull:1}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="nin.dita">$nin</xref></stentry>
+            <stentry>集合内不存在</stentry>
+            <stentry>db.foo.bar.find({age:{$nin:[20,21]})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="pall.dita">$all</xref></stentry>
+            <stentry>全部</stentry>
+            <stentry>db.foo.bar.find({age:{$all:[20,21]}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="and.dita">$and</xref></stentry>
+            <stentry>与</stentry>
+            <stentry>db.foo.bar.find({$and:{age:20},{name:"Tom"}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="not.dita">$not</xref></stentry>
+            <stentry>非</stentry>
+            <stentry>db.foo.bar.find({$not:{age:20},{name:"Tom"}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="por.dita">$or</xref></stentry>
+            <stentry>或</stentry>
+            <stentry>db.foo.bar.find({$or:{age:20},{name:"Tom"}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="type.dita">$type</xref></stentry>
+            <stentry>数据类型</stentry>
+            <stentry>db.foo.bar.find({age:{$type:16}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="exists.dita">$exists</xref></stentry>
+            <stentry>存在</stentry>
+            <stentry>db.foo.bar.find({age:{$exists:1}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="elemMatch.dita">$elemMatch</xref></stentry>
+            <stentry>元素匹配</stentry>
+            <stentry>db.foo.bar.find({age:{$elemMatch:20}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="special.dita">$+标识符</xref></stentry>
+            <stentry>数组元素匹配</stentry>
+            <stentry>db.foo.bar.find({"array.$2":10})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="psize.dita">$size</xref></stentry>
+            <stentry>大小</stentry>
+            <stentry>db.foo.bar.find({array:{$size:3}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="pregex.dita">$regex</xref></stentry>
+            <stentry>正则表达式 </stentry>
+            <stentry>db.foo.bar.find({str:{$regex:'dh.*fj',$options:'i'}})</stentry>
+          </strow>
+        </simpletable>
+      </p>
+    </section>
+    <section><title>更新规则</title>
+      <p>
+        <simpletable>
+          <sthead>
+            <stentry>更新符</stentry>
+            <stentry>描述</stentry>
+            <stentry>信息</stentry>
+            <stentry>示例</stentry>
+          </sthead>
+          <strow>
+            <stentry><xref href="inc.dita">$inc</xref></stentry>
+            <stentry>添加</stentry>
+            <stentry>将指定字段名的值增加给定的值。</stentry>
+            <stentry>db.foo.bar.update({$inc:{age:25}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="gset.dita">$set</xref></stentry>
+            <stentry>设置指定字段</stentry>
+            <stentry>将给定字段名设定为给定值。 </stentry>
+            <stentry>db.foo.bar.update({$set:{age:10}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="unset.dita">$unset</xref></stentry>
+            <stentry>删除指定字段</stentry>
+            <stentry>删除对象中的指定字段。</stentry>
+            <stentry>db.foo.bar.update({$unset:{age:""}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="gaddtoset.dita">$addtoset</xref></stentry>
+            <stentry>加入集合</stentry>
+            <stentry>如果添加元素不存在在数组中则添加，否则跳过。目标字段必须为数组。</stentry>
+            <stentry>db.foo.bar.update({$addtoset:{array:[3,4,5]}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="pop.dita">$pop</xref></stentry>
+            <stentry>消除数组中最后 N 个数值</stentry>
+            <stentry>删除数组中最后 N 个数值，目标字段必须为数组（如果 N 小于0意味着从数组起始删除第 -N 个数值）。</stentry>
+            <stentry>db.foo.bar.update({$pop:{array:2}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="gpull.dita">$pull</xref></stentry>
+            <stentry>消除数值 </stentry>
+            <stentry>目标数组中清除给定数值，目标元素必须为数组。 </stentry>
+            <stentry>db.foo.bar.update({$pull:{array:2}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="gpull_all.dita">$pull_all</xref></stentry>
+            <stentry>消除数组</stentry>
+            <stentry>目标数组中清除给定数组中每个元素的数值，目标元素必须为数组。</stentry>
+            <stentry>db.foo.bar.update({$pull_all:{array:[2,3,4}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="gpush.dita">$push</xref></stentry>
+            <stentry>推入数值</stentry>
+            <stentry>将数值插入目标数组，目标元素必须为数组 。</stentry>
+            <stentry>db.foo.bar.update({$push:{array:2}})</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="gpush_all.dita">$push_all</xref></stentry>
+            <stentry>推入数组</stentry>
+            <stentry>将给定数组中每一个值插入目标数组，目标元素必须为数组。</stentry>
+            <stentry>db.foo.bar.update({$push_all:{array:[2,3,4}})</stentry>
+          </strow>
+        </simpletable>
+      </p>
+    </section>
+    <section>
+      <title>聚集符</title>
+      <p>
+        <simpletable>
+          <sthead>
+            <stentry>参数名 </stentry>
+            <stentry>描述 </stentry>
+            <stentry>示例 </stentry>
+          </sthead>
+          <strow>
+            <stentry><xref href="project.dita">$project</xref></stentry>
+            <stentry>选择需要输出的字段名，“1”表示输出，“0”表示不输出，还可以实现字段的重命名</stentry>
+            <stentry>{$project:{field1:1,field:0,aliase:"$field3"}}</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="match.dita">$match</xref></stentry>
+            <stentry>实现从集合中选择匹配条件的记录，相当与 SQL 语句的 where</stentry>
+            <stentry>{$match:{field:{$lte:value}}}</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="jlimit.dita">$limit</xref></stentry>
+            <stentry>限制返回的记录条数</stentry>
+            <stentry>{$limit:10} </stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="jskip.dita">$skip</xref></stentry>
+            <stentry>控制结果集的开始点，即跳过结果集中指定条数的记录</stentry>
+            <stentry>{$skip:5}</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="jgroup.dita">$group</xref></stentry>
+            <stentry>实现对记录的分组，类似与 SQL 的 group by 语句，“_id”指定分组字段</stentry>
+            <stentry>{$group:{_id:"$field"}}</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="jsort.dita">$sort</xref></stentry>
+            <stentry>实现对结果集的排序，“1”代表升序，“-1”代表降序。</stentry>
+            <stentry>{$sort:{field1:1,field2:-1,...}}</stentry>
+          </strow>
+        </simpletable>
+      </p>
+      <p><b>$group 聚集符支持以下聚集函数：</b><simpletable>
+          <sthead>
+            <stentry>函数名</stentry>
+            <stentry>描述</stentry>
+          </sthead>
+          <strow>
+            <stentry><xref href="j$addToSet.dita">$addtoset</xref></stentry>
+            <stentry>将指定字段值添加到数组中，相同的字段值只会添加一次</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="jfirst.dita">$first</xref></stentry>
+            <stentry>取分组中第一条记录中的字段值</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="jlast.dita">$last</xref></stentry>
+            <stentry>取分组中最后一条记录中的字段值</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="jmax.dita">$max</xref></stentry>
+            <stentry>取分组中字段值最大的</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="jmin.dita">$min</xref></stentry>
+            <stentry>取分组中字段值最小的</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="javg.dita">$avg</xref></stentry>
+            <stentry>取分组中字段值的平均值</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="j$push.dita">$push</xref></stentry>
+            <stentry>将所有字段添加到数组中，即使数组中已经存在相同的字段值，也继续添加</stentry>
+          </strow>
+          <strow>
+            <stentry><xref href="jsum.dita">$sum</xref></stentry>
+            <stentry>取分组中字段值的总和</stentry>
+          </strow>
+        </simpletable></p>
+    </section>
+    <section>
+      <note>在 SequoiaDB 的查询语言中表达相等（=）时，使用 JSON{字段名：值} 的结构。当然也可以使用 <xref href="pet.dita"><i>$et</i></xref> 操作符
+        <p>示例：</p>
+        <codeblock>db.collectionspace.collection.find({a:42}) 等价于 db.collectionspace.collection.find({a:{$et:42}})</codeblock>        
+        <p>查询集合下符合条件 a 等于42的记录。</p>
+      </note>
+    </section>
+  </body>
+</topic>

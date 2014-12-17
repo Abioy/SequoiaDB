@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_hky_qcx_tk_en">
+  <title>Catalog Replica Group Management</title>
+  <body>
+    <p>This section introduce how to add replica group or nodes in catalog replica group.</p>
+    <p><b>directoty:</b></p>
+    <p><xref href="cata_group_en.dita">Create New Catalog Replica Group</xref></p>
+    <p><xref href="cata_node_en.dita">Create New Node In Catalog Replica Group</xref></p>
+  </body>
+</topic>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/map.dtd">
+<map title="Administration_Concepts">
+    <topicref href="topics/concepts.dita">
+     <anchorref href="database/database.ditamap"/>
+      
+     <anchorref href="cluster/cluster.ditamap"/>
+    </topicref>
+</map>

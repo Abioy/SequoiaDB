@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_cluster_replset">
+  <title>ReplicaGroup</title>
+  <body>
+    <section><title>Concept</title>
+      <p>ReplicaGroup is also named as replication group. A ReplicaGroup may contain one or more data nodes
+        (or catalog node).The data replicattion between nodes is asynchronous log file
+        replication,which ensures data consistence. </p>
+      <p>All the nodes in a ReplicaGroup contacts with each other through replication service port
+        (replname parament), and regularly sent heartbeat package to each other to validate their
+        states. </p>
+      <p>The structure of ReplicaGroup is as follow: </p>
+      <image href="../../../../introduction/images/sequoiadb_infrastructure_shard1_en.jpg"/>
+      <p>Each node in a ReplicaGroup has two statuses: </p>
+      <dl>
+        <dlentry>
+          <dt>Master node</dt>
+          <dd>Master node is also called main node. Master node can be written and read. All the
+            written fata is recorded in log file aynchronously. Log information in log files is
+            written into nodes asynchronously.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Slave node</dt>
+          <dd>Slave node is also called slave node. Slave node can only be read. All the data
+            written into master node is asynchronously written into slave node. So the data in main
+            node and inferior may be inconsistent, but replication can guarantee data
+            consistence.</dd>
+        </dlentry>
+      </dl>
+      <p>ReplicaGroup achieves high usability through data replication, read/write splitting and
+        vote.</p>
+    </section>
+  </body>
+</topic>

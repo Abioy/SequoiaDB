@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_xyy_t2t_5n">
+  <title>query.hint()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>hint - Enumerate the result set according to the specified index.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>cursor.hint</apiname>(<parmname>[hint]</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Query
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Enumerate the result set according to the specified index.</p>
+      <parml>
+        <plentry>
+          <pt>hint (json object)</pt>
+          <pd>It specifies the access plan to accelerate query speed.
+            <parml>
+              <plentry>
+                <pt>Format</pt>
+                <pd>The method "query.hint()" contains parameter "hint". If it is not specified, the query
+                  will not use index to visit records. The parameter "hint" contains a one-field json object. The field name is ignored. But the
+                  field value is specified as the index which will be visited. When it is null, it will visit all the records in the collection.</pd>
+                <pd>{"":null} or {"":"&lt;indexname>"}</pd>
+              </plentry>
+            </parml></pd>
+        </plentry>        
+      </parml>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Enumerate the records contain field "age" in the collection "bar" according to index "ageIndex" and return the result set.</p>
+      <codeblock>db.foo.bar.find({age:{$exists:1}}).hint({"":"ageIndex"})</codeblock>     
+    </section>
+  </body>
+  <related-links>
+    <link href="query_cond.sort.dita" format="dita" type="topic"></link>
+    <link href="query_cond.limit.dita" format="dita" type="topic"></link>
+    <link href="query_cond.skip.dita" format="dita" type="topic"></link>
+    <link href="cl.find.dita" format="dita" type="topic"></link>    
+  </related-links>
+</topic>

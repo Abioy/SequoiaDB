@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_offset_en">
+  <title>sql offset</title>
+  <body>
+    <section><title>offset</title>
+      <p>Be used to set the number of skipped records.</p>
+    </section>
+    <section><title>Grammar</title>
+      <p><codeblock>offset&lt;offset_num>   </codeblock></p>
+      <p>&lt;offset_num>：the number of skipped records</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>This sample will skip the first five records,then return from the sixth record.</p>
+          <p><codeblock>db.exec("select * from foo.bar offset 5") </codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="order_by_en.dita" format="dita" type="topic"></link>
+    <link href="as_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

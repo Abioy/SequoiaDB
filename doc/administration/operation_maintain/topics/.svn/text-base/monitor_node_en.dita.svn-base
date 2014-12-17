@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qhj_lmp_fm">
+  <title>Monitoring Node Status</title>
+  <body>
+    <p>Users can use the snapshot monitor the status of each node.</p>
+    <ol>
+      <li>Connect to the coord node
+        <codeblock>$ /opt/sequoiadb/bin/sdb
+> var db = new Sdb("localhost", 11810) ;
+</codeblock></li>
+      <li>Get replica group <codeblock>> datarg = db.getRG ( "&lt;datagroup1>" ) ;</codeblock></li>
+      <li>Get the data node
+        <codeblock>> datanode = datarg.getNode ( "&lt;hostname1>", "&lt;servicename1>" ) ;</codeblock></li>
+      <li>To obtain a snapshot of the node
+        <codeblock>> datanode.connect().snapshot(SDB_SNAP_DATABASE)</codeblock><p>Snapshot type are divided into:</p><p><xref href="../../database/topics/snapshot/contexts_en.dita">SDB_SNAP_CONTEXTS</xref>
+        </p><p><xref href="../../database/topics/snapshot/contexts_current_en.dita">SDB_SNAP_CONTEXTS_CURRENT</xref> </p><p><xref href="../../database/topics/snapshot/sessions_en.dita">SDB_SNAP_SESSIONS</xref> </p><p><xref href="../../database/topics/snapshot/sessions_current_en.dita">SDB_SNAP_SESSIONS_CURRENT</xref>
+        </p><p><xref href="../../database/topics/snapshot/collections_en.dita">SDB_SNAP_COLLECTIONS</xref> </p><p><xref href="../../database/topics/snapshot/collectionspaces_en.dita">SDB_SNAP_COLLECTIONSPACES</xref> </p><p><xref href="../../database/topics/snapshot/database_en.dita">SDB_SNAP_DATABASE</xref>
+        </p><p><xref href="../../database/topics/snapshot/system_en.dita">SDB_SNAP_SYSTEM</xref> </p><p><xref href="../../database/topics/snapshot/catalog_en.dita">SDB_SNAP_CATALOG</xref> </p></li>
+    </ol>
+    <p>Users can use the shell script monitoring, for example:
+      <codeblock>[sequoiadb@vmsvr1-rhel-x64 sequoiadb]$ cat monitor_insert.sh
+#!/bin/bash
+~/sequoiadb/bin/sdb "db=new Sdb('localhost', 11810)" > /dev/null
+~/sequoiadb/bin/sdb "db.getRG('foo').getNode('vmsvr1-rhel-x64',11820).connect().snapshot(SDB_SNAP_DATABASE)" | grep TotalInsert
+~/sequoiadb/bin/sdb "quit"
+[sequoiadb@vmsvr1-rhel-x64 sequoiadb]$ ./monitor_insert.sh
+  "TotalInsert": 0,</codeblock></p>
+  </body>
+</topic>

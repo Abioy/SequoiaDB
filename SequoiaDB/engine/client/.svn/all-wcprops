@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/16557/trunk/SequoiaDB/engine/client
+END
+network.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/client/network.h
+END
+jstobs.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16297/trunk/SequoiaDB/engine/client/jstobs.c
+END
+clientImpl.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16293/trunk/SequoiaDB/engine/client/clientImpl.hpp
+END
+jstobs.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/13315/trunk/SequoiaDB/engine/client/jstobs.h
+END
+cJSON.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/16430/trunk/SequoiaDB/engine/client/cJSON.c
+END
+client.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16557/trunk/SequoiaDB/engine/client/client.c
+END
+client_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/15572/trunk/SequoiaDB/engine/client/client_internal.h
+END
+cJSON.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/16430/trunk/SequoiaDB/engine/client/cJSON.h
+END
+clientcpp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16361/trunk/SequoiaDB/engine/client/clientcpp.cpp
+END
+client.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16305/trunk/SequoiaDB/engine/client/client.h
+END
+client.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16293/trunk/SequoiaDB/engine/client/client.hpp
+END
+base64c.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/13033/trunk/SequoiaDB/engine/client/base64c.c
+END
+common.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/15572/trunk/SequoiaDB/engine/client/common.c
+END
+network.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/15565/trunk/SequoiaDB/engine/client/network.c
+END
+base64c.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/13623/trunk/SequoiaDB/engine/client/base64c.h
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/15572/trunk/SequoiaDB/engine/client/common.h
+END

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_dropUsr">
+  <title>db.dropUsr()</title>
+  <body>
+    <section>
+      <title>db.dropUsr(&lt;name>,&lt;password>)</title>
+      <p>删除数据库已有的用户名和密码。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable 
+        id="references_method_createUsr_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>name</stentry>
+          <stentry>string</stentry>
+          <stentry>用户名         </stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow>
+          <stentry>password       </stentry>
+          <stentry>string</stentry>
+          <stentry>密码                     </stentry>
+          <stentry>是</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>格式</title>
+      <p> dropUsr() 方法的定义格式 name 和 password 两个参数，两个参数都是字符串类型。 </p>
+      <p><codeblock>("&lt;用户名>","&lt;密码>")</codeblock></p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>删除用户名为 root，密码为 admin 的数据库权限。</p>
+          <p><codeblock>db.dropUsr("root","admin")</codeblock></p>
+        </li>
+      </ul>      
+    </section>
+  </body>
+  <related-links>
+    <link href="createUsr.dita" format="dita" type="topic"></link>    
+  </related-links>
+</topic>

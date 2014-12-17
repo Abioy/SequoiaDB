@@ -1,0 +1,431 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir
+END
+readdir_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/readdir_variation1.phpt
+END
+readdir_variation5.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/readdir_variation5.phpt
+END
+dir_variation1-win32.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation1-win32.phpt
+END
+dir_variation3.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation3.phpt
+END
+scandir_error2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_error2.phpt
+END
+scandir_error2-win32.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_error2-win32.phpt
+END
+dir_variation5-win32.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation5-win32.phpt
+END
+dir_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_basic.phpt
+END
+dir_variation7.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation7.phpt
+END
+scandir_variation3.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_variation3.phpt
+END
+dir_variation9-win32.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation9-win32.phpt
+END
+rewinddir_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/rewinddir_variation1.phpt
+END
+chdir_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/chdir_variation1.phpt
+END
+scandir_variation7.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_variation7.phpt
+END
+dir_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_error.phpt
+END
+opendir_error1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/opendir_error1.phpt
+END
+opendir_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/opendir_variation2.phpt
+END
+scandir_variation10.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_variation10.phpt
+END
+opendir_variation6.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/opendir_variation6.phpt
+END
+opendir_variation6-win32.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/opendir_variation6-win32.phpt
+END
+readdir_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/readdir_variation2.phpt
+END
+readdir_variation6.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/readdir_variation6.phpt
+END
+dir_variation4.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation4.phpt
+END
+dir_variation8-win32.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation8-win32.phpt
+END
+dir_variation8.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation8.phpt
+END
+chdir_error1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/chdir_error1.phpt
+END
+scandir_variation4.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_variation4.phpt
+END
+rewinddir_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/rewinddir_variation2.phpt
+END
+scandir_variation6-win32.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_variation6-win32.phpt
+END
+chdir_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/chdir_variation2.phpt
+END
+scandir_variation8.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_variation8.phpt
+END
+rewinddir_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/rewinddir_basic.phpt
+END
+opendir_error2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/opendir_error2.phpt
+END
+opendir_variation1-win32.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/opendir_variation1-win32.phpt
+END
+opendir_variation3.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/opendir_variation3.phpt
+END
+rewinddir_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/rewinddir_error.phpt
+END
+closedir_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/closedir_variation1.phpt
+END
+opendir_variation7.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/opendir_variation7.phpt
+END
+closedir_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/closedir_basic.phpt
+END
+readdir_variation3.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/readdir_variation3.phpt
+END
+readdir_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/readdir_basic.phpt
+END
+dir_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation1.phpt
+END
+readdir_variation7.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/readdir_variation7.phpt
+END
+closedir_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/closedir_error.phpt
+END
+getcwd_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/getcwd_basic.phpt
+END
+dir_variation5.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation5.phpt
+END
+scandir_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_variation1.phpt
+END
+scandir_variation1-win32.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_variation1-win32.phpt
+END
+readdir_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/readdir_error.phpt
+END
+dir_variation9.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation9.phpt
+END
+chdir_error2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/chdir_error2.phpt
+END
+scandir_variation5.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_variation5.phpt
+END
+rewinddir_variation3.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/rewinddir_variation3.phpt
+END
+getcwd_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/getcwd_error.phpt
+END
+scandir_variation9.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_variation9.phpt
+END
+opendir_variation4.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/opendir_variation4.phpt
+END
+closedir_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/closedir_variation2.phpt
+END
+readdir_variation4.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/readdir_variation4.phpt
+END
+dir_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation2.phpt
+END
+scandir_error1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_error1.phpt
+END
+dir_variation6-win32.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation6-win32.phpt
+END
+dir_variation6.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/dir_variation6.phpt
+END
+scandir_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_variation2.phpt
+END
+scandir_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_basic.phpt
+END
+scandir_variation6.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/scandir_variation6.phpt
+END
+chdir_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/chdir_basic.phpt
+END
+opendir_error2-win32.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/opendir_error2-win32.phpt
+END
+opendir_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/opendir_variation1.phpt
+END
+opendir_variation5.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/opendir_variation5.phpt
+END
+opendir_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/opendir_basic.phpt
+END
+closedir_variation3.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/dir/closedir_variation3.phpt
+END

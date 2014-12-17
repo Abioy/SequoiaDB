@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qgg_5wd_5n">
+  <title>db.createUsr()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>createUsr - Create a database user with a user name and a password.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p>
+      <apiname>db.createUsr</apiname>(<parmname>&lt;name></parmname>,<parmname>&lt;password></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Create a database user with a user name and a password.</p>
+      <parml>
+        <plentry>
+          <pt>name (string)</pt>
+          <pd>User name.</pd>
+        </plentry>
+        <plentry>
+          <pt>password (string)</pt>
+          <pd>Password.
+        <parml>
+              <plentry>
+                <pt>Format</pt>
+                <pd>The method "createUsr()" contains 2 parameters: name and password. Both of them are in the type of string. And they can be null string.</pd>
+                <pd>("&lt;user name>","&lt;password>")</pd>
+              </plentry>
+            </parml>
+          </pd>          
+        </plentry>        
+      </parml>
+      <note>
+        <ul><li><p>If there are any user accounts have been configured into the database, only the user with correct user name and password can log in and manipulate the database.
+          <codeblock>db = new Sdb("&lt;hostname>","&lt;port>","&lt;name>","&lt;password>")</codeblock></p></li>
+        </ul></note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p></p>Create a user with the user name "root" and the password "admin":
+      <codeblock>db.createUsr("root","admin")</codeblock>
+    </section>
+  </body>
+  <related-links>
+    <link href="db.startRG.dita" format="dita" type="topic"></link>
+    <link href="db.dropUsr.dita" format="dita" type="topic"></link>    
+  </related-links>
+</topic>

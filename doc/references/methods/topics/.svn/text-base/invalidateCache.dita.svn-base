@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_3yq_fsr_r4">
+  <title>db.invalidateCache()</title>
+  <body>
+    <section><title>db.invalidateCache([options])</title>
+      <p>清除节点（数据节点/协调节点）的缓存。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>options</stentry>
+          <stentry>Json 对象</stentry>
+          <stentry>清除缓存的选项。</stentry>
+          <stentry>否</stentry>
+        </strow>        
+      </simpletable>      
+    </section>
+    <section><title>格式</title>
+      <p>目前通过 options 可设置域的属性有：</p>
+      <simpletable>
+        <sthead>
+          <stentry>属性名</stentry>
+          <stentry>描述</stentry>
+          <stentry>格式</stentry>
+        </sthead>
+        <strow>
+          <stentry>Groups</stentry>
+          <stentry>需要清除缓存的目标。</stentry>
+          <stentry>Groups:null -- 当前协调节点；<fig></fig>Groups:['data1','data2'] -- 当前协调节点和指定的两个数据组；<fig></fig>Groups:'data1' -- 当前协调节点和指定的一个数据组。
+          </stentry>
+        </strow>        
+      </simpletable>     
+      <note>
+        <ul>
+          <li>当不指定 Groups 时，作用域为当前协调节点和所有数据节点。</li>
+        </ul>
+      </note>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>清除当前协调节点和数据组‘data1’的缓存信息。</p>
+          <p><codeblock>db.invalidateCache({Groups:'data1'})</codeblock></p>
+        </li>        
+      </ul>
+    </section>
+  </body>
+</topic>

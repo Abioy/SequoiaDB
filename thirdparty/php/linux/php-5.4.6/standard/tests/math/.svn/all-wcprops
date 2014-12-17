@@ -1,0 +1,1289 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math
+END
+pow_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/pow_basic.phpt
+END
+ceil_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/ceil_variation1.phpt
+END
+base_convert_variation3.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/base_convert_variation3.phpt
+END
+hexdec_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/hexdec_error.phpt
+END
+rad2deg_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/rad2deg_basic.phpt
+END
+log10_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log10_basiclong_64bit.phpt
+END
+hypot_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/hypot_error.phpt
+END
+cos_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/cos_basiclong_64bit.phpt
+END
+log_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log_variation1.phpt
+END
+abs_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/abs_error.phpt
+END
+deg2rad_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/deg2rad_error.phpt
+END
+decbin_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/decbin_variation1.phpt
+END
+tanh_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/tanh_basiclong_64bit.phpt
+END
+tan_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/tan_basic.phpt
+END
+base_convert_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/base_convert_error.phpt
+END
+log1p_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log1p_basic.phpt
+END
+deg2rad_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/deg2rad_variation.phpt
+END
+cosh_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/cosh_basiclong_64bit.phpt
+END
+ceil_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/ceil_error.phpt
+END
+bug27646.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bug27646.phpt
+END
+decbin_variation1_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/decbin_variation1_64bit.phpt
+END
+sinh_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/sinh_basiclong_64bit.phpt
+END
+floor_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/floor_error.phpt
+END
+atanh_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/atanh_basic.phpt
+END
+decbin_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/decbin_error.phpt
+END
+dechex_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/dechex_variation1.phpt
+END
+hexdec.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/hexdec.phpt
+END
+dechex_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/dechex_basic.phpt
+END
+number_format_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/number_format_basic.phpt
+END
+pow_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/pow_variation1.phpt
+END
+is_finite_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/is_finite_basiclong_64bit.phpt
+END
+sinh_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/sinh_basic.phpt
+END
+asin_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/asin_error.phpt
+END
+dechex_variation1_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/dechex_variation1_64bit.phpt
+END
+asin_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/asin_variation.phpt
+END
+acosh_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/acosh_error.phpt
+END
+atanh_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/atanh_variation.phpt
+END
+is_finite_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/is_finite_basic.phpt
+END
+bug24142.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bug24142.phpt
+END
+constants_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/constants_basic.phpt
+END
+sinh_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/sinh_variation.phpt
+END
+bindec_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bindec_basiclong_64bit.phpt
+END
+atan2_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/atan2_error.phpt
+END
+floor_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/floor_variation1.phpt
+END
+atan_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/atan_basic.phpt
+END
+hexdec_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/hexdec_basiclong_64bit.phpt
+END
+mt_getrandmax_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/mt_getrandmax_basic.phpt
+END
+getrandmax_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/getrandmax_basic.phpt
+END
+atan_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/atan_variation.phpt
+END
+deg2rad_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/deg2rad_basiclong_64bit.phpt
+END
+lcg_value_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/lcg_value_basic.phpt
+END
+sqrt_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/sqrt_error.phpt
+END
+expm1_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/expm1_error.phpt
+END
+mt_srand_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/mt_srand_variation1.phpt
+END
+srand_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/srand_variation1.phpt
+END
+ceil_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/ceil_basiclong_64bit.phpt
+END
+is_infinite_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/is_infinite_error.phpt
+END
+octdec_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/octdec_error.phpt
+END
+log1p_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log1p_basiclong_64bit.phpt
+END
+tan_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/tan_basiclong_64bit.phpt
+END
+decbin_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/decbin_basiclong_64bit.phpt
+END
+bug30069.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bug30069.phpt
+END
+log1p_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log1p_variation1.phpt
+END
+mt_rand_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/mt_rand_variation1.phpt
+END
+log.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log.phpt
+END
+rand_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/rand_variation1.phpt
+END
+bug28228.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bug28228.phpt
+END
+bug30695.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bug30695.phpt
+END
+round_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/round_variation2.phpt
+END
+cos_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/cos_basic.phpt
+END
+pow_basic2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/pow_basic2.phpt
+END
+round_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/round_basic.phpt
+END
+log10_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log10_error.phpt
+END
+mt_rand_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/mt_rand_error.phpt
+END
+cosh_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/cosh_basic.phpt
+END
+rand_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/rand_error.phpt
+END
+fmod_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/fmod_error.phpt
+END
+log10_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log10_variation.phpt
+END
+octdec_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/octdec_variation1.phpt
+END
+hypot_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/hypot_variation1.phpt
+END
+tanh_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/tanh_error.phpt
+END
+asinh_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/asinh_basic.phpt
+END
+atan2_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/atan2_variation2.phpt
+END
+abs.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/abs.phpt
+END
+tanh_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/tanh_variation.phpt
+END
+decoct_variation1_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/decoct_variation1_64bit.phpt
+END
+is_nan_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/is_nan_basic.phpt
+END
+base_convert_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/base_convert_variation2.phpt
+END
+bug62112.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bug62112.phpt
+END
+log_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log_basiclong_64bit.phpt
+END
+acos_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/acos_basiclong_64bit.phpt
+END
+srand_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/srand_error.phpt
+END
+mt_srand_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/mt_srand_error.phpt
+END
+bug45712.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bug45712.phpt
+END
+sin_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/sin_basiclong_64bit.phpt
+END
+log_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log_basic.phpt
+END
+bindec_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bindec_basic.phpt
+END
+acos_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/acos_basic.phpt
+END
+is_infinite_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/is_infinite_basiclong_64bit.phpt
+END
+exp_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/exp_variation1.phpt
+END
+sin_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/sin_basic.phpt
+END
+hexdec_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/hexdec_variation1.phpt
+END
+bindec_basic_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bindec_basic_64bit.phpt
+END
+abs_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/abs_basiclong_64bit.phpt
+END
+hexdec_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/hexdec_basic.phpt
+END
+acos_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/acos_variation.phpt
+END
+allowed_rounding_error.inc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/allowed_rounding_error.inc
+END
+hypot_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/hypot_basic.phpt
+END
+exp_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/exp_error.phpt
+END
+sin_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/sin_variation.phpt
+END
+hexdec_variation1_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/hexdec_variation1_64bit.phpt
+END
+abs_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/abs_basic.phpt
+END
+hexdec_basic_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/hexdec_basic_64bit.phpt
+END
+deg2rad_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/deg2rad_basic.phpt
+END
+decoct_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/decoct_error.phpt
+END
+octdec_basic_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/octdec_basic_64bit.phpt
+END
+floor_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/floor_basiclong_64bit.phpt
+END
+base_convert_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/base_convert_basic.phpt
+END
+ceil_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/ceil_basic.phpt
+END
+round_large_exp.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/round_large_exp.phpt
+END
+pow_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/pow_error.phpt
+END
+abs_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/abs_variation.phpt
+END
+rad2deg_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/rad2deg_error.phpt
+END
+floor_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/floor_basic.phpt
+END
+fmod_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/fmod_variation2.phpt
+END
+rad2deg_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/rad2deg_variation.phpt
+END
+atanh_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/atanh_basiclong_64bit.phpt
+END
+decbin_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/decbin_basic.phpt
+END
+acosh_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/acosh_basiclong_64bit.phpt
+END
+bug25694.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bug25694.phpt
+END
+log1p_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log1p_error.phpt
+END
+asin_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/asin_basic.phpt
+END
+tan_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/tan_error.phpt
+END
+asinh_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/asinh_basiclong_64bit.phpt
+END
+acosh_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/acosh_basic.phpt
+END
+decoct_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/decoct_variation1.phpt
+END
+atan2_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/atan2_basiclong_64bit.phpt
+END
+tan_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/tan_variation.phpt
+END
+atanh_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/atanh_error.phpt
+END
+atan2_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/atan2_basic.phpt
+END
+number_format_multichar.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/number_format_multichar.phpt
+END
+acosh_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/acosh_variation.phpt
+END
+dechex_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/dechex_error.phpt
+END
+sinh_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/sinh_error.phpt
+END
+atan_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/atan_basiclong_64bit.phpt
+END
+round_modes.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/round_modes.phpt
+END
+floorceil.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/floorceil.phpt
+END
+log_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log_variation2.phpt
+END
+is_finite_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/is_finite_error.phpt
+END
+sqrt_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/sqrt_basiclong_64bit.phpt
+END
+round_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/round_variation1.phpt
+END
+exp_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/exp_basiclong_64bit.phpt
+END
+round.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/round.phpt
+END
+sqrt_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/sqrt_basic.phpt
+END
+octdec_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/octdec_basiclong_64bit.phpt
+END
+expm1_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/expm1_basic.phpt
+END
+atan_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/atan_error.phpt
+END
+is_infinite_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/is_infinite_variation1.phpt
+END
+is_infinite_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/is_infinite_basic.phpt
+END
+rad2deg_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/rad2deg_basiclong_64bit.phpt
+END
+atan2_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/atan2_variation1.phpt
+END
+octdec_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/octdec_basic.phpt
+END
+round_prerounding.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/round_prerounding.phpt
+END
+getrandmax_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/getrandmax_error.phpt
+END
+mt_getrandmax_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/mt_getrandmax_error.phpt
+END
+pow_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/pow_variation2.phpt
+END
+is_nan_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/is_nan_variation1.phpt
+END
+sqrt_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/sqrt_variation.phpt
+END
+is_finite_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/is_finite_variation1.phpt
+END
+base_convert_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/base_convert_variation1.phpt
+END
+pi_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/pi_basic.phpt
+END
+bug21523.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bug21523.phpt
+END
+constants.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/constants.phpt
+END
+pow_basic_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/pow_basic_64bit.phpt
+END
+fmod_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/fmod_basiclong_64bit.phpt
+END
+round_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/round_basiclong_64bit.phpt
+END
+log10_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log10_basic.phpt
+END
+asin_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/asin_basiclong_64bit.phpt
+END
+rand_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/rand_basic.phpt
+END
+mt_rand_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/mt_rand_basic.phpt
+END
+fmod_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/fmod_basic.phpt
+END
+dechex_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/dechex_basiclong_64bit.phpt
+END
+tanh_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/tanh_basic.phpt
+END
+cos_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/cos_error.phpt
+END
+is_nan_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/is_nan_basiclong_64bit.phpt
+END
+round_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/round_error.phpt
+END
+cos_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/cos_variation.phpt
+END
+cosh_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/cosh_error.phpt
+END
+pow.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/pow.phpt
+END
+cosh_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/cosh_variation.phpt
+END
+mt_srand_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/mt_srand_basic.phpt
+END
+srand_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/srand_basic.phpt
+END
+pow_variation1_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/pow_variation1_64bit.phpt
+END
+asinh_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/asinh_error.phpt
+END
+asinh_variation.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/asinh_variation.phpt
+END
+is_nan_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/is_nan_error.phpt
+END
+bindec_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bindec_variation1.phpt
+END
+fmod_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/fmod_variation1.phpt
+END
+rand_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/rand_variation2.phpt
+END
+mt_rand_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/mt_rand_variation2.phpt
+END
+expm1_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/expm1_basiclong_64bit.phpt
+END
+bug25665.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bug25665.phpt
+END
+expm1_variation1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/expm1_variation1.phpt
+END
+bindec_variation1_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bindec_variation1_64bit.phpt
+END
+log_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/log_error.phpt
+END
+decoct_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/decoct_basiclong_64bit.phpt
+END
+hypot_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/hypot_basiclong_64bit.phpt
+END
+exp_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/exp_basic.phpt
+END
+bindec_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/bindec_error.phpt
+END
+acos_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/acos_error.phpt
+END
+pow_basiclong_64bit.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/pow_basiclong_64bit.phpt
+END
+hypot_variation2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/hypot_variation2.phpt
+END
+sin_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/sin_error.phpt
+END
+decoct_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/math/decoct_basic.phpt
+END

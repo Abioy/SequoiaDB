@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_y24_kb2_5n">
+  <title>db.transBegin()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>transBegin - Open the transaction.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.transBegin</apiname>()
+    </section>    
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Open the transaction function. Transaction in SequoiaDB is a series of operations performed as a single logical unit. Transaction processing can ensure that all the non-transactional operations are successfully completed in the unit, otherwise it would not permanently update the data-oriented resources.</p>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Open the transaction commands:</p>
+      <codeblock>db.transBegin() </codeblock>
+    </section>
+  </body>
+  <related-links>
+    <link href="db.dropUsr.dita"></link>
+    <link href="db.transCommit.dita"></link>
+  </related-links>
+</topic>

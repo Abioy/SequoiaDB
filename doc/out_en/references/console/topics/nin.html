@@ -1,0 +1,99 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="$nin"/>
+<meta name="description" content="语法 {&lt;字段名&gt;:{$nin:[&lt;值1&gt;,&lt;值2&gt;,...&lt;值N&gt;]}} 描述 选择集合中“&lt;字段名&gt;”值不等于给定数组（[&lt;值1&gt;,&lt;值2&gt;,...&lt;值N&gt;]）中任意一个值的记录或者不存在给定字段名的记录；如果“&lt;字段名&gt;”本身是数组类型，那么选择“&lt;字段名&gt;”中任意一个值都不等于给定数组（[&lt;值1&gt;,&lt;值2&gt;,...&lt;值N&gt;]）中值的记录。 示例 选择集合 bar 下 age ..."/>
+<meta name="DC.Relation" scheme="URI" content="pin.html"/>
+<meta name="DC.Relation" scheme="URI" content="pall.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../methods/topics/find.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../methods/topics/dbupdate.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="references_console_nin"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>$nin</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="references_console_nin"><a name="references_console_nin"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span></div></td><td width="50%"/></tr></tbody></table>
+
+  <h1 class="title topictitle1">$nin</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">语法</h2>
+      <div class="p"><pre class="pre codeblock">{&lt;字段名&gt;:{$nin:[&lt;值1&gt;,&lt;值2&gt;,...&lt;值N&gt;]}}</pre>
+</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">描述</h2>
+      <p class="p">选择集合中“&lt;字段名&gt;”值不等于给定数组（[&lt;值1&gt;,&lt;值2&gt;,...&lt;值N&gt;]）中任意一个值的记录或者不存在给定字段名的记录；如果“&lt;字段名&gt;”本身是数组类型，那么选择“&lt;字段名&gt;”中任意一个值都不等于给定数组（[&lt;值1&gt;,&lt;值2&gt;,...&lt;值N&gt;]）中值的记录。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">示例</h2>
+      <ul class="ul">
+        <li class="li">
+          <p class="p">选择集合 bar 下 age 字段的值不等于20和25或集合 bar 下不存在 age 字段的记录。</p>
+
+          <pre class="pre codeblock">db.foo.bar.find({age:{$nin:[20,25]}})</pre>
+
+        </li>
+
+        <li class="li">
+          <p class="p">$nin 匹配数组对象中的元素。选择集合 bar 中存在数组对象 name 且其元素不包含“Tom”和“Mike”或者选择集合 bar 中不存在数组对象 name 的记录，并将这些记录的 age 字段删除。</p>
+
+          <pre class="pre codeblock">db.foo.bar.update({<a class="xref" href="unset.html">$unset</a>:{age:""}},{name:{$nin:["Tom","Mike"]}})</pre>
+
+        </li>
+
+      </ul>
+
+      <div class="note note"><span class="notetitle">Note:</span>  当给定数组只有一个值时，即{&lt;字段名&gt;:{$nin:[&lt;值&gt;]}}，等价于{&lt;字段名&gt;:{$ne:&lt;值&gt;}}</div>
+
+      <pre class="pre codeblock">db.foo.bar.find({age:{$nin:[20]}})等价于db.foo.bar.find({age:{$ne:20}})</pre>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="pin.html" title="$in">$in</a></div>
+<div><a class="navheader_parent_path" href="pall.html" title="$all">$all</a></div>
+<div><a class="navheader_parent_path" href="../../methods/topics/find.html" title="db.collectionspace.collection.find()">db.collectionspace.collection.find()</a></div>
+<div><a class="navheader_parent_path" href="../../methods/topics/dbupdate.html" title="db.collectionspace.collection.update()">db.collectionspace.collection.update()</a></div>
+</div>
+</div>
+<div class="navfooter"><script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

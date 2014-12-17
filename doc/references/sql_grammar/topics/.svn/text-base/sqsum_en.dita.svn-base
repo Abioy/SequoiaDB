@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_sum_en">
+  <title>sql sum()</title>
+  <body>
+    <section><title>sum() </title>
+      <p>Be used to sum for the specified field name.</p>
+    </section>
+    <section><title>Grammar</title>
+      <p><codeblock>sum(field_name) as &lt;alisa_name></codeblock></p>
+      <note>1.when use sum() function,you must use aliases.<p>2.automatically skipped for the
+          non-numeric field.</p></note>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>This sample will sum for the field name <i>age</i> in the collection <i>bar</i>.</p>
+          <p><codeblock>db.exec("select sum(age) as 年龄总和 from foo.bar")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="right_join_en.dita" format="dita" type="topic"></link>
+    <link href="sqcount_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

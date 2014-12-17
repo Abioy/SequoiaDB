@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map><title>application_java_map</title>
+ <topicref href="topics/cs_en.dita">
+  <topicref href="topics/csdriver_en.dita"/>
+  <!--<topicref href="topics/csclient_en.dita"/>-->
+  <topicref href="topics/csbuild_en.dita"/>
+  <topicref href="topics/csdb_en.dita"/>
+  <topicref href="topics/ssql_en.dita"/>
+  <topicref href="topics/cs_api_en.dita"/>
+ </topicref>
+
+</map>

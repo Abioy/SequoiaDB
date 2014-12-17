@@ -1,0 +1,153 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="db.createCataRG()"/>
+<meta name="description" content="db.createCataRG(&lt;host&gt;,&lt;service&gt;,&lt;dbpath&gt;,[config]) Create a new catalog partition group, and create and start a catalog node. Parameter Description Parameter name Parameter type Description Required ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../references/methods/topics/methodlist_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_pg1_w2z_gm"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>db.createCataRG()</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_pg1_w2z_gm"><a name="topic_pg1_w2z_gm"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../references/methods/topics/methodlist_en.html" title="Sequoiadb javascript Method List"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sequoiadb javascript Method List</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/references_en.html" title="Reference">Reference</a> / <a class="navheader_parent_path" href="../../../references/methods/topics/methodlist_en.html" title="Sequoiadb javascript Method List">Sequoiadb javascript Method List</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">db.createCataRG()</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">db.createCataRG(&lt;host&gt;,&lt;service&gt;,&lt;dbpath&gt;,[config])</h2>
+      <p class="p">Create a new catalog partition group, and create and start a catalog node.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Parameter Description</h2><p class="p"/>
+
+      <a name="topic_pg1_w2z_gm__references_method_createCL_table"><!-- --></a><table cellpadding="4" cellspacing="0" summary="" id="topic_pg1_w2z_gm__references_method_createCL_table" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d125676e27" class="stentry">Parameter name</th>
+
+          <th valign="bottom" align="left" id="d125676e30" class="stentry">Parameter type</th>
+
+          <th valign="bottom" align="left" id="d125676e33" class="stentry">Description</th>
+
+          <th valign="bottom" align="left" id="d125676e36" class="stentry">Required</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d125676e27" class="stentry">host</td>
+
+          <td valign="top" headers="d125676e30" class="stentry">string</td>
+
+          <td valign="top" headers="d125676e33" class="stentry">Specifies the host name of the catalog node.</td>
+
+          <td valign="top" headers="d125676e36" class="stentry">Yes</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d125676e27" class="stentry">service</td>
+
+          <td valign="top" headers="d125676e30" class="stentry">int</td>
+
+          <td valign="top" headers="d125676e33" class="stentry">Service port specified catalog node, make sure that the port number, and the
+            subsequent continuation of the three port numbers unoccupied, if set to 11800, make sure
+            11800/11801/11802/11803 ports are not occupied.</td>
+
+          <td valign="top" headers="d125676e36" class="stentry">Yes</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d125676e27" class="stentry">dbpath</td>
+
+          <td valign="top" headers="d125676e30" class="stentry">string</td>
+
+          <td valign="top" headers="d125676e33" class="stentry">Data file path used to store catalog data files, administrators need to ensure that the data (created during installation, the default is 
+            sdbadmin) the user has write permissions.</td>
+
+          <td valign="top" headers="d125676e36" class="stentry">No</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d125676e27" class="stentry">config</td>
+
+          <td valign="top" headers="d125676e30" class="stentry">json</td>
+
+          <td valign="top" headers="d125676e33" class="stentry">parameter is optional, for more details on the configuration parameters, the format must be json format, database configuration parameters 
+            see a, If you need to configure the log size parameters {logfilesz:64}.</td>
+
+          <td valign="top" headers="d125676e36" class="stentry">Yes</td>
+
+        </tr>
+</table>
+
+      
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Format</h2>
+      <p class="p">Definition Format createCataRG() method has host, service, dbpath, config four parameters,
+        host, dbpath a string type, service is an integer type, config as json object in the
+        following format:</p>
+
+      <div class="p"><pre class="pre codeblock">{"&lt;host name&gt;",&lt;port number&gt;,"&lt;data file path&gt;",&lt;database configuration parameter object&gt;}</pre>
+</div>
+
+      <div class="note note"><span class="notetitle">Note:</span> 
+        <ul class="ul">
+          <li class="li">Make sure the permissions data file storage path, if SequoiaDB using the default installation, then the path to the authority conferred sdbadmin.</li>
+
+        </ul>
+ 
+      </div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Example</h2>
+      <ul class="ul">
+        <li class="li">
+          <p class="p">Named: Create a catalog node group on sdbserver1 host, service port: 11800, data files
+            path: /opt/sequoiadb/database/cata/11800</p>
+
+          <pre class="pre codeblock">db.createCataRG("sdbserver1", 11800, "/opt/sequoiadb/database/cata/11800")</pre>
+
+        </li>
+        
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../references/methods/topics/methodlist_en.html" title="Sequoiadb javascript Method List"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sequoiadb javascript Method List</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.6
+          
+    </div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qzs_5fr_t4">
+  <title>Python 开发基础</title>
+  <body>
+    <p>本节介绍使用 Python 运行 SequoiaDB。首先安装 SequoiaDB，安装信息请查看 <xref href="../../../../installation/server_installation/topics/server_installation.dita">SequoiaDB 服务器安装</xref>章节。</p>
+    <p>这里介绍如何使用 Python 客户端驱动接口编写使用 SequoiaDB 数据库的程序。为了简单起见，下面的示例不全部是完整的代码，只起示例性作用。可到 /sequoiadb/client/samples/python 下获取相应的完整的代码。更多查看 <xref href="..\..\..\..\python\html\index.html" format="html">Python API</xref></p>
+    <section>
+      <title>数据库操作</title>
+      <ul>
+        <li>数据库连接（Connecting）
+          <p>connect.py 演示如何连接到数据库。文件应当 import “pysequoiadb”中的 client，const 等模块，以及 error 模块中的 SequoiaDBError 类。</p>
+          <codeblock>import pysequoiadb
+from pysequoiadb import client
+from pysequoiadb import const
+from pysequoiadb.error import SequoiaDBError
+
+# connect to local db, using default args value.
+# host= 'localhost', port= 11810, user= '', password= ''
+try:
+   db = client()
+except DBBaseError, e:
+   pysequoiadb._print(e)
+   del db
+   exit()
+
+# if no error occurs, connect to specified server successfully
+print 'Connect success'
+db.disconnect()
+# Need to release client whether it connected db server successfully or not
+del db</codeblock>
+          <p>在 Linux 下，可以直接运行 python 解释执行 connect.py。</p>          
+          <note>
+            <p>本例程连接到本地数据库的11810端口，使用的是空的用户名和密码。用户需要根据自己的实际情况配置参数。譬如，将上述代码中的 db = client() 修改为 db = client('192.168.10.188', 11810)。当数据库已经创建用户时，应该使用正确的用户及密码连接到数据库，否则连接失败。</p>
+          </note></li>
+        <li>创建集合空间和集合
+          <p>以下创建了一个名字为“foo”的集合空间和一个名字为“bar”的集合，集合空间内的集合的数据页大小为16k。可根据实际情况选择不同大小的数据页。创建集合后，可对集合做增删改查等操作。</p>          
+          <codeblock># 连接到数据库
+try:
+   db = client()
+except SDBBaseError, e:
+   pysequoiadb._print(e)
+
+# success to connect to db
+try:
+cs_name = 'foo'
+   cs = db.create_collection_space(cs_name, 16384) except SDBBaseError, e:
+pysequoiadb._print(e)
+
+# success to create collection space
+cl_name = 'bar'
+try:
+   cs = cs.create_collection(cl_name)
+except SDBBaseError, e:
+pysequoiadb._print(e)</codeblock></li>
+        <li>插入数据（insert）<p></p>
+          <codeblock># 首先，需要创建一个插入的 dict 对象。
+record = {"name":"Tom", "age":24}
+# 接着，把此 dict 对象插入集合中
+oid = cl.insert ( record ) ;</codeblock>
+          <p>record 为输入参数，为要插入的数据。dict 对象将会被转换成 bson 插入到集合中。oid 是插入该记录，返回的 bson 结构的 objectid。</p></li>
+        <li>查询（query）<p><codeblock># 查询所有记录，把结果放入游标中，并循环打印游标中的每条记录
+try:
+   cr = cl.query()
+
+   while True:
+      try:
+         record = cr.next()
+      except SDBEndOfCursor:
+         break
+      except SDBBaseError, e:
+         pysequoiadb._print(e)
+</codeblock></p>
+          <p>查询操作需要一个游标对象存放查询的结果到本地。要获得查询的结果需要使用游标操作。本例使用了游标操作的 next 接口，表示从查询结果中取到一条记录。此示例中没有设置查询条件，筛选条件，排序情况，及仅使用默认索引。</p></li>
+        <li>索引（index）<p><codeblock>index_name = "index_name"
+# 首先创建一个 dict 对象包含将要创建的索引的信息
+idx = { 'name':1, 'age':-1 }
+# 创建一个以"name"为升序，"age"为降序的索引
+cl.create_index ( idx, index_name, FALSE, FALSE ) ;</codeblock></p>
+          <p>集合对象 collection 中创建一个以“name”为升序，“age”为降序的索引。</p></li>
+        <li>更新（update）
+          <p></p>
+          <codeblock># 先创建一个包含更新规则的 BSONObj 对象
+rule = {"$set":{ "age":19}}
+# 打印出更新规则
+print rule
+# 更新记录
+cl.update( rule )</codeblock><p>在集合对象 collection 中更新了记录。实例中没有指定数据匹配规则，所以此示例将更新集合中所有的集合。</p></li>
+      </ul>
+    </section>
+    <section>
+      <title>集群操作</title>
+      <ul>
+        <li>分区组操作
+          <p>分区组操作包括创建分区组（client::creat_replica_group），得到分区组实例（client:: get_replica_group_by_name 和 client:: get_replica_group_by_id），启动分区组所有数据节点（replicagroup::start），停止分区组所有数据节点（replicagroup::stop）等。</p>
+            <p>以下为分区组操作示例性的例子。真正的应用应包括错误检测等。
+            <codeblock># 定义一个空的 map 对象表示创建数据节点没有更多的配置内容
+config = {}
+…
+
+# 先建立一个编目分区组
+db.create_cata_replica_group ( HOST_NAME, SERVICE_NAME, CATALOG_GROUP_PATH , None)
+
+# 创建数据分区组
+rg = db.create_replica_group ( REPLICA_GROUP_NAME)
+
+# 创建第一个数据节点
+rg.create_node ( HOST_NAME1, SERVICE_NAME1, DATABASE_PATH1, config )
+…
+# 启动分区组
+rg.start ()</codeblock></p></li>
+        <li>数据节点操作
+          <p>数据节点操作包括创建数据节点（sdbReplicaGroup::createNode），得到主数据节点（sdbReplicaGroup::getMaster），得到从数据节点（sdbReplicaGroup::getSlave），启动数据节点（sdbNode::start），停止数据节点（sdb::Stop）等。</p>
+            <p>以下为数据节点操作示例性的例子。真正的应用应包括错误检测等。
+            <codeblock># 获取主数据节点
+master = rg.get_master() ;
+
+# 获取从数据节点
+slave = rg.get_slave() ;</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+</topic>

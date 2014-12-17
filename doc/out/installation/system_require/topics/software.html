@@ -1,0 +1,264 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="软件要求"/>
+<meta name="description" content="Linux 系统要求 配置主机名 配置项 配置方法 验证方法 配置主机名 1. 使用 root 权限登陆，执行 hostname sdbserver1（sdbserver1为主机名称，可根据需要修改。）； 对于 SUSE： 2. 打开 /etc/HOSTNAME 文件； vi /etc/HOSTNAME 3. 修改文件内容，配置为主机名称； sdbserver1  （主机名称） 4. 按 :wq ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../installation/system_require/topics/system_require.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_xwd_kfy_wj"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>软件要求</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_xwd_kfy_wj"><a name="topic_xwd_kfy_wj"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../installation/system_require/topics/system_require.html" title="SequoiaDB 产品安装的系统要求"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB 产品安装的系统要求</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/install_overview.html" title="安装指南">安装指南</a> / <a class="navheader_parent_path" href="../../../installation/system_require/topics/system_require.html" title="SequoiaDB 产品安装的系统要求">SequoiaDB 产品安装的系统要求</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">软件要求</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Linux 系统要求</h2>
+      
+      <ul class="ul">
+        <li class="li"><p class="p">配置主机名</p>
+
+          <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+              <th valign="bottom" align="left" id="d72062e25" class="stentry">配置项 </th>
+
+              <th valign="bottom" align="left" id="d72062e28" class="stentry">配置方法</th>
+
+              <th valign="bottom" align="left" id="d72062e31" class="stentry">验证方法</th>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" headers="d72062e25" class="stentry">配置主机名</td>
+
+              <td valign="top" headers="d72062e28" class="stentry">1. 使用 root 权限登陆，执行 hostname sdbserver1（sdbserver1为主机名称，可根据需要修改。）；<p class="p"/>
+
+                <ul class="ul">
+                  <li class="li">对于 SUSE：
+                    <p class="p">2. 打开 /etc/HOSTNAME 文件；</p>
+<p class="p"> vi /etc/HOSTNAME</p>
+
+                    <p class="p">3. 修改文件内容，配置为主机名称；</p>
+<p class="p"> sdbserver1  （主机名称）</p>
+
+                    <p class="p">4. 按 :wq 保存退出；</p>
+</li>
+
+                  <li class="li">对于 RedHat：
+                    <p class="p">2. 打开 /etc/sysconfig/network 文件；</p>
+<p class="p"> vi /etc/sysconfig/network</p>
+
+                    <p class="p">3. 将 HOSTNAME 一行修改为 HOSTNAME = sdbserver1，其中 sdbserver1 为新主机名；</p>
+
+                    <p class="p">4. 按 :wq 保存退出；</p>
+</li>
+
+                  <li class="li">对于 Ubuntu：
+                    <p class="p">2. 打开 /etc/hostname 文件；</p>
+<p class="p"> vi /etc/hostname</p>
+
+                    <p class="p">3. 修改文件内容，配置为主机名称；</p>
+<p class="p"> sdbserver1</p>
+
+                    4. 按 :wq 保存退出；</li>
+
+                </ul>
+
+              </td>
+
+              <td valign="top" headers="d72062e31" class="stentry">执行 hostname 命令，确认打印信息是否为“sdbserver1”</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" headers="d72062e25" class="stentry">配置物理机之间通过主机名可连接</td>
+
+              <td valign="top" headers="d72062e28" class="stentry"><ul class="ul">
+                <li class="li"><p class="p">使用 root 权限，打开 /etc/hosts 文件</p>
+<p class="p"> vi /etc/hosts</p>
+</li>
+
+                <li class="li"><p class="p">修改 /etc/hosts，将服务器节点的主机名与IP映射关系配置到该文件中</p>
+
+                  <p class="p">192.168.20.200  sdbserver1</p>
+
+                  <p class="p">192.168.20.201  sdbserver2</p>
+
+                  <p class="p">192.168.20.202  sdbserver3</p>
+</li>
+
+                  <li class="li">保存退出</li>
+</ul>
+
+              </td>
+
+              <td valign="top" headers="d72062e31" class="stentry"><p class="p">1. ping sdbserver1（本机主机名）可以 ping 通</p>
+2. ping sdbserver2（远端主机名）可以 ping 通</td>
+
+            </tr>
+</table>
+</li>
+
+        <li class="li"><p class="p">关闭防火墙</p>
+
+          <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+            <th valign="bottom" align="left" id="d72062e139" class="stentry">配置项</th>
+
+            <th valign="bottom" align="left" id="d72062e142" class="stentry">配置方法</th>
+
+            <th valign="bottom" align="left" id="d72062e145" class="stentry">验证方法</th>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" headers="d72062e139" class="stentry">关闭防火墙</td>
+
+            <td valign="top" headers="d72062e142" class="stentry">关闭防火墙操作，需要管理员权限。<p class="p"/>
+<ul class="ul">
+              <li class="li">对于 SUSE：
+                <p class="p">1. SuSEfirewall2 stop；</p>
+
+                <p class="p">2. chkconfig SuSEfirewall2_setup；</p>
+</li>
+
+              <li class="li">对于 RedHat：
+                <p class="p">1. service iptables stop；</p>
+
+                <p class="p">2. chkconfig iptables off；</p>
+ </li>
+
+              <li class="li">对于 Ubuntu：
+                <p class="p">1. ufw disable；</p>
+</li>
+</ul>
+
+            </td>
+
+            <td valign="top" headers="d72062e145" class="stentry"><ul class="ul">
+              <li class="li">对于 SUSE：<p class="p">chkconfig -list | grep fire；</p>
+</li>
+
+              <li class="li">对于 RedHat：<p class="p">service iptables status；</p>
+</li>
+
+              <li class="li">对于 Ubuntu：<p class="p">ufw status；</p>
+</li>
+
+            </ul>
+</td>
+
+          </tr>
+</table>
+</li>
+
+      </ul>
+
+      <div class="note note"><span class="notetitle">Note:</span> 每台作为数据库服务器的机器都需要配置。</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Linux 推荐配置</h2>
+      
+      <ul class="ul">
+        <li class="li">调整 ulimit <p class="p">在配置文件 /etc/security/limits.conf 中设置：</p>
+
+          <pre class="pre codeblock">#&lt;domain&gt;      &lt;type&gt;    &lt;item&gt;     &lt;value&gt;
+*               soft      core       0
+*               soft      data       unlimited
+*               soft      fsize      unlimited
+*               soft      rss        unlimited
+*               soft      as         unlimited</pre>
+
+          <p class="p"><strong class="ph b">参数说明：</strong></p>
+<p class="p"><strong class="ph b">core</strong>：数据库出现故障时产生 core 文件用于故障诊断，生产系统建议关闭；</p>
+
+          <p class="p"><strong class="ph b">data</strong>：数据库进程所允许分配的数据内存大小；</p>
+
+          <p class="p"><strong class="ph b">fsize</strong>：数据库进程所允许寻址的文件大小；</p>
+
+          <p class="p"><strong class="ph b">rss</strong>：数据库进程所允许的最大 resident set 大小；</p>
+
+          <p class="p"><strong class="ph b">as</strong>：数据库进程所允许最大虚拟内存寻址空间限制；</p>
+
+          在配置文件 /etc/security/limits.d/90-nproc.conf 中设置：<div class="p">
+            <pre class="pre codeblock">#&lt;domain&gt;      &lt;type&gt;    &lt;item&gt;     &lt;value&gt;
+*               soft      nproc     unlimited</pre>
+</div>
+
+          <p class="p"><strong class="ph b">参数说明：</strong></p>
+
+          <strong class="ph b">nproc：</strong>数据库所允许的最大线程数限制；          
+          <div class="note note"><span class="notetitle">Note:</span> 1. 每台作为数据库服务器的机器都需要配置； 2. 更改配置后需重新登录使得配置生效。</div>
+</li>
+
+      <li class="li">调整内核参数
+        <p class="p">1. 使用下列命令输出当前 vm 配置，并将其归档保存：</p>
+
+        <pre class="pre codeblock">cat /proc/sys/vm/swappiness
+cat /proc/sys/vm/dirty_ratio
+cat /proc/sys/vm/dirty_background_ratio
+cat /proc/sys/vm/dirty_expire_centisecs
+cat /proc/sys/vm/vfs_cache_pressure
+cat /proc/sys/vm/min_free_kbytes</pre>
+
+        <p class="p">2. 添加下列参数至 /etc/sysctl.conf 文件调整内核参数：</p>
+
+        <pre class="pre codeblock">vm.swappiness = 0
+vm.dirty_ratio = 100
+vm.dirty_background_ratio = 40
+vm.dirty_expire_centisecs = 3000
+vm.vfs_cache_pressure = 200
+vm.min_free_kbytes = &lt;物理内存大小的8%，单位KB&gt;</pre>
+
+        <div class="note note"><span class="notetitle">Note:</span> 当数据库可用物理内存不足 8GB 时不需使用 vm.swappiness = 0；上述 dirty 类参数只是建议值，具体系统设置时请按原则（控制系统的 flush 进程只采用脏页超时机制刷新脏页，而不采用脏页比例超支刷新脏页）进行设置。</div>
+
+        <p class="p">3. 执行如下命令，使配置生效：</p>
+
+        <pre class="pre codeblock">/sbin/sysctl -p</pre>
+
+        <div class="note note"><span class="notetitle">Note:</span> 每台作为数据库服务器的机器都需要配置。</div>
+</li>
+
+        <li class="li">数据库目录结构
+          <p class="p">用户应尽可能使数据目录，索引目录与日志目录存放在不同物理磁盘中，以减少顺序 I/O 与随机 I/O 之间的竞争。</p>
+</li>
+</ul>
+
+    </div>
+   
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../installation/system_require/topics/system_require.html" title="SequoiaDB 产品安装的系统要求"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB 产品安装的系统要求</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

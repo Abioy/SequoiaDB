@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_exception">
+  <title>异常对照表</title>
+  <body>
+    <simpletable frame="all" relcolwidth="5.25* 1.0*" id="references_exceptionmapping_table">
+      <sthead>
+        <stentry>描述</stentry>
+        <stentry>值</stentry>
+      </sthead>
+      <strow>
+        <stentry>IO Exception</stentry>
+        <stentry>-1</stentry>
+      </strow>
+      <strow>
+        <stentry>Out of Memory</stentry>
+        <stentry>-2</stentry>
+      </strow>
+      <strow>
+        <stentry>Permission Error</stentry>
+        <stentry>-3</stentry>
+      </strow>
+      <strow>
+        <stentry>File Not Exist</stentry>
+        <stentry>-4</stentry>
+      </strow>
+      <strow>
+        <stentry>File Exist</stentry>
+        <stentry>-5</stentry>
+      </strow>
+      <strow>
+        <stentry>Invalid Argument</stentry>
+        <stentry>-6</stentry>
+      </strow>
+      <strow>
+        <stentry>Invalid size</stentry>
+        <stentry>-7</stentry>
+      </strow>
+      <strow>
+        <stentry>Interrupt</stentry>
+        <stentry>-8</stentry>
+      </strow>
+      <strow>
+        <stentry>hit end of file</stentry>
+        <stentry>-9</stentry>
+      </strow>
+      <strow>
+        <stentry>system error</stentry>
+        <stentry>-10</stentry>
+      </strow>
+      <strow>
+        <stentry>has no space</stentry>
+        <stentry>-11</stentry>
+      </strow>
+      <strow>
+        <stentry>EDU status is not valid</stentry>
+        <stentry>-12</stentry>
+      </strow>
+      <strow>
+        <stentry>Timeout error</stentry>
+        <stentry>-13</stentry>
+      </strow>
+      <strow>
+        <stentry>Database is quiesced</stentry>
+        <stentry>-14</stentry>
+      </strow>
+      <strow>
+        <stentry>File Not Exist</stentry>
+        <stentry>-4</stentry>
+      </strow>
+      <strow>
+        <stentry>Network error</stentry>
+        <stentry>-15</stentry>
+      </strow>
+      <strow>
+        <stentry>File Not Exist</stentry>
+        <stentry>-4</stentry>
+      </strow>
+      <strow>
+        <stentry>Network is closed from remote</stentry>
+        <stentry>-16</stentry>
+      </strow>
+      <strow>
+        <stentry>Database is in shutdown status</stentry>
+        <stentry>-17</stentry>
+      </strow>
+      <strow>
+        <stentry>Application is forced</stentry>
+        <stentry>-18</stentry>
+      </strow>
+      <strow>
+        <stentry>Given path is not valid</stentry>
+        <stentry>-19</stentry>
+      </strow>
+      <strow>
+        <stentry>Unexpected file type specified</stentry>
+        <stentry>-20</stentry>
+      </strow>
+      <strow>
+        <stentry>There's no space for DMS</stentry>
+        <stentry>-21</stentry>
+      </strow>
+      <strow>
+        <stentry>collection already exist</stentry>
+        <stentry>-22</stentry>
+      </strow>
+      <strow>
+        <stentry>collection does not exist</stentry>
+        <stentry>-23</stentry>
+      </strow>
+      <strow>
+        <stentry>user record is too big</stentry>
+        <stentry>-24</stentry>
+      </strow>
+      <strow>
+        <stentry>record does not exist</stentry>
+        <stentry>-25</stentry>
+      </strow>
+      <strow>
+        <stentry>remote overflow record exist </stentry>
+        <stentry>-26</stentry>
+      </strow>
+      <strow>
+        <stentry>invalid record</stentry>
+        <stentry>-27</stentry>
+      </strow>
+      <strow>
+        <stentry>storage unit need reorg </stentry>
+        <stentry>-28</stentry>
+      </strow>
+      <strow>
+        <stentry>end of collection</stentry>
+        <stentry>-29</stentry>
+      </strow>
+      <strow>
+        <stentry>context is already opened </stentry>
+        <stentry>-30</stentry>
+      </strow>
+      <strow>
+        <stentry>context is closed</stentry>
+        <stentry>-31</stentry>
+      </strow>
+      <strow>
+        <stentry>option is not supported yet</stentry>
+        <stentry>-32</stentry>
+      </strow>
+      <strow>
+        <stentry>collection space already exist</stentry>
+        <stentry>-33</stentry>
+      </strow>
+      <strow>
+        <stentry>collection space not exist</stentry>
+        <stentry>-34</stentry>
+      </strow>
+      <strow>
+        <stentry>storage unit file is invalid</stentry>
+        <stentry>-35</stentry>
+      </strow>
+      <strow>
+        <stentry>context not exist </stentry>
+        <stentry>-36</stentry>
+      </strow>
+      <strow>
+        <stentry>more than one field has array </stentry>
+        <stentry>-37</stentry>
+      </strow>
+      <strow>
+        <stentry>duplicate key exist</stentry>
+        <stentry>-38</stentry>
+      </strow>
+      <strow>
+        <stentry>key is too large</stentry>
+        <stentry>-39</stentry>
+      </strow>
+      <strow>
+        <stentry>index extent has no space</stentry>
+        <stentry>-40</stentry>
+      </strow>
+      <strow>
+        <stentry>index key not exist</stentry>
+        <stentry>-41</stentry>
+      </strow>
+      <strow>
+        <stentry>hit max number of index</stentry>
+        <stentry>-42</stentry>
+      </strow>
+      <strow>
+        <stentry>failed to initialize index</stentry>
+        <stentry>-43</stentry>
+      </strow>
+      <strow>
+        <stentry>collection is dropped</stentry>
+        <stentry>-44</stentry>
+      </strow>
+      <strow>
+        <stentry>two records get same key and rid</stentry>
+        <stentry>-45</stentry>
+      </strow>
+      <strow>
+        <stentry>duplicate index name</stentry>
+        <stentry>-46</stentry>
+      </strow>
+      <strow>
+        <stentry>index name doesn't exist </stentry>
+        <stentry>-47</stentry>
+      </strow>
+      <strow>
+        <stentry>index flag is unexpected </stentry>
+        <stentry>-48</stentry>
+      </strow>
+      <strow>
+        <stentry>hit end of index</stentry>
+        <stentry>-49</stentry>
+      </strow>
+      <strow>
+        <stentry>hit max of dedup buffer</stentry>
+        <stentry>-50</stentry>
+      </strow>
+      <strow>
+        <stentry>invalid predicates</stentry>
+        <stentry>-51</stentry>
+      </strow>
+      <strow>
+        <stentry>index is no longer exist </stentry>
+        <stentry>-52</stentry>
+      </strow>
+      <strow>
+        <stentry>index hint is not valid</stentry>
+        <stentry>-53</stentry>
+      </strow>
+      <strow>
+        <stentry>no more temp tables avaliable</stentry>
+        <stentry>-54</stentry>
+      </strow>
+      <strow>
+        <stentry>exceed max number of SU </stentry>
+        <stentry>-55</stentry>
+      </strow>
+      <strow>
+        <stentry> $id index can't be dropped</stentry>
+        <stentry>-56</stentry>
+      </strow>
+      <strow>
+        <stentry>log was not found in log buf</stentry>
+        <stentry>-57</stentry>
+      </strow>
+      <strow>
+        <stentry>log was not found in log file</stentry>
+        <stentry>-58</stentry>
+      </strow>
+      <strow>
+        <stentry>replication group not exist</stentry>
+        <stentry>-59</stentry>
+      </strow>
+      <strow>
+        <stentry>replication group exist</stentry>
+        <stentry>-60</stentry>
+      </strow>
+      <strow>
+        <stentry>invalid request id is received</stentry>
+        <stentry>-61</stentry>
+      </strow>
+      <strow>
+        <stentry>session ID does not exist</stentry>
+        <stentry>-62</stentry>
+      </strow>
+      <strow>
+        <stentry>system edu can't be forced</stentry>
+        <stentry>-63</stentry>
+      </strow>
+      <strow>
+        <stentry>database is not connected</stentry>
+        <stentry>-64</stentry>
+      </strow>
+      <strow>
+        <stentry>unexpected result received</stentry>
+        <stentry>-65</stentry>
+      </strow>
+      <strow>
+        <stentry>corrupted record</stentry>
+        <stentry>-66</stentry>
+      </strow>
+      <strow>
+        <stentry>backup has already started</stentry>
+        <stentry>-67</stentry>
+      </strow>
+      <strow>
+        <stentry>backup not completed</stentry>
+        <stentry>-68</stentry>
+      </strow>
+      <strow>
+        <stentry>backup in progress mode</stentry>
+        <stentry>-69</stentry>
+      </strow>
+      <strow>
+        <stentry>backup file is damaged </stentry>
+        <stentry>-70</stentry>
+      </strow>
+      <strow>
+        <stentry>there's no primary found</stentry>
+        <stentry>-71</stentry>
+      </strow>
+      <strow>
+        <stentry>the requested node not exist</stentry>
+        <stentry>-72</stentry>
+      </strow>
+      <strow>
+        <stentry>help argument is specified</stentry>
+        <stentry>-73</stentry>
+      </strow>
+      <strow>
+        <stentry>connection state is not valid</stentry>
+        <stentry>-74</stentry>
+      </strow>
+      <strow>
+        <stentry>invalid handle</stentry>
+        <stentry>-75</stentry>
+      </strow>
+      <strow>
+        <stentry>client object is freed</stentry>
+        <stentry>-76</stentry>
+      </strow>
+      <strow>
+        <stentry>transfer has already listened</stentry>
+        <stentry>-77</stentry>
+      </strow>
+      <strow>
+        <stentry>can not listen specified addr</stentry>
+        <stentry>-78</stentry>
+      </strow>
+      <strow>
+        <stentry>cannot connect to specified addr</stentry>
+        <stentry>-79</stentry>
+      </strow>
+      <strow>
+        <stentry>connection does not exist</stentry>
+        <stentry>-80</stentry>
+      </strow>
+      <strow>
+        <stentry>failed to send </stentry>
+        <stentry>-81</stentry>
+      </strow>
+      <strow>
+        <stentry>timer id not found </stentry>
+        <stentry>-82</stentry>
+      </strow>
+      <strow>
+        <stentry>route info not found</stentry>
+        <stentry>-83</stentry>
+      </strow>
+      <strow>
+        <stentry>broken msg</stentry>
+        <stentry>-84</stentry>
+      </strow>
+      <strow>
+        <stentry>invalid net handle</stentry>
+        <stentry>-85</stentry>
+      </strow>
+      <strow>
+        <stentry>reorg file is not valid </stentry>
+        <stentry>-86</stentry>
+      </strow>
+      <strow>
+        <stentry>reorg file is in read only mode</stentry>
+        <stentry>-87</stentry>
+      </strow>
+      <strow>
+        <stentry>collection status is not valid</stentry>
+        <stentry>-88</stentry>
+      </strow>
+      <strow>
+        <stentry>collection is not in reorg state</stentry>
+        <stentry>-89</stentry>
+      </strow>
+      <strow>
+        <stentry>replication group is not activated</stentry>
+        <stentry>-90</stentry>
+      </strow>
+      <strow>
+        <stentry>the member is not in this group</stentry>
+        <stentry>-91</stentry>
+      </strow>
+      <strow>
+        <stentry>collection flag not compatible</stentry>
+        <stentry>-92</stentry>
+      </strow>
+      <strow>
+        <stentry>local group version is expired </stentry>
+        <stentry>-93</stentry>
+      </strow>
+      <strow>
+        <stentry>page size is not valid</stentry>
+        <stentry>-94</stentry>
+      </strow>
+      <strow>
+        <stentry>remote group version is expired</stentry>
+        <stentry>-95</stentry>
+      </strow>
+      <strow>
+        <stentry>failed to create a poll</stentry>
+        <stentry>-96</stentry>
+      </strow>
+      <strow>
+        <stentry>log record is corrupted</stentry>
+        <stentry>-97</stentry>
+      </strow>
+      <strow>
+        <stentry>given lsn greater than latest</stentry>
+        <stentry>-98</stentry>
+      </strow>
+      <strow>
+        <stentry>received unknown mesage</stentry>
+        <stentry>-99</stentry>
+      </strow>
+      <strow>
+        <stentry>updated information is same as old one</stentry>
+        <stentry>-100</stentry>
+      </strow>
+      <strow>
+        <stentry>unknow message</stentry>
+        <stentry>-101</stentry>
+      </strow>
+      <strow>
+        <stentry>empty heap </stentry>
+        <stentry>-102</stentry>
+      </strow>
+      <strow>
+        <stentry>not primary</stentry>
+        <stentry>-103</stentry>
+      </strow>
+      <strow>
+        <stentry>data node not enough</stentry>
+        <stentry>-104</stentry>
+      </strow>
+      <strow>
+        <stentry>data node have no catalog info</stentry>
+        <stentry>-105</stentry>
+      </strow>
+      <strow>
+        <stentry>data node catlog version old </stentry>
+        <stentry>-106</stentry>
+      </strow>
+      <strow>
+        <stentry>coord node catalog version old</stentry>
+        <stentry>-107</stentry>
+      </strow>
+      <strow>
+        <stentry>exceds the max group size </stentry>
+        <stentry>-108</stentry>
+      </strow>
+      <strow>
+        <stentry>failed to sync log </stentry>
+        <stentry>-109</stentry>
+      </strow>
+      <strow>
+        <stentry>failed to replay log</stentry>
+        <stentry>-110</stentry>
+      </strow>
+      <strow>
+        <stentry>error http struct </stentry>
+        <stentry>-111</stentry>
+      </strow>
+      <strow>
+        <stentry>failed to negotiate</stentry>
+        <stentry>-112</stentry>
+      </strow>
+      <strow>
+        <stentry>failed to change dps metadata </stentry>
+        <stentry>-113</stentry>
+      </strow>
+      <strow>
+        <stentry>SME is corrupted</stentry>
+        <stentry>-114</stentry>
+      </strow>
+      <strow>
+        <stentry>application is interrupted</stentry>
+        <stentry>-115</stentry>
+      </strow>
+      <strow>
+        <stentry>application is disconnected</stentry>
+        <stentry>-116</stentry>
+      </strow>
+      <strow>
+        <stentry>character encoding errors</stentry>
+        <stentry>-117</stentry>
+      </strow>
+      <strow>
+        <stentry>get failed msg from the node</stentry>
+        <stentry>-118</stentry>
+      </strow>
+      <strow>
+        <stentry>buffer array is full</stentry>
+        <stentry>-119</stentry>
+      </strow>
+      <strow>
+        <stentry>sub context is conflict</stentry>
+        <stentry>-120</stentry>
+      </strow>
+      <strow>
+        <stentry>coord received EOC message</stentry>
+        <stentry>-121</stentry>
+      </strow>
+      <strow>
+        <stentry>DPS file size are not the same</stentry>
+        <stentry>-122</stentry>
+      </strow>
+      <strow>
+        <stentry>dps file not recognise</stentry>
+        <stentry>-123</stentry>
+      </strow>
+      <strow>
+        <stentry>no resource</stentry>
+        <stentry>-124</stentry>
+      </strow>
+      <strow>
+        <stentry>invalid lsn</stentry>
+        <stentry>-125</stentry>
+      </strow>
+      <strow>
+        <stentry>data to pipe is too big</stentry>
+        <stentry>-126</stentry>
+      </strow>
+      <strow>
+        <stentry>catalog auth failed</stentry>
+        <stentry>-127</stentry>
+      </strow>
+      <strow>
+        <stentry>node is full sync</stentry>
+        <stentry>-128</stentry>
+      </strow>
+      <strow>
+        <stentry>catnode failed assign data-node</stentry>
+        <stentry>-129</stentry>
+      </strow>
+      <strow>
+        <stentry>php driver internal error</stentry>
+        <stentry>-130</stentry>
+      </strow>
+      <strow>
+        <stentry>failed to send the message</stentry>
+        <stentry>-131</stentry>
+      </strow>
+      <strow>
+        <stentry>there is no node-group register in catalogue-node</stentry>
+        <stentry>-132</stentry>
+      </strow>
+      <strow>
+        <stentry>remote-node disconnected </stentry>
+        <stentry>-133</stentry>
+      </strow><strow>
+        <stentry>couldn't find the match catalogue-info </stentry>
+        <stentry>-134</stentry>
+      </strow>
+      <strow>
+        <stentry>update catalog failed</stentry>
+        <stentry>-135</stentry>
+      </strow>
+      <strow>
+        <stentry>received invalid request which opcode is unknowned</stentry>
+        <stentry>-136</stentry>
+      </strow>
+      <strow>
+        <stentry>coord couldn't find the group-info in local</stentry>
+        <stentry>-137</stentry>
+      </strow>
+      <strow>
+        <stentry>dms extent is corrupted</stentry>
+        <stentry>-138</stentry>
+      </strow>
+      <strow>
+        <stentry>remote cluster manage failed</stentry>
+        <stentry>-139</stentry>
+      </strow>
+      <strow>
+        <stentry>remote engines have been stopped partially</stentry>
+        <stentry>-140</stentry>
+      </strow>
+      <strow>
+        <stentry>sdb service is starting</stentry>
+        <stentry>-141</stentry>
+      </strow>
+      <strow>
+        <stentry>sdb service has already been started</stentry>
+        <stentry>-142</stentry>
+      </strow>
+      <strow>
+        <stentry>sdb service is restarting </stentry>
+        <stentry>-143</stentry>
+      </strow>
+      <strow>
+        <stentry>sdb node is already existed</stentry>
+        <stentry>-144</stentry>
+      </strow>
+      <strow>
+        <stentry>sdb node is not existed </stentry>
+        <stentry>-145</stentry>
+      </strow>
+      <strow>
+        <stentry>unable to lock</stentry>
+        <stentry>-146</stentry>
+      </strow>
+      <strow>
+        <stentry>dms state is not compatible with current command</stentry>
+        <stentry>-147</stentry>
+      </strow>
+      <strow>
+        <stentry>rebuild has already started</stentry>
+        <stentry>-148</stentry>
+      </strow>
+      <strow>
+        <stentry>rebuild in progress mode</stentry>
+        <stentry>-149</stentry>
+      </strow>
+      <strow>
+        <stentry>there is no data in the coord-node's cache </stentry>
+        <stentry>-150</stentry>
+      </strow>
+      <strow>
+        <stentry>errors occur during the process of evalution</stentry>
+        <stentry>-151</stentry>
+      </strow>
+      <strow>
+        <stentry>group already exist</stentry>
+        <stentry>-152</stentry>
+      </strow>
+      <strow>
+        <stentry>group does not exist</stentry>
+        <stentry>-153</stentry>
+      </strow>
+      <strow>
+        <stentry>node does not exist</stentry>
+        <stentry>-154</stentry>
+      </strow>
+      <strow>
+        <stentry>failed to start the node </stentry>
+        <stentry>-155</stentry>
+      </strow>
+      <strow>
+        <stentry>node'configure conflicts</stentry>
+        <stentry>-156</stentry>
+      </strow>
+      <strow>
+        <stentry>group is empty </stentry>
+        <stentry>-157</stentry>
+      </strow>
+      <strow>
+        <stentry>The operation is for coord node only</stentry>
+        <stentry>-158</stentry>
+      </strow>
+      <strow>
+        <stentry>failed to operate on node only</stentry>
+        <stentry>-159</stentry>
+      </strow>
+      <strow>
+        <stentry>The mutex job already exist</stentry>
+        <stentry>-160</stentry>
+      </strow>
+      <strow>
+        <stentry>The specified job does not exist</stentry>
+        <stentry>-161</stentry>
+      </strow>
+      <strow>
+        <stentry>The catalog information is corrupted</stentry>
+        <stentry>-162</stentry>
+      </strow>
+      <strow>
+        <stentry>$shard index can't be dropped</stentry>
+        <stentry>-163</stentry>
+      </strow>
+      <strow>
+        <stentry>The command can't be run in the node</stentry>
+        <stentry>-164</stentry>
+      </strow>
+      <strow>
+        <stentry>The command can't be run in the serice plane</stentry>
+        <stentry>-165</stentry>
+      </strow>
+      <strow>
+        <stentry>The group info not exist</stentry>
+        <stentry>-166</stentry>
+      </strow>
+      <strow>
+        <stentry>Group name is conflict</stentry>
+        <stentry>-167</stentry>
+      </strow>
+      <strow>
+        <stentry>The collection is not sharded</stentry>
+        <stentry>-168</stentry>
+      </strow>
+      <strow>
+        <stentry>The record does not contains valid sharding key </stentry>
+        <stentry>-169</stentry>
+      </strow>
+      <strow>
+        <stentry>A task that already exists does not compatible with the new task</stentry>
+        <stentry>-170</stentry>
+      </strow>
+      <strow>
+        <stentry>The collection does not exists on the specified group</stentry>
+        <stentry>-171</stentry>
+      </strow>
+      <strow>
+        <stentry>The specified task does not exist </stentry>
+        <stentry>-172</stentry>
+      </strow>
+      <strow>
+        <stentry>The record contains more than one sharding key </stentry>
+        <stentry>-173</stentry>
+      </strow>
+      <strow>
+        <stentry>The mutex task already exist</stentry>
+        <stentry>-174</stentry>
+      </strow>
+      <strow>
+        <stentry>The split key is not valid or not in the source group</stentry>
+        <stentry>-175</stentry>
+      </strow>
+      <strow>
+        <stentry>The split key is on boundary of the source group</stentry>
+        <stentry>-176</stentry>
+      </strow>
+      <strow>
+        <stentry>The unique index must include all fields in sharding key </stentry>
+        <stentry>-177</stentry>
+      </strow>
+      <strow>
+        <stentry>Sharding key cannot be updated </stentry>
+        <stentry>-178</stentry>
+      </strow>
+      <strow>
+        <stentry>There is pending task for the collection space </stentry>
+        <stentry>-179</stentry>
+      </strow>
+      <strow>
+        <stentry>authority is forbidden</stentry>
+        <stentry>-180</stentry>
+      </strow>
+      
+    </simpletable>
+  </body>
+</topic>

@@ -1,0 +1,304 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Read"/>
+<meta name="description" content="Of the basic database operations(i.e.CRUD), read operatios are these those retrieve records or documents from a collection in SequoiaDB, and include all operations that return a cursor in response to ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../developement/basics/topics/shell_en.html"/>
+<meta name="DC.Relation" scheme="URI" content="create_en.html"/>
+<meta name="DC.Relation" scheme="URI" content="update_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="developement_basics_read_en"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>Read</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="developement_basics_read_en"><a name="developement_basics_read_en"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../developement/basics/topics/shell_en.html" title="Basic Manipulation in Shell"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Basic Manipulation in Shell</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/developement_en.html" title="Development Instruction">Development Instruction</a> / <a class="navheader_parent_path" href="../../../developement/basics/topics/shell_en.html" title="Basic Manipulation in Shell">Basic Manipulation in Shell</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Read</h1>
+
+  <div class="body">
+    <p class="p">Of the basic database operations(i.e.CRUD), read operatios are these those retrieve records or
+      documents from a collection in SequoiaDB, and include all operations that return a cursor in
+      response to application request data.</p>
+
+    <p class="p">This dacument describes the syntax and structure of the queries applications use to request
+      data from SequoiaDB and how different factors affect the efficiency of reads.</p>
+
+    <div class="note note"><span class="notetitle">Note:</span> <p class="p">All of the examples in this document use the SequoiaDB shell interface.</p>
+</div>
+
+    <div class="section"><h2 class="title sectiontitle">find()</h2>
+      
+      <p class="p">we use <a class="xref" href="../../../references/methods/topics/find_en.html"><em class="ph i">find</em></a>method
+        to read records from SequoiaDB. the <em class="ph i">find</em>method is the main method to select records
+        from collections and it returns a cursor which contains a lot of records. it's grammatical
+        structure as follows:</p>
+
+      <pre class="pre codeblock">db.collectionspace.collection.find([cond],[sel])</pre>
+
+      <p class="p">The corresponding opration in sql: the method of <em class="ph i">find()</em> is simalar with
+          <em class="ph i">select</em> statement :</p>
+
+      <p class="p"><strong class="ph b">.</strong> the<em class="ph i"> [cond]</em> parameter corresponds to <em class="ph i">where</em> statement</p>
+
+      <p class="p"><strong class="ph b">.</strong> the [sel] parameter corresponds to the list of fields in the result set</p>
+
+      <p class="p">there is a record in collection like this:</p>
+
+      <pre class="pre codeblock">    {
+  "_id":1,
+  "name":{
+     "first" : "Tom",
+     "second":"David"
+       },
+  "age":23
+  "birth":"1990-04-01",
+  "phone":[
+      10086,
+      10010,
+      10000
+     ],
+  "family":[
+      {
+     "Dad":"Kobe",
+     "phone":139123456
+      },
+      {
+      "Mom":"Julie",
+      "phone":189123456
+       }
+    ]
+ }     </pre>
+
+      
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">return all the records from the collection</h2>
+      
+      <p class="p">If there is no <em class="ph i">cond</em> parameter, the method of
+          <em class="ph i">db.collectionspace.colletion.find()</em> returns all the records from the collection. The
+        following operation select all records in the collection named <em class="ph i">bar</em> which in the
+        collectionspace named<em class="ph i"> foo</em>:</p>
+
+      <div class="p"><pre class="pre codeblock">db.foo.bar.find()</pre>
+</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">return  records that match query conditions</h2>
+      
+      <ul class="ul">
+        <li class="li">Equality match<p class="p">The following operation  select the records in the collection
+              <em class="ph i">bar</em> where the<em class="ph i"> age</em> filed has the value 23</p>
+<div class="p">
+            <pre class="pre codeblock"> db.foo.bar.find({age:23})</pre>
+
+          </div>
+</li>
+
+        <li class="li"><p class="p">use<a class="xref" href="../../../references/console/topics/console_en.html"><em class="ph i"> operators</em></a></p>
+
+          <p class="p">The following operation select the records in the collection <em class="ph i">bar</em> where the
+              <em class="ph i">age</em> field is more than(<a class="xref" href="../../../references/console/topics/gt_en.html">$gt</a>)20</p>
+<div class="p">
+            <pre class="pre codeblock">db.foo.bar.find({age:{<a class="xref" href="../../../references/console/topics/gt_en.html">$gt</a>:20}})</pre>
+
+          </div>
+</li>
+
+        <li class="li"><p class="p">On array </p>
+
+          <p class="p">(1)query an element, The following operation returns a cursor to all records in the
+              <em class="ph i">bar</em> collection where the array field <em class="ph i">phone</em> contains the element
+            '10086':</p>
+
+          <div class="p"><pre class="pre codeblock"> db.foo.bar.find({"phone":10086})</pre>
+</div>
+
+          <p class="p">(2)query array element which is BSON Object. The following operation return a cursor to
+            all records in the <em class="ph i">bar </em>collection where <em class="ph i">family</em> array contains a
+            subdocument element that contains the <em class="ph i">Dad</em> field equal to 'Kobe' and the
+              <em class="ph i">phone</em> field equal to '139123456':</p>
+
+          <div class="p"><pre class="pre codeblock"> db.foo.bar.find( 
+  {
+  "family":{
+    $elemMatch: {
+     "Dad":"Kobe",
+     "phone":139123456
+   }
+  }
+  })</pre>
+</div>
+
+        </li>
+
+        <li class="li"><p class="p">query on subdocument </p>
+
+          <p class="p">The following operation returns a cursor to all documents in the <em class="ph i">bar</em> collection
+            where the subdocument name is exactly {first:"Tom"}</p>
+
+          <div class="p"><pre class="pre codeblock"> db.foo.bar.find(
+    {
+     "name":{ 
+     "first":"Tom"
+      }
+    }
+   )</pre>
+</div>
+
+          <div class="p">It can also be written
+            as:<pre class="pre codeblock"> db.foo.bar.find(
+     {
+     "name.first":"Tom"
+     }
+   )</pre>
+</div>
+
+        </li>
+
+        
+      </ul>
+
+    </div>
+
+    
+    <div class="section"><h2 class="title sectiontitle">specity the field of the returned records</h2>
+      
+      <p class="p">If specity the <em class="ph i">sel</em> parameter of  <em class="ph i">find</em> method, then only return the field
+        within sel parameter:</p>
+
+      <div class="p">
+        <pre class="pre codeblock">db.foo.bar.find(null,{name:""})</pre>
+
+      </div>
+
+      <div class="note note"><span class="notetitle">Note:</span> 
+        <p class="p">If a records doesn't contain the specity field(as:people), SequoiaDB will default return.
+          For example:</p>
+
+        <pre class="pre codeblock">db.foo.bar.find({},{name:"",people:""})
+return:{
+       "name":{
+                "fist":"Tom",
+                "second":"David"
+              },
+        "people":""
+        }</pre>
+
+      </div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle"><em class="ph i">find()</em> more information</h2>
+      
+      <p class="p">Execute db.foo.bar.find().help(), then will see more methods of <em class="ph i">find()</em>
+      </p>
+
+      <ul class="ul">
+        <li class="li">
+          <p class="p">cursor.sort(&lt;sort&gt;)</p>
+
+          <p class="p">The method of sort() is used to order by the specified field, syntax:
+            sort({"field1":1|-1,"field2":1|-1,...}), '1' stand for Ascending, '-1' stand for
+            Descending. If the the method of <em class="ph i">find </em>doesn't specity the content of sel
+            parameter, then<em class="ph i"> sort()</em> will order by the <em class="ph i">sort </em>parameter, but if <em class="ph i">sel
+            </em>parameter specity the returned field, then <em class="ph i">sort()</em> can only order by the field
+            included in the <em class="ph i">sel</em> parameter. For example:</p>
+
+          <div class="p">
+            <pre class="pre codeblock">db.foo.bar.find().sort({age:1})   //return all the records in the <em class="ph i">bar</em> collection and order by the value of <em class="ph i">age</em> field in ASC</pre>
+
+            <pre class="pre codeblock">db.foo.bar.find(null,{name:""}).sort({age:1})  //this operation actually can't reach the purpose of sorting.</pre>
+
+          </div>
+
+        </li>
+
+        <li class="li">cursor.hint(&lt;hint&gt;)<p class="p">add indexes
+            to speed up the query speed, assuming there is a index named 'testIndex':</p>
+<div class="p">
+            <pre class="pre codeblock">db.foo.bar.find().hint({"":"testIndex"})</pre>
+
+          </div>
+</li>
+
+        <li class="li">cursor.limit(&lt;num&gt;)<p class="p">limit the
+            number of records in the result set:</p>
+<div class="p">
+            <pre class="pre codeblock">db.foo.bar.find().limit(3) //return the first three records in the result set</pre>
+
+          </div>
+</li>
+
+        <li class="li">cursor.skip(&lt;num&gt;)<p class="p">the skip()
+            method controls the point of the results set, that is skipping the first 'num' records,
+            begin to return from the 'num+1' records:</p>
+<div class="p">
+            <pre class="pre codeblock">db.foo.bar.find().skip(5)  //skipping the first 5 records in the <em class="ph i">bar</em> collection</pre>
+
+          </div>
+</li>
+
+        <li class="li">
+          <p class="p">use cursor to control the returned records</p>
+
+          <div class="p"><pre class="pre codeblock"><a class="xref" href="../../../references/methods/topics/ccurrent_en.html">db.foo.bar.find().current()</a> //return the record that the current cursor point to 
+
+<a class="xref" href="../../../references/methods/topics/next_en.html">db.foo.bar.find().next()</a> //return the next record that the current cursor point to 
+ 
+<a class="xref" href="../../../references/methods/topics/dbcount_en.html">db.foo.bar.find().count()</a>//return the number of records that the current cursor point to
+            
+<a class="xref" href="../../../references/methods/topics/csize_en.html">db.foo.bar.find().size()</a> //return the distance from the current cursor to the final cursor
+            
+<a class="xref" href="../../../references/methods/topics/toArray_en.html">db.foo.bar.find().toArray()</a> //return the result sets with array form</pre>
+</div>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="create_en.html" title="Create">Create</a></div>
+<div><a class="navheader_parent_path" href="update_en.html" title="Update">Update</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../developement/basics/topics/shell_en.html" title="Basic Manipulation in Shell"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Basic Manipulation in Shell</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

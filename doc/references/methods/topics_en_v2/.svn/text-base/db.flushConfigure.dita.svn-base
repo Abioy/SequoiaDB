@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_3vt_g5f_5n">
+  <title>db.flushConfigure()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>flushConfigure - Flush the configurations to the configuration files.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.flushConfigure</apiname>(<parmname>&lt;rule></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Flush the configurations to the configuration files.</p>
+      <parml>
+        <plentry>
+          <pt>rule (json object)</pt>
+          <pd>Flush rules.
+          <parml>
+            <plentry>
+              <pt>Global</pt>
+              <pd>True indicates to flush the entire system's configurations. False indicates to flush the current node's configurations.</pd>
+              <pd>Global:true</pd>
+            </plentry>
+          </parml></pd>
+        </plentry>        
+      </parml>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Flush database's configurations.</p>
+      <codeblock>db.flushConfigure({Global:true})</codeblock>      
+    </section>
+  </body> 
+</topic>

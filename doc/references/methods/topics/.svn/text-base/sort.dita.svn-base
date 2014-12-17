@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_methods_sort">
+  <title>query.sort()</title>
+  <body>
+    <section><title>query.sort(&lt;sort>)</title>
+      <p>对结果集按指定字段排序。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable id="references_method_sort_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>sort</stentry>
+          <stentry>json对象     </stentry>
+          <stentry>对结果集按指定字段排序。字段名的值为1或者-1,1代表升序；-1代表降序。             </stentry>
+          <stentry>否</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>格式</title>
+      <p>query.sort()方法的定义格式包含sort参数，它是一个json对象。如果不设定sort的内容，相当于对返回的结果集不排序。</p>
+      <p>设定sort参数的话，格式如下：</p>
+      <p><codeblock>{&lt;字段名1>:&lt;-1|1>,&lt;字段名2>:&lt;-1|1>,...}</codeblock></p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>返回集合bar中age字段值大于20的记录，设置只返回记录的name和age字段，并按age字段值的升序排序。</p>
+          <p><codeblock>db.foo.bar.find({age:{<xref href="../../console/topics/gt.dita">$gt</xref>:20}},{age:"",name:""}).sort({age:1})</codeblock></p>
+          <note><p>通过<xref href="find.dita">find()</xref>方法，我们能任意选择我们想要返回的字段名，在上例中我们选择了返回记录的age和name字段，此时用sort()方法时，只能对记录的age或name字段排序。而如果我们
+择返回记录的所有字段，即不设置find方法的sel参数内容时，那么sort()能对任意字段排序。</p></note>
+        </li>
+      </ul>
+      
+    </section>
+  </body>
+  <related-links>
+    <link href="cskip.dita" format="dita" type="topic"></link>
+    <link href="hint.dita" format="dita" type="topic"></link>
+    <link href="find.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/gt.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

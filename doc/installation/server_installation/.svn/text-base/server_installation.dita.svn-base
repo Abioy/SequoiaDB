@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_j3r_5jy_wj">
+  <title>SequoiaDB服务器安装</title>
+  <body>
+    <p>操作系统可用的安装方式一览表</p>
+    <simpletable>
+      <sthead>
+        <stentry>&nbsp;&nbsp;&nbsp;安装方式&nbsp;&nbsp;&nbsp;</stentry>
+        <stentry>&nbsp;&nbsp;Linux&nbsp;&nbsp;</stentry>
+        <stentry>&nbsp;&nbsp;Windows&nbsp;&nbsp;</stentry>
+      </sthead>
+      <strow>
+        <stentry>&nbsp;&nbsp;向导安装方式&nbsp;&nbsp;</stentry>
+        <stentry>&nbsp;&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;</stentry>
+        <stentry>&nbsp;&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;</stentry>
+      </strow>
+    </simpletable>
+    <section><title>向导安装方式</title><p>向导安装是一个在Linux 和Windows 上适用的GUI安装程序。
+        向导提供了易于使用的界面，用于安装产品和支持出示设置。</p>在Linux上，需要X Server来显示GUI图形界面；如果没有X Server，可以使用字符界面进行安装。 </section>
+  </body>
+</topic>

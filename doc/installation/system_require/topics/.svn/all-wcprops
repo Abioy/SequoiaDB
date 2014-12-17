@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/15139/trunk/doc/installation/system_require/topics
+END
+hardware_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/13448/trunk/doc/installation/system_require/topics/hardware_en.dita
+END
+system_require.dita
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/13796/trunk/doc/installation/system_require/topics/system_require.dita
+END
+os.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/13669/trunk/doc/installation/system_require/topics/os.dita
+END
+service_os.dita
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/9949/trunk/doc/installation/system_require/topics/service_os.dita
+END
+system_require_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/9949/trunk/doc/installation/system_require/topics/system_require_en.dita
+END
+os_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/13448/trunk/doc/installation/system_require/topics/os_en.dita
+END
+service_os_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/9949/trunk/doc/installation/system_require/topics/service_os_en.dita
+END
+supported_os.dita
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/9949/trunk/doc/installation/system_require/topics/supported_os.dita
+END
+supported_os_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/9949/trunk/doc/installation/system_require/topics/supported_os_en.dita
+END
+software.dita
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/14495/trunk/doc/installation/system_require/topics/software.dita
+END
+software_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/15139/trunk/doc/installation/system_require/topics/software_en.dita
+END
+hardware.dita
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/13669/trunk/doc/installation/system_require/topics/hardware.dita
+END

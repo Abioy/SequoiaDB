@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_4g3_1bn_5n">
+  <title>db.collectionspace.collection.attachCL()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>attachCL - Attach child partition-collections to the main partition.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.collectionspace.collection.attachCL</apiname>(<parmname>&lt;subCLFullName></parmname><parmname>,&lt;options></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Collection
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Attach child partition-collections to the main partition.</p>
+      <parml>
+        <plentry>
+          <pt>subCLFullName (string)</pt>
+          <pd>The child partition-collection's full name(include the name of collection space).</pd>
+        </plentry>
+        <plentry>
+          <pt>options (json object)</pt>
+          <pd>Partition range, includes two fields named "LowBound" and "UpBoumd".</pd>
+          <pd> e.g., {LowBound:{a:0},UpBound:{a:100} stands for choosing the range of field a:[0, 100)</pd>
+        </plentry>
+      </parml>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Mount the child partition-collections to the specified main collection.</p>
+      <codeblock>db.foo.year.attachCL("foo2.January",{LowBound:{date:"20130101"},UpBound:{date:"20130131"}})</codeblock>      
+    </section>
+  </body>
+</topic>

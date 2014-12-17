@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_methods_sort">
+  <title>cursor.sort()</title>
+  <body>
+    <section><title>cursor.sort(&lt;sort>)</title>
+      <p>Sort result set according to a specified field.</p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable id="references_method_sort_table">
+        <sthead>
+          <stentry>Parameter Name</stentry>
+          <stentry>Parameter Type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Not null</stentry>
+        </sthead>
+        <strow>
+          <stentry>sort</stentry>
+          <stentry>json object</stentry>
+          <stentry>Sort result set according to a specified field. The value of it is 1 or -1. 1
+            represents ascending order. -1 represents descending order. </stentry>
+          <stentry>no</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>Format</title>
+      <p>The method "cursor.sort()" contains a parameter called "sort". It is a json object. If  it
+        is not specified, result set will not be sorted.</p>
+      <p>The format is as follow:</p>
+      <p><codeblock>{&lt;Field name 1>:&lt;-1|1>,&lt;Field name 2>:&lt;-1|1>,...}</codeblock></p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>Return records that contains the value of "age" greater than 20. And it just return the
+            fields named "name" and "age" in them with ascending order on the field "age".</p>
+          <p><codeblock>db.foo.bar.find({age:{<xref href="../../console/topics/gt_en.dita">$gt</xref>:20}},{age:"",name:""}).sort({age:1})</codeblock></p>
+          <note><p>Through the method "<xref href="find_en.dita">find()</xref>", we can select the fields we need.
+              In the example above, it returns "age" and "name", so it we use "sort()" to sort the
+              records, we can only sort according to "age" and "name". If we don't specify the
+              parameter "sel" in the method "find", we can sort the records according to any
+              field.</p></note>
+        </li>
+      </ul>
+      
+    </section>
+  </body>
+  <related-links>
+    <link href="hint_en.dita" format="dita" type="topic"></link>
+    <link href="find_en.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/gt_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

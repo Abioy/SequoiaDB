@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_cpy_5gd_pl">
+  <title>监控</title>
+  <body>
+    <p>本节介绍节点和集群的监控信息</p>
+    <p><xref href="monitor_node.dita">监控节点状态</xref></p>
+    <p><xref href="monitor_cluster.dita">监控集群</xref></p>
+  </body>
+</topic>

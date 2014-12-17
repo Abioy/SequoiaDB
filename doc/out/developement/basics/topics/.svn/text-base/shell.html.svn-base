@@ -1,0 +1,75 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="SequoiaDB shell 中的基本操作"/>
+<meta name="description" content="在 shell 查看操作数据会用到4个基本操作：创建、读取、更新和删除（CRUD）。 创建 读取 更新 删除"/>
+<meta name="DC.Relation" scheme="URI" content="../../../developement/topics/developement.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../developement/basics/topics/create.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../developement/basics/topics/read.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../developement/basics/topics/update.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../developement/basics/topics/delete.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="basic_shell"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>SequoiaDB shell 中的基本操作</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="basic_shell"><a name="basic_shell"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../developement/topics/developement.html" title="开发指南"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">开发指南</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../../developement/topics/developement.html" title="开发指南">开发指南</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">SequoiaDB shell 中的基本操作</h1>
+
+  <div class="body">
+    <p class="p">在 shell 查看操作数据会用到4个基本操作：创建、读取、更新和删除（CRUD）。</p>
+
+    <ul class="ul">
+      <li class="li"><a class="xref" href="create.html">创建</a></li>
+
+      <li class="li"><a class="xref" href="read.html">读取</a></li>
+
+      <li class="li"><a class="xref" href="update.html">更新</a></li>
+
+      <li class="li"><a class="xref" href="delete.html">删除</a></li>
+
+    </ul>
+
+  </div>
+
+<div class="related-links">
+<ul class="ullinks">
+</ul>
+</div>
+<div class="navfooter"><a class="link" href="../../../developement/topics/developement.html" title="开发指南"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">开发指南</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

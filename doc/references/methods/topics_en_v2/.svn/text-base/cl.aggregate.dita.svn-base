@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_fzj_qdm_5n">
+  <title>db.collectionspace.collection.aggregate()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>aggregate - retrieve the documents from the collection in the SequoiaDB and return a cursor.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.collectionspace.collection.aggregate</apiname>(<parmname>&lt;subOp>...</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Collection
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>The functions of aggregate() and find() are pretty similar to each other. It also retrieves the documents from the collection in the SequoiaDB and return a cursor.</p>
+      <parml>        
+        <plentry>
+          <pt>subOp (json object)</pt>
+          <pd>Sub-operation, 1 to N sub-operations can be filled in the aggregate() method.
+            <p>aggregate() method has only one parameter subOp, which represents 1~N sub-operations,each sub-operation is a json 
+              object, separated by commas sub-operation. Aggregation framework supports the following Sub-operation parameters:</p>
+            <parml>              
+              <plentry>
+                <pt>$project</pt>
+                <pd>Select the output fields by specifying field names, 1 stands for output, 0 means do not output. The rename of fields can be realized.</pd>
+                <pd>{$project:{field1:1,field:0,aliase:"$field3"}}</pd>
+              </plentry>
+              <plentry>
+                <pt>$match</pt>
+                <pd>Select records which match the criteria from the collection, equivalent to the "WHERE" command in SQL.</pd>
+                <pd>{$match:{field:{$lte:value}}}</pd>                
+              </plentry>
+              <plentry>
+                <pt>$limit</pt>
+                <pd>Limit the number of returned records.</pd>
+                <pd>{$limit:10}</pd>
+              </plentry>
+              <plentry>
+                <pt>$skip</pt>
+                <pd>Control the starting point of the result set, in other words, skip specified number of records in the result set.</pd>
+                <pd>{$skip:5}</pd>
+              </plentry>
+              <plentry>
+                <pt>$group</pt>
+                <pd>Divide the records into groups, similar to the "group by" command in SQL, specify the grouping field by "_id".</pd>
+                <pd>{$group:{_id:"$field"}}</pd>
+              </plentry>
+              <plentry>
+                <pt>$sort</pt>
+                <pd>Sort the result set. 1 for ascending while 0 for descending.</pd>
+                <pd>{$sort:{field1:1,field2:-1,...}}</pd>
+              </plentry>
+            </parml></pd>
+        </plentry>        
+      </parml>
+      <note>
+        <ul>
+          <li><b>Description: </b>aggregate() can have any number of sub-operations, but please be careful about the syntax of the parameters.</li>
+        </ul>
+      </note>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Assume a collection stores records in following format:</p>
+      <codeblock>{
+  no:1000,
+  score:80,
+  interest:["basketball","football"],
+  major:"Computer Science and Technology",
+  dep:"Computer Academy",
+  info:{
+        name:"Tom",
+        age:25,
+        gender:"male"
+        }
+        }</codeblock>
+      <p>Select records according to the criteria, and specify the returned field name.</p>
+      <codeblock>db.collectionspace.collection.aggregate({$match:{$and:[{no:{$gt:1002}},{no:{$lt:1015}},{dep:"Computer Academy"}]}},
+{$project:{no:1,"info.name":1,major:1}})</codeblock>
+      <p>This aggregate operation firstly uses $match to select the records match the criteria, then uses $project to specify the names of the returned fields.</p>
+      <codeblock>{
+  "no": 1003,
+  "info.name": "Sam",
+  "major": "Computer Software and Theory"
+}
+{
+  "no": 1004,
+  "info.name": "Coll",
+  "major": "Computer Engineering"
+}
+{
+  "no": 1005,
+  "info.name": "Jim",
+  "major": "Computer Engineering"
+  }</codeblock>
+      <p>Select records by criteria and divide the selected records into groups.</p>
+      <codeblock>db.collectionspace.collection.aggregate({$match:{dep:"Computer Academy"}},{$group:{_id:"$major",Major:{$first:"$major"},
+avg_age:{$avg:"$info.age"}}})</codeblock>
+      <p>This operation firstly uses $match to select records that match the selecting criteria, then uses $group to divide the selected records by field "major", and uses $avg to return the average of the "age" field in each group.</p>
+      <codeblock>{
+  "Major": "Computer Engineering",
+  "avg_age": 25
+}
+{
+  "Major": "Computer Science and Technology",
+  "avg_age": 22.5
+}
+{
+  "Major": "Computer Software and Theory",
+  "avg_age": 26
+  }</codeblock>
+      <p>Select records by criteria, then group and sort the selected records, limit the starting point of the result set and the number of returned records.</p>
+      <codeblock>db.collectionspace.collection.aggregate({$match:{interest:{$exists:1}}},{$group:{_id:"$major",avg_age:{$avg:"$info.age"},
+major:{$first:"$major"}}},{$sort:{avg_age:-1,major:-1}},{$skip:2},{$limit:3})</codeblock>
+      <p>This aggregate operation firstly uses $match to select records match the criteria, then uses $group to group the records by "major", uses $avg to return the average of "age" field in each group, and sort the records in descending order, uses $skip to specify the starting point of the returned result, and $limit to limit the number of returned records.</p>
+      <codeblock>{
+  "avg_age": 25,
+  "major": "Computer Science and Technology"
+}
+{
+  "avg_age": 22,
+  "major": "Computer Software and Theory"
+}
+{
+  "avg_age": 22,
+  "major": "Physics"
+}</codeblock>
+    </section>
+  </body>  
+</topic>

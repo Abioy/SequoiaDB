@@ -1,0 +1,185 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="C++ Driver"/>
+<meta name="description" content="Outline C++ client-driven provide interfaces of database operations and cluster operations. Mainly include the following 8 lvevls: database operation, collection spaces, collections, cursor, replica ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../developement/application/CPP/topics/cpp_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_kmr_n2s_wj_en"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>C++ Driver</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_kmr_n2s_wj_en"><a name="topic_kmr_n2s_wj_en"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../developement/application/CPP/topics/cpp_en.html" title="C++ Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">C++ Driver</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/application_en.html" title="SequoiaDB Application Development">SequoiaDB Application Development</a> / <a class="navheader_parent_path" href="../../../../developement/application/CPP/topics/cpp_en.html" title="C++ Driver">C++ Driver</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">C++ Driver</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Outline</h2>
+      
+      <p class="p">C++ client-driven provide interfaces of database operations and cluster operations. Mainly include the following 8 lvevls: database operation, collection spaces, collections, cursor, replica group, node, domain, lob.</p>
+
+    <p class="p"><a class="xref" href="../../../../cpp/html/index.html">For more please refer to online C++ API</a>。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">C++ Class Instances</h2>
+      <p class="p">C++ Client-Driven has two class instances. One is used
+      to operate database, the other is used to operate cluster.</p>
+
+      <ul class="ul">
+        <li class="li">Database operation instance <p class="p">There are 3 degrees of data in
+          SequoiaDB:</p>
+<p class="p"> 1) Database</p>
+<p class="p"> 2) Collection space</p>
+<p class="p"> 3) Collection</p>
+<p class="p"> So, in operations of database, we can use 3 classes to represent, one for database connection, collectionspace and collection, one represents cursor, and one for LOB. </p>
+<table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="strow">
+              <td valign="top" class="stentry">Sdb </td>
+
+              <td valign="top" class="stentry"> Database class </td>
+
+              <td valign="top" class="stentry"> This class mainly for managing the whole database, including connection creating, collectionspace creating  </td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry">sdbCollectionSpace </td>
+
+              <td valign="top" class="stentry"> CollectionSpace class </td>
+
+              <td valign="top" class="stentry"> This mainly for managing collections </td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry">sdbCollection</td>
+
+              <td valign="top" class="stentry">Collection class</td>
+
+              <td valign="top" class="stentry"> This class is for CRUD operations of database  </td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry">sdbCursor</td>
+
+              <td valign="top" class="stentry"> Cursor class</td>
+
+              <td valign="top" class="stentry"> Thisclass is mainly for traverse querying. The result cursor that snapshot returning  represent a cursor created from query </td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry">sdbLob</td>
+
+              <td valign="top" class="stentry">Large Object Class</td>
+
+              <td valign="top" class="stentry">This class is for the operations of LOB</td>
+
+            </tr>
+</table>
+<p class="p"> C++ client-driven application operate with different instances.For
+            example,reading data will use Cursor instance,then creating collectionspace uses
+            database connection instance. </p>
+</li>
+
+        <li class="li"> Cluster Operation Instance <p class="p">There are three degrees of cluster operation in
+          SequoiaDB:</p>
+<p class="p">  1) ReplicaGroups</p>
+<p class="p">  2) Data Node</p>
+<p class="p">  3) Domain</p>
+<div class="note note"><span class="notetitle">Note:</span> 
+            <p class="p">ReplicaGroups contain three tpyes: Coord ReplicaGroups, Catalog ReplicaGroup, Data ReplicaGroup.</p>
+
+          </div>
+<p class="p"> ReplicaGroup instances, Data Node instances and domain instancescan be represented by the
+            following three types of classes. </p>
+<div class="p">
+            <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="strow">
+                <td valign="top" class="stentry"> sdbReplicaGroup </td>
+
+                <td valign="top" class="stentry"> Replica group class</td>
+
+                <td valign="top" class="stentry"> It represents a stand-alone ReplicaGroup </td>
+
+              </tr>
+<tr class="strow">
+                <td valign="top" class="stentry"> sdbNode </td>
+
+                <td valign="top" class="stentry"> data node clsaa </td>
+
+                <td valign="top" class="stentry"> It represents a stand-alone Data Node </td>
+
+              </tr>
+<tr class="strow">
+                <td valign="top" class="stentry"> sdbDomain </td>
+
+                <td valign="top" class="stentry"> domain clsaa </td>
+
+                <td valign="top" class="stentry"> It represents a stand-alone Domain </td>
+
+              </tr>
+</table>
+
+            </div>
+<p class="p">Cluster-related operations need to use ReplicaGroup instance and Data Node instance.</p>
+ 
+            <p class="p">The sdbReplicaGroup instants is to manage replica groups, including starting and stopping
+            replicagroups, getting the status, name-information and number-information of nodes in the
+            replicagroup. </p>
+<p class="p">The sdbNode instants is to manage Data Nodes, including starting
+            and stopping the specified data node, getting the specified data node instants and
+            maste-slave data node instants and address-information of data node. </p>
+
+        <p class="p">The sdbDomain used in the management domain, The modification of the domain, obtain the domain information such as operation.</p>
+</li>
+
+      </ul>
+</div>
+
+    <div class="section"><h2 class="title sectiontitle">Error Information</h2>
+      <p class="p">Each function has its returned value, the definition of the returned value is:</p>
+
+      <p class="p">SDB_OK (value is 0): Execution succeeds.</p>
+
+      <p class="p">&lt; 0: Database error, the detailed error description can be found in the include/ossErr.h directory of the C++ driver development kit.</p>
+
+      <p class="p">&gt; 0: System error, please check the related error code information.</p>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../developement/application/CPP/topics/cpp_en.html" title="C++ Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">C++ Driver</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

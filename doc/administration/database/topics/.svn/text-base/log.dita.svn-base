@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rt1_214_2l">
+  <title>日志</title>
+  <body>
+    <p><xref href="synlog.dita">同步日志</xref></p>
+  </body>
+</topic>

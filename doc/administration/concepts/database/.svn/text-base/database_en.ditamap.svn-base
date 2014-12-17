@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/map.dtd">
+<map title="Administration_Concepts_Database">
+    <topicref href="topics/database_en.dita">
+        <topicref href="topics/document_en.dita">
+            <topicref href="topics/array_en.dita"/>
+            <topicref href="topics/objectid_en.dita"/>
+            <topicref href="topics/date_en.dita"/>
+            <topicref href="topics/timestamp_en.dita"/>
+            <topicref href="topics/bindata_en.dita"/>
+            <topicref href="topics/regex_en.dita"/>
+        </topicref>
+        <topicref href="topics/collection_en.dita"/>
+        <topicref href="topics/collectionspace_en.dita"/>
+        <topicref href="topics/databaseserver_en.dita"/>
+        <topicref href="topics/index_en.dita"/>
+        <topicref href="topics/aggregate_en.dita"/>
+        <topicref href="topics/transaction_en.dita"/>
+        <topicref href="topics/consistency_en.dita"/>
+        <topicref href="topics/dataexamples_en.dita"/>
+        <topicref href="topics/read_write_en.dita"/>
+        <topicref href="topics/bg_task_en.dita"/>
+        <topicref href="topics/lob_en.dita"/>
+    </topicref>
+</map>

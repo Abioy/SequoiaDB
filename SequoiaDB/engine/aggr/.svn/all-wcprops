@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/aggr
+END
+aggrLimit.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/aggr/aggrLimit.cpp
+END
+aggrMatcher.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/aggr/aggrMatcher.cpp
+END
+aggrBuilder.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11968/trunk/SequoiaDB/engine/aggr/aggrBuilder.cpp
+END
+aggrProject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/aggr/aggrProject.cpp
+END
+aggrSkip.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/aggr/aggrSkip.cpp
+END
+aggrSort.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/aggr/aggrSort.cpp
+END
+aggrGroup.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/aggr/aggrGroup.cpp
+END
+aggrParser.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/aggr/aggrParser.cpp
+END

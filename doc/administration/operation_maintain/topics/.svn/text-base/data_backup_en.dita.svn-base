@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_z2k_qvk_fm">
+  <title>Data Backup</title>
+  <body>
+    <p>The current version, data backup support offline backup, or data backups need to interrupt the insert, update, delete, etc. change operation, only support query operations. 
+    Current backup supports two modes: full backup and incremental backup.</p>
+    <ul>
+      <li>Full backup: Backing up the entire database configuration, data and logs.</li>
+      <li>Incremental backup: In the last full backup or incremental backup on the basis of the new log and configuration.</li>
+    </ul>
+    <section>
+      <title>Offline backup parameter description</title>
+      <simpletable>        
+        <sthead>
+          <stentry>Parameter</stentry>
+          <stentry>Explanation</stentry>
+        </sthead>
+        <strow>
+          <stentry>Name</stentry>
+          <stentry>Backup name, the default name places the current time format, such as "2013-11-13-15:00:00".</stentry>
+        </strow>
+        <strow>
+          <stentry>Description</stentry>
+          <stentry>Backup user description</stentry>
+        </strow>
+        <strow>
+          <stentry>Path</stentry>
+          <stentry>The backup path is specified, the default for the configuration parameter "bkuppath" in the path specified.</stentry>
+        </strow>
+        <strow>
+          <stentry>EnsureInc</stentry>
+          <stentry>Backup, true means that incremental backups, false that full backup, the default is false.</stentry>
+        </strow>
+        <strow>
+          <stentry>OverWrite</stentry>
+          <stentry>For the same name as the backup to overwrite, true represeentation covering, false means not overwritten if the same name is an error, lack of true.</stentry>
+        </strow>        
+        <strow>
+          <stentry>GroupName</stentry>
+          <stentry>Backup of the specified group, the default for the whole system backup, when you need to back up multiple groups can be specified as an array type, such as: ["datagroup1","datagroup2"]</stentry>
+        </strow>              
+      </simpletable></section>
+    <section>
+      <title>Backup the entire database</title>
+      <p>1. Connect to the coord node</p><codeblock>$ /opt/sequoiadb/bin/sdb
+>  var db = new Sdb("localhost",11810);</codeblock>
+      <p>2. Perform the bacup command</p><codeblock>> db.backupOffline({Name:"backupName",Description:"backup for all"})</codeblock>      
+    </section>
+    <section>
+      <title>Database backup designated group</title>
+      <p>1. Connect to the coord node</p><codeblock>$ /opt/sequoiadb/bin/sdb
+> var db = new Sdb("localhost",11810);</codeblock>
+      <p>2. Perform the backup command</p><codeblock>> db.backupOffline({Name:"backupName",Description:"backup group1",GroupName:"datagroup1"})</codeblock>      
+    </section>
+    <section>
+      <title>Specified node database backup</title>
+      <p>1. Connected to the specified node</p><codeblock>$ /opt/sequoiadb/bin/sdb
+> var dbdata = new Sdb("hostname1","servicename1");</codeblock>
+      <p>2. Perform the backup command</p><codeblock>> dbdata.backupOffline({Name:"backupName",Description:"backup data node"}))</codeblock>      
+    </section> 
+    <note>catalog name of the group is fixed to SYSCatalogGroup.</note>    
+  </body>
+</topic>

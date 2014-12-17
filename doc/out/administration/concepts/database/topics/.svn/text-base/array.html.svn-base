@@ -1,0 +1,85 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="数组"/>
+<meta name="description" content="概念 SequoiaDB 中的文档为 JSON 格式，一般又被称为记录。 格式 当记录中的某一字段对应多个数值是，用户可以使用数组结构存放数据。数组由“[”（左中括号）起始，至“]”（右中括号）结束，其中包含零个或多个数值。 { 字段名 : [ &lt;数值1&gt;, &lt;数值2&gt;, &lt;数值3&gt; ... ] } 示例 数组可以存放完全不相同的数据类型，其中每个记录以从0起始的下标表示。例如： { &#34;key&#34; ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/database/topics/document.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../../introduction/topics/datamodel.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_concepts_database_array"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>数组</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_concepts_database_array"><a name="administration_concepts_database_array"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/concepts/database/topics/document.html" title="文档"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">文档</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="database.html" title="数据库">数据库</a> / <a class="navheader_parent_path" href="../../../../administration/concepts/database/topics/document.html" title="文档">文档</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">数组</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">概念</h2>
+      
+      <p class="p">SequoiaDB 中的文档为 JSON 格式，一般又被称为记录。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">格式</h2>
+      
+      <p class="p">当记录中的某一字段对应多个数值是，用户可以使用数组结构存放数据。数组由“[”（左中括号）起始，至“]”（右中括号）结束，其中包含零个或多个数值。</p>
+
+      <pre class="pre codeblock">{ 字段名 : [ &lt;数值1&gt;, &lt;数值2&gt;, &lt;数值3&gt; ... ] }</pre>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">示例</h2>
+      
+      <p class="p">数组可以存放完全不相同的数据类型，其中每个记录以从0起始的下标表示。例如：</p>
+
+      <pre class="pre codeblock">{ "key" : [ "hello", "world" ] }</pre>
+
+      <p class="p">其中“hello”在数组中的下标为0，而“world”在数组中的下标为1。数组之中的数值有序，在进行数据操作时数组中的数值顺序不会改变。表示数组中某个元素时，可以使用“字段名.下标”的方式。</p>
+
+      <p class="p">例如：如果希望表示 key 中“world”所在的数值，可以使用“key.1”作为字段名。</p>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="../../../../introduction/topics/datamodel.html" title="数据模型">数据模型</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../../administration/concepts/database/topics/document.html" title="文档"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">文档</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

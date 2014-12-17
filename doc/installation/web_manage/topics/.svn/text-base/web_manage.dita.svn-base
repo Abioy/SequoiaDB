@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="web_manage">
+  <title>SequoiaDB Web管理工具安装(可选)</title>
+  <body>
+    <p><b>目录:</b></p>
+    <p>
+      <xref href="linux.dita">&nbsp;&nbsp;Linux版本的安装</xref></p>
+  </body>
+</topic>

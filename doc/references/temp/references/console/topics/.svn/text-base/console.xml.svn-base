@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\references\console\topics?><?path2project ..\..\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="references_console" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="title:1">操作符</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="section:1">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="title:2">匹配规则</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:1">
+        <simpletable id="references_console_match_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="simpletable:1">
+          <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="sthead:1">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:1">匹配符</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:2">描述</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:3">示例</stentry>
+          </sthead>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:1">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:4"><xref href="gt.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:1" type="topic"><?ditaot usertext?>$gt</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:5">大于</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:6">db.foo.bar.find({age:{$gt:20}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:2">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:7"><xref href="gte.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:2" type="topic"><?ditaot usertext?>$gte</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:8">大于等于</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:9">db.foo.bar.find({age:{$gte:20}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:3">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:10"><xref href="lt.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:3" type="topic"><?ditaot usertext?>$lt</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:11">小于</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:12">foo.bar.find({age:{$lt:20}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:4">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:13"><xref href="lte.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:4" type="topic"><?ditaot usertext?>$lte</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:14">小于等于</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:15">db.foo.bar.find({age:{$lte:20}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:5">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:16"><xref href="ne.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:5" type="topic"><?ditaot usertext?>$ne</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:17">不等于</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:18">db.foo.bar.find({age:{$ne:20}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:6">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:19"><xref href="et.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:6" type="topic"><?ditaot usertext?>$et</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:20">等于</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:21">db.foo.bar.find({age:{$et:20}})</stentry>
+          </strow>
+          
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:7">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:22"><xref href="in.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:7" type="topic"><?ditaot usertext?>$in</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:23">集合内存在</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:24">db.foo.bar.find({age:{$in:[20,21]}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:8">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:25"><xref href="nin.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:8" type="topic"><?ditaot usertext?>$nin</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:26">集合内不存在</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:27">db.foo.bar.find({age:{$nin:[20,21]})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:9">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:28"><xref href="all.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:9" type="topic"><?ditaot usertext?>$all</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:29">全部</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:30">db.foo.bar.find({age:{$all:[20,21]}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:10">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:31"><xref href="and.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:10" type="topic"><?ditaot usertext?>$and</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:32">与</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:33">db.foo.bar.find({$and:{age:20,name:"Tom"}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:11">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:34"><xref href="not.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:11" type="topic"><?ditaot usertext?>$not</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:35">非</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:36">db.foo.bar.find({$not:{age:20,name:"Tom"}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:12">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:37"><xref href="or.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:12" type="topic"><?ditaot usertext?>$or</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:38">或</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:39">db.foo.bar.find({$or:{age:20,name:"Tom"}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:13">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:40"><xref href="type.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:13" type="topic"><?ditaot usertext?>$type</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:41">数据类型</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:42">db.foo.bar.find({age:{$type:16}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:14">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:43"><xref href="exists.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:14" type="topic"><?ditaot usertext?>$exists</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:44">存在</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:45">db.foo.bar.find({age:{$exists:1}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:15">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:46"><xref href="elemMatch.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:15" type="topic"><?ditaot usertext?>$elemMatch</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:47">元素匹配</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:48">db.foo.bar.find({age:{$elemMatch:20}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:16">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:49"><xref href="size.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:16" type="topic"><?ditaot usertext?>$size</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:50">大小</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:51">db.foo.bar.find({array:{$size:3}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:17">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:52"><xref href="regex.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:17" type="topic"><?ditaot usertext?>$regex</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:53">正则表达式 </stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:54">db.foo.bar.find({str:{$regex:'dh.*fj',$options:'i'}})</stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:18">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:55"><xref href="regex.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:18" type="topic"><?ditaot usertext?>$options</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:56">正则表达式选项 </stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:57">db.foo.bar.find({str:{$regex:'dh.*fj',$options:'i'}})</stentry>
+          </strow>
+        </simpletable>
+      </p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="title:3">更新规则</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:2">
+        <simpletable id="references_console_update_table" relcolwidth="1.57* 1.0* 4.51* 2.88*" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="simpletable:2">
+          <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="sthead:2">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:58">更新符</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:59">描述</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:60">信息</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:61">示例</stentry>
+          </sthead>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:19">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:62"><xref href="inc.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:19" type="topic"><?ditaot usertext?>$inc</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:63"> 添加</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:64"> 将指定字段名的值增加给定的值</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:65">
+              <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:3">db.foo.bar.update({$inc:{age:25}})</p>
+            </stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:20">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:66"><xref href="set.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:20" type="topic"><?ditaot usertext?>$set</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:67"> 设置指定字段</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:68">将给定字段名设定为给定值 </stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:69">
+              <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:4">db.foo.bar.update({$set:{age:10}})</p>
+            </stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:21">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:70"><xref href="unset.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:21" type="topic"><?ditaot usertext?>$unset</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:71"> 删除指定字段</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:72">删除对象中的指定字段</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:73">
+              <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:5">db.foo.bar.update({$unset:{age:""}})</p>
+            </stentry>
+          </strow>
+          
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:22">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:74"><xref href="addtoset.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:22" type="topic"><?ditaot usertext?>$addtoset</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:75">加入集合 </stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:76">如果添加元素不存在在数组中则添加，否则跳过。目标字段必须为数组。 </stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:77">
+              <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:6">db.foo.bar.update({$addtoset:{array:[3,4,5]}})</p>
+            </stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:23">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:78"><xref href="pop.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:23" type="topic"><?ditaot usertext?>$pop</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:79"> 消除数组中最后N 个数值</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:80"> 删除数组中最后 N 个数值，目标字段必须为数组（如果 N 小于 0 意味着从数组起始删除第 -N 个数值） 。</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:81">
+              <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:7">db.foo.bar.update({$pop:{array:2}})</p>
+            </stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:24">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:82"><xref href="pull.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:24" type="topic"><?ditaot usertext?>$pull</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:83"> 消除数值 </stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:84">目标数组中清除给定数值，目标元素必须为数组 </stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:85">
+              <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:8">db.foo.bar.update({$pull:{array:2}})</p>
+            </stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:25">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:86"><xref href="pull_all.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:25" type="topic"><?ditaot usertext?>$pull_all</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:87"> 消除数组 </stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:88">目标数组中清除给定数组中每个元素的数值，目标元素必须为数组 。</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:89">
+              <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:9">db.foo.bar.update({$pull_all:{array:[2,3,4}})</p>
+            </stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:26">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:90"><xref href="push.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:26" type="topic"><?ditaot usertext?>$push</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:91"> 推入数值 </stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:92"> 将数值插入目标数组，目标元素必须为数组 。</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:93">
+              <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:10">db.foo.bar.update({$push:{array:2}})</p>
+            </stentry>
+          </strow>
+          <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="strow:27">
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:94"><xref href="push_all.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:27" type="topic"><?ditaot usertext?>$push_all</xref></stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:95"> 推入数组 </stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:96">将给定数组中每一个值插入目标数组，目标元素必须为数组。</stentry>
+            <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="stentry:97">
+              <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:11">db.foo.bar.update({$push_all:{array:[2,3,4}})</p>
+            </stentry>
+          </strow>
+        </simpletable>
+      </p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="section:3">
+      <note class="- topic/note " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="note:1">
+        <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:12"> 在sequoiadb的查询语言中表达相等（=）时，使用JSON{字段名：值}的结构。 当然也可以使用<xref href="et.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="xref:28" type="topic"><?ditaot usertext?><i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="i:1">$et</i></xref>操作符</p>
+        <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:13"> 示例 </p>
+        <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:14"> db.collectionspace.collection.find({a:42})  等价于
+          db.collectionspace.collection.find({a:{$et:42}}) </p>
+        <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\console.dita" xtrc="p:15"> 查询集合下符合条件a等于42的记录 </p>
+      </note>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="application_topics">
+  <title>SequoiaDB Application Development</title>
+  <body>
+    <p>SequoiaDB allows users to connect it in many ways such as C, C++, Java, PHP, C#, Python. This chapter introduces drivers for different programming language.</p>
+  </body>
+</topic>

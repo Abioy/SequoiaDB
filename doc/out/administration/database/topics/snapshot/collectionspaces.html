@@ -1,0 +1,407 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="集合空间快照"/>
+<meta name="description" content="描述 集合空间快照列出当前数据库节点中所有的集合空间，每个集合空间为一条记录。 标示 SDB_SNAP_COLLECTIONSPACES 字段信息 由于数据节点与编目节点保存的集合空间信息不同，集合空间快照在协调节点与其它节点所返回的结构有所不同： 非协调节点字段信息 字段名 类型 描述 Name 字符串 集合空间名 Collection 字符串数组 集合空间中所包含的所有集合 PageSize ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/database/topics/snapshot/snapshot.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_database_monitoring_snapshot_collectionspaces"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>集合空间快照</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_database_monitoring_snapshot_collectionspaces"><a name="administration_database_monitoring_snapshot_collectionspaces"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/database/topics/snapshot/snapshot.html" title="快照"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">快照</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../monitoring.html" title="监控">监控</a> / <a class="navheader_parent_path" href="../../../../administration/database/topics/snapshot/snapshot.html" title="快照">快照</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">集合空间快照</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">描述</h2>
+      
+      <p class="p">集合空间快照列出当前数据库节点中所有的集合空间，每个集合空间为一条记录。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">标示</h2>
+      
+      <p class="p">SDB_SNAP_COLLECTIONSPACES</p>
+
+    </div>
+
+    
+    <div class="section"><h2 class="title sectiontitle">字段信息</h2>
+      
+      <p class="p">由于数据节点与编目节点保存的集合空间信息不同，集合空间快照在协调节点与其它节点所返回的结构有所不同：</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">非协调节点字段信息</h2>
+      
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d32956e46" class="stentry">字段名</th>
+
+          <th valign="bottom" align="left" id="d32956e49" class="stentry">类型</th>
+
+          <th valign="bottom" align="left" id="d32956e52" class="stentry">描述</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">Name</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">字符串</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间名</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">Collection</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">字符串数组</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间中所包含的所有集合</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">PageSize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间数据页大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">LobPageSize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间大对象数据页大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">MaxCapacitySize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间的最大容量上限</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">MaxDataCapSize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间数据文件最大容量上限</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">MaxIndexCapSize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间索引文件最大容量上限</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">MaxLobCapSize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间大对象文件最大容量上限</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">NumCollections</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合数量</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">TotalRecords</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间的记录总数</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">TotalSize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间的总大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">FreeSize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间的空闲大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">TotalDataSize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间数据文件总大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">FreeDataSize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间数据文件空闲空间大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">TotalIndexSize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间索引文件总大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">FreeIndexSize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间索引文件空闲空间大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">TotalLobSize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间大对象文件总大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e46" class="stentry">FreeLobSize</td>
+
+          <td valign="top" headers="d32956e49" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e52" class="stentry">集合空间大对象文件空闲空间大小</td>
+
+        </tr>
+</table>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">协调节点字段信息</h2>
+      
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d32956e286" class="stentry">字段名</th>
+
+          <th valign="bottom" align="left" id="d32956e289" class="stentry">类型</th>
+
+          <th valign="bottom" align="left" id="d32956e292" class="stentry">描述</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e286" class="stentry">Name</td>
+
+          <td valign="top" headers="d32956e289" class="stentry">字符串</td>
+
+          <td valign="top" headers="d32956e292" class="stentry">集合空间名</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e286" class="stentry">Collection</td>
+
+          <td valign="top" headers="d32956e289" class="stentry">字符串数组</td>
+
+          <td valign="top" headers="d32956e292" class="stentry">集合空间中所包含的所有集合</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e286" class="stentry">PageSize</td>
+
+          <td valign="top" headers="d32956e289" class="stentry">整型</td>
+
+          <td valign="top" headers="d32956e292" class="stentry">集合空间数据页大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e286" class="stentry">LobPageSize</td>
+
+          <td valign="top" headers="d32956e289" class="stentry">整型</td>
+
+          <td valign="top" headers="d32956e292" class="stentry">集合空间大对象数据页大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e286" class="stentry">TotalSize</td>
+
+          <td valign="top" headers="d32956e289" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e292" class="stentry">集合空间的总大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e286" class="stentry">FreeSize</td>
+
+          <td valign="top" headers="d32956e289" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e292" class="stentry">集合空间的空闲大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e286" class="stentry">TotalDataSize</td>
+
+          <td valign="top" headers="d32956e289" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e292" class="stentry">集合空间数据文件总大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e286" class="stentry">FreeDataSize</td>
+
+          <td valign="top" headers="d32956e289" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e292" class="stentry">集合空间数据文件空闲空间大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e286" class="stentry">TotalIndexSize</td>
+
+          <td valign="top" headers="d32956e289" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e292" class="stentry">集合空间索引文件总大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e286" class="stentry">FreeIndexSize</td>
+
+          <td valign="top" headers="d32956e289" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e292" class="stentry">集合空间索引文件空闲空间大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e286" class="stentry">TotalLobSize</td>
+
+          <td valign="top" headers="d32956e289" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e292" class="stentry">集合空间大对象文件总大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e286" class="stentry">FreeLobSize</td>
+
+          <td valign="top" headers="d32956e289" class="stentry">长整型</td>
+
+          <td valign="top" headers="d32956e292" class="stentry">集合空间大对象文件空闲空间大小</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d32956e286" class="stentry">Group.GroupName</td>
+
+          <td valign="top" headers="d32956e289" class="stentry">字符串</td>
+
+          <td valign="top" headers="d32956e292" class="stentry">该集合空间所在的分区组名列表</td>
+
+        </tr>
+</table>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">非协调节点示例</h2>
+      
+      <pre class="pre codeblock">&gt; db.snapshot(SDB_SNAP_COLLECTIONSPACES)
+{
+  "Collection": [
+    {
+      "Name": "bar"
+    }
+  ],
+  "PageSize": 65536,
+  "LobPageSize": 262144,
+  "MaxCapacitySize": 26388279066624,  
+  "MaxDataCapSize": 8796093022208,
+  "MaxIndexCapSize": 8796093022208,
+  "MaxLobCapSize": 8796093022208,
+  "NumCollections": 4,
+  "TotalRecords": 2,
+  "TotalSize": 306315264,
+  "FreeSize": 265551224,
+  "TotalDataSize": 155254784,
+  "FreeDataSize": 133627904,
+  "TotalIndexSize": 151060480,
+  "FreeIndexSize": 134152171,
+  "TotalLobSize": 352714752,
+  "FreeLobSize": 140771328,
+  "Name": "foo"
+}</pre>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">协调节点示例</h2>
+      
+      <pre class="pre codeblock">&gt; coord.snapshot(SDB_SNAP_COLLECTIONSPACES)
+{
+  "Name": "foo",
+  "PageSize": 4096,  
+  "LobPageSize": 262144,
+  "TotalSize": 918945792,
+  "FreeSize": 805183062,  
+  "TotalDataSize": 155254784,
+  "FreeDataSize": 133627904,
+  "TotalIndexSize": 151060480,
+  "FreeIndexSize": 134152171,
+  "TotalLobSize": 352714752,
+  "FreeLobSize": 140771328,
+  "Collection": [
+    {
+      "Name": "bar"
+    }
+  ],
+  "Group": [
+    "db2"
+  ]
+}</pre>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../administration/database/topics/snapshot/snapshot.html" title="快照"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">快照</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

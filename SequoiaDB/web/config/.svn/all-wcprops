@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sequoiadb/!svn/ver/16108/trunk/SequoiaDB/web/config
+END
+sequoiadb_config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/15787/trunk/SequoiaDB/web/config/sequoiadb_config.xml
+END
+sequoiadb_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16108/trunk/SequoiaDB/web/config/sequoiadb_template.xml
+END
+business.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/15787/trunk/SequoiaDB/web/config/business.xml
+END

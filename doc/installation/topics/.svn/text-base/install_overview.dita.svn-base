@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qjp_xnx_wj">
+  <title>安装指南</title>
+  <body>
+    <p>安装 SequoiaDB 产品的基本步骤如下：</p>
+    <p><xref href="../deploy/topics/overview.dita">规划数据库部署</xref></p>
+    <p><xref href="../system_require/topics/system_require.dita">SequoiaDB 产品安装的系统需求</xref></p>
+    <p><xref href="install_media.dita">准备安装介质</xref></p>
+    <p><xref href="../server_installation/topics/server_installation.dita">SequoiaDB 服务器安装部署</xref></p>
+    <p><xref href="topics/start_web.dita">SequoiaDB Web 监控</xref></p>
+  </body>
+</topic>

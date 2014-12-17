@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_split">
+  <title>db.collectionspace.collection.split()</title>
+  <body>
+    <section><title>db.collectionspace.collection.split(&lt;source group>,&lt;target group>,&lt;percent(0~100)|&lt;condition>, [endcondition])</title>
+      <p>At least two sharding groups environment,the data records will be cut into different
+        sharding group according to the specified conditions.</p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable><!-- frame="all" relcolwidth="1.04* 1.1* 5.7* 1.0*"
+        id="references_method_createCS_table">-->
+        <sthead>
+          <stentry>Parameter Name</stentry>
+          <stentry>Parameter Type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Not null</stentry>
+        </sthead>
+        <strow>
+          <stentry>source shard</stentry>
+          <stentry>string</stentry>
+          <stentry>The source sharding group.</stentry>
+          <stentry>yes</stentry>
+        </strow>
+        <strow>
+          <stentry>target shard</stentry>
+          <stentry>string</stentry>
+          <stentry>The target sharding group.</stentry>
+          <stentry>yes</stentry>
+        </strow>
+        <strow>
+          <stentry>condition</stentry>
+          <stentry>json object</stentry>
+          <stentry>Range split condition</stentry>
+          <stentry>condition or percent</stentry>
+        </strow>
+        <strow>
+          <stentry>percent(0~100)</stentry>
+          <stentry>duble</stentry>
+          <stentry>percent split condition</stentry>
+          <stentry>condition or percent</stentry>
+        </strow>
+        <strow>
+          <stentry>endcondition</stentry>
+          <stentry>json objcet</stentry>
+          <stentry>End of the range condition.</stentry>
+          <stentry>Optional, and only in the conditional cut time-effective, time-sharing a percentage cut invalid.</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>Format</title>
+      <p>Data spliting is divided into range-spliting and percent-spliting,"source shard" and
+        "target shard"are common params,and are string type;the param "condition" and "endconditionis" filled when
+        range spliting,it is a object of json structure;param "percent" is filled when
+        percent-spliting,it is a int type.</p>
+      <ul>
+        <li> range-spliting<p>Range Sharding use exact conditions when range-spliting, while Hash
+            Sharding use "Partition"(number of slices) conditions. The starting condition is a
+            required field and the ending condition is a optional condition when spliting, if the
+            ending condition doesn't fill, then it default as the max range of data that "source
+            shard"
+            contains.<codeblock>("&lt;source shard>","&lt;target shard>"，&lt;condition>) </codeblock></p></li>
+        <li>percent-spliting<codeblock>db.foo.bar.split("&lt;source shard>","&lt;target shard>"，&lt;percent>) </codeblock></li>
+      </ul>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>Range-spliting of Hash Sharding
+          <codeblock>db.foo.bar.split("shard1", "shard2",{Partition:10},{Partition:20}) </codeblock></li>
+        <li>Range-spliting of Range
+          Sharding<codeblock>db.foo.bar.split("shard1", "shard2",{a:10}, {a:10000})</codeblock></li>
+        <li>Percent-spliting<codeblock>db.foo.bar.split("shard1", "shard2", 50) </codeblock></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="../../../administration/concepts/cluster/topics/split_en.dita"></link>
+    <link href="../../../administration/concepts/cluster/topics/sharding_en.dita"></link>
+    <link href="../../../administration/concepts/cluster/topics/shardingkey_en.dita"></link>
+  </related-links>
+</topic>

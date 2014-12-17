@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_3yv_yds_5n">
+  <title>node.stop()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>stop - Stop the current node.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>node.stop</apiname>()
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Node
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Stop the current node.</p>            
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Stop the current node.</p>
+      <codeblock>node.stop()</codeblock>   
+    </section>
+  </body>
+  <related-links>
+    <link href="node.connect.dita"></link>
+  </related-links>
+</topic>

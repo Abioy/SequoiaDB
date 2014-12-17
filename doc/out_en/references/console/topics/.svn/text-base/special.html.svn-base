@@ -1,0 +1,114 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="$+标识符"/>
+<meta name="description" content="语法 {&#34;字段名.$+标识符&#34;:value} 描述 $+标识符 是一种特殊的命令符，这种命令符只作用于 数组对象 ， 标识符 是一个整数，如 $1 ， $3 ，标识符相当于一个临时的存储，会把匹配成功的数组元素的索引存储起来。下面这些是错误的书写格式：$5.4，$a2，$3c，$MA。 这种命令符只作用于数组，用来代替数组的索引 Key，并且可以把匹配到的第一个索引值传递到方法 update 的 ..."/>
+<meta name="DC.Relation" scheme="URI" content="elemMatch.html"/>
+<meta name="DC.Relation" scheme="URI" content="psize.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="references_console_special"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>$+标识符</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="references_console_special"><a name="references_console_special"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span></div></td><td width="50%"/></tr></tbody></table>
+
+  <h1 class="title topictitle1">$+标识符</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">语法</h2>
+      <div class="p"><pre class="pre codeblock">{"字段名.$+标识符":value}</pre>
+</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">描述</h2><p class="p"><strong class="ph b">$+标识符</strong>是一种特殊的命令符，这种命令符只作用于<strong class="ph b">数组对象</strong>，<strong class="ph b">标识符</strong>是一个整数，如 <strong class="ph b">$1</strong>，<strong class="ph b">$3</strong>，标识符相当于一个临时的存储，会把匹配成功的数组元素的索引存储起来。下面这些是错误的书写格式：$5.4，$a2，$3c，$MA。</p>
+
+      这种命令符只作用于数组，用来代替数组的索引 Key，并且可以把匹配到的第一个索引值传递到方法 <a class="xref" href="../../methods/topics/dbupdate.html">update</a> 的 rule 参数中。</div>
+
+    <div class="section"><h2 class="title sectiontitle">示例</h2>
+      <ul class="ul">
+        <li class="li">
+          <p class="p">查询</p>
+
+          <p class="p">有记录：{a:[1,2,3,4,5]};{a:[1,4,5]};{a:[4,2,1]}现在要查询出数组中存在元素5的记录，使用如下命令</p>
+
+          <pre class="pre codeblock">db.foo.bar.find({"a.$1":5},{a:1})</pre>
+
+          <div class="p">只要记录中数组对象 a 存在元素5，就能返回。返回结果如下：<pre class="pre codeblock">{ "a": [ 1, 4, 5 ] }
+{ "a": [ 1, 2, 3, 4, 5 ] }</pre>
+</div>
+
+        </li>
+
+        <li class="li">更新
+          <div class="p">1. 有记录 { a : [ 1, 2, 3, 4, 5 ] }，现在要修改数组 a 中的元素，把值为4的元素改成100，使用如下命令<pre class="pre codeblock">db.foo.bar.update({$set:{"a.$1":100}},{"a.$1":4})</pre>
+</div>
+
+          <p class="p">在匹配时元素4的索引 Key 是3，因此在更新规则 { "$set" : { "a.$1": 100 } } 中，$1的值为3，系统会自动把更新规则转换成 { "$set" : { "a.3" : 100 } }</p>
+
+          <div class="p">更新后记录为：<pre class="pre codeblock">{ a : [ 1, 2, 3, 100, 5 ] }</pre>
+</div>
+
+          <div class="p">2. 有记录 { a : [ 1, 2, 3, 4, 5 ], b : [ 6, 7, 8 ] }，现要修改数组 a 中的元素，把值为4的元素改成100，且把数组 b 中值为6的元素修改为200，使用如下命令<pre class="pre codeblock">db.foo.bar.update({ "$set" : { "a.$1" : 100, "b.$2" : 200 } },{ "a.$1": 4, "b.$2" : 6  })</pre>
+</div>
+
+          <div class="p">更新后记录为：<pre class="pre codeblock">{ a : [ 1, 2, 3, 100, 5 ], b : [ 200, 7, 8 ] }</pre>
+</div>
+
+          <div class="note note"><span class="notetitle">Note:</span> 如果有多个元素符合规则，那么只会修改第一个。如下例：</div>
+
+          <div class="p">3. 有记录 {  a : [ 1, 2, 2, 2, 5 ] }，现要修改数组 a 中的元素，把值为2的元素改成100，使用如下命令<pre class="pre codeblock">db.foo.bar.update({ "$set" : { "a.$1" : 100 } },{ "a.$1": 2 })</pre>
+</div>
+
+          <p class="p">更新后记录为：</p>
+<pre class="pre codeblock">{ a : [ 1, 100, 2, 2, 5 ]  }</pre>
+          
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="elemMatch.html" title="$elemMatch">$elemMatch</a></div>
+<div><a class="navheader_parent_path" href="psize.html" title="$size">$size</a></div>
+</div>
+</div>
+<div class="navfooter"><script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

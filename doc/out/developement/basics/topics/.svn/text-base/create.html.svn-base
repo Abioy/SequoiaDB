@@ -1,0 +1,154 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="创建"/>
+<meta name="description" content="在 SequoiaDB 中，create 操作是向集合中添加新的文档记录。我们可以使用 insert 方法向 SequoiaDB 中的集合中添加记录。 所有的插入操作在 SequoiaDB 中具有如下性质： 如果插入的文档记录没有 _id 字段，客户端将会为记录自动添加 _id 字段，并且填充一个唯一值。 如果指定 _id 字段，那个在集合中 _id 的值必须唯一；否则出现操作异常。 最大的 ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../developement/basics/topics/shell.html"/>
+<meta name="DC.Relation" scheme="URI" content="read.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="basics_create"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>创建</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="basics_create"><a name="basics_create"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../developement/basics/topics/shell.html" title="SequoiaDB shell 中的基本操作"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB shell 中的基本操作</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/developement.html" title="开发指南">开发指南</a> / <a class="navheader_parent_path" href="../../../developement/basics/topics/shell.html" title="SequoiaDB shell 中的基本操作">SequoiaDB shell 中的基本操作</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">创建</h1>
+
+  <div class="body">
+    <p class="p">在 SequoiaDB 中，create 操作是向集合中添加新的文档记录。我们可以使用 insert 方法向 SequoiaDB 中的集合中添加记录。</p>
+
+    <div class="p">所有的插入操作在 SequoiaDB 中具有如下性质：
+      <a name="basics_create__ul_c4q_km3_wj"><!-- --></a><ul class="ul" id="basics_create__ul_c4q_km3_wj">
+        <li class="li">如果插入的文档记录没有 _id 字段，客户端将会为记录自动添加 _id 字段，并且填充一个唯一值。</li>
+
+        <li class="li">如果指定 _id 字段，那个在集合中 _id 的值必须唯一；否则出现操作异常。</li>
+
+        <li class="li">最大的 BSON 文档长度为16MB。</li>
+
+        <li class="li">文档结构的字段命名有如下限制：
+          <p class="p">字段名 _id 作为主键保存在集合中，它的值必须唯一且不可改变，它的值可以是除数组类型以外的其他任何类型。字段的命名不能是空串；不能以 $ 开始；不能含有（.）。</p>
+</li>
+
+      </ul>
+
+      <div class="note note"><span class="notetitle">Note:</span> 本文档的所有例子都是使用 SequoiaDB 的 shell 接口。</div>
+</div>
+
+    <div class="section"><h2 class="title sectiontitle">insert()</h2>
+      
+      <p class="p"><a class="xref" href="../../../references/methods/topics/dbinsert.html">insert()</a> 是向 SequoiaDB 集合中插入记录的主要方法，它有以下语法：</p>
+
+      <pre class="pre codeblock">db.collectionspace.collection.insert(&lt;doc|docs&gt;,[flag])</pre>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">插入第一个文档</h2>
+      
+      <p class="p">如果<a class="xref" href="../../../administration/concepts/database/topics/collectionspace.html">集合空间</a>和<a class="xref" href="../../../administration/concepts/database/topics/collection.html">集合</a>不存在，首先创建集合空间（如 db.createCS("foo")：创建集合空间 foo）和集合（如 db.foo.createCL("bar")：在集合空间下创建集合 bar），之后才能做插入操作。</p>
+
+      <pre class="pre codeblock">db.foo.bar.insert(
+  {
+     _id:1,
+     name:{fist:"Jhon",last:"Black"},
+     phone:[1853742000,1802321000],
+     remark:[
+              {
+                 position:"manager",
+                 year:2000
+                },
+               {
+                 position:"CEO",
+                 year:2012
+                }
+             ]
+  }
+   )   </pre>
+
+      <p class="p">可以使用 find() 方法确认是否插入成功。</p>
+
+      <pre class="pre codeblock">db.foo.bar.find()</pre>
+
+      <p class="p">此操作返回结果如下：</p>
+
+       <pre class="pre codeblock"> {
+    _id:1,
+    name:{fist:"Jhon",last:"Black"},
+    phone:[1853742000,1802321000],
+    remark:[
+             {
+                position:"manager",
+                year:2000
+               },
+              {
+                position:"CEO",
+                year:2012
+               }
+            ]
+ } </pre>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">不指定 _id 字段</h2>
+      
+      <p class="p">如果新的文档记录不包含 _id 字段，<a class="xref" href="../../../references/methods/topics/dbinsert.html">insert()</a> 方法向文档添加 _id 字段并生成一个唯一的 $oid 值</p>
+
+      <pre class="pre codeblock">db.foo.bar.insert({name:"Tom",age:20})</pre>
+
+      <p class="p">此操作是向集合 bar 中插入一条新的记录，记录 name 字段的值为“Tom”，age 字段的值为20，_id 字段被唯一创建：</p>
+
+      <pre class="pre codeblock">{ "_id": { "$oid": "515152ba49af395200000000" }, "name": "Tom", "age": 20 }</pre>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">插入多条记录</h2>
+      
+      <p class="p">如果向 insert 方法中传一个数组类型的文档，insert() 方法将会在集合中执行批量插入。</p>
+
+      <p class="p">下面的操作是向集合 bar 中插入两条记录。此操作也说明了 SequoiaDB 的动态模式的特点。尽管 _id:20 的记录含有字段名 phone 而在另一条记录中不存在，SequoiaDB 不要求其他记录必须含有此字段。</p>
+
+      <pre class="pre codeblock">db.foo.bar.insert([{name:"Mike",age:15},{_id:20,name:"John",age:25,phone:123}])</pre>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="read.html" title="读取">读取</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../developement/basics/topics/shell.html" title="SequoiaDB shell 中的基本操作"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">SequoiaDB shell 中的基本操作</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

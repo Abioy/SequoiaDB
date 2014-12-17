@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="developement_basics_more">
+  <title>更多</title>
+  <body>
+    <p>要了解更多javascript方法请点击 <xref href="../../../references/methods/topics/methodlist.dita"
+        >这里。</xref>
+    </p>
+  </body>
+</topic>

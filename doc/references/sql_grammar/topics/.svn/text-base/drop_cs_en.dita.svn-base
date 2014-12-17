@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_dropCS_en">
+  <title>sql drop collectionspace</title>
+  <body>
+    <section><title>drop collectionspace</title>
+      <p>Be used to drop the collectionspace in the database.</p>
+    </section>
+    <section><title>Grammar</title>
+      <p><codeblock>drop collectionspace &lt;cs_name></codeblock></p>
+      <p>&lt;cs_name>collectionspace name,the collectionspace name must be exist in the
+        database.</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>This sample will drop the collectionspace<i> foo</i>.</p>
+          <p><codeblock>db.execUpdate("drop collectionspace foo") //Equivalent db.dropCS("foo")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="create_cs_en.dita" format="dita" type="topic"></link>
+    <link href="create_cl_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

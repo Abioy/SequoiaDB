@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>Administration_database</title>
+ <topicref href="topics/database.dita">
+     <topicref href="topics/runtime_configuration.dita"/>
+     <topicref href="topics/monitoring.dita">
+        <topicref href="topics/snapshot/snapshot.dita">
+         <topicref href="topics/snapshot/contexts.dita"></topicref>
+         <topicref href="topics/snapshot/contexts_current.dita"></topicref>
+         <topicref href="topics/snapshot/sessions.dita"></topicref>
+         <topicref href="topics/snapshot/sessions_current.dita"></topicref>
+         <topicref href="topics/snapshot/collections.dita"></topicref>
+         <topicref href="topics/snapshot/collectionspaces.dita"></topicref>
+         <topicref href="topics/snapshot/database.dita"></topicref>
+         <topicref href="topics/snapshot/system.dita"></topicref>
+            <topicref href="topics/snapshot/catalog.dita"></topicref>
+        </topicref>
+         
+         <topicref href="topics/list/list.dita">
+             <topicref href="topics/list/list_contexts.dita"></topicref>
+             <topicref href="topics/list/list_contexts_current.dita"></topicref>
+             <topicref href="topics/list/list_sessions.dita"></topicref>
+             <topicref href="topics/list/list_sessions_current.dita"></topicref>
+             <topicref href="topics/list/list_collections.dita"></topicref>
+             <topicref href="topics/list/list_collectionspace.dita"></topicref>
+             <topicref href="topics/list/list_storageunits.dita"></topicref>
+             <topicref href="topics/list/list_groups.dita"></topicref>
+         </topicref>
+     </topicref>
+     <topicref href="topics/EDU.dita"/>
+     <topicref href="topics/log.dita">
+         <topicref href="topics/synlog.dita"/>
+     </topicref>
+     <!--<topicref href="topics/backup_recovery.dita">
+         <topicref href="../database/data_backup/data_backup.dita">
+             <topicref href="../database/data_backup/confi_backup.dita">
+                 <topicref href="../database/data_backup/confi_standalone.dita"/>
+                 <topicref href="../database/data_backup/confi_cluster.dita"/>
+                 <topicref href="../database/data_backup/confi_sample.dita"/>
+             </topicref>
+             <topicref href="../database/data_backup/data_file_backup.dita">
+                 <topicref href="../database/data_backup/data_standalone.dita"/>
+                 <topicref href="../database/data_backup/data_cluster.dita"/>
+                 <topicref href="../database/data_backup/data_file_sample.dita"/>
+             </topicref>
+             
+         </topicref>
+         <topicref href="../database/data_recovery/data_recovery.dita">
+             <topicref href="../database/data_recovery/standalone.dita"/>
+             <topicref href="../database/data_recovery/cluster.dita"/>
+             <topicref href="../database/data_recovery/sample.dita"/>
+         </topicref>
+     </topicref>-->
+     <topicref href="database_tool/topics/database_tool.dita">
+         <topicref href="database_tool/topics//import.dita"/>
+         <topicref href="database_tool/topics/export.dita"/>
+         <topicref href="database_tool/topics/sdbinspt.dita"/>
+         <topicref href="database_tool/topics/tool_sdbtop.dita"/>
+         <topicref href="database_tool/topics/sdbinspect.dita"/>
+         <topicref href="database_tool/topics/sdbsupport.dita"/>
+         <topicref href="database_tool/topics/lob_tool.dita"/>
+     </topicref>     
+ </topicref>
+</map>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_cluster_node_data">
+  <title>数据节点</title>
+  <body>
+    <section>
+      <title>概念</title>
+      <p>数据节点为一种逻辑节点，其中保存用户数据信息。</p>
+      <p>数据节点中没有专门的编目信息集合，因此第一次访问集合前需要向编目节点请求该集合的元数据信息。</p>
+      <p>在独立模式中，数据节点为单独的服务提供者，直接与应用程序或客户端进行通讯，并且不需要访问任何编目信息。</p>
+    </section>
+  </body>
+</topic>

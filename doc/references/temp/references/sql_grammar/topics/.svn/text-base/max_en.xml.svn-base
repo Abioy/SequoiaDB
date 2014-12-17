@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\references\sql_grammar\topics?><?path2project ..\..\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="references_sql_max" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="title:1">sql max()</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="title:2">max() function</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="p:1">Be used to return the maximum value of the specified field name.</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="title:3">Grammar</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="p:2"><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="codeblock:1">max(field_name) as &lt;alisa_name&gt;</codeblock></p>
+      <note class="- topic/note " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="note:1">1.when use max() to return the max value of the specified field name,you must use
+        aliases.</note>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="section:3"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="title:4">Sample</title>
+      <ul class="- topic/ul " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="ul:1">
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="li:1"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="p:3">Return the max value of the field name<i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="i:1">age</i>.</p>
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="p:4"><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="codeblock:2">db.exec("select max(age) as 最大年龄 from foo.bar")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links class="- topic/related-links " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="related-links:1"><linkpool class="- topic/linkpool " xtrc="topicref:25" xtrf="C:\SequoiaDB\doc\references\sql_grammar\sql_grammar_en.ditamap"><link class="- topic/link " mapclass="+ map/topicref mapgroup-d/anchorref " type="topic" xtrc="topicref:1" xtrf="C:\SequoiaDB\doc\references\sql_grammar\sql_grammar_en.ditamap" href="../../sql_grammar/topics/sql_grammar_list_en.xml" role="parent"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>SQL Grammar</linktext></link></linkpool>
+    <link href="avg_en.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="link:1"><?ditaot gentext?><linktext class="- topic/linktext ">sql avg()</linktext></link>
+    <link href="min_en.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\max_en.dita" xtrc="link:2"><?ditaot gentext?><linktext class="- topic/linktext ">sql min()</linktext></link>
+  </related-links>
+</topic>

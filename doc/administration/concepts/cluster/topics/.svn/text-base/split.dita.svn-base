@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_split">
+  <title>数据切分</title>
+  <body>
+    <section>
+      <title>概念</title>
+      <p>一个分区集合首先会被创建在一个随机的分区组中。如果用户希望对该集合水平切分，将其划分到超过一个分区组中，就需要数据切分功能。</p>
+      <p>数据切分是一种将数据在线从一个分区组转移到另一个分区组的方式。在数据转移的过程中，查询所得的结果集数据会存在暂时的不一致，但是 SequoiaDB 可以保证磁盘中数据的最终一致性。</p>
+      <p>Range 分区和 Hash 分区都包含两种切分方式：范围切分和百分比切分。在范围切分时，Range 分区使用精确条件，而 Hash 分区使用 Partition（分区数）条件。切分时起始条件为必填字段，而结束条件为选填条件，结束条件默认为切分源当前包含的最大数据范围。</p>
+      <p>例如：</p>
+      <p><b>Hash:</b> <codeblock>db.foo.bar.split('src', 'dst', {Partition:10}, {Partition:20})</codeblock></p>
+      <p><b>Range:</b> <codeblock>db.foo.bar.split('src', 'dst', {a:10}, {a:20})</codeblock></p>
+      <p>数据切分及分区上的数据范围皆遵循左闭右开原则。即：{Partition:10}, {Partition:20} 代表迁移数据范围为[10, 20)。</p>
+      <p>百分比切分：<codeblock>db.foo.bar.split('src', 'dst', 50)</codeblock>
+        <note>
+          <ul>
+            <li>当切分范围不冲突时，可以做并发切分</li>
+            <li>“src”、“dst”分别表示“源分区所在复制组”、“目标分区所在复制组”</li>
+          </ul>          
+        </note></p>
+      <image href="../images/split.jpg" width="500"/>
+      <p>图中左上角为系统的起始状态，4条记录均存放在左侧的节点中。切分时定义由3起始，因此数据3与4会被切分至右侧节点。（左下图）</p>
+      <p>右上图为第三状态，数据在两个分区组中同时存在。此刻数据会有暂时的不一致。最终状态切换到右下图，已经迁移成功的数据从原始节点删除，数据最终恢复一致。</p>
+      <p>在数据切分过程在两个数据分区组之间进行交互：</p>
+      <ul>
+        <li>源分区所在复制组：代表数据原本所存在的分区</li>
+        <li>目标分区所在复制组：代表切分后，所有需要迁移的数据的目标组</li>
+      </ul>
+    </section>
+    <section>
+      <title>后台任务</title>
+      <p>数据切分属于一个<xref href="task.dita">后台任务</xref>。</p>
+      <p>对于数据切分的后台任务拥有几个特有的字段：</p>
+      <simpletable>
+        <sthead>
+          <stentry>字段名</stentry>
+          <stentry>类型</stentry>
+          <stentry>描述</stentry>
+        </sthead>
+        <strow>
+          <stentry>SourceName</stentry>
+          <stentry>字符串</stentry>
+          <stentry>源分区所在复制组名</stentry>
+        </strow>
+        <strow>
+          <stentry>TargetName</stentry>
+          <stentry>字符串</stentry>
+          <stentry>目标分区所在复制组名</stentry>
+        </strow>
+        <strow>
+          <stentry>SourceID</stentry>
+          <stentry>整数</stentry>
+          <stentry>源分区所在复制组 ID</stentry>
+        </strow>
+        <strow>
+          <stentry>TargetID</stentry>
+          <stentry>整数</stentry>
+          <stentry>目标分区所在复制组 ID</stentry>
+        </strow>
+        <strow>
+          <stentry>SplitValue</stentry>
+          <stentry>对象</stentry>
+          <stentry>数据切分键</stentry>
+        </strow>
+      </simpletable>
+      <p>数据切分的后台操作分为几个阶段：</p>
+      <dl>
+        <dlentry>
+          <dt>准备阶段</dt>
+          <dd>在准备阶段中，并不会向编目节点的 SYSCAT.SYSTASKS 插入任务记录。该阶段首先向编目节点查询，确保该请求合法，并且向源数据节点组请求得到一条包含分区条件的记录或根据规则生成一条包含分区条件的记录。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>预备阶段</dt>
+          <dd>在预备阶段中，协调节点将分区条件发送至编目节点。编目节点在 SYSCAT.SYSTASKS 集合中插入后台操作记录。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>运行阶段</dt>
+          <dd>在运行阶段中，协调节点向目标节点发送切分请求，目标节点创建后台任务，从源节点请求数据，并向编目节点上报自身状态。目标节点会在后台任务创建后直接返回给协调节点，并不会长时间阻塞用户会话。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>清除阶段</dt>
+          <dd>在清除阶段中，目标节点已经从源节点得到所有的数据，因此向编目节点发送清除请求，并在源数据节点进行数据清除操作。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>完成阶段</dt>
+          <dd>在源节点清除了所有已经迁移的数据后，会向编目节点发送完成消息。编目节点从 SYSCAT.SYSTASKS 集合中删除该任务。</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </body>
+  <related-links>
+    <link href="SYSTASKS.dita"/>
+  </related-links>
+</topic>

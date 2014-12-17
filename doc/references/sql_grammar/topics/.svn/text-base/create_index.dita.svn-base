@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_createIndex">
+  <title>sql create index</title>
+  <body>
+    <section><title>create index 语句</title>
+      <p>用于在集合中创建索引。在不读取整个集合的情况下，索引使数据库应用程序可以更快地查找数据。</p>
+    </section>
+    <section>
+      <title>语法</title>
+      <p>
+        <codeblock>create [unique] index &lt;index_name> on &lt;cs_name>.&lt;cl_name> (field1_name [asc|desc],...)</codeblock>
+      </p>
+      <p>[unique]：标识创建的索引是否唯一。在唯一索引所指定的索引键字段上，集合中不可存在一条以上的记录完全重复。</p>
+      <p>&lt;index_name>：索引名称</p>
+      <p>&lt;cs_name>：集合空间名称</p>
+      <p>&lt;cl_name>：集合名称</p>
+      <p>field1_name：创建索引所在的字段名，同一个索引名可以在多个字段名上创建</p>
+      <p>[asc|desc]：排序，asc 表示升序索引某个字段中的值，desc 表示降序索引某个字段中的值，默认为升序。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>本例会创建一个简单的索引，名为“test_index”，在 foo 集合空间的 bar 集合上的 age 字段：
+              <codeblock>db.execUpdate("create index test_index on foo.bar (age)")</codeblock>
+          <p>如果希望以降序索引某个字段中的值，可以在字段名后面添加保留字 <b>desc</b>：</p>
+          <codeblock>db.execUpdate("create index test_index on foo.bar (age desc)")</codeblock>
+          <p>如果希望索引不止在一个字段上，可以在括号中列出这些字段的名称，用逗号隔开：</p>
+          <codeblock>db.execUpdate("create index test_index on foo.bar (age desc,name asc)")</codeblock></li>
+        <li>下面的实例会创建一个唯一索引：<p>
+            <codeblock>db.execUpdate("create unique index test_index on foo.bar (age)")</codeblock>
+          </p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="drop_cl.dita" format="dita" type="topic"></link>
+    <link href="drop_index.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

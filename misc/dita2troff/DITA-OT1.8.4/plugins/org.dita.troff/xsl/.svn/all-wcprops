@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/15720/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl
+END
+dita2troff-step1-shell.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl/dita2troff-step1-shell.xsl
+END
+dita2troff-step2-shell.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl/dita2troff-step2-shell.xsl
+END

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_tbl_pbb_q4">
+  <title>domain.listCollectionSpaces()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>listCollectionSpaces - The collection spaces in the domain.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>domain.listCollectionSpaces</apiname>()
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Domain
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>The collection spaces in the domain.</p>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p><codeblock>domain.listCollectionSpace()</codeblock></p>
+      <p>Returns:</p>
+      <codeblock>      { 
+        "Name":"foo" 
+      }</codeblock>
+    </section>
+  </body>
+  <related-links>
+    <link href="domain.listCollections.dita"></link>
+  </related-links>
+</topic>

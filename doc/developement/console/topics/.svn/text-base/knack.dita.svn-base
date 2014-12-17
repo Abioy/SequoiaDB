@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="developement_console_knack">
+  <title>使用 shell 的窍门</title>
+  <body>
+      <p>SequoiaDB shell 本身内置了帮助文档，通过 help() 命令可以查看使用介绍。另外，参考手册 SequoiaDB JavaScript 方法一节中，有各方法的详细使用介绍。</p>
+        <ul>
+            <li>Help<p>查看使用介绍：</p><codeblock>> help()
+   var db = new Sdb()                     connect to database use default host 'localhost' and default port 11810
+   var db = new Sdb('localhost',11810)    connect to database use specified host and port
+   var db = new Sdb('ubuntu',11810,'','') connect to database with username and password
+   help(&lt;method>)                         help on specified method, e.g. help('createCS')
+   db.help()                              help on db methods
+   db.cs.help()                           help on collection space cs
+   db.cs.cl                               access collection cl on collection space cs
+   db.cs.cl.help()                        help on collection cl
+   db.cs.cl.find()                        list all records
+   db.cs.cl.find({a:1})                   list records where a=1
+   db.cs.cl.find().help()                 help on find methods
+   db.cs.cl.count().help()                help on count methods
+   print(x), println(x)                   print out x
+   traceFmt(&lt;type>,&lt;in>,&lt;out>)            format trace input(in) to output(out) by type
+   getErr(ret)                            print error description for return code
+   clear                                  clear the terminal screen
+   history -c                             clear the history
+   quit                                   exit
+   Takes 0.2993s.</codeblock>
+                <note><p>SequoiaDB shell 主要包括 database(db)，collection space(cs)，collection(cl)，cursor(cur)，replica group(rg)，node(nd)，domain(dm) 这7大级别的操作。用户需要理解各级别之间的关系。各级别都有使用帮助命令如下所示：</p></note></li>            
+            <li>Database Help<p>database 级别主要包括用管理户组，集合空间，副本组，域，快照，存储过程，备份，事务，sql，及错误跟踪等操作。</p>
+                <p>假设已经连接上数据库，并取得 database 的 javascript 对象 db。</p>
+                <p>查看 database 所有方法：</p><codeblock>db.help()</codeblock>
+                <p>查看 database 具体方法：</p><codeblock>db.help("method")</codeblock></li>
+            <li>CollectionSpace Help<p>collection space 级别主要包括对集合管理的操作。</p>
+                <p>假设存在名字为“foo”的集合空间。</p>
+                <p>查看 collection space 所有方法：</p><codeblock>db.foo.help()</codeblock>
+                <p>查看 collection space 具体方法：</p><codeblock>db.foo.help("method")</codeblock></li>
+            <li>Collection Help<p>collection 级别主要包括 CRUD，索引管理，数据切分，垂直分区表管理等操作。</p>
+                <p>假设在集合空间“foo”中存在名字为“bar”的集合。</p>
+                <p>查看 collection 所有方法：</p><codeblock>db.foo.bar.help()</codeblock>
+                <p>查看 collection 具体方法：</p><codeblock>db.foo.bar.help("method")</codeblock></li>
+            <li>Cursor Help<p>cursor 级别主要包括对返回记录（数据）的操作。</p>
+                <p>在 shell 命令中，与 sequoiadb 引擎交互时，若有记录（数据）返回，都是以游标（cursor）的方式呈现。例如，当使用 db.foo.bar.<xref href="../../../references/methods/topics/find.dita">find()</xref> 方法执行数据库查询操作，将返回一个游标对象，所有查询结果将放在这个游标中。通常的使用方法如下：</p>
+                <codeblock>db.foo.bar.find()</codeblock><p>或者</p><codeblock>var cur = db.foo.bar.find()</codeblock>
+                <p>前者直接将所有结果显示在屏幕上，后者将结果放到游标中。</p>
+                <p>查看 cursor 所有方法：</p><codeblock>db.foo.bar.find().help()</codeblock><p>或者</p><codeblock>cur.help()</codeblock>
+                <p>查看 cursor 具体方法：</p><codeblock>db.foo.bar.find().help("method")</codeblock><p>或者</p><codeblock>cur.help("method")</codeblock>
+                <p>类似于 find() 返回游标的方法，还有 list，snapshot 等等。</p></li>
+            <li>Replica Group Help<p>replica group 级别主要包括对数据节点的管理的操作。</p>
+                <p>假设数据库中存在名字为“group1”的副本组，通过 var rg = db.getRG("group1") 获取一个关于副本组的 javascript 对象 rg。</p>
+                <p>查看 replica group 所有方法：</p><codeblock>rg.help()</codeblock>
+                <p>查看 replica group 具体方法：</p><codeblock>rg.help("method")</codeblock></li>
+            <li>Node Help<p>node 级别主要包括对数据节点状态信息获取的操作。</p>
+                <p>假设在副本组“group1”中创建一个数据节点，var rn = rg.createNode("ubuntu-dev1", 51000, "/opt/sequoiadb/database/data/51000")，获取一个关于数据节点的 javascript 对象 rn。</p>
+                <p>查看 node 所有方法：</p><codeblock>rn.help()</codeblock>
+                <p>查看 node 具体方法：</p><codeblock>rn.help("method")</codeblock></li>
+            <li>Domain Help<p>domain 级别主要包括对域更改及获取域信息的操作。</p>
+                <p>假设在数据库中创建一个名字为“domain1”的域，var dm = db.createDomain("domain1",["group1","group2"],{AutoSplit:true})，获取一个关于域的 javascript 对象 dm。</p>
+                <p>查看 domain 所有方法：</p><codeblock>dm.help()</codeblock>
+                <p>查看 domain 具体方法：</p><codeblock>dm.help("method")</codeblock></li>    
+        </ul>
+      <note>以 man page 方式显示帮助文档功能是随 SequoiaDB 1.8版本发布的，若使用1.8版本以下的 sdb shell 客户端，将不具备上述的 help("method") 功能。另外，应该确保 /opt/sequoiadb/doc/manual 目录下有相关方法的 troff 文件，否则，无法显示相应的 man page 介绍。</note>
+      <p>查看 shell 提供的所有自动生成的 JavaScript 函数 API 文档，可访问 <xref href="https://developer.mozilla.org//en-US/docs/Web/JavaScript/Language_Resources"></xref></p>
+  </body>
+</topic>

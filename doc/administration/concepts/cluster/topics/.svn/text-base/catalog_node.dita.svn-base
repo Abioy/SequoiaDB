@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_cluster_node_catalog">
+  <title>编目节点</title>
+  <body>
+    <section>
+      <title>概念</title>
+      <p>编目节点为一种逻辑节点，其中保存了数据库的元数据信息，而不保存其他用户数据。</p>
+      <p>编目节点中包含4个集合空间：</p>
+      <ul>
+        <li><p>SYSCAT 系统编目集合空间，包含4个系统集合：</p>
+          <simpletable>
+            <sthead>
+              <stentry>集合名</stentry>
+              <stentry>描述</stentry>
+            </sthead>
+            <strow>
+              <stentry><xref href="SYSCOLLECTIONS.dita">SYSCOLLECTIONS</xref></stentry>
+              <stentry>保存了该集群中所有的用户集合信息</stentry>
+            </strow>
+            <strow>
+              <stentry><xref href="SYSCOLLECTIONSPACES.dita">SYSCOLLECTIONSPACES</xref></stentry>
+              <stentry>保存了该集群中所有的用户集合空间信息</stentry>
+            </strow>
+            <strow>
+              <stentry><xref href="SYSNODES.dita">SYSNODES</xref></stentry>
+              <stentry>保存了该集群中所有的逻辑节点与复制组信息</stentry>
+            </strow>
+            <strow>
+              <stentry><xref href="SYSTASKS.dita">SYSTASKS</xref></stentry>
+              <stentry>保存了该集群中所有正在运行的后台任务信息</stentry>
+            </strow>
+          </simpletable>
+        </li>
+        <li><p>SYSTEMP 系统临时集合空间，可以创建最多4096个临时集合</p></li>
+        <li><p>SYSAUTH 系统认证集合空间，包含一个用户集合，保存当前系统中所有的用户信息</p>
+          <simpletable>
+            <sthead>
+              <stentry>集合名</stentry>
+              <stentry>描述</stentry>
+            </sthead>
+            <strow>
+              <stentry><xref href="SYSUSRS.dita">SYSUSRS</xref></stentry>
+              <stentry>保存了该集群中所有的用户信息</stentry>
+            </strow>
+          </simpletable>
+        </li>
+        <li><p>SYSPROCEDURES 系统存储过程集合空间，包含一个集合，用于存储所有的存储过程函数信息</p>
+          <simpletable>
+            <sthead>
+              <stentry>集合名</stentry>
+              <stentry>描述</stentry>
+            </sthead>
+            <strow>
+              <stentry><xref href="STOREPROCEDURES.dita">STOREPROCEDURES</xref></stentry>
+              <stentry>保存所有存储过程函数信息</stentry>
+            </strow>
+          </simpletable>
+        </li>
+      </ul>
+      <p>除了编目节点外，集群中所有其他的节点不在磁盘中保存任何全局元数据信息。当需要访问其他节点上的数据时，除编目节点外的其他节点需要从本地缓存中寻找集合信息，如果不存在则需要从编目节点获取。</p>
+      <p>编目节点与其它节点之间主要使用编目服务端口（catalogname参数）进行通讯。</p>
+    </section>
+  </body>
+</topic>

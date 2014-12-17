@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/16287/trunk/driver/java/src/main/java/com/sequoiadb/util
+END
+ByteOutputBuffer1.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/13716/trunk/driver/java/src/main/java/com/sequoiadb/util/ByteOutputBuffer1.java
+END
+Helper.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16287/trunk/driver/java/src/main/java/com/sequoiadb/util/Helper.java
+END
+logger.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/sequoiadb/util/logger.java
+END
+SDBMessageHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/16287/trunk/driver/java/src/main/java/com/sequoiadb/util/SDBMessageHelper.java
+END
+ByteOutputBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/com/sequoiadb/util/ByteOutputBuffer.java
+END

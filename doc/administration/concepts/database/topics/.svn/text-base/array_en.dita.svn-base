@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="administration_concepts_database_array">
+  <title>Array</title>
+  <body>
+    <section><title>Concept</title>
+      <p>Arrays in SequoiaDB, in the format of JSON object in documents, are generally named
+        records.</p>
+    </section>
+    <section><title>Format</title>
+      <p>If there are multiple values in an array, users can store data in the format of data
+        structure. Array begins with "[" and ends with "]". It contains 0 or multiple values.</p>
+      <codeblock>{ Field Name : [ &lt;Value1&gt;, &lt;Value2&gt;, &lt;Value3&gt; ... ] }</codeblock>
+    </section>
+    <section><title>Sample</title>
+      <p>Array can contain different data types as values. The index of elements start with 0. For
+        example:</p>
+      <codeblock>{ "key" : [ "hello", "world" ] }</codeblock>
+      <p>The index of "hello" is 0. The subscript value of "world" is 1. The values in an array are
+        in order. The order of values is unchangable when operation is  implemented in an array. </p>
+      <p>Element in array is invoked as "field name.index". For exmaple, in the sample above,
+        "world" is invoked as "key.1".</p>
+    </section>
+  </body>
+  <related-links >
+    <link href="../../../../introduction/topics/datamodel_en.dita" format="dita" type="topic"/>
+  </related-links>
+</topic>

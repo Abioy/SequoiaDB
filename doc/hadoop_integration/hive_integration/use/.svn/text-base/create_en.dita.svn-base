@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qhf_qhq_fm">
+  <title>Create a Table Based SequoiaDB</title>
+  <body>
+    <p>Start hive shell command line window, execute the following command to create the data table.</p>
+    <codeblock>hive> create external table sdb_tab(id INT, name STRING, value DOUBLE) stored by 
+"com.sequoiadb.hive.SdbHiveStorageHandler" tblproperties("sdb.address" = "localhost:11810";)
+
+OK
+Time taken: 0.386 seconds</codeblock>
+    <p>Of which:</p>
+    <p>Sdb.address SequoiaDB coord node is used to specify the IP and port, if there are multiple coord node, you can write to multiple, separated by commas. Tables' databaserefres to Collectionspace in SequoiaDB, and tables refer to Collection in SequoiaDB.</p>
+  </body>
+</topic>

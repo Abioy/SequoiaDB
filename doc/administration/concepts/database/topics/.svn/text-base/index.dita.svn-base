@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_database_index">
+  <title>索引</title>
+  <body>
+    <section>
+      <title>概念</title>
+      <p>在 SequoiaDB 数据库中，索引是一种特殊的数据对象。索引本身不做为保存用户数据的容器，而是作为一种特殊的元数据，提高数据访问的效率。</p>
+      <p>每一个索引必须建立在一个集合之中，一个集合最多可以拥有64个索引。</p>
+      <p>索引可以被认为是将数据按照某一个或多个给定的字段进行排序，从而在其中快速搜索到用户指定查询条件的方式。在 SequoiaDB 中，索引使用 B 树结构。</p>
+      <p>一个典型的索引结构如下图所示：</p>
+      <p><image href="../images/index_concept.jpg" id="administration_concepts_database_index_img1" width="500"/></p>
+      <p>图中左边的方形为数据，右边的三角形为索引。索引按照从小到大的树形结构排列，每条索引记录分别指向一条记录文档。</p>
+      <p>通过进行树形遍历，对于查找某个特定数值的操作，可以使用树遍历在索引中快速定位其所需的数据。</p>
+      <p>SequoiaDB 可以对任意数据类型进行索引，每一个索引包含几个属性：</p>
+      <simpletable>
+        <sthead>
+          <stentry>属性</stentry>
+          <stentry>描述</stentry>
+        </sthead>
+        <strow>
+          <stentry>name</stentry>
+          <stentry>索引名，同一个集合中的索引名必须唯一。</stentry>
+        </strow>
+        <strow>
+          <stentry>key</stentry>
+          <stentry>索引键，为一个 JSON 结构，包含一个或多个指定索引字段与方向的字段。其中方向为1代表从小到大排序，-1则为从大到小排序。</stentry>
+        </strow>
+        <strow>
+          <stentry>unique</stentry>
+          <stentry>索引是否唯一，可选参数，默认 false。设置为 true 时代表该索引为唯一索引。在唯一索引所指定的索引键字段上，集合中不可存在一条以上的记录完全重复。</stentry>
+        </strow>
+        <strow>
+          <stentry>enforced</stentry>
+          <stentry>索引是否强制唯一，可选参数，在 unique 为 true 时生效，默认 false。设置为 true 时代表该索引在 unique 为 true 的前提下，不可存在一个以上全空的索引键。</stentry>
+        </strow>
+      </simpletable>
+      <p>在 SequoiaDB 中，所有集合均包含一个名为“$id”的强制唯一索引。该索引包含一个“_id”字段的索引键。</p>
+      <p>所有的分区集合在创建时均会自动生成一个额外的“$shard”索引，索引键为用户指定的分区键字段。</p>
+      <note>
+        <p>在分区集合中，所有的唯一索引必须包含集合分区键中所指定的全部字段。</p>
+        <p>在分区集合中，“$id”索引仅保证单节点内记录的唯一性。如果用户希望指定全局唯一的字段，需要额外创建唯一索引，且该索引必须包含集合分区键中所指定的全部字段。</p>
+      </note>
+    </section>
+    <section>
+      <title>格式</title>
+      <p>索引的定义格式必须包含 name 与 key 两个字段。其中 name 的值必须为字符串，key 则为一个 JSON 对象。</p>
+      <codeblock>{ "name" : "&lt;索引名>", "key" : "{ "&lt;索引字段1>" : &lt;1|-1>, [ "&lt;索引字段2>" : &lt;1|-1> ...] }, [ "unique" : &lt;true|false> ], [ "enforced" : &lt;true|false> ]}</codeblock>
+      <p>key 的对象必须包含至少一个字段，其中字段名为用户需要索引的字段名，数值为1或者-1。其中1代表数据在索引中的排列顺序由小至大，-1则代表由大至小。</p>
+    </section>
+    <section>
+      <title>示例</title>
+      <ul id="administration_concepts_database_index_example">
+        <li><p>非唯一索引，索引名“employee_id_key”，索引字段为正向“employee_id”</p>
+          <codeblock>{ "name" : "employee_id_key", "key" : { "employee_id" : 1 } }</codeblock></li>
+        <li><p>唯一索引，索引名为“record_id_index”，索引字段为正向“product_key”与逆向“record_key”</p>
+          <codeblock>{ "name" : "record_id_index", "key" : { "product_key" : 1, "record_key" : -1 }, "unique" : true }</codeblock>
+          <p>在该索引中，不可存在两条记录拥有同样的 product_key 与 record_key（如果仅 product_key 相同，或者仅 record_key 相同则可以通过唯一判定）</p></li>
+        <li><p>强制唯一索引，索引名为“测试索引”，索引字段为正向“测试用例名称”</p>
+          <codeblock>{ "name" : "测试索引", "key" : { "测试用例名称" : 1 }, "unique" : true, "enforced" : true }</codeblock>
+          <p>在强制唯一索引中，所有记录必须遵循唯一索引规则，且不可存在一条以上的数据在“测试用例名称”字段为空。</p></li>
+      </ul>
+    </section>
+  </body>
+  <related-links >
+    <link href="collection.dita" format="dita" type="topic"/>
+  </related-links>
+</topic>

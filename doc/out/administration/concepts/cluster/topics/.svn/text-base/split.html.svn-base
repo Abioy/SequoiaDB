@@ -1,0 +1,199 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="数据切分"/>
+<meta name="description" content="概念 一个分区集合首先会被创建在一个随机的分区组中。如果用户希望对该集合水平切分，将其划分到超过一个分区组中，就需要数据切分功能。 数据切分是一种将数据在线从一个分区组转移到另一个分区组的方式。在数据转移的过程中，查询所得的结果集数据会存在暂时的不一致，但是 SequoiaDB 可以保证磁盘中数据的最终一致性。 Range 分区和 Hash ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/sharding.html"/>
+<meta name="DC.Relation" scheme="URI" content="SYSTASKS.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_concepts_split"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>数据切分</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_concepts_split"><a name="administration_concepts_split"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/concepts/cluster/topics/sharding.html" title="数据分区"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">数据分区</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="cluster.html" title="集群">集群</a> / <a class="navheader_parent_path" href="../../../../administration/concepts/cluster/topics/sharding.html" title="数据分区">数据分区</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">数据切分</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">概念</h2>
+      
+      <p class="p">一个分区集合首先会被创建在一个随机的分区组中。如果用户希望对该集合水平切分，将其划分到超过一个分区组中，就需要数据切分功能。</p>
+
+      <p class="p">数据切分是一种将数据在线从一个分区组转移到另一个分区组的方式。在数据转移的过程中，查询所得的结果集数据会存在暂时的不一致，但是 SequoiaDB 可以保证磁盘中数据的最终一致性。</p>
+
+      <p class="p">Range 分区和 Hash 分区都包含两种切分方式：范围切分和百分比切分。在范围切分时，Range 分区使用精确条件，而 Hash 分区使用 Partition（分区数）条件。切分时起始条件为必填字段，而结束条件为选填条件，结束条件默认为切分源当前包含的最大数据范围。</p>
+
+      <p class="p">例如：</p>
+
+      <div class="p"><strong class="ph b">Hash:</strong> <pre class="pre codeblock">db.foo.bar.split('src', 'dst', {Partition:10}, {Partition:20})</pre>
+</div>
+
+      <div class="p"><strong class="ph b">Range:</strong> <pre class="pre codeblock">db.foo.bar.split('src', 'dst', {a:10}, {a:20})</pre>
+</div>
+
+      <p class="p">数据切分及分区上的数据范围皆遵循左闭右开原则。即：{Partition:10}, {Partition:20} 代表迁移数据范围为[10, 20)。</p>
+
+      <div class="p">百分比切分：<pre class="pre codeblock">db.foo.bar.split('src', 'dst', 50)</pre>
+
+        <div class="note note"><span class="notetitle">Note:</span> 
+          <ul class="ul">
+            <li class="li">当切分范围不冲突时，可以做并发切分</li>
+
+            <li class="li">“src”、“dst”分别表示“源分区所在复制组”、“目标分区所在复制组”</li>
+
+          </ul>
+          
+        </div>
+</div>
+
+      <img class="image" src="../images/split.jpg" width="500"/>
+      <p class="p">图中左上角为系统的起始状态，4条记录均存放在左侧的节点中。切分时定义由3起始，因此数据3与4会被切分至右侧节点。（左下图）</p>
+
+      <p class="p">右上图为第三状态，数据在两个分区组中同时存在。此刻数据会有暂时的不一致。最终状态切换到右下图，已经迁移成功的数据从原始节点删除，数据最终恢复一致。</p>
+
+      <p class="p">在数据切分过程在两个数据分区组之间进行交互：</p>
+
+      <ul class="ul">
+        <li class="li">源分区所在复制组：代表数据原本所存在的分区</li>
+
+        <li class="li">目标分区所在复制组：代表切分后，所有需要迁移的数据的目标组</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">后台任务</h2>
+      
+      <p class="p">数据切分属于一个<a class="xref" href="task.html">后台任务</a>。</p>
+
+      <p class="p">对于数据切分的后台任务拥有几个特有的字段：</p>
+
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d7720e103" class="stentry">字段名</th>
+
+          <th valign="bottom" align="left" id="d7720e106" class="stentry">类型</th>
+
+          <th valign="bottom" align="left" id="d7720e109" class="stentry">描述</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d7720e103" class="stentry">SourceName</td>
+
+          <td valign="top" headers="d7720e106" class="stentry">字符串</td>
+
+          <td valign="top" headers="d7720e109" class="stentry">源分区所在复制组名</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d7720e103" class="stentry">TargetName</td>
+
+          <td valign="top" headers="d7720e106" class="stentry">字符串</td>
+
+          <td valign="top" headers="d7720e109" class="stentry">目标分区所在复制组名</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d7720e103" class="stentry">SourceID</td>
+
+          <td valign="top" headers="d7720e106" class="stentry">整数</td>
+
+          <td valign="top" headers="d7720e109" class="stentry">源分区所在复制组 ID</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d7720e103" class="stentry">TargetID</td>
+
+          <td valign="top" headers="d7720e106" class="stentry">整数</td>
+
+          <td valign="top" headers="d7720e109" class="stentry">目标分区所在复制组 ID</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d7720e103" class="stentry">SplitValue</td>
+
+          <td valign="top" headers="d7720e106" class="stentry">对象</td>
+
+          <td valign="top" headers="d7720e109" class="stentry">数据切分键</td>
+
+        </tr>
+</table>
+
+      <p class="p">数据切分的后台操作分为几个阶段：</p>
+
+      <dl class="dl">
+        
+          <dt class="dt dlterm">准备阶段</dt>
+
+          <dd class="dd">在准备阶段中，并不会向编目节点的 SYSCAT.SYSTASKS 插入任务记录。该阶段首先向编目节点查询，确保该请求合法，并且向源数据节点组请求得到一条包含分区条件的记录或根据规则生成一条包含分区条件的记录。</dd>
+
+        
+        
+          <dt class="dt dlterm">预备阶段</dt>
+
+          <dd class="dd">在预备阶段中，协调节点将分区条件发送至编目节点。编目节点在 SYSCAT.SYSTASKS 集合中插入后台操作记录。</dd>
+
+        
+        
+          <dt class="dt dlterm">运行阶段</dt>
+
+          <dd class="dd">在运行阶段中，协调节点向目标节点发送切分请求，目标节点创建后台任务，从源节点请求数据，并向编目节点上报自身状态。目标节点会在后台任务创建后直接返回给协调节点，并不会长时间阻塞用户会话。</dd>
+
+        
+        
+          <dt class="dt dlterm">清除阶段</dt>
+
+          <dd class="dd">在清除阶段中，目标节点已经从源节点得到所有的数据，因此向编目节点发送清除请求，并在源数据节点进行数据清除操作。</dd>
+
+        
+        
+          <dt class="dt dlterm">完成阶段</dt>
+
+          <dd class="dd">在源节点清除了所有已经迁移的数据后，会向编目节点发送完成消息。编目节点从 SYSCAT.SYSTASKS 集合中删除该任务。</dd>
+
+        
+      </dl>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="SYSTASKS.html" title="SYSTASKS 集合">SYSTASKS 集合</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../../administration/concepts/cluster/topics/sharding.html" title="数据分区"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">数据分区</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

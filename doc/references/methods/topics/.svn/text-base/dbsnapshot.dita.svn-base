@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_snapshot">
+  <title>db.snapshot()</title>
+  <body>
+    <section><title>db.snapshot(&lt;snapType>,[cond],[sel],[sort])</title>
+      <p>枚举快照，快照是一种得到当前系统状态的命令。<xref href="../../../administration/database/topics/monitoring.dita">查看更多有关快照信息</xref></p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>snapType</stentry>
+          <stentry>枚举</stentry>
+          <stentry><xref href="../../../administration/database/topics/monitoring.dita">快照类型</xref>。</stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow>
+          <stentry>cond</stentry>
+          <stentry>Json 对象</stentry>
+          <stentry>选择条件，只返回 cond 字段指定的节点或分区组的快照信息，为 null 时，返回整个集群的快照信息。</stentry>
+          <stentry>否</stentry>
+        </strow>
+        <strow>
+          <stentry>sel</stentry>
+          <stentry>Json 对象</stentry>
+          <stentry>选择返回字段名。为 null 时，返回所有的字段名。</stentry>
+          <stentry>否</stentry>
+        </strow>
+        <strow>
+          <stentry>sort</stentry>
+          <stentry>Json 对象</stentry>
+          <stentry>对返回的记录按选定的字段排序。1为升序；-1为降序。</stentry>
+          <stentry>否</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>格式</title>
+      <p>snapshot() 方法定义格式有 snapType，cond两个字段，snapType 为枚举类型，cond 为 Json 对象，格式如下：</p>
+      <codeblock>{"snapType":"&lt;快照类型>",["cond":"{"字段名1":{"操作符1":"值1"},"字段名2":{"操作符2":"值2"}...}"]}</codeblock>
+      <note>
+        <ul>
+          <li>snapType 字段的值请参考<xref href="../../../administration/database/topics/monitoring.dita">快照类型</xref></li>
+          <li>sel 参数是一个 json 结构，字段名的值一般指定为空串。如果指定为如下结构：{"字段名1":"值1","字段名2":"值2",...}，对于记录中存在所选字段名的话，设定的值其实无效；对于记录中不存在所选字段名的话，返回{"字段名1":"值1","字段名2":"值2",...}</li>
+          <li>字段的值是数组的话，我们用“.”操作符引用数组内的元素。并加上双引号（""）</li>
+        </ul>
+      </note>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>指定 snapType 的值为 SDB_SNAP_CONTEXTS：<codeblock>db.snapshot(SDB_SNAP_CONTEXTS)</codeblock></p>
+          <p> 返回整个集群的上下文快照：</p>
+          <codeblock>{
+  "SessionID": "vmsvr1-cent-x64-1:11820:22",
+  "Contexts": [
+    {
+      "ContextID": 8,
+      "Type": "DUMP",
+      "Description": "BufferSize:0",
+      "DataRead": 0,
+      "IndexRead": 0,
+      "QueryTimeSpent": 0,
+      "StartTimestamp": "2013-12-28-16.07.59.146399"
+    }
+  ]
+}
+{
+  "SessionID": "vmsvr1-cent-x64-1:11830:22",
+  "Contexts": [
+    {
+      "ContextID": 6,
+      "Type": "DUMP",
+      "Description": "BufferSize:0",
+      "DataRead": 0,
+      "IndexRead": 0,
+      "QueryTimeSpent": 0,
+      "StartTimestamp": "2013-12-28-16.07.59.147576"
+    }
+  ]
+}
+{
+  "SessionID": "vmsvr1-cent-x64-1:11840:23",
+  "Contexts": [
+    {
+      "ContextID": 7,
+      "Type": "DUMP",
+      "Description": "BufferSize:0",
+      "DataRead": 0,
+      "IndexRead": 0,
+      "QueryTimeSpent": 0,
+      "StartTimestamp": "2013-12-28-16.07.59.148603"
+    }
+  ]
+}</codeblock>
+        </li>
+        <li><p>通过组名或组 ID 查询某个分区组的快照信息，如：</p>
+          <p><codeblock>db.snapshot(SDB_SNAP_CONTEXTS,{GroupName:'data1'})</codeblock>返回组名为“data1”的分区组快照信息
+            <codeblock>db.snapshot(SDB_SNAP_CONTEXTS,{GroupID:1000})</codeblock>返回组 ID 为“1000”的分区组快照信息</p>
+          <codeblock>{
+  "SessionID": "vmsvr1-cent-x64-1:11820:22",
+  "Contexts": [
+    {
+      "ContextID": 11,
+      "Type": "DUMP",
+      "Description": "BufferSize:0",
+      "DataRead": 0,
+      "IndexRead": 0,
+      "QueryTimeSpent": 0,
+      "StartTimestamp": "2013-12-28-16.13.57.864245"
+    }
+  ]
+}
+{
+  "SessionID": "vmsvr1-cent-x64-1:11840:23",
+  "Contexts": [
+    {
+      "ContextID": 10,
+      "Type": "DUMP",
+      "Description": "BufferSize:0",
+      "DataRead": 0,
+      "IndexRead": 0,
+      "QueryTimeSpent": 0,
+      "StartTimestamp": "2013-12-28-16.13.57.865103"
+    }
+  ]
+}</codeblock></li>
+        <li><p>通过“组名+主机名+服务名”或“组 ID+节点 ID”查询某个节点的快照信息，如：</p>
+          <p><codeblock>db.snapshot(SDB_SNAP_CONTEXTS,{GroupName:'data1',HostName:"vmsvr1-cent-x64-1",svcname:"11820"})</codeblock>
+            <codeblock>db.snapshot(SDB_SNAP_CONTEXTS,{GroupID:1000,NodeID:1001})</codeblock></p>
+          <codeblock>{
+  "SessionID": "vmsvr1-cent-x64-1:11820:22",
+  "Contexts": [
+    {
+      "ContextID": 11,
+      "Type": "DUMP",
+      "Description": "BufferSize:0",
+      "DataRead": 0,
+      "IndexRead": 0,
+      "QueryTimeSpent": 0,
+      "StartTimestamp": "2013-12-28-16.13.57.864245"
+    }
+  ]
+  }</codeblock></li>
+        <li><p>通过“主机名+服务名”查询某个节点的快照信息，如：</p>
+          <p><codeblock>db.snapshot(SDB_SNAP_CONTEXTS,{HostName:"vmsvr1-cent-x64-1",svcname:"11820"})</codeblock></p>
+        </li> 
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="listReplicaGroups.dita" format="dita" type="topic"></link>
+    <link href="resetSnapshot.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/database/topics/EDU.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/console.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

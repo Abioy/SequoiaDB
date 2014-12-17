@@ -1,0 +1,360 @@
+<!--@param ${STAF.PATH}: The path where is staf binary directory-->
+<!--@param ${ant.sdb.tasks.path}:  The path where sdb's ant tasks jar files -->
+<!--@param ${install.path}: The path where install sequoiadb -->
+<!--@param ${deploy.file.fullname}: The file full path where deploy file name for test -->
+<!--@param ${deploy.path}: The path where deploy direcotry before tar -->
+<!--@param ${WORKSPACE}: where the working space is it-->
+<!--@param ${test.reports.path}: The path where test reports directory. -->
+<!--@param ${properties.dir} : where the ci.test.properties file is it -->
+
+<project name="deploy" default="test">
+	<!--property file="ci.properties" /-->
+		<property name="properties.dir" value="${basedir}/../ci.test.properties" />
+		<property file="${properties.dir}" />	
+	<target name="deploy" depends="">
+		<echo message="Begin install software and test files to ${test.machine1}" />
+		<hostinfo prefix="host" />
+
+    <parallel>
+			<ant antfile="deploy-software-in-host.xml" dir="." inheritAll="false">
+			   <property name="install.package.fullname" value="${install.package.fullname}" />
+			   <property name="deploy.host.name" value="${test.machine.no1.basic}" />
+			   <property name="coord.service.port" value="${coord.service.port}" />
+			   <property name="is.standalone.mode" value="false" />
+			   <property name="is.coord.master" value="true"/>
+			   <property name="catalog.addrs" value="${test.machine.no1.data}:30003,${test.machine.no2.data}:30003,${test.machine.no3.data}:30003" />
+		  </ant>
+		  <ant antfile="deploy-software-in-host.xml" dir="." inheritAll="false">
+			   <property name="install.package.fullname" value="${install.package.fullname}" />
+			   <property name="deploy.host.name" value="${test.machine.no2.basic}" />
+			   <property name="coord.service.port" value="${coord.service.port}" />
+			   <property name="is.standalone.mode" value="false" />
+			   <property name="is.coord.master" value="false"/>
+			   <property name="catalog.addrs" value="${test.machine.no1.data}:30003,${test.machine.no2.data}:30003,${test.machine.no3.data}:30003" />
+		  </ant>
+		  <ant antfile="deploy-software-in-host.xml" dir="." inheritAll="false">
+			   <property name="install.package.fullname" value="${install.package.fullname}" />
+			   <property name="deploy.host.name" value="${test.machine.no3.basic}" />
+			   <property name="coord.service.port" value="${coord.service.port}" />
+			   <property name="is.standalone.mode" value="false" />
+			   <property name="is.coord.master" value="false"/>
+			   <property name="catalog.addrs" value="${test.machine.no1.data}:30003,${test.machine.no2.data}:30003,${test.machine.no3.data}:30003" />
+		  </ant>
+		</parallel>
+		
+
+		<sdbdeploy host="${test.machine.no1.basic}" coordport="50000">
+			<catagroup name="cata1">
+				<node host="${test.machine.no1.data}" baseport="30000" dbpath="${install.path}/sequoiadb/database/cata/30000">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no2.data}" baseport="30000" dbpath="${install.path}/sequoiadb/database/cata/30000">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no3.data}" baseport="30000" dbpath="${install.path}/sequoiadb/database/cata/30000">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+			</catagroup>
+		</sdbdeploy>
+
+		<sdbdeploy host="${test.machine.no1.basic}" coordport="50000">
+			<datagroup name="group1">
+				<node host="${test.machine.no1.data}" baseport="21100" dbpath="${install.path}/sequoiadb/database/data/21100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no2.data}" baseport="21100" dbpath="${install.path}/sequoiadb/database/data/21100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no3.data}" baseport="21100" dbpath="${install.path}/sequoiadb/database/data/21100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+			</datagroup>
+
+			<datagroup name="group2">
+				<node host="${test.machine.no3.data}" baseport="22100" dbpath="${install.path}/sequoiadb/database/data/22100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no1.data}" baseport="22100" dbpath="${install.path}/sequoiadb/database/data/22100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no2.data}" baseport="22100" dbpath="${install.path}/sequoiadb/database/data/22100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="sharingbreak" value="20000" />
+					<confitem name="transactionon" value="true" />
+				</node>
+			</datagroup>
+		</sdbdeploy>
+	</target>
+
+	<target name="test" depends="">
+		
+		<parallel>
+			<ant antfile="deploy-test-in-host.xml" dir="." inheritAll="false">
+				<property name="deploy.file.fullname" value="${deploy.file.fullname}" />
+				<property name="deploy.host.name" value="${test.machine.no1.basic}" />
+			</ant>
+			<ant antfile="deploy-test-in-host.xml" dir="." inheritAll="false">
+				<property name="deploy.file.fullname" value="${deploy.file.fullname}" />
+				<property name="deploy.host.name" value="${test.machine.no2.basic}" />
+			</ant>
+			<ant antfile="deploy-test-in-host.xml" dir="." inheritAll="false">
+				<property name="deploy.file.fullname" value="${deploy.file.fullname}" />
+				<property name="deploy.host.name" value="${test.machine.no3.basic}" />
+			</ant>
+		</parallel>
+		
+		<!--basename property="antFileName" file="${ant.file}" suffix=".xml" />
+		<property name="test-type-list" value="basic" />
+		<for list="${test-type-list}" param="test-type">
+			<sequential>
+				<ant antfile="${WORKSPACE}/sequoiadb/misc/ci/test-type.xml" dir="." inheritAll="false">
+					<property name="test.machine.deploy.path" value="${test.machine.deploy.path}" />
+					<property name="install.path" value="${install.path}" />
+					<property name="deploy.case.fullname" value="${deploy.case.fullname}" />
+					<property name="test.reports.path" value="${test.reports.path}" />
+					<property name="test-type" value="@{test-type}" />
+					<property name="antFileName" value="${antFileName}" />
+				</ant>
+			</sequential>
+			
+		</for-->
+		
+		
+		
+		
+		
+     <tstamp >
+       <format property="bMonth" pattern="M"  locale="en.GB"/>
+     </tstamp>
+     <tstamp >
+       <format property="bDay" pattern="d"  locale="en.GB"/>
+     </tstamp>
+
+     <echo message="begin month is ${bMonth} , begin day is ${bDay}"/>
+     <if>
+       <equals arg1="${bMonth}" arg2="12"/>
+       <then>
+          <echo>begin month is 12 , so end month is 1</echo>
+          <property name="eMonth" value="1"/>
+       </then>
+       <else>
+          <math result="eMonth" datatype="int" operand1="${bMonth}" operation="+" operand2="1"/>
+       </else>
+     </if>
+     <!--math result="eDay" datatype="int" operand1="31" operation="-" operand2="${bDay}"/-->
+     <property name="eDay" value="28" />
+     <echo message="begin month is ${bMonth} , begin day is ${bDay}"/>
+     <echo>end month is ${eMonth} , end day is ${eDay}</echo>
+     <property name="begin_str" value="${bMonth}-${bDay}"/>
+     <property name="end_str" value="${eMonth}-${eDay}"/>
+     <echo>begin string is ${begin_str}</echo>
+     <echo>end string is ${end_str}</echo>
+     
+     
+		<property name="test_times" value="0"/>
+		<property name="mk.dir.is" value="true" />
+		<trycatch property="fail_str" reference="bar">
+	  <try>
+      <sdbWhile isForever="true">
+      	<sequential>
+      		<math result="test_times" datatype="int" operand1="${test_times}" operation="+" operand2="1"/>
+      		
+      		<tstamp >
+            <format property="nowT_str" pattern="M-d"  locale="en.GB"/>
+    		  </tstamp>
+      		<echo>now time is ${nowT_str}</echo>
+      		<if>
+      			<equals arg1="${nowT_str}" arg2="${end_str}" />
+      			<!--equals arg1="3" arg2="${test_times}" /-->
+      			<then>
+      				<echo>fail</echo>
+      				<echo>test_times is ${test_times}</echo>
+      				<fail>time is ${nowT_str}</fail>
+      			</then>
+      			<else>
+      				
+      				<echo message="now begin to test ${test_times}"/>
+      				<echo>end string is ${end_str}</echo>
+      				<echo>call the test target---test_target</echo>
+      				<if>
+      					<not>
+      					<equals arg1="${test_times}" arg2="1" />
+      					</not>
+      					<then>
+      						<sdbProperty name="mk.dir.is" value="false" />
+      						<echo>test_times is not equals 1</echo>
+      						<echo>mk.dir.is equals ${mk.dir.is}</echo>
+      					</then>
+      					<else>
+      						<sdbProperty name="mk.dir.is" value="true" />
+      						<echo>test_times is equals 1</echo>
+      						<echo>mk.dir.is equals ${mk.dir.is}</echo>
+      					</else>
+      				</if>
+      				<antcall target="test_target">
+      					<param name="mk.dir.is" value ="${mk.dir.is}" />
+      				</antcall>
+      			</else>
+      		</if>
+      	</sequential>
+      </sdbWhile>
+	  </try>
+	  <catch>
+	  	<echo>&lt;catch&gt;</echo>
+	  	<echo>fail message is ${fail_str}</echo>
+	  	<echo>&lt;/catch&gt;</echo>
+	  </catch>	
+	  <finally>
+	  	
+	  </finally>
+	</trycatch>
+		
+		
+		
+		
+		<!--
+		<mkdir dir="${WORKSPACE}/${host.NAME}-copy-log/${antFileName}" />
+		<sdbCopyAndTar fileHostName="${test.machine.no1.basic}" saveHostName="${host.NAME}" diaglogPath="${install.path}/sequoiadb/database" savePath="${WORKSPACE}/${host.NAME}-copy-log/${antFileName}" />
+		<sdbCopyAndTar fileHostName="${test.machine.no2.basic}" saveHostName="${host.NAME}" diaglogPath="${install.path}/sequoiadb/database" savePath="${WORKSPACE}/${host.NAME}-copy-log/${antFileName}" />
+		<sdbCopyAndTar fileHostName="${test.machine.no3.basic}" saveHostName="${host.NAME}" diaglogPath="${install.path}/sequoiadb/database" savePath="${WORKSPACE}/${host.NAME}-copy-log/${antFileName}" />
+		-->
+
+	</target>
+	
+	<target name="test_target" depends="">
+		<property name="testTimeOut" value="600m" />
+		<basename property="antFileName" file="${ant.file}" suffix=".xml" />
+		<tstamp >
+       <format property="now_time_str" pattern="M-d"  locale="en.GB"/>
+    </tstamp>
+		<parallel>
+			<!--getRowNum propertyName="lineNum1" /-->
+			<sdbtest mkDirIs="${mk.dir.is}" getLogBack="false"  host="${test.machine.no1.basic}" testscript="${test.machine.deploy.path}/deploy/exec-basic-testcases.xml" remotereports="${test.machine.deploy.path}/deploy/hlt/js_testcases/reports" masterreports="${test.reports.path}" timeout="${testTimeOut}" antFileName="${antFileName}">
+				<param name="testcase.path" value="${test.machine.deploy.path}/deploy/hlt/js_testcases/" />
+				<param name="install.path" value="${install.path}" />
+				<param name="excludes.dir.patterns" value="vote" />
+				<param name="antTask.jar.path" value="${test.machine.deploy.path}/deploy/ant-sdbtasks" />
+				<!--param name="parallel.num" value="${lineNum1}" /-->
+				<param name="to.copy.test.log" value="false" />
+				<param name="save.testLog.hostname" value="${save.testLog.hostname}" />
+				<param name="save.testLog.dir" value="${save.testLog.dir}" />
+			</sdbtest>
+			<!--getRowNum propertyName="lineNum2" /-->
+			<sdbtest mkDirIs="${mk.dir.is}" getLogBack="false"  host="${test.machine.no1.basic}" testscript="${test.machine.deploy.path}/deploy/exec-basic-testcases.xml" remotereports="${test.machine.deploy.path}/deploy/hlt/js_testcases/reports" masterreports="${test.reports.path}" timeout="${testTimeOut}" antFileName="${antFileName}">
+				<param name="testcase.path" value="${test.machine.deploy.path}/deploy/hlt/js_testcases/" />
+				<param name="install.path" value="${install.path}" />
+				<param name="excludes.dir.patterns" value="vote" />
+				<param name="antTask.jar.path" value="${test.machine.deploy.path}/deploy/ant-sdbtasks" />
+				<!--param name="parallel.num" value="${lineNum2}" /-->
+				<param name="to.copy.test.log" value="false" />
+				<param name="save.testLog.hostname" value="${save.testLog.hostname}" />
+				<param name="save.testLog.dir" value="${save.testLog.dir}" />
+			</sdbtest>
+			<!--getRowNum propertyName="lineNum3" /-->
+			<sdbtest mkDirIs="${mk.dir.is}" getLogBack="false"  host="${test.machine.no1.basic}" testscript="${test.machine.deploy.path}/deploy/exec-basic-testcases.xml" remotereports="${test.machine.deploy.path}/deploy/hlt/js_testcases/reports" masterreports="${test.reports.path}" timeout="${testTimeOut}" antFileName="${antFileName}">
+				<param name="testcase.path" value="${test.machine.deploy.path}/deploy/hlt/js_testcases/" />
+				<param name="install.path" value="${install.path}" />
+				<param name="excludes.dir.patterns" value="vote" />
+				<param name="antTask.jar.path" value="${test.machine.deploy.path}/deploy/ant-sdbtasks" />
+				<!--param name="parallel.num" value="${lineNum3}" /-->
+				<param name="to.copy.test.log" value="false" />
+				<param name="save.testLog.hostname" value="${save.testLog.hostname}" />
+				<param name="save.testLog.dir" value="${save.testLog.dir}" />
+			</sdbtest>
+			<!--getRowNum propertyName="lineNum4" /-->
+			<sdbtest mkDirIs="${mk.dir.is}" getLogBack="false"  host="${test.machine.no2.basic}" testscript="${test.machine.deploy.path}/deploy/exec-basic-testcases.xml" remotereports="${test.machine.deploy.path}/deploy/hlt/js_testcases/reports" masterreports="${test.reports.path}" timeout="${testTimeOut}" antFileName="${antFileName}">
+				<param name="testcase.path" value="${test.machine.deploy.path}/deploy/hlt/js_testcases/" />
+				<param name="install.path" value="${install.path}" />
+				<param name="excludes.dir.patterns" value="vote" />
+				<param name="antTask.jar.path" value="${test.machine.deploy.path}/deploy/ant-sdbtasks" />
+				<!--param name="parallel.num" value="${lineNum4}" /-->
+				<param name="to.copy.test.log" value="false" />
+				<param name="save.testLog.hostname" value="${save.testLog.hostname}" />
+				<param name="save.testLog.dir" value="${save.testLog.dir}" />
+			</sdbtest>
+			<!--getRowNum propertyName="lineNum5" /-->
+			<sdbtest mkDirIs="${mk.dir.is}" getLogBack="false"  host="${test.machine.no2.basic}" testscript="${test.machine.deploy.path}/deploy/exec-basic-testcases.xml" remotereports="${test.machine.deploy.path}/deploy/hlt/js_testcases/reports" masterreports="${test.reports.path}" timeout="${testTimeOut}" antFileName="${antFileName}">
+				<param name="testcase.path" value="${test.machine.deploy.path}/deploy/hlt/js_testcases/" />
+				<param name="install.path" value="${install.path}" />
+				<param name="excludes.dir.patterns" value="vote" />
+				<param name="antTask.jar.path" value="${test.machine.deploy.path}/deploy/ant-sdbtasks" />
+				<!--param name="parallel.num" value="${lineNum5}" /-->
+				<param name="to.copy.test.log" value="false" />
+				<param name="save.testLog.hostname" value="${save.testLog.hostname}" />
+				<param name="save.testLog.dir" value="${save.testLog.dir}" />
+			</sdbtest>
+			<!--getRowNum propertyName="lineNum6" /-->
+			<sdbtest mkDirIs="${mk.dir.is}" getLogBack="false"  host="${test.machine.no2.basic}" testscript="${test.machine.deploy.path}/deploy/exec-basic-testcases.xml" remotereports="${test.machine.deploy.path}/deploy/hlt/js_testcases/reports" masterreports="${test.reports.path}" timeout="${testTimeOut}" antFileName="${antFileName}">
+				<param name="testcase.path" value="${test.machine.deploy.path}/deploy/hlt/js_testcases/" />
+				<param name="install.path" value="${install.path}" />
+				<param name="excludes.dir.patterns" value="vote" />
+				<param name="antTask.jar.path" value="${test.machine.deploy.path}/deploy/ant-sdbtasks" />
+				<!--param name="parallel.num" value="${lineNum6}" /-->
+				<param name="to.copy.test.log" value="false" />
+				<param name="save.testLog.hostname" value="${save.testLog.hostname}" />
+				<param name="save.testLog.dir" value="${save.testLog.dir}" />
+			</sdbtest>
+			<!--getRowNum propertyName="lineNum7" /-->
+			<sdbtest mkDirIs="${mk.dir.is}" getLogBack="false"  host="${test.machine.no2.basic}" testscript="${test.machine.deploy.path}/deploy/exec-basic-testcases.xml" remotereports="${test.machine.deploy.path}/deploy/hlt/js_testcases/reports" masterreports="${test.reports.path}" timeout="${testTimeOut}" antFileName="${antFileName}">
+				<param name="testcase.path" value="${test.machine.deploy.path}/deploy/hlt/js_testcases/" />
+				<param name="install.path" value="${install.path}" />
+				<param name="excludes.dir.patterns" value="vote" />
+				<param name="antTask.jar.path" value="${test.machine.deploy.path}/deploy/ant-sdbtasks" />
+				<!--param name="parallel.num" value="${lineNum7}" /-->
+				<param name="to.copy.test.log" value="false" />
+				<param name="save.testLog.hostname" value="${save.testLog.hostname}" />
+				<param name="save.testLog.dir" value="${save.testLog.dir}" />
+			</sdbtest>
+			<!--getRowNum propertyName="lineNum8" /-->
+			<sdbtest mkDirIs="${mk.dir.is}" getLogBack="false"  host="${test.machine.no3.basic}" testscript="${test.machine.deploy.path}/deploy/exec-basic-testcases.xml" remotereports="${test.machine.deploy.path}/deploy/hlt/js_testcases/reports" masterreports="${test.reports.path}" timeout="${testTimeOut}" antFileName="${antFileName}">
+				<param name="testcase.path" value="${test.machine.deploy.path}/deploy/hlt/js_testcases/" />
+				<param name="install.path" value="${install.path}" />
+				<param name="excludes.dir.patterns" value="vote" />
+				<param name="antTask.jar.path" value="${test.machine.deploy.path}/deploy/ant-sdbtasks" />
+				<!--param name="parallel.num" value="${lineNum8}" /-->
+				<param name="to.copy.test.log" value="false" />
+				<param name="save.testLog.hostname" value="${save.testLog.hostname}" />
+				<param name="save.testLog.dir" value="${save.testLog.dir}" />
+			</sdbtest>
+			<!--getRowNum propertyName="lineNum9" /-->
+			<sdbtest mkDirIs="${mk.dir.is}" getLogBack="false"  host="${test.machine.no3.basic}" testscript="${test.machine.deploy.path}/deploy/exec-basic-testcases.xml" remotereports="${test.machine.deploy.path}/deploy/hlt/js_testcases/reports" masterreports="${test.reports.path}" timeout="${testTimeOut}" antFileName="${antFileName}">
+				<param name="testcase.path" value="${test.machine.deploy.path}/deploy/hlt/js_testcases/" />
+				<param name="install.path" value="${install.path}" />
+				<param name="excludes.dir.patterns" value="vote" />
+				<param name="antTask.jar.path" value="${test.machine.deploy.path}/deploy/ant-sdbtasks" />
+				<!--param name="parallel.num" value="${lineNum9}" /-->
+				<param name="to.copy.test.log" value="false" />
+				<param name="save.testLog.hostname" value="${save.testLog.hostname}" />
+				<param name="save.testLog.dir" value="${save.testLog.dir}" />
+			</sdbtest>
+			<!--getRowNum propertyName="lineNum10" /-->
+			<sdbtest mkDirIs="${mk.dir.is}" getLogBack="false"  host="${test.machine.no3.basic}" testscript="${test.machine.deploy.path}/deploy/exec-basic-testcases.xml" remotereports="${test.machine.deploy.path}/deploy/hlt/js_testcases/reports" masterreports="${test.reports.path}" timeout="${testTimeOut}" antFileName="${antFileName}">
+				<param name="testcase.path" value="${test.machine.deploy.path}/deploy/hlt/js_testcases/" />
+				<param name="install.path" value="${install.path}" />
+				<param name="excludes.dir.patterns" value="vote" />
+				<param name="antTask.jar.path" value="${test.machine.deploy.path}/deploy/ant-sdbtasks" />
+				<!--param name="parallel.num" value="${lineNum10}" /-->
+				<param name="to.copy.test.log" value="false" />
+				<param name="save.testLog.hostname" value="${save.testLog.hostname}" />
+				<param name="save.testLog.dir" value="${save.testLog.dir}" />
+			</sdbtest>
+		</parallel>
+	</target>
+
+</project>

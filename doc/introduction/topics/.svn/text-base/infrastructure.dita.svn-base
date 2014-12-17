@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="sequoiadb_infrastructure">
+  <title>系统架构</title>
+  <body>
+    <p>SequoiaDB 使用分布式架构，下图提供了对 SequoiaDB 体系结构的一般概述。</p>
+    <p><image href="../images/sequoiadb_infrastructure_shard.jpg" id="sequoiadb_infrastructure_shard"/></p>
+    <p>在客户机端（或应用程序端），本地或/和远程应用程序都与 SequoiaDB 客户机库链接。本地与远程客户机使用 TCP/IP 协议与协调节点进行通讯。</p>
+    <p>协调节点不保存任何用户数据，仅作为请求分发节点将用户请求分发至相应的数据节点。</p>
+    <p>编目节点保存系统的元数据信息，协调节点通过与编目节点通讯从而了解数据在数据节点中的实际分布。一个或多个编目节点可组成复制组集群。</p>
+    <p>数据节点保存用户的数据信息。一个或多个数据节点可以构成一个复制组（又称分区组）。复制组中每个数据节点都存储该复制组的一份完整数据，又称为复制组实例（或分区组实例）；复制组中的数据节点之间采用最终一致性同步数据，不同的复制组中保存的数据无重复。</p>
+    <p>每个复制组中可以包含一个或多个数据节点。当存在多个数据节点时，节点间数据进行异步复制。复制组中可以存在最多一个主节点与若干从节点。其中主节点可以进行读写操作，从节点进行只读操作。</p>
+    <p><image href="../images/sequoiadb_infrastructure_shard1.jpg" id="sequoiadb_infrastructure_shard1"/></p>
+    <p>从节点离线不影响主节点的正常工作。主节点离线后会在从节点中自动选举出新的主节点处理写请求。</p>
+    <p><image href="../images/sequoiadb_infrastructure_shard2.jpg" id="sequoiadb_infrastructure_shard2"/></p>
+    <p>节点恢复后，或新的节点加入复制组后会进行自动同步，保障数据在同步完成时与主节点一致。</p>
+    <p><image href="../images/sequoiadb_infrastructure_shard3.jpg" id="sequoiadb_infrastructure_shard3"/></p>
+    <p>在单个数据节点中的体系结构如下：</p>
+    <p><image href="../images/sequoiadb_infrastructure_data.jpg" id="sequoiadb_infrastructure_data"/></p>
+    <p>在数据节点，活动由引擎可调度单元（EDU）控制。每一个节点为操作系统中的一个进程。每个 EDU 在节点中为一个线程。对于外部用户请求其处理线程为代理线程，对于集群内部请求则由同步代理线程处理分区内同步事件；或分区代理线程处理分区间同步事件。</p>
+    <p>所有对数据的写操作均会记录入日志缓冲区，通过日志记录器将其异步写入磁盘。</p>
+    <p>用户数据会由代理线程直接写入文件系统缓冲池，然后由操作系统将其异步写入底层磁盘。</p>
+  </body>
+</topic>

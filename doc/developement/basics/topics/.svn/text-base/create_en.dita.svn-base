@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="basics_create">
+  <title>Create</title>
+  <body>
+    <p>In sequoiaDB, "create" means adding new document record into collections. We can add new
+      record into collections through the method "insert". In sequoiaDB, the insert  manipulations
+      are as follow:<ul id="ul_c4q_km3_wj">
+        <li>If there is no "_id" field in the document record which is about to be inserted, the
+          client will automatically add "_id" field and insert an unique value.</li>
+        <li>If "_id" field is specified, the "_id" field in that collection should be unique, or
+          exception will occur. </li>
+        <li>The maximum length of BSON document is 16MB.</li>
+        <li>The limits of fields are as follow: <p>The field "_id" should be stored as primary key
+            in a collection. The value of it should be unique and unchangable. The type of "_id" can
+            be ordinary types except for array.</p><p>The name of a field should not be null, start
+            with "$" or contain (.).</p></li>
+      </ul><note>In this document, all examples use shell interface in sequoiadb.</note></p>
+    <section>
+      <title>insert()</title>
+      <p>The method <xref href="../../../references/methods/topics/dbinsert_en.dita">insert()</xref>
+        is used to insert record into insert records into sequoiaDB collection.The grammar of it is
+        :</p>
+      <codeblock>db.collectionspace.collection.insert(&lt;doc|docs>,[flag])</codeblock>
+    </section>
+    <section>
+      <title>Insert the first document </title>
+      <p>If there is no <xref
+          href="../../../administration/concepts/database/topics/collectionspace_en.dita">collection
+          space </xref>and <xref
+          href="../../../administration/concepts/database/topics/collection_en.dita"
+          >collection</xref>. Firstly, create collection (For example, "db.createCS("foo")" create
+        collection space "foo") and collection (For example, "db.foo.createCL("bar")" create
+        collection under collection space "bar"), then you are able to insert records.</p>
+      <codeblock>db.foo.bar.insert(
+  {
+     _id:1,
+     name:{fist:"Jhon",last:"Black"},
+     phone:[1853742XXX,1802321XXX],
+     remark:[
+              {
+                 position:"manager",
+                 year:2000
+                },
+               {
+                 position:"CEO",
+                 year:2012
+                }
+             ]
+  }
+   )   </codeblock>
+      <p>Users can check out whether the insert is successful through the method "find()"</p>
+      <codeblock>db.foo.bar.find()</codeblock>
+      <p>The result is as follow:</p>
+       <codeblock> {
+    _id:1,
+    name:{fist:"Jhon",last:"Black"},
+    phone:[1853742XXX,1802321XXX],
+    remark:[
+             {
+                position:"manager",
+                year:2000
+               },
+              {
+                position:"CEO",
+                year:2012
+               }
+            ]
+ } </codeblock>
+    </section>
+    <section>
+      <title>unspecified _id field </title>
+      <p>If a new document record doesn't conain "_id" field, the method <xref
+          href="../../../references/methods/topics/dbinsert_en.dita">insert()</xref> will add "_id"
+        field into a document and generate an unique "$oid" value.</p>
+      <codeblock>db.foo.bar.insert({name:"Tom",age:20})</codeblock>
+      <p>This command insert a newe record into collection "bar". In the record, the value of "name"
+        is "Tom". The value of "age" is 20. The "_id" field is unique:</p>
+      <codeblock>{ "_id": { "$oid": "515152ba49af395200000000" }, "name": "Tom", "age": 20 }</codeblock>
+    </section>
+    <section>
+      <title>Insert more than one record</title>
+      <p>If users insert an array document in the method "insert", the method "insert()" will
+        execute batch inserts in a collection. </p>
+      <p>The following command inserts 2 records into collection "bar". This manipulation
+        demonstrates the feature of dynamic mode in sequoiaDB. Although the record with "_id:20"
+        contains field name "phone", but the other one doesn't contain that, sequoiaDB doesn't
+        require all records to contains this field.</p>
+      <codeblock>db.foo.bar.insert([{name:”Mike”,age:15},{_id:20,name:”John”,age:25,phone:123}])</codeblock>
+    </section>
+  </body>
+  <related-links>
+    <link href="read_en.dita" format="dita" type="topics"></link>
+  </related-links>
+</topic>

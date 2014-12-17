@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_sum">
+  <title>sql sum()</title>
+  <body>
+    <section><title>sum() 函数</title>
+      <p>用于求和。</p>
+    </section>
+    <section><title>语法</title>
+      <p><codeblock>sum(field_name) as &lt;alisa_name></codeblock></p>
+      <note>1.使用sum函数对字段名求和，必须使用别名。<p>2.对非数值型字段自动跳过。</p></note>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>对集合bar中age字段进行求和：</p>
+          <p><codeblock>db.exec("select sum(age) as 年龄总和 from foo.bar")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="right_join.dita" format="dita" type="topic"></link>
+    <link href="count.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

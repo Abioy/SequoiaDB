@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sequoiadb/!svn/ver/14084/trunk/SequoiaDB/engine/ixm
+END
+ixmIndexKey.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/14084/trunk/SequoiaDB/engine/ixm/ixmIndexKey.cpp
+END
+ixmExtent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/13962/trunk/SequoiaDB/engine/ixm/ixmExtent.cpp
+END
+ixm_common.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/ixm/ixm_common.cpp
+END
+ixmKey.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/13092/trunk/SequoiaDB/engine/ixm/ixmKey.cpp
+END
+ixm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/13234/trunk/SequoiaDB/engine/ixm/ixm.cpp
+END

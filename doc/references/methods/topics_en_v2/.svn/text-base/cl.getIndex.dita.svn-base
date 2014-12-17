@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_zdm_qrm_5n">
+  <title>db.collectionspace.collection.getIndex()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>getIndex - Return the reference of specified index.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.collectionspace.collection.getIndex</apiname>(<parmname>&lt;name></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Collection
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Return the reference of specified index.</p>
+      <parml>        
+        <plentry>
+          <pt>name (string)</pt>
+          <pd>Index name, all the index names in a collection should be unique to each other.
+            <parml>
+              <plentry>
+                <pt>Format</pt>
+                <pd>The method "getIndex()" contains the field "name", which is in the type of string.</pd>
+                <pd>{"name":"&lt;index name>"}</pd>
+              </plentry>
+            </parml></pd>
+        </plentry>        
+      </parml>
+      <note>
+        <p>
+          <ul>
+            <li>It should be ensured that the index name exists in the collection before users get
+              index reference.</li>
+            <li>Index name should not contain null string, "." or "$". The length of it should not
+              be greater than 127B.</li>
+          </ul>
+        </p>
+      </note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Supposing that the index "ageIndex" exists in collection "bar", the following command will return
+        the reference of it.</p>
+      <codeblock>db.foo.bar.getIndex("ageIndex")</codeblock>
+    </section>
+  </body>
+  <related-links>    
+    <link href="cl.dropIndex.dita" format="dita" type="topic"></link>
+    <link href="cl.listIndexes.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

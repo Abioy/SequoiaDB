@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_cluster_node_catalog_syscollections">
+  <title>SYSCOLLECTIONS Collection</title>
+  <body>
+    <section><title>Collection Space</title>
+      <p>SYSCAT</p>
+    </section>
+    <section><title>Concept</title>
+      <p>SYSTASKS collection contains information of all user collections. Information of a user
+        collection is saved in a corresponding file. </p>
+      <p>Every file contains the following fields:</p>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 2.26*"
+        id="administration_concepts_cluster_node_catalog_syscollections_table1">-->
+        <sthead>
+          <stentry>Field Name</stentry>
+          <stentry>Type</stentry>
+          <stentry>Descrption</stentry>
+        </sthead>
+        <strow>
+          <stentry>Name</stentry>
+          <stentry>String</stentry>
+          <stentry>Full name of a collection. The form is &lt;collection space&gt;.&lt;collection
+            name&gt;.</stentry>
+        </strow>
+        <strow>
+          <stentry>Version</stentry>
+          <stentry>Integer</stentry>
+          <stentry>Version number of the collection, starts with 1. It increases by 1 after any
+            metadata alteration on the collection.</stentry>
+        </strow>
+        <strow>
+          <stentry>ReplSize</stentry>
+          <stentry>Integer</stentry>
+          <stentry>The minimum replica group, to ensure that any write operation must be copied to at least return after a specified number of nodes success.</stentry>
+        </strow>
+        <strow>
+          <stentry>ShardingKey</stentry>
+          <stentry>Object</stentry>
+          <stentry>ShardingKey is in sharding collections. It contains one or more fields. The field
+            name is its sharding field name. The value is 1 or -1, which represents forward or
+            reserve sequencing.</stentry>
+        </strow>
+        <strow>
+          <stentry>ShardingType</stentry>
+          <stentry>String</stentry>
+          <stentry>Partition types: the presence in the partition collection. Partition types: range partitioning(Range) and hash partitioning(Hash) two.</stentry>
+        </strow>
+        <strow>
+          <stentry>Partition</stentry>
+          <stentry>Integer</stentry>
+          <stentry>The partition size of the hash value must be a power of 2.</stentry>
+        </strow>
+        <strow>
+          <stentry>CataInfo</stentry>
+          <stentry>Array</stentry>
+          <stentry>Information of logical nodes of a collection. In a single sharding collection,
+            the arrary contains only one element, which represents the replset of the collection. In
+            a multiple sharding collection, the array contains one or more elements, which represent
+            the replset which covers all the ranges of values in the collection. Every range of
+            values includes two value: LowBound and UpBound, which respectively represent floor and
+            ceiling. The interval  is left-close and right-open.</stentry>
+        </strow>
+      </simpletable>    
+    </section>
+    <section><title>Sample</title>
+      <p>A typical single sharding collection is as follow:</p>
+      <codeblock>{ "Name" : "test.foo", "Version" : 1, "CataInfo" : [ { "GroupID" : 1000 } ] }</codeblock>
+      <p>A typical multiple sharding collection is as follow:</p>
+      <codeblock>{ "Name" : "foo.test", 
+  "Version" : 1, 
+  "ShardingKey" : { "Field1" : 1, "Field2" : -1 },
+  "ShardingType" : "range" ,
+  "ReplSize": 3,
+  "CataInfo" : [ 
+     { "GroupID" : 1000, 
+       "LowBound" : { "" : MinKey, "" : MaxKey },
+       "UpBound" : { "" : MaxKey, "" : MinKey } } ] 
+  }</codeblock>
+    </section>
+  </body>
+</topic>

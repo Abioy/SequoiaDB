@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_all">
+  <title >$all</title>
+  <body>
+    <section><title>Grammar</title>
+      <p><codeblock>{&lt;Field name>:{$all:[&lt;value 1>,&lt;value 2>,...&lt;value N>]}}</codeblock></p>
+    </section>
+    <section><title>Description</title>
+      <p>Manipulation "$all" is manipulated on field names in type of Array. It will find records
+        that contains all the values in the specified array ([&lt;value 1>,&lt;value 2>,...&lt;value
+        N>]) on the specified field ("&lt;field name>"). </p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>Find records that contain "Tom" and "Mike" on the specified field "name" in the
+            collection "bar":</p>
+          <codeblock>db.foo.bar.find({name:{$all:["Tom","Mike"]}})</codeblock>
+          <p>As a result, the system will match records that contains the field "name" and "name"
+            values as follow in the collection "bar":</p>
+          <codeblock>["Tom","Mike",..]
+["Tom","Jhon","Mike",...]</codeblock>
+          <p>But the record below won't be matched:</p>
+          <codeblock>["Tom","Jhon"]</codeblock>
+        </li>
+      </ul>
+      <note>
+        <p>When "$all" is manipulated on a field not in type of array, for example:
+          "db.foo.bar.find({age:{$all:[20]}})" equals to "db.foo.bar.find({age:20})".</p>
+      </note>
+    </section>
+  </body>
+  <related-links>
+    <link href="nin_en.dita" format="dita" type="topic"></link>
+    <link href="and_en.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/find_en.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/dbupdate_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

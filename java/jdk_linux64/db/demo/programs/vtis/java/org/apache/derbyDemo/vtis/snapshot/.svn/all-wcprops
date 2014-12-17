@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/snapshot
+END
+Subscription.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/snapshot/Subscription.java
+END
+SnapshotQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/snapshot/SnapshotQuery.java
+END
+SubscriptionSignature.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/snapshot/SubscriptionSignature.java
+END

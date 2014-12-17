@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_y14_42s_wj">
+  <title>C Development Foundation</title>
+  <body>
+    <p>This section introduce the approach to run SequiaDB in C application. First, you should make
+       sure that you have install. Please refer to the <xref
+          href="../../../../installation/server_installation/topics/server_installation_en.dita"
+          >installation page for more about
+          installation information.</xref></p>
+    <section><title>Edit client code</title>
+    <p>For the purpose of simpleness, the following sample is not complete code. Please get complete
+            source code in the path "/sequoiadb/client/samples/C".</p>
+    <ul>
+      <li>Connecting Database<p>There is a complete client file called "connect.c" to show how to
+                  connect to database in a C applicaiton. The file includes a head file called
+                  "client.h".</p><codeblock>#include &lt;stdio.h&gt;  
+#include "client.h"
+
+// Display Syntax Error
+void displaySyntax ( CHAR *pCommand )
+{
+   printf ( "Syntax: %s&lt;hostname&gt; &lt;servicename&gt; &lt;username&gt; &lt;password&gt;"
+            OSS_NEWLINE, pCommand ) ;
+}
+
+INT32 main ( INT32 argc, CHAR **argv )
+{
+   // define a connecion handle; use to connect to database
+   sdbConnectionHandle connection    = 0 ;
+   INT32 rc = SDB_OK ;
+
+   // verify syntax
+   if ( 5 != argc )
+   {
+      displaySyntax ( (CHAR*)argv[0] ) ;
+      exit ( 0 ) ;
+   }
+
+   // read argument
+   CHAR *pHostName = (CHAR*)argv[1] ;
+   CHAR *pServiceName = (CHAR*)argv[2] ;
+   CHAR *pUsr = (CHAR*)argv[3] ;
+   CHAR *pPasswd = (CHAR*)argv[4] ;
+
+   // connect to database
+   rc = sdbConnect ( pHostName, pServiceName, pUsr, pPasswd, &amp;connection ) ;
+   if( rc!=SDB_OK )
+   {
+      printf("Fail to connet to database, rc = %d" OSS_NEWLINE, rc ) ;
+      goto error ;
+   }
+
+done:
+   // disconnect from database
+   sdbDisconnect ( connection ) ;
+   // release connection
+   sdbReleaseConnection ( connection ) ;
+   return 0 ;
+error:
+   goto done ;
+   }</codeblock><p>In
+                  Linux we can compile and link to dynamically linked librarie file called
+                  "libsdbc.so" as follow:</p><codeblock>$gcc -o connect connect.c -I /<i>path_to</i>/C/include -lsdbc -L/<i>path-to</i>/client/C/lib
+$ ./connect localhost 11810 "" ""
+connect success!</codeblock><note>
+                  <p>This sample link to the port of 11810 of local database. It log in with null
+                     user name and null password. Users need to configurate parameters according to
+                     their own situation. But if database has created a user, it can connect to
+                     database with it and its password.</p>
+               </note></li>
+      <li>Inserting Data<p>SequoiaDB stores data in the format of BSON. BSON is a binary object
+                  similar to JSON. In order to store data, we should create a BSON object. The
+                  following sample insert the record {name:"Tom",age:24} into a
+               collection:</p><codeblock>// Firstly, a BSON object is created.
+INT32 rc  = SDB_OK ;
+bson obj ;
+bson_init( &amp;obj ) ;
+bson_append_string( &amp;obj, "name", "tom" ) ;
+bson_append_int( &amp;obj, "age", 24 ) ;
+rc = bson_finish( &amp;obj ) ;
+if ( rc != SDB_OK )
+printf("Error.");
+// Secondly, insert it into a collection.
+dbInsert ( collection, &amp;obj ) ;</codeblock></li>
+      <li>Query<p> In a query, a cursor handle is used to store the result set of a query. You can
+                  get results by manipulating the cursor. This sample uses the <i>sdbNext</i>
+                  interface of cursor manipulation to get one record in the result set.
+                  <codeblock>   // Define a cursor handle.
+   dbCursorHandle cursor    = 0 ;
+   …
+   // Search for all records and put the results in the cursor handle.
+   sdbQuery(collection, NULL, NULL, NULL, NULL, 0, -1, &amp;cursor ) ;
+   // Show every record in cursor.
+   bson_init(obj);
+   while( !( rc=sdbNext( cursor, &amp;obj ) ) )
+   {
+      bson_print( &amp;obj ) ;
+      bson_destroy(&amp;obj) ;
+      bson_init(&amp;obj);
+   }
+   bson_destroy(obj) ;</codeblock></p></li>
+      <li>Index<p>Here, we create an index in the collection specified by the collection handle
+                     <i>collection</i> . It is in ascending order on "name" and descending order on
+                  "age".<codeblock>   #define INDEX_NAME "index"
+   …
+   // Firstly we create a bson that contains the information of the index.
+   bson_init( &amp;obj ) ;
+   bson_append_int( &amp;obj, "name", 1 ) ;
+   bson_append_int( &amp;obj, "age", -1 ) ;
+   rc = bson_finish( &amp;obj ) ;
+   if ( rc != SDB_OK )
+printf("Error.");
+   // Create an index with the BOSN object.
+   sdbCreateIndex ( collection, &amp;obj, INDEX_NAME, FALSE, FALSE ) ;
+   bson_destroy ( &amp;obj ) ;   </codeblock></p></li>
+      <li>Updating data<p>Here, we create an index in the collection specified by the collection
+                  handle <i>collection</i> This sample doesn't contain any matching condition, so it
+                  will update all the records in the
+                  collection.</p><codeblock>   // Create a BSON object that contains updating rules
+   bson_init( &amp;rule ) ;
+   bson_append_start_object ( &amp;rule, "$set" ) ;
+   bson_append_int ( &amp;rule, "age", 19 ) ;
+   bson_append_finish_object ( &amp;rule ) ;
+   rc = bson_finish ( &amp;rule ) ;
+   if ( rc != SDB_OK )
+printf("Error.");
+	 // Print updating rule.
+   bson_print( &amp;rule ) ;
+   // Update records.
+   sdbUpdate( collection, &amp;rule, NULL, NULL ) ;
+   bson_destroy(&amp;rule);</codeblock><p>Here,as
+                  no record matching conditions have specified,then this example will update all
+                  records in the collection which collection handle specified.</p></li>
+    </ul>
+    </section>
+     <section>
+        <title>Cluster Operations </title>
+        <ul>
+           <li>ReplicaSet Operations <p>ReplicaSet Operations contains creating
+                  ReplicaSets(sdbCreateShard)、getting ReplicaSet handles(sdbGetShard)、starting
+                  ReplicaSet(sdbStartShard) and stopping ReplicaSet(sdbStopShard). The following
+                  shows the ReplicaSet Operations, and real application should include error
+                  detecting ,etc.
+                  <codeblock>// define a ReplicaSet Handle
+   sdbShardHandle shard   = 0 ;
+   …
+// create a catalog ReplicaSet at first
+   sdbCreateCataShard ( connection, HOST_NAME, SERVICE_NAME,
+                               CATALOG_SET_PATH , NULL ) ;
+// sleep 5s to wait starting catalog ReplicaSet and electing master and slave.
+   sleep( 5 ) ;
+// create data ReplicaSet
+   sdbCreateShard ( connection, GROUP_NAME, &amp;rg ) ;
+ 
+// create data nodes
+   sdbCreateNode ( rd, HOST_NAME1, SERVICE_NAME1, DATABASE_PATH1, NULL ) ;
+// start ReplicaSet
+   sdbStartShard( shard ) ;</codeblock></p></li>
+           <li>Data Node Operations <p>Data Node Operations contains create data
+                  node(sdbCreateNode)、get master data node(sdbGetNodeMaster)、get slave data
+                  node(sdbGetNodeSlave)、start data node (sdbStartNode) and stop data
+                  node(sdbStopNode), etc. The following shows the Data Node Operations, and real
+                  application should include error detecting, etc.
+                  <codeblock>   // define a data node handle 
+   sdbNodeHandle masternode   = 0 ;
+   sdbNodeHandle slavenode    = 0 ;
+   …
+   // sleep 10s to wait starting data ReplicaSet and electing master and slave
+   sleep( 10 ) ;
+
+   //get master data node
+   sdbGetNodeMaster ( shard, &amp;masternode ) ;
+   //get slave data node
+   sdbGetNodeSlave ( shard, &amp;slavenode ) ;         </codeblock></p>
+            </li>
+        </ul>
+     </section>
+  </body>
+</topic>
+

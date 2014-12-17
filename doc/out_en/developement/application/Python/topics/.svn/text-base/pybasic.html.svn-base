@@ -1,0 +1,210 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Python 开发基础"/>
+<meta name="description" content="本节介绍使用 Python 运行 SequoiaDB。首先安装 SequoiaDB，安装信息请查看 SequoiaDB 服务器安装 章节。 这里介绍如何使用 Python 客户端驱动接口编写使用 SequoiaDB 数据库的程序。为了简单起见，下面的示例不全部是完整的代码，只起示例性作用。可到 /sequoiadb/client/samples/python 下获取相应的完整的代码。更多查看 ..."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_qzs_5fr_t4"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Python 开发基础</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_qzs_5fr_t4"><a name="topic_qzs_5fr_t4"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span></div></td><td width="50%"/></tr></tbody></table>
+
+  <h1 class="title topictitle1">Python 开发基础</h1>
+
+  <div class="body">
+    <p class="p">本节介绍使用 Python 运行 SequoiaDB。首先安装 SequoiaDB，安装信息请查看 <a class="xref" href="../../../../installation/server_installation/topics/server_installation.html">SequoiaDB 服务器安装</a>章节。</p>
+
+    <p class="p">这里介绍如何使用 Python 客户端驱动接口编写使用 SequoiaDB 数据库的程序。为了简单起见，下面的示例不全部是完整的代码，只起示例性作用。可到 /sequoiadb/client/samples/python 下获取相应的完整的代码。更多查看 <a class="xref" href="../../../../python/html/index.html">Python API</a></p>
+
+    <div class="section"><h2 class="title sectiontitle">数据库操作</h2>
+      
+      <ul class="ul">
+        <li class="li">数据库连接（Connecting）
+          <p class="p">connect.py 演示如何连接到数据库。文件应当 import “pysequoiadb”中的 client，const 等模块，以及 error 模块中的 SequoiaDBError 类。</p>
+
+          <pre class="pre codeblock">import pysequoiadb
+from pysequoiadb import client
+from pysequoiadb import const
+from pysequoiadb.error import SequoiaDBError
+
+# connect to local db, using default args value.
+# host= 'localhost', port= 11810, user= '', password= ''
+try:
+   db = client()
+except SequoiaDBError:
+   pysequoiadb.cout('SDB_OOM appeared. Please check available memory.' )
+   del db
+   exit()
+
+# if no error occurs, connect to specified server successfully
+print 'Connect success'
+db.disconnect()
+# Need to release client whether it connected db server successfully or not
+del db</pre>
+
+          <p class="p">在 Linux 下，可以直接运行 python 解释执行 connect.py。</p>
+          
+          <div class="note note"><span class="notetitle">Note:</span> 
+            <p class="p">本例程连接到本地数据库的11810端口，使用的是空的用户名和密码。用户需要根据自己的实际情况配置参数。譬如，将上述代码中的 db = client() 修改为 db = client('192.168.10.188', 11810)。当数据库已经创建用户时，应该使用正确的用户及密码连接到数据库，否则连接失败。</p>
+
+          </div>
+</li>
+
+        <li class="li">创建集合空间和集合
+          <p class="p">以下创建了一个名字为“foo”的集合空间和一个名字为“bar”的集合，集合空间内的集合的数据页大小为16k。可根据实际情况选择不同大小的数据页。创建集合后，可对集合做增删改查等操作。</p>
+          
+          <pre class="pre codeblock"># 连接到数据库
+try:
+   db = client()
+except SequoiaDBError :
+   pysequoiadb.cout('Cannot allocate client')
+
+# success to connect to db
+cs_name = 'foo'
+rc, cs = db.create_collection_space(cs_name, 16384)
+if const.SDB_OK != rc:
+   pysequoiadb.cout("create collection space[%s] failed, %s" % (cs_name, pysequoiadb.getErr(rc)))
+
+# success to create collection space
+cl_name = 'bar'
+rc, cs = cs.create_collection(cl_name)
+if const.SDB_OK != rc:
+   pysequoiadb.cout("create collection[%s] failed, %s" % (cl_name, pysequoiadb.getErr(rc)))
+</pre>
+</li>
+
+        <li class="li">插入数据（insert）<p class="p"/>
+
+          <pre class="pre codeblock"># 首先，需要创建一个插入的 dict 对象。
+record = {"name":"Tom", "age":24}
+# 接着，把此 dict 对象插入集合中
+rc, oid = cl.insert ( record ) ;
+if const.SDB_OK != rc:
+   pysequoiadb.cout("insert record: %s failed, %s" % (record, pysequoiadb.getErr(rc)))</pre>
+
+          <p class="p">record 为输入参数，为要插入的数据。dict 对象将会被转换成 bson 插入到集合中。oid 是插入该记录，返回的 bson 结构的 objectid。</p>
+</li>
+
+        <li class="li">查询（query）<div class="p"><pre class="pre codeblock"># 查询所有记录，把结果放入游标中，并循环打印游标中的每条记录
+rc, cr = cl.query()
+pysequoiadb.ASSERT(rc == const.SDB_OK)
+
+rc, record = cr.next()
+while const.SDB_DMS_EOC != rc:
+   if const.SDB_OK != rc:
+      pysequoiadb.cout("get current record failed. %s", pysequoiadb.getErr(rc))
+   else:
+      pysequoiadb.cout(record)
+   rc, record = cr.next()</pre>
+</div>
+
+          <p class="p">查询操作需要一个游标对象存放查询的结果到本地。要获得查询的结果需要使用游标操作。本例使用了游标操作的 next 接口，表示从查询结果中取到一条记录。此示例中没有设置查询条件，筛选条件，排序情况，及仅使用默认索引。</p>
+</li>
+
+        <li class="li">索引（index）<div class="p"><pre class="pre codeblock">index_name = "index_name"
+# 首先创建一个 dict 对象包含将要创建的索引的信息
+idx = { 'name':1, 'age':-1 }
+# 创建一个以"name"为升序，"age"为降序的索引
+cl.create_index ( idx, index_name, FALSE, FALSE ) ;</pre>
+</div>
+
+          <p class="p">集合对象 collection 中创建一个以“name”为升序，“age”为降序的索引。</p>
+</li>
+
+        <li class="li">更新（update）
+          <p class="p"/>
+
+          <pre class="pre codeblock"># 先创建一个包含更新规则的 BSONObj 对象
+rule = {"$set":{ "age":19}}
+# 打印出更新规则
+print rule
+# 更新记录
+cl.update( rule )</pre>
+<p class="p">在集合对象 collection 中更新了记录。实例中没有指定数据匹配规则，所以此示例将更新集合中所有的集合。</p>
+</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">集群操作</h2>
+      
+      <ul class="ul">
+        <li class="li">分区组操作
+          <p class="p">分区组操作包括创建分区组（client::creat_replica_group），得到分区组实例（client:: get_replica_group_by_name 和 client:: get_replica_group_by_id），启动分区组所有数据节点（replicagroup::start），停止分区组所有数据节点（replicagroup::stop）等。</p>
+
+            <div class="p">以下为分区组操作示例性的例子。真正的应用应包括错误检测等。
+            <pre class="pre codeblock"># 定义一个空的 map 对象表示创建数据节点没有更多的配置内容
+config = {}
+…
+
+# 先建立一个编目分区组
+db.create_cata_replica_group ( HOST_NAME, SERVICE_NAME, CATALOG_GROUP_PATH , None)
+
+# 创建数据分区组
+rc, rg = db.create_replica_group ( REPLICA_GROUP_NAME)
+
+# 创建第一个数据节点
+rg.create_node ( HOST_NAME1, SERVICE_NAME1, DATABASE_PATH1, config )
+…
+# 启动分区组
+rg.start ()</pre>
+</div>
+</li>
+
+        <li class="li">数据节点操作
+          <p class="p">数据节点操作包括创建数据节点（sdbReplicaGroup::createNode），得到主数据节点（sdbReplicaGroup::getMaster），得到从数据节点（sdbReplicaGroup::getSlave），启动数据节点（sdbNode::start），停止数据节点（sdb::Stop）等。</p>
+
+            <div class="p">以下为数据节点操作示例性的例子。真正的应用应包括错误检测等。
+            <pre class="pre codeblock"># 获取主数据节点
+rc, master = rg.get_master() ;
+
+# 获取从数据节点
+rc, slave = rg.get_slave() ;</pre>
+</div>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="navfooter"><script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.9B
+          
+    </div>
+</body>
+</html>

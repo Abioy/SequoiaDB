@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_elemMatch">
+  <title >$elemMatch</title>
+  <body>
+    <section><title>语法</title>
+      <p>{&lt;字段名>:{$elemMatch:{子字段名:&lt;值>,...}}}</p>
+    </section>
+    <section>
+      <title>描述</title>
+      <p>选择集合中“&lt;字段名>”匹配指定“{子字段名:&lt;值>,....}”的记录。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>嵌套 JSON 对象匹配</p>
+          <p><codeblock>db.foo.bar.find({content:{$elemMatch:{name:"Tom",phone:123}}})</codeblock></p>
+          <p>字段 content 是一个 JSON 嵌套对象，此操作匹配 content 内字段 name 值为“Tom”，phone 值为123的记录。</p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="exists.dita" format="dita" type="topic"></link>
+    <link href="special.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/find.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

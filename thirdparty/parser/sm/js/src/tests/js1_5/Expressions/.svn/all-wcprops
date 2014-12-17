@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_5/Expressions
+END
+regress-96526-argsub.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_5/Expressions/regress-96526-argsub.js
+END
+regress-192288.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_5/Expressions/regress-192288.js
+END
+regress-394673.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_5/Expressions/regress-394673.js
+END
+shell.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_5/Expressions/shell.js
+END
+regress-96526-delelem.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_5/Expressions/regress-96526-delelem.js
+END
+jstests.list
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_5/Expressions/jstests.list
+END
+regress-96526-noargsub.js
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_5/Expressions/regress-96526-noargsub.js
+END
+browser.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_5/Expressions/browser.js
+END

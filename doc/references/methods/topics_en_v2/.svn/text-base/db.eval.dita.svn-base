@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_sj1_q1f_5n">
+  <title>db.eval()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>eval - Fill in needed javaScript statements.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p>
+      <apiname>db.eval</apiname>(<parmname>&lt;code></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Fill in needed javaScript statements. And it can also invoke defined procedures.</p>
+      <parml>
+        <plentry>
+          <pt>code (string)</pt>
+          <pd>JavaScript statements or defined procedure functions.</pd>          
+        </plentry>        
+      </parml>
+      <ul>
+        <li>Return the results according to the statements If success. And the returned value can be directly assigned to anther variable. For example: <b>var a = db.eval(' db.foo.bar'); a.find(); </b></li>
+        <li>Return the error code and error information if fail.: <b>{ "errmsg": "(nofile):1 ReferenceError: sum is not defined","retCode": -152 } </b></li>
+        <li>Nothing will be returned until the function is completely finished. Exit during run time will terminate the entire execution, and code has been executed will not be rolled back.</li>
+        <li>There is a limit on the length of returned value, for more information, please check "Maximum length of inserted record in SequoiaDB" section.</li>
+        <li>Support the definition of temporary functions, for example: <b>db.eval(' function sum(x,y){return x+y;} sum(1,2)')</b></li>
+        <li>The uses of global database are in the same way as createProcedure().</li>
+      </ul>
+      <note>The use of any print statements in the statements are not recommended even though all the outputs will be blocked.</note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p></p>Call a stored procedure function sum() in the eval() method.
+      <codeblock>//sum() method does not exist at the time of initialization, return a exception information.
+> var a = db.eval('sum(1,2)');
+{ "errmsg": "(nofile):1 ReferenceError: getCL is not defined
+", "retCode": -152 }
+(nofile):0 uncaught exception: -152
+//Initialization sum()
+>db.createProcedure(function sum(x,y){return x+y;})
+//Call the sum()
+>db.eval('sum(1,2)')
+3</codeblock>
+      <p>Fill in javaScript statement in the eval() method</p>
+      <codeblock>>var rc = db.eval("db.foo.bar")
+>rc.find()
+{
+  "_id": {
+    "$oid": "5248d3867159ae144a000000"
+  },
+  "a": 1
+}
+{
+  "_id": {
+    "$oid": "5248d3897159ae144a000001"
+  },
+  "a": 2
+}...</codeblock>
+    </section>
+  </body>
+  <related-links>
+    <link href="db.listProcedures.dita" format="dita" type="topic"></link>    
+  </related-links>
+</topic>

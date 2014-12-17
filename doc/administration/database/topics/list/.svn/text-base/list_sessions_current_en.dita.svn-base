@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_database_monitoring_snapshot_sessions_current">
+  <title>Current Sessions List</title>
+  <body>
+    <section><title>Description</title>
+      <p>Current sessions list contains the current sessions on current database node. Each session
+        is recorded as one record.</p>
+    </section>
+    <section><title>Sign</title>
+      <p>SDB_LIST_SESSIONS_CURRENT</p>
+    </section>
+    
+    <section><title>Field Information</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 2.0*" id="administration_database_monitoring_snapshot_sessions_current_table">-->
+        <sthead>
+          <stentry>Field Name</stentry>
+          <stentry>Type</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry>SessionID</stentry>
+          <stentry>Integer or long integer</stentry>
+          <stentry>Session ID</stentry>
+        </strow>
+        <strow>
+          <stentry>TID</stentry>
+          <stentry>Integer</stentry>
+          <stentry>System thread ID corresponding to the session</stentry>
+        </strow>
+        <strow>
+          <stentry>Status</stentry>
+          <stentry>String</stentry>
+          <stentry>
+            Session status:
+            <ul id="ul_5l4_kyj_yj">
+              <li>Creating: creating status</li>
+              <li>Running: running status </li>
+              <li>Waiting: waiting status</li>
+              <li>Idle: idle status of thread pool</li>
+              <li>Destroying: destroying status</li>
+            </ul>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>Type</stentry>
+          <stentry>String</stentry>
+          <stentry><xref href="../EDU_en.dita">EDU type</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>Name</stentry>
+          <stentry>String</stentry>
+          <stentry>EDU name. Generally, it is null.</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section><title>Sample</title>
+      <codeblock>> db.list(SDB_LIST_SESSIONS_CURRENT)
+{
+  "SessionID": 21,
+  "TID": 6691,
+  "Status": "Running",
+  "Type": "Agent",
+  "Name": "192.168.20.101:52741"
+}</codeblock>
+    </section>
+  </body>
+</topic>

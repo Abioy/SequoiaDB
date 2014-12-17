@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_createRG">
+  <title>db.getRG()</title>
+  <body>
+    <section><title>db.getRG(parameters)</title>
+      <p>Return the quotation of a replset.</p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable frame="all" relcolwidth="1.0* 1.11* 5.31* 1.53*"
+        id="references_method_getRG_table">
+        <sthead>
+          <stentry>Parameter Name</stentry>
+          <stentry>Parameter Type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Not null</stentry>
+        </sthead>
+        <strow>
+          <stentry>name</stentry>
+          <stentry>string</stentry>
+          <stentry>Replset name. Replset names are unique to each other in a database
+            object.</stentry>
+          <stentry>Either "name"or "id" is not null</stentry>
+        </strow>
+        <strow>
+          <stentry>id</stentry>
+          <stentry>int</stentry>
+          <stentry>Replset id. The system will automatically generate a replset id.</stentry>
+          <stentry>Either "name"or "id" is not null</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>Format</title>
+      <p>The method "getRG()" contains "name" or "id". The type of "name" is string. The type of
+        "id" is "int". It the replset specified by "name" or "id" doesn't exist, operation exception
+        will occur. </p>
+      <p><codeblock>("&lt;Replset name>"|&lt;id>)</codeblock></p>
+      <note>
+        <ul><li>The value of "name" should not contain null string, "." or "$". The length of it should not be
+            greater than 127B. </li></ul>
+      </note>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>Specify the value of "name", the returnthe quotation of replset "rg1".</p>
+         <p><codeblock>db.getRG("rg1")</codeblock></p></li>
+        <li>
+          <p>Specify the value of "id", the returnthe quotation of replset "rg1".</p>
+          <p><codeblock>db.getRG("1000")</codeblock></p>
+        </li>
+        
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="createRG_en.dita" format="dita" type="topic"></link>
+    <link href="removeRG_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

@@ -1,0 +1,114 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Sample"/>
+<meta name="description" content="Find the node's physical machine and service from catalog node Open the node's configuration file,find the &#34;dbpath&#34; and &#34;indexpath&#34;.By default,the value of them are the same. $ cat ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../administration/database/data_backup/data_file_backup_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_4kp_kv2_gl_en"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>Sample</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_4kp_kv2_gl_en"><a name="topic_4kp_kv2_gl_en"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../administration/database/data_backup/data_file_backup_en.html" title="Data Files Backup"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Data Files Backup</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="data_backup_en.html" title="Data Backup">Data Backup</a> / <a class="navheader_parent_path" href="../../../administration/database/data_backup/data_file_backup_en.html" title="Data Files Backup">Data Files Backup</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Sample</h1>
+
+  <div class="body">
+    <ol class="ol">
+      <li class="li"><p class="p">Find the node's physical machine and service from catalog node</p>
+</li>
+
+      <li class="li">Open the node's configuration file,find the "dbpath" and "indexpath".By default,the value
+        of them are the same. <div class="p">
+          <pre class="pre codeblock">$ cat /opt/sequoiadb/conf/local/11820/sdb.conf
+svcname=11820
+dbpath=/tmpfs/data1
+diaglevel=5
+transactionon=true
+role=data
+catalogaddr=vmsvr1-rhel-x64:11803</pre>
+
+        </div>
+</li>
+
+      <li class="li">Connect to coord ,and stop node
+        <pre class="pre codeblock">$ ~/sequoiadb/bin/sdb
+&gt;db=new Sdb('192.168.20.35',11810)
+192.168.20.35:11810
+&gt;shard=db.getShard('foo')
+foo
+&gt;node=shard.getNode('vmsvr1-rhel-x64:11820')
+vmsvr1-rhel-x64:11820
+&gt;node.stop()</pre>
+</li>
+
+      <li class="li">archive the files in the database and index pathes.
+        <pre class="pre codeblock">$ tar -zcvf vmsvr1-rhel-x64.11810.2013_08_21.tar.gz /tmpfs/data1/*.dat /tmpfs/data1/*.idx
+/tmpfs/data1/foo.dat
+/tmpfs/data1/one.dat
+/tmpfs/data1/SYSTEMP.dat
+/tmpfs/data1/foo.idx
+/tmpfs/data1/one.idx
+/tmpfs/data1/SYSTEMP.idx</pre>
+</li>
+
+      <li class="li">Restart
+        node<pre class="pre codeblock">$ ~/sequoiadb/bin/sdb 
+&gt;db=new Sdb('192.168.20.35',11810)
+192.168.20.35:11810
+&gt;shard=db.getShard('foo')
+foo
+&gt;node=shard.getNode('vmsvr1-rhel-x64:11820')
+vmsvr1-rhel-x64:11820
+&gt;node.start()</pre>
+</li>
+
+    </ol>
+
+    <p class="p">It is also applicable for catalog.</p>
+
+    <div class="note note"><span class="notetitle">Note:</span> 
+      <p class="p">Please ensure the node is completely stopped before archiving data and index
+        files,otherwise,the backuping files may be damaged.</p>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../administration/database/data_backup/data_file_backup_en.html" title="Data Files Backup"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Data Files Backup</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.6B
+          
+    </div>
+</body>
+</html>

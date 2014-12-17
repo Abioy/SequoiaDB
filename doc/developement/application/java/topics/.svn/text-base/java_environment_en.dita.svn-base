@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_wfv_jmv_jl">
+  <title>Java Environment to Build</title>
+  <body>
+    <section>
+      <title>Getting the Driver Development Kit</title>
+      <p>From <xref href="http://www.sequoiadb.com" format="html" scope="external"
+        >http://www.sequoiadb.com</xref> download the corresponding operating system version SequoiaDB Driver Development Kit, extract the driver development kit, from <i>driver/java/</i> directory access sequoiadb.jar file.</p>
+    </section>
+    <section>
+      <title>Configuring Eclipse development environment</title>
+      <ol>
+        <li>The SequoiaDB driver development package sequoiadb.jar files are copied to the project file directory (recommended be placed on all other dependent libraries directory, such as lib directory).</li>
+        <li>In Eclipse interface, create/open development engineering.</li>
+        <li>The left side of the main window in the Eclipse "Package Explore" window, select development projects, and click the right mouse button.</li>
+        <li>In the menu, select "properties" menu item.</li>
+        <li>In the pop-up "property for project ..."window, select "Java Build Path" -> "Libraries", as shown below:<p><image
+          href="../image/eclipse.jpg" width="400" height="350"/></p></li>
+        <li>Click on "Add JARs.." button, select Add sequoiadb.jar to the project.</li>
+        <li>Click "OK" to complete environment configuration.</li>
+      </ol>
+      <p><xref href="jbase_operations_en.dita">Please refer here for more</xref></p>
+    </section>
+  </body>
+</topic>

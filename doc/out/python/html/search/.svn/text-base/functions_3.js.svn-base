@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['cancel_5ftask',['cancel_task',['../classpysequoiadb_1_1client_1_1client.html#a3a3a3e4e5392bc17cfd0b25abca86a9d',1,'pysequoiadb::client::client']]],
+  ['close',['close',['../classpysequoiadb_1_1cursor_1_1cursor.html#a60e560821e39d8f3752bab0b533e59a0',1,'pysequoiadb.cursor.cursor.close()'],['../classpysequoiadb_1_1lob_1_1lob.html#af6452a5b46d21b8ad4247636f4a6d7bd',1,'pysequoiadb.lob.lob.close()']]],
+  ['close_5fall_5fcursors',['close_all_cursors',['../classpysequoiadb_1_1client_1_1client.html#aac17be205eaf4e1f9abd7afd7088d999',1,'pysequoiadb::client::client']]],
+  ['code',['code',['../classpysequoiadb_1_1error_1_1SDBBaseError.html#a6b9f08401030ce1e37e659838cf7f739',1,'pysequoiadb::error::SDBBaseError']]],
+  ['collection',['collection',['../classbson_1_1dbref_1_1DBRef.html#abcd0407ebf9e5ace1e6939ce60bc1cc7',1,'bson::dbref::DBRef']]],
+  ['connect',['connect',['../classpysequoiadb_1_1client_1_1client.html#a86b9d348b3c506eb35de350669dad7a2',1,'pysequoiadb.client.client.connect()'],['../classpysequoiadb_1_1replicanode_1_1replicanode.html#afec533245151d0c9e7f5780d29a845b1',1,'pysequoiadb.replicanode.replicanode.connect()']]],
+  ['connect_5fto_5fhosts',['connect_to_hosts',['../classpysequoiadb_1_1client_1_1client.html#a94ed87aee00da0ee5d01e020c79c363f',1,'pysequoiadb::client::client']]],
+  ['create_5fcollection',['create_collection',['../classpysequoiadb_1_1collectionspace_1_1collectionspace.html#a8f390d781b5fe3c5b04bc0271b666fec',1,'pysequoiadb::collectionspace::collectionspace']]],
+  ['create_5fcollection_5fspace',['create_collection_space',['../classpysequoiadb_1_1client_1_1client.html#a548cc40bec6b5722d367458912ad23bb',1,'pysequoiadb::client::client']]],
+  ['create_5findex',['create_index',['../classpysequoiadb_1_1collection_1_1collection.html#a0823f6a6b07a2f7504880632366c82fe',1,'pysequoiadb::collection::collection']]],
+  ['create_5flob',['create_lob',['../classpysequoiadb_1_1collection_1_1collection.html#a27b737239cfd58c864c012e7aff52f5f',1,'pysequoiadb::collection::collection']]],
+  ['create_5fnode',['create_node',['../classpysequoiadb_1_1replicagroup_1_1replicagroup.html#ae95a48dd45d0e48edee6ad9f6ea47e08',1,'pysequoiadb::replicagroup::replicagroup']]],
+  ['create_5fprocedure',['create_procedure',['../classpysequoiadb_1_1client_1_1client.html#ad7f610fd0eb59b86297b4e266d14b47f',1,'pysequoiadb::client::client']]],
+  ['create_5freplica_5fcata_5fgroup',['create_replica_cata_group',['../classpysequoiadb_1_1client_1_1client.html#a1dbbd95e0e6825654fe396bc3df898fa',1,'pysequoiadb::client::client']]],
+  ['create_5freplica_5fgroup',['create_replica_group',['../classpysequoiadb_1_1client_1_1client.html#a7062fc86f4bc0b8ce0254bc8e6c20642',1,'pysequoiadb::client::client']]],
+  ['create_5fuser',['create_user',['../classpysequoiadb_1_1client_1_1client.html#a57ae3dc886d7c24997b030e8c1e8d17a',1,'pysequoiadb::client::client']]],
+  ['current',['current',['../classpysequoiadb_1_1cursor_1_1cursor.html#a2530e34f146fa2b8914ccad69855b70b',1,'pysequoiadb::cursor::cursor']]]
+];

@@ -1,0 +1,210 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Python Development Foundation"/>
+<meta name="description" content="This section introduces how to use Python to run the SequoiaDB. Fisrt, to install SequoiaDB, please refer to the Installation of SequoiaDB Server section. This doc introduces how to use the Python ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../developement/application/Python/topics/python_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_ccv_gf3_x4"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Python Development Foundation</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_ccv_gf3_x4"><a name="topic_ccv_gf3_x4"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../developement/application/Python/topics/python_en.html" title="Python Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Python Driver</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/application_en.html" title="SequoiaDB Application Development">SequoiaDB Application Development</a> / <a class="navheader_parent_path" href="../../../../developement/application/Python/topics/python_en.html" title="Python Driver">Python Driver</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Python Development Foundation</h1>
+
+  <div class="body">
+    <p class="p">This section introduces how to use Python to run the SequoiaDB. Fisrt, to install SequoiaDB, please refer to the <a class="xref" href="../../../../installation/server_installation/topics/server_installation_en.html">Installation of SequoiaDB Server</a> section.</p>
+
+    <p class="p">This doc introduces how to use the Python Driver's APIs to develop SequoiaDB database programs. The following samples are not the complete code in order to be clear and simple. for more, please refer to online <a class="xref" href="../../../../python/html/index.html">Python API</a></p>
+
+    <div class="section"><h2 class="title sectiontitle">Database Manipulations</h2>
+      
+      <ul class="ul">
+        <li class="li">Database Connecting
+          <p class="p">connect.py shows how to connect to the database. The file should import client and const modules inside the pysequoiadb, and the error module inside SequoiaDBError class.</p>
+
+          <pre class="pre codeblock">import pysequoiadb
+from pysequoiadb import client
+from pysequoiadb import const
+from pysequoiadb.error import SequoiaDBError
+
+# connect to local db, using default args value.
+# host= 'localhost', port= 11810, user= '', password= ''
+try:
+   db = client()
+except DBBaseError, e:
+   pysequoiadb._print(e)
+   del db
+   exit()
+
+# if no error occurs, connect to specified server successfully
+print 'Connect success'
+db.disconnect()
+# Need to release client whether it connected db server successfully or not
+del db</pre>
+
+          <p class="p">In Linux, directly run python to interpret and run connect.py.</p>
+          
+          <div class="note note"><span class="notetitle">Note:</span> 
+            <p class="p">In the above sample, the port 11810 the local database connects to is the service port of a coord node; it uses null for user name and password. The users need to configure the parameters according to their own situations. For example, modify db = client() of the above code into db = client('192.168.10.188',11810). The correct user name and password are required when the database already has a user, otherwise the connection will fail.</p>
+
+          </div>
+</li>
+
+        <li class="li">Create collection space and collection
+          <p class="p">The following sample create a collection space named "foo" and a collection named "bar". The page size of the collection in the collection space is 16k. The page size can be chosen accordingly. The CURD (create, retrieve, update, and delete) operations can be done after the collection is created.</p>
+          
+          <pre class="pre codeblock"># connect to a database
+try:
+   db = client()
+except SDBBaseError, e:
+   pysequoiadb._print(e)
+
+# success to connect to db
+try:
+cs_name = 'foo'
+   cs = db.create_collection_space(cs_name, 16384) except SDBBaseError, e:
+pysequoiadb._print(e)
+
+# success to create collection space
+cl_name = 'bar'
+try:
+   cs = cs.create_collection(cl_name)
+except SDBBaseError, e:
+pysequoiadb._print(e)</pre>
+</li>
+
+        <li class="li">Insert data<p class="p"/>
+
+          <pre class="pre codeblock"># firstly, create a object to be inserted named idct.
+record = {"name":"Tom", "age":24}
+# then insert this object dict into the collection.
+oid = cl.insert ( record ) ;</pre>
+
+          <p class="p">record is the data to be inserted. dict object will be transformed into bson to insert into the collection. oid is a bson-structured objected to be returned after the data is inserted.</p>
+</li>
+
+        <li class="li">Query<div class="p"><pre class="pre codeblock"># query all the records, put the result into the cursor, and print each record in the cursor.
+try:
+   cr = cl.query()
+
+   while True:
+      try:
+         record = cr.next()
+      except SDBEndOfCursor:
+         break
+      except SDBBaseError, e:
+         pysequoiadb._print(e)</pre>
+</div>
+
+          <p class="p">Query operation needs a cursor object to store all the query results in the local. This sample uses the next API of the cursor operation which gets a record from the query result set. This sample only uses the default index without setting query condition, selecting condition, filtering condition, sorting condition.</p>
+</li>
+
+        <li class="li">Index<div class="p"><pre class="pre codeblock">index_name = "index_name"
+# firest create a dict object includes all the information of the index to be created.
+idx = { 'name':1, 'age':-1 }
+# create a index that uses "name" as the ascending key and "age" as the descending key.
+cl.create_index ( idx, index_name, FALSE, FALSE ) ;</pre>
+</div>
+
+          <p class="p">Create an index that uses "name" as the ascending key and "age" as the descending key in the collection object named collection</p>
+</li>
+
+        <li class="li">Update
+          <p class="p"/>
+
+          <pre class="pre codeblock"># create a BSONObj object which includes the updating rules.
+rule = {"$set":{ "age":19}}
+# print out the updating rules.
+print rule
+# update the records.
+cl.update( rule )</pre>
+<p class="p">In the collection object collection update records. Example is not specified in the data matching rules, so this example will update the collection of all the.</p>
+</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Cluster Manipulations</h2>
+      
+      <ul class="ul">
+        <li class="li">Replica Group Manipulations
+          <p class="p">Replica group manipulations include creating replica groups (client client::creat_replica_group), getting the replica group instances (client::get_replica_group_by_name and client:: get_replica_group_by_id), start all the nodes of the replica group (replicagroup::start), stop all the nodes in the replica group(replicagroup::stop), etc.</p>
+
+          <div class="p">The following code is a sample of replica group manipulation. The real application includes error detection, etc.
+            <pre class="pre codeblock"># define a new map object without any configuring options.
+config = {}
+…
+
+# create a new catalog replica group first.
+db.create_cata_replica_group ( HOST_NAME, SERVICE_NAME, CATALOG_GROUP_PATH , None)
+
+# create a data replica group.
+rg = db.create_replica_group ( REPLICA_GROUP_NAME)
+
+# create a new data node.
+rg.create_node ( HOST_NAME1, SERVICE_NAME1, DATABASE_PATH1, config )
+…
+# start the replica group
+rg.start ()</pre>
+</div>
+</li>
+
+        <li class="li">Data Node Manipulation
+          <p class="p">Data node manipulation includes creating data node (sdbReplicaGroup::createNode), get the master data node (sdbReplicaGroup::getMaster), get the slave data node (sdbReplicaGroup::getSlave), start data node (sdbNode::start), stop data node (sdb::Stop), etc.</p>
+
+          <div class="p">The following code is a sample of data node manipulation. The real application includes error detection, etc.
+            <pre class="pre codeblock"># get the master data node.
+master = rg.get_master() ;
+
+# get the slave data node.
+slave = rg.get_slave() ;</pre>
+</div>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../developement/application/Python/topics/python_en.html" title="Python Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Python Driver</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

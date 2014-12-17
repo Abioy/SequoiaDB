@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/map.dtd">
+<map title="References_Console">
+ <topicref href="topics/console_en.dita">
+     <topicref href="topics/select_en.dita">
+     <topicref href="topics/gt_en.dita"/>
+     <topicref href="topics/gte_en.dita"/>
+     <topicref href="topics/plt_en.dita"/>
+     <topicref href="topics/lte_en.dita"/>
+     <topicref href="topics/pne_en.dita"/>
+     <topicref href="topics/pet_en.dita"/>
+     <topicref href="topics/mod_en.dita"/>
+     <topicref href="topics/pin_en.dita"/>
+     <topicref href="topics/isnull_en.dita"/>
+     <topicref href="topics/nin_en.dita"/>
+     <topicref href="topics/pall_en.dita"/>
+     <topicref href="topics/and_en.dita"/>
+     <topicref href="topics/not_en.dita"/>
+     <topicref href="topics/por_en.dita"/>
+     <topicref href="topics/type_en.dita"/>
+     <topicref href="topics/exists_en.dita"/>
+     <topicref href="topics/elemMatch_en.dita"/>
+     <topicref href="topics/special_en.dita"/>    
+     <topicref href="topics/psize_en.dita"/>
+     <topicref href="topics/pregex_en.dita"/>
+         <!--<topicref href="topics/options_en.dita"/>-->
+     </topicref>
+     <topicref href="topics/update_en.dita">
+     <topicref href="topics/inc_en.dita"/>
+     <topicref href="topics/gset_en.dita"/>
+     <topicref href="topics/unset_en.dita"/>
+     <!--<topicref href="topics/rename_en.dita"/>-->
+     <topicref href="topics/gaddtoset_en.dita"/>
+     <topicref href="topics/pop_en.dita"/>
+     <topicref href="topics/gpull_en.dita"/>
+     <topicref href="topics/gpull_all_en.dita"/>
+     <topicref href="topics/gpush_en.dita"/>
+     <topicref href="topics/gpush_all_en.dita"/>
+     </topicref>
+     <topicref href="topics/aggregate_en.dita">
+         <topicref href="topics/project_en.dita"/>
+         <topicref href="topics/match_en.dita"/>
+         <topicref href="topics/jgroup_en.dita">
+             <topicref href="topics/j$addToSet_en.dita"/>
+             <topicref href="topics/jfirst_en.dita"/>
+             <topicref href="topics/jlast_en.dita"/>
+             <topicref href="topics/jmax_en.dita"/>
+             <topicref href="topics/jmin_en.dita"/>
+             <topicref href="topics/javg_en.dita"/>
+             <topicref href="topics/jsum_en.dita"/>
+             <topicref href="topics/j$push_en.dita"/>
+             <topicref href="topics/jcount_en.dita"/>
+         </topicref>
+         <topicref href="topics/jlimit_en.dita"/>
+         <topicref href="topics/jsort_en.dita"/>
+         <topicref href="topics/jskip_en.dita"/>
+         <topicref href="topics/sql_to_aggregate_en.dita"/>
+     </topicref>
+ </topicref>
+ 
+</map>

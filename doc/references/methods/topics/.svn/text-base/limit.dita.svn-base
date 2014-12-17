@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_methods_limit">
+  <title>cursor.limit()</title>
+  <body>
+    <section><title>cursor.limit(&lt;num>)</title>
+      <p>控制结果集返回记录的条数。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable id="references_method_limit_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>num         </stentry>
+          <stentry>int                </stentry>
+          <stentry>自定义返回结果集的记录条数。        </stentry>
+          <stentry>否</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>格式</title>
+      <p>cousor.limit()方法的定义格式包含num参数，它是int类型。如果不设定num的内容，相当于返回所有的结果集记录。如果想返回结果集的前5条记录，可是设置num的值为5。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>选择集合bar下age字段值大于10的记录，控制返回前面10条记录。</p>
+          <p><codeblock>db.foo.bar.find({age:{<xref href="../../console/topics/gt.dita">$gt</xref>:10}}).limit(10)</codeblock></p>
+        </li>
+      </ul>
+      <note>
+        <p>如果结果集的记录数小于10，按实际的记录数返回，如果结果集的记录数大于10，则返回前10条。</p>
+      </note>
+      
+    </section>
+  </body>
+  <related-links>
+    <link href="hint.dita" format="dita" type="topic"></link>
+    <link href="skip.dita" format="dita" type="topic"></link>
+    <link href="find.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/exists.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

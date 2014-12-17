@@ -1,0 +1,86 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="独立模式的配置与启动"/>
+<meta name="description" content="说明：   （1）本节按照最简部署为例，介绍配置和启动步骤；   （2）以下操作步骤假设 SequoiaDB 程序安装在 /opt/sequoiadb 目录下；   （3）sdb 服务进程全部以 sdbadmin 用户运行，请确保所有数据库目录都赋予 sdbadmin 读写权限。 切换到 sdbadmin 用户 su sdbadmin 启动 SequoiaDB Shell ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../installation/configuration_start/topics/configuration_start.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_qh4_p4y_wj"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>独立模式的配置与启动</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_qh4_p4y_wj"><a name="topic_qh4_p4y_wj"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../installation/configuration_start/topics/configuration_start.html" title="系统配置与启动"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">系统配置与启动</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/install_overview.html" title="安装指南">安装指南</a> / <a class="navheader_parent_path" href="../../../installation/configuration_start/topics/configuration_start.html" title="系统配置与启动">系统配置与启动</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">独立模式的配置与启动</h1>
+
+  <div class="body">
+    <p class="p"><strong class="ph b">说明：</strong></p>
+
+    <p class="p">  （1）本节按照最简部署为例，介绍配置和启动步骤；</p>
+
+    <p class="p">  （2）以下操作步骤假设 SequoiaDB 程序安装在 /opt/sequoiadb 目录下；</p>
+
+    <p class="p">  （3）sdb 服务进程全部以 sdbadmin 用户运行，请确保所有数据库目录都赋予 sdbadmin 读写权限。</p>
+
+    <ul class="ul">
+      <li class="li">切换到 sdbadmin 用户<pre class="pre codeblock">su sdbadmin</pre>
+</li>
+
+      <li class="li">启动 SequoiaDB Shell 控制台（下文以默认安装路径 /opt/sequoiadb 为例）<div class="p"><pre class="pre codeblock">/opt/sequoiadb/bin/sdb</pre>
+</div>
+</li>
+
+      <li class="li">连接到本地的集群管理服务进程 sdbcm<pre class="pre codeblock">var oma = new Oma("localhost", 11790)</pre>
+</li>
+
+      <li class="li">创建独立模式的数据节点<pre class="pre codeblock">oma.createData(11810, "/opt/sequoiadb/database/standalone/11810")</pre>
+
+        <div class="note note"><span class="notetitle">Note:</span> 其中11810为数据库服务端口名，为避免出现端口冲突等问题，切勿将数据库端口配置在随机端口范围以内。如：多数 Linux 默认随机端口范围为32768～61000，可将数据库端口配置在32767以下。</div>
+</li>
+
+      <li class="li">启动该节点<pre class="pre codeblock">oma.startNode(11810)</pre>
+</li>
+
+      <li class="li">数据库配置启动完成</li>
+      
+    </ul>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../installation/configuration_start/topics/configuration_start.html" title="系统配置与启动"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">系统配置与启动</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.10
+          
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_delete">
+  <title>sql delete</title>
+  <body>
+    <section><title>delete 语句</title>
+      <p>用于删除集合中的记录。</p>
+    </section>
+    <section><title>语法</title>
+      <p><codeblock>delete from &lt;cs_name>.&lt;cl_name> [where &lt;condition>]</codeblock></p>
+      <p>&lt;cs_name>：集合空间名</p>
+      <p>&lt;cl_name>：集合名</p>
+      <p>&lt;condition>：条件，只对符合条件的记录删除</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>本例会删除集合中的所有记录：</p>
+          <p><codeblock>db.execUpdate("delete from foo.bar") </codeblock></p>
+        </li>
+        <li>本例会删除符合条件 age &lt;10 的记录：<codeblock>db.execUpdate("delete from foo.bar where age&lt;10")</codeblock></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="squpdate.dita" format="dita" type="topic"></link>
+    <link href="where.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

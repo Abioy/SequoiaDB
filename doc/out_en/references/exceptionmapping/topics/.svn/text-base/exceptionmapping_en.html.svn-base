@@ -1,0 +1,1701 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Error Code List"/>
+<meta name="description" content="Description Error Code IO Exception -1 Out of Memory -2 Permission Error -3 File Not Exist -4 File Exist -5 Invalid Argument -6 Invalid size -7 Interrupt -8 Hit end of file -9 System error -10 No ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../references/topics/references_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="references_exception"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>Error Code List</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="references_exception"><a name="references_exception"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../references/topics/references_en.html" title="Reference"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Reference</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../../references/topics/references_en.html" title="Reference">Reference</a></td></tr></tbody></table>
+
+   <h1 class="title topictitle1">Error Code List</h1>
+
+   <div class="body">
+      <a name="references_exception__references_exceptionmapping_table"><!-- --></a><table cellpadding="4" cellspacing="0" summary="" id="references_exception__references_exceptionmapping_table" border="1" class="simpletable"><tr class="sthead">
+            <th valign="bottom" align="left" id="d136757e14" class="stentry" width="84%">Description</th>
+
+            <th valign="bottom" align="left" id="d136757e17" class="stentry" width="16%">Error Code</th>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">IO Exception</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-1</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Out of Memory</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-2</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Permission Error</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-3</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">File Not Exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-4</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">File Exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-5</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid Argument</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-6</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid size</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-7</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Interrupt</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-8</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Hit end of file</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-9</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">System error</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-10</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">No space is left on disk</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-11</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">EDU status is not valid</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-12</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Timeout error</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-13</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Database is quiesced</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-14</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Network error</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-15</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Network is closed from remote</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-16</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Database is in shutdown status</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-17</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Application is forced</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-18</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Given path is not valid</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-19</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unexpected file type specified</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-20</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">There's no space for DMS</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-21</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Collection already exists</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-22</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Collection does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-23</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">User record is too large</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-24</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Record does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-25</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Remote overflow record exists</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-26</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid record</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-27</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Storage unit need reorg</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-28</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">End of collection</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-29</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Context is already opened</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-30</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Context is closed</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-31</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Option is not supported yet</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-32</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Collection space already exists</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-33</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Collection space does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-34</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Storage unit file is invalid</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-35</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Context does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-36</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">More than one fields are array type</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-37</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Duplicate key exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-38</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Index key is too large</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-39</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">No space can be found for index extent</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-40</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Index key does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-41</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Hit max number of index</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-42</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to initialize index</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-43</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Collection is dropped</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-44</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Two records get same key and rid</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-45</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Duplicate index name</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-46</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Index name does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-47</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unexpected index flag</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-48</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Hit end of index</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-49</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Hit the max of dedup buffer</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-50</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid predicates</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-51</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Index does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-52</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid hint</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-53</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">No more temp collections are avaliable</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-54</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Exceed max number of storage unit</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-55</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">$id index can't be dropped</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-56</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Log was not found in log buf</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-57</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Log was not found in log file</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-58</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Replication group does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-59</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Replication group exists</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-60</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid request id is received</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-61</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Session ID does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-62</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">System EDU cannot be forced</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-63</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Database is not connected</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-64</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unexpected result received</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-65</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Corrupted record</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-66</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Backup has already been started</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-67</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Backup is not completed</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-68</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Backup is in progress</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-69</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Backup is corrupted</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-70</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">No primary node was found</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-71</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Requested node does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-72</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Engine help argument is specified</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-73</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid connection state</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-74</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid handle</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-75</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Object does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-76</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Listening port is already occupied</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-77</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unable to listen the specified address</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-78</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unable to connect to the specified address</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-79</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Connection does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-80</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to send</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-81</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Timer does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-82</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Route info does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-83</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Broken msg</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-84</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid net handle</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-85</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid reorg file</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-86</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Reorg file is in read only mode</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-87</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Collection status is not valid</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-88</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Collection is not in reorg state</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-89</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Replication group is not activated</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-90</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Node does not belong to the group</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-91</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Collection status is not compatible</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-92</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Incompatible version for storage unit</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-93</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Version is expired for local group</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-94</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid page size</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-95</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Version is expired for remote group</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-96</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to vote for primary</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-97</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Log record is corrupted</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-98</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">LSN is out of boundary</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-99</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unknown mesage is received</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-100</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Updated information is same as old one</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-101</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unknown message</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-102</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Empty heap</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-103</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Node is not primary</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-104</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Not enough number of data nodes</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-105</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Catalog information does not exist on data node</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-106</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Catalog version is expired on data node</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-107</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Catalog version is expired on coordinator node</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-108</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Exceeds the max group size</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-109</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to sync log</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-110</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to replay log</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-111</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid HTTP header</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-112</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to negotiate</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-113</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to change DPS metadata</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-114</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">SME is corrupted</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-115</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Application is interrupted</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-116</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Application is disconnected</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-117</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Character encoding errors</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-118</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to query on coord node</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-119</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Buffer array is full</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-120</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Sub context is conflict</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-121</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">EOC message is received by coordinator node</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-122</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Size of DPS files are not the same</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-123</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid DPS log file</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-124</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">No resource is avaliable</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-125</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid LSN</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-126</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Pipe buffer size is too small</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-127</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Catalog authentication failed</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-128</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Full sync is in progress</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-129</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to assign data node from coordinator node</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-130</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">PHP driver internal error</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-131</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to send the message</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-132</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unable to find the group information on catalog</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-133</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Remote-node is disconnected</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-134</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unable to find the catalog information</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-135</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to update catalog</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-136</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unknown request operation code</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-137</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Group information cannot be found on coordinator node</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-138</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">DMS extent is corrupted</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-139</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Remote cluster manager failed</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-140</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Remote database services have been stopped</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-141</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Service is starting</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-142</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Service has been started</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-143</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Service is restarting</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-144</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Node already exists</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-145</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Node does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-146</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unable to lock</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-147</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">DMS state is not compatible with current command</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-148</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Database rebuild is already started</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-149</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Database rebuild is in progress</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-150</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Cache is empty on coordinator node</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-151</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Evalution failed with error</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-152</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Group already exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-153</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Group does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-154</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Node does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-155</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to start the node</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-156</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid node configuration</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-157</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Group is empty</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-158</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The operation is for coord node only</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-159</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to operate on node only</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-160</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The mutex job already exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-161</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The specified job does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-162</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The catalog information is corrupted</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-163</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">$shard index can't be dropped</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-164</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The command can't be run in the node</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-165</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The command can't be run in the serice plane</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-166</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The group info not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-167</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Group name is conflict</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-168</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The collection is not sharded</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-169</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The record does not contains valid sharding key</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-170</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">A task that already exists does not compatible with the new task</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-171</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The collection does not exists on the specified group</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-172</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The specified task does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-173</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The record contains more than one sharding key</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-174</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The mutex task already exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-175</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The split key is not valid or not in the source group</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-176</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The unique index must include all fields in sharding key</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-177</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Sharding key cannot be updated</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-178</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Authority is forbidden</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-179</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">There is no catalog address specified by user</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-180</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Current record has been removed</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-181</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">No records can be matched for the search condition</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-182</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Index page is reorged and the pos got different lchild</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-183</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Duplicate field name exists in the record</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-184</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Too many records to be inserted at once</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-185</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Sort-Merge Join only supports equal predicates</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-186</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Trace is already started</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-187</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Trace buffer does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-188</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Trace file is not valid</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-189</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Incompatible lock</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-190</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Rollback operation is in progress</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-191</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid record is found during import</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-192</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Repeated variable name</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-193</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Column name is ambiguous</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-194</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">SQL syntax error</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-195</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid transactional operation</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-196</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Append to lock-wait-queue</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-197</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Record is deleted</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-198</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Index is dropped or invalid</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-199</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unable to create new catalog when there's already one exists</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-200</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to parse JSON file</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-201</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to parse CSV file</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-202</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Log file size is too large</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-203</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unable to remove the last node in a group</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-204</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unable to clean up catalog, manual cleanup may be required</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-205</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unable to remove catalog for non-empty database</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-206</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Group does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-207</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unable to remove non-empty group</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-208</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">End of queue</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-209</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unable to split because of no sharding index exists</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-210</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The parameter field does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-211</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Too many break points are specified</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-212</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">All prefetchers are busy</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-213</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Domain does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-214</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Domain already exists</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-215</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Group is not in domain</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-216</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Sharding type is not hash</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-217</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">split percentage is lower then expected</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-218</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Task is already finished</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-219</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Collection is in loading status</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-220</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Rolling back load operation</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-221</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">RouteID is different from the local</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-222</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Service already exists</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-223</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Field is not found</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-224</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">csv field line end</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-225</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unknown file type</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-226</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Exporting configuration does not complete in all nodes</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-227</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Empty non-primary node</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-228</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Secret value for index file does not match with data file</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-229</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Engine version argument is specified</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-230</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Help argument is specified</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-231</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Version argument is specified</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-232</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Stored procedure does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-233</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unable to remove collection partition</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-234</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Duplicated attach collection partition</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-235</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid partitioned-collection</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-236</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">New boundary is conflict with the existing boundary</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-237</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid boundary for the shard</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-238</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Hit the high water mark</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-239</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Backup already exists</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-240</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Backup does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-241</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Invalid collection partition</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-242</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Task is canceled</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-243</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Sharding type must be ranged partition for partitioned-collection</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-244</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">There is no valid sharding-key defined</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-245</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Operation is not supported on partitioned-collection</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-246</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Redefine index</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-247</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Dropping the collection space is in progress</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-248</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Hit the limit of maximum number of nodes in the cluster</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-249</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The node is not in normal status</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-250</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Node information is expired</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-251</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to wait for the sync operation from secondary nodes</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-252</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Transaction is disabled</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-253</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Data source is running out of connection pool</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-254</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Too many opened file description</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-255</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Domain is not empty</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-256</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The data received by REST is larger than the max size</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-257</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to build bson object</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-258</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Stored procedure arguments are out of bound</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-259</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Unknown REST command</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-260</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Failed to execute command on data node</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-261</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">The domain is empty</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-262</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Changing password is required</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-263</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">One or more nodes did not complete successfully</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-264</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">There is another OM Agent running with different version</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-265</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Task does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-266</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Task is rolling back</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-267</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">LOB sequence does not exist</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-268</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">LOB is not useable</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-269</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Data is not in UTF-8 format</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-270</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Task failed</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-271</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Lob does not open</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-272</td>
+
+         </tr>
+<tr class="strow">
+            <td valign="top" headers="d136757e14" class="stentry">Lob has been open</td>
+
+            <td valign="top" headers="d136757e17" class="stentry">-273</td>
+
+         </tr>
+</table>
+
+   </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../references/topics/references_en.html" title="Reference"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Reference</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

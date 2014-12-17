@@ -1,0 +1,100 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="C API"/>
+<meta name="description" content="This part is related to C API document. C API History Updates: Version 1.10 1. Added the interface to get visiting plan of the queries. sdbExplain, Get visiting plan of the queries. 2. Added ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../developement/application/C/topics/c_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_qcm_qzy_3k"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>C API</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_qcm_qzy_3k"><a name="topic_qcm_qzy_3k"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../developement/application/C/topics/c_en.html" title="C Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">C Driver</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/application_en.html" title="SequoiaDB Application Development">SequoiaDB Application Development</a> / <a class="navheader_parent_path" href="../../../../developement/application/C/topics/c_en.html" title="C Driver">C Driver</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">C API</h1>
+
+  <div class="body">
+    <p class="p">This part is related to C API document.</p>
+
+    <p class="p"><a class="xref" href="../../../../c/html/index.html">C API</a></p>
+
+    <div class="section"><h2 class="title sectiontitle">History Updates:</h2>
+      
+      <p class="p"><strong class="ph b">Version 1.10</strong></p>
+
+      <p class="p">1. Added the interface to get visiting plan of the queries.</p>
+<pre class="pre codeblock">sdbExplain, Get visiting plan of the queries.</pre>
+
+      <p class="p">2. Added interfaces for operations of LOBs.</p>
+<pre class="pre codeblock">sdbListLobs, list all LOBs in the collection
+sdbOpenLob, create or open a LOB
+sdbCloseLob, close a LOB
+sdbRemoveLob, delete a LOB
+sdbSeekLob, set the start position of read operations (in this version, seek is only used for read operations)
+sdbReadLob, read data from LOB
+sdbWriteLob, writes data to LOB
+sdbGetLobSize, get the size of a LOB
+sdbGetLobCreateTime, get the creating time of a LOB</pre>
+
+      <p class="p"><strong class="ph b">Version 1.8</strong></p>
+
+      <p class="p">New APIs in C:</p>
+<pre class="pre codeblock">sdbConnect1, multiple connection address can be provided, one of the random valid addresses will be used to connect to database
+sdbCreateCollectionSpaceV2, a BSON parameter is provided to make the creating of a collection space more flexible
+sdbAlterCollection, alters the attributes of a collection
+sdbCreateDomain, creates a domain
+sdbDropDomain, drops a domain
+sdbGetDomain, gets a domain
+sdbListDomains, enumerates and lists the domains
+sdbReleaseDomain, releases the domain handle
+sdbAlterDomain, alters the attributes of a domain</pre>
+
+      <p class="p"><strong class="ph b">Version 1.6</strong></p>
+
+      <p class="p">1. Use sdbNodeHandle to replace the original sdbReplicaNodeHandle. sdbReplicaNodeHandle will be abandoned in the version2.x.</p>
+
+      <p class="p">2. Use the concept of "node" to replace the original "replica node". And "replica node" related API interface will remain until version2.x will be abandoned.</p>
+
+      <p class="p">For details, please see the relevant API.</p>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../developement/application/C/topics/c_en.html" title="C Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">C Driver</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

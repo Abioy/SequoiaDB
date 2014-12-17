@@ -1,0 +1,106 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Object ID"/>
+<meta name="description" content="Concept Object ID is a 12-bit BSON object. It contains: 4-byte timeline measured in seconds 3-byte system (physical machine) identity 2-byte process ID 3-byte sequence number that starts with a random ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/database/topics/document_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_concepts_database_objectid"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Object ID</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_concepts_database_objectid"><a name="administration_concepts_database_objectid"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/concepts/database/topics/document_en.html" title="Document"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Document</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="database_en.html" title="Database">Database</a> / <a class="navheader_parent_path" href="../../../../administration/concepts/database/topics/document_en.html" title="Document">Document</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Object ID</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Concept</h2>
+      <p class="p">Object ID is a 12-bit BSON object. It contains: </p>
+
+      <ul class="ul">
+        <li class="li">4-byte timeline measured in seconds</li>
+
+        <li class="li">3-byte system (physical machine) identity</li>
+
+        <li class="li">2-byte process ID</li>
+
+        <li class="li">3-byte sequence number that starts with a random number</li>
+
+      </ul>
+
+      
+      <div class="p"><table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+            <th valign="bottom" align="left" id="d16742e37" class="stentry">4-byte timeline</th>
+
+            <th valign="bottom" align="left" id="d16742e40" class="stentry">3-byte system identity</th>
+
+            <th valign="bottom" align="left" id="d16742e43" class="stentry">2-byte process ID</th>
+
+            <th valign="bottom" align="left" id="d16742e46" class="stentry">3-byte sequence number</th>
+
+          </tr>
+<tr class="strow"/>
+</table>
+</div>
+<p class="p">The object ID can identify each process of each system in cluster environment
+        with 16777216 different values, so it is regarded as a globally unique value in cluster
+        environment.</p>
+
+      <p class="p">In SequoiaDB, each file in a collection stores at least an "id" field , which is unique
+        within the collection. </p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Format</h2>
+      <p class="p">The format of an object ID is:</p>
+
+      <pre class="pre codeblock">{ "$oid" : "&lt;24-byte hexademical string&gt;" }</pre>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Sample</h2>
+      <p class="p">Object ID is desplayed as:</p>
+
+      <pre class="pre codeblock">{ "key" : { "$oid" : "5156c192f970aed30c020000" } }</pre>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../administration/concepts/database/topics/document_en.html" title="Document"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Document</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

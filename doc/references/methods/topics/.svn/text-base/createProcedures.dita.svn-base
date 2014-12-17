@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_rlh_vcw_ql">
+  <title> db.createProcedure() </title>
+  <body>
+    <section><title>db.createProcedure(&lt;code>)</title>
+      <p>在数据库对象中创建存储过程。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>code</stentry>
+          <stentry>自定义函数</stentry>
+          <stentry>标准函数定义，不是字符串类型，在输入参数时不能使用引号。 </stentry>
+          <stentry>是</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>格式</title>
+      <p>createProcedure() 方法的定义格式包含 code 参数，参数值为标准函数定义。</p>
+      <p><codeblock>createProcedure(&lt;code>)</codeblock></p>
+      <p><b>说明：</b><ul id="ul_p2q_bmw_ql">
+        <li>推荐直接使用存储过程中已初始化全局的 db，且全局 db 采用当前执行该存储过程的会话的鉴权信息，如：<b>db.createProcedure( function getAll(){return db.foo.bar.find();} )</b> 。</li>
+        <li>自己初始化 db 的形式为 <b>var db = new Sdb()</b>，db 采用当前执行该存储过程的会话的鉴权信息。如果需要加入其它用户名和密码，为 <b>var db = new Sdb('usrname','passwd')</b> 。这里需要注意的时，存储过程只能运行在已连接上的 db，不提供远程连接其他 db 的方法。在不需要鉴权的情况下，即使如 <b>var db = new Sdb('hostname', 'servicename')</b> 语句正常执行。得到的 db 仍然是本地 db。</li>
+          <li>db 角色必须为协调节点。standalone 模式不提供存储过程功能。</li>
+        </ul></p>
+    </section>
+    <section>
+      <title>函数定义</title>
+      <ul id="ul_rnt_h4w_ql">
+        <li><p>函数定义</p>
+          <p>1. 函数必须包含函数名。不能使用如：<b>function(x,y){return x+y;}</b></p>
+          <p>2. 在函数定义时可以调用其他函数甚至是不存在的函数。但需要保证运行时所有函数已存在。</p>
+          <p>3. 函数名全局唯一。不提供重载。 </p>
+          <p>4. 每个函数均在全系统可用。随意删除一个存储过程可能导致他人运行失败。</p></li>
+        <li>函数参数 <p>native type of JS</p></li>
+        <li>函数输出 <p>函数中所有标准输出，标准错误会被屏蔽。同时不建议在函数定义或执行时加入输出语句。大量的输出可能会导致存储过程运行失败</p></li>
+        <li>函数返回值 <p>函数返回值可以是除 db 以外任意类型数据。如：<b>function getCL(){return db.foo.bar;}</b></p></li>
+      </ul>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>创建 sum 函数</p>
+          <codeblock>db.createProcedure(function sum(x,y){return x+y;})</codeblock>
+          <p>创建之后可以使用 <xref href="listProcedures.dita">db.listProcedures()</xref> 查看函数信息。</p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="listProcedures.dita" format="dita" type="topic"></link>
+    <link href="removeProcedure.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

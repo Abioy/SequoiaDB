@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="reference_method_hint">
+  <title>cursor.hint()</title>
+  <body>
+    <section><title>cursor.hint(&lt;hint>)</title>
+      <p>Visit result set using specified index.</p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable id="references_method_hint_table">
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Not null</stentry>
+        </sthead>
+        <strow>
+          <stentry>hint</stentry>
+          <stentry>json object</stentry>
+          <stentry>It specifies the visiting plan to accelarate query speed. </stentry>
+          <stentry>no</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section>
+      <title>Format</title>
+      <p>The method "cursor.hint()" contains parameter "hint". If it is not specified, the query
+        will not use index to visit records.</p>
+      <p>The parameter "hint" contain a one-field json object. The field name is ignored. But the
+        field value is specified as the index </p>
+      <p>which will be visited. When it is null, it will visit all the records in the collection. </p>
+      <p>The format is as follow:</p>
+      <p>
+        <codeblock>{"":null} or {"":"&lt;indexname>"}</codeblock>
+      </p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>Find records that contains the field "age" in the collection "bar" using the index
+            "ageIndex" and return results.</p>
+          <p><codeblock>db.foo.bar.find({age:{$exists:1}}).hint({"":"ageIndex"})</codeblock></p>
+        </li>
+      </ul>
+      
+    </section>
+  </body>
+  <related-links>
+    <link href="csort_en.dita" format="dita" type="topic"></link>
+    <link href="climit_en.dita" format="dita" type="topic"></link>
+    <link href="find_en.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/exists_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_1pf_gt1_q4">
+  <title>domain.listCollectionSpaces()</title>
+  <body>
+    <section><title>domain.listCollectionSpaces()</title>
+      <p>枚举域中所有的集合空间。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p><codeblock>domain.listCollectionSpaces()</codeblock></p>
+          <p>返回：</p>
+          <codeblock>      { 
+        "Name":"foo" 
+      }</codeblock></li>
+      </ul>      
+    </section>
+  </body>
+  <related-links>
+    <link href="dblist.dita"></link>
+    <link href="listCollections_domain.dita"></link>
+  </related-links>
+</topic>

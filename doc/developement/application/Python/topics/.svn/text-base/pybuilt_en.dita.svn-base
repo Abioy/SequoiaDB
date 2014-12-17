@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_114_2f3_x4">
+  <title>Python Environment to Build</title>
+  <body>
+    <section>
+      <title>Get Driver Development Kit</title>
+      <p>Download SequoiaDBDriver Development kit for the corresponding operating systems from <xref href="http://www.sequoiadb.com" format="html" scope="external">http://www.sequoiadb.com</xref>.</p>
+    </section>
+    <section>
+      <title>Configure the Development Environment</title>
+      <ul>
+        <li>Linux
+          <p>1. Extract the Driver Development Kit to get the python directory.</p>
+          <p>2. Copy the bson and pysequoiadb directories into the development project directory( recommend to put into the third party library directory).</p>
+        </li>
+        <li>Windows
+          <p>Windows driver development kit is not released yet.</p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="pybasic_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

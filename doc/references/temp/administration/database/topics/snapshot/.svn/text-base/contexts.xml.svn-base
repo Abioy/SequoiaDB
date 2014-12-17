@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\administration\database\topics\snapshot?><?path2project ..\..\..\..\out_en\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="administration_database_monitoring_snapshot_contexts" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="title:1">上下文快照</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="title:2">描述</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="p:1">上下文快照列出当前数据库节点中所有的会话所对应的上下文。</p>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="p:2">每一个会话为一条记录，如果一个会话中包括一个或一个以上的上下文时，其Contexts数组字段对每个上下文产生一个对象。</p>
+      <note class="- topic/note " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="note:1">快照操作自身需产生一个上下文，因此结果集中至少会返回一个当前快照的上下文信息。</note>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="title:3">标示</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="p:3">SDB_SNAP_CONTEXTS</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="section:3"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="title:4">适用节点</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="p:4">数据、编目</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="section:4"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="title:5">字段信息</title>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 1.0*" id="administration_database_monitoring_snapshot_contexts_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="simpletable:1">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="sthead:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:1">字段名</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:2">类型</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:3">描述</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="strow:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:4">SessionID</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:5">长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:6">会话ID</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="strow:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:7">Contexts.ContextID</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:8">长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:9">上下文ID</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="strow:3">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:10">Contexts.DataRead</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:11">长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:12">所读数据</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="strow:4">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:13">Contexts.IndexRead</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:14">长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:15">所读索引</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="strow:5">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:16">Contexts.QueryTimeSpent</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:17">浮点数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:18">查询总时间（秒）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="strow:6">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:19">Contexts.StartTimestamp</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:20">时间戳</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="stentry:21">创建时间</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="section:5"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="title:6">示例</title>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\administration\database\topics\snapshot\contexts.dita" xtrc="codeblock:1">&gt; db.snapshot(SDB_SNAP_CONTEXTS)
+{
+  "SessionID": 14,
+  "Contexts": [
+    {
+      "ContextID": 13,
+      "DataRead": 0,
+      "IndexRead": 0,
+      "QueryTimeSpent": 0,
+      "StartTimestamp": "2013-04-06-11.53.39.235812"
+    },
+    {
+      "ContextID": 14,
+      "DataRead": 0,
+      "IndexRead": 0,
+      "QueryTimeSpent": 0,
+      "StartTimestamp": "2013-04-06-11.53.40.836732"
+    }
+  ]
+}
+{
+  "SessionID": 21,
+  "Contexts": [
+    {
+      "ContextID": 29,
+      "DataRead": 0,
+      "IndexRead": 0,
+      "QueryTimeSpent": 0,
+      "StartTimestamp": "2013-04-06-12.24.51.136243"
+    }
+  ]
+}</codeblock>
+    </section>
+  </body>
+</topic>

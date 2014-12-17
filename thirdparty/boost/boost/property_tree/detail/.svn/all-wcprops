@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail
+END
+xml_parser_utils.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/xml_parser_utils.hpp
+END
+json_parser_error.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/json_parser_error.hpp
+END
+json_parser_write.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/json_parser_write.hpp
+END
+ptree_utils.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/ptree_utils.hpp
+END
+info_parser_read.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/info_parser_read.hpp
+END
+exception_implementation.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/exception_implementation.hpp
+END
+file_parser_error.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/file_parser_error.hpp
+END
+xml_parser_read_rapidxml.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/xml_parser_read_rapidxml.hpp
+END
+rapidxml.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/rapidxml.hpp
+END
+json_parser_read.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/json_parser_read.hpp
+END
+info_parser_error.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/info_parser_error.hpp
+END
+info_parser_write.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/info_parser_write.hpp
+END
+info_parser_writer_settings.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/info_parser_writer_settings.hpp
+END
+ptree_implementation.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/ptree_implementation.hpp
+END
+xml_parser_error.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/xml_parser_error.hpp
+END
+xml_parser_write.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/xml_parser_write.hpp
+END
+info_parser_utils.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/info_parser_utils.hpp
+END
+xml_parser_writer_settings.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/xml_parser_writer_settings.hpp
+END
+xml_parser_flags.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/property_tree/detail/xml_parser_flags.hpp
+END

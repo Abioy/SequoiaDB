@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_limits">
+  <title>限制</title>
+  <body>
+    <section><title>文档</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.5*" id="references_limits_doc">-->
+        <sthead>
+          <stentry>描述</stentry>
+          <stentry>限制</stentry>
+        </sthead>
+        <strow>
+          <stentry>文档最小长度</stentry>
+          <stentry>至少包含一个字段</stentry>
+        </strow>
+        <strow>
+          <stentry>文档最大长度</stentry>
+          <stentry>转为 BSON 结构后16777168字节</stentry>
+        </strow>
+        <strow>
+          <stentry>字段名</stentry>
+          <stentry>不以“$”起始，不包含“.”</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section><title>集合</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.19*" id="references_limits_collection">-->
+        <sthead>
+          <stentry>描述</stentry>
+          <stentry>限制</stentry>
+        </sthead>
+        <strow>
+          <stentry>集合名最大长度</stentry>
+          <stentry>127字节</stentry>
+        </strow>
+        <strow>
+          <stentry>集合名</stentry>
+          <stentry>不以“$”或“SYS”起始，不包含“.”</stentry>
+        </strow>
+        <strow>
+          <stentry>单节点集合最大容量</stentry>
+          <stentry>为集合空间最大容量</stentry>
+        </strow>
+        <strow>
+          <stentry>单集合空间集合最大数量</stentry>
+          <stentry>4096</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section><title>集合空间</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 2.38*" id="references_limits_collectionspace">-->
+        <sthead>
+          <stentry>描述</stentry>
+          <stentry>限制</stentry>
+        </sthead>
+        <strow>
+          <stentry>集合空间名最大长度</stentry>
+          <stentry>127字节</stentry>
+        </strow>
+        <strow>
+          <stentry>集合空间名</stentry>
+          <stentry>不以“$”或“SYS”起始，不包含“.”</stentry>
+        </strow>
+        <strow>
+          <stentry>数据页大小</stentry>
+          <stentry>4096、8192、16384、32768、65536</stentry>
+        </strow>
+        <strow>
+          <stentry>单节点集合空间最大容量</stentry>
+          <stentry> 对应每种数据页大小，分别为512GB、1TB、2TB、4TB、8TB </stentry>
+        </strow>
+        <strow>
+          <stentry>单节点集合空间最大数量</stentry>
+          <stentry>4096</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section><title>索引</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.21*" id="references_limits_index">-->
+        <sthead>
+          <stentry>描述</stentry>
+          <stentry>限制</stentry>
+        </sthead>
+        <strow>
+          <stentry>每条数据索引键最大长度</stentry>
+          <stentry>1024字节</stentry>
+        </strow>
+        <strow>
+          <stentry>索引定义总长度（包括索引名，索引键名等）</stentry>
+          <stentry>转为 BSON 后小于等于数据页大小-48字节</stentry>
+        </strow>
+        <strow>
+          <stentry>复合索引</stentry>
+          <stentry>文档里符合索引所定义的字段中，最多一个字段包含数组</stentry>
+        </strow>
+        <strow>
+          <stentry>索引键定义排序值</stentry>
+          <stentry>1或者-1</stentry>
+        </strow>
+        <strow>
+          <stentry>单集合最大索引数量</stentry>
+          <stentry>64</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section><title>数据库</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.16*" id="references_limits_database">-->
+        <sthead>
+          <stentry>描述</stentry>
+          <stentry>限制</stentry>
+        </sthead>
+        <strow>
+          <stentry>日志文件最小</stentry>
+          <stentry>64MB</stentry>
+        </strow>
+        <strow>
+          <stentry>日志文件最大</stentry>
+          <stentry>2GB</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section><title>节点</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 2.02*" id="references_limits_node">-->
+        <sthead>
+          <stentry>描述</stentry>
+          <stentry>限制</stentry>
+        </sthead>
+        <strow>
+          <stentry>每分区组最大节点数量</stentry>
+          <stentry>7</stentry>
+        </strow>
+        <strow>
+          <stentry>创建节点</stentry>
+          <stentry>必须使用 hostname，而不是 IP 地址</stentry>
+        </strow>
+        <strow>
+          <stentry>网络</stentry>
+          <stentry>集群中所有系统必须能够使用 hostname 互相访问</stentry>
+        </strow>
+        <strow>
+          <stentry>主节点选举条件</stentry>
+          <stentry>分区组内至少存在超过半数节点参与选举</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section><title>分区</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 3.54*" id="references_limits_shard">-->
+        <sthead>
+          <stentry>描述</stentry>
+          <stentry>限制</stentry>
+        </sthead>
+        <strow>
+          <stentry>数据切分</stentry>
+          <stentry>同一时刻每个集合只能进行一个范围的切分</stentry>
+        </strow>
+        <strow>
+          <stentry>分区键</stentry>
+          <stentry>分区键数值在数据插入后不可修改</stentry>
+        </strow>
+        <strow>
+          <stentry>_id</stentry>
+          <stentry>分区集合中 _id 仅保证分区组内唯一，不保证全局唯一</stentry>
+        </strow>
+        <strow>
+          <stentry>唯一索引</stentry>
+          <stentry>必须包含分区键中所有字段</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section><title>驱动</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 5.72*" id="references_limits_API">-->
+        <sthead>
+          <stentry>描述</stentry>
+          <stentry>限制</stentry>
+        </sthead>
+        <strow>
+          <stentry>线程安全</stentry>
+          <stentry>每个连接对象与其下属的子对象为非线程安全不同连接对象之间为线程安全 </stentry>
+        </strow>
+      </simpletable>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/11839/trunk/SequoiaDB/engine/test/sql
+END
+sqlTest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/test/sql/sqlTest.cpp
+END
+sqlTest2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11839/trunk/SequoiaDB/engine/test/sql/sqlTest2.cpp
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/test/sql/main.cpp
+END

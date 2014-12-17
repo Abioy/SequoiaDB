@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_x44_wzm_zj">
+  <title>db.traceOff()</title>
+  <body>
+    <section><title>db.traceOff(&lt;dumpFile>)</title>
+      <p>关闭数据库引擎跟踪功能，并将跟踪情况导出二进制文件，如：/opt/sequoiadb/trace.dump</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable id="references_method_createNode_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>        
+        <strow>
+          <stentry>dump file</stentry>
+          <stentry>string</stentry>
+          <stentry>dump 的文件名称。</stentry>
+          <stentry>是</stentry>
+        </strow>        
+      </simpletable>      
+    </section>    
+    <section><title>示例</title>
+      <ul>
+        <li>关闭数据库引擎跟踪/opt/sequoiadb/trace.dump<codeblock>db.traceOff("/opt/sequoiadb/trace.dump");</codeblock></li>
+      </ul>      
+    </section>
+  </body>
+  <related-links>
+  <link href="traceFmt.dita" format="dita" type="topic"></link>
+  <link href="traceOn.dita" format="dita" type="topic"></link>
+  <link href="traceResume.dita" format="dita" type="topic"></link>        
+  <link href="traceStatus.dita" format="dita" type="topic"></link>
+    </related-links>
+</topic>

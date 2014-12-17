@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_nhy_zf1_hm">
+  <title>db.collectionspace.collection.aggregate()</title>
+  <body>
+    <section><title>db.collectionspace.collection.aggregate( &lt;subOp&gt;... )</title>
+      <p>aggregate() method with <xref href="find_en.dita">find()</xref> method function relatively close, but also retrieve documents form the 
+        collection SequoiaDB's record, and return the cursor.</p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 8.2* 1.0*"
+        id="references_method_insert_table">-->
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Required</stentry>
+        </sthead>
+        <strow>
+          <stentry>subOp</stentry>
+          <stentry>json object</stentry>
+          <stentry>subOp said sub-operation, In aggregate() method can fill 1~N sub-operation.</stentry>
+          <stentry>Yes</stentry>
+        </strow>
+        <strow/>
+      </simpletable>
+      
+    </section>
+    <section>
+      <title>Format</title>
+      <p> aggregate() method has only one parameter subOp, which represents 1~N sub-operations,each sub-operation is a json 
+        object, separated by commas sub-operation. Aggregation framework supports the following sub-operating parameters:</p><p> <simpletable>
+        <sthead>
+          <stentry>Parameter name </stentry>
+          <stentry>Description</stentry>
+          <stentry>Example </stentry>
+        </sthead>
+        <strow>
+          <stentry><xref href="../../console/topics/project_en.dita">$project</xref></stentry>
+          <stentry>Selection field names need to output "1" output, "0" means no output, you can also implement rename fields </stentry>
+          <stentry>{$project:{field1:1,field:0,aliase:"$field3"}} </stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="../../console/topics/match_en.dita">$match</xref></stentry>
+          <stentry>Match to achieve matching criteria to select from a collection of records, rather with the SQL statement where </stentry>
+          <stentry>{$match:{field:{$lte:value}}}</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="../../console/topics/jlimit_en.dita">$limit</xref></stentry>
+          <stentry>Limit the number of returned </stentry>
+          <stentry>{$limit:10} </stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="../../console/topics/jskip_en.dita">$skip</xref></stentry>
+          <stentry>Control of the result set the starting point, ie the number of skips specified result set records </stentry>
+          <stentry>{$skip:5}</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="../../console/topics/jgroup_en.dita">$group</xref></stentry>
+          <stentry>Achieve grouping of records, similar to SQL's group by statement, "_id" designated group field </stentry>
+          <stentry>{$group:{_id:"$field"}}</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="../../console/topics/jsort_en.dita">$sort</xref></stentry>
+          <stentry>Sort the result set to achieve, "1" represents the ASC, "-1" for descending.</stentry>
+          <stentry>{$sort:{field1:1,field2:-1,...}}</stentry>
+        </strow>
+      </simpletable></p>
+      <p><b>Description: </b>aggregate() method can have any number of word operations, but note that the name of each parameter syntax tules sub-operations.</p>
+    </section>
+    <section>
+      <title>Example</title>
+      <p>Assuming collection of records collection contains the following format:</p>
+      <codeblock>{
+  no:1000,
+  score:80,
+  interest:["basketball","football"],
+  major:"Computer Science and Technology",
+  dep:"Computer Academy",
+  info:{
+        name:"Tom",
+        age:25,
+        gender:"male"
+        }
+}</codeblock>
+      <ul>
+        <li>
+          <p>Conditional select the record, and specify the field names returned.</p>
+          <codeblock>db.collectionspace.collection.aggregate({<xref href="../../console/topics/match_en.dita">$match</xref>:{$and:[{no:{$gt:1002}},{no:{$lt:1015}},{dep:"Computer Academy"}]}},
+{<xref href="../../console/topics/match_en.dita">$project</xref>:{no:1,"info.name":1,major:1}})</codeblock>
+          <p>This gathering operation the first to use <xref href="../../console/topics/match_en.dita"
+            ><b>$match</b></xref> operation to select records matching conditions, then use the <xref href="../../console/topics/match_en.dita"
+              ><b>$project</b></xref> returns only the specified field name. Return result sets as follows:</p>
+          <codeblock>{
+  "no": 1003,
+  "info.name": "Sam",
+  "major": "Computer Software and Theory"
+}
+{
+  "no": 1004,
+  "info.name": "Coll",
+  "major": "Computer Engineering"
+}
+{
+  "no": 1005,
+  "info.name": "Jim",
+  "major": "Computer Engineering"
+}</codeblock>
+        </li>
+        <li>
+          <p>Conditional select records, and the records are grouped</p>
+          <codeblock>db.collectionspace.collection.aggregate({<xref href="../../console/topics/match_en.dita">$match</xref>:{dep:"Computer Academy"}},{<xref href="../../console/topics/jgroup_en.dita">$group</xref>:{_id:"$major",Major:{<xref href="../../console/topics/jfirst_en.dita">$first</xref>:"$major"},
+avg_age:{<xref href="../../console/topics/javg_en.dita">$avg</xref>:"$info.age"}}})</codeblock>
+          <p>This first gathering operation to select records using <xref href="../../console/topics/match_en.dita"
+            ><b>$match</b></xref> matching conditions, then use <xref href="../../console/topics/jgroup_en.dita"
+              ><b>$group</b></xref> of records grouped by major field and use the <xref href="../../console/topics/javg_en.dita"
+                ><b>$avg</b></xref> returns each age group nested object field average.</p>
+          <codeblock>{
+  "Major": "Computer Engineering",
+  "avg_age": 25
+}
+{
+  "Major": "Computer Science and Technology",
+  "avg_age": 22.5
+}
+{
+  "Major": "Computer Software and Theory",
+  "avg_age": 26
+}</codeblock>
+        </li>
+        <li>
+          <p>Conditional select records,and records grouping, sorting, limit records returned starting position and number of records returned.</p>
+          <codeblock>db.collectionspace.collection.aggregate({<xref href="../../console/topics/match_en.dita">$match</xref>:{interest:{$exists:1}}},{<xref href="../../console/topics/jgroup_en.dita">$group</xref>:{_id:"$major",avg_age:{<xref href="../../console/topics/javg_en.dita">$avg</xref>:"$info.age"},
+major:{<xref href="../../console/topics/jfirst_en.dita">$first</xref>:"$major"}}},{<xref href="../../console/topics/jsort_en.dita">$sort</xref>:{avg_age:-1,major:-1}},{<xref href="../../console/topics/jskip_en.dita">$skip</xref>:2},{<xref href="../../console/topics/jlimit_en.dita">$limit</xref>:3})</codeblock>
+          <p>This gathering operations by <xref href="../../console/topics/match_en.dita"
+            ><b>$match</b></xref> first select records matching conditions, then use <xref href="../../console/topics/jgroup_en.dita"
+              ><b>$group</b></xref> grouped by major and use <xref href="../../console/topics/javg_en.dita"
+                ><b>$avg</b></xref> return nested objects in each age group in the field, on average, the output field named avg_age, finally use <xref
+                  href="../../console/topics/jsort_en.dita"
+                  ><b>$sort</b></xref> by avg_age field values (in descending order), major field values (in descending order) to sort the result set, use the <xref
+                    href="../../console/topics/jskip_en.dita"><b>$skip</b></xref> OK to return to the starting posistion of the recording, use the <xref
+                      href="../../console/topics/jlimit_en.dita"><b>$limit</b></xref> limit the number of records returned.</p>
+          <codeblock>{
+  "avg_age": 25,
+  "major": "Computer Science and Technology"
+}
+{
+  "avg_age": 22,
+  "major": "Computer Software and Theory"
+}
+{
+  "avg_age": 22,
+  "major": "Physics"
+}</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="../../console/topics/project_en.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/match_en.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/jgroup_en.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/jsort_en.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/jskip_en.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/jlimit_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

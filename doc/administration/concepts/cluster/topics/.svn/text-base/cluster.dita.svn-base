@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_cluster">
+  <title>集群</title>
+  <body>
+    <p>SequoiaDB 集群是指通过并联多台数据库服务器，达到并行计算，以提升数据请求效率的方式。</p>
+    <p>使用 SequoiaDB 集群，用户可以得到：</p>
+    <section>
+      <title>高性能的数据访问</title>
+      <p>通过并行计算的方式，在多台数据库服务器上分布式执行任务，降低了单节点的资源消耗，提升整体吞吐量与数据访问性能。</p>
+    </section>
+    <section>
+      <title>24x7的高可用性</title>
+      <p>复制组内数据复制保障了数据的可用性，任何一台系统宕机不影响数据的访问。</p>
+    </section>
+    <section>
+      <title>数据库的水平扩张能力</title>
+      <p>通过增加复制组的数量，数据库可以容纳更多的数据；通过增加复制组内节点的数量，数据库可以同时处理更多的读请求。数据库节点数量与整体吞吐量程近线形上升趋势。</p>
+    </section>
+  </body>
+</topic>

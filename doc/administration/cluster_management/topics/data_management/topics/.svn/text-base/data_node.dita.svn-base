@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_511_w2x_tk">
+  <title>分区组中新增节点</title>
+  <body>
+    <note>如果新增节点涉及到新增主机，则请首先按照在<xref href="../../create_host.dita">集群中新增主机</xref>一节完成主机的主机名和参数配置。</note>
+    <p>某些分区组可能在创建时设定的副本数较少，随着物理设备的增加，可能需要增加副本数以提高分区组数据可靠性。</p>
+    <p>操作方法：</p>
+    <codeblock>> var dataRG = db.getRG(&lt;groupname&gt;);
+> var node1 = dataRG.createNode(&lt;host&gt;,&lt;service&gt;,&lt;dbpath&gt;,[config]); 
+> node1.start();</codeblock>
+    <p>第一条命令用于获取数据分区组，参数 groupname 为数据分区组组名； </p>
+    <p>第二条命令用于创建一个新的数据节点，参数与<xref href="../../cata_management/topics/cata_node.dita">新增编目分区组中的创建节点</xref>参数相同；</p>
+    <p>第三条命令用于启动新增的数据节点。</p>
+  </body>
+</topic>

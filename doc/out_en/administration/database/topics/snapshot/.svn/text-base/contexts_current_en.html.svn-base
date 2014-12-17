@@ -1,0 +1,170 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Current Contexts Snapshot"/>
+<meta name="description" content="Description Current contexts snapshot contains the session contexts corresponding to current connections in data nodes. It returns one record. In a record, Contests array field contains all the ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/database/topics/snapshot/snapshot_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_database_monitoring_snapshot_contexts_current"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Current Contexts Snapshot</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_database_monitoring_snapshot_contexts_current"><a name="administration_database_monitoring_snapshot_contexts_current"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/database/topics/snapshot/snapshot_en.html" title="Snapshot"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Snapshot</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../monitoring_en.html" title="Monitoring">Monitoring</a> / <a class="navheader_parent_path" href="../../../../administration/database/topics/snapshot/snapshot_en.html" title="Snapshot">Snapshot</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Current Contexts Snapshot</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Description</h2>
+      <p class="p">Current contexts snapshot contains the session contexts corresponding to current
+        connections in data nodes.</p>
+
+      <p class="p">It returns one record. In a record, Contests array field contains all the contexts in
+        current session.</p>
+
+      <div class="note note"><span class="notetitle">Note:</span> The manipulation of snapshot will generate a context, so the result set of it at least
+        contains one context.</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Sign</h2>
+      <p class="p">SDB_SNAP_CONTEXTS_CURRENT</p>
+
+    </div>
+
+    
+    <div class="section"><h2 class="title sectiontitle">Field Information</h2>
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d45528e40" class="stentry">Field Name</th>
+
+          <th valign="bottom" align="left" id="d45528e43" class="stentry">Type</th>
+
+          <th valign="bottom" align="left" id="d45528e46" class="stentry">Description</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d45528e40" class="stentry">SessionID</td>
+
+          <td valign="top" headers="d45528e43" class="stentry">String</td>
+
+          <td valign="top" headers="d45528e46" class="stentry">SessionID(HostName:Port:ID)</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d45528e40" class="stentry">Contexts.ContextID</td>
+
+          <td valign="top" headers="d45528e43" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d45528e46" class="stentry">Context ID</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d45528e40" class="stentry">Contexts.Type</td>
+
+          <td valign="top" headers="d45528e43" class="stentry">String</td>
+
+          <td valign="top" headers="d45528e46" class="stentry">Context type, like: DUMP</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d45528e40" class="stentry">Contexts.Description</td>
+
+          <td valign="top" headers="d45528e43" class="stentry">String</td>
+
+          <td valign="top" headers="d45528e46" class="stentry">Description of the context, like: Including current query conditions</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d45528e40" class="stentry">Contexts.DataRead</td>
+
+          <td valign="top" headers="d45528e43" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d45528e46" class="stentry">Data that is read</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d45528e40" class="stentry">Contexts.IndexRead</td>
+
+          <td valign="top" headers="d45528e43" class="stentry">Long integer</td>
+
+          <td valign="top" headers="d45528e46" class="stentry">Index that is read</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d45528e40" class="stentry">Contexts.QueryTimeSpent</td>
+
+          <td valign="top" headers="d45528e43" class="stentry">Float</td>
+
+          <td valign="top" headers="d45528e46" class="stentry">Total query time (second)</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d45528e40" class="stentry">Contexts.StartTimestamp</td>
+
+          <td valign="top" headers="d45528e43" class="stentry">Timeline</td>
+
+          <td valign="top" headers="d45528e46" class="stentry">Creating time</td>
+
+        </tr>
+</table>
+
+    </div>
+
+    
+    <div class="section"><h2 class="title sectiontitle">Sample</h2>
+      <pre class="pre codeblock">&gt; db.snapshot(SDB_SNAP_CONTEXTS_CURRENT)
+{
+  "SessionID": vmsvr2-suse-x64:11820:28,
+  "Contexts": [
+    {
+      "ContextID": 13,
+      "Type": "DUMP",
+      "Description": "BufferSize:0",
+      "DataRead": 0,
+      "IndexRead": 0,
+      "QueryTimeSpent": 0,
+      "StartTimestamp": "2013-09-27-18.25.17.311168"
+    }
+  ]
+}</pre>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../administration/database/topics/snapshot/snapshot_en.html" title="Snapshot"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Snapshot</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

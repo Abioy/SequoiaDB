@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_xpj_bgx_tn">
+  <title>db.createRG()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>createRG - Create a replica group.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.createRG</apiname>(<parmname>&lt;name></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Create a replica group. When creating a replica group, the system will automatically generate a "groupID" for a replica group.</p>
+      <parml>
+        <plentry>
+          <pt>name (string)</pt>
+          <pd>Replica group name. All replica group names are unique to each other in a database instance.
+            <parml>
+              <plentry>
+                <pt>Format</pt>
+                <pd>The method "createRG()" contains the parameter "name", which is in the type of string. It should not be null.</pd>
+                <pd>(&lt;"replica group name">)</pd>
+              </plentry>
+            </parml>
+          </pd>          
+        </plentry>        
+      </parml>      
+      <note>
+        <ul><li>The value of the "name" cannot be a null string. It should not contain "." or "$". The length of it should not be greater than 127B.</li>
+        </ul></note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Create a replica group named "group".</p>
+      <codeblock>db.createRG("group")</codeblock>
+    </section>
+  </body>
+  <related-links>
+    <link href="db.getCS.dita" format="dita" type="topic"></link>
+    <link href="db.getRG.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

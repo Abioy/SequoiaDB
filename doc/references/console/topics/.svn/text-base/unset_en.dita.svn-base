@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_unset">
+  <title >$unset</title>
+  <body>
+    <section><title>Grammar</title>
+      <p>{$unset:{&lt;field name1>:"",&lt;field name2>:"",...}}</p>
+    </section>
+    <section><title>Description</title>
+      <p>$unset operation is used to delete the specified field name.if the specified field doesnot
+        exist in record,then skipped.</p>
+    </section>
+    <section><title>Samples</title>
+      <ul>
+        <li>
+          <p>Delete the fields <i>name</i> and <i>age</i> of records in the collection <i>bar</i>,if
+            a record does not contain the field <i>name</i> or <i>age</i>,then skipped,do
+            nothing.</p>
+          <p><codeblock>db.foo.bar.update({$unset:{name:"",age:""}})</codeblock></p>
+        </li>
+        <li>
+          <p>Use '$unset' to delete the element of array object.There has a record for
+            example:{arr:[1,2,3],name:"Tom"}.The operation use $unset to delete the second element
+            as follows:</p>
+          <p><codeblock>db.foo.bar.update({$unset:{"arr.2":""}})</codeblock></p>
+          <p>after this operation,the record update as:{arr:[1,null,3],name:"Tom"}</p>
+        </li>
+        <li>
+          <p>Use $unset to delete the element of nested object.There has a record for
+            example:{content:{ID:1,type:"system",position:"manager"},name:"Tom"},</p>
+          <p>content is a nested object,it has two elements:ID and type.The operation use $unset to
+            delete element <i>type</i> as follows:</p>
+          <p><codeblock>db.foo.bar.update({$unset:{"content.type":""}})</codeblock></p>
+          <p>after this operation,the record update
+            as:{content:{ID:1,position:"manager"},name:"Tom"}</p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="gset_en.dita" format="dita" type="topic"></link>
+    <link href="gaddtoset_en.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/dbupdate_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_phl_b4v_xl">
+  <title>与 Hive 集成</title>
+  <body>
+    <ul>
+      <li><xref href="./topics/Sequoiadbhive.dita">SequoiaDB 支持的 Hive 版本列表</xref></li>
+      <li><xref href="./topics/configmethod.dita">配置方法</xref></li>
+    </ul>
+  </body>
+</topic>

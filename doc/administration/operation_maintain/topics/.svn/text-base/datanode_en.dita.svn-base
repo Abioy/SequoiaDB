@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_l51_cdp_fm">
+  <title>Data Node</title>
+  <body>
+    <p>Data node fails, restart will automatically detect the database directory .SEQUOIADB_STARTUP hidden files.</p>
+    <p>If the file exists then the last execution terminates unexpectedly (eg kill -9). For the unexpected termination of the node, the system will crash recovery into the data node status. </p>
+    <p>In crash recovery process, the data node in the group with a normal amount of synchronizing all nodes. In this case, the restored node void all the data synchronized to the new data as a 
+    reference. Assuming that the node has not been terminated unexpectedly (eg kill -15), then enter the incremental synchronization status. In this case, if the current node other data contained in 
+    the oldest log is already higher than the new node to be restored, then enter the full amount of synchronization state, otherwise only the incremental synchronization log.</p>
+    <p>If the data set of all nodes are terminated unexpectedly, you need to start a node in standalone mode for local recovery. In this mode, the data will be exported and reimported to filter out all the possible data corruption. 
+    When one of the local node is restored, it needs to be copied into the data directory for all other data nodes.</p>
+  </body>
+</topic>

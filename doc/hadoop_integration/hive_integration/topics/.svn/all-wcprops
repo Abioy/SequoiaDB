@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/15921/trunk/doc/hadoop_integration/hive_integration/topics
+END
+configmethod.dita
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/15916/trunk/doc/hadoop_integration/hive_integration/topics/configmethod.dita
+END
+Sequoiadbhive.dita
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/13723/trunk/doc/hadoop_integration/hive_integration/topics/Sequoiadbhive.dita
+END
+configmethod_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/15921/trunk/doc/hadoop_integration/hive_integration/topics/configmethod_en.dita
+END
+Sequoiadbhive_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/13798/trunk/doc/hadoop_integration/hive_integration/topics/Sequoiadbhive_en.dita
+END
+use.ditamap
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/9949/trunk/doc/hadoop_integration/hive_integration/topics/use.ditamap
+END

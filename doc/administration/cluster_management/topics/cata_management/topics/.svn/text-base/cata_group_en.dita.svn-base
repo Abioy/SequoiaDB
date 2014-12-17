@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_jwh_ncx_tk_en">
+  <title>Create New Catalog Replica Group</title>
+  <body>
+    <note>If creating new nodes relate to create new master, please refer to the section <xref
+        href="../../create_host_en.dita">Add master to cluster</xref> to complete the configuration
+      of host name and params about master.</note>
+    <p>There is only one catalog replica group in the database cluster. So create new catalog replica group
+      have already completed in the time of installed and there is no need execute creating new
+      replica group operation after installing. Please refer to the section <xref
+        href="../../../../../installation/configuration_start/topics/cluster_en.dita">Configuration
+        and startup of cluster mode</xref>. operation methods: </p>
+    <codeblock> >db.createReplicaCataGroup(&lt;host&gt;,&lt;service&gt;,&lt;dbpath&gt;,[config])</codeblock>
+    <p>This command is to create a new catalog replica group, at the same time create and start a catalog
+      node, amongs:</p>
+    <p><b>host </b>: specify the host name of catalog node.</p>
+    <p><b>service </b>: specify the service port of catalog node, please ensure this port and the
+      next three ports are unoccupied; for example, if set port 11800, then ensure
+      11800/11801/11802/11803 are unoccupied.</p>
+    <p><b>dbpath</b>: data file path, be used to store catalog data files, please ensure that the
+      data administrator user has write access.(created when installed, dafault <i>sdbadmin</i>).</p>
+    <p><b>config </b>: optional param, be used to configure more detail params. the form is json. param
+      list refer to the section <xref
+        href="../../../../database/topics/runtime_configuration_en.dita">database
+        configuration</xref>, for example configure the param of log size {logfilesz:64}.</p>
+  </body>
+</topic>

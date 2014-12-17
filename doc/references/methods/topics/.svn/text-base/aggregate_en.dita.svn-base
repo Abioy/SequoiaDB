@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_nhy_zf1_hm">
+  <title>db.collectionspace.collection.aggregate()</title>
+  <body>
+    <section><title>db.collectionspace.collection.aggregate( &lt;subOp&gt;... )</title>
+      <p>aggregate()方法与<xref href="find.dita">find()</xref>方法功能比较接近，也是从sequoiadb的集合中检索文档记录，并返回游标。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 8.2* 1.0*"
+        id="references_method_insert_table">-->
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>subOp</stentry>
+          <stentry>json对象</stentry>
+          <stentry>subOp 表示子操作，在aggregate()方法中可以填写1~N个子操作。</stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow/>
+      </simpletable>
+      
+    </section>
+    <section>
+      <title>格式</title>
+      <p> aggregate()方法只有一个参数subOp，它表示1~N个子操作，每个子操作是一个json对象，子操作之间用逗号隔开。聚集框架支持以下子操作参数：</p><p> <simpletable>
+        <sthead>
+          <stentry>参数名 </stentry>
+          <stentry>描述 </stentry>
+          <stentry>示例 </stentry>
+        </sthead>
+        <strow>
+          <stentry><xref href="../../console/topics/project.dita">$project</xref></stentry>
+          <stentry>选择需要输出的字段名，"1"表示输出，"0"表示不输出，还可以实现字段的重命名。 </stentry>
+          <stentry>{$project:{field1:1,field:0,aliase:"$field3"}} </stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="../../console/topics/match.dita">$match</xref></stentry>
+          <stentry>实现从集合中选择匹配条件的记录，相当与SQL语句的where。</stentry>
+          <stentry>{$match:{field:{$lte:value}}}</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="../../console/topics/limit.dita">$limit</xref></stentry>
+          <stentry>限制返回的记录条数。</stentry>
+          <stentry>{$limit:10} </stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="../../console/topics/skip.dita">$skip</xref></stentry>
+          <stentry>控制结果集的开始点，即跳过结果集中指定条数的记录。</stentry>
+          <stentry>{$skip:5}</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="../../console/topics/group.dita">$group</xref></stentry>
+          <stentry>实现对记录的分组，类似与SQL的group by语句，"_id"指定分组字段。</stentry>
+          <stentry>{$group:{_id:"$field"}}</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="../../console/topics/sort.dita">$sort</xref></stentry>
+          <stentry>实现对结果集的排序，"1"代表升序，"-1"代表降序。</stentry>
+          <stentry>{$sort:{field1:1,field2:-1,...}}</stentry>
+        </strow>
+      </simpletable></p>
+      <p><b>说明：</b>aggregate()方法可以有任意多个字操作，但是注意各子操作的参数名的语法规则。</p>
+    </section>
+    <section>
+      <title>示例</title>
+      <p>假设集合collection包含如下格式的记录：</p>
+      <codeblock>{
+  no:1000,
+  score:80,
+  interest:["basketball","football"],
+  major:"计算机科学与技术",
+  dep:"计算机学院",
+  info:{
+        name:"Tom",
+        age:25,
+        sex:"男"
+        }
+}</codeblock>
+      <ul>
+        <li>
+          <p>按条件选择记录，并指定返回字段名</p>
+          <codeblock>db.collectionspace.collection.aggregate({<xref href="../../console/topics/match.dita">$match</xref>:{$and:[{no:{$gt:1002}},{no:{$lt:1015}},{dep:"计算机学院"}]}},
+{<xref href="../../console/topics/match.dita">$project</xref>:{no:1,"info.name":1,major:1}})</codeblock>
+          <p>此聚集操作操作首先使用<xref href="../../console/topics/match.dita"
+            ><b>$match</b></xref>选择匹配条件的记录，然后使用<xref href="../../console/topics/match.dita"
+              ><b>$project</b></xref>只返回指定的字段名。返回结果集如下：</p>
+          <codeblock>{
+  "no": 1003,
+  "info.name": "Sam",
+  "major": "计算机软件与理论"
+}
+{
+  "no": 1004,
+  "info.name": "Coll",
+  "major": "计算机工程"
+}
+{
+  "no": 1005,
+  "info.name": "Jim",
+  "major": "计算机工程"
+}</codeblock>
+        </li>
+        <li>
+          <p>按条件选择记录，并对记录进行分组</p>
+          <codeblock>db.collectionspace.collection.aggregate({<xref href="../../console/topics/match.dita">$match</xref>:{dep:"计算机学院"}},{<xref href="../../console/topics/group.dita">$group</xref>:{_id:"$major",Major:{<xref href="../../console/topics/first.dita">$first</xref>:"$major"},
+avg_age:{<xref href="../../console/topics/avg.dita">$avg</xref>:"$info.age"}}})</codeblock>
+          <p>此聚集操作首先使用<xref href="../../console/topics/match.dita"
+            ><b>$match</b></xref>选择匹配条件的记录，然后使用<xref href="../../console/topics/group.dita"
+              ><b>$group</b></xref>对记录按字段major进行分组，并使用<xref href="../../console/topics/avg.dita"
+                ><b>$avg</b></xref>返回每个分组中嵌套对象age字段的平均值。</p>
+          <codeblock>{
+  "Major": "计算机工程",
+  "avg_age": 25
+}
+{
+  "Major": "计算机科学与技术",
+  "avg_age": 22.5
+}
+{
+  "Major": "计算机软件与理论",
+  "avg_age": 26
+}</codeblock>
+        </li>
+        <li>
+          <p>按条件选择记录，并对记录进行分组、排序、限制返回记录的起始位置和返回记录数</p>
+          <codeblock>db.collectionspace.collection.aggregate({<xref href="../../console/topics/match.dita">$match</xref>:{interest:{$exists:1}}},{<xref href="../../console/topics/group.dita">$group</xref>:{_id:"$major",avg_age:{<xref href="../../console/topics/avg.dita">$avg</xref>:"$info.age"},
+major:{<xref href="../../console/topics/first.dita">$first</xref>:"$major"}}},{<xref href="../../console/topics/sort.dita">$sort</xref>:{avg_age:-1,major:-1}},{<xref href="../../console/topics/skip.dita">$skip</xref>:2},{<xref href="../../console/topics/limit.dita">$limit</xref>:3})</codeblock>
+          <p>此聚集操作首先按<xref href="../../console/topics/match.dita"
+            ><b>$match</b></xref>选择匹配条件的记录；然后使用<xref href="../../console/topics/group.dita"
+              ><b>$group</b></xref>按major进行分组，并使用<xref href="../../console/topics/avg.dita"
+                ><b>$avg</b></xref>返回每个分组中嵌套对象age字段的平均值，输出字段名为avg_age；最后使用<xref
+                  href="../../console/topics/sort.dita"
+                  ><b>$sort</b></xref>按avg_age字段值（降序）、major字段值（降序）对结果集进行排序，使用<xref
+                    href="../../console/topics/skip.dita"><b>$skip</b></xref>确定返回记录的起始位置，使用<xref
+                      href="../../console/topics/limit.dita"><b>$limit</b></xref>限制返回记录的条数。</p>
+          <codeblock>{
+  "avg_age": 25,
+  "major": "计算机科学与技术"
+}
+{
+  "avg_age": 22,
+  "major": "计算机软件与理论"
+}
+{
+  "avg_age": 22,
+  "major": "物理学"
+}</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="../../console/topics/project.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/match.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/group.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/sort.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/skip.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/limit.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

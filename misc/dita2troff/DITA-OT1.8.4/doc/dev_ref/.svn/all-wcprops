@@ -1,0 +1,329 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref
+END
+PdfDefault.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/PdfDefault.html
+END
+developer-reference.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/developer-reference.html
+END
+plugin-dependencies.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-dependencies.html
+END
+XhtmlCHM.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/XhtmlCHM.html
+END
+plugin-anttarget.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-anttarget.html
+END
+configuring-the-dita-ot.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/configuring-the-dita-ot.html
+END
+preprocess-genlist.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-genlist.html
+END
+preprocess-coderef.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-coderef.html
+END
+preprocess-chunk.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-chunk.html
+END
+OdtDefault.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/OdtDefault.html
+END
+plugin-overridestyle.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-overridestyle.html
+END
+preprocess-mappull.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-mappull.html
+END
+lib-org.dita.dost.platform-plugin.properties.html
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/lib-org.dita.dost.platform-plugin.properties.html
+END
+preprocess-mapref.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-mapref.html
+END
+preprocess-conref.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-conref.html
+END
+XhtmlDefault.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/XhtmlDefault.html
+END
+preprocess-flagging.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-flagging.html
+END
+DITA-OTArchitecture.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/DITA-OTArchitecture.html
+END
+plugins-removing.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugins-removing.html
+END
+flagging-migration.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/flagging-migration.html
+END
+plugin-newextensions.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-newextensions.html
+END
+DITA1.2-implementation-dependent-features.html
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/DITA1.2-implementation-dependent-features.html
+END
+DITA-OTPreprocess.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/DITA-OTPreprocess.html
+END
+XhtmlJavahelp.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/XhtmlJavahelp.html
+END
+XhtmlWithNavigation.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/XhtmlWithNavigation.html
+END
+preprocess-keyref.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-keyref.html
+END
+rebuilding-the-dita-ot-documentation.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/rebuilding-the-dita-ot-documentation.html
+END
+processing-structure.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/processing-structure.html
+END
+ant-properties.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/ant-properties.html
+END
+plugin-sample.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-sample.html
+END
+preprocess-maplink.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-maplink.html
+END
+preprocess-debugfilter.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-debugfilter.html
+END
+preprocess-copyfiles.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-copyfiles.html
+END
+extending-the-ot.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/extending-the-ot.html
+END
+plugins-installing.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugins-installing.html
+END
+plugin-antpreprocess.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-antpreprocess.html
+END
+processing-pipeline-modules.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/processing-pipeline-modules.html
+END
+plugins-overview.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugins-overview.html
+END
+processing-order.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/processing-order.html
+END
+extended-functionality.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/extended-functionality.html
+END
+plugin-xmlcatalog.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-xmlcatalog.html
+END
+plugin-xsltparams.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-xsltparams.html
+END
+preprocess-topicpull.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-topicpull.html
+END
+preprocess-conrefpush.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-conrefpush.html
+END
+plugin-newtranstype.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-newtranstype.html
+END
+XhtmlTocjs.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/XhtmlTocjs.html
+END
+plugin-configfile.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-configfile.html
+END
+XhtmlEclipse.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/XhtmlEclipse.html
+END
+plugin-messages.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-messages.html
+END
+preprocess-metadata.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/preprocess-metadata.html
+END
+plugin-javalib.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-javalib.html
+END
+XhtmlCommon.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/XhtmlCommon.html
+END
+plugin-support.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-support.html
+END
+plugin-addgeneratedtext.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/doc/dev_ref/plugin-addgeneratedtext.html
+END

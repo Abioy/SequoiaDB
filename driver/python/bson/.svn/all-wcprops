@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson
+END
+time64_limits.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/time64_limits.h
+END
+tz_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/tz_util.py
+END
+min_key.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/min_key.py
+END
+time64_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/time64_config.h
+END
+max_key.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/max_key.py
+END
+son.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/son.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/__init__.py
+END
+time64.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/time64.c
+END
+encoding_helpers.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/encoding_helpers.c
+END
+_cbsonmodule.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/_cbsonmodule.c
+END
+buffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/buffer.c
+END
+timestamp.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/timestamp.py
+END
+json_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/json_util.py
+END
+time64.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/time64.h
+END
+encoding_helpers.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/encoding_helpers.h
+END
+_cbsonmodule.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/_cbsonmodule.h
+END
+buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/buffer.h
+END
+regex.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/regex.py
+END
+code.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/code.py
+END
+errors.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/errors.py
+END
+py3compat.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/py3compat.py
+END
+dbref.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/dbref.py
+END
+objectid.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/objectid.py
+END
+binary.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/12658/trunk/driver/python/bson/binary.py
+END

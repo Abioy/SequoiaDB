@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_dropindex_en">
+  <title>sql drop index</title>
+  <body>
+    <section><title>drop index </title>
+      <p>Be used to drop the index in the collection.</p>
+    </section>
+    <section><title>Grammar</title>
+      <p><codeblock>drop index &lt;index_name> on &lt;cs_name>.&lt;cl_name></codeblock></p>
+      <p>&lt;index_name>：index name</p>
+      <p>&lt;cs_name>：collectionspace name</p>
+      <p>&lt;cl_name>：collection name</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>The following sample will drop the index name "test_index" in the collectionspace
+            <i>foo</i>,collection <i>bar</i>.Assume the index name is already exist.</p>
+          <p><codeblock>db.execUpdate("drop index test_index on foo.bar") //Equivalent db.foo.bar.dropIndex("test_index")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="create_index_en.dita" format="dita" type="topic"></link>
+    <link href="list_cs_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

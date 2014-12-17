@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_mkd_zyy_3k">
+  <title>Java API</title>
+  <body>
+    <p>This part is related to Java API document.</p>
+    <p><xref href="..\..\..\..\java\html\index.html" format="html">Java API</xref></p>
+    <section>
+      <title>History Updates:</title>
+      <p><b>Version 1.10</b></p>
+      <p>1. 1.	DBCollection class' new interfaces:</p><codeblock>createLob, create a large object(LOB)
+openLob, open an existed LOB
+removeLob, remove a LOB
+listLobs, list all the LOBs in the collection
+explain, Get the access of plan of the executions.</codeblock>
+      <p>2. Added a class of large objects (LOBs), to do operations on large objects.</p><codeblock>write, write and insert LOB
+read, read LOB from data
+seek, specifies the migration of the data to be read
+close, close a LOB
+getID, get the oid of a LOB
+getSize,  get the size of a LOB
+getCreateTime, get the time of creation of a LOB</codeblock>
+      <p><b>Version 1.8</b></p>
+      <p>1. New APIs in Sequoiadb Class:</p><codeblock>isValid, checks whether the current connection is valid or not
+createCollectionSpace, a BSONObject parameter is provided to make the creating of a collection space more flexible
+backupOffline, more options are supported by backupOffline()
+evalJS, evaluates JavaScript codes
+createDomain, creates a domain
+getDomain, gets a domain
+dropDomain, drops a domain
+isDomainExist, checks whether a domain exists or not
+listDomain, enumerates and lists the domains</codeblock>
+      <p>2. New APIs in DBCollection Class:</p><codeblock>alterCollection, alters the attributes of a collection
+setMainKeys, sets the main keys of a collection. This API only works with save(), the main keys set by it have no effects on other APIs
+save, uses the default main key "_id" or other specified main keys to insert one or more records</codeblock>
+      <p>3. A Domain Class is added to support the domain-related operations</p>
+      <p>4. New APIs in SequoiadbDatasource Class:</p><codeblock>SequoiadbDatasource, a new constructor supports multiple connecting addresses in order to realize a better load balancing
+getIdleConnNum, gets the number of currently idle connections
+getUsedConnNum, gets the number of currently used connections
+getNormalAddrNum, gets the number of currently normal connections
+getAbnormalAddrNum, gets the number of currently abnormal connections
+</codeblock>
+      <p>5. New APIs in SequoiadbOption class:</p><codeblock>setRecaptureConnPeriod, sets the recapture connection period
+getRecaptureConnPeriod, gets the recapture connection period</codeblock>
+      <p><b>Version 1.6</b></p>
+      <p>1. Add a class Node to replace the original class ReplicaNode. Class ReplicaNode and methods associated with it will be abandoned in the version 2.x.</p>
+      <p>For details, please see the relevant API.</p>
+    </section>
+  </body>
+</topic>

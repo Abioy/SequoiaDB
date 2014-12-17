@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_jml_lbn_5n">
+  <title>db.collectionspace.collection.detachCL()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>detachCL - Detach the child partition-collections from the main partition-collection.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.collectionspace.collection.detachCL</apiname>(<parmname>&lt;subCLFullName></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Collection
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Detach the child partition-collections from the main partition-collection.</p>
+      <parml>
+        <plentry>
+          <pt>subCLFullName (string)</pt>
+          <pd>Child partition-collection's full name(includes the  collection space name).</pd>
+        </plentry>        
+      </parml>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Detach the child partition-collection from the specified main partition-collection.</p>
+      <codeblock>db.foo.year.detachCL("foo2.January"}</codeblock>      
+    </section>
+  </body>
+</topic>

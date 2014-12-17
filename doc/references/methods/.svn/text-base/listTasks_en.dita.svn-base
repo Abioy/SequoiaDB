@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_gmt_jkr_kn">
+  <title>db.listTasks()</title>
+  <body>
+    <section><title>db.listTasks([cond],[sel],[orderBy],[hint])</title>
+      <p> View database of all background tasks</p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable>
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Are Required</stentry>
+        </sthead>        
+        <strow>
+          <stentry>cond</stentry>
+          <stentry>Json object</stentry>
+          <stentry>Tasks filter</stentry>
+          <stentry>No</stentry>
+        </strow>
+        <strow>
+          <stentry>sel</stentry>
+          <stentry>Json object</stentry>
+          <stentry>Task selection field</stentry>
+          <stentry>No</stentry>
+        </strow>
+        <strow>
+          <stentry>hint</stentry>
+          <stentry>Json object</stentry>
+          <stentry>Reservations</stentry>
+          <stentry>No</stentry>
+        </strow>
+      </simpletable>      
+    </section>    
+    <section><title>Example</title>
+      <ul>
+        <li><p>List all system background tasks.</p>
+          <p><codeblock>db.listTasks()</codeblock></p></li>
+      </ul>      
+    </section>
+  </body>
+</topic>
+

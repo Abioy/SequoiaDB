@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_listCL">
+  <title>sql list collections</title>
+  <body>
+    <section><title>list collections 语句</title>
+      <p>枚举集合空间中的集合。</p>
+    </section>
+    <section><title>语法</title>
+      <p><codeblock>list collections</codeblock></p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>本例会返回集合空间中的所有集合</p>
+          <p><codeblock>db.exec("list collections") 
+结果：
+{
+  "Name": "testfoo.testbar"
+  "Name":"big.small"
+  ...
+}</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="list_cs.dita" format="dita" type="topic"></link>
+    <link href="sqinsert.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

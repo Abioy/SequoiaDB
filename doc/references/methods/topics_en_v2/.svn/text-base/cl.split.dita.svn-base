@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_pt1_nxm_5n">
+  <title>db.collectionspace.collection.split()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>split - Split the records into different replica groups according to the given conditions in an environment with no less than two replica groups. This operation is a synchronous operation, so it will terminate and return after finishing the data split.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.collectionspace.collection.split</apiname>(<parmname>&lt;source group></parmname>,<parmname>&lt;target group></parmname>,<parmname>&lt;percent(0~100)|cond></parmname>,<parmname>[endcondition]</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Collection
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Split the records into different replica groups according to the given conditions in an environment with no less than two replica groups. This operation is a synchronous operation, so it will terminate and return after finishing the data split.</p>
+      <parml>
+        <plentry>
+          <pt>source group (string)</pt>
+          <pd>The source replica group.</pd>
+        </plentry>
+        <plentry>
+          <pt>target group (string)</pt>
+          <pd>The target replica group.</pd>
+        </plentry>
+        <plentry>
+          <pt>percent(0~100) (double)</pt>
+          <pd>percentage split condition. (Either "percent" or "condition".)</pd>
+        </plentry>
+        <plentry>
+          <pt>cond (json object)</pt>
+          <pd>Range split condition. (Either "condition" or "percent".)</pd>
+        </plentry>        
+        <plentry>
+          <pt>endcondition (json object)</pt>
+          <pd>End of the range condition. (Optional, and it is effective when using range split, useless when using percentage split.)
+            <parml>
+              <plentry>
+                <pt>Format</pt>
+                <pd>Data split is classified into range split and percentage split. Both "source group" and "target group" are common parameters in a type of string; both "condition" and "endcondition" are json objects that are needed when using range split; "percent" is a double float number that are needed when using percentage split.</pd>                
+                <pd><b>Range split:</b>  When using range split, range partitions use precise condition, hash partitions use "number of partitions" as a condition. The starting point of split is a required condition, but the ending point is optional, in default, the ending point is the maximum data range of the split source.</pd>
+                <pd>("&lt;source shard>","&lt;target shard>",&lt;condition>) </pd>                
+                <pd><b>Percentage split:</b> db.foo.bar.split("&lt;source shard>","&lt;target shard>",&lt;percent>)</pd>
+              </plentry>              
+            </parml>
+            <note> When using range split, if the specified field of sharding key is in descending order, like: {groupingKey:{&lt;Field 1>:&lt;-1>}, the starting point in "condition" or "partition" should be larger than the ending point. The Hash Sharding's parameter Partition must be integer type, not any other type.</note>
+          </pd>
+        </plentry>        
+      </parml>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Range-split of a hash-partition collection</p>
+        <codeblock>db.foo.bar.split("shard1", "shard2",{Partition:10},{Partition:20}) </codeblock>
+      <p>Range-split of range-partition collection</p>
+      <codeblock>db.foo.bar.split("shard1", "shard2",{a:10}, {a:10000})</codeblock>
+      <p>Percentage split</p><codeblock>db.foo.bar.split("shard1", "shard2", 50) </codeblock>
+      <note>When using percentage split, please make sure that there are data in the source group, in other words, the collection is not empty.</note>
+    </section>
+  </body>
+</topic>

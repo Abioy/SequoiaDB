@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="development_console_topics">
+  <title>SequoiaDB shell</title>
+  <body>
+    <p><b>目录：</b></p>
+    <ul>
+      <li><xref href="shell.dita">SequoiaDB shell入门</xref></li>
+      <li><xref href="knack.dita">使用 SequoiaDB shell 的窍门</xref></li>
+    </ul>
+  </body>
+</topic>

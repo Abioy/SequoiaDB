@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_console_add">
+  <title>$and</title>
+  <body>
+    <section><title>语法</title>
+      <p><codeblock>{$and:[{&lt;表达式1>}，{&lt;表达式2>},...,{&lt;表达式N>}]}</codeblock></p>
+    </section>
+    <section>
+      <title>描述</title>
+      <p>$and 是一个逻辑“与”操作。它的作用是选择满足所有表达式（&lt;表达式1>，&lt;表达式2>,...,&lt;表达式N>）的记录，但是如果第一个表达式（&lt;表达式1>）的计算结果为 false，SequoiaDB 将不会再执行后面的表达式。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>选择集合 bar 下 age 字段值为20，price 字段值小于10的记录</p>
+          <codeblock>db.foo.bar.find({$and:[{age:20},{price:{$lt:10}}]})</codeblock>
+          <note>
+            <p>SequoiaDB 提供了一种隐式的 and 操作，用逗号（,）隔开个表达式，例如</p>
+            <p><codeblock>db.foo.bar.find({age:20,price:{$lt:10}})</codeblock></p>
+          </note>
+        </li>
+        <li>
+          <p>当使用 and 操作对同一个字段名时，如{age：{$lt:20}}and{age:{$exists:1}}。那么可以用 $and 操作两个分开的表达式，也可以合并这两个表达式{age:{$lt:20,$exists:1}}。</p>
+          <p>
+            <codeblock>db.foo.bar.update({$inc:{salary:200}},{$and:[{age:{$lt:20}},{age:{$exists:1}}]})
+db.foo.bar.update({$inc:{salary:200}},{age:{$lt:20,$exists:1}})</codeblock>
+          </p>
+          <p>两个操作的结果相同，首先查询集合 bar 下存在 age 字段并且 age 的值小于20的记录，然后对这些记录的 salary 字段的值增加200。</p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="pall.dita" format="dita" type="topic"></link>
+    <link href="por.dita" format="dita" type="topic"></link>
+    <link href="inc.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/find.dita" format="dita" type="topic"></link>
+    <link href="../../methods/topics/dbupdate.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

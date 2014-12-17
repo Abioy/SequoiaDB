@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_4yc_5kk_kn">
+  <title>db.cancelTask()</title>
+  <body>
+    <section><title>db.cancelTask(&lt;id>,[isAsync])</title>
+      <p>取消任务</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>        
+        <strow>
+          <stentry>id</stentry>
+          <stentry>整数</stentry>
+          <stentry>任务 ID</stentry>
+          <stentry>是</stentry>
+        </strow>
+        <strow>
+          <stentry>isAsync</stentry>
+          <stentry>布尔</stentry>
+          <stentry>是否异步</stentry>
+          <stentry>否</stentry>
+        </strow>
+      </simpletable>      
+    </section>    
+    <section><title>示例</title>
+      <ul>
+        <li><p>停止切分任务</p>
+          <p><codeblock>var taskid1 = db.test.test.splitAsync("db1", "db2", 50);
+db.cancelTask( taskid1, true )</codeblock></p></li>
+      </ul>      
+    </section>
+  </body>
+</topic>

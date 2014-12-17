@@ -1,0 +1,270 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Integration with MapReduce"/>
+<meta name="description" content="Build Hadoop Environment We support both Hadoop 1.x and Hadoop 2.x, please install and configure Hadoop first. Configure Docking Environment hadoop-connector.jar and sequoiadb.jar are used for the ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../hadoop_integration/hadooproot_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_25h_znr_fm"/>
+<link rel="stylesheet" type="text/css" href="../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../assets/webhelp_topic.css"/>
+<title>Integration with MapReduce</title>
+<script type="text/javascript" src="../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_25h_znr_fm"><a name="topic_25h_znr_fm"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../hadoop_integration/hadooproot_en.html" title="Hadoop Integration"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Hadoop Integration</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../hadoop_integration/hadooproot_en.html" title="Hadoop Integration">Hadoop Integration</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Integration with MapReduce</h1>
+  
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Build Hadoop Environment</h2>
+      
+      <p class="p">We support both Hadoop 1.x and Hadoop 2.x, please install and configure Hadoop first.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Configure Docking Environment</h2>
+      
+      <p class="p">hadoop-connector.jar and sequoiadb.jar are used for the docking with MapReduce. These two jar files can be found under the hadoop directory of the SequoiaDB installation directory.</p>
+
+      <p class="p">We need to check the classpath of Hadoop first because it may vary in different versions. Enter hadoop classpath, select one directory form the classpath, move haddp-connector.jar and sequoiadb.jar into the directory. Restart the hadoop cluster.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Write MapReduce</h2>
+      
+      <p class="p"><strong class="ph b">Some important classes in hadoop-connector.jar:</strong></p>
+
+      <p class="p">    SequoiadbInputFormat: reads data from SequoiaDB</p>
+
+      <p class="p">    SequoiadbOutputFormat: writes data into SequoiaDB</p>
+
+      <p class="p">    BSONWritable: BSONObject's wrapper class, it realizes the interfaces of WritableComparable class. Used to serialize BSONObject objects.</p>
+
+      <p class="p"><strong class="ph b">The Configuration of SequoiaDB &amp; MapReduce</strong></p>
+
+      <p class="p">    Put the configuration file named sequoiadb-hadoop.xml into the root directory of the source code of the project.</p>
+
+      <p class="p">    sequoiadb.input.url: Specify the URL of the SequoiaDB which acts as an input source, the format is: hostname1:port1, hostname2:port2,</p>
+
+      <p class="p">    sequoiadb.in.collectionspace: Specify the collection space which acts as an input source.</p>
+
+      <p class="p">    sequoiadb.in.collection: Specify the collection which acts as an input source.</p>
+
+      <p class="p">    sequoiadb.output.url: Specify the URL of the SequoiaDB which acts as an output target.</p>
+
+      <p class="p">    sequoiadb.out.collectionspace: Specify the collection space which acts as an output target.</p>
+
+      <p class="p">    sequoiadb.out.collection: Specify the collection which acts as an output target.</p>
+
+      <p class="p">    sequoiadb.out.bulknum: Specify the number of records that are written into SequoiaDB for each time in order to optimize the write performance.</p>
+
+      <p class="p"><strong class="ph b">Examples</strong></p>
+
+      <ul class="ul">
+        <li class="li">
+      
+      <p class="p">1. The following codes read and process the data form HDFS files, and then write the result into SequoiaDB.</p>
+
+      <pre class="pre codeblock">public class HdfsSequoiadbMR {
+    static class MobileMapper extends  Mapper&lt;LongWritable,Text,Text,IntWritable&gt;{
+        private static final IntWritable ONE=new IntWritable(1);
+        @Override
+        protected void map(LongWritable key, Text value, Context context)
+                throws IOException, InterruptedException {
+            String valueStr=value.toString();
+            
+            String mobile_prefix=valueStr.split(",")[3].substring(0,3);
+            context.write(new Text(mobile_prefix), ONE);
+        }
+        
+    }
+    
+    static class MobileReducer extends Reducer&lt;Text, IntWritable, NullWritable, BSONWritable&gt;{
+
+        @Override
+        protected void reduce(Text key, Iterable&lt;IntWritable&gt; values,Context context)
+                throws IOException, InterruptedException {
+                Iterator&lt;IntWritable&gt; iterator=values.iterator();
+                long sum=0;
+                while(iterator.hasNext()){
+                    sum+=iterator.next().get();
+                }
+                BSONObject bson=new BasicBSONObject();
+                bson.put("prefix", key.toString());
+                bson.put("count", sum);
+                context.write(null,new BSONWritable(bson));
+        }
+        
+    }
+    
+    
+    
+    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
+        if(args.length&lt;1){
+            System.out.print("please set input path ");
+            System.exit(1);
+        }
+        Configuration conf=new Configuration();
+        conf.addResource("sequoiadb-hadoop.xml"); //load the configuration file
+        Job job=Job.getInstance(conf);
+        job.setJarByClass(HdfsSequoiadbMR.class);
+        job.setJobName("HdfsSequoiadbMR");
+        job.setInputFormatClass(TextInputFormat.class);
+        job.setOutputFormatClass(SequoiadbOutputFormat.class); //the reduce oupput is written to SequoiaDB
+        TextInputFormat.setInputPaths(job, new Path(args[0]));
+
+        job.setMapperClass(MobileMapper.class);    
+        job.setReducerClass(MobileReducer.class);
+        
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(IntWritable.class);
+        
+        job.setOutputKeyClass(NullWritable.class);        
+        job.setOutputValueClass(BSONWritable.class);
+        
+        job.waitForCompletion(true);
+    }
+}</pre>
+</li>
+
+      <li class="li"><p class="p">2. Reads and processes the data from SequoiaDB, and then writes the result into HDFS.</p>
+
+      <pre class="pre codeblock">public class SequoiadbHdfsMR {
+    /**
+     * 
+     * @author gaoshengjie
+     *  read the data, count penple in a province
+     */
+    static class ProvinceMapper extends Mapper&lt;Object, BSONObject,IntWritable,IntWritable&gt;{
+        private static final IntWritable ONE=new IntWritable(1);
+        @Override
+        protected void map(Object key, BSONObject value, Context context)
+                throws IOException, InterruptedException {
+            int province=(Integer) value.get("province_code");
+            context.write(new IntWritable(province), ONE);
+        }
+            
+    }
+    
+    static class ProvinceReducer extends Reducer&lt;IntWritable,IntWritable,IntWritable,LongWritable&gt;{
+
+        @Override
+        protected void reduce(IntWritable key, Iterable&lt;IntWritable&gt; values,
+                Context context)
+                throws IOException, InterruptedException {
+            Iterator&lt;IntWritable&gt; iterator=values.iterator();
+            long sum=0;
+            while(iterator.hasNext()){
+                sum+=iterator.next().get();
+            }
+            context.write(key,new LongWritable(sum));
+        }
+
+    }
+    
+    
+    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
+        if(args.length&lt;1){
+            System.out.print("please set  output path ");
+            System.exit(1);
+        }
+        Configuration conf=new Configuration();
+        conf.addResource("sequoiadb-hadoop.xml");
+        Job job=Job.getInstance(conf);
+        job.setJarByClass(SequoiadbHdfsMR.class);
+        job.setJobName("SequoiadbHdfsMR");
+        job.setInputFormatClass(SequoiadbInputFormat.class);
+        job.setOutputFormatClass(TextOutputFormat.class);
+
+        
+        FileOutputFormat.setOutputPath(job, new Path(args[0]+"/result"));
+        
+        job.setMapperClass(ProvinceMapper.class);    
+        job.setReducerClass(ProvinceReducer.class);
+        
+        job.setMapOutputKeyClass(IntWritable.class);
+        job.setMapOutputValueClass(IntWritable.class);
+        
+        job.setOutputKeyClass(IntWritable.class);        
+        job.setOutputValueClass(LongWritable.class);
+        
+        job.waitForCompletion(true);
+    }
+}</pre>
+</li>
+
+      </ul>
+
+      <p class="p">configuration file:</p>
+
+      <pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;configuration&gt;
+  &lt;property&gt;
+     &lt;name&gt;sequoiadb.input.url&lt;/name&gt;
+     &lt;value&gt;localhost:11810&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+     &lt;name&gt;sequoiadb.output.url&lt;/name&gt;
+     &lt;value&gt;localhost:11810&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+     &lt;name&gt;sequoiadb.in.collectionspace&lt;/name&gt;
+     &lt;value&gt;default&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+     &lt;name&gt;sequoiadb.in.collect&lt;/name&gt;
+     &lt;value&gt;student&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+     &lt;name&gt;sequoiadb.out.collectionspace&lt;/name&gt;
+     &lt;value&gt;default&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+     &lt;name&gt;sequoiadb.out.collect&lt;/name&gt;
+     &lt;value&gt;result&lt;/value&gt;
+  &lt;/property&gt;
+    &lt;property&gt;
+     &lt;name&gt;sequoiadb.out.bulknum&lt;/name&gt;
+     &lt;value&gt;10&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/configuration&gt;</pre>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../hadoop_integration/hadooproot_en.html" title="Hadoop Integration"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Hadoop Integration</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

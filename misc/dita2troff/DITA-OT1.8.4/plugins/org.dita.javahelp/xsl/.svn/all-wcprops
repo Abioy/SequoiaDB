@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.javahelp/xsl
+END
+map2javahelptoc.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.javahelp/xsl/map2javahelptoc.xsl
+END
+map2javahelpset.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.javahelp/xsl/map2javahelpset.xsl
+END
+map2javahelpmap.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.javahelp/xsl/map2javahelpmap.xsl
+END

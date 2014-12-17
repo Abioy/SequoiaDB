@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="application_c_sql">
+  <title>SQL to SequoiaDB shell to C</title>
+  <body>
+    <p>The query in Sequoiadb is in the format of json(bson). The following table shows examples
+      comparing sql statements, sequoiadb shell statements and sequoiadb C driver application
+      statements.</p>
+    <simpletable >
+      <sthead>
+        <stentry>SQL</stentry>
+        <stentry>SequoiaDB shell</stentry>
+        <stentry>C Driver</stentry>
+      </sthead>
+      <strow>
+        <stentry>insert into students(a,b) values(1,-1) </stentry>
+        <stentry>db.foo.bar.insert({a:1,b:-1}) </stentry>
+        <stentry> const char *r ="{a:1,b:-1}" ;<p>// <i>JsonToBso</i> transforms a json string into
+            a bson object</p><p>jsonToBson ( &amp;obj, r ) ;</p><p>// <i>Collection</i> is the
+            handle of collection <i>bar</i></p><p> sdbInsert (collection, &amp;obj ) ;
+          </p></stentry>
+      </strow>
+      <strow>
+        <stentry>select a,b from students </stentry>
+        <stentry>db.foo.bar.find(null,{a:"",b:""})</stentry>
+        <stentry>
+          const char *r ="{a:\"\",b:\"\"}" ;
+          <p>// <i>JsonToBso</i> transforms a json string into bson object </p>
+          <p>jsonToBson ( &amp; select, r ) ;</p>
+          <p>// <i>Collection</i> is the handle of collection <i>bar</i>. <i>Cursor</i> is the
+            handle that returns query results.</p>
+          <p>sdbQuery ( collection, NULL, &amp;select, NULL, NULL, 0, -1, cursor ) ;</p>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>select * from students</stentry>
+        <stentry>db.foo.bar.find()</stentry>
+        <stentry>
+          // <i>Collection</i>  is the handle of collection <i>bar</i>.<i>Cursor</i> is the
+            handle that returns query results.
+          <p>sdbQuery ( collection, NULL, NULL, NULL, NULL, 0, -1, cursor ) ;</p>
+        </stentry>
+      </strow>
+      <strow>
+        <stentry>select * from students where age=20</stentry>
+        <stentry>db.foo.bar.find({age:20})</stentry>
+        <stentry> const char *r ="{age:20}";<p>// JsonToBso transforms a json string into a bson
+            object.</p><p>jsonToBson ( &amp;condition, r ) ;</p><p>// <i>Collection</i> is the
+            handle of collection <i>bar</i>. <i>Cursor</i> is the handle that returns query
+            results.</p><p>sdbQuery ( collection, &amp; condition, NULL, NULL, NULL, 0, -1, cursor )
+            ; </p></stentry>
+      </strow>
+      <strow>
+        <stentry>select * from students where age=20 order by name</stentry>
+        <stentry>db.foo.bar.find({age:20}).sort({name:1})</stentry>
+        <stentry> const char *r1 ="{age:20}" ;<p>const char *r2 ="{name:1}" ;</p><p>//
+              <i>JsonToBso</i> transforms a json string into a bson object</p><p>jsonToBson ( &amp;
+            condition, r1 ) ;</p><p>jsonToBson ( &amp;orderBy, r2 ) ;</p><p>// <i>Collection</i> is
+            the handle of collection <i>bar</i>. <i>Cursor</i> is the handle that returns query
+            results.</p><p>sdbQuery ( collection, &amp; condition, NULL, &amp; orderBy, NULL, 0, -1,
+            cursor ) ; </p></stentry>
+      </strow>
+      <strow>
+        <stentry>select * from students where age>20 and age&lt;30</stentry>
+        <stentry>db.foo.bar.find({age:{$gt:20,$lt:30}})</stentry>
+        <stentry> const char *r ="{age:{$gt:20,$lt:30}}" ;<p>// <i>JsonToBso</i> transforms a json
+            string into a bson object</p><p>jsonToBson ( &amp;condition, r ) ;</p><p>//
+              <i>Collection</i> is the handle of collection <i>bar</i>. <i>Cursor</i> is the handle
+            that returns query results. </p><p>sdbQuery ( collection, &amp; condition, NULL, NULL,
+            NULL, 0, -1, cursor ) ; </p></stentry>
+      </strow>
+      <strow>
+        <stentry>create index testIndex on students(name)</stentry>
+        <stentry>db.foo.bar.createIndex("testIndex",{name:1},false)</stentry>
+        <stentry> const char *r ="{name:1}" ;<p>// <i>jsonToBso</i>  transforms a json string into a
+            bson object</p><p>jsonToBson ( &amp;obj, r ) ;</p><p>// <i>Collection</i> is the handle
+            of collection <i>bar</i></p> <p>sdbCreateIndex ( collection, &amp;obj, "testIndex", FALSE,
+              FALSE )</p> </stentry>
+      </strow>
+      <strow>
+        <stentry>select * from students limit 20 skip 10</stentry>
+        <stentry>db.foo.bar.find().limit(20).skip(10)</stentry>
+        <stentry> // <i>Collection</i> is the handle of collection <i>bar</i>. <i>Cursor</i> is the
+          handle that returns query results. <p>sdbQuery ( collection, NULL, NULL, NULL, NULL, 10,
+            20, cursor ) ; </p></stentry>
+      </strow>
+      <strow>
+        <stentry>select count(*) from students where age>20</stentry>
+        <stentry>db.foo.bar.find({age:{$gt:20}}).count()</stentry>
+        <stentry> const char *r ="{age:{$gt:20}}" ;<p>// jsonToBson transforms a json string into a
+            bson object</p><p>jsonToBson ( &amp;condition, r ) ;</p><p>// <i>Collection</i> is the
+            handle of collection <i>bar</i>. Count is the total amount of results.</p>
+          <p>sdbGetCount ( collection, &amp; condition, &amp;count ); </p></stentry>
+      </strow>
+      <strow>
+        <stentry>update students set a=a+2 where b=-1</stentry>
+        <stentry>db.foo.bar.update({$set:{a:2}},{b:-1})</stentry>
+        <stentry> const char *r1 ="{$set:{a:2}}" ;<p>const char *r2 =”{b:-1}” ;</p><p>// jsonToBso
+            transforms a json string into a bson object</p><p>jsonToBson ( &amp;rule, r1 )
+            ;</p><p>jsonToBson ( &amp;condition, r2 ) ;</p><p>// <i>Collection</i> is the handle of
+              collection <i>bar</i>.</p> <p>sdbUpdate (collection, &amp;rule, &amp;condition, NULL ) ; </p></stentry>
+      </strow>
+      <strow>
+        <stentry>delete from students where a=1</stentry>
+        <stentry>db.foo.bar.remove({a:1})</stentry>
+        <stentry> const char *r ="{a:1}" ;<p>// jsonToBso transforms a json string into a bson
+            object</p><p>jsonToBson ( &amp;condition, r ) ;</p><p>// <i>Collection</i> is the handle
+            of collection <i>bar</i>.</p>sdbDelete ( collection, &amp; condition, NULL ) ; </stentry>
+      </strow>
+    </simpletable>
+  </body>
+  <related-links>
+    <link href="../../../../references/sqlmapping/topics/sqlmapping_en.dita" format="dita" type="topics"></link>
+  </related-links>
+</topic>

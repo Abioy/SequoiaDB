@@ -1,0 +1,106 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="$push"/>
+<meta name="description" content="语法 {$push:{&lt;字段名1&gt;:&lt;值1&gt;,&lt;字段名2&gt;:&lt;值2&gt;,...}} 描述 $push 将给定数值（&lt;值1&gt;）插入到目标数组（&lt;字段名1&gt;）中，操作对象必须为数组类型的字段。如果记录中不存在指定的字段名，将指定的字段名以数组对象的形式推入到记录中并填充其指定的数值；如果记录中存在指定的字段名，且字段名存在指定的数值，指定的数值也会被推入到记录中。 示例 向集合 bar 下的 arr ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../references/console/topics/update.html"/>
+<meta name="DC.Relation" scheme="URI" content="gpull_all.html"/>
+<meta name="DC.Relation" scheme="URI" content="gpush_all.html"/>
+<meta name="DC.Relation" scheme="URI" content="exists.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../methods/topics/dbupdate.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="references_console_push"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>$push</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="references_console_push"><a name="references_console_push"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../references/console/topics/update.html" title="更新符"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">更新符</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="console.html" title="操作符">操作符</a> / <a class="navheader_parent_path" href="../../../references/console/topics/update.html" title="更新符">更新符</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">$push</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">语法</h2>
+      <p class="p">{$push:{&lt;字段名1&gt;:&lt;值1&gt;,&lt;字段名2&gt;:&lt;值2&gt;,...}}</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">描述</h2>
+      
+      <p class="p">$push 将给定数值（&lt;值1&gt;）插入到目标数组（&lt;字段名1&gt;）中，操作对象必须为数组类型的字段。如果记录中不存在指定的字段名，将指定的字段名以数组对象的形式推入到记录中并填充其指定的数值；如果记录中存在指定的字段名，且字段名存在指定的数值，指定的数值也会被推入到记录中。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">示例</h2>
+      <ul class="ul">
+        <li class="li">
+          <div class="p">向集合 bar 下的 arr 数组对象推入数值1。原记录中 arr 数组对象存在元素1，如有记录：<pre class="pre codeblock">{arr[1,2,4],age:10,name:["Tom","Mike"]}</pre>
+</div>
+
+          <div class="p"><pre class="pre codeblock">db.foo.bar.update({$push:{arr:1}})</pre>
+</div>
+
+          <div class="p">此操作后，记录更新为：<pre class="pre codeblock">{arr[1,2,4,1],age:10,name:["Tom","Mike"]}</pre>
+虽然原来 arr 中有元素1，使用 $push 操作符，还是会将元素1推入到 arr 数组对象中。</div>
+
+        </li>
+
+        <li class="li">
+          <div class="p">向集合 bar 中推入不存在的数组对象和值。原记录中不存在数组对象 name，如有记录：<pre class="pre codeblock">{arr[1,2],age:20}</pre>
+</div>
+
+          <div class="p"><pre class="pre codeblock">db.foo.bar.update({$push:{name:"Tom"}},{name:{<a class="xref" href="exists.html">$exists</a>:0}})</pre>
+</div>
+
+          <div class="p">此操作后，记录更新为：<pre class="pre codeblock">{arr[1,2],age:20,name:["Tom"]}</pre>
+原记录中不存在数组对象 name，使用 $push 操作符，会将 name 以数组对象的形式推入到记录中。</div>
+
+        </li>
+
+      </ul>
+      
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="gpull_all.html" title="$pull_all">$pull_all</a></div>
+<div><a class="navheader_parent_path" href="gpush_all.html" title="$push_all">$push_all</a></div>
+<div><a class="navheader_parent_path" href="exists.html" title="$exists">$exists</a></div>
+<div><a class="navheader_parent_path" href="../../methods/topics/dbupdate.html" title="db.collectionspace.collection.update()">db.collectionspace.collection.update()</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../references/console/topics/update.html" title="更新符"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">更新符</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

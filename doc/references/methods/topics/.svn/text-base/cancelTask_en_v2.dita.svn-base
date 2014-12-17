@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_bgv_l5t_sn">
+  <title>db.cancelTask()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>cancelTask - Cancel the task</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <apiname>db.cancelTask</apiname>(<parmname>id</parmname><parmname>,[isAsync]</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Cancel the task.</p>
+      <parml>
+        <plentry>
+          <pt>id (Integer)</pt>
+          <pd>Task ID</pd>
+        </plentry>
+        <plentry>
+          <pt>isAsync (Boolean)</pt>
+          <pd>Whether asynchronous.</pd>
+        </plentry>
+      </parml>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Stop splitting tasks.</p>
+      <codeblock>var taskid1 = db.test.test.splitAsync("db1", "db2", 50);
+db.cancelTask( taskid1, true )</codeblock>      
+    </section>
+  </body>  
+</topic>

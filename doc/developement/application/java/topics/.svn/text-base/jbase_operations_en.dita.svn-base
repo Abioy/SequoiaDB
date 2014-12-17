@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="application_java_driver">
+  <title>Java Development Foundation</title>
+  <body>
+    <p>This section introduce how to use Java client-driven interfaces to run Java application. for
+      simple, the following examples are not full code, only play an exemplary role. You can get the
+      full code in the directory "/sequoiadb/client/samples/java", for more, please refer to <xref
+        href="..\..\..\..\java\html\index.html" format="html">online Java API </xref></p>
+    <section>
+      <title>Database Operations</title>
+      <ul>
+        <li>Database Connection: The following codes connect to a database and list all the
+          collection information:<codeblock>import com.sequoiadb.base.DBCursor;
+import com.sequoiadb.base.Sequoiadb;
+import com.sequoiadb.exception.BaseException;
+
+public class Sample {
+  public static void main(String[] args) {
+		
+    String connString = "192.168.1.2:11810";
+	  try {
+		  //  build a SequoiaDB database connection
+		  Sequoiadb sdb = new Sequoiadb(connString, "", "");
+		  //  get and print all the Collection information
+		  DBCursor cursor = sdb.listCollections();
+		  while(cursor.hasNext()) {
+		    System.out.println(cursor.getCurrent());
+	      }
+	  } catch (BaseException e) {
+		  System.out.println("Sequoiadb driver error, error description:" + e.getErrorType());
+		}
+  }
+}</codeblock>
+          <note>
+            <p>1) In the above sample, the port 11810 the local database connects to is the service
+              port of a coord node; it uses null for user name and password. The users need to
+              configure the parameters according to their own situations.</p>
+            <p>2) SequoiaDB class is a non thread-safe class; each thread must build its own
+              SequoiaDB object, and cannot be passed to multithreads at the same time.</p>
+          </note></li>
+        <li>Insert Data
+          <codeblock>String connString = "192.168.1.2:11810";
+  try {
+			
+    Sequoiadb sdb = new Sequoiadb(connString, "", "");
+			
+	CollectionSpace db = sdb.createCollectionSpace("space");
+	DBCollection cl = db.createCollection("collection");
+			
+	// Create a bson object as an insertor
+	BSONObject obj = new BasicBSONObject();
+	obj.put("name", "tom");
+	obj.put("age", 24);
+			
+	cl.insert(obj);
+			
+  } catch (BaseException e) {
+		System.out.println("Sequoiadb driver error, error description:" + e.getErrorType());
+		}</codeblock>
+          <note>In the above sample, the port 11810 the local database connects to is the service port of a coord node; it uses null for user name and password. The users need to configure the parameters according to their own situations.</note></li>
+        <li>Query Data<codeblock>// define a cursor object
+DBCursor cursor;
+
+BSONObject queryCondition = new BasicBSONObject();
+queryCondition = (BSONObject) JSON.parse("({age:{$ne:20}})");
+// Query all the records, and put the result set into the cursor object
+cursor = cl.query(queryCondition, null, null, null);
+// print all the records in the cursor
+while (cursor.hasNext()) {
+  BSONObject record = cursor.getNext();
+  String name = (String) record.get("name");
+  System.out.println("name=" +  name);
+  }    </codeblock>
+          <note>
+            <p>1)	The above sample sets some simple query conditions. And some other parameters include select condition, sorting order, etc.</p>
+            <p>2)	The cursor object buffers part of the data into the local process's memory, it will get other parts of the data from the server through the network and buffers the data locally again.</p>
+          </note></li>
+      </ul>
+    </section>
+    <section>
+      <title>Cluster Operations</title>
+      <ul>
+        <li>Create Replica Group<codeblock>String connString = "192.168.1.2:11810";
+  try {
+
+    Sequoiadb sdb = new Sequoiadb(connString, "", "");
+    ReplicaGroup rg = sdb.createRG("group1");
+    rg.createNode("dbserver-1", 11820, "/opt/sequoiadb/database/data/11820", null);
+    rg.start();
+  } catch (BaseException e) {
+	  System.out.println("Sequoiadb driver error, error description" + e.getErrorType());
+	}</codeblock><note>
+	  <p>1)	rg.createNode() method’s first parameter is the host name (IP address is not supported currently) of the server of newly added node. The third parameter is the path which the data files store in, SequoiaDB will automatically create that directory, and please make sure that the SequoiaDB administrator account (sdbadmin in default) has the write permission.</p>
+	  <p>2)	rg.start() method is used to start all the nodes in a replica group. This function usually needs 10s to process. This method does not guarantee that the master node selection has finished, so in order to guarantee the replica group work properly, before using the new replica group, please wait another 30s after the start() method finished.</p>
+	</note></li>
+        <li>Add a New Node in the Replica Group<codeblock>String connString = "192.168.1.2:11810";
+  try {
+
+    Sequoiadb sdb = new Sequoiadb(connString,"","");
+
+    ReplicaGroup rg = sdb.getReplicaGroup("group1");
+    Node node = rg.createNode("dbserver-1", 11830, "/var/sequoiadb/database/data/11830", null);
+    node.start();
+  } catch (BaseException e) {
+	  System.out.println("Sequoiadb driver error, error description" + e.getErrorType());
+    }</codeblock><note>
+      <p>rg.createNode() method’s first parameter is the host name (IP address is not supported currently) of the server of newly added node.</p>
+    </note>
+        </li>
+      </ul>
+    </section>
+  </body>
+</topic>

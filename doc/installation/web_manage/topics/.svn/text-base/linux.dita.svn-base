@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_tjm_1wb_fk">
+  <title>Linux版本的安装</title>
+  <body>
+    <p><note>以下操作默认SequoiaDB的安装目录为/opt/sequoiadb。</note></p>
+    <section>
+      <title>SUSE版本的安装</title>
+      <ul>
+        <li>使用root权限登陆准备安装Web管理工具的服务器</li>
+        <li>解压缩安装包 (安装包名以apache2-linux-x64-installer.tar.gz 为例)
+          <codeblock>tar –vxzf apache2-linux-x64-installer.tar.gz</codeblock></li>
+        <li>进入解压缩后目录
+        <codeblock>cp apache2</codeblock></li>
+        <li>运行安装脚本 <codeblock>chmod u+x install.sh
+./install.sh install</codeblock></li>
+        <li>配置PHP驱动
+          <codeblock>vi /etc/php5/apache2/php.ini
+增加如下行:
+extension=/opt/sequoiadb/lib/libsdbphp.so
+按 :wq,  保存退出  </codeblock></li>
+        <li>从sequoiadb安装目录拷贝Web文件到apache Web 根目录
+          <codeblock>mkdir -p /srv/www/htdocs/ sdbadmin
+cp -r /opt/sequoiadb/www/*  /srv/www/htdocs/</codeblock></li>
+        <li>启动apache2 服务
+        <codeblock>service apache2 start</codeblock></li>
+        <li>打开后台管理的配置页面
+        <codeblock>使用浏览器打开 http://localhost/ sdbadmin /index.php</codeblock></li>
+        <li>安装完成</li>
+      </ul>
+    </section>
+    <section>
+      <title>Ubuntu版本的安装</title>
+      <ul>
+        <li>使用root权限登陆准备安装Web管理工具的服务器</li>
+        <li>执行如下命令，按照提示完成安装apache2 和 php5
+          <codeblock>apt-get install apache2
+apt-get install php5</codeblock></li>
+        <li>修改PHP配置，加载SequoiaDB的PHP驱动
+          <codeblock>vi /etc/php5/apache2/php.ini
+找到Dynamic Extensions位置，新增一行配置：
+extension=/opt/sequoiadb/lib/libsdbphp.so
+按:wq，保存退出</codeblock></li>
+        <li>拷贝Web文件到 apache Web根目录
+          <codeblock>mkdir -p /var/www/sdbadmin
+cp -r /opt/sequoiadb/www/* /var/www/sdbadmin/</codeblock></li>
+        <li>启动apache2 服务
+        <codeblock>service apache2 start</codeblock></li>
+        <li>打开后台管理的配置页面
+        <codeblock>使用浏览器打开 http://localhost/ sdbadmin /index.php</codeblock></li>
+        <li>安装完成</li>
+      </ul>
+    </section>
+  </body>
+</topic>

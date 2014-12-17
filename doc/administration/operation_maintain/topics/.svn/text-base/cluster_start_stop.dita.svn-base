@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qjg_cjd_pl">
+  <title>集群启停</title>
+  <body>
+    <p>本节介绍集群的启动和停止。</p>
+    <p><xref href="cluster_start.dita">集群启动</xref></p>
+    <p><xref href="cluster_stop.dita">集群停止</xref></p>
+  </body>
+</topic>

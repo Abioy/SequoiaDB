@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/jsd/test
+END
+test-bug617870-callhooks.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/jsd/test/test-bug617870-callhooks.js
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/jsd/test/Makefile.in
+END
+bug507448.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/jsd/test/bug507448.js
+END
+jsd-test.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/jsd/test/jsd-test.js
+END
+test_bug617870-callhooks.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/jsd/test/test_bug617870-callhooks.html
+END
+test_bug507448.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/jsd/test/test_bug507448.html
+END

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_trk_1lb_m4">
+  <title>db.getDomain()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>getDomain - Gets the specified domain.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.getDomain</apiname>(<parmname>&lt;name></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Gets the specified domain.</p>
+      <parml>
+        <plentry>
+          <pt>name (string)</pt>
+          <pd>Domain name.
+            <parml>
+              <plentry>
+                <pt>Format</pt>
+                <pd>The parameter "name" should be specified in the getDomain() method, and value of "name" should exist in the collection space, otherwise an exception will occur.</pd>
+                <pd>{"name":"&lt;domain name>"}</pd>
+              </plentry>
+            </parml></pd>
+        </plentry>        
+      </parml>     
+      <note>
+        <ul><li>SYSDOMAIN cannot be gotten.</li>                 
+        </ul></note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Get an existent domain.</p>
+      <codeblock>var domain = db.getDomain('mydomain')</codeblock>      
+    </section>
+  </body>
+</topic>

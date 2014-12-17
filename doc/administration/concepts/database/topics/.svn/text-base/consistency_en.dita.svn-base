@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_fpn_s1n_2l">
+  <title>Eventually Consistent</title>
+  <body>
+    <p>In SequoiaDB, to improve data reliability and data read/write Splitting, we adopt "eventually
+      consistent strategy" among ReplicaSets. Maybe, the data is not lastest in a moment, but
+      ultimately the same.</p>
+    <section>
+      <title>Glossary</title>
+      <p><b>W</b>：number of write-replicas</p>
+      <p><b>R</b>：number of read-replicas</p>
+      <p><b>N</b>：number of replicas</p>
+      <p>In SequoiaDB, the value of "R" is default set to "1", and not configurable.</p>
+      <p>By default, The master node in data ReplicaGroup will return immediately after processing a
+        writen request, that is W=1. Data syn will be done asny in the background (<xref
+          href="../../../database/topics/synlog_en.dita">Sys-log</xref>) and achieved eventually
+        consistent. At this moment, the data for extenal read request may not be the lastest. In the
+        case of less demanding data consistency, this way will provide a optimal
+        write-performance.</p>
+      <p>As the time of <xref href="../../../../references/methods/topics/createCL_en.dita">creating
+          collection</xref>, you can set the value of "W" by "ReplSize" param.</p>
+      <ul>
+        <li>By default, W=1.</li>
+        <li>If the value of ReplSize is equal "0", then the number of W will be changed based on the
+          number of nodes in current ReplicaGroup. That is, there have three nodes in a ReplicaGroup at
+          beginning, then W is equal 3; if adding a node, then W change to "4".</li>
+        <li>If specify the number of W by manually, it can not exceed the number of nodes in current
+          ReplicaGroup.</li>
+      </ul>
+      <p>Increaing the value of W can effectively improve the consistency and reliability of
+        data. When the value of W is equal to the number of  nodes in a ReplicaGroup and write-request
+        is done seccessfully, then the data for read-request are always the lastest. But this will
+        reduce the write-performance. For attention, although, the value of W can be set to equal to
+        the number of nodes, it not mean that the data in SequoiaDB hava strong consistency. When a
+        Relica write failed(such as the disk is full), it may exist one or more data versions in a
+        RelicaGroup, this time, you may read the lastest data, and may also the older. When the failed
+        replica get right, it will syn the lastest data from the master node, and achieve eventually
+        consistent.</p>
+    </section>
+  </body>
+</topic>

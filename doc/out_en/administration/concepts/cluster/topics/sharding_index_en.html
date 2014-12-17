@@ -1,0 +1,98 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Sharding Index"/>
+<meta name="description" content="Concept There is a default index named &#34;$shard&#34; in every sharded collection. This is sharding index. Only sharded collections have sharding index. Sharding index exists in every sharding group in a ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/sharding_en.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../database/topics/index_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_concepts_sharding_index"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Sharding Index</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_concepts_sharding_index"><a name="administration_concepts_sharding_index"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/concepts/cluster/topics/sharding_en.html" title="Sharding"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sharding</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="cluster_en.html" title="Cluster">Cluster</a> / <a class="navheader_parent_path" href="../../../../administration/concepts/cluster/topics/sharding_en.html" title="Sharding">Sharding</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Sharding Index</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Concept</h2>
+      <p class="p">There is a default index named "$shard" in every sharded collection. This is sharding
+        index.</p>
+
+      <p class="p">Only sharded collections have sharding index.</p>
+
+      <p class="p">Sharding index exists in every sharding group in a sharded collection. The order of field
+        definations and the order of fields are the same as that of sharding key.</p>
+
+      <div class="note note"><span class="notetitle">Note:</span> 
+        <p class="p">Any unique index defined by user should contain all the fields in sharding index. But the
+          order of fields of them may not be the same.</p>
+
+        <p class="p">In sharded collection, the field of "_id" is unique in the sharding, but not globally
+          unique.</p>
+
+      </div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Sample</h2>
+      
+      <p class="p">A typical sharding index is as follow:</p>
+
+      <pre class="pre codeblock">  { 
+        "IndexDef" : { 
+           "name" : "$shard", 
+           "_id" : { "$oid" : "515954bfa88873112fa6bd3a" }, 
+           "key" : { "Field1" : 1, "Field2" : -1 }, 
+           "v" : 0, 
+           "unique" : false, 
+           "dropDups" : false, 
+           "enforced" : false 
+        }, 
+        "IndexFlag" : "Normal" 
+  }</pre>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="../../database/topics/index_en.html" title="Index">Index</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../../administration/concepts/cluster/topics/sharding_en.html" title="Sharding"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sharding</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

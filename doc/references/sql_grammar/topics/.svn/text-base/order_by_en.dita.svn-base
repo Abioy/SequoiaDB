@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_order_by_en">
+  <title>sql order by</title>
+  <body>
+    <section><title>order by</title>
+      <p>Be used to sort the result set according to the specified field name,default asc.</p>
+    </section>
+    <section><title>Grammar</title>
+      <p><codeblock>order by &lt;field1_name [ASC|DESC ], ...&gt;    </codeblock></p>
+      <p>&lt;field_name>：field name </p>
+      <p>[asc|desc]：sort, asc stand for ascending,desc stand for descending. default asc</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>To count the number employees in each department ,and group by the feild name dept_no,and sort in
+            desc order by the field name.</p>
+          <p><codeblock>db.exec("select dept_no，<xref href="sqcount_en.dita">count</xref>(emp_no) as 员工总数 from foo.bar group by dept_no order by dept_no desc") </codeblock></p>
+          <note>
+            <p>like<xref href="sqsum_en.dita">sum</xref>，<xref href="sqcount_en.dita">count</xref>，<xref
+              href="sqmin_en.dita">min</xref>，<xref href="sqmax_en.dita">max</xref>，<xref href="sqavg_en.dita"
+                >avg</xref> these counting function must use alias.</p>
+          </note>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="group_by_en.dita" format="dita" type="topic"></link>
+    <link href="sqlimit_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

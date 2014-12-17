@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_kln_cr1_yj">
+  <title>List</title>
+  <body>
+    <p>In this section, th following lists will be introduced: </p>
+    <p><xref href="list_contexts_en.dita">Contexts List</xref></p>
+    <p><xref href="list_contexts_current_en.dita">Current Contexts List</xref></p>
+    <p><xref href="list_sessions_en.dita">Sessions List</xref></p>
+    <p><xref href="list_sessions_current_en.dita">Current Sessions List</xref></p>
+    <p><xref href="list_collections_en.dita">Collections List</xref></p>
+    <p><xref href="list_collectionspace_en.dita">Collection Spaces List</xref></p>
+    <p><xref href="list_storageunits_en.dita">Storage Units List</xref></p>
+    <p><xref href="list_groups_en.dita">Replica Groups List</xref>
+    </p>
+  </body>
+</topic>

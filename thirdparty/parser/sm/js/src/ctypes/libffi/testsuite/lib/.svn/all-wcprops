@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/testsuite/lib
+END
+target-libpath.exp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/testsuite/lib/target-libpath.exp
+END
+wrapper.exp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/testsuite/lib/wrapper.exp
+END
+libffi-dg.exp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/testsuite/lib/libffi-dg.exp
+END

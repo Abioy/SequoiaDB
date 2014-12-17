@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\administration\concepts\database\topics?><?path2project ..\..\..\..\out_en\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="administration_concepts_database_document" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="title:1">文档</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="title:2">概念</title>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="p:1">SequoiaDB中的文档为JSON格式，一般又被称为记录。在数据库内部使用BSON，即二进制的方式存放JSON数据。</p>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="p:2">一般来说，一条文档由一个或多个字段构成，每个字段分为键值与数值两个部分，如下为包含两个字段的文档：</p>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="p:3"><i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="i:1">{ "姓名" : "张三", "性别" : "男" }</i></p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="section:2">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="title:3">字段类型</title>
+     <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="p:4">每个字段的键值为字符串，而数值则可以为数字，字符串，嵌套JSON，嵌套数组等对象。SequoiaDB所支持的数值类型见下表：</p>
+     <simpletable frame="all" relcolwidth="1.0* 2.39* 3.07*" id="administration_concepts_database_document_table1" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="simpletable:1">
+       <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="sthead:1">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:1">数值类型</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:2">定义</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:3">用例</stentry>
+       </sthead>
+       <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="strow:1">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:4">整数</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:5">整数，范围-2147483648至2147483647</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:6">{ "key" : 123 }</stentry>
+       </strow>
+       <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="strow:2">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:7">长整数</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:8"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="p:5">整数，范围-9223372036854775808</p>至9223372036854775807。如果用户指定的数值无法适用于整数，则SequoiaDB自动将其转化为长整数。</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:9">{ "key" : 3000000000 }</stentry>
+       </strow>
+       <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="strow:3">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:10">浮点数</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:11">浮点数，范围1.7E-308至1.7E+308</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:12">{ "key" : 123.456 }或{ "key" : 123e+50 }</stentry>
+       </strow>
+       <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="strow:4">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:13">字符串</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:14">双引号包含的字符串</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:15">{ "key" : "value" }</stentry>
+       </strow>
+       <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="strow:5">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:16">对象ID（OID）</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:17">十二字节对象ID</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:18">{ "key" : { "$oid" : "123abcd00ef12358902300ef" } }</stentry>
+       </strow>
+       <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="strow:6">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:19">布尔</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:20">true或者false</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:21">{ "key" : true }或{ "key" : false }</stentry>
+       </strow>
+       <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="strow:7">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:22">日期</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:23">YYYY-MM-DD的日期形式</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:24">{ "key" : { "$date" : "2012-01-01" } }</stentry>
+       </strow>
+       <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="strow:8">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:25">时间戳</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:26">YYYY-MM-DD-HH.mm.ss.ffffff的</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:27">{ "key" : { "$timestamp" : "2012-01-01-13.14.26.124233" } }</stentry>
+       </strow>
+       <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="strow:9">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:28">二进制数据</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:29">Base64形式的二进制数据</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:30">{ "key" : { "$binary" : "aGVsbG8gd29ybGQ=", "$type" : 1 } }</stentry>
+       </strow>
+       <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="strow:10">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:31">正则表达式</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:32">正则表达式</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:33">{ "key" : { "$regex" : "^张", "$options" : "i" } }</stentry>
+       </strow>
+       <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="strow:11">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:34">对象</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:35">嵌套JSON文档对象</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:36">{ "key" : { "subobj" : "value" } }</stentry>
+       </strow>
+       <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="strow:12">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:37">数组</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:38">嵌套数组对象</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:39">{ "key" : [ "abc", 0, "def" ] }</stentry>
+       </strow>
+       <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="strow:13">
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:40">空</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:41">null</stentry>
+         <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="stentry:42">{ "key" : null }</stentry>
+       </strow>
+     </simpletable>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="section:3">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="title:4">字段顺序</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="p:6">文档中的各字段无排列顺序，在进行数据操作时字段之间的顺序可能会被调换。</p>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="p:7">当表示嵌套对象中的某一个字段时，可以使用“.”（句号）在字段名之间进行分割。例如给定数据：</p>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="p:8"><i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="i:2">{ "姓名" : "张三", "地址" : { "街道" : "水蓝街", "城市" : "xx", "省份" : "yy" } }</i></p>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="p:9">用户可以使用“地址.城市”字段名表示地址子对象中的城市字段。</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="section:4">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="title:5">其他</title>
+      <ul id="administration_concepts_database_misc" class="- topic/ul " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="ul:1">
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="li:1">每个文档的最大尺寸为16MB</li>
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="li:2">文档中必须包括“_id”字段，如果用户没有提供该字段，系统会自动生成一个对象ID类型的字段</li>
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="li:3">“_id”字段在集合内唯一</li>
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="li:4">文档的字段名不可以“$”字符起始</li>
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="li:5">文档的字段名不可以包含“.”字符</li>
+      </ul>
+    </section>
+  </body>
+  <related-links class="- topic/related-links " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="related-links:1">
+    <link href="../../../../introduction/topics/datamodel.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="link:1"><?ditaot gentext?><linktext class="- topic/linktext ">数据模型</linktext></link>
+    <link href="collection.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document.dita" xtrc="link:2"><?ditaot gentext?><linktext class="- topic/linktext ">集合</linktext></link>
+  </related-links>
+</topic>

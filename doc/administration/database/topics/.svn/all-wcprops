@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16395/trunk/doc/administration/database/topics
+END
+EDU_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/database/topics/EDU_en.dita
+END
+log.dita
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/13699/trunk/doc/administration/database/topics/log.dita
+END
+log_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/9949/trunk/doc/administration/database/topics/log_en.dita
+END
+database.dita
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/13699/trunk/doc/administration/database/topics/database.dita
+END
+monitoring.dita
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/database/topics/monitoring.dita
+END
+database_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/9949/trunk/doc/administration/database/topics/database_en.dita
+END
+monitoring_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/13404/trunk/doc/administration/database/topics/monitoring_en.dita
+END
+runtime_configuration.dita
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/16395/trunk/doc/administration/database/topics/runtime_configuration.dita
+END
+synlog.dita
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/13699/trunk/doc/administration/database/topics/synlog.dita
+END
+runtime_configuration_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/16395/trunk/doc/administration/database/topics/runtime_configuration_en.dita
+END
+EDU.dita
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/13699/trunk/doc/administration/database/topics/EDU.dita
+END
+synlog_en.dita
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/13796/trunk/doc/administration/database/topics/synlog_en.dita
+END

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_whg_32h_vp">
+  <title>db.traceResume()</title>
+  <body>
+    <section><title>db.traceResume()</title>
+      <p>重新开启断点跟踪程序。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable id="references_method_createNode_table">
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>-</stentry>
+          <stentry>-</stentry>
+          <stentry>-</stentry>
+          <stentry>-</stentry>
+        </strow>        
+      </simpletable>      
+    </section>    
+    <section><title>示例</title>
+      <ul>
+        <li>重新开启断点跟踪程序：<codeblock>db.traceResume()</codeblock></li>        
+      </ul>      
+    </section>
+  </body>
+  <related-links>
+  <link href="traceFmt.dita" format="dita" type="topic"></link>
+  <link href="traceOff.dita" format="dita" type="topic"></link>
+  <link href="traceOn.dita" format="dita" type="topic"></link>        
+  <link href="traceStatus.dita" format="dita" type="topic"></link>
+    </related-links>
+</topic>

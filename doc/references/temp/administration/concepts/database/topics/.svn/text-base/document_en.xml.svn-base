@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\administration\concepts\database\topics?><?path2project ..\..\..\..\out_en\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="administration_concepts_database_document" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="title:1">Document</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="title:2">Concept</title>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="p:1">In SequoiaDB, document is in the format of JSON, also named as record. In database, JSON data
+        is stored in the format of BSON after transformation. Generally, a document is consisted of
+        one or more fields. Every field is consisted of 2 parts: key and value.This is a document
+        containing 2 fields:</p>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="p:2"><i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="i:1">{ "name" : "Zhangsan", "sex" : "male" }</i></p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="section:2">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="title:3">Field type</title>
+     <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="p:3">The key of a field is in the format of string, but value can be in the format of figure,
+        string, nested JSON project, nestd array.etc. SequoiaDB support these types:</p>
+     <simpletable frame="all" relcolwidth="1.0* 2.27* 2.95*" id="administration_concepts_database_document_table1" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="simpletable:1">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="sthead:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:1">Type</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:2">Definition</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:3">Sample</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="strow:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:4">Integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:5">Integer，range from -2147483648 to 2147483647</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:6">{ "key" : 123 }</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="strow:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:7">Long</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:8">Integer，range from -9223372036854775808 to 9223372036854775807. If a value is not
+            suitible to an Integer, it is automatically transform into Long by SequoiaDB.</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:9">{ "key" : 3000000000 }</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="strow:3">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:10">Float</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:11">Float, range from 1.7E-308 to 1.7E+308</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:12">{ "key" : 123.456 }或{ "key" : 123e+50 }</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="strow:4">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:13">String</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:14">String within double quotations</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:15">{ "key" : "value" }</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="strow:5">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:16">Object ID（OID）</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:17">12-byte object ID</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:18">{ "key" : { "$oid" : "123abcd00ef12358902300ef" } }</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="strow:6">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:19">Bool</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:20">true or false</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:21">{ "key" : true }或{ "key" : false }</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="strow:7">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:22">Date</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:23">In the format of YYYY-MM-DD</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:24">{ "key" : { "$date" : "2012-01-01" } }</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="strow:8">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:25">Timeline</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:26">In the format of YYYY-MM-DD-HH.mm.ss.ffffff</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:27">{ "key" : { "$timestamp" : "2012-01-01-13.14.26.124233" } }</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="strow:9">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:28">Bindata</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:29">Base64 binary data</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:30">{ "key" : { "$binary" : "aGVsbG8gd29ybGQ=", "$type" : 1 } }</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="strow:10">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:31">Regex</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:32">Regular expression</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:33">{ "key" : { "$regex" : "^张", "$options" : "i" } }</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="strow:11">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:34">Object</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:35">Nested JSON document object</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:36">{ "key" : { "subobj" : "value" } }</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="strow:12">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:37">Array</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:38">Nested array object</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:39">{ "key" : [ "abc", 0, "def" ] }</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="strow:13">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:40">NULL</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:41">null</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="stentry:42">{ "key" : null }</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="section:3">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="title:4">Field order</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="p:4">Fields are unordered. The order of fields may be changed in the process of data
+        manipulation.</p>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="p:5">Within a nested object, fields are invoked in the format of  "object.field". For
+        example,</p>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="p:6"><i class="+ topic/ph hi-d/i " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="i:2">{ "name" : "zhangsan", "address" : { "street" : "shuilan street", "city" : "xx", "block"
+          : "yy" } }</i></p>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="p:7">The field of "city" is invoked as "address.city".</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="section:4">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="title:5">Others</title>
+      <ul id="administration_concepts_database_misc" class="- topic/ul " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="ul:1">
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="li:1">The max size of each document is 16MB</li>
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="li:2">Document should contains "_id" field. If users do not offer it, syetem will
+          automatically generate a field in the type of object ID.</li>
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="li:3">"_id" is unique in a collection</li>
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="li:4">Field name in document should not begin with the character "$".</li>
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="li:5">Field name in document should not contain ".".</li>
+      </ul>
+    </section>
+  </body>
+  <related-links class="- topic/related-links " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="related-links:1">
+    <link href="../../../../introduction/topics/datamodel_en.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="link:1"><?ditaot gentext?><linktext class="- topic/linktext ">Data Model</linktext></link>
+    <link href="collection_en.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\administration\concepts\database\topics\document_en.dita" xtrc="link:2"><?ditaot gentext?><linktext class="- topic/linktext ">Collection</linktext></link>
+  </related-links>
+</topic>

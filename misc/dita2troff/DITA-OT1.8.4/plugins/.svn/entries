@@ -1,0 +1,85 @@
+10
+
+dir
+16591
+http://192.168.20.11/sequoiadb/trunk/misc/dita2troff/DITA-OT1.8.4/plugins
+http://192.168.20.11/sequoiadb
+
+
+
+2014-10-20T07:26:18.120256Z
+15720
+tanzhaobo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6121f079-4a18-41d3-8c30-8870a322f2c2
+
+org.dita.pdf
+dir
+
+org.dita.base
+dir
+
+org.dita.htmlhelp
+dir
+
+org.dita.np
+dir
+
+org.dita.eclipsecontent
+dir
+
+org.dita.troff
+dir
+
+org.dita.docbook
+dir
+
+org.dita.specialization.dita132
+dir
+
+org.dita.odt
+dir
+
+org.dita.wordrtf
+dir
+
+legacypdf
+dir
+
+org.dita.javahelp
+dir
+
+org.dita.pdf2
+dir
+
+org.dita.xhtml
+dir
+
+org.dita.eclipsehelp
+dir
+
+org.dita.specialization.eclipsemap
+dir
+
+org.dita.specialization.dita11
+dir
+
+com.sophos.tocjs
+dir
+
+h2d
+dir
+

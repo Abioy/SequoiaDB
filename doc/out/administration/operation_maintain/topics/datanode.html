@@ -1,0 +1,63 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="数据节点"/>
+<meta name="description" content="数据节点发生故障后，重新启动会自动检测数据库目录下 .SEQUOIADB_STARTUP 隐藏文件。 如果该文件存在则说明上次的执行意外终止（例如 kill -9）。对于意外终止的节点，系统会将该数据节点置入崩溃恢复状态。 在崩溃恢复的过程中，数据节点会与该组中的一个正常节点进行全量同步。在这种情况下，被恢复的节点中所有数据作废，同步到的新数据作为基准。假设该节点没有被意外终止（例如 kill ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../administration/operation_maintain/topics/fault_recovery.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_swb_vfd_pl"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>数据节点</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_swb_vfd_pl"><a name="topic_swb_vfd_pl"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../administration/operation_maintain/topics/fault_recovery.html" title="故障恢复"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">故障恢复</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="operation_maintain.html" title="运维">运维</a> / <a class="navheader_parent_path" href="../../../administration/operation_maintain/topics/fault_recovery.html" title="故障恢复">故障恢复</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">数据节点</h1>
+
+  <div class="body">
+    <p class="p">数据节点发生故障后，重新启动会自动检测数据库目录下 .SEQUOIADB_STARTUP 隐藏文件。</p>
+
+    <p class="p">如果该文件存在则说明上次的执行意外终止（例如 kill -9）。对于意外终止的节点，系统会将该数据节点置入崩溃恢复状态。</p>
+
+    <p class="p">在崩溃恢复的过程中，数据节点会与该组中的一个正常节点进行全量同步。在这种情况下，被恢复的节点中所有数据作废，同步到的新数据作为基准。假设该节点没有被意外终止（例如 kill -15），则进入增量同步状态。在这种情况下，如果当前其它数据节点中包含的最老日志已经比被恢复节点新，则进入全量同步状态，否则只同步增量日志。</p>
+
+    <p class="p">如果该数据组中所有节点都被意外终止，则需要以独立模式启动一个节点进行本地恢复。在该模式中，数据会被导出并再次导入，以过滤掉所有可能出现的数据损坏。当其中一个节点被本地恢复后，需要将其数据目录拷贝入其它所有数据节点。 </p>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../administration/operation_maintain/topics/fault_recovery.html" title="故障恢复"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">故障恢复</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

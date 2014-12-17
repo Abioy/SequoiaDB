@@ -1,0 +1,158 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="db.collectionspace.collection.update()"/>
+<meta name="description" content="db.collectionspace.collection.update(&lt;rule&gt;,[cond],[hint]) 更新集合记录。 参数描述 参数名 参数类型 描述 是否必填 rule json对象 更新规则。记录按rule的内容更新。 是 cond json对象 选择条件。为空时，更新所有记录，不为空时，更新符合条件的记录。 否 hint json对象 指定访问计划。 否 格式 ..."/>
+<meta name="DC.Relation" scheme="URI" content="listIndexes.html"/>
+<meta name="DC.Relation" scheme="URI" content="upsert.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="references_method_update"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>db.collectionspace.collection.update()</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="references_method_update"><a name="references_method_update"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span></div></td><td width="50%"/></tr></tbody></table>
+
+  <h1 class="title topictitle1">db.collectionspace.collection.update()</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">db.collectionspace.collection.update(&lt;rule&gt;,[cond],[hint])</h2>
+      <p class="p">更新集合记录。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">参数描述</h2><p class="p"/>
+
+      <a name="references_method_update__references_method_update_table"><!-- --></a><table cellpadding="4" cellspacing="0" summary="" id="references_method_update__references_method_update_table" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d142876e27" class="stentry">参数名</th>
+
+          <th valign="bottom" align="left" id="d142876e30" class="stentry">参数类型</th>
+
+          <th valign="bottom" align="left" id="d142876e33" class="stentry">描述</th>
+
+          <th valign="bottom" align="left" id="d142876e36" class="stentry">是否必填</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d142876e27" class="stentry">rule</td>
+
+          <td valign="top" headers="d142876e30" class="stentry">json对象</td>
+
+          <td valign="top" headers="d142876e33" class="stentry">更新规则。记录按rule的内容更新。</td>
+
+          <td valign="top" headers="d142876e36" class="stentry">是</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d142876e27" class="stentry">cond</td>
+
+          <td valign="top" headers="d142876e30" class="stentry">json对象</td>
+
+          <td valign="top" headers="d142876e33" class="stentry">选择条件。为空时，更新所有记录，不为空时，更新符合条件的记录。</td>
+
+          <td valign="top" headers="d142876e36" class="stentry">否</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d142876e27" class="stentry">hint</td>
+
+          <td valign="top" headers="d142876e30" class="stentry">json对象</td>
+
+          <td valign="top" headers="d142876e33" class="stentry">指定访问计划。</td>
+
+          <td valign="top" headers="d142876e36" class="stentry">否</td>
+
+        </tr>
+</table>
+      
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">格式</h2>
+      <p class="p">update()方法的定义必须包含rule字段，rule是一个json对象。cond和hint字段可选。hint参数是一个包含一个单一字段的json对象，字段名会被忽略，而其字段值则指定为需要访问索引的名称，当字段值为null时，则遍历集合中所有的记录，它的格式为{"":null}或者{"":"&lt;indexname&gt;"}。</p>
+
+      <div class="p"><pre class="pre codeblock">{&lt;{"<a class="xref" href="../../console/topics/console.html">"更新符1"</a>":{字段名1:"值"},"更新符2":{"字段名2":"值2"},...}&gt;,[{"字段名1":{<a class="xref" href="../../console/topics/console.html">"匹配符1"</a>:"值1"},"字段名2":{"匹配符2":"值2"},...}],[{"":"索引名"|null}]}</pre>
+</div>
+
+    </div>
+
+    <div class="note note"><span class="notetitle">Note:</span> update本版本暂不支持对表分区键（ShardingKey）段更新，如果包含对分区键的更新操作，将自动剔除掉对分区键的更新，但其他字段更新生效，且不会发生错误。</div>
+
+    <div class="section"><h2 class="title sectiontitle">示例</h2>
+      
+      <ul class="ul">
+        <li class="li">
+          <p class="p">按指定的更新规则更新集合中所有记录，即设置rule参数，不设定cond和hint参数的内容</p>
+
+          <div class="p"><pre class="pre codeblock">db.foo.bar.update({<a class="xref" href="../../console/topics/inc.html">$inc</a>:{age:1}})</pre>
+</div>
+
+          <p class="p">此操作更新集合bar下的age字段，将age字段的值增加1。</p>
+
+        </li>
+
+        <li class="li">
+          <p class="p">选择符合匹配条件的记录，对这些记录按更新规则更新，即设定rule和cond参数</p>
+
+          <div class="p"><pre class="pre codeblock">db.foo.bar.update({<a class="xref" href="../../console/topics/unset.html">$unset</a>:{age:""}},{age:{<a class="xref" href="../../console/topics/exists.html">$exists</a>:1},name:{$exists:0}})</pre>
+</div>
+
+          <p class="p">此操作更新集合bar中存在age字段而不存在name字段的记录，将这些记录的age字段删除。</p>
+
+        </li>
+
+        <li class="li">
+          <p class="p">按访问计划更新记录，假设集合中存在指定的索引名</p>
+
+          <pre class="pre codeblock">db.foo.bar.update({<a class="xref" href="../../console/topics/inc.html">$inc</a>:{age:1}},{age:{<a class="xref" href="../../console/topics/gt.html">$gt</a>:20}},{"":"testIndex"})&gt;</pre>
+
+          <p class="p">此操作使用索引名为testIndex访问集合bar中age字段值大于20的记录，将这些记录的age字段名加1。</p>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="listIndexes.html" title="db.collectionspace.collection.listIndexes()">db.collectionspace.collection.listIndexes()</a></div>
+<div><a class="navheader_parent_path" href="upsert.html" title="db.collectionspace.collection.upsert()">db.collectionspace.collection.upsert()</a></div>
+</div>
+</div>
+<div class="navfooter"><script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

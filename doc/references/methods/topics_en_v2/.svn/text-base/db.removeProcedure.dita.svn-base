@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_vb2_vt2_5n">
+  <title>db.removeProcedure()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>removeProcedure - Deletes the specified function name.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p>
+      <apiname>db.removeProcedure</apiname>(<parmname>&lt;function name></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Deletes the specified function name, The specified function name must exist, otherwise exceptions will occur.</p>
+      <parml>
+        <plentry>
+          <pt>function name (string)</pt>
+          <pd>function name.</pd>          
+        </plentry>        
+      </parml>
+      <p>removeProcedure() method has one parameter 'function name' in a string type. Its value should already exist, otherwise exceptions will occur.</p>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p></p>Delete the sum function:
+      <codeblock>db.removeProcedure("sum")</codeblock>
+      Make sure that the function name specified in the removeProcedure() method be exactly the same as the name in its definition. Otherwise, it will return a failure. db.removeProcedure('sum') call will return a failure.
+    </section>
+  </body>
+  <related-links>
+    <link href="db.createProcedure.dita" format="dita" type="topic"></link>
+    <link href="db.listProcedures.dita" format="dita" type="topic"></link>    
+  </related-links>
+</topic>

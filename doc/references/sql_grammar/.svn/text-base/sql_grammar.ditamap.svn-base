@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/map.dtd">
+<map title="References_Sqlgrammar">
+ <topicref href="topics/sql_grammar_list.dita">
+  <topicref href="topics/create_cs.dita"/>
+  <topicref href="topics/drop_cs.dita"/>
+  <topicref href="topics/create_cl.dita"/>
+  <topicref href="topics/drop_cl.dita"/>
+  <topicref href="topics/create_index.dita"/>
+  <topicref href="topics/drop_index.dita"/>
+  <topicref href="topics/list_cs.dita"/>
+  <topicref href="topics/list_cl.dita"/>
+  <topicref href="topics/sqinsert.dita"/>
+  <topicref href="topics/sqselect.dita"/>
+  <topicref href="topics/squpdate.dita"/>
+  <topicref href="topics/sqdelete.dita"/>
+  <topicref href="topics/group_by.dita"/>
+  <topicref href="topics/order_by.dita"/>
+  <topicref href="topics/split_by.dita"/>
+  <topicref href="topics/sqlimit.dita"/>
+  <topicref href="topics/offset.dita"/>
+  <topicref href="topics/as.dita"/>
+  <topicref href="topics/sqjoin.dita"/>
+  <topicref href="topics/left_join.dita"/>
+  <topicref href="topics/right_join.dita"/>
+  <topicref href="topics/sqsum.dita"/>
+  <topicref href="topics/sqcount.dita"/>
+  <topicref href="topics/sqavg.dita"/>
+  <topicref href="topics/sqmax.dita"/>
+  <topicref href="topics/sqmin.dita"/>
+  <topicref href="topics/sqfirst.dita"/>
+  <topicref href="topics/sqlast.dita"/>
+  <topicref href="topics/sqpush.dita"/>
+  <topicref href="topics/sqaddtoset.dita"/>
+  <topicref href="topics/buildobj.dita"/>
+  <topicref href="topics/mergearrayset.dita"/>
+ </topicref>
+</map>

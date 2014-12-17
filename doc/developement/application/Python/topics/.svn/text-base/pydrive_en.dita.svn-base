@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qbz_bf3_x4">
+  <title>Python Driver</title>
+  <body>
+    <section>
+      <title>Overview</title>
+      <p>Python client driver offers the APIs for database and cluster manipulations. Database manipulations include connecting to the database, creating and removing of the users, the CRUD (create, retrieve, update, and delete) of data, the creating and removing of the index, getting and resetting of the snapshot. The manipulations of the cluster include the administration of the replica group and the data nodes, such as to start or stop a replica group or a data node, get the master node. For more details, please refer to the online <xref href="..\..\..\..\python\html\index.html" format="html">Python API</xref></p>
+    </section>
+    <section>
+      <title>Python Instances</title>
+      <p>Python client driver has two kinds of instances, one for <b>database manipulations</b>, and one for <b>cluster manipulations</b>. </p>
+      <ul>
+        <li>Database manipulations<p>There are three levels for storing data in SequoiaDB:</p><p><b>1) database</b></p><p><b>2) collection space</b></p><p><b>3) collection</b></p>
+          <p>Thus, for the database manipulations, there are 3 classes stand for database connection, collection space, and collection instances respectively, and another class for the cursor instances.</p>
+          <simpletable>
+            <strow>
+              <stentry>client</stentry>
+              <stentry>database class</stentry>
+              <stentry>a connection instance stands for a single database connection</stentry>
+            </strow>
+            <strow>
+              <stentry>collectionspace</stentry>
+              <stentry>collection space class</stentry>
+              <stentry>a collection space instance stands for a single collection space</stentry>
+            </strow>
+            <strow>
+              <stentry>collection</stentry>
+              <stentry>collection class</stentry>
+              <stentry>a collection instance stands for a single collection</stentry>
+            </strow>
+            <strow>
+              <stentry>cursor</stentry>
+              <stentry>cursor class</stentry>
+              <stentry>a cursor instance stands for a cursor created by a query</stentry>
+            </strow>
+          </simpletable>
+          <p>Python client needs to use different instances to manipulate. For example, an operation of reading data need a cursor instance, and the creating of a collection space need a database instance.</p>
+        </li>
+        <li>Cluster Manipulation Instances<p>There are two levels for cluster manipulation in SequoiaDB: 1) replica group 2) data node </p>
+          <note>replica group includes three types: catalog group, data group, coord group.</note>
+          <p>Replica group instances and data node instances can be represented by the following two types of class instances:</p>
+          <simpletable>
+            <strow>
+              <stentry>replicagroup</stentry>
+              <stentry>replica group class</stentry>
+              <stentry>a replica group instance represents a single replica group</stentry>
+            </strow>
+            <strow>
+              <stentry>replicaode</stentry>
+              <stentry>data node class</stentry>
+              <stentry>a data node instance represents a single data node</stentry>
+            </strow>
+          </simpletable>
+          <p>The cluster-related operations need to use the replica group and data node instances.</p>
+          <p>replicagroup instances are used to manage the replica group. Their operations include start and stop replica groups, get the status of a node in the replica group, the name of the group, etc.</p>
+          <p>replicanode instances are used to manage the node. Their operations include start and stop nodes, get the instance of specified master/slave nodes or the address info of a data node.</p></li>
+      </ul>
+    </section>
+    <section>
+      <title>Error Information</title>
+      <p>Each function has its returned value, the definition of the returned values is:</p>
+      <p>SDB_OK (value is 0): successfully executed.</p>
+      <p>&lt; 0: database error. Detailed error description can be found in err.prop file, or can be gotten by pysequoiadb.getErr(error_no).</p>
+      <p>> 0: system error. For more details, please refer to the system's error code information.</p>
+    </section>
+  </body>
+</topic>

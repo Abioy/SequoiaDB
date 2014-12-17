@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\administration\concepts\cluster\topics?><?path2project ..\..\..\..\out_en\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="administration_concepts_cluster_node_catalog_systasks" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="title:1">SYSTASKS Collection</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="title:2">Collection Space</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="p:1">SYSCAT</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="title:3">Concept</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="p:2">SYSTASKS collection contains information of all the running background tasks. Information
+        of a task is saved in a corresponding file.</p>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="p:3">Every file contains the following fields:</p>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 2.26*" id="administration_concepts_cluster_node_catalog_systasks_table1" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="simpletable:1">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="sthead:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:1">Field Name</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:2">Type</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:3">Descrption</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="strow:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:4">JobType</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:5">Integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:6"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="p:4">Task type, respectively represents:</p>
+            <ul class="- topic/ul " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="ul:1">
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="li:1">0: data split</li>
+            </ul>
+          </stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="strow:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:7">Status</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:8">Integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:9"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="p:5">Task status, repectively represents</p>
+            <ul class="- topic/ul " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="ul:2">
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="li:2">0: preparing</li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="li:3">1: running</li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="li:4">2: paused</li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="li:5">3: finished</li>
+            </ul>
+          </stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="strow:3">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:10">CollectionSpace</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:11">String</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:12">Collection space same</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="strow:4">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:13">Collection</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:14">String</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:15">Colletion name</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="section:3"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="title:4">Data Split</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="p:6">Regarding data split, every file contains the following fields:</p>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 2.26*" id="administration_concepts_cluster_node_catalog_systasks_table2" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="simpletable:2">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="sthead:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:16">Field Name</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:17">String</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:18">Description</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="strow:5">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:19">SourceName</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:20">String</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:21">Source replset name</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="strow:6">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:22">TargetName</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:23">String</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:24">Target replset name</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="strow:7">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:25">SourceID</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:26">Integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:27">Source replset ID</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="strow:8">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:28">TargetID</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:29">Integer</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:30">Target replset ID</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="strow:9">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:31">SplitValue</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:32">Object</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\concepts\cluster\topics\SYSTASKS_en.dita" xtrc="stentry:33">Data split key</stentry>
+        </strow>
+      </simpletable>
+    </section>
+  </body>
+</topic>

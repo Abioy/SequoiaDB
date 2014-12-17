@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/9949/trunk/doc/misc/frameworks/dita/DITA-OT/xsl/xslhtml
+END
+dita2htmlImpl.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/9949/trunk/doc/misc/frameworks/dita/DITA-OT/xsl/xslhtml/dita2htmlImpl.xsl
+END
+rel-links.xsl.bak
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/9949/trunk/doc/misc/frameworks/dita/DITA-OT/xsl/xslhtml/rel-links.xsl.bak
+END
+rel-links.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/9949/trunk/doc/misc/frameworks/dita/DITA-OT/xsl/xslhtml/rel-links.xsl
+END

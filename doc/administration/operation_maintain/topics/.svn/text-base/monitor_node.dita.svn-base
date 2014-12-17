@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_zmb_xgd_pl">
+  <title>监控节点状态</title>
+  <body>
+    <p>用户可以使用 snapshot 监控每个节点的状态。</p>
+    <ol>
+      <li>连接到协调节点<codeblock>$ /opt/sequoiadb/bin/sdb
+> var db = new Sdb("localhost", 11810) ;</codeblock></li>
+      <li>得到分区组<codeblock>> datarg = db.getRG ( "&lt;datagroup1>" ) ;</codeblock></li>
+      <li>得到数据节点<codeblock>> datanode = datarg.getNode ( "&lt;hostname1>", "&lt;servicename1>" ) ;</codeblock></li>
+      <li>得到该节点的快照<codeblock>> datanode.connect().snapshot(SDB_SNAP_DATABASE)</codeblock>
+        <p>快照类型分为：</p>
+        <p><xref href="../../database/topics/snapshot/contexts.dita">SDB_SNAP_CONTEXTS</xref></p>
+        <p><xref href="../../database/topics/snapshot/contexts_current.dita">SDB_SNAP_CONTEXTS_CURRENT</xref></p>
+        <p><xref href="../../database/topics/snapshot/sessions.dita">SDB_SNAP_SESSIONS</xref></p>
+        <p><xref href="../../database/topics/snapshot/sessions_current.dita">SDB_SNAP_SESSIONS_CURRENT</xref></p>
+        <p><xref href="../../database/topics/snapshot/collections.dita">SDB_SNAP_COLLECTIONS</xref></p>
+        <p><xref href="../../database/topics/snapshot/collectionspaces.dita">SDB_SNAP_COLLECTIONSPACES</xref></p>
+        <p><xref href="../../database/topics/snapshot/database.dita">SDB_SNAP_DATABASE</xref></p>
+        <p><xref href="../../database/topics/snapshot/system.dita">SDB_SNAP_SYSTEM</xref></p>
+        <p><xref href="../../database/topics/snapshot/catalog.dita">SDB_SNAP_CATALOG</xref></p></li>
+    </ol>
+    <p>用户可以使用 Shell 脚本监控，例如：<codeblock>[sequoiadb@vmsvr1-rhel-x64 sequoiadb]$ cat monitor_insert.sh
+#!/bin/bash
+~/sequoiadb/bin/sdb "db=new Sdb('localhost', 11810)" > /dev/null
+~/sequoiadb/bin/sdb "db.getRG('foo').getNode('vmsvr1-rhel-x64',11820).connect().snapshot(SDB_SNAP_DATABASE)" | grep TotalInsert
+~/sequoiadb/bin/sdb "quit"
+[sequoiadb@vmsvr1-rhel-x64 sequoiadb]$ ./monitor_insert.sh
+  "TotalInsert": 0,</codeblock></p>
+  </body>
+</topic>

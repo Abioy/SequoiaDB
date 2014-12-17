@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_frw_ycs_5n">
+  <title>node.getServiceName()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>getServiceName - Return the server name of a node.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>node.getServiceName</apiname>()
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Node
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Return the server name of a node.</p>            
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Return of server name of the current node.</p>
+      <codeblock>> node.getServiceName()
+Return: 11800</codeblock>   
+    </section>
+  </body>
+  <related-links>
+    <link href="node.getHostName.dita"></link>
+    <link href="node.getNodeDetail.dita"></link>
+  </related-links>
+</topic>

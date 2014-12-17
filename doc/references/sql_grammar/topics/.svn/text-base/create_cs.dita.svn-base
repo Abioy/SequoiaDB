@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_createCS">
+  <title>sql create collectionspace</title>
+  <body>
+    <section><title>create collectionspace 语句</title>
+      <p>用于创建数据库中的集合空间。</p>
+    </section>
+    <section><title>语法</title>
+      <p><codeblock>create collectionspace &lt;cs_name></codeblock></p>
+      <p>&lt;cs_name>：集合空间名称，集合空间名的最大长度为127Byte，并且不能为空。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>创建名为 foo 的集合空间</p>
+          <p><codeblock>db.execUpdate("create collectionspace foo") //等价于 db.createCS("foo")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="drop_cs.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

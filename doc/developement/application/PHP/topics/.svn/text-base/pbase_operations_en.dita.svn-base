@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_jzx_f1y_fm">
+  <title>PHP Development Foundation</title>
+  <body>
+    <p>Here's how to use PHP database-driven interface written using SepuoiaDB program. For simplicity, this example is not entirely complete code, only play an exemplary role.
+      Available to the installation directory /client/samples/php obtained under the corresponding complete code. <xref href="..\..\..\..\php\html\index.html"
+      format="html">More View PHP API</xref></p>
+    <section>
+      <title>Data Manipulation</title>
+      <ul>
+        <li>Connect to the database
+          <codeblock>//Create SequoiaDB object
+$db = new Sequoiadb();
+//Connect to database
+$array = $db -> connect("localhost:11810");
+//Test connection results returned by default php array type, the data is array(0){"errno"=>0}
+//If errno is 0, then the connection is successful
+if($array['errno'] !=0 )
+{ 
+  exit();
+}</codeblock></li>
+        <li>Select the collection space
+          <codeblock>//Select the name of "foo" is a collection of space, if does not exist, it is automatically created
+//Return SequoiaCS object
+$cs = $db -> selectCs("foo");
+//Test results, if successful, returns an object, failed to return NULL
+if( empty($cs) )
+{ 
+  exit();
+}</codeblock></li>
+        <li>Choose a collection
+          <codeblock>//Select the name of "big" collection, and of not, is automatically created
+//Return SequoiaCollection object
+$cl = $cs -> selectCollection("big");
+//Test results, if successful, returns an object, failed to return NULL
+if( empty($cl) )
+{ 
+  exit();
+}</codeblock></li>
+        <li>Insert
+          <codeblock>//Insert json
+$arr = $cl -> insert("{test:1}");
+//Test results
+if($array['errno'] !=0 )
+{ 
+  exit();
+}
+//Insert array
+$arr = $cl -> insert(array("test">=2));
+//Test results
+if($arr['errno'] !=0 )
+{ 
+  exit();
+}</codeblock></li>
+        <li>Inquiry
+          <codeblock>//Set all the records in the query
+//Return SequoiaCursor object
+$cursor = $cl -> find();
+//Loop through all records
+while($record = $cursor -> getNext())
+{
+  var_dump($record);
+}</codeblock></li>
+        <li>Update
+          <codeblock>//Modify the collection of more than a record, the value of the field test was revised to 0
+$arr = $cl -> update("{$set:{test:0}}");
+//Test results
+if($arr['errno'] !=0 )
+{ 
+  exit();
+}</codeblock></li>
+        <li>Delete
+          <codeblock>//Delete all records collection
+$arr = $cl -> remove();
+//Test results
+if($arr['errno'] !=0 )
+{ 
+  exit();
+}</codeblock></li>
+      </ul>
+    </section>
+    
+    <section>
+      <title>Cluster operation</title>
+      <ul>
+        <li>Select Group
+          <codeblock>//Select the name of "group" of the group, if you do not exist, it is automatically created
+//Return SequoiaShard object
+$group = $db -> selectGroup("group");
+//Test results, if successful, returns an object, failed to return NULL
+if( empty($group) )
+{ 
+  exit();
+}</codeblock>
+        </li>
+        <li>Boot replica group
+          <codeblock>//boot replica group for the first time will automatically activate
+//Return operation information
+$arr = $group -> start() ;
+//Check the restlts
+If ( $arr['errno'] != 0 )
+{
+   Exit() ;
+   }</codeblock></li>
+        <li>Select the node
+          <codeblock>//Get the name, of "node" node
+//Return SequoiaNode object
+$node = $group -> getNode( 'node') ;
+//Check whether the object is empty
+If ( empty( $node ) )
+{
+   Exit() ;
+}</codeblock></li>
+      </ul>
+    </section>
+  </body>
+</topic>

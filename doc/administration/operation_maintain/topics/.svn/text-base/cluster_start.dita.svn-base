@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_y15_54c_pl">
+  <title>集群启动</title>
+  <body>
+    <section>
+      <title>操作系统重启动</title>
+      <p>操作系统启动后会自动启动服务 sdbcm（sequoiadb cluster manager）。该服务启动后会自动启动该物理机中所有注册在 /opt/sequoiadb/conf/local 目录下的节点。使用命令 <b>ps –elf | grep sequoiadb</b> 能看到当前正在启动的节点与启动完毕的节点。启动完毕的进程名为：sequoiadb（服务名）正在启动的进程名一般为：</p>
+      <p><b>/opt/sequoiadb/bin/sequoiadb –c /opt/sequoiadb/conf/local/（服务名）</b></p>
+    </section>
+    <section>
+      <title>手工启动特定节点</title>
+      <p>当集群中某个节点失效后，用户可以在 sdb 命令行使用如下步骤启动节点。假设 SequoiaDB 的安装路径为<b>/opt/sequoiadb</b></p>
+      <ol>
+        <li>连接到协调节点<codeblock>$ /opt/sequoiadb/bin/sdb
+> var db = new Sdb("localhost", 11810) ;</codeblock></li>
+        <li>得到分区组<codeblock>> dataRG = db.getRG ( "&lt;datagroup1>" ) ;</codeblock></li>
+        <li>得到数据节点<codeblock>> dataNode = dataRG.getNode ( "&lt;hostname1>", "&lt;servicename1>" ) ;</codeblock></li>
+        <li>启动节点<codeblock>> dataNode.start() ;</codeblock></li>
+      </ol>
+    </section>
+    <section>
+      <title>手工启动数据组</title>
+      <p>当集群中某个数据组被停止后，用户可以在 sdb 命令行使用如下步骤启动数据组。该操作会启动数据组中全部数据节点。</p>
+      <ol>
+        <li>连接到协调节点<codeblock>$ /opt/sequoiadb/bin/sdb
+> var db = new Sdb("localhost", 11810) ;</codeblock></li>
+        <li>得到分区组<codeblock>> dataRG = db.getRG ( "&lt;datagroup1>" ) ;</codeblock></li>
+        <li>启动数据组<codeblock>> dataRG.start();</codeblock></li>
+      </ol>
+    </section>
+  </body>
+</topic>

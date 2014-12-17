@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_cluster_node_data">
+  <title>Data Node</title>
+  <body>
+    <section><title>Concept</title>
+      <p>Data node is a kind of logical node, which stores user data information.</p>
+      <p>Data node doesn't contain special catalogue information collection, so before the first
+        visit to a collection, it is essential to get metadata information from catalog information
+        collection.</p>
+      <p>Under independent mode, a data node, as an independent service provider, is able to
+        communicate with application and client without visiting any catalogue information
+        collection.</p>
+    </section>
+  </body>
+</topic>

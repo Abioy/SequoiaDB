@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_52z_gzh_hm">
+  <title>sql last()</title>
+  <body>
+    <section><title>last() function</title>
+      <p>The choice of the last data.</p>
+    </section>
+    <section><title>Grammar</title>
+      <p><codeblock>last(field name)</codeblock></p>
+    </section>
+    <section><title>Example</title>
+      <ul>
+        <li><p>Finally, a data selection table</p>
+          <p><codeblock>Original records in the table
+{a:1, b:2}
+{a:2, b:3}
+{a:3, b:3)
+
+SELECT LAST(a) AS a, b FROM foo.bar GROUP BY b
+
+Get record
+{a:1, b:2}
+{a:3, b:3)</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="sqfirst_en.dita" format="dita" type="topic"></link>
+    <link href="sqpush_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

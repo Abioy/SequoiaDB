@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_xzh_j3n_5n">
+  <title>rg.getSlave()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>getSlave - Return a random slave node in the current replica group.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>rg.getSlave</apiname>()
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>ReplicaGroup
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Return a random slave node in the current replica group.</p>            
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Return a random slave node in the current replica group:</p>
+      <codeblock>> rg.getSlave()
+Return: vmsvr2-suse-x64:11800</codeblock>   
+    </section>
+  </body>
+  <related-links>
+    <link href="rg.getMaster.dita"></link>
+    <link href="rg.start.dita"></link>
+  </related-links>
+</topic>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map><title>application_java_map</title>
+ <topicref href="topics/java.dita">
+  <topicref href="topics/joverview.dita"/>
+  <topicref href="topics/java_environment.dita"/>
+  <topicref href="topics/jbase_operations.dita"/>
+  <topicref href="topics/jbson.dita"/>
+  <topicref href="topics/datasource.dita"/>
+  <topicref href="topics/jsql.dita"/>
+  <topicref href="topics/java_api.dita"/>
+ </topicref>
+</map>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_q2p_5np_2q">
+  <title>db.close()</title>
+  <body>
+    <section><title>db.close()</title>
+      <p>关闭数据库连接。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>关闭数据库连接</p>
+          <p><codeblock>> var db = new Sdb("192.168.20.178", 11810)
+Takes 0.11733s.
+> db.close()
+Takes 0.569s.</codeblock></p>         
+        </li>
+      </ul>
+    </section>
+  </body>
+</topic>

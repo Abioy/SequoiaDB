@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sqlmapping">
+  <title> Mapping Table from SQL to SequoiaDB</title>
+  <body>
+    <section><title>Concepts and terms</title>
+      <simpletable  id="references_method_count_table">
+        <sthead>
+          <stentry>SQL</stentry>
+          <stentry>SequoiaDB</stentry>
+        </sthead>
+        <strow>
+          <stentry>database</stentry>
+          <stentry>database</stentry>
+        </strow>
+        <strow>
+          <stentry>table</stentry>
+          <stentry>collection</stentry>
+        </strow>
+        <strow>
+          <stentry>row</stentry>
+          <stentry>document / BSON document</stentry>
+        </strow>
+        <strow>
+          <stentry>column</stentry>
+          <stentry>field</stentry>
+        </strow>
+        <strow>
+          <stentry>index</stentry>
+          <stentry>index</stentry>
+        </strow>
+        <strow>
+          <stentry>table joins</stentry>
+          <stentry>embedded documents</stentry>
+        </strow>
+        <strow>
+          <stentry>primary key (Users can take any unique column as primary key.)</stentry>
+          <stentry>primary key (In SequoiaDB, primary key is automatically as the field called "_id".)</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section>
+      <title>Create and Alter</title>
+      <p>The following table shows create and alter statements on table level in SQL and the corresponding ones in SequoiaDB.</p>
+      <simpletable id="sqlpping_ceate_table" >
+        <sthead>
+          <stentry>SQL Statements</stentry>
+          <stentry>Sequoiadb Statements</stentry>
+          <stentry>Relative Link</stentry>
+        </sthead>
+        <strow>
+          <stentry>create table student (id not null,stu_id varchar(50), age number primary key(id))</stentry>
+          <stentry>The system will automatically generate a collection when data is firstly
+            inserted. If the value on "_id" is not specified, the system will automatically generate
+            a "_id" value. "db.collectionspace.student({stu_id:"01",age:20})" Of course, you
+              can also create a collection manually "db.collectionspace.createCL("student")"</stentry>
+          <stentry><xref href="../../methods/topics/dbinsert_en.dita">insert()</xref>,<xref href="../../methods/topics/createCL_en.dita">createCL()</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>alter table student add name varchar(50)</stentry>
+          <stentry>In a collection, the structure is not changable, because there is no relative
+            manipulation to describe or change the structure. But the method update() can add new
+            field to document record with "$set". "db.collectionspace.student.update({},{$set:{name:"Tom"}})"</stentry>
+          <stentry><xref href="../../methods/topics/dbupdate_en.dita">update()</xref>,<xref href="../../console/topics/gset_en.dita">$set</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>alter table student drop column name</stentry>
+          <stentry>In a collection, the structure is not changable, because there is no relative
+            manipulation to describe or change the structure. But the method update() can delete
+            existing field from document record with "$unset". "db.collectionspace.student.update({},{$unset:{name:"Tom"}})"</stentry>
+          <stentry><xref href="../../methods/topics/dbupdate_en.dita">update()</xref>,<xref href="../../console/topics/unset_en.dita">$unset</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>create index index_stu_id on student (stu_id)</stentry>
+          <stentry>db.collectionspace.student.createIndex("index_stu_id",{stu_id:-1})</stentry>
+          <stentry><xref href="../../methods/topics/createIndex_en.dita">createIndex()</xref>,<xref href="../../../administration/concepts/database/topics/index_en.dita">index</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>drop table student</stentry>
+          <stentry>db.collectionspace.dropCL("student")</stentry>
+          <stentry><xref href="../../methods/topics/dropCL_en.dita">dropCL()</xref></stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section>
+      <title>Insert</title>
+      <p>The following table shows insert statement on table level in SQL and the corresponding one in SequoiaDB.</p>
+      <simpletable id="sqlmapping_insert_table" >
+        <sthead>
+          <stentry>SQL Statements</stentry>
+          <stentry>SequoiaDB Statements</stentry>
+          <stentry>Relative Link</stentry>
+        </sthead>
+        <strow>
+          <stentry>insert into student(stu_id,age) values("01",20)</stentry>
+          <stentry>db.collectionspace.student.insert({stu_id:"01",age:20})</stentry>
+          <stentry><xref href="../../methods/topics/dbinsert_en.dita">insert()</xref></stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section>
+      <title>Select</title>
+      <p>The following table shows read statement on table level in SQL and the corresponding one in SequoiaDB.</p>
+      <simpletable><!-- id="sqlmapping_read_table" frame="all" relcolwidth="1.0* 1.6* 1.0*">-->
+        <sthead>
+          <stentry>SQL Statements</stentry>
+          <stentry>SequoiaDB Statements</stentry>
+          <stentry>Relative Link</stentry>
+        </sthead>
+        <strow>
+          <stentry>select * from student</stentry>
+          <stentry>db.collectionspace.student.find()</stentry>
+          <stentry><xref href="../../methods/topics/find_en.dita">find()</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>select stu_id,age from student</stentry>
+          <stentry>db.collectionspace.student.find({},{stu_id:"01",age:20})</stentry>
+          <stentry><xref href="../../methods/topics/find_en.dita">find()</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>select * from student where age > 25</stentry>
+          <stentry>db.collectionspace.student.find({age:{$gt:25}})</stentry>
+          <stentry><xref href="../../methods/topics/find_en.dita">find()</xref>,<xref href="../../console/topics/gt_en.dita">$gt</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>select age from student where age = 25 and stu_id = "01"</stentry>
+          <stentry>db.collectionspace.student.find({age:25,stu_id="01"},{age:25})</stentry>
+          <stentry><xref href="../../methods/topics/find_en.dita">find()</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>select count(*) from student</stentry>
+          <stentry>db.collectionspace.student.count()</stentry>
+          <stentry><xref href="../../methods/topics/dbcount_en.dita">count()</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>select count(stu_id) from student</stentry>
+          <stentry>db.collectionspace.student.count({stu_id:{$exists:1}})</stentry>
+          <stentry><xref href="../../methods/topics/dbcount_en.dita">count()</xref>,<xref href="../../console/topics/exists_en.dita">$exists</xref></stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section>
+      <title>Update</title>
+      <p>The following table shows update statement on table level in SQL and the corresponding one in SequoiaDB.</p>
+      <simpletable id="sqlmapping_update_table" >
+        <sthead>
+          <stentry>SQL Statements</stentry>
+          <stentry>Sequoiadb Statements</stentry>
+          <stentry>Relative Link</stentry>
+        </sthead>
+        <strow>
+          <stentry>update student set age = 25 where stu_id = "01"</stentry>
+          <stentry>db.collectionspace.student.update({stu_id:"01"},{$set:{age:25}})</stentry>
+          <stentry><xref href="../../methods/topics/dbupdate_en.dita">update()</xref>,<xref href="../../console/topics/gset_en.dita">$set</xref></stentry>
+        </strow>
+        <strow>
+          <stentry>update student set age = age + 2 where stu_id = "01"</stentry>
+          <stentry>db.collectionspace.student.update({stu_id:"01"},{$inc:{age:2}})</stentry>
+          <stentry><xref href="../../methods/topics/dbupdate_en.dita">update()</xref>,<xref href="../../console/topics/inc_en.dita">$inc</xref></stentry>
+        </strow>
+      </simpletable>
+    </section>
+    
+    <section>
+      <title>Delete</title>
+      <p>The following table shows delete statement on table level in SQL and the corresponding one in SequoiaDB.</p>
+      <simpletable id="sqlmapping_delete_table">
+        <sthead>
+          <stentry>SQL Statements</stentry>
+          <stentry>Sequoiadb Statements</stentry>
+          <stentry>Relative Link</stentry>
+        </sthead>
+        <strow>
+          <stentry>delete from student where age = 20</stentry>
+          <stentry>db.collectionspace.student.remove({age:20})</stentry>
+          <stentry><xref href="../../methods/topics/remove_en.dita">remove()</xref>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry>delete from student</stentry>
+          <stentry>db.collectionspace.student.remove()</stentry>
+          <stentry><xref href="../../methods/topics/remove_en.dita">remove()</xref>
+          </stentry>
+        </strow>
+      </simpletable>
+    </section>
+  </body>
+</topic>

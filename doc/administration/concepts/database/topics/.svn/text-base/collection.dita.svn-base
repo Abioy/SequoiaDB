@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="administration_concepts_database_collection" xml:lang="zh-cn">
+  <title>集合</title>
+  <body>
+    <section>
+      <title>概念</title>
+      <p>集合（Collection）是数据库中存放文档的逻辑对象。任何一条文档必须属于一个且仅一个集合。</p>
+      <p>集合由“&lt;集合空间名>.&lt;集合名>”构成。集合名最大长度127字节，为 UTF-8 编码。一个集合中可以包含零个至任意多个文档（上限为集合空间大小上限）。</p>
+      <p>在集群环境下，每个集合还可以拥有除名称外的以下属性：</p>
+    <simpletable>
+      <sthead>
+        <stentry>属性名</stentry>
+        <stentry>描述</stentry>
+      </sthead>
+      <strow>
+        <stentry>分区键（ShardingKey）</stentry>
+        <stentry>指定集合的分区键，集合中所有的文档将分区键中指定的字段作为分区信息，文档分别存放在所对应的分区中。</stentry>
+      </strow>
+      <strow>
+        <stentry>分区类型（ShardingType）</stentry>
+        <stentry>指定集合的分区类型：范围分区（Range）或散列分区（Hash）。</stentry>
+      </strow>
+      <strow>
+        <stentry>写副本数（ReplSize）</stentry>
+        <stentry>指定该集合默认的写副本数。如果该值 ≤ 1，数据的写请求在一个副本写入成功后就会返回。如果该值 > 1，则需要等到至少指定数量的副本被成功写入数据后才会返回。</stentry>
+      </strow>
+      <strow>
+        <stentry>数据压缩（Compressed）</stentry>
+        <stentry>创建集合时，指定 Compressed 属性的值代表着在做插入操作时，是否以压缩的形式存储数据，它的值有 true 和 false，默认为 false。</stentry>
+      </strow>
+    </simpletable>
+    </section>
+  </body>
+  <related-links >
+    <link href="document.dita" format="dita" type="topic"/>
+    <link href="collectionspace.dita" format="dita" type="topic"/>
+    <link href="index.dita" format="dita" type="topic"/>
+  </related-links>
+</topic>

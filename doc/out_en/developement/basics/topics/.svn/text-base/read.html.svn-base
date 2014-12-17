@@ -1,0 +1,257 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="读取"/>
+<meta name="description" content="四大基本数据库操作即（CRUD），读操作是从 SequoiaDB 中的集合中检索文档记录，包括所有响应应用程序请求数据并返回游标的操作。 本文档描述了应用程序从 SequoiaDB 中请求数据的查询语法和结构，以及不同因素影响效率的读取请求。 本文档的所有例子都是使用 SequoiaDB 的 shell 接口。 find() 我们使用 find 方法读取 SequoiaDB 中的记录。find ..."/>
+<meta name="DC.Relation" scheme="URI" content="create.html"/>
+<meta name="DC.Relation" scheme="URI" content="update.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="developement_basics_read"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>读取</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="developement_basics_read"><a name="developement_basics_read"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span></div></td><td width="50%"/></tr></tbody></table>
+
+  <h1 class="title topictitle1">读取</h1>
+
+  <div class="body">
+    <p class="p">四大基本数据库操作即（CRUD），读操作是从 SequoiaDB 中的集合中检索文档记录，包括所有响应应用程序请求数据并返回游标的操作。</p>
+
+    <p class="p">本文档描述了应用程序从 SequoiaDB 中请求数据的查询语法和结构，以及不同因素影响效率的读取请求。</p>
+
+    <div class="note note"><span class="notetitle">Note:</span> <p class="p">本文档的所有例子都是使用 SequoiaDB 的 shell 接口。</p>
+</div>
+
+    <div class="section"><h2 class="title sectiontitle">find()</h2>
+      
+      <p class="p">我们使用 <a class="xref" href="../../../references/methods/topics/find.html">find</a> 方法读取 SequoiaDB 中的记录。find 方法是从集合中选择记录的主要方法，它返回一个包含很多记录的游标。它的语法结构如下：</p>
+
+      <pre class="pre codeblock">db.collectionspace.collection.find([cond],[sel])</pre>
+
+      <p class="p">在 SQL 中对应的操作：find() 的方法与 SELECT 语句相似：</p>
+
+      <p class="p"><strong class="ph b">.</strong> [cond] 参数对应 WHERE 语句</p>
+
+      <p class="p"><strong class="ph b">.</strong> [sel] 参数对应从结果集中选择的字段列表</p>
+
+      <p class="p">现集合中有如下一条记录：</p>
+
+<pre class="pre codeblock">{
+  "_id":1,
+  "name":{
+     "first" : "Tom",
+     "second":"David"
+       },
+  "age":23
+  "birth":"1990-04-01",
+  "phone":[
+      10086,
+      10010,
+      10000
+     ],
+  "family":[
+      {
+     "Dad":"Kobe",
+     "phone":139123456
+      },
+      {
+      "Mom":"Julie",
+      "phone":189123456
+       }
+    ]
+ }</pre>
+  
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">返回集合所有记录</h2>
+      
+      <p class="p">如果没有 cond 参数，方法 db.collectionspace.colletion.find() 选择集合中所有的记录，如下返回集合空间 foo 中集合 bar 的所有记录：</p>
+
+      <div class="p"><pre class="pre codeblock">db.foo.bar.find()</pre>
+</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">返回匹配条件的记录</h2>
+      
+       <ul class="ul">
+         <li class="li">Equality 匹配<p class="p">下面的操作返回集合 bar 中 age 等于23的记录 </p>
+
+           <div class="p"><pre class="pre codeblock"> db.foo.bar.find({age:23})</pre>
+</div>
+</li>
+
+         <li class="li"><p class="p">使用<a class="xref" href="../../../references/console/topics/console.html">匹配符</a></p>
+
+           <p class="p">下面操作返回集合 bar age 字段值大于20的记录</p>
+<div class="p">
+            <pre class="pre codeblock">db.foo.bar.find({age:{<a class="xref" href="../../../references/console/topics/gt.html">$gt</a>:20}})</pre>
+
+          </div>
+</li>
+
+         <li class="li"><p class="p">嵌套数组匹配</p>
+
+           <p class="p">1. 数组元素查询，下面的操作操作返回一个游标，指向集合 bar 中所有数组类型字段 phone 含有元素10086的记录：</p>
+
+           <div class="p"><pre class="pre codeblock"> db.foo.bar.find({"phone":10086})</pre>
+</div>
+
+           <p class="p">2. 数组元素为 BSON 对象的查询，下面的操作返回一个游标指向集合 bar 中 family 字段包含的子元素 Dad 字段值为“Kobe”，phone 字段值为139123456的记录：</p>
+
+           <div class="p"><pre class="pre codeblock"> db.foo.bar.find( 
+  {
+  "family":{
+    $elemMatch: {
+     "Dad":"Kobe",
+     "phone":139123456
+   }
+  }
+  })</pre>
+</div>
+
+         </li>
+
+         <li class="li"><p class="p">嵌套 BSON 对象匹配查询</p>
+
+           <p class="p">下面的操作返回一个游标指向集合 bar 中嵌套 BSON 对象的 name 字段匹配{"first":"Tom"}的记录</p>
+
+            <div class="p"><pre class="pre codeblock"> db.foo.bar.find(
+    {
+     "name":{ 
+     "first":"Tom"
+      }
+    }
+   )</pre>
+</div>
+
+              <div class="p">上面还可以写成：<pre class="pre codeblock"> db.foo.bar.find(
+     {
+     "name.first":"Tom"
+     }
+   )</pre>
+</div>
+
+         </li>
+
+         
+       </ul>
+
+    </div>
+    
+    <div class="section"><h2 class="title sectiontitle">指定返回记录字段</h2>
+      
+      <p class="p">如果指定 find 方法的 sel 参数，那么只返回指定的 sel 参数内的字段名。下面的操作返回记录的 name 字段：</p>
+
+      <div class="p">
+        <pre class="pre codeblock">db.foo.bar.find(null,{name:""})</pre>
+
+      </div>
+
+      <div class="note note"><span class="notetitle">Note:</span> <p class="p">如果记录中不存在指定的字段名（如：people），SequoiaDB 默认也返回。如：</p>
+
+        <pre class="pre codeblock">db.foo.bar.find({},{name:"",people:""})
+返回：{
+       "name":{
+                "fist":"Tom",
+                "second":"David"
+              },
+        "people":""
+        }</pre>
+
+      </div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">find() 更多信息</h2>
+      
+      <p class="p">执行 db.foo.bar.find().help() , 会看到 find() 的更多使用方法</p>
+
+      <ul class="ul">
+        <li class="li">
+          <p class="p">cursor.sort(&lt;sort&gt;)</p>
+
+          <div class="p">sort() 方法用来按指定的字段排序，语法格式为：sort({"字段名1"：1|-1,"字段名2"：1|-1,...})，1为升序，-1为降序。如果 find 方法的 sel 参数不设定内容，sort() 方法按指定 sort 参数设定的字段排序，如果 sel 参数设定了返回的字段名，那么 sort() 方法只能对 sel 参数中选定的字段进行排序。如：
+            <pre class="pre codeblock">db.foo.bar.find().sort({age:1})</pre>
+对返回的记录按 age 字段值的升序排序
+            <pre class="pre codeblock">db.foo.bar.find(null,{name:""}).sort({age:1})</pre>
+此操作实际上对返回的记录达不到排序的效果。</div>
+</li>
+
+        <li class="li">cursor.hint(&lt;hint&gt;)<div class="p">添加索引加快查找速度，假设存在名为“testIndex”的索引：<pre class="pre codeblock">db.foo.bar.find().hint({"":"testIndex"})</pre>
+</div>
+</li>
+
+        <li class="li">cursor.limit(&lt;num&gt;)<div class="p">在结果集中限制返回的记录条数：<pre class="pre codeblock">db.foo.bar.find().limit(3)</pre>
+返回结果集里面的的前三条记录</div>
+</li>
+
+        <li class="li">cursor.skip(&lt;num&gt;)<div class="p">skip() 方法控制结果集的开始点，即跳过前面的 num 条记录，从 num+1条记录开始返回：<pre class="pre codeblock">db.foo.bar.find().skip(5)</pre>
+从查询的结果集的第6条记录开始返回</div>
+</li>
+
+      <li class="li">
+        <p class="p">使用游标控制 find() 返回的记录</p>
+
+          <div class="p"><pre class="pre codeblock"><a class="xref" href="../../../references/methods/topics/ccurrent.html">db.foo.bar.find().current()</a>   //返回当前游标指向的记录
+
+<a class="xref" href="../../../references/methods/topics/next.html">db.foo.bar.find().next()</a>   //返回当前游标指向的下一条记录
+
+<a class="xref" href="../../../references/methods/topics/cclose.html">db.foo.bar.find().close()</a>   //关闭当前游标，当前游标不再可用          
+            
+<a class="xref" href="../../../references/methods/topics/dbcount.html">db.foo.bar.find().count()</a>   //返回当前游标的记录总数
+            
+<a class="xref" href="../../../references/methods/topics/csize.html">db.foo.bar.find().size()</a>   //返回当前游标到最终游标的距离
+            
+<a class="xref" href="../../../references/methods/topics/toArray.html">db.foo.bar.find().toArray()</a>   //以数组形式返回结果集</pre>
+</div>
+
+      </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="create.html" title="创建">创建</a></div>
+<div><a class="navheader_parent_path" href="update.html" title="更新">更新</a></div>
+</div>
+</div>
+<div class="navfooter"><script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

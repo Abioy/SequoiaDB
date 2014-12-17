@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator
+END
+iterator_adapter.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/iterator_adapter.hpp
+END
+value_of_data.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/value_of_data.hpp
+END
+distance.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/distance.hpp
+END
+basic_iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/basic_iterator.hpp
+END
+prior.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/prior.hpp
+END
+value_of.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/value_of.hpp
+END
+advance.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/advance.hpp
+END
+equal_to.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/equal_to.hpp
+END
+key_of.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/key_of.hpp
+END
+iterator_facade.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/iterator_facade.hpp
+END
+deref_data.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/deref_data.hpp
+END
+next.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/next.hpp
+END
+segmented_iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/segmented_iterator.hpp
+END
+deref.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/deref.hpp
+END
+mpl.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/fusion/iterator/mpl.hpp
+END

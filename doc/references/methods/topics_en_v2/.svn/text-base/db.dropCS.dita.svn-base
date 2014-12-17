@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_sfm_hvx_tn">
+  <title>db.dropCS()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>dropCS - Delete a specified collection space in a database instance.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.dropCS</apiname>(<parmname>&lt;name></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Delete a specified collection space in a database instance.</p>
+      <parml>
+        <plentry>
+          <pt>name (string)</pt>
+          <pd>Collection space name. All the collection sapcenames in a database instance are unique to each other.
+            <parml>
+              <plentry>
+                <pt>Format</pt>
+                <pd>The parameter "name" should be specified in the method "dropCS()". The type of collection space name should be string. It should be ensured that the collection space name exists in the database instance, or operation exception will occur.</pd>
+                <pd>("&lt;Collection space name>")</pd>
+              </plentry>
+            </parml>
+          </pd>          
+        </plentry>        
+      </parml>      
+      <note>
+        <ul><li>The value of "name" should not be a null string. It should not contain "." or "$". And the length of it should not be greater than 127B. If the collection space name is invalid , the operation will fail. </li>
+          <li>It should be ensured that the collection space name exists, or exception will occur.</li>
+        </ul></note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Supposing that a collection space called "foo" exists, the following command will delete it.</p>
+      <codeblock>db.dropCS("foo")</codeblock>
+    </section>
+  </body>
+  <related-links>
+    <link href="db.createCS.dita" format="dita" type="topic"></link>
+    <link href="db.getCS.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_vgx_vmr_tp">
+  <title>db.collectionspace.collection.getLob()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>getLob - Get the LOB in collection.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.collectionspace.collection.getLob</apiname>(<parmname>&lt;oid>,&lt;file path>,[forced]</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Collection
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Get the LOB in collection.</p>
+      <parml>
+        <plentry>
+          <pt>oid (string)</pt>
+          <pd>LOB(large Object)'s only description.</pd>
+        </plentry>
+        <plentry>
+          <pt>file path (string)</pt>
+          <pd>Full path of the local file prepared to write.</pd>
+        </plentry>
+        <plentry>
+          <pt>forced (boolean)</pt>
+          <pd>Whether force to replace if the local file has exist.</pd>
+        </plentry>
+      </parml>
+      <note>
+        <p>
+          <ul>
+            <li>Local file not need to manually create.</li>
+            <li>Default of forced is false.</li>
+          </ul>
+        </p>
+      </note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Write the LOB's descriptor named 5435e7b69487faa663000897, to the local path of /opt/newlob file.</p>
+      <codeblock>db.foo.bar.getLob('5435e7b69487faa663000897','/opt/newlob')</codeblock>      
+    </section>
+  </body>
+</topic>

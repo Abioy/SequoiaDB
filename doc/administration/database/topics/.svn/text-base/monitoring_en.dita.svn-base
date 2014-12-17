@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_database_monitoring">
+  <title>Monitoring</title>
+  <body>
+    <section><title>Concept</title>
+      <p>Monitorting is an approach to monitor the status of current system. In SequoiaDB, users can monitor system with SNAPSHOT command and LIST command.</p>
+      <note>If the query is a snapshot in a clustered environment, you can get connected to the coordinator node.</note>
+      <p>Corrdinator node connections, the default is to get a snapshot of the entire cluster of information, for example: snapshot(SDB_SNAP_SYSTEM)</p>
+      <p>To obtain the specified partition group snapshot information, using criteria query, for example: snapshot(SDB_SNAP_SYSTEM,{ GroupName: "group1" } )</p>
+      <p>To get a snapshot of the information specified node, using criteria query, for example: snapshot(SDB_SNAP_SYSTEM,{ HostName: "host1", svcname: "11820' } )</p>
+    </section>
+    <section><title>Snapshot</title>
+      <p>Snapshot is a kind of command which can get the current status of system. There are different types of snapshots as follow:</p>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 1.0* 3*"
+        id="administration_database_monitoring_snapshot_table">-->
+        <sthead>
+          <stentry>Snapshot Sign</stentry>
+          <stentry>Snapshot Type</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry><xref href="snapshot/contexts_en.dita">SDB_SNAP_CONTEXTS</xref></stentry>
+          <stentry>Context</stentry>
+          <stentry>Context snapshot contains all the contexts corresponding to all the sessions in current data node.</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/contexts_current_en.dita">SDB_SNAP_CONTEXTS_CURRENT</xref></stentry>
+          <stentry>Context of current session</stentry>
+          <stentry>Current contexts snapshot contains the session contexts corresponding to current connections in data nodes.</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/sessions_en.dita">SDB_SNAP_SESSIONS</xref></stentry>
+          <stentry>Session</stentry>
+          <stentry>Session snapshot contains all the sessions between users and system on current database node. </stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/sessions_current_en.dita">SDB_SNAP_SESSIONS_CURRENT</xref></stentry>
+          <stentry>Current session</stentry>
+          <stentry>Current session snapshot contains the current sessions on current database node.</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/collections_en.dita">SDB_SNAP_COLLECTIONS</xref></stentry>
+          <stentry>Collection</stentry>
+          <stentry>Collections snapshot contains all the non-temporary collections in current data nodes or current cluster.</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/collectionspaces_en.dita">SDB_SNAP_COLLECTIONSPACES</xref></stentry>
+          <stentry>Collection space</stentry>
+          <stentry>Collection space snapshot contains all the collection space in the current data node or cluster. <fig></fig>(expect from catalog collection space)</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/database_en.dita">SDB_SNAP_DATABASE</xref></stentry>
+          <stentry>Database</stentry>
+          <stentry>Database snapshot contains database monitoring information of current database node.</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/system_en.dita">SDB_SNAP_SYSTEM</xref></stentry>
+          <stentry>System</stentry>
+          <stentry>System snapshot contains system monitoring information of current database node.</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="snapshot/catalog_en.dita">SDB_SNAP_CATALOG</xref></stentry>
+          <stentry>Catalog information</stentry>
+          <stentry>View catalog information for.</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section><title>List</title>
+      <p>List is a kind of lightweight command for getting system current status.There are different
+        types of lists as follow:</p>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 1.0* 3*"
+        id="administration_database_monitoring_list_table">-->
+        <sthead>
+          <stentry>List Sign</stentry>
+          <stentry>List Type</stentry>
+          <stentry>Description</stentry>
+        </sthead>
+        <strow>
+          <stentry><xref href="list/list_contexts_en.dita">SDB_LIST_CONTEXTS</xref></stentry>
+          <stentry>Context</stentry>
+          <stentry>Context list contains all the contexts corresponding to all the sessions in current data node.</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_contexts_current_en.dita">SDB_LIST_CONTEXTS_CURRENT</xref></stentry>
+          <stentry>Context of current session</stentry>
+          <stentry>Current contexts list contains the session contexts corresponding to current connections in data nodes.</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_sessions_en.dita">SDB_LIST_SESSIONS</xref></stentry>
+          <stentry>Session</stentry>
+          <stentry>Session list contains all the sessions between users and system on current database node.</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_sessions_current_en.dita">SDB_LIST_SESSIONS_CURRENT</xref></stentry>
+          <stentry>Current session</stentry>
+          <stentry>Current session list contains the current sessions on current database node.</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_collections_en.dita">SDB_LIST_COLLECTIONS</xref></stentry>
+          <stentry>Collection</stentry>
+          <stentry>Collections list contains all the non-temporary collections in current data nodes or current cluster.</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_collectionspace_en.dita">SDB_LIST_COLLECTIONSPACES</xref></stentry>
+          <stentry>Collection space</stentry>
+          <stentry>Collection space snapshot contains all the collection space in the current data node or current cluster. <fig></fig>(expect from catalog collection space)</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_storageunits_en.dita">SDB_LIST_STORAGEUNITS</xref></stentry>
+          <stentry>Storage unit</stentry>
+          <stentry>Storage unit list contains information of all storage units on current database node.</stentry>
+        </strow>
+        <strow>
+          <stentry><xref href="list/list_groups.dita">SDB_LIST_GROUPS</xref></stentry>
+          <stentry>Replica Group</stentry>
+          <stentry>Replica Group list contains infromation of all shards in current cluster.</stentry>
+        </strow>
+      </simpletable>
+    </section>
+  </body>
+</topic>

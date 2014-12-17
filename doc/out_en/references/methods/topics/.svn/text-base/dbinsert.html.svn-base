@@ -1,0 +1,201 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="db.collectionspace.collection.insert()"/>
+<meta name="description" content="db.collectionspace.collection.insert(&lt;doc|docs&gt;,[flag]) 向指定集合中插入记录。如果集合空间或集合不存在，首先需要手动创建一个集合空间，如 db.createCS(&#34;foo&#34;)，再在该集合空间下手动创建集合，如 db.foo.createCL(&#34;bar&#34;)。然后在集合中插入记录。 参数描述 参数名 参数类型 描述 是否必填 doc|docs ..."/>
+<meta name="DC.Relation" scheme="URI" content="dbcount.html"/>
+<meta name="DC.Relation" scheme="URI" content="find.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../administration/concepts/database/topics/collection.html"/>
+<meta name="DC.Relation" scheme="URI" content="../../../administration/concepts/database/topics/collectionspace.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="references_method_insert"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>db.collectionspace.collection.insert()</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="references_method_insert"><a name="references_method_insert"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span></div></td><td width="50%"/></tr></tbody></table>
+
+  <h1 class="title topictitle1">db.collectionspace.collection.insert()</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">db.collectionspace.collection.insert(&lt;doc|docs&gt;,[flag])</h2>
+      <p class="p">向指定集合中插入记录。如果集合空间或集合不存在，首先需要手动创建一个集合空间，如 db.createCS("foo")，再在该集合空间下手动创建集合，如 db.foo.createCL("bar")。然后在集合中插入记录。</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">参数描述</h2><p class="p"/>
+
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d151674e27" class="stentry">参数名</th>
+
+          <th valign="bottom" align="left" id="d151674e30" class="stentry">参数类型</th>
+
+          <th valign="bottom" align="left" id="d151674e33" class="stentry">描述</th>
+
+          <th valign="bottom" align="left" id="d151674e36" class="stentry">是否必填</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d151674e27" class="stentry">doc|docs</td>
+
+          <td valign="top" headers="d151674e30" class="stentry">Json 对象</td>
+
+          <td valign="top" headers="d151674e33" class="stentry">文档记录。doc 为一条记录，docs 为多条记录。</td>
+
+          <td valign="top" headers="d151674e36" class="stentry">是</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d151674e27" class="stentry">flag</td>
+
+          <td valign="top" headers="d151674e30" class="stentry">Int</td>
+
+          <td valign="top" headers="d151674e33" class="stentry">可取 SDB_INSERT_RETURN_ID 或者 SDB_INSERT_CONTONDUP。<div class="fig fignone"/>
+前者在插入单条记录时有效，表示插入记录后返回记录中“_id”字段内容；后者在插入多条记录时有效，表示在插入的记录中，若存在“_id”字段内容重复的记录时，将跳过<div class="fig fignone"/>
+这些存在重复“_id”的记录继续插入后面记录。默认情况下，当存在重复“_id”字段内容的记录时，将停止插入后面的记录。</td>
+
+          <td valign="top" headers="d151674e36" class="stentry">否</td>
+
+        </tr>
+</table>
+      
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">格式</h2>
+      <p class="p"> insert() 方法的定义格式包含 doc|docs 和 flag 两个字段。</p>
+
+      <div class="p">doc：<pre class="pre codeblock">{"&lt; 字段名 1&gt;":"&lt; 值 &gt;","&lt; 字段名 2&gt;":"&lt; 值 &gt;",…}</pre>
+</div>
+
+      <div class="p">docs：<pre class="pre codeblock">{ [
+  {"&lt; 字段名 1&gt;":"&lt; 值 &gt;","&lt; 字段名 2&gt;":"&lt; 值 &gt;",…},
+  {"&lt; 字段名 1&gt;":"&lt; 值 &gt;","&lt; 字段名 2&gt;":"&lt; 值 &gt;",…},...
+ ] }</pre>
+</div>
+
+      <div class="note note"><span class="notetitle">Note:</span> 
+        <div class="p"><ul class="ul">
+          <li class="li">如果插入的记录不指定 _id 字段时，SequoiaDB 会自动为记录添加一个 _id 字段来标识记录的唯一性。</li>
+
+        </ul>
+</div>
+
+      </div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">示例</h2>
+        <ul class="ul">
+          <li class="li">
+            <p class="p">不指定 _id 字段，插入一条记录。</p>
+
+            <pre class="pre codeblock">db.foo.bar.insert({name:"Tom",age:20})</pre>
+
+            <p class="p">此操作是向集合 bar 中插入一条新的记录，name 字段的值为“Tom”，age 字段的值为20，_id 字段被唯一创建：</p>
+
+            <pre class="pre codeblock">{ "_id": { "$oid": "515152ba49af395200000000" }, "name": "Tom", "age": 20 }</pre>
+
+          </li>
+
+          <li class="li">
+            <p class="p">插入一条带有 _id 字段的记录。</p>
+
+            <pre class="pre codeblock">db.foo.bar.insert({_id:10,age:20})</pre>
+
+            <p class="p">此操作是向集合 bar 中插入一条新的记录，_id 字段的值为10，age 字段的值为20：</p>
+
+            <pre class="pre codeblock">{ "_id": 10, "age": 20 }</pre>
+
+          </li>
+
+          <li class="li">
+            <p class="p">插入多条记录。</p>
+
+            <pre class="pre codeblock">db.foo.bar.insert([{_id:20,name:"Mike",age:15},{name:"John",age:25,phone:123}])</pre>
+
+            <p class="p">此操作将会在集合 bar 中插入两条记录：</p>
+
+            <p class="p">1）其中一条记录 _id 字段的值为20，name 字段的值为“Mike”，age 字段的值为15。</p>
+
+            <p class="p">2）一条记录系统自动为 _id 字段生成唯一值，name 字段的值为“John”，age 字段的值为25，phone 字段的值为123。</p>
+
+            <pre class="pre codeblock">     {
+        "_id": 20, 
+        "name": "Mike", 
+        "age": 15 
+        }</pre>
+<pre class="pre codeblock">     { 
+        "_id": { "$oid": "5151557a49af395200000001" }, 
+        "name": "John", 
+        "age": 25, 
+        "phone": 123 
+        }</pre>
+
+          </li>
+
+          <li class="li">
+            <p class="p">插入拥有重复“_id”键的多条记录。</p>
+
+            <pre class="pre codeblock">db.foo.bar.insert([{_id:1,a:1 },{_id:1,b:2 },{_id:3,c:3}], SDB_INSERT_CONTONDUP)</pre>
+
+            <p class="p">此操作将会在集合 bar 中插入两条记录：</p>
+
+            <pre class="pre codeblock">{
+"_id": 1,
+"a": 1,
+}
+{
+"_id": 3,
+"c": 3
+}</pre>
+
+          </li>
+
+        </ul>
+              
+     </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="dbcount.html" title="db.collectionspace.collection.count()">db.collectionspace.collection.count()</a></div>
+<div><a class="navheader_parent_path" href="find.html" title="db.collectionspace.collection.find()">db.collectionspace.collection.find()</a></div>
+<div><a class="navheader_parent_path" href="../../../administration/concepts/database/topics/collection.html" title="集合">集合</a></div>
+<div><a class="navheader_parent_path" href="../../../administration/concepts/database/topics/collectionspace.html" title="集合空间">集合空间</a></div>
+</div>
+</div>
+<div class="navfooter"><script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

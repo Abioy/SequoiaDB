@@ -1,0 +1,188 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Java Development Foundation"/>
+<meta name="description" content="This section introduce how to use Java client-driven interfaces to run Java application. for simple, the following examples are not full code, only play an exemplary role. You can get the full code in ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../developement/application/java/topics/java_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="application_java_driver"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Java Development Foundation</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="application_java_driver"><a name="application_java_driver"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../developement/application/java/topics/java_en.html" title="Java Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Java Driver</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/application_en.html" title="SequoiaDB Application Development">SequoiaDB Application Development</a> / <a class="navheader_parent_path" href="../../../../developement/application/java/topics/java_en.html" title="Java Driver">Java Driver</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Java Development Foundation</h1>
+
+  <div class="body">
+    <p class="p">This section introduce how to use Java client-driven interfaces to run Java application. for
+      simple, the following examples are not full code, only play an exemplary role. You can get the
+      full code in the directory "/sequoiadb/client/samples/java", for more, please refer to <a class="xref" href="../../../../java/html/index.html">online Java API </a></p>
+
+    <div class="section"><h2 class="title sectiontitle">Database Operations</h2>
+      
+      <ul class="ul">
+        <li class="li">Database Connection: The following codes connect to a database and list all the
+          collection information:<pre class="pre codeblock">import com.sequoiadb.base.DBCursor;
+import com.sequoiadb.base.Sequoiadb;
+import com.sequoiadb.exception.BaseException;
+
+public class Sample {
+  public static void main(String[] args) {
+		
+    String connString = "192.168.1.2:11810";
+	  try {
+		  //  build a SequoiaDB database connection
+		  Sequoiadb sdb = new Sequoiadb(connString, "", "");
+		  //  get and print all the Collection information
+		  DBCursor cursor = sdb.listCollections();
+		  while(cursor.hasNext()) {
+		    System.out.println(cursor.getCurrent());
+	      }
+	  } catch (BaseException e) {
+		  System.out.println("Sequoiadb driver error, error description:" + e.getErrorType());
+		}
+  }
+}</pre>
+
+          <div class="note note"><span class="notetitle">Note:</span> 
+            <p class="p">1) In the above sample, the port 11810 the local database connects to is the service
+              port of a coord node; it uses null for user name and password. The users need to
+              configure the parameters according to their own situations.</p>
+
+            <p class="p">2) SequoiaDB class is a non thread-safe class; each thread must build its own
+              SequoiaDB object, and cannot be passed to multithreads at the same time.</p>
+
+          </div>
+</li>
+
+        <li class="li">Insert Data
+          <pre class="pre codeblock">String connString = "192.168.1.2:11810";
+  try {
+			
+    Sequoiadb sdb = new Sequoiadb(connString, "", "");
+			
+	CollectionSpace db = sdb.createCollectionSpace("space");
+	DBCollection cl = db.createCollection("collection");
+			
+	// Create a bson object as an insertor
+	BSONObject obj = new BasicBSONObject();
+	obj.put("name", "tom");
+	obj.put("age", 24);
+			
+	cl.insert(obj);
+			
+  } catch (BaseException e) {
+		System.out.println("Sequoiadb driver error, error description:" + e.getErrorType());
+		}</pre>
+
+          <div class="note note"><span class="notetitle">Note:</span> In the above sample, the port 11810 the local database connects to is the service port of a coord node; it uses null for user name and password. The users need to configure the parameters according to their own situations.</div>
+</li>
+
+        <li class="li">Query Data<pre class="pre codeblock">// define a cursor object
+DBCursor cursor;
+
+BSONObject queryCondition = new BasicBSONObject();
+queryCondition = (BSONObject) JSON.parse("({age:{$ne:20}})");
+// Query all the records, and put the result set into the cursor object
+cursor = cl.query(queryCondition, null, null, null);
+// print all the records in the cursor
+while (cursor.hasNext()) {
+  BSONObject record = cursor.getNext();
+  String name = (String) record.get("name");
+  System.out.println("name=" +  name);
+  }    </pre>
+
+          <div class="note note"><span class="notetitle">Note:</span> 
+            <p class="p">1)	The above sample sets some simple query conditions. And some other parameters include select condition, sorting order, etc.</p>
+
+            <p class="p">2)	The cursor object buffers part of the data into the local process's memory, it will get other parts of the data from the server through the network and buffers the data locally again.</p>
+
+          </div>
+</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Cluster Operations</h2>
+      
+      <ul class="ul">
+        <li class="li">Create Replica Group<pre class="pre codeblock">String connString = "192.168.1.2:11810";
+  try {
+
+    Sequoiadb sdb = new Sequoiadb(connString, "", "");
+    ReplicaGroup rg = sdb.createRG("group1");
+    rg.createNode("dbserver-1", 11820, "/opt/sequoiadb/database/data/11820", null);
+    rg.start();
+  } catch (BaseException e) {
+	  System.out.println("Sequoiadb driver error, error description" + e.getErrorType());
+	}</pre>
+<div class="note note"><span class="notetitle">Note:</span> 
+	  <p class="p">1)	rg.createNode() method’s first parameter is the host name (IP address is not supported currently) of the server of newly added node. The third parameter is the path which the data files store in, SequoiaDB will automatically create that directory, and please make sure that the SequoiaDB administrator account (sdbadmin in default) has the write permission.</p>
+
+	  <p class="p">2)	rg.start() method is used to start all the nodes in a replica group. This function usually needs 10s to process. This method does not guarantee that the master node selection has finished, so in order to guarantee the replica group work properly, before using the new replica group, please wait another 30s after the start() method finished.</p>
+
+	</div>
+</li>
+
+        <li class="li">Add a New Node in the Replica Group<pre class="pre codeblock">String connString = "192.168.1.2:11810";
+  try {
+
+    Sequoiadb sdb = new Sequoiadb(connString,"","");
+
+    ReplicaGroup rg = sdb.getReplicaGroup("group1");
+    Node node = rg.createNode("dbserver-1", 11830, "/var/sequoiadb/database/data/11830", null);
+    node.start();
+  } catch (BaseException e) {
+	  System.out.println("Sequoiadb driver error, error description" + e.getErrorType());
+    }</pre>
+<div class="note note"><span class="notetitle">Note:</span> 
+      <p class="p">rg.createNode() method’s first parameter is the host name (IP address is not supported currently) of the server of newly added node.</p>
+
+    </div>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../developement/application/java/topics/java_en.html" title="Java Driver"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Java Driver</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

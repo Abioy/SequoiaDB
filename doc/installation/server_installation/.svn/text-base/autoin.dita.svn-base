@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qgn_4jn_xp">
+  <title>自动化安装部署</title>
+  <body>
+    <p>自动化安装只需要选择一台机器，并在该机器上安装 OM 服务，便可以通过网页连接 OM，进行自动化安装部署集群。</p>
+    <p><xref href="topics/linuxom.dita">安装 OM 服务</xref></p>
+    <p><xref href="topics/autoinstall1.dita">通过 OM 部署集群</xref></p>
+  </body>
+</topic>

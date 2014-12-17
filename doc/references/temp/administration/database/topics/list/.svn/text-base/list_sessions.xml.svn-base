@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\administration\database\topics\list?><?path2project ..\..\..\..\out_en\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="administration_database_monitoring_list_sessions" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="title:1">会话列表</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="section:1">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="title:2">描述</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="p:1">会话列表列出当前数据库节点中所有的用户与系统会话，每一个会话为一条记录。</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="section:2">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="title:3">标示</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="p:2">SDB_LIST_SESSIONS</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="section:3">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="title:4">适用节点</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="p:3">数据、编目</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="section:4">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="title:5">字段信息</title>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 2.0*" id="administration_database_monitoring_snapshot_sessions_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="simpletable:1">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="sthead:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:1">字段名</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:2">类型</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:3">描述</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="strow:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:4">SessionID</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:5">整数或长整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:6">会话ID</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="strow:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:7">TID</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:8">整数</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:9">该会话所对应的系统线程ID</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="strow:3">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:10">Status</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:11">字符串</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:12">
+            <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="p:4">会话状态</p>
+            <ul class="- topic/ul " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="ul:1">
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="li:1">Creating：创建状态</li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="li:2">Running：运行状态</li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="li:3">Waiting：等待状态</li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="li:4">Idle：线程池待机状态</li>
+              <li class="- topic/li " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="li:5">Destroying：销毁状态</li>
+            </ul>
+          </stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="strow:4">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:13">Type</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:14">字符串</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:15"><xref href="../EDU.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="xref:1" type="topic"><?ditaot usertext?>EDU类型</xref></stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="strow:5">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:16">Name</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:17">字符串</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="stentry:18">EDU名，一般系统EDU名为空</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="section:5">
+      <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="title:6">示例</title>
+      <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\administration\database\topics\list\list_sessions.dita" xtrc="codeblock:1">&gt; db.list(SDB_LIST_SESSIONS)
+{
+  "SessionID": 1,
+  "TID": 6168,
+  "Status": "Running",
+  "Type": "TCPListener",
+  "Name": ""
+}
+{
+  "SessionID": 2,
+  "TID": 6169,
+  "Status": "Running",
+  "Type": "HTTPListener",
+  "Name": ""
+}
+...
+{
+  "SessionID": 21,
+  "TID": 6691,
+  "Status": "Running",
+  "Type": "Agent",
+  "Name": "192.168.20.101:52741"
+}</codeblock>
+    </section>
+  </body>
+</topic>

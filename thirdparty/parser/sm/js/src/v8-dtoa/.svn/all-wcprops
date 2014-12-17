@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa
+END
+v8.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/v8.h
+END
+checks.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/checks.cc
+END
+utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/utils.cc
+END
+checks.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/checks.h
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/utils.h
+END
+powers-ten.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/powers-ten.h
+END
+conversions.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/conversions.cc
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/README
+END
+conversions.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/conversions.h
+END
+double.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/double.h
+END
+include-v8.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/include-v8.h
+END
+v8-dtoa.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/v8-dtoa.cc
+END
+fast-dtoa.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/fast-dtoa.cc
+END
+fast-dtoa.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/fast-dtoa.h
+END
+platform.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/platform.cc
+END
+globals.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/globals.h
+END
+platform.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/platform.h
+END
+cached-powers.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/cached-powers.h
+END
+diy-fp.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/diy-fp.cc
+END
+dtoa.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/dtoa.h
+END
+diy-fp.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/v8-dtoa/diy-fp.h
+END

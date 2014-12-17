@@ -1,0 +1,137 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Sharded Collection"/>
+<meta name="description" content="Concept Sharded collection is a collection that has defined a sharding key. Sharded collection can split data in collection to more than one data sharding group according to the fields specified by ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/sharding_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_concepts_sharded_collection"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Sharded Collection</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_concepts_sharded_collection"><a name="administration_concepts_sharded_collection"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/concepts/cluster/topics/sharding_en.html" title="Sharding"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sharding</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="cluster_en.html" title="Cluster">Cluster</a> / <a class="navheader_parent_path" href="../../../../administration/concepts/cluster/topics/sharding_en.html" title="Sharding">Sharding</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Sharded Collection</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Concept</h2>
+      <p class="p">Sharded collection is a collection that has defined a sharding key. Sharded collection can
+        split data in collection to more than one data sharding group according to the fields
+        specified by sharding key.</p>
+
+      <p class="p">When collection is generated, users can specify sharding key. Sharded collection is
+        generated in a random data sharding group. User can split a collection to several data
+        sharding groups by themselves.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Sharding Interval</h2>
+      <p class="p">Every interval in sharded collection is named sharding interval.</p>
+
+      <p class="p">When a sharded collection is generated, the sharding group of it contains all the ranges,
+        which include range from MinKey to MaxKey for all fields. </p>
+
+      <p class="p">Every range is left-closed and right-open. That's to say, data in it is greater than or
+        equal to the lower boundary and lesser than the upper boundary. For example:</p>
+
+      <pre class="pre codeblock">{ LowBound: { "": 10 }, UpBound: { "": 20 } }</pre>
+
+      <p class="p">In this example, the lower boundary is 10 and the high boundary is 20. So all the data in
+        this range for all the sharding field is greater than or equal to 10 and lesser than 20.</p>
+
+      <div class="note note"><span class="notetitle">Note:</span> The definition of all ranges within a collection does not contain field name. The fields
+        in it are consistent with those defined in sharding key in terms of type and number. </div>
+
+      <p class="p">When a sharding key contains several fields, the matching principle is to match first field
+        ahead. If it is located in boundary, it will match the next field. For example,</p>
+
+      <pre class="pre codeblock">{ LowBound: { "": 10, "": 5 }, UpBound: { "": 20, "": 1 } }</pre>
+
+      <p class="p">In this shardin range, if the sharding key users input is located between 10 and 20, it is
+        judged to belong to this range.If it is lesser than 10 or greater than 20, it doesnt belong
+        to this range. If it is 10 or 20, it will compare the second field with the principle of
+        left-closed-right-open. </p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Rule</h2>
+      <p class="p">Please refer to the definition of <a class="xref" href="SYSCOLLECTIONS_en.html">SYSCOLLECTIONS</a>
+        for more about the the definition principle of sharded collection. </p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Sample</h2>
+      <p class="p">A typical sharded range which exists in two sharding group is as follow:</p>
+
+      <pre class="pre codeblock">  [ 
+        { "GroupID" : 1000, 
+          "LowBound" : { "" : MinKey, "" : MaxKey }, 
+          "UpBound" : { "" : 10, "" : 5 } 
+        }, 
+        { "GroupID" : 1001, 
+          "LowBound" : { "" : 10, "" : 5 }, 
+          "UpBound" : { "" : MaxKey, "" : MinKey } 
+        } 
+  ]</pre>
+
+      <p class="p">The replset ID of the first range in this sample is 1000. The sample contains a sharding
+        key with two fields:</p>
+
+      <ul class="ul">
+        <li class="li">lower boundary : { "" : MinKey, "" : MaxKey }</li>
+
+        <li class="li">upper boundary：{ "" : 10, "" : 5 }</li>
+
+      </ul>
+
+      <p class="p">The replset ID of the second range in this sample is 1001. The sample contains a sharding
+        key with two fields:</p>
+
+      <ul class="ul">
+        <li class="li">lower boundary : { "" : 10, "" : 5 }</li>
+
+        <li class="li">upper boundary：{ "" : MaxKey, "" : MinKey }</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../administration/concepts/cluster/topics/sharding_en.html" title="Sharding"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sharding</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_yqp_bqs_5p">
+  <title>oma.createCoord()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>createCoord - Create a CoordNode in the cluster.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>oma.createCoord</apiname>(<parmname>&lt;svcname>&lt;dbpath>,[config obj]</parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Oma
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Create a CoordNode in the cluster.</p>
+      <parml>
+        <plentry>
+          <pt>svcname (string)</pt>
+          <pd>Port number of the node.</pd>
+        </plentry>
+        <plentry>
+          <pt>dbpath (string)</pt>
+          <pd>Nodes path.</pd>
+        </plentry>
+        <plentry>
+          <pt>config (Json Object)</pt>
+          <pd>Configuration file of the node, including setting log's size, whether open transaction.</pd>
+        </plentry>
+      </parml>
+      <note>
+        <p>
+          <ul>
+            <li>In a collection, we can create multiple nodes, but port number of each two nodes must be apart at least 5 ports, because each node's backend control 5 communication ports.</li>           
+          </ul>
+        </p>
+      </note>
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Create a Coord Node at port 11810, and set the log file size to 64MB.</p>
+      <codeblock>oma.createCoord(11810,"/opt/sequoiadb/coord/11810",{logfilesz:64})</codeblock>      
+    </section>
+  </body>
+</topic>

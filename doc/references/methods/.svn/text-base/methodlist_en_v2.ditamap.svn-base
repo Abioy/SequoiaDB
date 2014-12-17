@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>SequoiaDB JavaScript Method List</title>
+ <topicref href="topics_en_v2/methodlist_en_v2.dita">
+  <topicref href="topics_en_v2/db.backupoffline.dita"/>
+  <topicref href="topics_en_v2/db.cancelTask.dita"/>
+  <topicref href="topics_en_v2/db.createCataRG.dita"/>
+  <topicref href="topics_en_v2/db.createCS.dita"/>
+  <topicref href="topics_en_v2/db.createDomain.dita"/>
+  <topicref href="topics_en_v2/db.createProcedure.dita"/>
+  <topicref href="topics_en_v2/db.createRG.dita"/>
+  <topicref href="topics_en_v2/db.createUsr.dita"/>
+  <topicref href="topics_en_v2/db.dropCS.dita"/>
+  <topicref href="topics_en_v2/db.dropDomain.dita"/>
+  <topicref href="topics_en_v2/db.dropUsr.dita"/>
+  <topicref href="topics_en_v2/db.eval.dita"/>
+  <topicref href="topics_en_v2/db.exec.dita"/>
+  <topicref href="topics_en_v2/db.execUpdate.dita"/>
+  <topicref href="topics_en_v2/db.flushConfigure.dita"/>
+  <topicref href="topics_en_v2/db.forceSession.dita"/>
+  <!--<topicref href="topics_en_v2/db.interrupt.dita"/>-->
+  <topicref href="topics_en_v2/db.getCS.dita"/>
+  <topicref href="topics_en_v2/db.getDomain.dita"/>
+  <topicref href="topics_en_v2/db.getRG.dita"/>
+  <topicref href="topics_en_v2/db.invalidateCache.dita"/>
+  <topicref href="topics_en_v2/db.list.dita"/>
+  <topicref href="topics_en_v2/db.listBackup.dita"/>
+  <topicref href="topics_en_v2/db.listCollections.dita"/>
+  <topicref href="topics_en_v2/db.listCollectionSpaces.dita"/>
+  <topicref href="topics_en_v2/db.listDomains.dita"/>
+  <topicref href="topics_en_v2/db.listProcedures.dita"/>
+  <topicref href="topics_en_v2/db.listReplicaGroups.dita"/>
+  <topicref href="topics_en_v2/db.listTasks.dita"/>
+  <topicref href="topics_en_v2/db.removeBackup.dita"/>
+  <topicref href="topics_en_v2/db.removeProcedure.dita"/>
+  <topicref href="topics_en_v2/db.removeRG.dita"/>
+  <topicref href="topics_en_v2/db.resetSnapshot.dita"/>
+  <topicref href="topics_en_v2/db.setSessionAttr.dita"/>
+  <topicref href="topics_en_v2/db.snapshot.dita"/>
+  <topicref href="topics_en_v2/db.startRG.dita"/>
+  <topicref href="topics_en_v2/db.traceFmt.dita"/>
+  <topicref href="topics_en_v2/db.traceOff.dita"/>
+  <topicref href="topics_en_v2/db.traceOn.dita"/>
+  <topicref href="topics_en_v2/db.traceResume.dita"/>
+  <topicref href="topics_en_v2/db.traceStatus.dita"/>
+  <topicref href="topics_en_v2/db.transBegin.dita"/>
+  <topicref href="topics_en_v2/db.transCommit.dita"/>
+  <topicref href="topics_en_v2/db.transRollback.dita"/>
+  <topicref href="topics_en_v2/db.waitTasks.dita"/>
+   
+  <topicref href="topics_en_v2/cs.createCL.dita"/>
+  <topicref href="topics_en_v2/cs.dropCL.dita"/>
+  <topicref href="topics_en_v2/cs.getCL.dita"/>
+  
+  <topicref href="topics_en_v2/cl.aggregate.dita"/>
+  <topicref href="topics_en_v2/cl.alter.dita"/>
+  <topicref href="topics_en_v2/cl.attachCL.dita"/>
+  <topicref href="topics_en_v2/cl.count.dita"/>
+  <topicref href="topics_en_v2/cl.createIndex.dita"/>
+  <topicref href="topics_en_v2/cl.deleteLob.dita"/>
+  <topicref href="topics_en_v2/cl.detachCL.dita"/>
+  <topicref href="topics_en_v2/cl.dropIndex.dita"/>
+  <topicref href="topics_en_v2/cl.find.dita"/>
+  <topicref href="topics_en_v2/cl.findOne.dita"/>
+  <topicref href="topics_en_v2/cl.getIndex.dita"/>
+  <topicref href="topics_en_v2/cl.getLob.dita"/> 
+  <topicref href="topics_en_v2/cl.insert.dita"/>
+  <topicref href="topics_en_v2/cl.listIndexes.dita"/>
+  <topicref href="topics_en_v2/cl.listLobs.dita"/>
+  <topicref href="topics_en_v2/cl.putLob.dita"/>
+  <topicref href="topics_en_v2/cl.remove.dita"/>
+  <topicref href="topics_en_v2/cl.split.dita"/>
+  <topicref href="topics_en_v2/cl.splitAsync.dita"/>
+  <topicref href="topics_en_v2/cl.update.dita"/>
+  <topicref href="topics_en_v2/cl.upsert.dita"/>
+  
+  <!--<topicref href="topics_en_v2/cursor.close.dita"/>
+  <topicref href="topics_en_v2/cursor.current.dita"/>
+  <topicref href="topics_en_v2/cursor.explain.dita"/>
+  <topicref href="topics_en_v2/cursor.hint.dita"/>
+  <topicref href="topics_en_v2/cursor.limit.dita"/>
+  <topicref href="topics_en_v2/cursor.next.dita"/>
+  <topicref href="topics_en_v2/cursor.size.dita"/>
+  <topicref href="topics_en_v2/cursor.skip.dita"/>
+  <topicref href="topics_en_v2/cursor.sort.dita"/>
+  <topicref href="topics_en_v2/cursor.toArray.dita"/>-->
+  
+  <topicref href="topics_en_v2/query_cond.hint.dita"/>
+  <topicref href="topics_en_v2/query_cond.limit.dita"/>
+  <topicref href="topics_en_v2/query_cond.skip.dita"/>
+  <topicref href="topics_en_v2/query_cond.sort.dita"/>
+  <topicref href="topics_en_v2/query_curs.close.dita"/>
+  <topicref href="topics_en_v2/query_curs.current.dita"/>
+  <topicref href="topics_en_v2/query_curs.next.dita"/>
+  <topicref href="topics_en_v2/query_gen.[i].dita"/>
+  <topicref href="topics_en_v2/query_gen.count.dita"/>
+  <topicref href="topics_en_v2/query_gen.explain.dita"/>
+  <topicref href="topics_en_v2/query_gen.size.dita"/>
+  <topicref href="topics_en_v2/query_gen.toArray.dita"/>
+  
+  <topicref href="topics_en_v2/rg.createNode.dita"/>
+  <topicref href="topics_en_v2/rg.getDetail.dita"/>
+  <topicref href="topics_en_v2/rg.getMaster.dita"/>
+  <topicref href="topics_en_v2/rg.getNode.dita"/>
+  <topicref href="topics_en_v2/rg.getSlave.dita"/>
+  <topicref href="topics_en_v2/rg.removeNode.dita"/>
+  <topicref href="topics_en_v2/rg.start.dita"/>
+  <topicref href="topics_en_v2/rg.stop.dita"/> 
+  
+  <topicref href="topics_en_v2/node.connect.dita"/>
+  <topicref href="topics_en_v2/node.getHostName.dita"/>
+  <topicref href="topics_en_v2/node.getNodeDetail.dita"/>
+  <topicref href="topics_en_v2/node.getServiceName.dita"/>
+  <topicref href="topics_en_v2/node.start.dita"/>
+  <topicref href="topics_en_v2/node.stop.dita"/>
+  
+  <topicref href="topics_en_v2/domain.alter.dita"/>
+  <topicref href="topics_en_v2/domain.listCollections.dita"/>
+  <topicref href="topics_en_v2/domain.listCollectionSpaces.dita"/>
+   
+  <topicref href="topics_en_v2/oma.close.dita"/>
+  <topicref href="topics_en_v2/oma.createCoord.dita"/>
+  <topicref href="topics_en_v2/oma.createData.dita"/>
+  <topicref href="topics_en_v2/oma.createOM.dita"/>
+  <topicref href="topics_en_v2/oma.removeCoord.dita"/>
+  <topicref href="topics_en_v2/oma.removeData.dita"/>
+  <topicref href="topics_en_v2/oma.removeOM.dita"/>
+  <topicref href="topics_en_v2/oma.startNode.dita"/>
+  <topicref href="topics_en_v2/oma.stopNode.dita"/>
+ </topicref>
+</map>

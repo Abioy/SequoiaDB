@@ -1,0 +1,15 @@
+body
+{
+font-size:100%;
+margin:10px;
+}
+
+h1 {font-size:200%;}
+h2 {font-size:140%;}
+h3 {font-size:110%;}
+
+header_logo { color:black; text-decoration:underline; }
+
+a:link {text-decoration:none;}
+a:hover {font-weight:bold;text-decoration:none;}
+a:visited {text-decoration:none;}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_z53_lfy_wj_service_en">
+  <title>Server</title>
+  <body>
+    <p>
+      <simpletable>
+        <sthead>
+          <stentry>&nbsp;&nbsp;Type of system&nbsp;&nbsp;</stentry>
+          <stentry>&nbsp;List of system&nbsp;&nbsp;</stentry>
+        </sthead>
+        <strow>
+          <stentry>&nbsp;&nbsp;&nbsp;Linux&nbsp;&nbsp;&nbsp;</stentry>
+          <stentry> 
+            <ul>
+              <li>Red Hat Enterprise Linux (RHEL) 5</li>  
+              <li>Red Hat Enterprise Linux (RHEL) 6</li>
+              <li>Red Hat Enterprise Power PC </li>
+              <li>SUSE Linux Enterprise Server (SLES) 10 Service Pack 1 </li>
+              <li>SUSE Linux Enterprise Server (SLES)10 Service Pack 2 </li>
+              <li>SUSE Linux Enterprise Server (SLES) 11 Service Pack 1 </li>
+              <li>Ubuntu 8.04</li>
+              <li>Ubuntu 7.04 </li> </ul></stentry>
+        </strow>
+        <strow>
+          <stentry >&nbsp;&nbsp;&nbsp;Windows&nbsp;&nbsp;</stentry>
+          <stentry>
+            <ul>
+              
+              <li>Windows Server 2003 DataCenter Edition(32bir or 64bit)</li>  
+              <li>Windows Server 2003 Enterprise Edition(32bir or 64bit) </li>
+              <li>Windows Server 2003 Standard Edition(32bir or 64bit) </li>
+              <li>Windows Server 2008 DataCenter Edition(32bir or 64bit) </li>
+              <li>Windows Server 2008 Enterprise Edition(32bir or 64bit) </li>
+              <li>Windows Server 2008 Standard Edition(32bir or 64bit)</li></ul></stentry>
+        </strow>
+        <strow>
+          <stentry>&nbsp;&nbsp;&nbsp;Power PC&nbsp;&nbsp;</stentry>
+          <stentry>
+            <ul>
+              <li>Red Hat Enterprise Linux (RHEL) 6</li>
+              <li>SUSE Linux Enterprise Server (SLES)10 Service Pack 2</li></ul></stentry>
+        </strow>
+      </simpletable>
+    </p>
+  </body>
+</topic>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/9949/trunk/doc/out_en/search/stemmers
+END
+de_stemmer.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/9949/trunk/doc/out_en/search/stemmers/de_stemmer.js
+END
+en_stemmer.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/9949/trunk/doc/out_en/search/stemmers/en_stemmer.js
+END
+fr_stemmer.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/9949/trunk/doc/out_en/search/stemmers/fr_stemmer.js
+END

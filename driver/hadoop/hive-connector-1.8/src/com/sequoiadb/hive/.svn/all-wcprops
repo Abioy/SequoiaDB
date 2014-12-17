@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16264/trunk/driver/hadoop/hive-connector-1.8/src/com/sequoiadb/hive
+END
+SdbConnAddr.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/16264/trunk/driver/hadoop/hive-connector-1.8/src/com/sequoiadb/hive/SdbConnAddr.java
+END
+Demo.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/16264/trunk/driver/hadoop/hive-connector-1.8/src/com/sequoiadb/hive/Demo.java
+END
+SdbSplit.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/16264/trunk/driver/hadoop/hive-connector-1.8/src/com/sequoiadb/hive/SdbSplit.java
+END
+ConfigurationUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/16264/trunk/driver/hadoop/hive-connector-1.8/src/com/sequoiadb/hive/ConfigurationUtil.java
+END
+SdbWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/16264/trunk/driver/hadoop/hive-connector-1.8/src/com/sequoiadb/hive/SdbWriter.java
+END
+SdbHiveStorageHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/16264/trunk/driver/hadoop/hive-connector-1.8/src/com/sequoiadb/hive/SdbHiveStorageHandler.java
+END
+SdbReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/16264/trunk/driver/hadoop/hive-connector-1.8/src/com/sequoiadb/hive/SdbReader.java
+END
+SdbSerDe.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/16264/trunk/driver/hadoop/hive-connector-1.8/src/com/sequoiadb/hive/SdbSerDe.java
+END
+SdbHiveInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/16264/trunk/driver/hadoop/hive-connector-1.8/src/com/sequoiadb/hive/SdbHiveInputFormat.java
+END
+SdbHiveOutputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/sequoiadb/!svn/ver/16264/trunk/driver/hadoop/hive-connector-1.8/src/com/sequoiadb/hive/SdbHiveOutputFormat.java
+END

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_hb2_vts_n4">
+  <title>The Test Environment</title>
+  <body>
+    <p>1. Enter the SequoiaDB shell console.</p><codeblock>/opt/sequoiadb/bin/sdb</codeblock>
+    <p>2. Create a new sdb connection.</p><codeblock>db = new Sdb("localhost",11810);</codeblock>
+    <p>3. Create a collection of space.</p><codeblock>db.createCS("foo");</codeblock>
+    <p>4. Create a collection.</p><codeblock>db.foo.createCL("bar");</codeblock>
+    <p>5. Written records.</p><codeblock>db.foo.bar.insert({"name":"sequoiadb"});</codeblock>
+    <p>6. Query results.</p><codeblock>db.foo.bar.find();
+{
+  "_id": {
+    "$oid": "53a82aa2c4b970091e000000"
+  },
+  "name": "sequoiadb"
+}
+Return 1 row(s).
+</codeblock>
+    <p>The query results are correct.</p>
+  </body>
+</topic>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_xv1_ljr_tp">
+  <title>db.collectionspace.collection.deleteLob()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>deleteLob - Delete the LOB in collection.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.collectionspace.collection.deleteLob</apiname>(<parmname>&lt;oid></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Collection
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Delete the LOB in collection.</p>
+      <parml>
+        <plentry>
+          <pt>oid (string)</pt>
+          <pd>LOB(large Object)'s only description.</pd>
+        </plentry>        
+      </parml>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Delete a LOB's descriptor named 5435e7b69487faa663000897.</p>
+      <codeblock>db.foo.bar.deleteLob('5435e7b69487faa663000897')</codeblock>      
+    </section>
+  </body>
+</topic>

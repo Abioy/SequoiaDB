@@ -1,0 +1,642 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<base target="contentwin"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<link href="assets/jquery.treeview.css" type="text/css" rel="stylesheet"/><link href="assets/webhelp_toc.css" type="text/css" rel="stylesheet"/><link href="assets/jquery.treeview.addon.css" type="text/css" rel="stylesheet"/><title>SequoiaDB 信息中心</title>
+<script type="text/javascript" src="assets/jquery-1.3.2.js"><!----></script><script type="text/javascript" src="assets/jquery-ui-1.8.2.custom.min.js"><!----></script><script type="text/javascript" src="assets/jquery.treeview.js"><!----></script><script type="text/javascript" src="search/htmlFileList.js"><!----></script><script type="text/javascript" src="search/htmlFileInfoList.js"><!----></script><script type="text/javascript" src="search/nwSearchFnt.js"><!----></script><script type="text/javascript" src="search/stemmers/en_stemmer.js"><!----></script><script type="text/javascript" src="search/index-1.js"><!----></script><script type="text/javascript" src="search/index-2.js"><!----></script><script type="text/javascript" src="search/index-3.js"><!----></script><script src="assets/localization/en-us.js" type="text/javascript"><!----></script><script src="assets/webhelp.js" type="text/javascript"><!----></script><script src="assets/browserDetect.js" type="text/javascript"><!----></script></head>
+<body onload="javascript:hideDiv('searchDiv','displayContentDiv');"><h1>SequoiaDB 信息中心</h1>
+<div id="contentAndSearchDiv"><div id="divContent" style="display:inline"><!----></div>
+            |
+            <div id="divSearch" style="display:inline"><!----></div></div><div id="searchDiv"><form name="searchForm" action="javascript:void(0)" onsubmit="Verifie('searchForm');">Keywords: <!----><input type="text" id="textToSearch" name="textToSearch" class="textToSearch" size="30"/><!----><input type="button" value="Search" name="searchButton" class="searchButton" onclick="Verifie('searchForm');"/></form><div id="searchResults"><!----></div></div><div id="displayContentDiv"><div id="tab_nav_tree_placeholder"><div id="tab_nav_tree" class="visible_tab">
+<ul id="tree">
+<li id="d11e5"><a href="introduction/topics/introduction.html">SequoiaDB 数据库概述</a>
+<ul>
+<li id="d11e12"><a href="introduction/topics/features.html">主要特点</a></li>
+<li id="d11e19"><a href="introduction/topics/datamodel.html">数据模型</a></li>
+<li id="d11e26"><a href="introduction/topics/infrastructure.html">系统架构</a></li>
+</ul>
+</li>
+<li id="d11e34"><a href="administration/concepts/topics/concepts.html">数据库概念</a>
+<ul>
+<li id="d11e41"><a href="administration/concepts/database/topics/database.html">数据库</a>
+<ul>
+<li id="d11e48"><a href="administration/concepts/database/topics/document.html">文档</a>
+<ul>
+<li id="d11e55"><a href="administration/concepts/database/topics/array.html">数组</a></li>
+<li id="d11e62"><a href="administration/concepts/database/topics/objectid.html">对象 ID</a></li>
+<li id="d11e69"><a href="administration/concepts/database/topics/date.html">日期</a></li>
+<li id="d11e76"><a href="administration/concepts/database/topics/timestamp.html">时间戳</a></li>
+<li id="d11e83"><a href="administration/concepts/database/topics/bindata.html">二进制数据</a></li>
+<li id="d11e90"><a href="administration/concepts/database/topics/regex.html">正则表达式</a></li>
+</ul>
+</li>
+<li id="d11e97"><a href="administration/concepts/database/topics/collection.html">集合</a></li>
+<li id="d11e104"><a href="administration/concepts/database/topics/collectionspace.html">集合空间</a></li>
+<li id="d11e111"><a href="administration/concepts/database/topics/databaseserver.html">数据库服务器</a></li>
+<li id="d11e118"><a href="administration/concepts/database/topics/index.html">索引</a></li>
+<li id="d11e125"><a href="administration/concepts/database/topics/aggregate.html">聚集</a></li>
+<li id="d11e132"><a href="administration/concepts/database/topics/transaction.html">事务</a></li>
+<li id="d11e139"><a href="administration/concepts/database/topics/consistency.html">最终一致性策略</a></li>
+<li id="d11e146"><a href="administration/concepts/database/topics/dataexamples.html">实例</a></li>
+<li id="d11e153"><a href="administration/concepts/database/topics/read_write.html">读写分离</a></li>
+<li id="d11e161"><a href="administration/concepts/database/topics/bg_task.html">后台任务</a></li>
+<li id="d11e168"><a href="administration/concepts/database/topics/lob.html">大对象</a></li>
+</ul>
+</li>
+<li id="d11e175"><a href="administration/concepts/cluster/topics/cluster.html">集群</a>
+<ul>
+<li id="d11e182"><a href="administration/concepts/cluster/topics/mode.html">运行模式</a></li>
+<li id="d11e189"><a href="administration/concepts/cluster/topics/node.html">节点</a>
+<ul>
+<li id="d11e196"><a href="administration/concepts/cluster/topics/catalog_node.html">编目节点</a>
+<ul>
+<li id="d11e203"><a href="administration/concepts/cluster/topics/SYSCOLLECTIONS.html">SYSCOLLECTIONS 集合</a></li>
+<li id="d11e210"><a href="administration/concepts/cluster/topics/SYSCOLLECTIONSPACES.html">SYSCOLLECTIONSPACES 集合</a></li>
+<li id="d11e217"><a href="administration/concepts/cluster/topics/SYSNODES.html">SYSNODES 集合</a></li>
+<li id="d11e224"><a href="administration/concepts/cluster/topics/SYSTASKS.html">SYSTASKS 集合</a></li>
+<li id="d11e231"><a href="administration/concepts/cluster/topics/SYSUSRS.html">SYSUSRS 集合</a></li>
+<li id="d11e238"><a href="administration/concepts/cluster/topics/STOREPROCEDURES.html">STOREPROCEDURES 集合</a></li>
+</ul>
+</li>
+<li id="d11e245"><a href="administration/concepts/cluster/topics/coord_node.html">协调节点</a></li>
+<li id="d11e252"><a href="administration/concepts/cluster/topics/data_node.html">数据节点</a></li>
+</ul>
+</li>
+<li id="d11e259"><a href="administration/concepts/cluster/topics/replset.html">分区组</a>
+<ul>
+<li id="d11e266"><a href="administration/concepts/cluster/topics/vote.html">选举</a></li>
+<li id="d11e273"><a href="administration/concepts/cluster/topics/replicate.html">复制</a></li>
+<li id="d11e280"><a href="administration/concepts/cluster/topics/sync.html">全量同步</a></li>
+</ul>
+</li>
+<li id="d11e287"><a href="administration/concepts/cluster/topics/sharding.html">数据分区</a>
+<ul>
+<li id="d11e294"><a href="administration/concepts/cluster/topics/shardingkey.html">分区键</a></li>
+<li id="d11e301"><a href="administration/concepts/cluster/topics/sharded_collection.html">分区集合</a></li>
+<li id="d11e308"><a href="administration/concepts/cluster/topics/sharding_index.html">分区索引</a></li>
+<li id="d11e315"><a href="administration/concepts/cluster/topics/task.html">后台任务</a></li>
+<li id="d11e322"><a href="administration/concepts/cluster/topics/split.html">数据切分</a></li>
+</ul>
+</li>
+<li id="d11e329"><a href="administration/concepts/cluster/topics/domain.html">域</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="d11e337"><a href="installation/topics/install_overview.html">安装指南</a>
+<ul>
+<li id="d11e344"><a href="installation/deploy/topics/overview.html">规划数据库部署</a>
+<ul>
+<li id="d11e351"><a href="installation/deploy/topics/easiest.html">最简部署</a></li>
+<li id="d11e358"><a href="installation/deploy/topics/available.html">高可用部署</a></li>
+<li id="d11e365"><a href="installation/deploy/topics/performance.html">高性能部署</a></li>
+</ul>
+</li>
+<li id="d11e372"><a href="installation/system_require/topics/system_require.html">SequoiaDB 产品安装的系统要求</a>
+<ul>
+<li id="d11e379"><a href="installation/system_require/topics/hardware.html">硬件要求</a></li>
+<li id="d11e386"><a href="installation/system_require/topics/os.html">受支持的操作系统</a></li>
+<li id="d11e393"><a href="installation/system_require/topics/software.html">软件要求</a></li>
+</ul>
+</li>
+<li id="d11e400"><a href="installation/topics/install_media.html">准备安装介质</a></li>
+<li id="d11e407"><a href="installation/server_installation/topics/server_installation.html">SequoiaDB 服务器安装部署</a>
+<ul>
+<li id="d11e414"><a href="installation/server_installation/autoin.html">自动化安装部署</a>
+<ul>
+<li id="d11e421"><a href="installation/server_installation/topics/linuxom.html">安装 OM 服务</a></li>
+<li id="d11e428"><a href="installation/server_installation/topics/autoinstall1.html">通过 OM 部署集群</a></li>
+</ul>
+</li>
+<li id="d11e435"><a href="installation/server_installation/manualin.html">手工安装部署</a>
+<ul>
+<li id="d11e442"><a href="installation/server_installation/topics/linux.html">安装 SequoiaDB</a></li>
+<li id="d11e449"><a href="installation/server_installation/topics/configuration_start1.html">手工部署集群</a>
+<ul>
+<li id="d11e456"><a href="installation/server_installation/topics/stanalone1.html">独立模式的部署</a></li>
+<li id="d11e463"><a href="installation/server_installation/topics/cluster1.html">集群模式的部署</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="d11e470"><a href="installation/topics/start_web.html">SequoiaDB Web 监控</a></li>
+<li id="d11e477"><a href="installation/topics/testEM.html">测试环境</a></li>
+<li id="d11e484"><a href="installation/uninstall/topics/uninstall.html">卸载</a></li>
+<li id="d11e491"><a href="installation/upgrade/topics/upgrade.html">升级</a></li>
+</ul>
+</li>
+<li id="d11e499"><a href="administration/topics/administration.html">数据库管理</a>
+<ul>
+<li id="d11e506"><a href="administration/database/topics/database.html">数据库管理</a>
+<ul>
+<li id="d11e513"><a href="administration/database/topics/runtime_configuration.html">数据库配置</a></li>
+<li id="d11e520"><a href="administration/database/topics/monitoring.html">监控</a>
+<ul>
+<li id="d11e527"><a href="administration/database/topics/snapshot/snapshot.html">快照</a>
+<ul>
+<li id="d11e534"><a href="administration/database/topics/snapshot/contexts.html">上下文快照</a></li>
+<li id="d11e541"><a href="administration/database/topics/snapshot/contexts_current.html">当前上下文快照</a></li>
+<li id="d11e548"><a href="administration/database/topics/snapshot/sessions.html">会话快照</a></li>
+<li id="d11e555"><a href="administration/database/topics/snapshot/sessions_current.html">当前会话快照</a></li>
+<li id="d11e562"><a href="administration/database/topics/snapshot/collections.html">集合快照</a></li>
+<li id="d11e569"><a href="administration/database/topics/snapshot/collectionspaces.html">集合空间快照</a></li>
+<li id="d11e576"><a href="administration/database/topics/snapshot/database.html">数据库快照</a></li>
+<li id="d11e583"><a href="administration/database/topics/snapshot/system.html">操作系统快照</a></li>
+<li id="d11e590"><a href="administration/database/topics/snapshot/catalog.html">编目信息快照</a></li>
+</ul>
+</li>
+<li id="d11e597"><a href="administration/database/topics/list/list.html">列表</a>
+<ul>
+<li id="d11e604"><a href="administration/database/topics/list/list_contexts.html">上下文列表</a></li>
+<li id="d11e611"><a href="administration/database/topics/list/list_contexts_current.html">当前上下文列表</a></li>
+<li id="d11e618"><a href="administration/database/topics/list/list_sessions.html">会话列表</a></li>
+<li id="d11e625"><a href="administration/database/topics/list/list_sessions_current.html">当前会话列表</a></li>
+<li id="d11e632"><a href="administration/database/topics/list/list_collections.html">集合列表</a></li>
+<li id="d11e639"><a href="administration/database/topics/list/list_collectionspace.html">集合空间列表</a></li>
+<li id="d11e646"><a href="administration/database/topics/list/list_storageunits.html"> 存储单元列表</a></li>
+<li id="d11e653"><a href="administration/database/topics/list/list_groups.html"> 分区组列表</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="d11e660"><a href="administration/database/topics/EDU.html">引擎调度单元</a></li>
+<li id="d11e667"><a href="administration/database/topics/log.html">日志</a>
+<ul>
+<li id="d11e674"><a href="administration/database/topics/synlog.html">同步日志</a></li>
+</ul>
+</li>
+<li id="d11e681"><a href="administration/database/database_tool/topics/database_tool.html">数据库工具</a>
+<ul>
+<li id="d11e688"><a href="administration/database/database_tool/topics/import.html">数据迁移 — 导入</a></li>
+<li id="d11e695"><a href="administration/database/database_tool/topics/export.html">数据迁移 — 导出</a></li>
+<li id="d11e702"><a href="administration/database/database_tool/topics/sdbinspt.html">数据库检测工具 — sdbdmsdump</a></li>
+<li id="d11e709"><a href="administration/database/database_tool/topics/tool_sdbtop.html">数据库性能监控工具 — sdbtop</a></li>
+<li id="d11e716"><a href="administration/database/database_tool/topics/sdbinspect.html">数据库集群节点数据一致性检测工具 — sdbinspect</a></li>
+<li id="d11e723"><a href="administration/database/database_tool/topics/sdbsupport.html">数据库信息收集工具 — sdbsupport</a></li>
+<li id="d11e730"><a href="administration/database/database_tool/topics/lob_tool.html">大对象（LOB）工具 — sdblobtool</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="d11e737"><a href="administration/cluster_management/topics/cluster_management.html">集群管理</a>
+<ul>
+<li id="d11e744"><a href="administration/cluster_management/topics/create_host.html">集群中新增主机</a></li>
+<li id="d11e751"><a href="administration/cluster_management/topics/cata_management/topics/cata_management.html">编目分区组管理</a>
+<ul>
+<li id="d11e758"><a href="administration/cluster_management/topics/cata_management/topics/cata_group.html">新建编目分区组</a></li>
+<li id="d11e765"><a href="administration/cluster_management/topics/cata_management/topics/cata_node.html">编目分区组中新增节点</a></li>
+</ul>
+</li>
+<li id="d11e772"><a href="administration/cluster_management/topics/data_management/topics/data_management.html">数据分区组管理</a>
+<ul>
+<li id="d11e779"><a href="administration/cluster_management/topics/data_management/topics/data_group.html">新增数据分区组</a></li>
+<li id="d11e786"><a href="administration/cluster_management/topics/data_management/topics/data_node.html">分区组中新增节点</a></li>
+</ul>
+</li>
+<li id="d11e793"><a href="administration/cluster_management/topics/create_coordnode.html">新增协调节点</a></li>
+<li id="d11e800"><a href="administration/cluster_management/topics/sample.html">案例</a></li>
+</ul>
+</li>
+<li id="d11e807"><a href="administration/operation_maintain/topics/operation_maintain.html">运维</a>
+<ul>
+<li id="d11e814"><a href="administration/operation_maintain/topics/cluster_start_stop.html">集群启停</a>
+<ul>
+<li id="d11e821"><a href="administration/operation_maintain/topics/cluster_start.html">集群启动</a></li>
+<li id="d11e828"><a href="administration/operation_maintain/topics/cluster_stop.html">集群停止</a></li>
+</ul>
+</li>
+<li id="d11e835"><a href="administration/operation_maintain/topics/bandr.html">备份恢复</a>
+<ul>
+<li id="d11e842"><a href="administration/operation_maintain/topics/data_backup.html">数据备份</a></li>
+<li id="d11e849"><a href="administration/operation_maintain/topics/search.html">查看备份信息</a></li>
+<li id="d11e856"><a href="administration/operation_maintain/topics/data_recovery.html">数据恢复</a></li>
+<li id="d11e863"><a href="administration/operation_maintain/topics/instructions.html">SequoiaDB 备份恢复操作指导书</a></li>
+</ul>
+</li>
+<li id="d11e870"><a href="administration/operation_maintain/topics/fault_recovery.html">故障恢复</a>
+<ul>
+<li id="d11e877"><a href="administration/operation_maintain/topics/catalog.html">协调节点</a></li>
+<li id="d11e884"><a href="administration/operation_maintain/topics/datanode.html">数据节点</a></li>
+<li id="d11e891"><a href="administration/operation_maintain/topics/coord.html">编目节点</a></li>
+</ul>
+</li>
+<li id="d11e898"><a href="administration/operation_maintain/topics/monitor.html">监控</a>
+<ul>
+<li id="d11e905"><a href="administration/operation_maintain/topics/monitor_node.html">监控节点状态</a></li>
+<li id="d11e912"><a href="administration/operation_maintain/topics/monitor_cluster.html">监控集群</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="d11e919"><a href="administration/security/topics/security.html">系统安全</a></li>
+</ul>
+</li>
+<li id="d11e927"><a href="hadoop_integration/hadooproot.html">Hadoop 集成</a>
+<ul>
+<li id="d11e934"><a href="hadoop_integration/topics/hadoop.html">SequoiaDB 与 Hadoop 部署</a></li>
+<li id="d11e941"><a href="hadoop_integration/topics/map_reduce.html">与 MapReduce 集成</a></li>
+<li id="d11e948"><a href="hadoop_integration/hive_integration/hiveinter.html">与 Hive 集成</a>
+<ul>
+<li id="d11e955"><a href="hadoop_integration/hive_integration/topics/Sequoiadbhive.html">SequoiaDB 支持的 Hive 版本列表</a></li>
+<li id="d11e962"><a href="hadoop_integration/hive_integration/topics/configmethod.html">配置方法</a></li>
+<li id="d11e969"><a href="hadoop_integration/hive_integration/use/use.html">使用方法</a>
+<ul>
+<li id="d11e976"><a href="hadoop_integration/hive_integration/use/create.html">创建基于 SequoiaDB 的表</a></li>
+<li id="d11e983"><a href="hadoop_integration/hive_integration/use/insert.html">从 HDFS 文件中导入数据到 SequoiaDB 表</a></li>
+<li id="d11e990"><a href="hadoop_integration/hive_integration/use/inquiry.html">查询数据</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="d11e997"><a href="hadoop_integration/pig/pig.html">与 Pig 集成</a></li>
+</ul>
+</li>
+<li id="d11e1006"><a href="developement/topics/developement.html">开发指南</a>
+<ul>
+<li id="d11e1013"><a href="developement/console/topics/console.html">SequoiaDB shell</a>
+<ul>
+<li id="d11e1020"><a href="developement/console/topics/shell.html">SequoiaDB shell 入门</a></li>
+<li id="d11e1027"><a href="developement/console/topics/knack.html">使用 shell 的窍门</a></li>
+</ul>
+</li>
+<li id="d11e1034"><a href="developement/basics/topics/shell.html">SequoiaDB shell 中的基本操作</a>
+<ul>
+<li id="d11e1041"><a href="developement/basics/topics/create.html">创建</a></li>
+<li id="d11e1048"><a href="developement/basics/topics/read.html">读取</a></li>
+<li id="d11e1055"><a href="developement/basics/topics/update.html">更新</a></li>
+<li id="d11e1062"><a href="developement/basics/topics/delete.html">删除</a></li>
+</ul>
+</li>
+<li id="d11e1069"><a href="developement/application/topics/application.html">SequoiaDB 应用程序开发</a>
+<ul>
+<li id="d11e1076"><a href="developement/application/C/topics/c.html">C 驱动</a>
+<ul>
+<li id="d11e1083"><a href="developement/application/C/topics/c_client.html">C 驱动</a></li>
+<li id="d11e1090"><a href="developement/application/C/topics/cbuilt.html">C 开发环境搭建</a></li>
+<li id="d11e1097"><a href="developement/application/C/topics/c_driver.html">C 开发基础</a></li>
+<li id="d11e1104"><a href="developement/application/C/topics/csql.html">SQL to SequoiaDB shell to C</a></li>
+<li id="d11e1111"><a href="developement/application/C/topics/C_api.html">C API</a></li>
+</ul>
+</li>
+<li id="d11e1118"><a href="developement/application/CPP/topics/cpp.html">C++ 驱动</a>
+<ul>
+<li id="d11e1125"><a href="developement/application/CPP/topics/cpp_client.html">C++ 驱动</a></li>
+<li id="d11e1132"><a href="developement/application/CPP/topics/cpp_built.html">C++ 开发环境搭建</a></li>
+<li id="d11e1139"><a href="developement/application/CPP/topics/cpp_driver.html">C++ 开发基础</a></li>
+<li id="d11e1146"><a href="developement/application/CPP/topics/cpp_sql.html">SQL to SequoiaDB shell to C++</a></li>
+<li id="d11e1153"><a href="developement/application/CPP/topics/cpp_api.html">C++ API</a></li>
+</ul>
+</li>
+<li id="d11e1160"><a href="developement/application/java/topics/java.html">Java 驱动</a>
+<ul>
+<li id="d11e1167"><a href="developement/application/java/topics/joverview.html">Java 驱动</a></li>
+<li id="d11e1174"><a href="developement/application/java/topics/java_environment.html">Java 开发环境搭建</a></li>
+<li id="d11e1181"><a href="developement/application/java/topics/jbase_operations.html">Java 开发基础</a></li>
+<li id="d11e1188"><a href="developement/application/java/topics/jbson.html">Java BSON 使用</a></li>
+<li id="d11e1195"><a href="developement/application/java/topics/datasource.html">Java Datasource 介绍</a></li>
+<li id="d11e1202"><a href="developement/application/java/topics/jsql.html">SQL to SequoiaDB shell to Java</a></li>
+<li id="d11e1209"><a href="developement/application/java/topics/java_api.html">Java API</a></li>
+</ul>
+</li>
+<li id="d11e1216"><a href="developement/application/PHP/topics/php.html">PHP 驱动</a>
+<ul>
+<li id="d11e1223"><a href="developement/application/PHP/topics/php_start.html">PHP 驱动</a></li>
+<li id="d11e1230"><a href="developement/application/PHP/topics/phpenvironment.html">PHP 开发环境搭建</a></li>
+<li id="d11e1237"><a href="developement/application/PHP/topics/pbase_operations.html">PHP 开发基础</a></li>
+<li id="d11e1244"><a href="developement/application/PHP/topics/phpsql.html">SQL to SequoiaDB shell to PHP</a></li>
+<li id="d11e1251"><a href="developement/application/PHP/topics/php_api.html">PHP API</a></li>
+</ul>
+</li>
+<li id="d11e1258"><a href="developement/application/CS/topics/cs.html">C# 驱动</a>
+<ul>
+<li id="d11e1265"><a href="developement/application/CS/topics/csdriver.html">C# 驱动</a></li>
+<li id="d11e1272"><a href="developement/application/CS/topics/csbuild.html">C# 开发环境搭建</a></li>
+<li id="d11e1279"><a href="developement/application/CS/topics/csdb.html">C# 开发基础</a></li>
+<li id="d11e1286"><a href="developement/application/CS/topics/ssql.html">SQL to SequoiaDB shell to C#</a></li>
+<li id="d11e1293"><a href="developement/application/CS/topics/cs_api.html">C# API</a></li>
+</ul>
+</li>
+<li id="d11e1300"><a href="developement/application/Python/topics/python.html">Python 驱动</a>
+<ul>
+<li id="d11e1307"><a href="developement/application/Python/topics/pydrive.html">Python 驱动</a></li>
+<li id="d11e1314"><a href="developement/application/Python/topics/pybuilt.html">Python 开发环境搭建</a></li>
+<li id="d11e1321"><a href="developement/application/Python/topics/pybasic.html">Python 开发基础</a></li>
+<li id="d11e1328"><a href="developement/application/Python/topics/pysql.html">SQL to SequoiaDB shell to Python</a></li>
+<li id="d11e1335"><a href="developement/application/Python/topics/py_api.html">Python API</a></li>
+</ul>
+</li>
+<li id="d11e1342"><a href="developement/application/C/topics/bson.html">C BSON 简介</a></li>
+<li id="d11e1349"><a href="developement/application/CPP/topics/cpp_bson.html">C++ BSON 简介</a></li>
+<li id="d11e1356"><a href="developement/application/topics/bson_api.html">C BSON API</a></li>
+<li id="d11e1363"><a href="developement/application/topics/cppbson_api.html">C++ BSON API</a></li>
+</ul>
+</li>
+<li id="d11e1370"><a href="developement/sdbcm/topics/sdbcm.html">数据库集群控制器</a></li>
+</ul>
+</li>
+<li id="d11e1378"><a href="references/topics/references.html">参考手册</a>
+<ul>
+<li id="d11e1385"><a href="references/methods/topics/methodlist.html">SequoiaDB JavaScript 方法</a>
+<ul>
+<li id="d11e1392"><a href="references/methods/global.html">Global</a>
+<ul>
+<li id="d11e1399"><a href="references/methods/topics/traceFmt.html">traceFmt()</a></li>
+</ul>
+</li>
+<li id="d11e1406"><a href="references/methods/jssequoiadb.html">Sdb</a>
+<ul>
+<li id="d11e1413"><a href="references/methods/topics/backupoffline.html">db.backupOffline()</a></li>
+<li id="d11e1420"><a href="references/methods/cancelTask.html">db.cancelTask()</a></li>
+<li id="d11e1427"><a href="references/methods/topics/dbclose.html">db.close()</a></li>
+<li id="d11e1434"><a href="references/methods/topics/createcatarg.html">db.createCataRG()</a></li>
+<li id="d11e1441"><a href="references/methods/topics/createCS.html">db.createCS()</a></li>
+<li id="d11e1448"><a href="references/methods/topics/createDomain.html">db.createDomain()</a></li>
+<li id="d11e1455"><a href="references/methods/topics/createProcedures.html"> db.createProcedure() </a></li>
+<li id="d11e1462"><a href="references/methods/topics/createRG.html">db.createRG()</a></li>
+<li id="d11e1469"><a href="references/methods/topics/createUsr.html">db.createUsr()</a></li>
+<li id="d11e1476"><a href="references/methods/topics/dropCS.html">db.dropCS()</a></li>
+<li id="d11e1484"><a href="references/methods/topics/dropDomain.html">db.dropDomain()</a></li>
+<li id="d11e1491"><a href="references/methods/topics/dropUsr.html">db.dropUsr()</a></li>
+<li id="d11e1498"><a href="references/methods/topics/eval.html">db.eval()</a></li>
+<li id="d11e1505"><a href="references/methods/topics/exec.html">db.exec()</a></li>
+<li id="d11e1512"><a href="references/methods/topics/execUpdate.html">db.execUpdate()</a></li>
+<li id="d11e1519"><a href="references/methods/flushConfigure.html">db.flushConfigure()</a></li>
+<li id="d11e1526"><a href="references/methods/topics/interrupt.html">db.forceSession()</a></li>
+<li id="d11e1533"><a href="references/methods/topics/getCS.html">db.getCS()</a></li>
+<li id="d11e1540"><a href="references/methods/topics/getDomain.html">db.getDomain()</a></li>
+<li id="d11e1547"><a href="references/methods/topics/getRG.html">db.getRG()</a></li>
+<li id="d11e1554"><a href="references/methods/topics/invalidateCache.html">db.invalidateCache()</a></li>
+<li id="d11e1562"><a href="references/methods/topics/dblist.html">db.list()</a></li>
+<li id="d11e1569"><a href="references/methods/listBackup.html">db.listBackup()</a></li>
+<li id="d11e1576"><a href="references/methods/topics/listCollections.html">db.listCollections()</a></li>
+<li id="d11e1583"><a href="references/methods/topics/listCollectionSpaces.html">db.listCollectionSpaces()</a></li>
+<li id="d11e1590"><a href="references/methods/topics/listDomains.html">db.listDomains()</a></li>
+<li id="d11e1597"><a href="references/methods/topics/listProcedures.html">db.listProcedures()</a></li>
+<li id="d11e1604"><a href="references/methods/topics/listReplicaGroups.html">db.listReplicaGroups()</a></li>
+<li id="d11e1611"><a href="references/methods/listTasks.html">db.listTasks()</a></li>
+<li id="d11e1618"><a href="references/methods/removeBackup.html">db.removeBackup()</a></li>
+<li id="d11e1625"><a href="references/methods/topics/removeProcedures.html">db.removeProcedure()</a></li>
+<li id="d11e1632"><a href="references/methods/topics/removeRG.html">db.removeRG()</a></li>
+<li id="d11e1640"><a href="references/methods/topics/resetSnapshot.html">db.resetSnapshot()</a></li>
+<li id="d11e1647"><a href="references/methods/setSessionAttr.html">db.setSessionAttr()</a></li>
+<li id="d11e1654"><a href="references/methods/topics/dbsnapshot.html">db.snapshot()</a></li>
+<li id="d11e1661"><a href="references/methods/topics/startRG.html">db.startRG()</a></li>
+<li id="d11e1668"><a href="references/methods/topics/traceOff.html">db.traceOff()</a></li>
+<li id="d11e1675"><a href="references/methods/topics/traceOn.html">db.traceOn()</a></li>
+<li id="d11e1682"><a href="references/methods/topics/traceResume.html">db.traceResume()</a></li>
+<li id="d11e1689"><a href="references/methods/topics/traceStatus.html">db.traceStatus()</a></li>
+<li id="d11e1696"><a href="references/methods/topics/transBegin.html">db.transBegin()</a></li>
+<li id="d11e1703"><a href="references/methods/topics/transCommit.html">db.transCommit()</a></li>
+<li id="d11e1710"><a href="references/methods/topics/transRollback.html">db.transRollback()</a></li>
+<li id="d11e1718"><a href="references/methods/waitTasks.html">db.waitTasks()</a></li>
+</ul>
+</li>
+<li id="d11e1725"><a href="references/methods/jscollectionspace.html">SdbCS</a>
+<ul>
+<li id="d11e1732"><a href="references/methods/topics/createCL.html">db.collectionspace.createCL()</a></li>
+<li id="d11e1739"><a href="references/methods/topics/dropCL.html">db.collectionspace.dropCL()</a></li>
+<li id="d11e1746"><a href="references/methods/topics/getCL.html">db.collectionspace.getCL()</a></li>
+</ul>
+</li>
+<li id="d11e1753"><a href="references/methods/jscollection.html">SdbCollection</a>
+<ul>
+<li id="d11e1760"><a href="references/methods/topics/dbaggregate.html">db.collectionspace.collection.aggregate()</a></li>
+<li id="d11e1767"><a href="references/methods/topics/ccalter.html">db.collectionspace.collection.alter()</a></li>
+<li id="d11e1774"><a href="references/methods/topics/attachCL.html">db.collectionspace.collection.attachCL()</a></li>
+<li id="d11e1781"><a href="references/methods/topics/dbcount.html">db.collectionspace.collection.count()</a></li>
+<li id="d11e1788"><a href="references/methods/topics/createIndex.html">db.collectionspace.collection.createIndex()</a></li>
+<li id="d11e1795"><a href="references/methods/topics/deleteLob.html">db.collectionspace.collection.deleteLob()</a></li>
+<li id="d11e1802"><a href="references/methods/topics/detachCL.html">db.collectionspace.collection.detachCL()</a></li>
+<li id="d11e1809"><a href="references/methods/topics/dropIndex.html">db.collectionspace.collection.dropIndex()</a></li>
+<li id="d11e1816"><a href="references/methods/topics/find.html">db.collectionspace.collection.find()</a></li>
+<li id="d11e1823"><a href="references/methods/topics/findOne.html">db.collectionspace.collection.findOne()</a></li>
+<li id="d11e1831"><a href="references/methods/topics/getIndex.html">db.collectionspace.collection.getIndex()</a></li>
+<li id="d11e1838"><a href="references/methods/topics/getlob.html">db.collectionspace.collection.getLob()</a></li>
+<li id="d11e1845"><a href="references/methods/topics/dbinsert.html">db.collectionspace.collection.insert()</a></li>
+<li id="d11e1852"><a href="references/methods/topics/listIndexes.html">db.collectionspace.collection.listIndexes()</a></li>
+<li id="d11e1859"><a href="references/methods/topics/listLobs.html">db.collectionspace.collection.listLobs()</a></li>
+<li id="d11e1866"><a href="references/methods/topics/putlob.html">db.collectionspace.collection.putLob()</a></li>
+<li id="d11e1873"><a href="references/methods/topics/remove.html">db.collectionspace.collection.remove()</a></li>
+<li id="d11e1880"><a href="references/methods/topics/dbsplit.html">db.collectionspace.collection.split()</a></li>
+<li id="d11e1887"><a href="references/methods/topics/splitAsync.html">db.collectionspace.collection.splitAsync()</a></li>
+<li id="d11e1894"><a href="references/methods/topics/dbupdate.html">db.collectionspace.collection.update()</a></li>
+<li id="d11e1901"><a href="references/methods/topics/upsert.html">db.collectionspace.collection.upsert()</a></li>
+</ul>
+</li>
+<li id="d11e1908"><a href="references/methods/jscursor.html">SdbCursor</a>
+<ul>
+<li id="d11e1915"><a href="references/methods/topics/cclose.html">cursor.close()</a></li>
+<li id="d11e1922"><a href="references/methods/topics/ccurrent.html">cursor.current()</a></li>
+<li id="d11e1929"><a href="references/methods/topics/next.html">cursor.next()</a></li>
+</ul>
+</li>
+<li id="d11e1936"><a href="references/methods/SdbQuery.html">SdbQuery</a>
+<ul>
+<li id="d11e1943"><a href="references/methods/topics/explain.html">query.explain()</a></li>
+<li id="d11e1950"><a href="references/methods/topics/query_gen.count.html">query.count()</a></li>
+<li id="d11e1957"><a href="references/methods/topics/query_gen.index.html">query[i]</a></li>
+<li id="d11e1964"><a href="references/methods/topics/hint.html">query.hint()</a></li>
+<li id="d11e1971"><a href="references/methods/topics/climit.html">query.limit()</a></li>
+<li id="d11e1978"><a href="references/methods/topics/csize.html">query.size()</a></li>
+<li id="d11e1985"><a href="references/methods/topics/cskip.html">query.skip()</a></li>
+<li id="d11e1992"><a href="references/methods/topics/csort.html">query.sort()</a></li>
+<li id="d11e1999"><a href="references/methods/topics/toArray.html">query.toArray()</a></li>
+</ul>
+</li>
+<li id="d11e2006"><a href="references/methods/jsrg.html">SdbReplicaGroup</a>
+<ul>
+<li id="d11e2013"><a href="references/methods/topics/createNode.html">rg.createNode()</a></li>
+<li id="d11e2020"><a href="references/methods/topics/getDetail.html">rg.getDetail()</a></li>
+<li id="d11e2027"><a href="references/methods/topics/getMaster.html">rg.getMaster()</a></li>
+<li id="d11e2034"><a href="references/methods/topics/getNode.html">rg.getNode()</a></li>
+<li id="d11e2041"><a href="references/methods/topics/getSlave.html">rg.getSlave()</a></li>
+<li id="d11e2048"><a href="references/methods/topics/removeNode.html">rg.removeNode()</a></li>
+<li id="d11e2055"><a href="references/methods/topics/rgstart.html">rg.start()</a></li>
+<li id="d11e2062"><a href="references/methods/topics/rgstop.html">rg.stop()</a></li>
+</ul>
+</li>
+<li id="d11e2069"><a href="references/methods/jsnode.html">SdbNode</a>
+<ul>
+<li id="d11e2076"><a href="references/methods/topics/nodeconnect.html">node.connect()</a></li>
+<li id="d11e2083"><a href="references/methods/topics/getHostName.html">node.getHostName()</a></li>
+<li id="d11e2090"><a href="references/methods/topics/getNodeDetail.html">node.getNodeDetail()</a></li>
+<li id="d11e2097"><a href="references/methods/topics/getServiceName.html">node.getServiceName()</a></li>
+<li id="d11e2104"><a href="references/methods/topics/nodestart.html">node.start()</a></li>
+<li id="d11e2111"><a href="references/methods/topics/nodestop.html">node.stop()</a></li>
+</ul>
+</li>
+<li id="d11e2118"><a href="references/methods/jsdomain.html">SdbDomain</a>
+<ul>
+<li id="d11e2125"><a href="references/methods/topics/domainalter.html">domain.alter()</a></li>
+<li id="d11e2132"><a href="references/methods/topics/listCollections_domain.html">domain.listCollections()</a></li>
+<li id="d11e2139"><a href="references/methods/topics/listCollectionSpaces_domain.html">domain.listCollectionSpaces()</a></li>
+</ul>
+</li>
+<li id="d11e2146"><a href="references/methods/jsoma.html">Oma</a>
+<ul>
+<li id="d11e2153"><a href="references/methods/topics/omaclose.html">oma.close()</a></li>
+<li id="d11e2160"><a href="references/methods/topics/omacreateCoord.html">oma.createCoord()</a></li>
+<li id="d11e2167"><a href="references/methods/topics/omacreateData.html">oma.createData()</a></li>
+<li id="d11e2174"><a href="references/methods/topics/omacreateOM.html">oma.createOM()</a></li>
+<li id="d11e2181"><a href="references/methods/topics/omaremoveCoord.html">oma.removeCoord()</a></li>
+<li id="d11e2188"><a href="references/methods/topics/omaremoveData.html">oma.removeData()</a></li>
+<li id="d11e2195"><a href="references/methods/topics/omaremoveOM.html">oma.removeOM()</a></li>
+<li id="d11e2202"><a href="references/methods/topics/omastartNode.html">oma.startNode()</a></li>
+<li id="d11e2209"><a href="references/methods/topics/omastopNode.html">oma.stopNode()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="d11e2216"><a href="references/console/topics/console.html">操作符</a>
+<ul>
+<li id="d11e2223"><a href="references/console/topics/select.html">匹配符</a>
+<ul>
+<li id="d11e2230"><a href="references/console/topics/gt.html">$gt</a></li>
+<li id="d11e2237"><a href="references/console/topics/gte.html">$gte</a></li>
+<li id="d11e2244"><a href="references/console/topics/plt.html">$lt</a></li>
+<li id="d11e2251"><a href="references/console/topics/lte.html">$lte</a></li>
+<li id="d11e2258"><a href="references/console/topics/pne.html">$ne</a></li>
+<li id="d11e2265"><a href="references/console/topics/pet.html">$et</a></li>
+<li id="d11e2272"><a href="references/console/topics/mod.html">$mod</a></li>
+<li id="d11e2279"><a href="references/console/topics/pin.html">$in</a></li>
+<li id="d11e2286"><a href="references/console/topics/isnull.html">$isnull</a></li>
+<li id="d11e2293"><a href="references/console/topics/nin.html">$nin</a></li>
+<li id="d11e2301"><a href="references/console/topics/pall.html">$all</a></li>
+<li id="d11e2308"><a href="references/console/topics/and.html">$and</a></li>
+<li id="d11e2315"><a href="references/console/topics/not.html">$not</a></li>
+<li id="d11e2322"><a href="references/console/topics/por.html">$or</a></li>
+<li id="d11e2329"><a href="references/console/topics/type.html">$type</a></li>
+<li id="d11e2336"><a href="references/console/topics/exists.html">$exists</a></li>
+<li id="d11e2343"><a href="references/console/topics/elemMatch.html">$elemMatch</a></li>
+<li id="d11e2350"><a href="references/console/topics/special.html">$+标识符</a></li>
+<li id="d11e2357"><a href="references/console/topics/psize.html">$size</a></li>
+<li id="d11e2364"><a href="references/console/topics/pregex.html">$regex</a></li>
+</ul>
+</li>
+<li id="d11e2371"><a href="references/console/topics/update.html">更新符</a>
+<ul>
+<li id="d11e2378"><a href="references/console/topics/inc.html">$inc</a></li>
+<li id="d11e2385"><a href="references/console/topics/gset.html">$set</a></li>
+<li id="d11e2392"><a href="references/console/topics/unset.html">$unset</a></li>
+<li id="d11e2399"><a href="references/console/topics/gaddtoset.html">$addtoset</a></li>
+<li id="d11e2406"><a href="references/console/topics/pop.html">$pop</a></li>
+<li id="d11e2413"><a href="references/console/topics/gpull.html">$pull</a></li>
+<li id="d11e2420"><a href="references/console/topics/gpull_all.html">$pull_all</a></li>
+<li id="d11e2427"><a href="references/console/topics/gpush.html">$push</a></li>
+<li id="d11e2434"><a href="references/console/topics/gpush_all.html">$push_all</a></li>
+</ul>
+</li>
+<li id="d11e2441"><a href="references/console/topics/aggregate.html">聚集符</a>
+<ul>
+<li id="d11e2448"><a href="references/console/topics/project.html">$project</a></li>
+<li id="d11e2455"><a href="references/console/topics/match.html">$match</a></li>
+<li id="d11e2462"><a href="references/console/topics/jgroup.html">$group</a>
+<ul>
+<li id="d11e2469"><a href="references/console/topics/j$addToSet.html">$addtoset</a></li>
+<li id="d11e2476"><a href="references/console/topics/jfirst.html">$first</a></li>
+<li id="d11e2483"><a href="references/console/topics/jlast.html">$last</a></li>
+<li id="d11e2490"><a href="references/console/topics/jmax.html">$max</a></li>
+<li id="d11e2497"><a href="references/console/topics/jmin.html">$min</a></li>
+<li id="d11e2504"><a href="references/console/topics/javg.html">$avg</a></li>
+<li id="d11e2511"><a href="references/console/topics/jsum.html">$sum</a></li>
+<li id="d11e2518"><a href="references/console/topics/j$push.html">$push</a></li>
+<li id="d11e2525"><a href="references/console/topics/jcount.html">$count</a></li>
+</ul>
+</li>
+<li id="d11e2532"><a href="references/console/topics/jlimit.html">$limit</a></li>
+<li id="d11e2539"><a href="references/console/topics/jsort.html">$sort</a></li>
+<li id="d11e2546"><a href="references/console/topics/jskip.html">$skip</a></li>
+<li id="d11e2553"><a href="references/console/topics/sql_to_aggregate.html">SQL to Aggregate 映射表</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="d11e2560"><a href="references/sql_grammar/topics/sql_grammar_list.html">SQL 语法</a>
+<ul>
+<li id="d11e2567"><a href="references/sql_grammar/topics/create_cs.html">sql create collectionspace</a></li>
+<li id="d11e2574"><a href="references/sql_grammar/topics/drop_cs.html">sql drop collectionspace</a></li>
+<li id="d11e2581"><a href="references/sql_grammar/topics/create_cl.html">sql create collection</a></li>
+<li id="d11e2588"><a href="references/sql_grammar/topics/drop_cl.html">sql drop collection</a></li>
+<li id="d11e2595"><a href="references/sql_grammar/topics/create_index.html">sql create index</a></li>
+<li id="d11e2602"><a href="references/sql_grammar/topics/drop_index.html">sql drop index</a></li>
+<li id="d11e2609"><a href="references/sql_grammar/topics/list_cs.html">sql list collectionspaces</a></li>
+<li id="d11e2616"><a href="references/sql_grammar/topics/list_cl.html">sql list collections</a></li>
+<li id="d11e2623"><a href="references/sql_grammar/topics/sqinsert.html">sql insert into</a></li>
+<li id="d11e2630"><a href="references/sql_grammar/topics/sqselect.html">sql select </a></li>
+<li id="d11e2638"><a href="references/sql_grammar/topics/squpdate.html">sql update</a></li>
+<li id="d11e2645"><a href="references/sql_grammar/topics/sqdelete.html">sql delete</a></li>
+<li id="d11e2652"><a href="references/sql_grammar/topics/group_by.html">sql group by</a></li>
+<li id="d11e2659"><a href="references/sql_grammar/topics/order_by.html">sql order by</a></li>
+<li id="d11e2666"><a href="references/sql_grammar/topics/split_by.html">sql split by</a></li>
+<li id="d11e2673"><a href="references/sql_grammar/topics/sqlimit.html">sql limit</a></li>
+<li id="d11e2680"><a href="references/sql_grammar/topics/offset.html">sql offset</a></li>
+<li id="d11e2687"><a href="references/sql_grammar/topics/as.html">sql as</a></li>
+<li id="d11e2694"><a href="references/sql_grammar/topics/sqjoin.html">sql inner join</a></li>
+<li id="d11e2701"><a href="references/sql_grammar/topics/left_join.html">sql left outer join</a></li>
+<li id="d11e2708"><a href="references/sql_grammar/topics/right_join.html">sql right outer join</a></li>
+<li id="d11e2716"><a href="references/sql_grammar/topics/sqsum.html">sql sum()</a></li>
+<li id="d11e2723"><a href="references/sql_grammar/topics/sqcount.html">sql count()</a></li>
+<li id="d11e2730"><a href="references/sql_grammar/topics/sqavg.html">sql avg()</a></li>
+<li id="d11e2737"><a href="references/sql_grammar/topics/sqmax.html">sql max()</a></li>
+<li id="d11e2744"><a href="references/sql_grammar/topics/sqmin.html">sql min()</a></li>
+<li id="d11e2751"><a href="references/sql_grammar/topics/sqfirst.html">sql first()</a></li>
+<li id="d11e2758"><a href="references/sql_grammar/topics/sqlast.html">sql last()</a></li>
+<li id="d11e2765"><a href="references/sql_grammar/topics/sqpush.html">sql push()</a></li>
+<li id="d11e2772"><a href="references/sql_grammar/topics/sqaddtoset.html">sql addtoset()</a></li>
+<li id="d11e2779"><a href="references/sql_grammar/topics/buildobj.html">sql buildobj()</a></li>
+<li id="d11e2786"><a href="references/sql_grammar/topics/mergearrayset.html">sql mergearrayset()</a></li>
+</ul>
+</li>
+<li id="d11e2793"><a href="references/sqlmapping/topics/sqlmapping.html">SQL to SequoiaDB 映射表</a></li>
+<li id="d11e2800"><a href="references/limits/topics/limits.html">限制</a></li>
+<li id="d11e2807"><a href="references/exceptionmapping/topics/exceptionmapping_cn.html">Error Code List</a></li>
+</ul>
+</li>
+</ul>
+</div></div></div><div class="footer"/><script type="text/javascript"><!-- 
+  	$(function() {
+  			$("#tree").treeview({
+  				collapsed: true,
+  				animated: "fast",
+  				control:"#sidetreecontrol",
+  				persist: "location"
+  		});
+  	});
+    function select(){
+      selectLink(this.parentNode.id);
+    }  	     
+    
+function getHTMLPage2Expand(url){
+      var page = url.substr(1);
+      currentPage = page;
+      page = parent.location.search.substr(1).split("&");
+      for (x in page) {
+        var q;
+        q = page[x].split("=");;
+        if(q[0] == 'q'){
+         currentPage = q[1];
+        }
+      }
+      return currentPage;
+   }
+   
+    var aElements = document.getElementById(tree).getElementsByTagName("a");
+    var i;
+    var pathPrefix = parent.location.pathname;
+    var expandPage = getHTMLPage2Expand(parent.contentwin.location.pathname);
+    expandPage = expandPage.replace(pathPrefix, "");
+    for (i = 0; i< aElements.length; i++){
+      aElements[i].onclick = select;
+    }
+    if(parent.location.search != ''){ 
+      setTimeout('expandToTopic(window.location.href, expandPage)',200);
+    }
+//--></script></body>
+</html>

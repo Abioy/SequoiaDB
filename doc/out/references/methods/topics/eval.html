@@ -1,0 +1,145 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="db.eval()"/>
+<meta name="description" content="db.eval(&lt;code&gt;) 根据需要填入 JavaScript 语句。同时可以在语句中调用已经创建好的存储过程。 参数描述 参数名 参数类型 描述 是否必填 code 字符串 JavaScript 语句或者创建好的存储过程函数。 是 说明： 1. 执行成功则按照语句返回结果。可以将返回值直接赋值给另一个变量。如： var a = db.eval(' db.foo.bar'); a ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../references/methods/jssequoiadb.html"/>
+<meta name="DC.Relation" scheme="URI" content="listProcedures.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_y4l_dpw_ql"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>db.eval()</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_y4l_dpw_ql"><a name="topic_y4l_dpw_ql"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../references/methods/jssequoiadb.html" title="Sdb"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sdb</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="methodlist.html" title="SequoiaDB JavaScript 方法">SequoiaDB JavaScript 方法</a> / <a class="navheader_parent_path" href="../../../references/methods/jssequoiadb.html" title="Sdb">Sdb</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">db.eval()</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">db.eval(&lt;code&gt;)</h2>
+      
+      <p class="p"> 根据需要填入 JavaScript 语句。同时可以在语句中调用已经创建好的存储过程。 </p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">参数描述</h2>
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d121681e27" class="stentry">参数名</th>
+
+          <th valign="bottom" align="left" id="d121681e30" class="stentry">参数类型</th>
+
+          <th valign="bottom" align="left" id="d121681e33" class="stentry">描述</th>
+
+          <th valign="bottom" align="left" id="d121681e36" class="stentry">是否必填</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d121681e27" class="stentry">code</td>
+
+          <td valign="top" headers="d121681e30" class="stentry">字符串</td>
+
+          <td valign="top" headers="d121681e33" class="stentry">JavaScript 语句或者创建好的存储过程函数。</td>
+
+          <td valign="top" headers="d121681e36" class="stentry">是</td>
+
+        </tr>
+</table>
+
+      <p class="p"><strong class="ph b">说明：</strong></p>
+
+      <p class="p">1. 执行成功则按照语句返回结果。可以将返回值直接赋值给另一个变量。如：<strong class="ph b">var a = db.eval(' db.foo.bar'); a.find(); </strong></p>
+
+      <p class="p">2. 执行失败会返回错误码及错误信息。如：<strong class="ph b">{ "errmsg": "(nofile):1 ReferenceError: sum is not defined","retCode": -152 } </strong></p>
+
+      <p class="p">3. 在函数执行结束前操作不会返回。中途退出则终止整个执行，但已经执行的代码不会被回滚。</p>
+
+      <p class="p">4. 自定义返回值的长度有一定限制，参考 SequoiaDB 插入记录的最大长度。</p>
+
+      <p class="p">5. 支持定义临时函数，如：<strong class="ph b">db.eval(' function sum(x,y){return x+y;} sum(1,2)')</strong></p>
+
+      <p class="p">6. 全局 db 使用方式与 <a class="xref" href="createProcedure.html">createProcedure</a> 相同。</p>
+
+      <div class="note note"><span class="notetitle">Note:</span> 虽然语句中的所有输出都会被屏蔽，但还是建议不要加入任何打印语句。</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">示例</h2>
+      <ul class="ul">
+        <li class="li">
+          <p class="p">在eval() 方法中调用存储过程函数 sum</p>
+
+          <pre class="pre codeblock">//初始时 sum() 方法不存在，返回异常信息
+&gt; var a = db.eval('sum(1,2)');
+{ "errmsg": "(nofile):1 ReferenceError: getCL is not defined
+", "retCode": -152 }
+(nofile):0 uncaught exception: -152
+//初始化 sum()
+&gt;db.createProcedure(function sum(x,y){return x+y;})
+//调用 sum()
+&gt;db.eval('sum(1,2)')
+3</pre>
+
+        </li>
+
+        <li class="li">在 eval() 方法中填写 JavaScript 语句
+          <pre class="pre codeblock">&gt;var rc = db.eval("db.foo.bar")
+&gt;rc.find()
+{
+  "_id": {
+    "$oid": "5248d3867159ae144a000000"
+  },
+  "a": 1
+}
+{
+  "_id": {
+    "$oid": "5248d3897159ae144a000001"
+  },
+  "a": 2
+}...</pre>
+</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="listProcedures.html" title="db.listProcedures()">db.listProcedures()</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../references/methods/jssequoiadb.html" title="Sdb"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sdb</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

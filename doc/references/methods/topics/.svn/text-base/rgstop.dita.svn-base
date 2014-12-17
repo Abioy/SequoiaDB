@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_rgstop">
+  <title>rg.stop()</title>
+  <body>
+    <section><title>rg.stop()</title>
+      <p>停止分区组。停止之后就不能创建节点等相关操作。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>停止分区组</p>
+          <p><codeblock>rg.stop()</codeblock></p></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="rgstart.dita"></link>
+    <link href="nodestart.dita"></link>
+  </related-links>
+</topic>

@@ -1,0 +1,180 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Java 驱动"/>
+<meta name="description" content="概述 SequoiaDB Java 驱动提供了数据库操作和集群操作的接口。主要包括以下8个级别的操作：数据库，集合空间，集合，游标，副本组，节点，域，大对象。 Java 驱动的有两种类实例。一种用于数据库操作，另一种用于集群操作。 数据库操作实例 SequoiaDB 数据库中的数据存放分为三个级别：  1）数据库  2）集合空间  3）集合 ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../developement/application/java/topics/java.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_2ny_sdd_wj"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Java 驱动</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_2ny_sdd_wj"><a name="topic_2ny_sdd_wj"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../developement/application/java/topics/java.html" title="Java 驱动"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Java 驱动</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/application.html" title="SequoiaDB 应用程序开发">SequoiaDB 应用程序开发</a> / <a class="navheader_parent_path" href="../../../../developement/application/java/topics/java.html" title="Java 驱动">Java 驱动</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Java 驱动</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">概述</h2>
+         
+      <p class="p">SequoiaDB Java 驱动提供了数据库操作和集群操作的接口。主要包括以下8个级别的操作：数据库，集合空间，集合，游标，副本组，节点，域，大对象。</p>
+
+    <p class="p">Java 驱动的有两种类实例。一种用于数据库操作，另一种用于集群操作。 </p>
+
+      <ul class="ul">
+        <li class="li"><p class="p">数据库操作实例</p>
+<p class="p">SequoiaDB 数据库中的数据存放分为三个级别：</p>
+<p class="p"> 1）数据库</p>
+<p class="p"> 2）集合空间</p>
+<p class="p"> 3）集合</p>
+
+          <p class="p">因此，在数据库操作中，可用3个类来分别表示连接，集合空间，集合实例，另2个类分别表示游标实例和大对象实例：</p>
+
+          <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="strow">
+            <td valign="top" class="stentry">SequoiaDB</td>
+
+            <td valign="top" class="stentry">数据库实例</td>
+
+            <td valign="top" class="stentry">代表一个单独的数据库连接</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry">CollectionSpace</td>
+
+            <td valign="top" class="stentry">集合空间实例</td>
+
+            <td valign="top" class="stentry">代表一个单独的集合空间</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry">DBCollection</td>
+
+            <td valign="top" class="stentry">集合实例</td>
+
+            <td valign="top" class="stentry">代表一个单独的集合</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry">DBCursor</td>
+
+            <td valign="top" class="stentry">游标实例</td>
+
+            <td valign="top" class="stentry">代表一个查询产生的结果集</td>
+
+          </tr>
+<tr class="strow">
+            <td valign="top" class="stentry">DBLob</td>
+
+            <td valign="top" class="stentry">大对象实例</td>
+
+            <td valign="top" class="stentry">代表一个大对象</td>
+
+          </tr>
+</table>
+
+          <p class="p">Java 驱动需要使用不同的实例进行操作。譬如读取数据的操作需要游标实例，而创建表空间则需要数据库实例。</p>
+
+          <div class="note note"><span class="notetitle">Note:</span> <p class="p">SequoiaDB 只建立一条 Socket 连接，且内部没有对网络操作加锁。如果需要多线程连接数据库，各个线程必须各自新建一个 SequoiaDB 对象及其之上的 CollectionSpace/DBCollection/DBCursor 对象。</p>
+</div>
+
+        </li>
+
+        <li class="li">集群操作实例
+          <p class="p">SequoiaDB 数据库中的集群操作分为三个级别：</p>
+<p class="p">1）分区组</p>
+<p class="p">2）数据节点</p>
+<p class="p">3）域</p>
+
+          <div class="note note"><span class="notetitle">Note:</span> 分区组包两种类型：编目分区组、数据分区组。</div>
+
+          <p class="p">分区组实例和数据节点实例可以用以下三种类的实例表示。</p>
+
+          <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="strow">
+              <td valign="top" class="stentry">ReplicaGroup</td>
+
+              <td valign="top" class="stentry">分区组类</td>
+
+              <td valign="top" class="stentry">分区组实例代表一个单独的分区组</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry">Node</td>
+
+              <td valign="top" class="stentry">数据节点类</td>
+
+              <td valign="top" class="stentry">数据节点实例代表一个单独的数据节点</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry">sdbDomain</td>
+
+              <td valign="top" class="stentry">域类</td>
+
+              <td valign="top" class="stentry">域实例代表一个管理若干个分区组的域</td>
+
+            </tr>
+</table>
+
+          <p class="p">与集群相关的操作需要使用分区组及数据节点实例。</p>
+
+          <p class="p">ReplicaGroup 的实例用于管理分区组。其操作包括启动，停止分区组，获取分区组中节点的状态，名称信息，数目信息。</p>
+
+          <p class="p">Node 的实例用于管理节点。其操作包括启动，停止指定的节点，获取指定节点实例，获取主从节点实例，获取数据节点地址信息。</p>
+
+          <p class="p">sdbDomain 的实例用于管理域。其包括修改域，获取域信息等操作。</p>
+</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">错误信息</h2>
+      
+      <ul class="ul">
+        <li class="li"><p class="p">当执行出现异常时，大部分接口都会抛出 com.sequoiadb.exception.BaseException 和 java.lang.Exception 异常，分别对应于数据库引擎返回的异常信息和客户端本地的异常信息；</p>
+</li>
+
+        <li class="li">BaseException 的异常信息可以通过该类的 getErrorType，getErrorCode 和 getMessage 方法获取。</li>
+
+      </ul>
+
+    </div>
+    
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../developement/application/java/topics/java.html" title="Java 驱动"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Java 驱动</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

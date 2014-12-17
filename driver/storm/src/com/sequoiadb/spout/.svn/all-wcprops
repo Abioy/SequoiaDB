@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11485/trunk/driver/storm/src/com/sequoiadb/spout
+END
+SequoiaSpoutTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11485/trunk/driver/storm/src/com/sequoiadb/spout/SequoiaSpoutTask.java
+END
+SequoiaCappedCollectionSpout.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/11485/trunk/driver/storm/src/com/sequoiadb/spout/SequoiaCappedCollectionSpout.java
+END
+SequoiaSpoutBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11485/trunk/driver/storm/src/com/sequoiadb/spout/SequoiaSpoutBase.java
+END

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\references\sql_grammar\topics?><?path2project ..\..\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="references_sql_right_join" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="title:1">sql right outer join</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="title:2">right outer join 语句</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="p:1">right outer join会从右边的集合名(collection2_name)中返回所有的记录，即使在左边的集合名(collection1_name)中没有匹配的记录。</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="title:3">语法</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="p:2"><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="codeblock:1">&lt;collection1_name | (select_set1) as &lt;alias1_name&gt;
+right outer join
+&lt;collection2_name | (select_set2)&gt; as &lt;alias2_name&gt;
+[ON condition]</codeblock></p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="section:3"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="title:4">示例</title>
+      <ul class="- topic/ul " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="ul:1">
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="li:1"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="p:3">有员工信息表foo.emp和部门信息表foo.dept，查询员工号emp_no&lt;10所在的部门名dept_name：</p>
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="p:4"><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="codeblock:2">db.exec("select E.emp_no,D.dept_name from foo.emp as E right outer join foo.dept as D on E.dept_no=D.dept_no where E.emp_no&lt;10")</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links class="- topic/related-links " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="related-links:1">
+    <link href="left_join.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="link:1"><?ditaot gentext?><linktext class="- topic/linktext ">sql left outer join</linktext></link>
+    <link href="sum.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\sql_grammar\topics\right_join.dita" xtrc="link:2"><?ditaot gentext?><linktext class="- topic/linktext ">sql sum()</linktext></link>
+  </related-links>
+</topic>

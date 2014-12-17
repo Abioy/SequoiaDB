@@ -1,0 +1,260 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Software Requirement"/>
+<meta name="description" content="Linux System requirement System configuration requirement Configuration Item Configuration method Verification method Set hostname 1. Log in with root privileges, perform hostname ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../installation/system_require/topics/system_require_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_xwd_kfy_wj"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>Software Requirement</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_xwd_kfy_wj"><a name="topic_xwd_kfy_wj"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../installation/system_require/topics/system_require_en.html" title="System Requirement of SequoiaDB Installation"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">System Requirement of SequoiaDB Installation</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/install_overview_en.html" title="Install Overview">Install Overview</a> / <a class="navheader_parent_path" href="../../../installation/system_require/topics/system_require_en.html" title="System Requirement of SequoiaDB Installation">System Requirement of SequoiaDB Installation</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Software Requirement</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Linux System requirement</h2>
+      
+      <ul class="ul">
+        <li class="li">System configuration requirement <p class="p"/>
+<table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+              <th valign="bottom" align="left" id="d100978e24" class="stentry">Configuration Item</th>
+
+              <th valign="bottom" align="left" id="d100978e27" class="stentry">Configuration method</th>
+
+              <th valign="bottom" align="left" id="d100978e30" class="stentry">Verification method</th>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" headers="d100978e24" class="stentry">Set hostname</td>
+
+              <td valign="top" headers="d100978e27" class="stentry"> 1. Log in with root privileges, perform hostname sdbserver1(sdbserver1 hostname can be modified as needed);<p class="p"/>
+<ul class="ul">
+                <li class="li">For SUSE: <p class="p">2. Open the /etc/HOSTNAME file;</p>
+<p class="p">  vi /etc/HOSTNAME</p>
+
+                  <p class="p">3. Modify file contents, configured as a hostname;</p>
+<p class="p">  sdbserver1  (hostname)</p>
+<p class="p">4. Press :wq to save and exit;</p>
+</li>
+
+                <li class="li">For RedHat: <p class="p">2. Open the /etc/sysconfig/network file;</p>
+<p class="p">  vi /etc/sysconfig/network</p>
+<p class="p">3. HOSTNAME line will modify the HOSTNAME=sdbserver1, which sdbserver1 new hostname;</p>
+ <p class="p">4. Press :wq to save and exit;</p>
+</li>
+
+                <li class="li">For Ubuntu: <p class="p">2. Open the /etc/hostname file;</p>
+<p class="p">  vi /etc/hostname</p>
+<p class="p">3. Modify file contents, configured as a hostname;</p>
+<p class="p">sdbserver1</p>
+4. Press :wq to save and exit;</li>
+
+              </ul>
+</td>
+
+              <td valign="top" headers="d100978e30" class="stentry">Execute hostname command to verify whether the information is printed "sdbserver1" </td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" headers="d100978e24" class="stentry">
+                Enable server nodes to visit each other through hostname
+              </td>
+
+              <td valign="top" headers="d100978e27" class="stentry">
+                <ul class="ul">
+                  <li class="li">Log in the system in the role of root, open "/etc/hosts" with the command "vi
+                    /etc/hosts"</li>
+
+                  <li class="li"> Alter "/etc/hosts", set the mapping between hostname of server node and IP in
+                    this file.<p class="p"> 192.168.20.200  sdbserver1</p>
+<p class="p"> 192.168.20.201 
+                      sdbserver2</p>
+<p class="p"> 192.168.20.202  sdbserver3</p>
+</li>
+
+                  <li class="li">Save and exit</li>
+
+                </ul>
+
+              </td>
+
+              <td valign="top" headers="d100978e30" class="stentry">Check with "ping sdbserver1"<p class="p"/>
+Check with "ping sdbserver2"</td>
+
+            </tr>
+</table>
+</li>
+
+        <li class="li"><p class="p">Close the firewall</p>
+ <p class="p"/>
+<table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+            <th valign="bottom" align="left" id="d100978e129" class="stentry">Configuration Item </th>
+
+            <th valign="bottom" align="left" id="d100978e132" class="stentry">Configuration method</th>
+
+            <th valign="bottom" align="left" id="d100978e135" class="stentry">Verification method</th>
+
+          </tr>
+<tr class="strow"/>
+<tr class="strow">
+            <td valign="top" headers="d100978e129" class="stentry"> Close the firewall</td>
+
+            <td valign="top" headers="d100978e132" class="stentry">Close the firewall operation, need administrator privileges.<p class="p"/>
+<ul class="ul">
+              <li class="li">For SUSE:<p class="p">1. SuSEfirewall2 stop;</p>
+
+                <p class="p">2. chkconfig SuSEfirewall2_setup;</p>
+</li>
+
+              <li class="li">For RedHat:<p class="p">1. service iptables stop;</p>
+<p class="p">2. chkconfig iptables off;</p>
+ </li>
+
+              <li class="li">For Ubuntu:<p class="p">1. ufw disable;</p>
+</li>
+
+            </ul>
+</td>
+
+            <td valign="top" headers="d100978e135" class="stentry"><ul class="ul">
+              <li class="li">For SUSE:<p class="p"> chkconfig -list | grep fire;</p>
+
+              </li>
+
+              <li class="li">For RedHat:<p class="p">service iptables status;</p>
+ </li>
+
+              <li class="li">For Ubuntu:<p class="p">ufw status;</p>
+</li>
+
+            </ul>
+</td>
+
+          </tr>
+<tr class="strow"/>
+</table>
+</li>
+
+      </ul>
+
+      <div class="note note"><span class="notetitle">Note:</span> Each database server should be configured.</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Recommended configuration in Linux</h2>
+      
+      <ul class="ul">
+        <li class="li">Adjusting ulimit<p class="p">modify the configuration file "/etc/security/limits.conf
+              ":</p>
+<pre class="pre codeblock">#&lt;domain&gt;      &lt;type&gt;    &lt;item&gt;     &lt;value&gt;
+*               soft      core       0
+*               soft      data       unlimited
+*               soft      fsize      unlimited
+*               soft      rss        unlimited
+*               soft      as         unlimited</pre>
+<p class="p"><strong class="ph b">Params
+              Description:</strong></p>
+<p class="p"><strong class="ph b">core</strong>: The "core" file is generated as the time of
+            database failure to troubleshooting, you had better close the system for
+              advice.</p>
+<p class="p"><strong class="ph b">data</strong>: The size of data memory that database processes allow to
+            allocate.</p>
+<p class="p"><strong class="ph b"> fsize</strong>: The size of file that database processes allow to address. </p>
+<p class="p">
+            <strong class="ph b">rss</strong>: The max size of resident set that database processes allowed.
+              </p>
+<p class="p"><strong class="ph b">as</strong>: The max amount of virtual memory addressing space that database
+              processes allowed. </p>
+
+          Set in the configuration file in /etc/security/limits.d/90-nproc.conf:<div class="p">
+            <pre class="pre codeblock">#&lt;domain&gt;      &lt;type&gt;    &lt;item&gt;     &lt;value&gt;
+*               soft      nproc     unlimited</pre>
+</div>
+
+          <p class="p"><strong class="ph b">Explanation of parameters</strong>:</p>
+
+          <strong class="ph b">nproc</strong>: The database allows the maximum number of threads limits;
+          <div class="note note"><span class="notetitle">Note:</span> <p class="p">1. Each database server should be configured.</p>
+<p class="p">2. It need to
+              relogin after changing to be effective.</p>
+</div>
+</li>
+
+        <li class="li">Adjusting kernel params <p class="p">1. Using the following command to output the current
+            configuration of vm,and be placed on file.
+          </p>
+<pre class="pre codeblock">cat /proc/sys/vm/swappiness
+cat /proc/sys/vm/dirty_ratio
+cat /proc/sys/vm/dirty_background_ratio
+cat /proc/sys/vm/dirty_expire_centisecs
+cat /proc/sys/vm/vfs_cache_pressure
+cat /proc/sys/vm/min_free_kbytes</pre>
+
+          2. Adding the following params to the file of "/etc/sysctl.conf" to adjust kernel params.
+            <pre class="pre codeblock">vm.swappiness = 0
+vm.dirty_ratio = 100
+vm.dirty_background_ratio = 40
+vm.dirty_expire_centisecs = 3000
+vm.vfs_cache_pressure = 200
+vm.min_free_kbytes =  &lt;8% of physical memory size, unit is KB&gt; </pre>
+<div class="note note"><span class="notetitle">Note:</span> When
+            the available physical memory size of database isn't enough 8GB, doesn't need to set
+            "vm.swappiness = 0". The dirty parameter is only recommended values, the system settings press principle (the control system of flush process using only the dirty page timeout 
+            mechanism to refresh the new dirty page, instead of using a dirty page refresh ratio overruns dirty pages) set.</div>
+ 
+          3. Executing the following command to be
+            effective.<pre class="pre codeblock">/sbin/sysctl -p</pre>
+<div class="note note"><span class="notetitle">Note:</span> Each database server should be
+            configured.</div>
+</li>
+
+        <li class="li">Database directory structure<p class="p">The users had better put the directory of data, index, and
+            log in different physical disks, to reduce the competition between sequential I/O and
+            random I/O.</p>
+</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../installation/system_require/topics/system_require_en.html" title="System Requirement of SequoiaDB Installation"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">System Requirement of SequoiaDB Installation</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/map.dtd">
+<map title="References">
+    <topicref href="topics/references_en.dita">
+        <!--<anchorref href="methods/methodlist_en.ditamap"/>-->
+        <anchorref href="methods/methodlist_en_v2.ditamap"/>
+        <anchorref href="console/console_en.ditamap"/>
+        <anchorref href="sql_grammar/sql_grammar_en.ditamap"/>
+        <anchorref href="sqlmapping/sqlmapping_en.ditamap"/>
+        <anchorref href="limits/limits_en.ditamap"/>
+        <anchorref href="exceptionmapping/exceptionmapping_en.ditamap"/>
+    </topicref>
+</map>

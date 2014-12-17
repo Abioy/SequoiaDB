@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_snapshot">
+  <title>db.snapshot()</title>
+  <body>
+    <section><title>db.snapshot(&lt;snapType>,[con],[sel],[sort])</title>
+      <p>It lists snapshots. Snapshot is a kind of command used to get the current status of
+          system.<xref href="../../../administration/database/topics/monitoring_en.dita">Click here
+          to learn more about snapshot.</xref>
+      </p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable><!--frame="all" relcolwidth="1.0* 1.2* 6.29* 1.38*" id="references_method_snapshot_table">-->
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Not null</stentry>
+        </sthead>
+        <strow>
+          <stentry>snapType</stentry>
+          <stentry>List</stentry>
+          <stentry><xref href="../../../administration/database/topics/monitoring_en.dita">Snapshot
+              type</xref>, the value of snapshot type is in the range from 0 to 7.</stentry>
+          <stentry>Yes</stentry>
+        </strow>
+        <strow>
+          <stentry>con</stentry>
+          <stentry>json object</stentry>
+          <stentry>Selectable condition. It just returns records that matches the value of "con". If
+            it is null, it  returns all records.</stentry>
+          <stentry>No</stentry>
+        </strow>
+        <strow>
+          <stentry>sel</stentry>
+          <stentry>json object</stentry>
+          <stentry>Select returned field name. If it is null, return all the fields</stentry>
+          <stentry>No</stentry>
+        </strow>
+        <strow>
+          <stentry>sort</stentry>
+          <stentry>json object</stentry>
+          <stentry>Sort records according to specified field. "1" means ascending order. "-1" means
+            descending order.</stentry>
+          <stentry>No</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>Format</title>
+      <p>The defination of the method "snapshot()" contains four fields: listType、con、sel、sort. The
+        type of "listType" is enumeration. Other fields are json objects. The format is as
+        follow:</p>
+      <codeblock>{"snapType":"&lt;snapshot type>",["con":"{"Field name 1":{"operation 1":"value 1"},"Field name 2":{"Operation 2":"value 2"}...}"],
+["sel":"{"Field name 1":"","Field name 2":"",...}"],["sort":"{Order:-1|1}"]}</codeblock>
+      <note>
+        <ul>
+          <li>The value of snapType is in the range from 0 to 7.</li>
+          <li>The parameter "sel" is a json object. The value of field name is specified as null
+            string. It is defined as: {"Field name 1":"value 1","Field name 2":"value 2",...}.If the
+            records contain the specified field names, the values are invalid. If the records don't
+            contain specified fields, it returns "{"Field name 1":"value 1", "Field name 2":"value
+            2"}".</li>
+          <li>If the value of a field is in the type of array. We invoke the elements in it through
+            "." and double quotations. </li>
+        </ul>
+      </note>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>Set the value of "snapType" as 0:<codeblock>db.snapshot(0)</codeblock></p>
+          <p> Returns context snapshot:</p>
+          <codeblock>{
+        "SessionID": 3,
+        "Contexts": [ 
+         {
+           "ContextID": 1, 
+           "DataRead": 0, 
+           "IndexRead": 0, 
+           "QueryTimeSpent": 0, 
+           "StartTimestamp": "2013-04-08-17.17.02.135620" 
+         }
+        ]
+      } 
+      </codeblock>
+        </li>
+        <li><p>
+            <codeblock>db.snapshot(0,{"Contexts.0.ContextID":{$gte:0}},{SessiomID:"","Contexts.0.StartTimestamp":""},{SessionID：1})</codeblock>
+          </p>
+          <p>Return records that contain the value of "Contexts.0.ContextID" equal to 0, and just
+            return values in the 2 field, SessiomID and Contexts.StartTimestamp. The returned
+            records are in ascending order: </p>
+          <codeblock>{ 
+        "Contexts": [ 
+         {
+           "StartTimestamp": "2013-04-09-09.31.03.270965" 
+         } 
+        ],
+        "SessionID": 5 
+      } </codeblock></li>
+
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="listReplicaGroups_en.dita" format="dita" type="topic"/>
+    <link href="resetSnapshot_en.dita" format="dita" type="topic"/>
+    <link href="../../../administration/database/topics/EDU_en.dita" format="dita" type="topic"/>
+    <link href="../../console/topics/console_en.dita" format="dita" type="topic"/>
+  </related-links>
+</topic>

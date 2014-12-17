@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_dmq_spv_xl">
+  <title>创建基于 SequoiaDB 的表</title>
+  <body>
+    <p>启动 Hive Shell 命令行窗口，执行如下命令创建数据表；</p>
+    <codeblock>hive> create external table sdb_tab(id INT, name STRING, value DOUBLE) stored by 
+"com.sequoiadb.hive.SdbHiveStorageHandler" tblproperties("sdb.address" = "localhost:11810");
+
+OK
+Time taken: 0.386 seconds</codeblock>
+    <p>其中：</p>
+    <p>sdb.address 用于指定 SequoiaDB 协调节点的 IP 和端口，如果有多个协调节点，可以写入多个，之间用逗号隔开。表的数据库对应 SequoiaDB 的集合空间，表对应集合空间中的集合。</p>
+  </body>
+</topic>

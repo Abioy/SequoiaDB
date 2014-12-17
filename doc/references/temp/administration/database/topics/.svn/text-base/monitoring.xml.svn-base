@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\administration\database\topics?><?path2project ..\..\..\out_en\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="administration_database_monitoring" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="title:1">监控</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="title:2">概念</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="p:1">监控是一种监视当前系统状态的方式。在SequoiaDB中，用户可以使用快照（SNAPSHOT）与列表（LIST）命令进行系统监控。</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="title:3">快照</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="p:2">快照是一种得到系统当前状态的命令，主要分为以下类型：</p>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 1.0* 3*" id="administration_database_monitoring_snapshot_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="simpletable:1">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="sthead:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:1">快照标示</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:2">快照类型</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:3">适用节点类型</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:4">描述</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:1">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:5"><xref href="snapshot/contexts.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:1" type="topic"><?ditaot usertext?>SDB_SNAP_CONTEXTS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:6">上下文</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:7">数据，编目</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:8">上下文快照列出当前数据库节点中所有的会话所对应的上下文</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:9"><xref href="snapshot/contexts_current.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:2" type="topic"><?ditaot usertext?>SDB_SNAP_CONTEXTS_CURRENT</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:10">当前会话上下文</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:11">数据，编目</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:12">当前上下文快照列出当前数据库节点中当前会话所对应的上下文</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:3">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:13"><xref href="snapshot/sessions.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:3" type="topic"><?ditaot usertext?>SDB_SNAP_SESSIONS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:14">会话</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:15">数据，编目</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:16">会话快照列出当前数据库节点中所有的会话</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:4">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:17"><xref href="snapshot/sessions_current.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:4" type="topic"><?ditaot usertext?>SDB_SNAP_SESSIONS_CURRENT</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:18">当前会话</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:19">数据，编目</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:20">当前会话快照列出当前数据库节点中当前的会话</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:5">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:21"><xref href="snapshot/collections.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:5" type="topic"><?ditaot usertext?>SDB_SNAP_COLLECTIONS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:22">集合</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:23">全部</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:24">集合快照列出当前数据库节点或集群中所有非临时集合</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:6">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:25"><xref href="snapshot/collectionspaces.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:6" type="topic"><?ditaot usertext?>SDB_SNAP_COLLECTIONSPACES</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:26">集合空间</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:27">全部</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:28">集合空间快照列出当前数据库节点或集群中所有集合空间（编目集合空间除外）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:7">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:29"><xref href="snapshot/database.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:7" type="topic"><?ditaot usertext?>SDB_SNAP_DATABASE</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:30">数据库</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:31">数据，编目</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:32">数据库快照列出当前数据库节点的数据库监视信息</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:8">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:33"><xref href="snapshot/system.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:8" type="topic"><?ditaot usertext?>SDB_SNAP_SYSTEM</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:34">系统</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:35">数据，编目</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:36">系统快照列出当前数据库节点的系统监视信息</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="section:3"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="title:4">列表</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="p:3">列表是一种轻量级的得到系统当前状态的命令，主要分为以下类型：</p>
+      <simpletable frame="all" relcolwidth="1.0* 1.0* 1.0* 3*" id="administration_database_monitoring_list_table" class="- topic/simpletable " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="simpletable:2">
+        <sthead class="- topic/sthead " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="sthead:2">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:37">列表标示</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:38">列表类型</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:39">适用节点类型</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:40">描述</stentry>
+        </sthead>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:9">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:41"><xref href="list/list_contexts.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:9" type="topic"><?ditaot usertext?>SDB_LIST_CONTEXTS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:42">上下文</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:43">数据，编目</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:44">上下文列表列出当前数据库节点中所有的会话所对应的上下文</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:10">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:45"><xref href="list/list_contexts_current.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:10" type="topic"><?ditaot usertext?>SDB_LIST_CONTEXTS_CURRENT</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:46">当前会话上下文</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:47">数据，编目</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:48">当前上下文列表列出当前数据库节点中当前会话所对应的上下文</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:11">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:49"><xref href="list/list_sessions.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:11" type="topic"><?ditaot usertext?>SDB_LIST_SESSIONS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:50">会话</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:51">数据，编目</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:52">会话列表列出当前数据库节点中所有的会话</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:12">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:53"><xref href="list/list_sessions_current.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:12" type="topic"><?ditaot usertext?>SDB_LIST_SESSIONS_CURRENT</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:54">当前会话</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:55">数据，编目</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:56">当前会话列表列出当前数据库节点中当前的会话</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:13">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:57"><xref href="list/list_collections.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:13" type="topic"><?ditaot usertext?>SDB_LIST_COLLECTIONS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:58">集合</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:59">全部</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:60">集合列表列出当前数据库节点或集群中所有非临时集合</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:14">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:61"><xref href="list/list_collectionspace.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:14" type="topic"><?ditaot usertext?>SDB_LIST_COLLECTIONSPACES</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:62">集合空间</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:63">全部</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:64">集合空间列表列出当前数据库节点或集群中所有集合空间（编目集合空间除外）</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:15">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:65"><xref href="list/list_storageunits.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:15" type="topic"><?ditaot usertext?>SDB_LIST_STORAGEUNITS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:66">存储单元</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:67">数据，编目</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:68">存储单元列表列出当前数据库节点的全部存储单元信息</stentry>
+        </strow>
+        <strow class="- topic/strow " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="strow:16">
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:69"><xref href="list/list_groups.xml" class="- topic/xref " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="xref:16" type="topic"><?ditaot usertext?>SDB_LIST_GROUPS</xref></stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:70">分区组</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:71">协调</stentry>
+          <stentry class="- topic/stentry " xtrf="C:\SequoiaDB\doc\administration\database\topics\monitoring.dita" xtrc="stentry:72">分区组列表列出当前集群中的所有分区信息</stentry>
+        </strow>
+      </simpletable>
+    </section>
+  </body>
+</topic>

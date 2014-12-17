@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\introduction\topics?><?path2project ..\..\out_en\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="sequoiadb_datamodel" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="title:1">数据模型</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="body:1">
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="p:1">SequoiaDB数据库使用JSON数据模型，而非传统的关系型数据模型。</p>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="p:2">JSON数据结构的全称为Javascript Object Notation，是一种轻量级的数据交换格式，非常易于人阅读和编写，同时也易于机器生成和解析。</p>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="p:3">它基于JavaScript Programming Language, Standard ECMA-262 3rd Edition – December 1999的一个子集，为纯文本格式，支持嵌套结构与数组。</p>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="p:4">JSON建构基于两种结构：</p>
+    <ul id="sequoiadb_datamodel_jsonstruct" class="- topic/ul " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="ul:1">
+      <li class="- topic/li " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="li:1">键值对集合。在键值对集合结构中，每一个数据元素拥有一个名称与一个数值。数值可以包含数字，字符串等常用结构，或嵌套JSON对象和数组</li>
+      <li class="- topic/li " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="li:2">数组。在数组中的每一个元素不包含元素名，其值可以为数字，字符串等常用结构，或者嵌套JSON对象和数组</li>
+    </ul>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="p:5">JSON具有如下形式：</p>
+    <ul id="sequoiadb_datamodel_jsonmodel" class="- topic/ul " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="ul:2">
+      <li class="- topic/li " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="li:3"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="p:6">对象是一个无序的“键值对”集合，以“{”（左大括号）开始，“}”（右大括号）结束。每一个元素名后跟一个“:”（冒号）；而元素之间使用“,”（逗号）分隔</p>
+        <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="p:7"><image href="../images/sequoiadb_datamodel_jsonstruct_img1.jpg" id="sequoiadb_datamodel_jsonstruct_img1" placement="inline" class="- topic/image " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="image:1"/></p></li>
+      <li class="- topic/li " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="li:4"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="p:8">数组是值的有序集合，以“[”（左中括号）开始，“]”（右中括号）结束。值之间使用“,”（逗号）分隔</p>
+        <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="p:9"><image href="../images/sequoiadb_datamodel_jsonstruct_img2.jpg" id="sequoiadb_datamodel_jsonstruct_img2" placement="inline" class="- topic/image " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="image:2"/></p></li>
+      <li class="- topic/li " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="li:5"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="p:10">值可以为由双引号包裹的字符串，数值，true，false，null，对象，数组，以及SequoiaDB数据库特有的数据结构（例如日期，时间等）组成</p>
+        <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="p:11"><image href="../images/sequoiadb_datamodel_jsonstruct_img3.jpg" id="sequoiadb_datamodel_jsonstruct_img3" placement="inline" class="- topic/image " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="image:3"/></p></li>
+    </ul>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="p:12">一个典型的嵌套式数据结构如下：</p>
+    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="p:13"><image href="../images/sequoiadb_datamodel_jsonstruct_img4.jpg" id="sequoiadb_datamodel_jsonstruct_img4" placement="inline" class="- topic/image " xtrf="C:\SequoiaDB\doc\introduction\topics\datamodel.dita" xtrc="image:4"/></p>
+  </body>
+</topic>

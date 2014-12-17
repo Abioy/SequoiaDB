@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ylw_sfd_pl">
+  <title>故障恢复</title>
+  <body>
+    <p>本节介绍个类型节点的故障恢复。</p>
+    <p><xref href="catalog.dita">协调节点</xref></p>
+    <p><xref href="datanode.dita">数据节点</xref></p>
+    <p><xref href="coord.dita">编目节点</xref></p>
+  </body>
+</topic>

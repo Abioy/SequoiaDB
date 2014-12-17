@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ykq_wdz_gm">
+  <title>db.removeRG()</title>
+  <body>
+    <section><title>db.removeRG(&lt;name>)</title>
+      <p>Deldte the database specified slice group.</p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.08* 5.78* 1.1*"
+        id="references_method_createRG_table">-->
+        <sthead>
+          <stentry>Parameter name</stentry>
+          <stentry>Parameter Type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Are Required</stentry>
+        </sthead>
+        <strow>
+          <stentry>name</stentry>
+          <stentry>string</stentry>
+          <stentry>Slice group name, the same database object, a unique slice group name.</stentry>
+          <stentry>Yes</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>Format</title>
+      <p>Definition Format removeRG() method, only the name field, name value is a string,
+        required.</p>
+      <p><codeblock>(&lt;"Slice group name">)</codeblock></p>
+      <note>
+        <ul><li>Slice group name must exist.</li></ul>
+      </note>
+    </section>
+    <section><title>Example</title>
+      <ul>
+        <li><p>Delete slice group called "group" of</p>
+          <p><codeblock>db.removeShard("group")</codeblock></p></li>
+      </ul>     
+    </section>
+  </body>
+  <related-links>
+    <link href="getRG_en.dita" format="dita" type="topic"></link>
+    <link href="dblist_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

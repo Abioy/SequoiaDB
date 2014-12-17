@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>Operation and maintain Map</title>
+ <topicref href="topics/operation_maintain.dita">
+   <topicref href="topics/cluster_start_stop.dita">
+     <topicref href="topics/cluster_start.dita"/>
+     <topicref href="topics/cluster_stop.dita"/>
+   </topicref>
+   <topicref href="topics/bandr.dita">
+     <topicref href="topics/data_backup.dita"/>
+     <topicref href="topics/search.dita"/>
+     <topicref href="topics/data_recovery.dita"/>
+     <topicref href="topics/instructions.dita"/>
+   </topicref>
+   <topicref href="topics/fault_recovery.dita">
+     <topicref href="topics/catalog.dita"/>
+     <topicref href="topics/datanode.dita"/>
+     <topicref href="topics/coord.dita"/>
+   </topicref>
+   <topicref href="topics/monitor.dita">
+     <topicref href="topics/monitor_node.dita"/>
+     <topicref href="topics/monitor_cluster.dita"/>
+   </topicref>
+ </topicref> 
+</map>

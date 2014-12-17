@@ -1,0 +1,143 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Background Task"/>
+<meta name="description" content="Concept Background task is a kind of task that never block front session. It won't stop when a front session pauses. All the background tasks is recorded in the collection of SYSCAT.SYSTASKS in ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../administration/concepts/cluster/topics/sharding_en.html"/>
+<meta name="DC.Relation" scheme="URI" content="SYSTASKS_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="administration_concepts_task"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>Background Task</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="administration_concepts_task"><a name="administration_concepts_task"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../administration/concepts/cluster/topics/sharding_en.html" title="Sharding"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sharding</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="cluster_en.html" title="Cluster">Cluster</a> / <a class="navheader_parent_path" href="../../../../administration/concepts/cluster/topics/sharding_en.html" title="Sharding">Sharding</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">Background Task</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">Concept</h2>
+      <p class="p">Background task is a kind of task that never block front session. It won't stop when a
+        front session pauses.</p>
+
+      <p class="p">All the background tasks is recorded in the collection of SYSCAT.SYSTASKS in catalog node.
+        Different types of background tasks may contain different fields.</p>
+
+      <p class="p">All the background tasks contain fields as follow: </p>
+
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d10337e27" class="stentry">Field Name</th>
+
+          <th valign="bottom" align="left" id="d10337e30" class="stentry">Type</th>
+
+          <th valign="bottom" align="left" id="d10337e33" class="stentry">Describtion</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d10337e27" class="stentry">JobType</td>
+
+          <td valign="top" headers="d10337e30" class="stentry">Integer</td>
+
+          <td valign="top" headers="d10337e33" class="stentry">Task type, representd:
+            <ul class="ul">
+              <li class="li">0: data split</li>
+
+            </ul>
+
+          </td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d10337e27" class="stentry">Status</td>
+
+          <td valign="top" headers="d10337e30" class="stentry">Integer</td>
+
+          <td valign="top" headers="d10337e33" class="stentry">Task status, represents:
+            <ul class="ul">
+              <li class="li">0: prepare</li>
+
+              <li class="li">1: run</li>
+
+              <li class="li">2: pause</li>
+
+              <li class="li">3: cancel</li>
+
+              <li class="li">4: change metadata</li>
+
+              <li class="li">9: completed</li>
+
+            </ul>
+
+          </td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d10337e27" class="stentry">CollectionSpace</td>
+
+          <td valign="top" headers="d10337e30" class="stentry">String</td>
+
+          <td valign="top" headers="d10337e33" class="stentry">colelction space name</td>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d10337e27" class="stentry">Collection</td>
+
+          <td valign="top" headers="d10337e30" class="stentry">String</td>
+
+          <td valign="top" headers="d10337e33" class="stentry">collection name</td>
+
+        </tr>
+</table>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Background task type includes:</h2>
+      
+      <ul class="ul">
+        <li class="li"><a class="xref" href="split_en.html">data split</a></li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="SYSTASKS_en.html" title="SYSTASKS Collection">SYSTASKS Collection</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../../administration/concepts/cluster/topics/sharding_en.html" title="Sharding"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sharding</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

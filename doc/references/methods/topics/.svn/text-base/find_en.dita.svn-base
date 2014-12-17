@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_find">
+  <title>db.collectionspace.collection.find()</title>
+  <body>
+    <section><title>db.collectionspace.collection.find([cond],[sel])</title>
+      <p>The method "find()" selects records that users need. It will return a cursor. In Sequoiadb,
+        a  cursor is a pointer which point to a query result set. The client can go through teh
+        query results.</p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.31* 11.32* 1.34*"
+        id="references_method_find_table">-->
+        <sthead>
+          <stentry>Parameter Name</stentry>
+          <stentry>Parameter Type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Not Null</stentry>
+        </sthead>
+        <strow>
+          <stentry>cond</stentry>
+          <stentry>json object</stentry>
+          <stentry>Selecting condtion. If it is null, it will find all the records. If it is not
+            null, it will find records that matches the condition.</stentry>
+          <stentry>no</stentry>
+        </strow>
+        <strow>
+          <stentry>sel</stentry>
+          <stentry>json object</stentry>
+          <stentry> It chooses fields to be returned. If it is null, it will return all the
+            records.If a field doesn't exist, it will return null string.</stentry>
+          <stentry>no</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>Format</title>
+      <p>The definitin of "find()" contains 2 parameters: cond and sel, which are both in the type
+        of JSON object. The parameter "cond" specifys the matching condition. The parameter "sel"
+        specifys the fields to be returned.</p>
+      <p><codeblock>{[{"field name 1":{<xref href="../../console/topics/console_en.dita">"match 1"</xref>:"value 1","field name 2":{"match 2":"value 2"},...}],[{"field name 1":"","field name 2":"",..}]}</codeblock></p>
+      <note>
+        <p>The parameter "sel" is in the type of a json object. The value of the field is null
+          string. But if it is specified as :{"field name 1":"value 1","field name 2":"value 2",...}
+          and records conain choosed field, the values are invalid. If fields specified in "sel"
+          don't exist, it will return "{"field name 1":"value 1","field name 2":"value 2",...}".</p>
+      </note>
+    </section>
+    <section>
+      <title>Sample</title>
+        <ul>
+          <li>
+            <p>Find all the records without specifying the field "cond" and "sel".</p>
+            <codeblock>db.foo.bar.find()</codeblock>
+          </li>
+          <li>
+            <p>Find records that matches the value of the parameter "cond".</p>
+            <codeblock>db.foo.bar.find({age:{<xref href="../../console/topics/gt_en.dita">$gt</xref>:25},name:"Tom"})</codeblock>
+            <p>This operation will return records that contains the value of "age" greater than 25
+            and the value "Tom" on the field "name".</p>
+          </li>
+          <li>
+            <p>Specify the fields to return by setting the content of the parameter "sel".For
+            example, there are 2 records: "{age:25,type:"system"}" and
+            "{age:20,name:"Tom",type:"normal"}".</p>
+            <codeblock>db.foo.bar.find(null,{age:"",name:""})</codeblock>
+            <p>This operation return the value of "age" and "name". So it will
+            return:"{age:25,name:""}，{age:20,name:"Tom"}". Although the first record doesn't contain
+            the field, it will return "name:""".</p>
+          </li>
+        </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="dbinsert_en.dita" format="dita" type="topic"></link>
+    <link href="remove_en.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/concepts/database/topics/collection_en.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/concepts/database/topics/collectionspace_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

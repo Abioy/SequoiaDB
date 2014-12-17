@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_sql_update_en">
+  <title>sql update</title>
+  <body>
+    <section><title>update </title>
+      <p>Be used to modify records in the collection.</p>
+    </section>
+    <section><title>Grammar</title>
+      <p><codeblock>update &lt;cs_name>.&lt;cl_name> set (&lt;field1_name>=&lt;value1>,...) [where &lt;condition>]</codeblock></p>
+      <p>&lt;cs_name>：collectionspace name</p>
+      <p>&lt;cl_name>：collection name</p>
+      <p>&lt;condition>：condition,only update the records match the condition.</p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li><p>This sample will modify all the records in the collection,the value of field name <i>age</i> will
+            be update <i>20</i>,if a records doesnot contain feild <i>age</i>,then 'age:20' will be
+            add to the record.</p>
+          <p><codeblock>db.execUpdate("update foo.bar set age=20") </codeblock></p>
+        </li>
+        <li>This sample will be modify the match records,only update the records that satisfy the
+          condition
+          <i>age&lt;10</i>.<codeblock>db.execUpdate("update foo.bar set age=20 where age&lt;10")</codeblock></li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="list_cs_en.dita" format="dita" type="topic"></link>
+    <link href="sqinsert_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

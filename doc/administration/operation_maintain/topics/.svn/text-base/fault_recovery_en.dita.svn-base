@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_ql3_ccp_fm">
+  <title>Failure Recovery</title>
+  <body>
+    <p>This section describes the types of node failure recovery.</p>
+    <p><xref href="catalog_en.dita">Coord Node</xref></p>
+    <p><xref href="datanode_en.dita">Data Node</xref></p>
+    <p><xref href="coord_en.dita">Catalog Node</xref></p>
+  </body>
+</topic>

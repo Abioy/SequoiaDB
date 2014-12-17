@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/10926/trunk/doc/out_en/administration/database/data_recovery
+END
+cluster_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/10554/trunk/doc/out_en/administration/database/data_recovery/cluster_en.html
+END
+sample_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/10926/trunk/doc/out_en/administration/database/data_recovery/sample_en.html
+END
+data_recovery_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/10554/trunk/doc/out_en/administration/database/data_recovery/data_recovery_en.html
+END
+standalone_en.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/10554/trunk/doc/out_en/administration/database/data_recovery/standalone_en.html
+END

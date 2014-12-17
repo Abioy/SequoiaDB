@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/sequoiadb/!svn/ver/16084/trunk/misc/ci/mkrelease
+END
+sequoiadb_server.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16074/trunk/misc/ci/mkrelease/sequoiadb_server.xml
+END
+sequoiadb-1.8.spec
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/14402/trunk/misc/ci/mkrelease/sequoiadb-1.8.spec
+END
+sequoiadb_zh.lng
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16084/trunk/misc/ci/mkrelease/sequoiadb_zh.lng
+END
+sequoiadb_en.lng
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16084/trunk/misc/ci/mkrelease/sequoiadb_en.lng
+END

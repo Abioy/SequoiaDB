@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_methods_toArray">
+  <title>query.toArray()</title>
+  <body>
+    <section><title>query.toArray()</title>
+      <p>以数组的形式返回结果集。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p>以数组的形式返回集合 bar 中 age 字段值大于5的记录。</p>
+          <p><codeblock>db.foo.bar.find({age:{<xref href="../../console/topics/gt.dita">$gt</xref>:10}}).toArray()</codeblock></p>
+          <codeblock>返回：{
+  "_id": {
+    "$oid": "516a76a1c9565daf06030000"
+  },
+  "age": 10,
+  "name": "Tom"
+},{
+  "_id": {
+    "$oid": "516a76a1c9565daf06050000"
+  },
+  "age": 20,
+  "a": 10
+},{
+  "_id": {
+    "$oid": "516a76a1c9565daf06040000"
+  },
+  "age": 15
+}</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="csize.dita" format="dita" type="topic"></link>
+    <link href="find.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/gt.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

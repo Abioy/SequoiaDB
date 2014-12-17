@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_createRG">
+  <title>db.list()</title>
+  <body>
+    <section><title>db.list(&lt;listType>,[con],[sel],[sort])</title>
+      <p>Enumerate list. List is a lightweight command to get the current system status.<xref
+          href="../../../administration/database/topics/monitoring_en.dita">Click here to learn more
+          about list.</xref>
+      </p>
+    </section>
+    <section><title>Parameter Description</title>
+      <simpletable><!-- frame="all" relcolwidth="1.23* 1.52* 7.32* 1.0*"
+        id="references_method_list_table">-->
+        <sthead>
+          <stentry>Parameter Name</stentry>
+          <stentry>Parameter Type</stentry>
+          <stentry>Description</stentry>
+          <stentry>Not Null</stentry>
+        </sthead>
+        <strow>
+          <stentry>listType</stentry>
+          <stentry>Enumeration</stentry>
+          <stentry><xref href="../../../administration/database/topics/monitoring_en.dita">List
+              type</xref>. The value of it is in the range from 0 to 7.</stentry>
+          <stentry>yes</stentry>
+        </strow>
+        <strow>
+          <stentry>con</stentry>
+          <stentry>json object</stentry>
+          <stentry>Selecting condition. It just returns the records that match conditions in "con".
+            When it is null, return all records.</stentry>
+          <stentry>no</stentry>
+        </strow>
+        <strow>
+          <stentry>sel</stentry>
+          <stentry>json object</stentry>
+          <stentry>Select fields to be returned. When it is null, return all records.</stentry>
+          <stentry>no</stentry>
+        </strow>
+        <strow>
+          <stentry>sort</stentry>
+          <stentry>json object</stentry>
+          <stentry>Sort records. "1" means ascending order. "-1" means descending order.</stentry>
+          <stentry>no</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>Format</title>
+      <p>The method "list()" contians 4 parameters: listType, con, sel and sort. The parameter
+        "listType" is in the type of enumeration. Other parameters are in the type of json object.
+        The format is as follow:</p>
+      <codeblock>{"listType":"&lt;List type>",["con":"{"field name 1":{"operator 1":"value 1"},"field name 2":{"operator 2":"value 2"}...}"],["sel":"{"field name 1":"","field name 2":"",...}"],["sort":"{"field name 1":-1|1,"field name 2":1|-1,...}"]}</codeblock>
+      <note>
+        <ul>
+          <li>The value of "listType" is in the range from 0 to 7.</li>
+          <li>The value of "sel" is in the type of json object. The value of each field in it is
+            always null string. If it is specified as "{"field name 1": "value 1", "field name
+            2":"value 2",...}", the values of existing fields are invalid. As for fields that
+            doesn't exist, it will return "{"field name 1": "value 1", "field name 2":"value
+            2",...}".</li>
+          <li>If a value of a field is in the type of array, users can use "." to invoke it and add
+            double quotation.</li>
+        </ul>
+      </note>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>Specify the value of "listType" as 0：<codeblock>db.list(0)</codeblock></p>
+          <p>Return ：</p>
+          <codeblock>     {
+        "SessionID": 4,
+        "Contexts": [ 0 ]
+      } ...</codeblock>
+        </li>
+        <li>
+          <p>Specify the value of "listType" as 6：<codeblock>db.list(6)</codeblock></p>
+          <p>Return：</p>
+          <codeblock>    {
+        "Name": "foo", 
+        "ID": 4094,
+        "Logical ID": 1,
+        "PageSize": 4096, 
+        "Sequence": 1, 
+        "NumCollections": 1,
+        "CollectionHWM": 3,
+        "Size": 172032000 
+      } </codeblock>
+        </li>
+        <li>
+          <p>
+            <codeblock>db.list(6,{"Logical ID":{$gt:1}},{Name:"space",ID:2},{Name：1})</codeblock>
+          </p>
+          <p>Return records that contains the value of "Logical" greater than 1. Each record just
+            return the 2 fields: Name and ID. The values of "Name" in these records are in ascending
+            order.  </p>
+          <codeblock>      {
+        "ID": 4091,
+        "Name": "foo" 
+      } 
+      {
+        "ID": 4093,
+        "Name": "name"
+       }...</codeblock> 
+        </li>
+      </ul>
+
+    </section>
+  </body>
+  <related-links>
+    <link href="getRG_en.dita" format="dita" type="topic"></link>
+    <link href="listCollectionSpaces_en.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/database/topics/EDU_en.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/console_en.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

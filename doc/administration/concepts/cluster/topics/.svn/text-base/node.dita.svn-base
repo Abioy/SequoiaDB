@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="administration_concepts_cluster_node">
+  <title>节点</title>
+  <body>
+    <section>
+      <title>概念</title>
+      <p>在 SequoiaDB 集群环境中，数据库节点分为物理节点与逻辑节点。</p>
+      <dl>
+        <dlentry>
+          <dt>逻辑节点</dt>
+          <dd>
+            <p>逻辑节点即一个单独的数据库服务，代表一个最基本的数据库服务单元。</p>
+            <p>在 Windows 与 Unix 操作系统中，一个逻辑节点即一个 SequoiaDB 进程。一台计算机中可以运行多个逻辑节点。</p>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt>物理节点</dt>
+          <dd>
+            <p>物理节点即一台单独运行操作系统的服务器，代表一个最基本的物理单元。</p>
+            <p>在虚拟化环境中，物理节点代表一台虚拟机。</p>
+          </dd>
+        </dlentry>
+      </dl>
+      <p>一个物理节点中可以运行多个逻辑节点。一般来说，同一个物理节点中的每个逻辑节点监听不同的端口，各自从相应的端口获得请求信息并返回结果。</p>
+      <p><image href="../images/logical_physicalnode.jpg" id="administration_concepts_cluster_node_img1"/></p>
+    </section>
+  </body>
+</topic>

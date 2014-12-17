@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_yxn_4wl_5n">
+  <title>db.collectionspace.getCL()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>getCL - Returns the reference of collection in a collection space.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.collectionspace.getCL</apiname>(<parmname>&lt;name></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Collectionspace
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Returns the reference of collection in a collection space.</p>
+      <parml>
+        <plentry>
+          <pt>name (string)</pt>
+          <pd>Collection name. In a collection space, collection name should be unique to each other.
+            <parml>
+              <plentry>
+                <pt>Format</pt>
+                <pd>The parameter "name" in the method "getCL()" should be specified and the "name" should be valid, or exception will occur.</pd>
+                <pd>{"name":"&lt;collection name>"}</pd>
+              </plentry>
+            </parml></pd>
+        </plentry>        
+      </parml>
+      <note>
+        <ul>
+          <li>The value of "name" should not be null string. It should not contain "." or "$". The
+            length of should not be greater than 127B. If the value of "name" is invalid, exception
+            will occur. </li>
+          <li>Make sure that the collection name exists in the collection space, or operation
+            exception will occur. </li>
+        </ul>
+      </note>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Supposing that the collection name "bar", the command returns the reference of the collection
+        "bar" in the collection space "foo".</p>
+      <codeblock>db.foo.getCL("bar")</codeblock>           
+    </section>
+  </body>
+  <related-links>
+    <link href="cs.createCL.dita" format="dita" type="topic"></link>
+    <link href="cs.dropCL.dita" format="dita" type="topic"></link>    
+  </related-links>
+</topic>

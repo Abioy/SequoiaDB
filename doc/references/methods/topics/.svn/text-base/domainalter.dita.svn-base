@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_tcr_x3v_l4">
+  <title>domain.alter()</title>
+  <body>
+    <section><title>domain.alter(&lt;options>)</title>
+      <p>修改域的属性。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable>
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>options</stentry>
+          <stentry>Json 对象</stentry>
+          <stentry>需要修改的属性列表。</stentry>
+          <stentry>是</stentry>
+        </strow>        
+      </simpletable>      
+    </section>
+    <section><title>格式</title>
+      <p>目前通过 options 可设置域的属性有：</p>
+      <simpletable>
+        <sthead>
+          <stentry>属性名</stentry>
+          <stentry>描述</stentry>
+          <stentry>格式</stentry>          
+        </sthead>
+        <strow>
+          <stentry>Groups</stentry>
+          <stentry>包含的复制组。</stentry>
+          <stentry>Groups:['data1','data2']</stentry>
+        </strow>
+        <strow>
+          <stentry>AutoSplit</stentry>
+          <stentry>自动切分。</stentry>
+          <stentry>AutoSplit:true|false</stentry>
+        </strow>
+      </simpletable> 
+      <note>
+        <ul>
+          <li>删除复制组前必须保证其不包含任何数据。</li>
+          <li>AutoSplit 的更改不对之前创建的集合和集合空间产生影响。</li>
+        </ul>
+      </note>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>首先创建一个域，包含两个复制组，开启自动切分。</p>
+          <p><codeblock>> var domain = db.createDomain('mydomain',['data1','data2'],{AutoSplit:true})</codeblock></p>
+          <p>从域中删除一个复制组 data2，添加另一个复制组 data3，最后域中包含 data1 和 data3 两个复制组。</p>
+          <p><codeblock>> domain.alter({Groups:['data1','data3']})</codeblock></p>
+        </li>
+        <li><p>首先创建一个域，包含一个复制组，复制组中包含表 foo.bar。</p>
+          <p><codeblock>> var domain = db.createDomain('mydomain',['group1'])</codeblock></p>
+          <p>从域中删除原复制组，添加另一个复制组，将因把拥有数据的 group1 从域中删除而报错。</p>
+          <p><codeblock>> domain.alter({Groups:['group2']})
+(nofile):0 uncaught exception: -256
+> getErr(-256)
+Domain is not empty</codeblock></p>
+          </li>        
+      </ul>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_g5f_ps1_q4">
+  <title>domain.listCollections()</title>
+  <body>
+    <section><title>domain.listCollections()</title>
+      <p>枚举集合，执行此方法会将指定域下的集合信息全部显示出来。</p>
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li>
+          <p><codeblock>domain.listCollections()</codeblock></p>
+          <p>返回：</p>
+          <codeblock>    { 
+        "Name": "foo.bar"
+      }</codeblock>  
+        </li>
+      </ul>
+      
+    </section>
+  </body>
+  <related-links>
+    <link href="listCollectionSpaces_domain.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

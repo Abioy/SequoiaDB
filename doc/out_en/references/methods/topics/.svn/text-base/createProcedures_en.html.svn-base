@@ -1,0 +1,155 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="db.createProcedures()"/>
+<meta name="description" content="db.createProcedures(&lt;code&gt;) Create a stord procedure in the database object. Parameter Description Parameter name Parameter type Description Required code Custom Functions Standard function ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../references/methods/topics/methodlist_en.html"/>
+<meta name="DC.Relation" scheme="URI" content="listProcedures_en.html"/>
+<meta name="DC.Relation" scheme="URI" content="removeProcedures_en.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_kxr_njz_gm"/>
+<link rel="stylesheet" type="text/css" href="../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../assets/webhelp_topic.css"/>
+<title>db.createProcedures()</title>
+<script type="text/javascript" src="../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_kxr_njz_gm"><a name="topic_kxr_njz_gm"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../references/methods/topics/methodlist_en.html" title="Sequoiadb javascript Method List"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sequoiadb javascript Method List</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/references_en.html" title="Reference">Reference</a> / <a class="navheader_parent_path" href="../../../references/methods/topics/methodlist_en.html" title="Sequoiadb javascript Method List">Sequoiadb javascript Method List</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1"> db.createProcedures() </h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">db.createProcedures(&lt;code&gt;)</h2>
+      <p class="p">Create a stord procedure in the database object.</p>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Parameter Description</h2>
+      <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+          <th valign="bottom" align="left" id="d124145e26" class="stentry">Parameter name</th>
+
+          <th valign="bottom" align="left" id="d124145e29" class="stentry">Parameter type</th>
+
+          <th valign="bottom" align="left" id="d124145e32" class="stentry">Description</th>
+
+          <th valign="bottom" align="left" id="d124145e35" class="stentry">Required</th>
+
+        </tr>
+<tr class="strow">
+          <td valign="top" headers="d124145e26" class="stentry">code</td>
+
+          <td valign="top" headers="d124145e29" class="stentry">Custom Functions</td>
+
+          <td valign="top" headers="d124145e32" class="stentry">Standard function definition, not a string type, input parameters can not use quotation marks. </td>
+
+          <td valign="top" headers="d124145e35" class="stentry">Yes</td>
+
+        </tr>
+</table>
+
+      
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Format</h2>
+      <p class="p">Definition Format createProcedures() method contains the code parameter, the parameter value is the standard fuction definition.</p>
+
+      <div class="p"><pre class="pre codeblock">createProcedures(&lt;code&gt;)</pre>
+</div>
+
+      <div class="p"><strong class="ph b">Description:</strong><a name="topic_kxr_njz_gm__ul_p2q_bmw_ql"><!-- --></a><ul class="ul" id="topic_kxr_njz_gm__ul_p2q_bmw_ql">
+        <li class="li"> Recommended direct use stored procedures have been initialized global db, such as:  <strong class="ph b">db.createProcedures( function getAll(){return
+          db.foo.bar.find();} )</strong> . But if you need authentication, then the global db failure. Needs its own initialization db.</li>
+
+        <li class="li"> Db initialization own form of <strong class="ph b">var db=new Sdb()</strong>. If you need to add a user name and password, as <strong class="ph b">var db=new Sdb('usrname','passwd')</strong>. 
+          It should be noted that when the stored procedure can only be run on a connected db, db does not provide remote connection to other methods. Without 
+          the need for authentication, even if <strong class="ph b">var db = new Sdb('hostname', 'servicename')</strong> statement is executed normally. Db still get local db.</li>
+
+        <li class="li">Db role must be coordinated nodes. standalone mode does not provide the stored procedure functionality.</li>
+
+      </ul>
+</div>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Function definition</h2>
+      
+      <a name="topic_kxr_njz_gm__ul_rnt_h4w_ql"><!-- --></a><ul class="ul" id="topic_kxr_njz_gm__ul_rnt_h4w_ql">
+        <li class="li"><p class="p">Function definition</p>
+
+          <p class="p">1. function must contain the tunction name. Can not be used as: <strong class="ph b">function(x,y){return x+y;}</strong></p>
+
+          <p class="p">2. In the function definition can call other functions or function does not exist. But need to ensure the operation of all fuctions already exist.</p>
+
+          <p class="p">3. globally unique function name. No overloading. </p>
+
+          <p class="p">4. Each fuction are available in the whole system. Feel free to delete a stored procedure may cause others to fail.</p>
+</li>
+
+        <li class="li">Function parameters <p class="p">native type of JS</p>
+</li>
+
+        <li class="li">Function outputs <p class="p">Function for all standard output, standard error will be masked. While not recommend adding output statements in the function
+        definition or execution. The output may result in large number of stored procedures fail.</p>
+</li>
+
+        <li class="li">function return values <p class="p">Function return value can be any type of data except for db. Such as: <strong class="ph b">function getCL(){return db.foo.bar;}</strong></p>
+</li>
+
+      </ul>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">Example</h2>
+      <ul class="ul">
+        <li class="li"><p class="p">Create a sum function</p>
+
+          <pre class="pre codeblock">db.createProcedures(function sum(x,y){return x+y;})</pre>
+
+          <p class="p">After you crdate can be used <a class="xref" href="listProcedures_en.html">db.listProcedures()</a> function to view the information.</p>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="related-links"><div class="relinfo"><strong>Related information</strong><br/>
+<div><a class="navheader_parent_path" href="listProcedures_en.html" title="db.listProcedures()">db.listProcedures()</a></div>
+<div><a class="navheader_parent_path" href="removeProcedures_en.html" title="db.removeProcedures()">db.removeProcedures()</a></div>
+</div>
+</div>
+<div class="navfooter"><a class="link" href="../../../references/methods/topics/methodlist_en.html" title="Sequoiadb javascript Method List"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Sequoiadb javascript Method List</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.6
+          
+    </div>
+</body>
+</html>

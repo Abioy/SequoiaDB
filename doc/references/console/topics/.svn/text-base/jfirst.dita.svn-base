@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_hm1_mwj_pl">
+  <title>$first</title>
+  <body>
+    <section>
+      <title>描述</title>
+      <p>记录分组后，取分组中第一条记录指定的字段值，对嵌套对象使用点操作符（.）引用字段名。</p>
+    </section>
+   <section>
+     <title>示例</title>
+     <ul>
+       <li>对记录分组后，输出每个分组第一条记录的指定字段值
+          <codeblock>db.collectionspace.collection.aggregate({$group:{_id:"$dep",Dep:{$first:"$dep"},Name:{$first:"$info.name"}}})</codeblock>
+         此操作对记录按 dep 字段分组，取每个分组中第一条记录的 dep 字段值和嵌套对象 name 字段值，输出字段名分别为 Dep 和 Name，记录返回如下：<codeblock>{
+  "Dep": "物电学院",
+  "Name": "Lily"
+}
+{
+  "Dep": "计算机学院",
+  "Name": "Tom"
+}</codeblock></li>
+     </ul>
+   </section>
+  </body>
+  <related-links>
+    <link href="j$addToSet.dita" format="dita" type="topic"></link>
+    <link href="jlast.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

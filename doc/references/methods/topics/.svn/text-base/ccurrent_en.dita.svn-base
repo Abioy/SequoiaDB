@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_methods_current">
+  <title>cursor.current()</title>
+  <body>
+    <section><title>cursor.current()</title>
+      <p>Return the record that current cursor currently point to. <xref href="next_en.dita">Click
+          here to learn more about the method "cursor.next()".</xref></p>
+    </section>
+    <section><title>Sample</title>
+      <ul>
+        <li>
+          <p>Select records with the value of "age" greater than 10 in the collection "bar" and
+            return the record that current cursor currently point to.</p>
+          <p><codeblock>db.foo.bar.find({age:{<xref href="../../console/topics/gt_en.dita">$gt</xref>:10}}).current()</codeblock></p>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="hint_en.dita" format="dita" type="topic"/>
+    <!--<link href="current_en.dita" format="dita" type="topic"/>-->
+    <link href="find_en.dita" format="dita" type="topic"/>
+    <link href="../../console/topics/gt_en.dita" format="dita" type="topic"/>
+  </related-links>
+</topic>

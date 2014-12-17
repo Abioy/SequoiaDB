@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/exec-testcases
+END
+exec-ant-testcases.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/exec-testcases/exec-ant-testcases.xml
+END
+exec-samples-testcases.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/exec-testcases/exec-samples-testcases.xml
+END
+exec-hadoop-conn-test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/exec-testcases/exec-hadoop-conn-test.xml
+END
+exec-tpcc-testcases.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/exec-testcases/exec-tpcc-testcases.xml
+END
+exec-driver-java-test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/exec-testcases/exec-driver-java-test.xml
+END
+exec-driver-python-test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/exec-testcases/exec-driver-python-test.xml
+END
+exec-driver-C-test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/exec-testcases/exec-driver-C-test.xml
+END
+exec-driver-CPP-test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/exec-testcases/exec-driver-CPP-test.xml
+END
+exec-unusual-testcases.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/exec-testcases/exec-unusual-testcases.xml
+END
+exec-basic-testcases.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/exec-testcases/exec-basic-testcases.xml
+END
+exec-driver-php-test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/exec-testcases/exec-driver-php-test.xml
+END

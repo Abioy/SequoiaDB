@@ -1,0 +1,145 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xml:lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="PHP 驱动"/>
+<meta name="description" content="概述 SequoiaDB PHP 驱动提供了数据库操作和集群操作的 PHP 接口。数据库操作包括数据库的连接，用户的创建删除，数据的增删改查，索引的创建删除，快照的获取与重置，以及集合与集合空间的创建删除操作等操作。集群操作包括管理分区组和数据节点的各种操作，譬如启动，停止分区组，启动，停止数据节点，获取主从数据节点，集合分区等。 PHP 驱动的有两种类实例。一种用于 数据库操作 ，另一种用于 ..."/>
+<meta name="DC.Relation" scheme="URI" content="../../../../developement/application/PHP/topics/php.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="topic_gyw_mk4_jl"/>
+<link rel="stylesheet" type="text/css" href="../../../../commonltr.css"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/webhelp_topic.css"/>
+<title>PHP 驱动</title>
+<script type="text/javascript" src="../../../../assets/jquery-1.3.2.js"> </script><script type="text/javascript" src="../../../../assets/jquery-ui-1.8.2.custom.min.js"> </script><script type="text/javascript" src="../../../../assets/frames_redirect.js"> </script><script type="text/javascript"><!--
+    var prefix = "../../../../../index.html";
+    var ratingFile = "";
+    redirectToToc(window.location.search);
+    function highlightSearchTerm(){
+        if(parent.termsToHighlight != null){
+        // highlight each term in the content view  
+          for(i = 0 ; i < parent.termsToHighlight.length ; i++){        
+              $('*', window.parent.frames[1].document).highlight(parent.termsToHighlight[i]);
+          }
+        }
+    }
+//--></script></head>
+<body onload="highlightSearchTerm()" id="topic_gyw_mk4_jl"><a name="topic_gyw_mk4_jl"><!-- --></a>
+<table class="nav"><tbody><tr><td><div class="navheader"><span class="frames" onclick="redirectFrames(location.pathname)"><script type="text/javascript"><!--
+  if (parent.window.location.pathname == window.location.pathname ) document.write('With Frames');                    
+                    --></script></span><a class="link" href="../../../../developement/application/PHP/topics/php.html" title="PHP 驱动"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">PHP 驱动</span></a>  </div></td><td width="50%"><a class="navheader_parent_path" href="../../topics/application.html" title="SequoiaDB 应用程序开发">SequoiaDB 应用程序开发</a> / <a class="navheader_parent_path" href="../../../../developement/application/PHP/topics/php.html" title="PHP 驱动">PHP 驱动</a></td></tr></tbody></table>
+
+  <h1 class="title topictitle1">PHP 驱动</h1>
+
+  <div class="body">
+    <div class="section"><h2 class="title sectiontitle">概述</h2>
+      
+      <p class="p">SequoiaDB PHP 驱动提供了数据库操作和集群操作的 PHP 接口。数据库操作包括数据库的连接，用户的创建删除，数据的增删改查，索引的创建删除，快照的获取与重置，以及集合与集合空间的创建删除操作等操作。集群操作包括管理分区组和数据节点的各种操作，譬如启动，停止分区组，启动，停止数据节点，获取主从数据节点，集合分区等。</p>
+
+      <p class="p">PHP 驱动的有两种类实例。一种用于<strong class="ph b">数据库操作</strong>，另一种用于<strong class="ph b">集群操作</strong>。</p>
+
+      <ul class="ul">
+        <li class="li">数据库操作实例<p class="p">SequoiaDB 数据库中的数据存放分为三个级别：</p>
+<p class="p"><strong class="ph b">1）数据库</strong></p>
+<p class="p"><strong class="ph b">2）集合空间</strong></p>
+<p class="p"><strong class="ph b">3）集合 </strong></p>
+
+          <p class="p">因此，在数据库操作中，可用3个类来分别表示连接，集合空间，集合实例，另1个类表示游标实例：</p>
+
+          <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="strow">
+              <td valign="top" class="stentry">SequoiaDB</td>
+
+              <td valign="top" class="stentry">数据库类</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry">SequoiaCS</td>
+
+              <td valign="top" class="stentry">集合空间类</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry">SequoiaCollection</td>
+
+              <td valign="top" class="stentry">集合类</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry">SequoiaCursor</td>
+
+              <td valign="top" class="stentry">游标类</td>
+
+            </tr>
+</table>
+
+          <p class="p">PHP 驱动需要使用不同的实例进行操作。譬如读取数据的操作需要游标实例，而创建表空间则需要数据库实例。</p>
+</li>
+
+        <li class="li">集群操作实例<p class="p">SequoiaDB 数据库中的集群操作分为两个级别：1）分区组 2）数据节点</p>
+
+          <div class="note note"><span class="notetitle">Note:</span> 分区组包三种类型：协调分区组，编目分区组，数据分区组。</div>
+
+          <p class="p">分区组实例和数据节点实例可以用以下两种类的实例表示。</p>
+
+          <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="strow">
+              <td valign="top" class="stentry">SequoiaGroup</td>
+
+              <td valign="top" class="stentry">分区组类</td>
+
+              <td valign="top" class="stentry">分区组实例代表一个单独的分区组</td>
+
+            </tr>
+<tr class="strow">
+              <td valign="top" class="stentry">SequoiaNode</td>
+
+              <td valign="top" class="stentry">数据节点类</td>
+
+              <td valign="top" class="stentry">数据节点实例代表一个单独的数据节点</td>
+
+            </tr>
+</table>
+
+          <p class="p">与集群相关的操作需要使用分区组及数据节点实例。</p>
+
+          <p class="p">SequoiaGroup 的实例用于管理分区组。其操作包括启动，停止分区组，获取分区组中节点的状态，名称信息，数目信息。</p>
+
+          <p class="p">SequoiaNode 的实例用于管理节点。其操作包括启动，停止指定的节点，获取指定节点实例，获取主从节点实例，获取数据节点地址信息。</p>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="section"><h2 class="title sectiontitle">错误信息</h2>
+      
+      <ul class="ul">
+        <li class="li">一个函数被成功调用则返回 true（或整型1），否则返回值为 false（或整型0）</li>
+
+        <li class="li">如果用户需要知道详细的错误信息，可以调用 getError() 获取错误信息，如果没有错误，则会输出“No error message”</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="related-links"/>
+<div class="navfooter"><a class="link" href="../../../../developement/application/PHP/topics/php.html" title="PHP 驱动"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">PHP 驱动</span></a>  <script type="text/javascript"><!--         
+    function expand(){
+        parent.tocwin.expandToTopic(window.location.href, this.getAttribute('href'));
+    }
+    var aArray = document.getElementsByTagName('a');
+    var i;
+    for (i = 0; i< aArray.length; i++){
+      aArray[i].onclick = expand;
+    }
+//--></script></div><div class="footer"><a href="http://www.sequoiadb.com" target="_blank"><img src="../../../../assets/images/sequoiadb_logo.png" alt="SequoiaDB"/></a>SequoiaDB Version 1.11
+          
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map><title>application_php_map</title>
+ <topicref href="topics/php.dita">
+  <topicref href="topics/php_start.dita"/>
+  <topicref href="topics/phpenvironment.dita"/>
+  <topicref href="topics/pbase_operations.dita"/>
+  <topicref href="topics/phpsql.dita"/>
+  <topicref href="topics/php_api.dita"/>
+ </topicref> 
+</map>

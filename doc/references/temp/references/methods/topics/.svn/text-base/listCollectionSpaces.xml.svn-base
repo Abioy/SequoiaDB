@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\references\methods\topics?><?path2project ..\..\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="references_method_listCollectionSpaces" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="topic:1">
+  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="title:1">db.listCollectionSpaces()</title>
+  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="body:1">
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="section:1"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="title:2">db.listCollectionSpaces()</title>
+      <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="p:1">枚举数据库中所有的集合空间。</p>
+    </section>
+    <section class="- topic/section " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="section:2"><title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="title:3">示例</title>
+      <ul class="- topic/ul " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="ul:1">
+        <li class="- topic/li " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="li:1"><p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="p:2"><codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="codeblock:1">db.listCollectionSpace()</codeblock></p>
+          <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="p:3">返回：</p>
+          <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="codeblock:2">      { 
+        "Name":"foo" 
+      }...</codeblock></li>
+      </ul>
+      
+    </section>
+  </body>
+  <related-links class="- topic/related-links " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="related-links:1">
+    <link href="list.xml" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="link:1" type="topic"><?ditaot gentext?><linktext class="- topic/linktext ">db.list()</linktext></link>
+    <link href="listCollections.xml" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="link:2" type="topic"><?ditaot gentext?><linktext class="- topic/linktext ">db.listCollections()</linktext></link>
+    <link href="../../../administration/concepts/database/topics/collectionspace.xml" format="dita" type="topic" class="- topic/link " xtrf="C:\SequoiaDB\doc\references\methods\topics\listCollectionSpaces.dita" xtrc="link:3"><?ditaot gentext?><linktext class="- topic/linktext ">集合空间</linktext></link>
+  </related-links>
+</topic>

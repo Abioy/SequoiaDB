@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="references_method_count">
+  <title>db.collectionspace.collection.count()</title>
+  <body>
+    <section><title>db.collectionspace.collection.count([cond])</title>
+      <p>统计指定集合空间下指定集合的记录总数。</p>
+    </section>
+    <section><title>参数描述</title>
+      <simpletable><!-- frame="all" relcolwidth="1.0* 1.0* 5.9* 1.0*"
+        id="references_method_count_table">-->
+        <sthead>
+          <stentry>参数名</stentry>
+          <stentry>参数类型</stentry>
+          <stentry>描述</stentry>
+          <stentry>是否必填</stentry>
+        </sthead>
+        <strow>
+          <stentry>cond</stentry>
+          <stentry>json对象</stentry>
+          <stentry>选择条件。为空时，统计集合下所有的记录总数；不为空时，统计符合条件的记录总数。</stentry>
+          <stentry>否</stentry>
+        </strow>
+      </simpletable>
+      
+    </section>
+    <section><title>格式</title>
+      <p>count()方法的定义格式包含cond字段，它是一个JSON对象。</p>
+      <p><codeblock>{[{"字段名1":{<xref href="../../console/topics/console.dita">"匹配符1"</xref>:"值1"},"字段名2":{"匹配符2":"值2"},...}]}</codeblock></p>
+      
+    </section>
+    <section><title>示例</title>
+      <ul>
+        <li><p>统计集合bar所有的记录数，即不指定参数cond</p>
+            <codeblock>db.foo.bar.count()</codeblock>
+        </li>
+        <li>
+          <p>统计符合条件name字段的值为“Tom”且age字段的值大于25的记录数</p>
+          <codeblock>db.foo.bar.count({name:"Tom",age:{$gt:25}})</codeblock>
+        </li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <link href="dropCS.dita" format="dita" type="topic"></link>
+    <link href="insert.dita" format="dita" type="topic"></link>
+    <link href="../../console/topics/console.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/concepts/database/topics/collection.dita" format="dita" type="topic"></link>
+    <link href="../../../administration/concepts/database/topics/collectionspace.dita" format="dita" type="topic"></link>
+  </related-links>
+</topic>

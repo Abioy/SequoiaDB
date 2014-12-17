@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_1y1_zdf_5n">
+  <title>db.execUpdate()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>execUpdate - Execute other SQL statements.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p>
+      <apiname>db.execUpdate</apiname>(<parmname>&lt;other sql></parmname>)
+    </section>    
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Sequoiadb
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Execute other SQL statements.</p>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Insert a new record into the collection named "my.my".</p>
+      <codeblock>db.execUpdate("insert into my.my(name,age) values('zhangshang', 30) ")</codeblock>
+    </section>
+  </body>  
+</topic>

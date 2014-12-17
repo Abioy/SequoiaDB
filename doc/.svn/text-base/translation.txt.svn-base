@@ -1,0 +1,33 @@
+﻿
+Problems:
+
+1,目前英文版的文档里所有的图都是中文的，这些图还没重新做。
+
+3,C:\sequoiadb\doc\developement\application\C\topics\bson_en.dita  翻一半，搁置
+
+4,C:\sequoiadb\doc\developement\application\java\topics\javadriver_en.dita “删除”那里有问题
+
+5,C:\sequoiadb\doc\installation\server_installation\topics\linux_en.dita  里面由于我没亲自安装过服务器，
+所以翻译出来的界面内容跟用户实际上看到的内容可能不一致，建议修改。
+
+
+7,C:\sequoiadb\doc\references\methods\topics\snapshot_en.dita 中，Note那里翻译也有问题。
+
+8,目前所有还没翻译的文件：
+
+Reference:
+
+"C:\sequoiadb\doc\references\console\topics\新建文件夹\" 里面的要翻译好然后迁移到 
+“C:\sequoiadb\doc\references\console\topics\”   删除“新建文件夹”
+
+9,PHP和CPP版本的驱动还没定稿，暂时没翻译
+
+
+
+
+
+
+
+
+
+infrastructure_en.dita里面有问题需要改

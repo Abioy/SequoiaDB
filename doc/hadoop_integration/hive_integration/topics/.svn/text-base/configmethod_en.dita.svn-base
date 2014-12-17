@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_nbk_zfq_fm">
+  <title>Configuration Method</title>
+  <body>
+    <p>1.	Install adn configure Hadoop/Hive environment, start hadoop environment.</p>
+    <p>2.	Copy the sequoiadb installation directory (by default in /opt/sequoiadb) of hadoop/hive-sequiadb-{version}.jar and java/sequoiadb.jar two files are copied to the hive/lib installation directory.</p>
+    <p>3.	Modify the hive installation directory under bin/hive-site.xml file (if you do not exist, you can copy the $HIVE_HOME/conf/hive-default.xml.template to hive-site.xml file), add the following attributes:</p>
+    <codeblock>&lt;property&gt;
+  &lt;name&gt;hive.aux.jars.path&lt;/name&gt;
+  &lt;value&gt;file://&lt;HIVE_home&gt;/lib/hive-sequoiadb-{version}.jar,file://&lt;HIVE_HOME&gt;/lib/sequoiadb.jar&lt;/value&gt;
+  &lt;description&gt;Sequoiadb store handler jar file&lt;/description&gt;
+&lt;/property&gt;
+            
+&lt;property&gt;
+  &lt;name&gt; hive.auto.convert.join&lt;/name&gt;
+  &lt;value&gt;false&lt;/value&gt;
+  &lt;/property&gt;</codeblock>
+    <note>Thesejar packages need to be stored at HDFS, and the path is the same as the file protocol.</note>
+  </body>
+</topic>

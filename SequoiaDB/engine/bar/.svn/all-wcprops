@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sequoiadb/!svn/ver/16565/trunk/SequoiaDB/engine/bar
+END
+barRestoreJob.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/bar/barRestoreJob.cpp
+END
+barBkupLogger.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16565/trunk/SequoiaDB/engine/bar/barBkupLogger.cpp
+END

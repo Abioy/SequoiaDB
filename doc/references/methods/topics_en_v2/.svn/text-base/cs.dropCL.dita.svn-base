@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_gz4_z5l_5n">
+  <title>db.collectionspace.dropCL()</title>
+  <body>
+    <section>
+      <title>NAME</title>
+      <p>dropCL - Delete a specified collection in a specified collection space.</p>
+    </section>
+    <section>
+      <title>SYNOPSIS</title>
+      <p></p><apiname>db.collectionspace.dropCL</apiname>(<parmname>&lt;name></parmname>)
+    </section>
+    <section>
+      <title>CATEGORY</title>
+      <p></p>Collectionspace
+    </section>
+    <section>
+      <title>DESCRIPTION</title> 
+      <p>Delete a specified collection in a specified collection space.</p>
+      <parml>
+        <plentry>
+          <pt>name (string)</pt>
+          <pd>Collection name. Collection names should be unique to each other in a collection space.
+            <parml>
+              <plentry>
+                <pt>Format</pt>
+                <pd>The parameter "name" should be specified in the method "dropCL()". It should be ensured
+                  that the collection name exists in the collection space, or operation exception will
+                  occur.</pd>
+                <pd>{"name":"&lt;collection name>"}</pd>
+              </plentry>
+            </parml></pd>
+        </plentry>        
+      </parml>
+<note>
+  <ul>
+    <li>The value of "name" should not be null string. It should not contain "." or "$". And
+      the length of it should not be greater than 127B. If the collection name is invalid ,
+      the operation will fail. </li>
+    <li>It should be ensured that the collection name exists in a collection space, or
+      exception will occur.</li>
+  </ul>
+</note>      
+    </section>    
+    <section>
+      <title>Examples</title>
+      <p>Supposing that the collection "bar" exists in the collection space "foo", the following command will delete it.</p>
+      <codeblock>db.foo.dropCL("bar")</codeblock>           
+    </section>
+  </body>
+  <related-links>
+    <link href="cs.getCL.dita" format="dita" type="topic"></link>
+    <link href="cl.count.dita" format="dita" type="topic"></link>    
+  </related-links>
+</topic>
