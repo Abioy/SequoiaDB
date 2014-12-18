@@ -1100,6 +1100,10 @@
             <stentry>Lob has been open</stentry>
             <stentry>-273</stentry>
          </strow>
+         <strow>
+            <stentry>Node is in restoring</stentry>
+            <stentry>-274</stentry>
+         </strow>
       </simpletable>
    </body>
 </topic>

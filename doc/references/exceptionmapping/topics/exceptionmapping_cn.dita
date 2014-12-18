@@ -1100,6 +1100,10 @@
             <stentry>大对象已打开</stentry>
             <stentry>-273</stentry>
          </strow>
+         <strow>
+            <stentry>节点正在启动恢复</stentry>
+            <stentry>-274</stentry>
+         </strow>
       </simpletable>
    </body>
 </topic>
