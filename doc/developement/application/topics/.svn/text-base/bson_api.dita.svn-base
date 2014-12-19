@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_2kt_wjd_kk">
-  <title>C BSON API</title>
-  <body>
-    <p>此部分是相关 C BSON 的 API 文档。</p>
-    <p><xref href="..\..\..\bson\html\index.html" format="html">C BSON API</xref></p> 
-  </body>
-</topic>

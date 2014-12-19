@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_2bc_slp_fm">
-  <title>Catalog Node</title>
-  <body>
-    <p>Catalog a node failure recovery strategies and the same data nodes. <xref href="datanode_en.dita">Click here</xref></p>
-  </body>
-</topic>

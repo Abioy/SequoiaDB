@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="administration_concepts_database">
-  <title>数据库</title>
-  <body>
-    <p>数据库的主要对象包括文档，集合，集合空间与索引等。</p>
-  </body>
-</topic>

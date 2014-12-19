@@ -1,80 +1,0 @@
-10
-
-dir
-16591
-http://192.168.20.11/sequoiadb/trunk/thirdparty/boost/boost/geometry/multi
-http://192.168.20.11/sequoiadb
-
-
-
-2012-09-14T11:58:11.093256Z
-3
-admin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6121f079-4a18-41d3-8c30-8870a322f2c2
-
-multi.hpp
-file
-
-
-
-
-2014-12-03T03:47:23.142149Z
-b5f4d12eca05e4d99cdc982f031c4974
-2012-09-14T11:58:11.093256Z
-3
-admin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3749
-
-geometries
-dir
-
-io
-dir
-
-core
-dir
-
-algorithms
-dir
-
-strategies
-dir
-
-views
-dir
-
