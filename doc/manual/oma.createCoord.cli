@@ -15,7 +15,7 @@ createCoord - Create a CoordNode in the cluster.
 .sp 2
 
 .sp 2
-oma.createCoord(\fB<svcname><dbpath>,[config obj]\fR)
+oma.createCoord(\fB<svcname>,<dbpath>,[config obj]\fR)
 .SH "CATEGORY"
 
 .sp 2

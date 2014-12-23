@@ -15,7 +15,7 @@ createData - Create a Data Node in the Standalone mode.
 .sp 2
 
 .sp 2
-oma.createData(\fB<svcname><dbpath>,[config obj]\fR)
+oma.createData(\fB<svcname>,<dbpath>,[config obj]\fR)
 .SH "CATEGORY"
 
 .sp 2

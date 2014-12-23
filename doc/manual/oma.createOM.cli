@@ -15,7 +15,7 @@ createOM - Create an OM node.
 .sp 2
 
 .sp 2
-oma.createOM(\fB<svcname><dbpath>,[config obj]\fR)
+oma.createOM(\fB<svcname>,<dbpath>,[config obj]\fR)
 .SH "CATEGORY"
 
 .sp 2

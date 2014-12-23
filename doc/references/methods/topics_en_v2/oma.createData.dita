@@ -9,7 +9,7 @@
     </section>
     <section>
       <title>SYNOPSIS</title>
-      <p></p><apiname>oma.createData</apiname>(<parmname>&lt;svcname>&lt;dbpath>,[config obj]</parmname>)
+      <p></p><apiname>oma.createData</apiname>(<parmname>&lt;svcname>,&lt;dbpath>,[config obj]</parmname>)
     </section>
     <section>
       <title>CATEGORY</title>
