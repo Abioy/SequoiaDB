@@ -21,9 +21,16 @@
       <p><b>SequoiaDB 和 MapReduce 的配置：</b></p>
       <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb-hadoop.xml 是配置文件，放在你编写的 MapReduce 工程的源码根目录下面。</p>
       <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.input.url：指定作为输入的 SequoiaDB 的 URL 路径，格式为：hostname1:port1,hostname2:port2,</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.input.user：指定输入源的 SequoiaDB 用户，默认为 null。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.input.passwd：指定输入源的 SequoiaDB 连接密码，默认为 null。</p>
       <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.in.collectionspace：指定作为输入的集合空间。</p>
       <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.in.collection：指定作为输入的集合。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.query.json：指定输入源的查询条件，使用 json 结构，默认为 null。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.selector.json：指定输入源的字段筛选，使用 json 结构，默认为 null。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.preferedinstance：指定从 SequoiaDB 中获取数据时，连接哪个数据节点，默认为 anyone，可填值：[slave/master/anyone/node(1-7)]。</p>
       <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.output.url：指定作为输出的 SequoiaDB 的 URL 路径。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.output.user：指定输出源的 SequoiaDB 用户，默认为 null。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.output.passwd：指定输出源的 SequoiaDB 连接密码，默认为 null。</p>
       <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.out.collectionspace：指定作为输出的集合空间。</p>
       <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.out.collection：指定作为输出的集合。</p>
       <p>&nbsp;&nbsp;&nbsp;&nbsp;sequoiadb.out.bulknum：指定每次向 SequoiaDB 写入的记录条数，对写入性能进行优化。</p>
@@ -98,12 +105,13 @@
      * @author gaoshengjie
      *  read the data, count penple in a province
      */
-    static class ProvinceMapper extends Mapper&lt;Object, BSONObject,IntWritable,IntWritable>{
+    static class ProvinceMapper extends Mapper&lt;Object, BSONWritable,IntWritable,IntWritable>{
         private static final IntWritable ONE=new IntWritable(1);
         @Override
-        protected void map(Object key, BSONObject value, Context context)
-                throws IOException, InterruptedException {
-            int province=(Integer) value.get("province_code");
+        protected void map(Object key, BSONWritable value, Context context)
+                throws IOException, InterruptedException {                
+                       BSONObject obj = value.getBson();
+            int province=(Integer) obj.get("province_code");
             context.write(new IntWritable(province), ONE);
         }
             
