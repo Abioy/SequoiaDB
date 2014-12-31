@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_lng_flj_kn">
-  <title>实例</title>
-  <body>
-    <p><b>复制组实例</b> 复制组中的每个数据节点都存储该复制组的一份完整数据，因此也称复制组中的每个节点为复制组实例。复制组实例可根据节点在复制组中的位置分为“主”，“备”或“0~7”标识。</p>
-    <p><b>数据库实例</b> 所有复制组中相同位置的复制组实例共同构成数据库实例，因此数据库实例也可以分为“主”，“备”或“0~7”标识。</p>
-  </body>
-</topic>

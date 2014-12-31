@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?><?workdir /C:\SequoiaDB\doc\references\temp\references\console\topics?><?path2project ..\..\?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="topic_wwl_pwr_gk" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="C:\SequoiaDB\doc\references\console\topics\push_en.dita" xtrc="topic:1">
-  <title class="- topic/title " xtrf="C:\SequoiaDB\doc\references\console\topics\push_en.dita" xtrc="title:1">Topic title</title>
-  <body class="- topic/body " xtrf="C:\SequoiaDB\doc\references\console\topics\push_en.dita" xtrc="body:1">
-    <p class="- topic/p " xtrf="C:\SequoiaDB\doc\references\console\topics\push_en.dita" xtrc="p:1">Topic paragraph</p>
-  </body>
-<related-links class="- topic/related-links "><linkpool class="- topic/linkpool " xtrc="topicref:31" xtrf="C:\SequoiaDB\doc\references\console\console_en.ditamap"><link class="- topic/link " mapclass="- map/topicref " type="topic" xtrc="topicref:22" xtrf="C:\SequoiaDB\doc\references\console\console_en.ditamap" href="../../console/topics/update_en.xml" role="parent"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Update Operator</linktext></link></linkpool></related-links>
-</topic>

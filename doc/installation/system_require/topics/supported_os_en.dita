@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_vtv_jpn_2l">
-  <title>Supported Operating System</title>
-  <body>
-    <p><xref href="client_os_en.dita">Client</xref></p>
-    <p><xref href="service_os_en.dita">Server</xref></p>
-  </body>
-</topic>

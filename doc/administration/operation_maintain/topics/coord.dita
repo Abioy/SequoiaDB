@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="topic_rgp_vfd_pl">
-  <title>编目节点</title>
-  <body>
-    <p>编目节点故障恢复策略与数据节点相同。<xref href="datanode.dita">点击这里</xref></p>
-  </body>
-</topic>

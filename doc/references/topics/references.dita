@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
-<topic id="Administration_Concepts">
-  <title>参考手册</title>
-  <body>
-    <p>有关 SequoiaDB 数据库的 JavaScript 操作方法和操作符，以及词汇表、错误代码信息和一些命名限定。</p>
-  </body>
-</topic>

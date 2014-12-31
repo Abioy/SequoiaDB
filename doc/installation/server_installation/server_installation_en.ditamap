@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
-<map>
- <title>server_installation</title>
- <topicref href="topics/server_installation_en.dita">
-  <anchorref href="autoin_en.ditamap"/>
-  <anchorref href="manualin_en.ditamap"/>
- </topicref>
-</map>
