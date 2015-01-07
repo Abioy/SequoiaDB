@@ -1,0 +1,112 @@
+<!--@param ${deploy.conffile.wildcard}: deploy config file wildcard. just for debug -->
+<!--@param ${test.environment} : the control the test Environment -->
+<!--@param ${is.test}: the flag for whether execute test, if set false, then just deploy. just for debug -->
+<!--@param ${WORKSPACE}: The path where the deploy directory -->
+<!--@param ${ci.script.file.path} : the ci-script file path -->
+<!--@param ${BUILD_NUMBER} : what number is it build -->
+
+<!-- hostname:jenkins.master.ip -->
+<!-- depends:null -->
+<!-- call:deploy-software-in-host.xml,${deploy.case.fullname} -->
+
+<project name="deploy-test-all" default="Deploy-Test-All">
+	<hostinfo prefix="host" />
+	<property file="${ci.script.file.path}/ci.test.properties" />
+	<property name="deploy.config.path" value="${ci.script.file.path}/deploy-config" />
+	<property name="release.path" value="${WORKSPACE}/release" />
+	<property file="${release.path}/build.version" />
+	<taskdef resource="com/sequoiadb/ant/ant-sdbtasks.xml">
+		<classpath>
+			<fileset dir="${WORKSPACE}/deploy/ant-sdbtasks/" includes="*.jar" />
+		</classpath>
+	</taskdef>
+	
+	<target name="Tar-Deploy-File" depends="" >
+		<property name="deploy.tar.file.name" value="deploy.tar.gz" />
+		<echo message="Tarred the test file by deploy-test-all.xml" />
+		<tar destfile="${WORKSPACE}/${deploy.tar.file.name}" basedir="${WORKSPACE}" includes="deploy/**/*" compression="gzip" />
+	</target>
+	
+	<target name="Clean-Last-Build-Reports" depends="Tar-Deploy-File">
+		<delete dir="${WORKSPACE}/reports" />
+		<mkdir dir="${WORKSPACE}/reports" />
+	</target>
+
+	<target name="Deploy-Test-All" depends="Clean-Last-Build-Reports">
+		<if>
+			<equals arg1="${deploy.conffile.wildcard}" arg2="*" />
+			<then>
+				<foreach target="Deploy-And-Test-Case" param="deploy.case.fullname" parallel="true">
+					<path>
+						<fileset dir="${deploy.config.path}" >
+							<include name="${test.environment}-[h1][g1][d1]-tp1.xml" />
+							<include name="${test.environment}-standalone-tp1.xml" />
+						</fileset>
+					</path>
+					<param name="deploy.file.fullname" value="${WORKSPACE}/${deploy.tar.file.name}" />
+				</foreach>
+
+				<foreach target="Deploy-And-Test-Case" param="deploy.case.fullname">
+					<path>
+						<fileset dir="${deploy.config.path}">
+							<include name="${test.environment}-${deploy.conffile.wildcard}.xml" /> 
+							<exclude name="${test.environment}-[h1][g1][d1]-tp1.xml" />
+							<exclude name="${test.environment}-standalone-tp1.xml" />
+						</fileset>
+					</path>
+					<param name="deploy.file.fullname" value="${WORKSPACE}/${deploy.tar.file.name}" />
+				</foreach>
+			</then>
+			<else>
+				<foreach target="Deploy-And-Test-Case" param="deploy.case.fullname">
+					<path>
+						<fileset dir="${deploy.config.path}" includes="${test.environment}-${deploy.conffile.wildcard}.xml" />
+					</path>
+					<param name="deploy.file.fullname" value="${WORKSPACE}/${deploy.tar.file.name}" />
+				</foreach>
+			</else>
+		</if>
+	</target>
+
+	<target name="Clean-Env-Before-Test" depends="">
+		<echo message="Begin to clean test env..." />
+		<parallel>
+			<ant antfile="deploy-software-in-host.xml" dir="." target="Uninstall-Software" inheritAll="false">
+				<property name="deploy.host.name" value="${test.machine.no1.basic}" />
+			</ant>
+			<ant antfile="deploy-software-in-host.xml" dir="." target="Uninstall-Software" inheritAll="false">
+				<property name="deploy.host.name" value="${test.machine.no2.basic}" />
+			</ant>
+			<ant antfile="deploy-software-in-host.xml" dir="." target="Uninstall-Software" inheritAll="false">
+				<property name="deploy.host.name" value="${test.machine.no3.basic}" />
+			</ant>
+		</parallel>
+		<sleep seconds="5"/>
+	</target>
+
+	<target name="Deploy-And-Test-Case" depends="Clean-Env-Before-Test">
+		<echo message="Begin to deploy one case and test.... " />
+	    <echo message="Command:antfile  -f ${deploy.case.fullname} --target=Deploy -Dinstall.package.fullname=${release.path}/${BUILD.INSTALL.FILENAME} -Ddeploy.file.fullname=${deploy.file.fullname} -Ddeploy.path=${WORKSPACE}/deploy " />	
+		<ant antfile="${deploy.case.fullname}" dir="${ci.script.file.path}" target="Deploy" inheritAll="true">
+			<property name="install.package.fullname" value="${release.path}/${BUILD.INSTALL.FILENAME}" />
+			<property name="deploy.file.fullname" value="${deploy.file.fullname}" />
+		</ant>
+		<sleep seconds="5"/>
+
+		<if>
+			<equals arg1="${is.test}" arg2="true" />
+			<then>
+				<ant antfile="${deploy.case.fullname}" dir="${ci.script.file.path}" inheritAll="true">
+					<property name="test.reports.path" value="${WORKSPACE}/reports" />
+					<property name="deploy.case.fullname" value="${deploy.case.fullname}" />
+					<property name="WORKSPACE" value="${WORKSPACE}" />
+					<property name="test.environment" value="${test.environment}" />
+					<property name="deploy.conffile.wildcard" value="${deploy.conffile.wildcard}" />
+					<property name="ci.script.file.path" value="${ci.script.file.path}" />
+					<property name="BUILD_NUMBER" value="${BUILD_NUMBER}" />
+				</ant>
+			</then>
+		</if>
+		<echo message="Deploy ${deploy.case.fullname} complete. " />
+	</target>
+</project>

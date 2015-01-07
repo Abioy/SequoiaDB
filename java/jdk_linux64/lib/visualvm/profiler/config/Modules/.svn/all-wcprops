@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/config/Modules
+END
+org-netbeans-lib-profiler-ui.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/config/Modules/org-netbeans-lib-profiler-ui.xml
+END
+org-netbeans-modules-profiler-oql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/config/Modules/org-netbeans-modules-profiler-oql.xml
+END
+org-netbeans-lib-profiler.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/config/Modules/org-netbeans-lib-profiler.xml
+END
+org-netbeans-lib-profiler-charts.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/config/Modules/org-netbeans-lib-profiler-charts.xml
+END
+org-netbeans-modules-profiler.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/config/Modules/org-netbeans-modules-profiler.xml
+END
+org-netbeans-lib-profiler-common.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/profiler/config/Modules/org-netbeans-lib-profiler-common.xml
+END

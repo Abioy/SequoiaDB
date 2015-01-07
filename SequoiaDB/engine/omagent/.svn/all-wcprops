@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/16754/trunk/SequoiaDB/engine/omagent
+END
+omagentSession.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16474/trunk/SequoiaDB/engine/omagent/omagentSession.cpp
+END
+omagentMgr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16616/trunk/SequoiaDB/engine/omagent/omagentMgr.cpp
+END
+omagentNodeCmd.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16447/trunk/SequoiaDB/engine/omagent/omagentNodeCmd.cpp
+END
+omagentJob.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16389/trunk/SequoiaDB/engine/omagent/omagentJob.cpp
+END
+omagentNodeMgr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16754/trunk/SequoiaDB/engine/omagent/omagentNodeMgr.cpp
+END
+omagentUtil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16660/trunk/SequoiaDB/engine/omagent/omagentUtil.cpp
+END
+omagentCommand.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16389/trunk/SequoiaDB/engine/omagent/omagentCommand.cpp
+END
+omagent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/13981/trunk/SequoiaDB/engine/omagent/omagent.cpp
+END
+omagentHelper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16576/trunk/SequoiaDB/engine/omagent/omagentHelper.cpp
+END
+omagentRunJob.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16389/trunk/SequoiaDB/engine/omagent/omagentRunJob.cpp
+END
+omagentTask.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16442/trunk/SequoiaDB/engine/omagent/omagentTask.cpp
+END

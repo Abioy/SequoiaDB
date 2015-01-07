@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin
+END
+setNetworkServerCP
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/setNetworkServerCP
+END
+dblook.bat
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/dblook.bat
+END
+NetworkServerControl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/NetworkServerControl
+END
+derby_common.bat
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/derby_common.bat
+END
+setNetworkServerCP.bat
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/setNetworkServerCP.bat
+END
+stopNetworkServer
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/stopNetworkServer
+END
+NetworkServerControl.bat
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/NetworkServerControl.bat
+END
+setNetworkClientCP
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/setNetworkClientCP
+END
+setEmbeddedCP
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/setEmbeddedCP
+END
+sysinfo
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/sysinfo
+END
+stopNetworkServer.bat
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/stopNetworkServer.bat
+END
+setNetworkClientCP.bat
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/setNetworkClientCP.bat
+END
+setEmbeddedCP.bat
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/setEmbeddedCP.bat
+END
+startNetworkServer
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/startNetworkServer
+END
+sysinfo.bat
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/sysinfo.bat
+END
+ij
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/ij
+END
+startNetworkServer.bat
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/startNetworkServer.bat
+END
+ij.bat
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/ij.bat
+END
+dblook
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/bin/dblook
+END

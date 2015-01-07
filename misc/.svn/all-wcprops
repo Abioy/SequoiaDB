@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/sequoiadb/!svn/ver/16729/trunk/misc
+END
+doxygen-java.conf
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/15583/trunk/misc/doxygen-java.conf
+END
+doxygen-python.conf
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/13409/trunk/misc/doxygen-python.conf
+END
+doxygen-c.conf
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/sequoiadb/!svn/ver/11150/trunk/misc/doxygen-c.conf
+END
+doxygen-cpp.conf
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/sequoiadb/!svn/ver/11150/trunk/misc/doxygen-cpp.conf
+END
+doxygen-base64.conf
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/11150/trunk/misc/doxygen-base64.conf
+END
+loc.sh
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/sequoiadb/!svn/ver/9949/trunk/misc/loc.sh
+END
+doxygen-php.conf
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/sequoiadb/!svn/ver/11150/trunk/misc/doxygen-php.conf
+END
+doxygen-base64c.conf
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/11150/trunk/misc/doxygen-base64c.conf
+END
+sdbtop.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/sequoiadb/!svn/ver/10650/trunk/misc/sdbtop.xml
+END
+.vimrc
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/sequoiadb/!svn/ver/9949/trunk/misc/.vimrc
+END
+doxygen-bson.conf
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/11150/trunk/misc/doxygen-bson.conf
+END
+doxygen-Jstobs.conf
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/11150/trunk/misc/doxygen-Jstobs.conf
+END
+doxygen-bsoncpp.conf
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/sequoiadb/!svn/ver/11150/trunk/misc/doxygen-bsoncpp.conf
+END
+doxygen-cs.conf
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sequoiadb/!svn/ver/11150/trunk/misc/doxygen-cs.conf
+END
+jsToCpp.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/sequoiadb/!svn/ver/15112/trunk/misc/jsToCpp.py
+END
+cscope.build
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/sequoiadb/!svn/ver/9949/trunk/misc/cscope.build
+END
+doxygen-ossErr.conf
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/11150/trunk/misc/doxygen-ossErr.conf
+END

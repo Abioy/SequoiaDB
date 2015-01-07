@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters
+END
+read.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/read.phpt
+END
+bug50363.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/bug50363.phpt
+END
+stream_filter_remove_basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/stream_filter_remove_basic.phpt
+END
+filter_errors_user.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/filter_errors_user.phpt
+END
+filter_errors.inc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/filter_errors.inc
+END
+bug46164-1.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/bug46164-1.phpt
+END
+bug46164-2.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/bug46164-2.phpt
+END
+bug22538.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/bug22538.phpt
+END
+basic.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/basic.phpt
+END
+bug35916.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/bug35916.phpt
+END
+stream_filter_remove_error.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/stream_filter_remove_error.phpt
+END
+filter_errors_convert_base64_decode.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/filter_errors_convert_base64_decode.phpt
+END
+php_user_filter_01.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/php_user_filter_01.phpt
+END
+php_user_filter_02.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/php_user_filter_02.phpt
+END
+php_user_filter_03.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/php_user_filter_03.phpt
+END
+001.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/001.phpt
+END
+chunked_001.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/chunked_001.phpt
+END
+filter_errors_zlib_inflate.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/filters/filter_errors_zlib_inflate.phpt
+END

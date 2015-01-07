@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/powerpc
+END
+ppc_closure.S
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/powerpc/ppc_closure.S
+END
+darwin_closure.S
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/powerpc/darwin_closure.S
+END
+ffitarget.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/powerpc/ffitarget.h
+END
+aix.S
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/powerpc/aix.S
+END
+darwin.S
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/powerpc/darwin.S
+END
+ffi.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/powerpc/ffi.c
+END
+sysv.S
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/powerpc/sysv.S
+END
+asm.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/powerpc/asm.h
+END
+linux64_closure.S
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/powerpc/linux64_closure.S
+END
+ffi_darwin.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/powerpc/ffi_darwin.c
+END
+linux64.S
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/powerpc/linux64.S
+END
+aix_closure.S
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/ctypes/libffi/src/powerpc/aix_closure.S
+END

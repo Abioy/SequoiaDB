@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules
+END
+org-netbeans-modules-core-kit.xml_hidden
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-core-kit.xml_hidden
+END
+org-netbeans-modules-options-keymap.xml_hidden
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-options-keymap.xml_hidden
+END
+com-sun-tools-visualvm-sampler.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-sampler.xml
+END
+com-sun-tools-visualvm-api-caching.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-api-caching.xml
+END
+com-sun-tools-visualvm-heapdump.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-heapdump.xml
+END
+org-netbeans-core-execution.xml_hidden
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/org-netbeans-core-execution.xml_hidden
+END
+com-sun-tools-visualvm-host-remote.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-host-remote.xml
+END
+com-sun-tools-visualvm-host-views.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-host-views.xml
+END
+com-sun-tools-visualvm-uisupport.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-uisupport.xml
+END
+org-netbeans-modules-spi-actions.xml_hidden
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-spi-actions.xml_hidden
+END
+com-sun-tools-visualvm-host.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-host.xml
+END
+com-sun-tools-visualvm-coredump.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-coredump.xml
+END
+org-openide-compat.xml_hidden
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/org-openide-compat.xml_hidden
+END
+org-netbeans-core-output2.xml_hidden
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/org-netbeans-core-output2.xml_hidden
+END
+com-sun-tools-visualvm-jvmstat.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-jvmstat.xml
+END
+com-sun-tools-visualvm-profiling.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-profiling.xml
+END
+org-openide-options.xml_hidden
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/org-openide-options.xml_hidden
+END
+com-sun-tools-visualvm-jvm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-jvm.xml
+END
+com-sun-tools-visualvm-threaddump.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-threaddump.xml
+END
+com-sun-tools-visualvm-application-views.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-application-views.xml
+END
+com-sun-tools-visualvm-tools.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-tools.xml
+END
+com-sun-tools-visualvm-sa.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-sa.xml
+END
+com-sun-tools-visualvm-application.xml
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-application.xml
+END
+com-sun-tools-visualvm-attach.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-attach.xml
+END
+com-sun-tools-visualvm-profiler.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-profiler.xml
+END
+com-sun-tools-visualvm-modules-appui.xml
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-modules-appui.xml
+END
+com-sun-tools-visualvm-charts.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-charts.xml
+END
+org-netbeans-modules-favorites.xml_hidden
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-favorites.xml_hidden
+END
+org-openide-util-enumerations.xml_hidden
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/org-openide-util-enumerations.xml_hidden
+END
+org-netbeans-api-visual.xml_hidden
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/org-netbeans-api-visual.xml_hidden
+END
+com-sun-tools-visualvm-core.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-core.xml
+END
+com-sun-tools-visualvm-jmx.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-jmx.xml
+END

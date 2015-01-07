@@ -1,0 +1,352 @@
+10
+
+dir
+16762
+http://192.168.20.11/sequoiadb/trunk/SequoiaDB/engine
+http://192.168.20.11/sequoiadb
+
+
+
+2015-01-07T07:41:29.809107Z
+16760
+linyoubin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6121f079-4a18-41d3-8c30-8870a322f2c2
+
+cls
+dir
+
+ncurses
+dir
+
+bps
+dir
+
+gtest
+dir
+
+dps
+dir
+
+spd
+dir
+
+omsvc
+dir
+
+mth
+dir
+
+SConscriptClientCpp
+file
+
+
+
+
+2014-12-30T05:10:50.260941Z
+92309f14afc248907b9dab12ac96d660
+2014-09-17T08:46:36.317172Z
+15120
+taoewang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3580
+
+ixm
+dir
+
+tools
+dir
+
+auth
+dir
+
+bson
+dir
+
+opt
+dir
+
+rtn
+dir
+
+pd
+dir
+
+bar
+dir
+
+fap
+dir
+
+spt
+dir
+
+cat
+dir
+
+snappy
+dir
+
+mdocml
+dir
+
+mig
+dir
+
+rest
+dir
+
+test
+dir
+
+ssh2
+dir
+
+SConscriptShell
+file
+
+
+
+
+2014-12-30T05:10:50.261939Z
+8d9756c57b27e1c2da314f07a5ba73a6
+2014-12-23T11:15:57.076370Z
+16641
+xujianhui
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5220
+
+pmd
+dir
+
+aggr
+dir
+
+include
+dir
+
+dms
+dir
+
+qgm
+dir
+
+SConscriptTool
+file
+
+
+
+
+2014-12-30T11:26:22.135813Z
+ab3fee5f06747cf72458f0521024c3bb
+2014-12-30T07:46:49.160304Z
+16689
+jwhe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16061
+
+net
+dir
+
+msg
+dir
+
+SConscript
+file
+
+
+
+
+2014-12-30T05:10:50.260941Z
+f156de57c09d93d2de13bbff3a487331
+2014-12-23T11:09:24.540539Z
+16639
+xujianhui
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28347
+
+pcre
+dir
+
+mon
+dir
+
+SConscriptClientC
+file
+
+
+
+
+2014-12-30T05:10:50.261939Z
+d830da7a82afd1deb0f96beea18c361d
+2014-09-17T08:46:36.317172Z
+15120
+taoewang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1362
+
+omagent
+dir
+
+SConscriptFmp
+file
+
+
+
+
+2014-12-30T05:10:50.261939Z
+4f60132b43b1b6fb8a9920aaf97a211f
+2014-09-28T13:21:50.225524Z
+15356
+xujianhui
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1857
+
+sql
+dir
+
+oss
+dir
+
+coord
+dir
+
+util
+dir
+
+client
+dir
+

@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail
+END
+throw_on_empty_input.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/throw_on_empty_input.hpp
+END
+has_self_intersections.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/has_self_intersections.hpp
+END
+assign_indexed_point.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/assign_indexed_point.hpp
+END
+not.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/not.hpp
+END
+ring_identifier.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/ring_identifier.hpp
+END
+assign_values.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/assign_values.hpp
+END
+convert_point_to_point.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/convert_point_to_point.hpp
+END
+partition.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/partition.hpp
+END
+as_range.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/as_range.hpp
+END
+calculate_sum.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/calculate_sum.hpp
+END
+convert_indexed_to_indexed.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/convert_indexed_to_indexed.hpp
+END
+for_each_range.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/for_each_range.hpp
+END
+point_on_border.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/point_on_border.hpp
+END
+disjoint.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/disjoint.hpp
+END
+calculate_null.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/calculate_null.hpp
+END
+assign_box_corners.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/geometry/algorithms/detail/assign_box_corners.hpp
+END

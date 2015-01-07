@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb
+END
+loadFLIGHTS1.sql
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/loadFLIGHTS1.sql
+END
+loadFLIGHTS2.sql
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/loadFLIGHTS2.sql
+END
+loadFLIGHTAVAILABILITY1.sql
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/loadFLIGHTAVAILABILITY1.sql
+END
+disconnect.sql
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/disconnect.sql
+END
+loadFLIGHTAVAILABILITY2.sql
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/loadFLIGHTAVAILABILITY2.sql
+END
+smallisle.gif
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/smallisle.gif
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/build.xml
+END
+witchisle.gif
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/witchisle.gif
+END
+ToursDB_schema.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/ToursDB_schema.sql
+END
+toursdb_readme.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/toursdb_readme.html
+END
+loadAIRLINES.sql
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/loadAIRLINES.sql
+END
+insertMaps.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/insertMaps.java
+END
+loadTables.sql
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/loadTables.sql
+END
+cupisle.gif
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/cupisle.gif
+END
+loadCOUNTRIES.sql
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/loadCOUNTRIES.sql
+END
+loadCITIES.sql
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/toursdb/loadCITIES.sql
+END

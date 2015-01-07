@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src
+END
+DatabaseManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src/DatabaseManager.java
+END
+GCalendar.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src/GCalendar.java
+END
+NetworkDownException.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src/NetworkDownException.java
+END
+CalEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src/CalEvent.java
+END
+AddEventRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src/AddEventRequest.java
+END
+RequestManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src/RequestManager.java
+END
+localcal.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src/localcal.js
+END
+GCalendarRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src/GCalendarRequest.java
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src/index.html
+END
+EventManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src/EventManager.java
+END
+CalendarController.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src/CalendarController.java
+END
+DeleteEventRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src/DeleteEventRequest.java
+END
+UpdateEventRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/db/demo/programs/localcal/src/UpdateEventRequest.java
+END

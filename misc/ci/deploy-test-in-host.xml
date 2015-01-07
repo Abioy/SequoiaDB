@@ -1,0 +1,23 @@
+<!--@param ${deploy.file.fullname} : The test deploy tar full file name -->
+<!--@param ${deploy.host.name} :  The host name for deploy test scripts and install software-->
+
+<!-- hostname:jenkins.master.ip -->
+<!-- depends:${deploy.case.fullname} -->
+<!-- call:install-test-in-host.xml -->
+
+<project name="deploy-test-in-host" default="Deploy-Test-In-Host">
+	<property file="ci.test.properties" />
+
+	<target name="Clean-Deploy-In-Host" depends="">
+		<stafTools workHost="${deploy.host.name}" workType="delete" fileName="${test.machine.deploy.path}" failonerror="false" />
+		<stafTools workHost="${deploy.host.name}" workType="create" fileName="${test.machine.deploy.path}" />
+	</target>
+
+	<target name="Deploy-Test-In-Host" depends="Clean-Deploy-In-Host">
+		<stafTools workType="copy" workHost="LOCAL" fileName="${deploy.file.fullname}" saveDir="${test.machine.deploy.path}" toHost="${deploy.host.name}" />
+		<stafTools workType="copy" workHost="LOCAL" fileName="${basedir}/install-test-in-host.xml" saveDir="${test.machine.deploy.path}" toHost="${deploy.host.name}" />
+    	<stafTools workType="shell" workHost="${deploy.host.name}" workDir="${test.machine.deploy.path}" common="ant -l ${test.machine.deploy.path}/install-test-in-host.log -f ${test.machine.deploy.path}/install-test-in-host.xml -Dtest.basedir=${test.machine.deploy.path} -Ddeploy.tar.file.name=deploy.tar.gz" />
+		<stafTools workType="get" workHost="${deploy.host.name}" fileName="${test.machine.deploy.path}/install-test-in-host.log" />    
+	</target>
+</project>
+

@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sequoiadb/!svn/ver/16716/trunk/SequoiaDB/engine/oss
+END
+ossShMem.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/12960/trunk/SequoiaDB/engine/oss/ossShMem.cpp
+END
+ossRWMutex.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/13476/trunk/SequoiaDB/engine/oss/ossRWMutex.cpp
+END
+ossNPipe.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/16417/trunk/SequoiaDB/engine/oss/ossNPipe.cpp
+END
+ossEDU.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/11824/trunk/SequoiaDB/engine/oss/ossEDU.cpp
+END
+ossUtil.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16075/trunk/SequoiaDB/engine/oss/ossUtil.c
+END
+ossUtil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16690/trunk/SequoiaDB/engine/oss/ossUtil.cpp
+END
+ossMem.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/16417/trunk/SequoiaDB/engine/oss/ossMem.c
+END
+ossMem.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/16417/trunk/SequoiaDB/engine/oss/ossMem.cpp
+END
+oss.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/16417/trunk/SequoiaDB/engine/oss/oss.c
+END
+oss.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/16417/trunk/SequoiaDB/engine/oss/oss.cpp
+END
+ossEvent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/oss/ossEvent.cpp
+END
+ossDynamicLoad.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/12960/trunk/SequoiaDB/engine/oss/ossDynamicLoad.cpp
+END
+ossHdfs.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/oss/ossHdfs.cpp
+END
+ossSocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/15420/trunk/SequoiaDB/engine/oss/ossSocket.cpp
+END
+ossErr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/oss/ossErr.cpp
+END
+ossMmap.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/12960/trunk/SequoiaDB/engine/oss/ossMmap.cpp
+END
+ossLatch.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/oss/ossLatch.cpp
+END
+ossASIO.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/12960/trunk/SequoiaDB/engine/oss/ossASIO.cpp
+END
+ossStackDump.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/12335/trunk/SequoiaDB/engine/oss/ossStackDump.cpp
+END
+ossVer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/oss/ossVer.cpp
+END
+ossVer.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/11877/trunk/SequoiaDB/engine/oss/ossVer.c
+END
+ossPath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16417/trunk/SequoiaDB/engine/oss/ossPath.cpp
+END
+ossCmdRunner.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16716/trunk/SequoiaDB/engine/oss/ossCmdRunner.cpp
+END
+ossProc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16558/trunk/SequoiaDB/engine/oss/ossProc.cpp
+END
+ossPrimitiveFileOp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16417/trunk/SequoiaDB/engine/oss/ossPrimitiveFileOp.cpp
+END
+ossIO.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16217/trunk/SequoiaDB/engine/oss/ossIO.cpp
+END

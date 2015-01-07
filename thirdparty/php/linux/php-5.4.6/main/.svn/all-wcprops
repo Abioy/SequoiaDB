@@ -1,0 +1,341 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main
+END
+win32_internal_function_disabled.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/win32_internal_function_disabled.h
+END
+fopen_wrappers.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/fopen_wrappers.h
+END
+php_logos.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_logos.h
+END
+php_globals.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_globals.h
+END
+php_scandir.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_scandir.h
+END
+output.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/output.c
+END
+rfc1867.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/rfc1867.c
+END
+php_version.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_version.h
+END
+getopt.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/getopt.c
+END
+snprintf.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/snprintf.c
+END
+rfc1867.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/rfc1867.h
+END
+spprintf.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/spprintf.c
+END
+mergesort.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/mergesort.c
+END
+internal_functions_nw.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/internal_functions_nw.c
+END
+snprintf.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/snprintf.h
+END
+php_open_temporary_file.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_open_temporary_file.c
+END
+internal_functions.c.in
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/internal_functions.c.in
+END
+spprintf.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/spprintf.h
+END
+php_open_temporary_file.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_open_temporary_file.h
+END
+php_memory_streams.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_memory_streams.h
+END
+build-defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/build-defs.h
+END
+php_ini.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_ini.c
+END
+internal_functions_win32.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/internal_functions_win32.c
+END
+php_reentrancy.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_reentrancy.h
+END
+build-defs.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/build-defs.h.in
+END
+network.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/network.c
+END
+php_streams.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_streams.h
+END
+php_ini.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_ini.h
+END
+php.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php.h
+END
+SAPI.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/SAPI.c
+END
+php_compat.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_compat.h
+END
+strlcpy.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/strlcpy.c
+END
+php_main.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_main.h
+END
+SAPI.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/SAPI.h
+END
+php_content_types.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_content_types.c
+END
+php_network.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_network.h
+END
+reentrancy.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/reentrancy.c
+END
+php_content_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_content_types.h
+END
+php_output.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_output.h
+END
+strlcat.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/strlcat.c
+END
+php_getopt.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_getopt.h
+END
+php_variables.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_variables.c
+END
+php_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_config.h
+END
+win95nt.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/win95nt.h
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/main.c
+END
+php_variables.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_variables.h
+END
+php_ticks.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_ticks.c
+END
+php_config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_config.h.in
+END
+logos.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/logos.h
+END
+php_ticks.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_ticks.h
+END
+fopen_wrappers.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/fopen_wrappers.c
+END
+php_logos.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_logos.c
+END
+php_scandir.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_scandir.c
+END
+alloca.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/alloca.c
+END
+php_syslog.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_syslog.h
+END
+php_sprintf.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/main/php_sprintf.c
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/sequoiadb/!svn/ver/14160/trunk/misc/ci/exec-tools
+END
+print_version.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11730/trunk/misc/ci/exec-tools/print_version.c
+END
+ant-sdbtasks.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/14160/trunk/misc/ci/exec-tools/ant-sdbtasks.jar
+END

@@ -1,0 +1,473 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/16416/trunk/SequoiaDB/engine/mdocml
+END
+mandoc.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mandoc.c
+END
+mdoc_html.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mdoc_html.c
+END
+mandoc.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mandoc.h
+END
+out.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/out.c
+END
+term.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/term.c
+END
+term_ps.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/term_ps.c
+END
+st.in
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/11400/trunk/SequoiaDB/engine/mdocml/st.in
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11622/trunk/SequoiaDB/engine/mdocml/config.h
+END
+tbl_data.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/tbl_data.c
+END
+msec.in
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/11400/trunk/SequoiaDB/engine/mdocml/msec.in
+END
+read.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11555/trunk/SequoiaDB/engine/mdocml/read.c
+END
+out.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/out.h
+END
+att.in
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11400/trunk/SequoiaDB/engine/mdocml/att.in
+END
+term.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/term.h
+END
+libmdoc.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/libmdoc.h
+END
+compat_getsubopt.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/compat_getsubopt.c
+END
+chars.in
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11400/trunk/SequoiaDB/engine/mdocml/chars.in
+END
+man_validate.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/man_validate.c
+END
+tbl_opts.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/tbl_opts.c
+END
+att.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/att.c
+END
+libroff.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/libroff.h
+END
+lib.in
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11400/trunk/SequoiaDB/engine/mdocml/lib.in
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/Makefile
+END
+manpath.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/manpath.h
+END
+man_html.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/man_html.c
+END
+tree.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/tree.c
+END
+chars.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/11400/trunk/SequoiaDB/engine/mdocml/chars.c
+END
+mdoc_macro.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mdoc_macro.c
+END
+parseMandocCpp.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11770/trunk/SequoiaDB/engine/mdocml/parseMandocCpp.hpp
+END
+libman.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/libman.h
+END
+eqn_html.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/eqn_html.c
+END
+mdoc_term.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mdoc_term.c
+END
+predefs.in
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11400/trunk/SequoiaDB/engine/mdocml/predefs.in
+END
+arch.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/arch.c
+END
+compat_fgetln.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/compat_fgetln.c
+END
+vol.in
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11400/trunk/SequoiaDB/engine/mdocml/vol.in
+END
+mdoc_hash.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mdoc_hash.c
+END
+msec.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/msec.c
+END
+parseMandoc.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11555/trunk/SequoiaDB/engine/mdocml/parseMandoc.c
+END
+apropos_db.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16416/trunk/SequoiaDB/engine/mdocml/apropos_db.h
+END
+vol.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/vol.c
+END
+arch.in
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/11400/trunk/SequoiaDB/engine/mdocml/arch.in
+END
+parseMandoc.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11555/trunk/SequoiaDB/engine/mdocml/parseMandoc.h
+END
+man_term.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/man_term.c
+END
+compat_strlcpy.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/compat_strlcpy.c
+END
+make.sh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/11404/trunk/SequoiaDB/engine/mdocml/make.sh
+END
+tbl_html.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/tbl_html.c
+END
+eqn_term.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/eqn_term.c
+END
+mandocdb.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mandocdb.h
+END
+mdoc_man.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mdoc_man.c
+END
+man_hash.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/man_hash.c
+END
+tbl_layout.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/tbl_layout.c
+END
+mandoc.1
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mandoc.1
+END
+compat_strlcat.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/compat_strlcat.c
+END
+term_ascii.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/term_ascii.c
+END
+tbl.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/tbl.c
+END
+mandoc.3
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mandoc.3
+END
+st.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/st.c
+END
+man_macro.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/man_macro.c
+END
+libmandoc.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/libmandoc.h
+END
+parseMandocCpp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11770/trunk/SequoiaDB/engine/mdocml/parseMandocCpp.cpp
+END
+make.bat
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/make.bat
+END
+mdoc_argv.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mdoc_argv.c
+END
+html.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/html.c
+END
+lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/lib.c
+END
+tbl_term.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/tbl_term.c
+END
+html.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/html.h
+END
+man.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/man.c
+END
+man.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/man.h
+END
+mdoc.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mdoc.c
+END
+eqn.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/eqn.c
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/main.c
+END
+mdoc.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mdoc.h
+END
+common.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/mdocml/common.c
+END
+main.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/main.h
+END
+mdoc_validate.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11399/trunk/SequoiaDB/engine/mdocml/mdoc_validate.c
+END
+roff.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/11555/trunk/SequoiaDB/engine/mdocml/roff.c
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/mdocml/common.h
+END

@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/16693/trunk/driver/C%23.Net/DriverTest
+END
+ReplicaGroupTest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/10971/trunk/driver/C%23.Net/DriverTest/ReplicaGroupTest.cs
+END
+Constants.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/10971/trunk/driver/C%23.Net/DriverTest/Constants.cs
+END
+SequoiadbTest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16356/trunk/driver/C%23.Net/DriverTest/SequoiadbTest.cs
+END
+HelperTest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/9949/trunk/driver/C%23.Net/DriverTest/HelperTest.cs
+END
+LoggerTest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/9949/trunk/driver/C%23.Net/DriverTest/LoggerTest.cs
+END
+Config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16259/trunk/driver/C%23.Net/DriverTest/Config.xml
+END
+DBCollectionTest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/16693/trunk/driver/C%23.Net/DriverTest/DBCollectionTest.cs
+END
+DBLobTest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16256/trunk/driver/C%23.Net/DriverTest/DBLobTest.cs
+END
+DBCursorTest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16356/trunk/driver/C%23.Net/DriverTest/DBCursorTest.cs
+END
+Config.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/9949/trunk/driver/C%23.Net/DriverTest/Config.cs
+END
+DriverTest.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/16693/trunk/driver/C%23.Net/DriverTest/DriverTest.csproj
+END
+CollectionSpaceTest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/16259/trunk/driver/C%23.Net/DriverTest/CollectionSpaceTest.cs
+END
+DomainTest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16356/trunk/driver/C%23.Net/DriverTest/DomainTest.cs
+END
+BaseExceptionTest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/16259/trunk/driver/C%23.Net/DriverTest/BaseExceptionTest.cs
+END

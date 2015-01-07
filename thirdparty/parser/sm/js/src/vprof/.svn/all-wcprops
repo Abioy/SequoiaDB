@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/vprof
+END
+vprof.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/vprof/vprof.h
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/vprof/readme.txt
+END
+manifest.mk
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/vprof/manifest.mk
+END
+vprof.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/vprof/vprof.cpp
+END
+testVprofMT.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/vprof/testVprofMT.c
+END

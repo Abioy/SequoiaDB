@@ -1,0 +1,233 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask
+END
+SdbCreateCL.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbCreateCL.class
+END
+SdbUpdate.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbUpdate.class
+END
+SdbCreateConnection.class
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbCreateConnection.class
+END
+SdbCount.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbCount.class
+END
+createPrefix.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/createPrefix.class
+END
+SdbCreateCS.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbCreateCS.class
+END
+SdbCreateIndex.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbCreateIndex.class
+END
+SdbDeploy.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbDeploy.class
+END
+clearEnvCS.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/clearEnvCS.class
+END
+SdbGetCL.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbGetCL.class
+END
+SdbtaskBaseName.class
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbtaskBaseName.class
+END
+SdbHaveMaster.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbHaveMaster.class
+END
+SdbGetNodeInfo.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbGetNodeInfo.class
+END
+SdbTransRollBack.class
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbTransRollBack.class
+END
+SdbDelete.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbDelete.class
+END
+SdbGetCS.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbGetCS.class
+END
+SdbQuery.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbQuery.class
+END
+SdbStopCM.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbStopCM.class
+END
+SdbGetIndex.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbGetIndex.class
+END
+SdbNodeServiceStatus.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbNodeServiceStatus.class
+END
+SdbStartCM.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbStartCM.class
+END
+SdbIsCSExist.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbIsCSExist.class
+END
+SdbIsIndexExist.class
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbIsIndexExist.class
+END
+SdbRestartHost.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbRestartHost.class
+END
+SdbCheckNode.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbCheckNode.class
+END
+SdbDropCL.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbDropCL.class
+END
+SdbCloseConnection.class
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbCloseConnection.class
+END
+SdbNetWork.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbNetWork.class
+END
+SdbDropCS.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbDropCS.class
+END
+SdbTransBegin.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbTransBegin.class
+END
+SdbDelIndex.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbDelIndex.class
+END
+SdbTransCommit.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbTransCommit.class
+END
+SdbKillNode.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbKillNode.class
+END
+SdbCopyAndTar.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbCopyAndTar.class
+END
+SdbInsert.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbInsert.class
+END
+SdbIsCLExist.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbIsCLExist.class
+END
+SdbList.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbList.class
+END
+SdbTest.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/sdbtask/SdbTest.class
+END

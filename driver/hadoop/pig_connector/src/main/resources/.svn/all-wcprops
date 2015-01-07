@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/9949/trunk/driver/hadoop/pig_connector/src/main/resources
+END
+testPig.script
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/9949/trunk/driver/hadoop/pig_connector/src/main/resources/testPig.script
+END
+command.bp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/9949/trunk/driver/hadoop/pig_connector/src/main/resources/command.bp
+END

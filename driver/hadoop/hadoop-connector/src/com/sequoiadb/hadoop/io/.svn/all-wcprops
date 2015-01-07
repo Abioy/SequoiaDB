@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/16666/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/io
+END
+BSONFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/13660/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/io/BSONFile.java
+END
+BSONWritableComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/13660/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/io/BSONWritableComparator.java
+END
+SequoiadbIndexReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/sequoiadb/!svn/ver/13664/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/io/SequoiadbIndexReader.java
+END
+SequoioadbUpdateWritable.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/sequoiadb/!svn/ver/13660/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/io/SequoioadbUpdateWritable.java
+END
+SequoiadbWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/16666/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/io/SequoiadbWriter.java
+END
+SequoiadbBlockReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/sequoiadb/!svn/ver/16666/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/io/SequoiadbBlockReader.java
+END
+BSONWritable.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/16592/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/io/BSONWritable.java
+END

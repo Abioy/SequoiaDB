@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16686/trunk/driver/hadoop/hive-connector-1.8
+END
+hive-sequoiadb-apache.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/16264/trunk/driver/hadoop/hive-connector-1.8/hive-sequoiadb-apache.jar
+END
+hive-sequoiadb-cdh-5.0.0-beta-2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/16264/trunk/driver/hadoop/hive-connector-1.8/hive-sequoiadb-cdh-5.0.0-beta-2.jar
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16686/trunk/driver/hadoop/hive-connector-1.8/build.xml
+END

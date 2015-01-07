@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/15720/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl/troff
+END
+step1-hi-d.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl/troff/step1-hi-d.xsl
+END
+step1-pr-d.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl/troff/step1-pr-d.xsl
+END
+step1-task.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl/troff/step1-task.xsl
+END
+step1.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/11658/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl/troff/step1.xsl
+END
+step2.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/15720/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl/troff/step2.xsl
+END
+rel-links.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl/troff/rel-links.xsl
+END
+step1-ut-d.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl/troff/step1-ut-d.xsl
+END
+step1-sw-d.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl/troff/step1-sw-d.xsl
+END
+step2-base.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/11658/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl/troff/step2-base.xsl
+END
+step1-ui-d.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.troff/xsl/troff/step1-ui-d.xsl
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16595/trunk/driver/hadoop/hadoop-connector/conf
+END
+sequoiadb-hadoop.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16595/trunk/driver/hadoop/hadoop-connector/conf/sequoiadb-hadoop.xml
+END
+hdfs-site.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/13665/trunk/driver/hadoop/hadoop-connector/conf/hdfs-site.xml
+END
+core-site.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/13665/trunk/driver/hadoop/hadoop-connector/conf/core-site.xml
+END
+mapred-site.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/13665/trunk/driver/hadoop/hadoop-connector/conf/mapred-site.xml
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/core/locale
+END
+.svn_zh_CN.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/core/locale/.svn_zh_CN.jar
+END
+com-sun-tools-visualvm-modules-startup_zh_CN.jar
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/core/locale/com-sun-tools-visualvm-modules-startup_zh_CN.jar
+END
+.svn_ja.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/core/locale/.svn_ja.jar
+END
+core_visualvm.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/core/locale/core_visualvm.jar
+END
+com-sun-tools-visualvm-modules-startup_ja.jar
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/core/locale/com-sun-tools-visualvm-modules-startup_ja.jar
+END

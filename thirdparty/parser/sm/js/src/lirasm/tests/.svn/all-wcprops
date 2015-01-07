@@ -1,0 +1,779 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests
+END
+mulov_xxy.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mulov_xxy.out
+END
+mulov_xyz.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mulov_xyz.in
+END
+addjovi.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/addjovi.out
+END
+random.out
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/random.out
+END
+subjovi.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/subjovi.in
+END
+cond_eqi.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_eqi.out
+END
+muljovi.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muljovi.in
+END
+cond_gti.in
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_gti.in
+END
+fpu2-598151.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/fpu2-598151.out
+END
+muljovi_xxx.in
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muljovi_xxx.in
+END
+addd.out
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/addd.out
+END
+call2.in
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/call2.in
+END
+muljovi_ovf.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muljovi_ovf.out
+END
+cond_leui.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_leui.in
+END
+multfrag1.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/multfrag1.in
+END
+mul_xxx.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mul_xxx.in
+END
+lduc2ui.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/lduc2ui.out
+END
+callid1.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/callid1.in
+END
+fuzz-527178.in
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/fuzz-527178.in
+END
+mulov_xxy.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mulov_xxy.in
+END
+mulov_xyz.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mulov_xyz.out
+END
+floatingpoint.in
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/floatingpoint.in
+END
+bug596923.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/bug596923.in
+END
+fneg.out
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/fneg.out
+END
+cond_ltui.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_ltui.out
+END
+cond_gtd.in
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_gtd.in
+END
+shi.in
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/shi.in
+END
+shi.out
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/shi.out
+END
+ldus2ui.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/ldus2ui.out
+END
+cond_lti.in
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_lti.in
+END
+cond_lti.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_lti.out
+END
+subd.in
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/subd.in
+END
+muljovi_xxx.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muljovi_xxx.out
+END
+ldc2i.in
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/ldc2i.in
+END
+calld1.out
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/calld1.out
+END
+mul_xxx.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mul_xxx.out
+END
+cond_led.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_led.out
+END
+lds2i.in
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/lds2i.in
+END
+cond_eqi.in
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_eqi.in
+END
+muljovi.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muljovi.out
+END
+cond_ltd.in
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_ltd.in
+END
+addjovi_ovf.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/addjovi_ovf.out
+END
+cond_geui.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_geui.in
+END
+call2.out
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/call2.out
+END
+muljovi_xyy.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muljovi_xyy.out
+END
+float_double.in
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/float_double.in
+END
+muljovi_xyz.in
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muljovi_xyz.in
+END
+mul_xyz.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mul_xyz.in
+END
+mul_xyy.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mul_xyy.out
+END
+callid2.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/callid2.out
+END
+cond_eqd.in
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_eqd.in
+END
+floatingpoint.out
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/floatingpoint.out
+END
+addjovi.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/addjovi.in
+END
+fpu1-598151.in
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/fpu1-598151.in
+END
+divd.in
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/divd.in
+END
+cond_gti.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_gti.out
+END
+addjovi_ovf.in
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/addjovi_ovf.in
+END
+negnot.out
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/negnot.out
+END
+muljovi_xxy.in
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muljovi_xxy.in
+END
+cond_geui.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_geui.out
+END
+subd.out
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/subd.out
+END
+ldc2i.out
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/ldc2i.out
+END
+muld.out
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muld.out
+END
+multfrag2.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/multfrag2.in
+END
+cond_ged.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_ged.out
+END
+cmov.in
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cmov.in
+END
+multfrag2.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/multfrag2.out
+END
+mul_xxy.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mul_xxy.in
+END
+cond_gei.in
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_gei.in
+END
+callid2.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/callid2.in
+END
+mulov_xxx.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mulov_xxx.out
+END
+cond_eqd.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_eqd.out
+END
+lds2i.out
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/lds2i.out
+END
+cond_ltui.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_ltui.in
+END
+add.out
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/add.out
+END
+negnot.in
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/negnot.in
+END
+subjovi_ovf.in
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/subjovi_ovf.in
+END
+subjovi_ovf.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/subjovi_ovf.out
+END
+muljovi_ovf.in
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muljovi_ovf.in
+END
+calld1.in
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/calld1.in
+END
+cond_ged.in
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_ged.in
+END
+callv.out
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/callv.out
+END
+addsub.out
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/addsub.out
+END
+cmov.out
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cmov.out
+END
+lduc2ui.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/lduc2ui.in
+END
+mulov_xyy.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mulov_xyy.in
+END
+cond_lei.in
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_lei.in
+END
+mulov_xyy.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mulov_xyy.out
+END
+fneg.in
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/fneg.in
+END
+bug596923.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/bug596923.out
+END
+fpu2-598151.in
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/fpu2-598151.in
+END
+fpu1-598151.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/fpu1-598151.out
+END
+ldus2ui.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/ldus2ui.in
+END
+cond_ltd.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_ltd.out
+END
+loadstore.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/loadstore.in
+END
+call1.in
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/call1.in
+END
+muljovi_xxy.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muljovi_xxy.out
+END
+muld.in
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muld.in
+END
+addsub.in
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/addsub.in
+END
+mul_xxy.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mul_xxy.out
+END
+cond_led.in
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_led.in
+END
+mulov_xxx.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mulov_xxx.in
+END
+cond_gtui.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_gtui.in
+END
+cond_gtui.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_gtui.out
+END
+cond_lei.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_lei.out
+END
+subjovi.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/subjovi.out
+END
+std2f.out
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/std2f.out
+END
+divd.out
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/divd.out
+END
+call1.out
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/call1.out
+END
+loadstore.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/loadstore.out
+END
+float_double.out
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/float_double.out
+END
+muljovi_xyz.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muljovi_xyz.out
+END
+callv.in
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/callv.in
+END
+cond_leui.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_leui.out
+END
+multfrag3.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/multfrag3.in
+END
+mul_xyz.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mul_xyz.out
+END
+fuzz-527178.out
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/fuzz-527178.out
+END
+callid1.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/callid1.out
+END
+callid3.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/callid3.in
+END
+callid3.out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/callid3.out
+END
+std2f.in
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/std2f.in
+END
+cond_gtd.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_gtd.out
+END
+add.in
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/add.in
+END
+addd.in
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/addd.in
+END
+muljovi_xyy.in
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/muljovi_xyy.in
+END
+multfrag1.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/multfrag1.out
+END
+multfrag3.out
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/multfrag3.out
+END
+mul_xyy.in
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/mul_xyy.in
+END
+cond_gei.out
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/lirasm/tests/cond_gei.out
+END

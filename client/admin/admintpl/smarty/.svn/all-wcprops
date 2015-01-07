@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/9949/trunk/client/admin/admintpl/smarty
+END
+debug.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/9949/trunk/client/admin/admintpl/smarty/debug.tpl
+END
+Smarty.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/9949/trunk/client/admin/admintpl/smarty/Smarty.class.php
+END
+SmartyBC.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/9949/trunk/client/admin/admintpl/smarty/SmartyBC.class.php
+END

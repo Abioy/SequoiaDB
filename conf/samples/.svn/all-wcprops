@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/sequoiadb/!svn/ver/16395/trunk/conf/samples
+END
+sdb.conf.coord
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/16395/trunk/conf/samples/sdb.conf.coord
+END
+sdb.conf.data
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/16395/trunk/conf/samples/sdb.conf.data
+END
+sdb.conf.catalog
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/16395/trunk/conf/samples/sdb.conf.catalog
+END
+sdbtop.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/sequoiadb/!svn/ver/11382/trunk/conf/samples/sdbtop.xml
+END
+sdb.cat
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/sequoiadb/!svn/ver/9949/trunk/conf/samples/sdb.cat
+END

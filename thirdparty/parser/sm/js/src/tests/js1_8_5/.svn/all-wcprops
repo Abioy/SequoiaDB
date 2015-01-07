@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_8_5
+END
+shell.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_8_5/shell.js
+END
+template.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_8_5/template.js
+END
+jstests.list
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_8_5/jstests.list
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_8_5/README
+END
+browser.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/js1_8_5/browser.js
+END

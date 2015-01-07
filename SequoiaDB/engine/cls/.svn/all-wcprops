@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sequoiadb/!svn/ver/16690/trunk/SequoiaDB/engine/cls
+END
+clsVSPrimary.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/12021/trunk/SequoiaDB/engine/cls/clsVSPrimary.cpp
+END
+clsCatalogCaller.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/12261/trunk/SequoiaDB/engine/cls/clsCatalogCaller.cpp
+END
+clsVSSecondary.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/cls/clsVSSecondary.cpp
+END
+clsReplBucket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/13467/trunk/SequoiaDB/engine/cls/clsReplBucket.cpp
+END
+clsVoteMachine.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/12959/trunk/SequoiaDB/engine/cls/clsVoteMachine.cpp
+END
+clsTask.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/15528/trunk/SequoiaDB/engine/cls/clsTask.cpp
+END
+clsShardSession.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16500/trunk/SequoiaDB/engine/cls/clsShardSession.cpp
+END
+clsReplSession.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16432/trunk/SequoiaDB/engine/cls/clsReplSession.cpp
+END
+clsSyncManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/14249/trunk/SequoiaDB/engine/cls/clsSyncManager.cpp
+END
+clsShardMgr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16447/trunk/SequoiaDB/engine/cls/clsShardMgr.cpp
+END
+clsUtil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16561/trunk/SequoiaDB/engine/cls/clsUtil.cpp
+END
+clsTimerHandler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/14058/trunk/SequoiaDB/engine/cls/clsTimerHandler.cpp
+END
+clsCatalogMatcher.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16410/trunk/SequoiaDB/engine/cls/clsCatalogMatcher.cpp
+END
+clsCommand.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/13196/trunk/SequoiaDB/engine/cls/clsCommand.cpp
+END
+clsVSAnnounce.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/cls/clsVSAnnounce.cpp
+END
+clsCataHashMatcher.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/12366/trunk/SequoiaDB/engine/cls/clsCataHashMatcher.cpp
+END
+clsVoteStatus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/cls/clsVoteStatus.cpp
+END
+clsCleanupJob.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16500/trunk/SequoiaDB/engine/cls/clsCleanupJob.cpp
+END
+clsReplayer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16566/trunk/SequoiaDB/engine/cls/clsReplayer.cpp
+END
+clsReplicateSet.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/14058/trunk/SequoiaDB/engine/cls/clsReplicateSet.cpp
+END
+clsMsgHandler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/14058/trunk/SequoiaDB/engine/cls/clsMsgHandler.cpp
+END
+clsFSSrcSession.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16500/trunk/SequoiaDB/engine/cls/clsFSSrcSession.cpp
+END
+clsMgr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/16690/trunk/SequoiaDB/engine/cls/clsMgr.cpp
+END
+clsVSVote.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/cls/clsVSVote.cpp
+END
+clsFSDstSession.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/15593/trunk/SequoiaDB/engine/cls/clsFSDstSession.cpp
+END
+clsSrcSelector.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11973/trunk/SequoiaDB/engine/cls/clsSrcSelector.cpp
+END
+clsCatalogAgent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/15390/trunk/SequoiaDB/engine/cls/clsCatalogAgent.cpp
+END
+clsVSSilence.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11973/trunk/SequoiaDB/engine/cls/clsVSSilence.cpp
+END
+clsCatalogPredicate.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/16410/trunk/SequoiaDB/engine/cls/clsCatalogPredicate.cpp
+END

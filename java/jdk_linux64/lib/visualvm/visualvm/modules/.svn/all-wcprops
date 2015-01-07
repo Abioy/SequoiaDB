@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules
+END
+com-sun-tools-visualvm-charts.jar
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-charts.jar
+END
+com-sun-tools-visualvm-modules-appui.jar
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-modules-appui.jar
+END
+com-sun-tools-visualvm-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-core.jar
+END
+com-sun-tools-visualvm-jvmstat.jar
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-jvmstat.jar
+END
+com-sun-tools-visualvm-profiling.jar
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-profiling.jar
+END
+com-sun-tools-visualvm-jvm.jar
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-jvm.jar
+END
+com-sun-tools-visualvm-threaddump.jar
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-threaddump.jar
+END
+com-sun-tools-visualvm-jmx.jar
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-jmx.jar
+END
+com-sun-tools-visualvm-application-views.jar
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-application-views.jar
+END
+com-sun-tools-visualvm-tools.jar
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-tools.jar
+END
+com-sun-tools-visualvm-sampler.jar
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-sampler.jar
+END
+com-sun-tools-visualvm-sa.jar
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-sa.jar
+END
+com-sun-tools-visualvm-api-caching.jar
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-api-caching.jar
+END
+com-sun-tools-visualvm-heapdump.jar
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-heapdump.jar
+END
+com-sun-tools-visualvm-application.jar
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-application.jar
+END
+com-sun-tools-visualvm-attach.jar
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-attach.jar
+END
+com-sun-tools-visualvm-host-remote.jar
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-host-remote.jar
+END
+all-wcprops
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/all-wcprops
+END
+com-sun-tools-visualvm-host-views.jar
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-host-views.jar
+END
+com-sun-tools-visualvm-uisupport.jar
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-uisupport.jar
+END
+com-sun-tools-visualvm-host.jar
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-host.jar
+END
+entries
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/entries
+END
+com-sun-tools-visualvm-coredump.jar
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-coredump.jar
+END
+com-sun-tools-visualvm-profiler.jar
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/sequoiadb/!svn/ver/9949/trunk/java/jdk_linux64/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-profiler.jar
+END

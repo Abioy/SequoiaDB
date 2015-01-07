@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/datatype
+END
+CataNodeGroup.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/datatype/CataNodeGroup.class
+END
+DataNodeGroup.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/datatype/DataNodeGroup.class
+END
+HostName.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/datatype/HostName.class
+END
+NodeGroup.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/datatype/NodeGroup.class
+END
+JsonElement.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/datatype/JsonElement.class
+END
+ConfItem.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/datatype/ConfItem.class
+END
+Node.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/13829/trunk/misc/ci-labs/ant-sdbtask/bin/com/sequoiadb/ant/datatype/Node.class
+END

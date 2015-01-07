@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/16666/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/util
+END
+SequoiadbConfigUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/16666/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/util/SequoiadbConfigUtil.java
+END
+SdbConnAddr.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/13660/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/util/SdbConnAddr.java
+END
+SequoiadbTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/13660/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/util/SequoiadbTool.java
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/16650/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/split
+END
+SdbBlockSplit.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/sequoiadb/!svn/ver/16599/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/split/SdbBlockSplit.java
+END
+SdbIndexSplit.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/sequoiadb/!svn/ver/13660/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/split/SdbIndexSplit.java
+END
+SdbSplitFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/16650/trunk/driver/hadoop/hadoop-connector/src/com/sequoiadb/hadoop/split/SdbSplitFactory.java
+END

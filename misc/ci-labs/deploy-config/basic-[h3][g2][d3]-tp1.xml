@@ -1,0 +1,195 @@
+<!--@param ${install.package.fullname}: The path where place software package.-->
+<!--@param ${deploy.file.fullname}: The file full path where deploy file name for test -->
+
+<!--@param ${test.reports.path}: The path where test reports directory. -->
+<!--@param ${deploy.case.fullname}:all kind of test environment. -->
+<!--@param ${WORKSPACE}: where the working space is it-->
+<!--@param ${deploy.conffile.wildcard}: deploy config file wildcard. just for debug -->
+<!--@param ${test.environment} : the control the test Environment -->
+<!--@param ${ci.script.file.path} : where the ci.test.properties file is it -->
+
+<!-- hostname:jenkins.master.ip -->
+<!-- depends:deploy-test-all.xml -->
+<!-- call:deploy-software-in-host.xml,deploy-test-in-host.xml,test-type.xml -->
+
+<project name="H3-G2-D3" default="H3-G2-D3">
+	<property name="properties.dir" value="${basedir}/../ci.test.properties" />
+	<property file="${properties.dir}" />
+	<taskdef resource="com/sequoiadb/ant/ant-sdbtasks.xml">
+		<classpath>
+			<pathelement location="${WORKSPACE}/deploy/ant-sdbtasks/*.jar" />
+		</classpath>
+	</taskdef> 
+
+	<target name="Deploy" depends="">
+		<parallel>
+			<ant antfile="deploy-software-in-host.xml" dir="." inheritAll="false">
+				<property name="install.package.fullname" value="${install.package.fullname}" />
+				<property name="deploy.host.name" value="${test.machine.no1.basic}" />
+				<!-- <property name="coord.service.port" value="${coord.service.port}" /> -->
+				<property name="is.standalone.mode" value="false" />
+				<property name="is.coord.master" value="true"/>
+				<property name="catalog.addrs" value="${test.machine.no1.data}:30003,${test.machine.no2.data}:30003,${test.machine.no3.data}:30003" />
+			</ant>
+			<ant antfile="deploy-software-in-host.xml" dir="." inheritAll="false">
+				<property name="install.package.fullname" value="${install.package.fullname}" />
+				<property name="deploy.host.name" value="${test.machine.no2.basic}" />
+				<!-- <property name="coord.service.port" value="${coord.service.port}" /> -->
+				<property name="is.standalone.mode" value="false" />
+				<property name="is.coord.master" value="false"/>
+				<property name="catalog.addrs" value="${test.machine.no1.data}:30003,${test.machine.no2.data}:30003,${test.machine.no3.data}:30003" />
+			</ant>
+			<ant antfile="deploy-software-in-host.xml" dir="." inheritAll="false">
+				<property name="install.package.fullname" value="${install.package.fullname}" />
+				<property name="deploy.host.name" value="${test.machine.no3.basic}" />
+				<!-- <property name="coord.service.port" value="${coord.service.port}" /> -->
+				<property name="is.standalone.mode" value="false" />
+				<property name="is.coord.master" value="false"/>
+				<property name="catalog.addrs" value="${test.machine.no1.data}:30003,${test.machine.no2.data}:30003,${test.machine.no3.data}:30003" />
+			</ant>
+		</parallel>
+
+		<sdbdeploy host="${test.machine.no1.basic}" coordport="${coord.service.port}">
+			<catagroup name="cata1">
+				<node host="${test.machine.no1.data}" baseport="${cata.service.port}" dbpath="${install.path}/sequoiadb/database/cata/${cata.service.port}">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no2.data}" baseport="${cata.service.port}" dbpath="${install.path}/sequoiadb/database/cata/${cata.service.port}">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no3.data}" baseport="${cata.service.port}" dbpath="${install.path}/sequoiadb/database/cata/${cata.service.port}">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+			</catagroup>
+		</sdbdeploy>
+
+		<sdbdeploy host="${test.machine.no1.basic}" coordport="${coord.service.port}">
+			<datagroup name="group1">
+				<node host="${test.machine.no1.data}" baseport="21100" dbpath="${install.path}/sequoiadb/database/data/21100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no2.data}" baseport="21100" dbpath="${install.path}/sequoiadb/database/data/21100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no3.data}" baseport="21100" dbpath="${install.path}/sequoiadb/database/data/21100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+			</datagroup>
+			<datagroup name="group2">
+				<node host="${test.machine.no3.data}" baseport="22100" dbpath="${install.path}/sequoiadb/database/data/22100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no1.data}" baseport="22100" dbpath="${install.path}/sequoiadb/database/data/22100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no2.data}" baseport="22100" dbpath="${install.path}/sequoiadb/database/data/22100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+			</datagroup>
+		</sdbdeploy>
+	</target>
+
+	<target name="H3-G2-D3" depends="">
+		<hostinfo prefix="host" />
+		<property name="test-type-list" value="basic,driver-python" />
+		<!-- <property name="test-type-list" value="samples" /> -->
+		<!-- <property name="test-type-list" value="driver-C,driver-CPP" /> -->
+		<property name="copy.test.log" value="true"/>
+		<!-- <property name="import.file.name" value="basic-testcases-time.json" /> -->
+
+		<parallel>
+			<ant antfile="deploy-test-in-host.xml" dir="." inheritAll="false">
+				<property name="deploy.file.fullname" value="${deploy.file.fullname}" />
+				<property name="deploy.host.name" value="${test.machine.no1.basic}" />
+			</ant>
+			<ant antfile="deploy-test-in-host.xml" dir="." inheritAll="false">
+				<property name="deploy.file.fullname" value="${deploy.file.fullname}" />
+				<property name="deploy.host.name" value="${test.machine.no2.basic}" />
+			</ant>
+			<ant antfile="deploy-test-in-host.xml" dir="." inheritAll="false">
+				<property name="deploy.file.fullname" value="${deploy.file.fullname}" />
+				<property name="deploy.host.name" value="${test.machine.no3.basic}" />
+			</ant>
+		</parallel>
+
+		<!-- <basename property="antFileName" file="${ant.file}" suffix=".xml" /> -->
+		<for list="${test-type-list}" param="Test-Type">
+			<sequential>
+				<antfetch antfile="${WORKSPACE}/sequoiadb/misc/ci/test-type.xml" dir="." inheritAll="false">
+					<!-- <property name="test.machine.deploy.path" value="${test.machine.deploy.path}" />
+					<property name="install.path" value="${install.path}" /> -->
+					<property name="deploy.case.fullname" value="${deploy.case.fullname}" />
+					<property name="test.reports.path" value="${test.reports.path}" />
+					<property name="Test-Type" value="@{Test-Type}" />
+					<!-- <property name="antFileName" value="${antFileName}" /> -->
+					<!-- <property name="import.file.name" value="${import.file.name}" /> -->
+					<property name="parallel.flag" value="parallel" />
+					<property name="WORKSPACE" value="${WORKSPACE}" />
+					<property name="ci.script.file.path" value="${ci.script.file.path}" />
+					<property name="test.host.NAME" value="${test.machine.no2.basic}" />
+					<property name="parallel.count" value="1" />
+				</antfetch>
+			</sequential>
+		</for>
+
+		<trycatch>
+			<try>
+				<if>
+					<equals arg1="${copy.test.log}" arg2="true" />
+					<then>
+						<echo message="The copy.test.log is true , then copy all test log to ${save.testLog.hostname}:${save.testLog.dir}"/>
+						<tstamp>
+							<format property="current.time.log" pattern="yyyy-MM-dd-hh.mm.ss" />
+						</tstamp>
+
+						<property name="test.log.path" value="${test.reports.path}/${test.environment}-${deploy.conffile.wildcard}-${host.NAME}-${current.time.log}" />
+						<echo message="Mkdir ${test.log.path}" />
+						<mkdir dir="${test.log.path}" />
+
+						<echo message="It's the cluster mod..." />
+						<sdbCopyAndTar fileHostName="${test.machine.no1.basic}" saveHostName="${host.NAME}" diaglogPath="${install.path}/sequoiadb/database" savePath="${test.log.path}" />
+						<sdbCopyAndTar fileHostName="${test.machine.no2.basic}" saveHostName="${host.NAME}" diaglogPath="${install.path}/sequoiadb/database" savePath="${test.log.path}" />
+						<sdbCopyAndTar fileHostName="${test.machine.no3.basic}" saveHostName="${host.NAME}" diaglogPath="${install.path}/sequoiadb/database" savePath="${test.log.path}" />
+
+						<echo message="Tar ${test.log.path}.tar.gz..." />
+						<tar basedir="${test.reports.path}" destfile="${test.log.path}.tar.gz" compression="gzip" includes="**/*" />
+
+						<stafTools workType="copy" workHost="${host.NAME}" fileName="${test.log.path}.tar.gz"  toHost="${save.testLog.hostname}"  saveDir="${save.testLog.dir}" />
+						<sdbProperty name="delete.diaglogFile" value="dir=$(find /opt/sequoiadb/database -name diaglog); for d in $dir ; do echo rm -f $d/* ; rm -f $d/* ; done" />
+
+						<stafTools workType="shell" workHost="${test.machine.no1.basic}" workDir="${install.path}/sequoiadb/database" common="${delete.diaglogFile}" failonerror="false" />
+						<stafTools workType="shell" workHost="${test.machine.no2.basic}" workDir="${install.path}/sequoiadb/database" common="${delete.diaglogFile}" failonerror="false" />
+						<stafTools workType="shell" workHost="${test.machine.no3.basic}" workDir="${install.path}/sequoiadb/database" common="${delete.diaglogFile}" failonerror="false" />
+
+						<echo message="Delete ${test.log.path}.tar.gz and ${test.log.path} dir ..." />
+						<delete file="${test.log.path}.tar.gz" failonerror="false" />
+						<delete dir="${test.log.path}" failonerror="false"/>
+					</then>
+				</if>
+			</try>
+			<catch>
+				<echo message="copy log for download code fail" />
+			</catch>
+			<finally>
+			</finally>
+		</trycatch>		
+	</target>
+</project>

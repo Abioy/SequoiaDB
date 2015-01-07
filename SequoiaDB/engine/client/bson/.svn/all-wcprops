@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/13038/trunk/SequoiaDB/engine/client/bson
+END
+bson.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/13038/trunk/SequoiaDB/engine/client/bson/bson.c
+END
+bson.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11662/trunk/SequoiaDB/engine/client/bson/bson.h
+END
+encoding.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/client/bson/encoding.c
+END
+encoding.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/client/bson/encoding.h
+END
+numbers.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/client/bson/numbers.c
+END

@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess
+END
+mapref.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/mapref.xsl
+END
+mappull.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/mappull.xsl
+END
+topicpull-task.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/topicpull-task.xsl
+END
+topicpull-pr-d.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/topicpull-pr-d.xsl
+END
+topicpull.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/topicpull.xsl
+END
+conref.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/conref.xsl
+END
+maplinkImpl.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/maplinkImpl.xsl
+END
+maplink_template.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/maplink_template.xsl
+END
+maplink.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/maplink.xsl
+END
+flagImpl.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/flagImpl.xsl
+END
+maprefImpl.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/maprefImpl.xsl
+END
+mappullImpl.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/mappullImpl.xsl
+END
+topicpullImpl.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/topicpullImpl.xsl
+END
+conrefImpl.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/conrefImpl.xsl
+END
+flag_template.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/flag_template.xsl
+END
+mapref_template.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/mapref_template.xsl
+END
+mappull_template.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/mappull_template.xsl
+END
+topicpull_template.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/topicpull_template.xsl
+END
+conref_template.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/conref_template.xsl
+END
+flag.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/preprocess/flag.xsl
+END

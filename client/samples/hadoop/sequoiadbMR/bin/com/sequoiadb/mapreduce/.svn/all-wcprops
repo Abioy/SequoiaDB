@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce
+END
+HdfsReduceNodone.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/HdfsReduceNodone.class
+END
+SequoiadbHdfsMR.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/SequoiadbHdfsMR.class
+END
+HdfsSequoiadbMR.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/HdfsSequoiadbMR.class
+END
+HdfsSequoiadbMR$MobileMapper.class
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/HdfsSequoiadbMR$MobileMapper.class
+END
+HdfsReduceNodone$SdbMapper.class
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/HdfsReduceNodone$SdbMapper.class
+END
+HdfsSequoiadbMR$MobileReducer.class
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/HdfsSequoiadbMR$MobileReducer.class
+END
+SdbReduceNodone$SdbReduce.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/SdbReduceNodone$SdbReduce.class
+END
+SdbReduceDone$SdbReduce.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/SdbReduceDone$SdbReduce.class
+END
+SequoiadbHdfsMR$ProvinceMapper.class
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/SequoiadbHdfsMR$ProvinceMapper.class
+END
+SdbReduceNodone.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/SdbReduceNodone.class
+END
+SequoiadbHdfsMR$ProvinceReducer.class
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/SequoiadbHdfsMR$ProvinceReducer.class
+END
+HdfsReduceNodone$SdbReduce.class
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/HdfsReduceNodone$SdbReduce.class
+END
+SdbReduceNodone$SdbMapper.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/SdbReduceNodone$SdbMapper.class
+END
+SdbReduceDone.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/SdbReduceDone.class
+END
+SdbReduceDone$SdbMapper.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/bin/com/sequoiadb/mapreduce/SdbReduceDone$SdbMapper.class
+END

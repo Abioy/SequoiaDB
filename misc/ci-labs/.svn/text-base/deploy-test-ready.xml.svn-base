@@ -1,0 +1,78 @@
+
+<!--@param ${WORKSPACE} :  The workspace path-->
+<!--@param ${os.publish.name} : the os name, for example: suse , ubuntu, etc-->
+<!--@param ${ci.script.path} : The path where place ci script files-->
+
+<project name="copy_tar_deploy" default="check">
+	<property environment="env" />
+	<hostinfo prefix="local" />
+	<property name="release.path" value="${WORKSPACE}/release" />
+	
+ 	<taskdef resource="com/sequoiadb/ant/ant-sdbtasks.xml">
+		<classpath>
+			<pathelement location="${ci.script.path}/exec-tools/ant-sdbtasks.jar" />
+		</classpath>
+	</taskdef> 
+
+	<target name="check" depends="">
+		<available file="${release.path}/build.version" property="build.version.exist" />
+
+		<echo message="build.version exist is ${build.version.exist} " />
+		<delete file="${release.path}/build.version.local" failonerror="false" />
+		<if>
+			<isset property="build.version.exist" />
+			<then>
+				<property file="${release.path}/build.version.local" />
+				<echo message="build.version is exist , copy the build.version to new build.version.local " />
+				<copy file="${release.path}/build.version" tofile="${release.path}/build.version.local" failonerror="true" />
+				<replace file="${release.path}/build.version.local" token="BUILD.NUMBER" value="BUILD.NUMBER.LOCAL" />
+				<replace file="${release.path}/build.version.local" token="BUILD.INSTALL.FILENAME" value="BUILD.INSTALL.FILENAME.LOCAL" />
+				<replace file="${release.path}/build.version.local" token="BUILD.DRIVER.FILENAME" value="BUILD.DRIVER.FILENAME.LOCAL" />
+				<property file="${release.path}/build.version" />
+			</then>
+			<else>
+				<echo message="build.version is not exist " />
+				<property name="BUILD.NUMBER.LOCAL" value="-1" />
+			</else>
+		</if>
+		<echo message="check build.version is OK , now check the version is old " />
+		<delete file="${release.path}/build.version" failonerror="false" />
+		<mkdir dir="${release.path}" />	
+		<copy file="${ci.script.path}/ci-properies-files/ci.test.properties.${os.publish.name}" tofile="${ci.script.path}/ci.test.properties" />
+		<property file="${ci.script.path}/ci.test.properties" />
+		
+		<stafTools workType="copy" workHost="${target.deploy_tar_gz.ip}" fileName="${copy_tar}/build.version" saveDir="${release.path}" toHost="${local.ADDR4}" />
+
+		<echo message="now software is ${BUILD.NUMBER.LOCAL}" />
+		<if>
+			<not>
+				<equals arg1="${BUILD.NUMBER}" arg2="${BUILD.NUMBER.LOCAL}" />
+			</not>
+			<then>
+				<antcall target="copy_tar_deploy" inheritAll="true" />
+			</then>
+		</if>
+	</target>
+
+	<target name="clean" depends="">
+		<echo message="delete ${release.path}" />
+		<delete dir="${release.path}" />
+		<mkdir dir="${release.path}" />
+	</target>
+
+	<target name="copy_tar_deploy" depends="clean">
+		<property file="${ci.script.path}/ci.test.properties" />
+		<echo message="Begin to copy the software package ..." />
+
+		<stafTools workType="copy" workHost="${target.deploy_tar_gz.ip}" fileName="${copy_tar}/build.version" saveDir="${release.path}" toHost="${local.ADDR4}" />
+		<stafTools workType="copy" workHost="${target.deploy_tar_gz.ip}" fileName="${copy_tar}/${BUILD.INSTALL.FILENAME}.${BUILD.NUMBER}" saveDir="${release.path}" toHost="${local.ADDR4}" />
+		<stafTools workType="copy" workHost="${target.deploy_tar_gz.ip}" fileName="${copy_tar}/${BUILD.DRIVER.FILENAME}.${BUILD.NUMBER}" saveDir="${release.path}" toHost="${local.ADDR4}" />
+
+		<move file="${release.path}/${BUILD.INSTALL.FILENAME}.${BUILD.NUMBER}" tofile="${release.path}/${BUILD.INSTALL.FILENAME}" />
+		<move file="${release.path}/${BUILD.DRIVER.FILENAME}.${BUILD.NUMBER}" tofile="${release.path}/${BUILD.DRIVER.FILENAME}" />
+		<untar src="${release.path}/${BUILD.DRIVER.FILENAME}" dest="${release.path}" compression="gzip" />
+	</target>
+</project>
+
+
+

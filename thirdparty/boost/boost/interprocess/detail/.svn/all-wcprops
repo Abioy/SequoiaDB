@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail
+END
+intersegment_ptr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/intersegment_ptr.hpp
+END
+in_place_interface.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/in_place_interface.hpp
+END
+segment_manager_helper.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/segment_manager_helper.hpp
+END
+robust_emulation.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/robust_emulation.hpp
+END
+xsi_shared_memory_device.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/xsi_shared_memory_device.hpp
+END
+ptime_wrk.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/ptime_wrk.hpp
+END
+managed_memory_impl.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/managed_memory_impl.hpp
+END
+interprocess_tester.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/interprocess_tester.hpp
+END
+move.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/move.hpp
+END
+type_traits.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/type_traits.hpp
+END
+atomic.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/atomic.hpp
+END
+tmp_dir_helpers.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/tmp_dir_helpers.hpp
+END
+managed_open_or_create_impl.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/managed_open_or_create_impl.hpp
+END
+transform_iterator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/transform_iterator.hpp
+END
+managed_multi_shared_memory.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/managed_multi_shared_memory.hpp
+END
+preprocessor.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/preprocessor.hpp
+END
+win32_api.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/win32_api.hpp
+END
+config_end.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/config_end.hpp
+END
+workaround.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/workaround.hpp
+END
+os_thread_functions.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/os_thread_functions.hpp
+END
+os_file_functions.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/os_file_functions.hpp
+END
+cast_tags.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/cast_tags.hpp
+END
+config_begin.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/config_begin.hpp
+END
+intermodule_singleton.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/intermodule_singleton.hpp
+END
+utilities.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/utilities.hpp
+END
+file_wrapper.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/file_wrapper.hpp
+END
+multi_segment_services.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/multi_segment_services.hpp
+END
+variadic_templates_tools.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/variadic_templates_tools.hpp
+END
+xsi_shared_memory_file_wrapper.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/xsi_shared_memory_file_wrapper.hpp
+END
+pointer_type.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/pointer_type.hpp
+END
+math_functions.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/math_functions.hpp
+END
+named_proxy.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/named_proxy.hpp
+END
+posix_time_types_wrk.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/posix_time_types_wrk.hpp
+END
+min_max.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/min_max.hpp
+END
+mpl.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/boost/boost/interprocess/detail/mpl.hpp
+END

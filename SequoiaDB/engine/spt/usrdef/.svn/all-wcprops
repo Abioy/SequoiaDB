@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/16714/trunk/SequoiaDB/engine/spt/usrdef
+END
+sptUsrSsh.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/15236/trunk/SequoiaDB/engine/spt/usrdef/sptUsrSsh.cpp
+END
+sptUsrFile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/15302/trunk/SequoiaDB/engine/spt/usrdef/sptUsrFile.cpp
+END
+sptUsrOmaAssit.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/14462/trunk/SequoiaDB/engine/spt/usrdef/sptUsrOmaAssit.cpp
+END
+sptUsrCmd.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/16714/trunk/SequoiaDB/engine/spt/usrdef/sptUsrCmd.cpp
+END
+sptUsrSystem.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/16678/trunk/SequoiaDB/engine/spt/usrdef/sptUsrSystem.cpp
+END
+sptUsrOma.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/15941/trunk/SequoiaDB/engine/spt/usrdef/sptUsrOma.cpp
+END

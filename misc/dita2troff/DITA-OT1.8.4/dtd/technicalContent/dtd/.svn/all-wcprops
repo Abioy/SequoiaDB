@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd
+END
+taskreqDomain.mod
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/taskreqDomain.mod
+END
+abbreviateDomain.ent
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/abbreviateDomain.ent
+END
+ditabase.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/ditabase.dtd
+END
+map.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/map.dtd
+END
+task.ent
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/task.ent
+END
+glossentry.mod
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/glossentry.mod
+END
+topic.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/topic.dtd
+END
+glossary.ent
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/glossary.ent
+END
+glossgroup.ent
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/glossgroup.ent
+END
+glossrefDomain.mod
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/glossrefDomain.mod
+END
+uiDomain.ent
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/uiDomain.ent
+END
+programmingDomain.ent
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/programmingDomain.ent
+END
+softwareDomain.mod
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/softwareDomain.mod
+END
+concept.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/concept.dtd
+END
+reference.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/reference.dtd
+END
+abbreviateDomain.mod
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/abbreviateDomain.mod
+END
+generalTask.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/generalTask.dtd
+END
+task.mod
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/task.mod
+END
+concept.ent
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/concept.ent
+END
+glossary.mod
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/glossary.mod
+END
+glossgroup.mod
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/glossgroup.mod
+END
+glossentry.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/glossentry.dtd
+END
+uiDomain.mod
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/uiDomain.mod
+END
+reference.ent
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/reference.ent
+END
+taskreqDomain.ent
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/taskreqDomain.ent
+END
+programmingDomain.mod
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/programmingDomain.mod
+END
+strictTaskbodyConstraint.mod
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/strictTaskbodyConstraint.mod
+END
+glossentry.ent
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/glossentry.ent
+END
+glossrefDomain.ent
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/glossrefDomain.ent
+END
+softwareDomain.ent
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/softwareDomain.ent
+END
+concept.mod
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/concept.mod
+END
+reference.mod
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/reference.mod
+END
+task.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/task.dtd
+END
+glossary.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/glossary.dtd
+END
+glossgroup.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/dtd/technicalContent/dtd/glossgroup.dtd
+END

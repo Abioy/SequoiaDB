@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sequoiadb/!svn/ver/16742/trunk/SequoiaDB/engine/mig
+END
+migExport.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16742/trunk/SequoiaDB/engine/mig/migExport.cpp
+END
+migCommon.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16689/trunk/SequoiaDB/engine/mig/migCommon.cpp
+END
+migImport.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16689/trunk/SequoiaDB/engine/mig/migImport.cpp
+END
+migLobTool.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16368/trunk/SequoiaDB/engine/mig/migLobTool.cpp
+END
+migLoad.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/13649/trunk/SequoiaDB/engine/mig/migLoad.cpp
+END

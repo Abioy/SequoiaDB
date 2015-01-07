@@ -1,0 +1,47 @@
+<!--@param ${samples.testcase.path}: The path where test case direcotry.-->
+<!--@param ${reports.path}: The path where test case direcotry.-->
+<!--@param ${test.package.name}: The name of test package name,.-->
+<!--@param ${deploy.case.fullname}: The file name ( .xml )this file name is -->
+<project name="Exec-Samples-Testcases" default="Test-Python-Samples">
+    <property file="${ci.properties.path}" />
+    <taskdef resource="com/sequoiadb/ant/ant-sdbtasks.xml">
+        <classpath>
+            <fileset dir="${antTask.jar.path}" includes="*.jar" />
+        </classpath>
+    </taskdef>
+
+    <target name="Test-Python-Samples" depends="">
+        <ant antfile="exec-driver-python-test.xml" dir="." target="Test-Python-Samples" inheritAll="true" >
+            <property name="excludes.dir.patterns" value="reports*" />
+            <property name="includes.dir.patterns" value="*" />
+        </ant>
+    </target>
+
+    <target name="Test-C-Samples" depends="">
+        <ant antfile="exec-driver-C-test.xml" dir="." target="Test-C-Samples" inheritAll="true" >
+            <property name="excludes.dir.patterns" value="README_zh" />
+            <property name="includes.dir.patterns" value="*" />
+        </ant>
+    </target>
+
+    <target name="Test-CPP-Samples" depends="">
+        <ant antfile="exec-driver-CPP-test.xml" dir="." target="Test-CPP-Samples" inheritAll="true" >
+            <property name="excludes.dir.patterns" value="README_zh" />
+            <property name="includes.dir.patterns" value="*" />
+        </ant>
+    </target>
+
+    <target name="Test-PHP-Samples" depends="">
+        <ant antfile="exec-driver-php-test.xml" dir="." target="Test-PHP-Samples" inheritAll="true" >
+            <property name="excludes.dir.patterns" value="tools" />
+            <property name="includes.dir.patterns" value="*" />
+        </ant>
+    </target>
+
+    <target name="Test-Java-Samples" depends="">
+        <ant antfile="exec-driver-java-test.xml" dir="." target="Test-Java-Samples" inheritAll="true" >
+            <property name="excludes.dir.patterns" value="" />
+            <property name="includes.dir.patterns" value="*" />
+        </ant>
+    </target>
+</project>

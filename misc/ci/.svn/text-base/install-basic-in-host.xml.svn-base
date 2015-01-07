@@ -1,0 +1,111 @@
+<!--@param ${test.basedir}: the path where deploy software and test script-->
+<!--@param ${install.package.filename}: The deploy tar file name -->
+<!--@param ${is.standalone.mode}: The flag whether start with standalone mode-->
+<!--@param ${is.coord.master}: flag this node is coord master or no-->
+<!--@param ${catalog.addrs}: The string include catalog addr and port-->
+
+<!-- hostname:jenkins.master.ip -->
+<!-- depends:deploy-software-in-host.xml -->
+<!-- call:null -->
+
+<project name="Install-Software" default="install-software">
+	<property file="${test.basedir}/ci.test.properties" />
+	<property name="db.path" value="${install.path}/sequoiadb" />
+
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="/usr/share/java/ant-contrib.jar" />
+		</classpath>
+	</taskdef>
+	<taskdef resource="com/sequoiadb/ant/ant-sdbtasks.xml">
+		<classpath>
+			<pathelement location="${test.machine.deploy.path}/deploy/ant-sdbtasks/ant-sdbtasks.jar" />
+		</classpath>
+	</taskdef> 
+
+	<target name="clean-install" depends="">
+		<hostinfo prefix="host" />
+		<echo message="Begin to clean install env..." />
+		
+		<exec executable="service" dir="" failonerror="false">
+			<arg value="sdbcm" />
+			<arg value="stop" />			
+		</exec>
+		<exec executable="${db.path}/bin/sdbstop" dir="" failonerror="true" />
+		<!-- <stafTools workHost="${host.NAME}" workType="shell" workDir="${db.path}" common="ps -ef|grep sdb | grep -v grep | awk '{print $2}' | xargs kill -9" failonerror="true" /> -->
+		<exec executable="${db.path}/uninstall" dir="${db.path}" failonerror="true">
+			<arg line="--mode unattended" />
+		</exec>
+		<delete dir="${db.path}" />
+		<echo message="Clean install env compeleted." />
+	</target>
+
+
+	<target name="install-software" depends="">
+		<echo message="Begin to install..." />
+		<chmod file="${test.basedir}/${install.package.filename}" perm="u+x" />
+		<exec executable="${test.basedir}/${install.package.filename}">
+			<arg line="--mode unattended --prefix ${db.path} --username ${install.user} --userpasswd ${install.password}" />
+		</exec>
+
+		<if>
+			<equals arg1="${is.standalone.mode}" arg2="true" />
+			<then>
+				<mkdir dir="${db.path}/conf/local/${coord.service.port}" />
+				<copy file="${db.path}/conf/samples/sdb.conf.standalone" tofile="${db.path}/conf/local/${coord.service.port}/sdb.conf" />
+				<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="diaglevel=.*" replace="diaglevel=5" flags="g" />
+				<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="transactionon=false" replace="transactionon=true" flags="g" />
+
+				<!--for fix coord port change to 11810 , we change coord port to 50000-->
+				<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="svcname=11810" replace="svcname=50000" flags="g" />
+				<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="replname=11811" replace="replname=50001" flags="g" />
+				<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="shardname=11812" replace="shardname=50002" flags="g" />
+				<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="catalogname=11813" replace="catalogname=50003" flags="g" />
+				<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="httpname=11814" replace="httpname=50004" flags="g" />
+
+				<echo message="Start standalone process: su - sdbadmin -c '${db.path}/bin/sdbstart -c ${db.path}/conf/local/${coord.service.port}'" />
+				<exec dir="${db.path}/bin" executable="su" failonerror="true" failifexecutionfails="true" >
+					<arg line=" - sdbadmin -c  '${db.path}/bin/sdbstart -c ${db.path}/conf/local/${coord.service.port}'" />
+				</exec>
+			</then>
+			<else>
+				<mkdir dir="${db.path}/conf/local/${coord.service.port}" />
+				<copy file="${db.path}/conf/samples/sdb.conf.coord" tofile="${db.path}/conf/local/${coord.service.port}/sdb.conf" />
+				<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="diaglevel=.*" replace="diaglevel=5" flags="g" />
+
+				<!--for fix coord port change to 11810 , we change coord port to 50000-->
+				<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="svcname=11810" replace="svcname=50000" flags="g" />
+				<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="replname=11811" replace="replname=50001" flags="g" />
+				<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="shardname=11812" replace="shardname=50002" flags="g" />
+				<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="catalogname=11813" replace="catalogname=50003" flags="g" />
+				<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="httpname=11814" replace="httpname=50004" flags="g" />
+
+				<if>
+					<equals arg1="${is.coord.master}" arg2="false" />
+					<then>
+						<replaceregexp file="${db.path}/conf/local/${coord.service.port}/sdb.conf" match="# catalogaddr=" replace="catalogaddr=${catalog.addrs}" flags="g" />
+					</then>
+				</if>
+
+				<exec executable="chown" dir="${db.path}/conf/local">
+                    <arg line=" -R ${install.user} ${coord.service.port}" />
+                </exec>
+                <exec executable="chgrp" dir="${db.path}/conf/local">
+                    <arg line=" -R ${install.user}_group ${coord.service.port}" />
+                </exec>
+
+				<echo message="Start coord: su - sdbadmin -c  '${db.path}/bin/sdbstart -c ${db.path}/conf/local/${coord.service.port}'" />
+				<exec dir="${db.path}/bin" executable="su" spawn="false">
+					<arg line=" - sdbadmin -c  '${db.path}/bin/sdbstart -c ${db.path}/conf/local/${coord.service.port}'" />
+				</exec>
+			</else>
+		</if>
+
+		<waitfor maxwait="30" maxwaitunit="second" checkevery="500">
+			<and>
+				<socket server="${ADDR4}" port="${coord.service.port}" />
+			</and>
+		</waitfor>
+		<echo message="Install compeleted." />
+	</target>
+</project>

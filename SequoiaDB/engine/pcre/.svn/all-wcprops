@@ -1,0 +1,407 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre
+END
+pcre.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre.h
+END
+pcrecpp.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcrecpp.h
+END
+pcre_scanner_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_scanner_unittest.cc
+END
+pcre16_utf16_utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_utf16_utils.c
+END
+pcre_scanner.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_scanner.cc
+END
+pcre16_compile.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_compile.c
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/config.h
+END
+pcre16_ord2utf16.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_ord2utf16.c
+END
+pcre16_dfa_exec.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_dfa_exec.c
+END
+pcre16_newline.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_newline.c
+END
+pcre_chartables.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_chartables.c
+END
+pcre_ucd.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_ucd.c
+END
+pcre_ord2utf8.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_ord2utf8.c
+END
+pcre_fullinfo.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_fullinfo.c
+END
+pcre16_printint.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_printint.c
+END
+pcre16_tables.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_tables.c
+END
+pcre_stringpiece.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_stringpiece.h
+END
+pcrecpparg.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcrecpparg.h
+END
+pcrecpp_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcrecpp_internal.h
+END
+pcre_refcount.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_refcount.c
+END
+pcre_version.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_version.c
+END
+pcrecpp.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcrecpp.cc
+END
+pcre16_get.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_get.c
+END
+pcre16_globals.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_globals.c
+END
+pcre_jit_compile.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_jit_compile.c
+END
+pcre_scanner.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_scanner.h
+END
+pcreposix.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcreposix.c
+END
+pcre16_xclass.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_xclass.c
+END
+pcre16_byte_order.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_byte_order.c
+END
+pcre_valid_utf8.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_valid_utf8.c
+END
+pcreposix.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcreposix.h
+END
+pcre_study.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_study.c
+END
+pcre_tables.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_tables.c
+END
+dftables.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/dftables.c
+END
+pcre16_config.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_config.c
+END
+pcre_stringpiece_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_stringpiece_unittest.cc
+END
+pcre16_maketables.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_maketables.c
+END
+pcre16_study.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_study.c
+END
+pcre_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_internal.h
+END
+ucp.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/ucp.h
+END
+pcre_exec.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_exec.c
+END
+pcredemo.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcredemo.c
+END
+pcre16_fullinfo.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_fullinfo.c
+END
+pcre_string_utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_string_utils.c
+END
+pcre_compile.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_compile.c
+END
+pcre16_refcount.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_refcount.c
+END
+pcre_xclass.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_xclass.c
+END
+pcre_byte_order.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_byte_order.c
+END
+pcre_newline.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_newline.c
+END
+pcre_config.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_config.c
+END
+pcre_maketables.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_maketables.c
+END
+pcre_get.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_get.c
+END
+pcre_stringpiece.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_stringpiece.cc
+END
+pcretest.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcretest.c
+END
+pcre16_ucd.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_ucd.c
+END
+pcre_globals.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_globals.c
+END
+pcrecpp_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcrecpp_unittest.cc
+END
+pcre_jit_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_jit_test.c
+END
+pcre16_exec.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_exec.c
+END
+pcre16_valid_utf16.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_valid_utf16.c
+END
+pcre16_version.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_version.c
+END
+pcre16_string_utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_string_utils.c
+END
+pcre_dfa_exec.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_dfa_exec.c
+END
+pcregrep.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcregrep.c
+END
+pcre16_jit_compile.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_jit_compile.c
+END
+pcre_printint.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre_printint.c
+END
+pcre16_chartables.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/9949/trunk/SequoiaDB/engine/pcre/pcre16_chartables.c
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/ci-properies-files
+END
+ci.build.properties.power
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/ci-properies-files/ci.build.properties.power
+END
+ci.test.properties.power
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/ci-properies-files/ci.test.properties.power
+END
+ci.test.properties.suse_long_test
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/ci-properies-files/ci.test.properties.suse_long_test
+END
+ci.test.properties.suse
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/ci-properies-files/ci.test.properties.suse
+END
+ci.test.properties.ubuntu
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/ci-properies-files/ci.test.properties.ubuntu
+END
+ci.build.properties.x86
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16269/trunk/misc/ci-labs/ci-properies-files/ci.build.properties.x86
+END

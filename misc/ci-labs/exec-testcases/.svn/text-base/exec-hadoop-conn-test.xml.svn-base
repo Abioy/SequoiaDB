@@ -1,0 +1,51 @@
+<project name="exec-hadoop-conn-test" default="test">
+	<property name="data.name" value="data-generate.jar" />
+	<property name="data.line.num" value="10000" />
+	<property name="data.file" value="sequoiadb-hadoop-data.txt" />
+	<property file="${ci.script.file.path}/ci.test.properties" />
+
+	<target name="clean-env" depends="">
+		<delete dir="${reports.path}" failonerror="false" />
+		<mkdir dir="${reports.path}" />
+		<delete file="${install.path}/hadoop-1.2.1/lib/hadoop-connector.jar" />
+		<delete file="${install.path}/hadoop-1.2.1/lib/sequoiadb.jar">
+	</target>
+
+	<target name="test" depends="clean-env">
+		<echo message="Begin to test sequoiadb conn to hadoop..." />
+		<echo file="${reports.path}/TEST-hadoop-conn.xml" message="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;testsuite errors=&quot;0&quot; failures=&quot;0&quot; hostname=&quot;${host.NAME}&quot; tests=&quot;1&quot;&gt;&#10;" />
+		<echo file="${reports.path}/TEST-hadoop-conn.xml" append="true" message="&lt;testcase name=&quot;Sequoiadb conn to hadoop&quot;&gt;&#10;" />
+
+		<exec executable="/usr/bin/python" dir="." error="error.message" errorproperty="error.output" resultproperty="ret.code">
+			<arg line=" ${testcase.path}/sdb-hadoop.py" />
+		</exec>
+
+		<echo message="the result = ${ret.code} after exec testcase." />
+     	<if>
+			<not>
+				<equals arg1="${ret.code}" arg2="0" />
+			</not>
+			<then>
+				<echo file="${reports.path}/TEST-hadoop-conn.xml" append="true" message="&lt;failure command=&quot;${append};&quot; returncode=&quot;${ret.code};&quot;/&gt;&#10; &lt;![CDATA[errormessage=&#10;${error.output} &#10;]]&gt;&#10;" />
+			</then>
+		 </if>
+		 <echo file="${reports.path}/TEST-hadoop-conn.xml" append="true" message="&lt;/testcase&gt;&#10;" />	
+		<echo file="${reports.path}/TEST-hadoop-conn.xml" message="&lt;/testsuite&gt;&#10;" append="true" />
+	</target>
+
+<!-- 	<target name="init" depends="clean-env">
+		<echo message="Begin to init the test data..." />
+		<exec executable="java" dir="${testcase.path}">
+			<arg line=" -jar ${data.name} ${data.line.num} ./${data.file}" />
+		</exec>
+
+		<echo message="Exec:${install.path}/sequoiadb/bin/sdbimprt -s localhost -p ${coord.service.port} -c default -l data --file ${testcase.path}/${data.file} --fields name,age,province_code,mobile" />
+		<exec executable="${install.path}/sequoiadb/bin/sdbimprt" dir=".">
+			<arg line=" -s localhost -p ${coord.service.port} -c default -l data --file ${testcase.path}/${data.file} --fields name,age,province_code,mobile" />
+		</exec>
+		<echo message="Compelted init the test data..." />
+	</target>
+
+	<target name="" depends="">
+	</target> -->
+</project>

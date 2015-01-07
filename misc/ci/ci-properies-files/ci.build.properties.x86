@@ -1,0 +1,9 @@
+STAF.PATH=/usr/local/staf
+
+project.name=sequoiadb
+os.and.platform=linux_x86_64
+
+copy_tar=/test_tar
+target.deploy_tar_gz.ip=bl465-4
+
+rpm_dir=/usr/src/packages

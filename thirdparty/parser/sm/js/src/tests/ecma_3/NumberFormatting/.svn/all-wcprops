@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_3/NumberFormatting
+END
+shell.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_3/NumberFormatting/shell.js
+END
+tostring-001.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_3/NumberFormatting/tostring-001.js
+END
+jstests.list
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_3/NumberFormatting/jstests.list
+END
+browser.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_3/NumberFormatting/browser.js
+END

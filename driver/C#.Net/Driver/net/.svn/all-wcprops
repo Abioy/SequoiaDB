@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/sequoiadb/!svn/ver/16688/trunk/driver/C%23.Net/Driver/net
+END
+ServerAddress.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/10971/trunk/driver/C%23.Net/Driver/net/ServerAddress.cs
+END
+TimeOutSocket.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16688/trunk/driver/C%23.Net/Driver/net/TimeOutSocket.cs
+END
+ConfigOptions.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/9949/trunk/driver/C%23.Net/Driver/net/ConfigOptions.cs
+END
+ConnectionTCPImpl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/16687/trunk/driver/C%23.Net/Driver/net/ConnectionTCPImpl.cs
+END
+IConnection.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/10971/trunk/driver/C%23.Net/Driver/net/IConnection.cs
+END

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global
+END
+direct-eval-but-not.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global/direct-eval-but-not.js
+END
+eval-01.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global/eval-01.js
+END
+eval-02.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global/eval-02.js
+END
+shell.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global/shell.js
+END
+eval-inside-with-is-direct.js
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global/eval-inside-with-is-direct.js
+END
+parenthesized-eval-is-direct.js
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global/parenthesized-eval-is-direct.js
+END
+adding-global-var-nonextensible-error.js
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global/adding-global-var-nonextensible-error.js
+END
+eval-native-callback-is-indirect.js
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global/eval-native-callback-is-indirect.js
+END
+jstests.list
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global/jstests.list
+END
+parseFloat-01.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global/parseFloat-01.js
+END
+browser.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global/browser.js
+END
+eval-in-strict-eval-in-normal-function.js
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global/eval-in-strict-eval-in-normal-function.js
+END
+parseInt-01.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/tests/ecma_5/Global/parseInt-01.js
+END

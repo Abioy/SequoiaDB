@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/14879/trunk/client/samples/hadoop/sequoiadbMR/.project
+END

@@ -1,0 +1,335 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize
+END
+006.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/006.phpt
+END
+serialization_error_001.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_error_001.phpt
+END
+serialization_objects_001.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_001.phpt
+END
+serialization_objects_011.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_011.phpt
+END
+serialization_objects_003.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_003.phpt
+END
+serialization_objects_013.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_013.phpt
+END
+serialization_precision_002.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_precision_002.phpt
+END
+serialization_objects_005.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_005.phpt
+END
+serialization_objects_015.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_015.phpt
+END
+serialization_objects_007.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_007.phpt
+END
+unserializeS.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/unserializeS.phpt
+END
+serialization_objects_009.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_009.phpt
+END
+bug43614.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug43614.phpt
+END
+serialization_arrays_002.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_arrays_002.phpt
+END
+bug14293.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug14293.phpt
+END
+serialization_arrays_004.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_arrays_004.phpt
+END
+bug28325.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug28325.phpt
+END
+autoload_implements.p5c
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/autoload_implements.p5c
+END
+bug62373.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug62373.phpt
+END
+incomplete_class.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/incomplete_class.phpt
+END
+bug21957.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug21957.phpt
+END
+bug23298.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug23298.phpt
+END
+bug42919.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug42919.phpt
+END
+serialization_resources_001.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_resources_001.phpt
+END
+bug46882.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug46882.phpt
+END
+precision.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/precision.phpt
+END
+serialization_miscTypes_001.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_miscTypes_001.phpt
+END
+bug55798.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug55798.phpt
+END
+001.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/001.phpt
+END
+003.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/003.phpt
+END
+autoload_interface.p5c
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/autoload_interface.p5c
+END
+005.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/005.phpt
+END
+serialization_objects_010.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_010.phpt
+END
+serialization_objects_002.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_002.phpt
+END
+bug31402.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug31402.phpt
+END
+serialization_objects_012.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_012.phpt
+END
+serialization_precision_001.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_precision_001.phpt
+END
+serialization_objects_004.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_004.phpt
+END
+bug30234.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug30234.phpt
+END
+serialization_objects_014.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_014.phpt
+END
+serialization_objects_006.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_006.phpt
+END
+bug31442.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug31442.phpt
+END
+bug24063.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug24063.phpt
+END
+serialization_objects_008.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_objects_008.phpt
+END
+serialization_arrays_001.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_arrays_001.phpt
+END
+serialization_arrays_003.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_arrays_003.phpt
+END
+bug36424.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug36424.phpt
+END
+serialization_arrays_005.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/serialization_arrays_005.phpt
+END
+bug45706.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug45706.phpt
+END
+bug26762.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug26762.phpt
+END
+bug25378.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug25378.phpt
+END
+bug27469.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug27469.phpt
+END
+bug37947.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/bug37947.phpt
+END
+002.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/002.phpt
+END
+004.phpt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/14631/trunk/thirdparty/php/linux/php-5.4.6/standard/tests/serialize/004.phpt
+END

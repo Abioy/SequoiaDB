@@ -1,0 +1,251 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit
+END
+NativePPC.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativePPC.h
+END
+Nativei386.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/Nativei386.cpp
+END
+NativeCommon.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativeCommon.h
+END
+NativeSH4.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativeSH4.cpp
+END
+Containers.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/Containers.cpp
+END
+njcpudetect.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/njcpudetect.h
+END
+VMPI.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/VMPI.h
+END
+Fragmento.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/Fragmento.cpp
+END
+Assembler.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/Assembler.h
+END
+NativeMIPS.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativeMIPS.h
+END
+NativeSparc.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativeSparc.h
+END
+Allocator.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/Allocator.h
+END
+NativeARM.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativeARM.cpp
+END
+avmplus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/avmplus.cpp
+END
+NativePPC.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativePPC.cpp
+END
+CodeAlloc.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/CodeAlloc.h
+END
+LIR.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/LIR.h
+END
+manifest.mk
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/manifest.mk
+END
+RegAlloc.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/RegAlloc.h
+END
+NativeX64.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativeX64.h
+END
+njconfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/njconfig.h
+END
+Nativei386.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/Nativei386.h
+END
+nanojit.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/nanojit.h
+END
+NativeSH4.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativeSH4.h
+END
+Containers.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/Containers.h
+END
+VMPI.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/VMPI.cpp
+END
+NativeSH4-auto-generated.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativeSH4-auto-generated.h
+END
+Assembler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/Assembler.cpp
+END
+LIRopcode.tbl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/LIRopcode.tbl
+END
+NativeSparc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativeSparc.cpp
+END
+NativeMIPS.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativeMIPS.cpp
+END
+Allocator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/Allocator.cpp
+END
+CodeAlloc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/CodeAlloc.cpp
+END
+LIR.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/LIR.cpp
+END
+Fragmento.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/Fragmento.h
+END
+NativeX64.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativeX64.cpp
+END
+RegAlloc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/RegAlloc.cpp
+END
+Native.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/Native.h
+END
+NativeARM.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/NativeARM.h
+END
+avmplus.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/avmplus.h
+END
+njconfig.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11622/trunk/thirdparty/parser/sm/js/src/nanojit/njconfig.cpp
+END

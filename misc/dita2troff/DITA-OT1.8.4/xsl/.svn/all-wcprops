@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl
+END
+normalize.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/normalize.xsl
+END
+generalize.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/generalize.xsl
+END
+job-helper.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/job-helper.xsl
+END
+pretty.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/pretty.xsl
+END
+specialize.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/xsl/specialize.xsl
+END

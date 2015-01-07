@@ -1,0 +1,2741 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/16760/trunk/SequoiaDB/engine/include
+END
+clsFSDstSession.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/15593/trunk/SequoiaDB/engine/include/clsFSDstSession.hpp
+END
+monCB.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16382/trunk/SequoiaDB/engine/include/monCB.hpp
+END
+sptSPArguments.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/14444/trunk/SequoiaDB/engine/include/sptSPArguments.hpp
+END
+sptScope.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/15160/trunk/SequoiaDB/engine/include/sptScope.hpp
+END
+qgmPlMthMatcherScan.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlMthMatcherScan.hpp
+END
+ixm_common.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ixm_common.hpp
+END
+qgmOprUnit.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmOprUnit.hpp
+END
+msgDef.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/16447/trunk/SequoiaDB/engine/include/msgDef.h
+END
+qgmExtendPlan.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmExtendPlan.hpp
+END
+optQgmOptimizer.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/optQgmOptimizer.hpp
+END
+rtnLobTuple.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/15593/trunk/SequoiaDB/engine/include/rtnLobTuple.hpp
+END
+msgCoord.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/msgCoord.hpp
+END
+rtnSQLMergeArraySet.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSQLMergeArraySet.hpp
+END
+pmdEDU.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16179/trunk/SequoiaDB/engine/include/pmdEDU.hpp
+END
+monDump.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/12698/trunk/SequoiaDB/engine/include/monDump.hpp
+END
+utilMinHeap.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/12957/trunk/SequoiaDB/engine/include/utilMinHeap.hpp
+END
+pmd.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16610/trunk/SequoiaDB/engine/include/pmd.hpp
+END
+pmdProcessor.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/16583/trunk/SequoiaDB/engine/include/pmdProcessor.hpp
+END
+qgmPlScan.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlScan.hpp
+END
+spd.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/spd.h
+END
+qgmPlFilter.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlFilter.hpp
+END
+rtnSQLFuncFactory.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSQLFuncFactory.hpp
+END
+dpsLogFile.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/13524/trunk/SequoiaDB/engine/include/dpsLogFile.hpp
+END
+migLobDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16347/trunk/SequoiaDB/engine/include/migLobDef.hpp
+END
+omTaskManager.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/15743/trunk/SequoiaDB/engine/include/omTaskManager.hpp
+END
+rtnCoord.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/rtnCoord.hpp
+END
+omDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16760/trunk/SequoiaDB/engine/include/omDef.hpp
+END
+rtnSQLFirst.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSQLFirst.hpp
+END
+qgmOptiSplit.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmOptiSplit.hpp
+END
+aggrParser.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/aggrParser.hpp
+END
+sptUsrOma.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/15094/trunk/SequoiaDB/engine/include/sptUsrOma.hpp
+END
+clsDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/13021/trunk/SequoiaDB/engine/include/clsDef.hpp
+END
+qgmConditionNodeHelper.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmConditionNodeHelper.hpp
+END
+utilParseData.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/12074/trunk/SequoiaDB/engine/include/utilParseData.hpp
+END
+ossEDU.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11806/trunk/SequoiaDB/engine/include/ossEDU.hpp
+END
+sptSPScope.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/15101/trunk/SequoiaDB/engine/include/sptSPScope.hpp
+END
+ossVer_Autogen.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/16720/trunk/SequoiaDB/engine/include/ossVer_Autogen.h
+END
+qgmTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/qgmTrace.h
+END
+rtnContextLob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/15162/trunk/SequoiaDB/engine/include/rtnContextLob.hpp
+END
+rtnDataLobStream.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/14242/trunk/SequoiaDB/engine/include/rtnDataLobStream.hpp
+END
+dmsStorageUnit.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16020/trunk/SequoiaDB/engine/include/dmsStorageUnit.hpp
+END
+clsShardMgr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/15593/trunk/SequoiaDB/engine/include/clsShardMgr.hpp
+END
+rtnCoordCommands.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/15627/trunk/SequoiaDB/engine/include/rtnCoordCommands.hpp
+END
+rtnLobStream.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/15593/trunk/SequoiaDB/engine/include/rtnLobStream.hpp
+END
+ixmTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/ixmTrace.h
+END
+qgmParamTable.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmParamTable.hpp
+END
+clsCommand.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/12567/trunk/SequoiaDB/engine/include/clsCommand.hpp
+END
+coordDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/coordDef.hpp
+END
+fmpVM.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/fmpVM.hpp
+END
+utilCommon.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16125/trunk/SequoiaDB/engine/include/utilCommon.hpp
+END
+clsMgr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/14084/trunk/SequoiaDB/engine/include/clsMgr.hpp
+END
+aggrBuilder.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11977/trunk/SequoiaDB/engine/include/aggrBuilder.hpp
+END
+clsVSVote.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/clsVSVote.hpp
+END
+clsSrcSelector.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/clsSrcSelector.hpp
+END
+ossPrimitiveFileOp.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11809/trunk/SequoiaDB/engine/include/ossPrimitiveFileOp.hpp
+END
+ixm.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/13234/trunk/SequoiaDB/engine/include/ixm.hpp
+END
+qgmPlan.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/include/qgmPlan.hpp
+END
+dmsCompress.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/13018/trunk/SequoiaDB/engine/include/dmsCompress.hpp
+END
+qgmPlJoin.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlJoin.hpp
+END
+sptLibssh2Session.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/16406/trunk/SequoiaDB/engine/include/sptLibssh2Session.hpp
+END
+barRestoreJob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/barRestoreJob.hpp
+END
+sqlCB.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11977/trunk/SequoiaDB/engine/include/sqlCB.hpp
+END
+ossFeat.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/ossFeat.hpp
+END
+rtnQueryOptions.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/13013/trunk/SequoiaDB/engine/include/rtnQueryOptions.hpp
+END
+msgTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/msgTrace.hpp
+END
+spt.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/15160/trunk/SequoiaDB/engine/include/spt.hpp
+END
+omManager.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16679/trunk/SequoiaDB/engine/include/omManager.hpp
+END
+mthTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/mthTrace.h
+END
+rtnContext.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16570/trunk/SequoiaDB/engine/include/rtnContext.hpp
+END
+sptInjection.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11759/trunk/SequoiaDB/engine/include/sptInjection.hpp
+END
+rtnCoordSql.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnCoordSql.hpp
+END
+rtnCoordAuth.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnCoordAuth.hpp
+END
+pmdAccessProtocolBase.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/16619/trunk/SequoiaDB/engine/include/pmdAccessProtocolBase.hpp
+END
+ossVer.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/ossVer.hpp
+END
+dmsRecord.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/13021/trunk/SequoiaDB/engine/include/dmsRecord.hpp
+END
+rtnTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/rtnTrace.hpp
+END
+restAdaptorold.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/restAdaptorold.hpp
+END
+ossTypes.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/ossTypes.hpp
+END
+spdFMP.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/14233/trunk/SequoiaDB/engine/include/spdFMP.hpp
+END
+migTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/migTrace.h
+END
+sptArguments.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/14444/trunk/SequoiaDB/engine/include/sptArguments.hpp
+END
+clsCatalogPredicate.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/clsCatalogPredicate.hpp
+END
+dpsReplicaLogMgr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/13455/trunk/SequoiaDB/engine/include/dpsReplicaLogMgr.hpp
+END
+spdFMPMgr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/14234/trunk/SequoiaDB/engine/include/spdFMPMgr.hpp
+END
+optAccessPlan.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16365/trunk/SequoiaDB/engine/include/optAccessPlan.hpp
+END
+aggrDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/aggrDef.hpp
+END
+sptUsrOmaAssit.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/14460/trunk/SequoiaDB/engine/include/sptUsrOmaAssit.hpp
+END
+rtnCoordAuthDel.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnCoordAuthDel.hpp
+END
+ossSignal.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ossSignal.hpp
+END
+sptParseTroff.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16538/trunk/SequoiaDB/engine/include/sptParseTroff.hpp
+END
+dmsStorageBase.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/15657/trunk/SequoiaDB/engine/include/dmsStorageBase.hpp
+END
+sptUtil.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/13672/trunk/SequoiaDB/engine/include/sptUtil.hpp
+END
+netDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/15162/trunk/SequoiaDB/engine/include/netDef.hpp
+END
+msgTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/msgTrace.h
+END
+sqlGrammar.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16625/trunk/SequoiaDB/engine/include/sqlGrammar.hpp
+END
+aggrSkip.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/aggrSkip.hpp
+END
+rtnCoordDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/rtnCoordDef.hpp
+END
+sptContainer.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/14459/trunk/SequoiaDB/engine/include/sptContainer.hpp
+END
+pmdInnerClient.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16521/trunk/SequoiaDB/engine/include/pmdInnerClient.hpp
+END
+pmdSignalHandler.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11738/trunk/SequoiaDB/engine/include/pmdSignalHandler.hpp
+END
+sptUsrSsh.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/15131/trunk/SequoiaDB/engine/include/sptUsrSsh.hpp
+END
+rtnIXScanner.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnIXScanner.hpp
+END
+rtnPrefetchJob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnPrefetchJob.hpp
+END
+ossMmap.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ossMmap.hpp
+END
+authDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/13234/trunk/SequoiaDB/engine/include/authDef.hpp
+END
+clsReplicateSet.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/14058/trunk/SequoiaDB/engine/include/clsReplicateSet.hpp
+END
+catTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/catTrace.h
+END
+sptSPDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/15142/trunk/SequoiaDB/engine/include/sptSPDef.hpp
+END
+rtnBackgroundJobBase.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/16399/trunk/SequoiaDB/engine/include/rtnBackgroundJobBase.hpp
+END
+rtnContextShdOfLob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/15593/trunk/SequoiaDB/engine/include/rtnContextShdOfLob.hpp
+END
+rtnSortDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSortDef.hpp
+END
+dmsStorageIndex.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/15657/trunk/SequoiaDB/engine/include/dmsStorageIndex.hpp
+END
+qgmOptiTree.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmOptiTree.hpp
+END
+pmdRemoteSession.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/15052/trunk/SequoiaDB/engine/include/pmdRemoteSession.hpp
+END
+rtnLobFetcher.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/15622/trunk/SequoiaDB/engine/include/rtnLobFetcher.hpp
+END
+qgmPlanContainer.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlanContainer.hpp
+END
+pmdProc.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/13987/trunk/SequoiaDB/engine/include/pmdProc.hpp
+END
+qgmPlInsert.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlInsert.hpp
+END
+bpsPrefetch.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/bpsPrefetch.hpp
+END
+ixmKey.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/include/ixmKey.hpp
+END
+ossEvent.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ossEvent.hpp
+END
+monTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/monTrace.h
+END
+dmsInspect.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/dmsInspect.hpp
+END
+rtnSorting.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSorting.hpp
+END
+ossQueue.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ossQueue.hpp
+END
+coordSession.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/coordSession.hpp
+END
+rtnContextBuff.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16554/trunk/SequoiaDB/engine/include/rtnContextBuff.hpp
+END
+coordCB.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/coordCB.hpp
+END
+clsBase.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/14058/trunk/SequoiaDB/engine/include/clsBase.hpp
+END
+rtnCoordInsert.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/rtnCoordInsert.hpp
+END
+ossASIO.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16625/trunk/SequoiaDB/engine/include/ossASIO.hpp
+END
+fmpJSVM.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/fmpJSVM.hpp
+END
+dms.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/14802/trunk/SequoiaDB/engine/include/dms.hpp
+END
+ossTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/ossTrace.hpp
+END
+sptUsrCmd.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16639/trunk/SequoiaDB/engine/include/sptUsrCmd.hpp
+END
+coordTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/coordTrace.hpp
+END
+rtnPageCleanerJob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11977/trunk/SequoiaDB/engine/include/rtnPageCleanerJob.hpp
+END
+catTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/catTrace.hpp
+END
+clsMsgHandler.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/14058/trunk/SequoiaDB/engine/include/clsMsgHandler.hpp
+END
+omagent.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16555/trunk/SequoiaDB/engine/include/omagent.hpp
+END
+dmsLobDirectInBuffer.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/16179/trunk/SequoiaDB/engine/include/dmsLobDirectInBuffer.hpp
+END
+rtnBackgroundJob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/14706/trunk/SequoiaDB/engine/include/rtnBackgroundJob.hpp
+END
+pmdDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16738/trunk/SequoiaDB/engine/include/pmdDef.hpp
+END
+sptObjDesc.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/15101/trunk/SequoiaDB/engine/include/sptObjDesc.hpp
+END
+clsTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/clsTrace.h
+END
+rtnAPM.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnAPM.hpp
+END
+ossUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16075/trunk/SequoiaDB/engine/include/ossUtil.h
+END
+clsReplBucket.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/14058/trunk/SequoiaDB/engine/include/clsReplBucket.hpp
+END
+rtnCoordCommon.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/15310/trunk/SequoiaDB/engine/include/rtnCoordCommon.hpp
+END
+ossFeat.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/ossFeat.h
+END
+oss.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/oss.hpp
+END
+qgmOptiMthMatchSelect.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmOptiMthMatchSelect.hpp
+END
+mthModifier.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/15974/trunk/SequoiaDB/engine/include/mthModifier.hpp
+END
+migImport.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/12224/trunk/SequoiaDB/engine/include/migImport.hpp
+END
+qgmExtendSelectPlan.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmExtendSelectPlan.hpp
+END
+mthTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/mthTrace.hpp
+END
+clsReplSession.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16432/trunk/SequoiaDB/engine/include/clsReplSession.hpp
+END
+mthMergeSelector.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/mthMergeSelector.hpp
+END
+rtnSQLAddToSet.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSQLAddToSet.hpp
+END
+ossCondition.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ossCondition.hpp
+END
+utilUnicodeGen.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/utilUnicodeGen.hpp
+END
+clsVSAnnounce.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/clsVSAnnounce.hpp
+END
+clsCataHashMatcher.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/12367/trunk/SequoiaDB/engine/include/clsCataHashMatcher.hpp
+END
+qgmUtil.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmUtil.hpp
+END
+qgmSelector.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmSelector.hpp
+END
+coordTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/coordTrace.h
+END
+rtnCoordLob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/15162/trunk/SequoiaDB/engine/include/rtnCoordLob.hpp
+END
+omagentUtil.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16660/trunk/SequoiaDB/engine/include/omagentUtil.hpp
+END
+rtnMergeSorting.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnMergeSorting.hpp
+END
+dpsPageMeta.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/include/dpsPageMeta.hpp
+END
+rtnCoordLobDispatcher.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/15473/trunk/SequoiaDB/engine/include/rtnCoordLobDispatcher.hpp
+END
+netMultiRouteAgent.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/15162/trunk/SequoiaDB/engine/include/netMultiRouteAgent.hpp
+END
+dmsStorageLoadExtent.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/include/dmsStorageLoadExtent.hpp
+END
+sptUsrFile.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/15302/trunk/SequoiaDB/engine/include/sptUsrFile.hpp
+END
+dmsTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/dmsTrace.h
+END
+dmsStorageData.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16020/trunk/SequoiaDB/engine/include/dmsStorageData.hpp
+END
+dpsTransCB.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11977/trunk/SequoiaDB/engine/include/dpsTransCB.hpp
+END
+netTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/netTrace.hpp
+END
+qgmOptiInsert.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmOptiInsert.hpp
+END
+optQgmSpecStrategy.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/optQgmSpecStrategy.hpp
+END
+dpsLogRecordDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/15593/trunk/SequoiaDB/engine/include/dpsLogRecordDef.hpp
+END
+omagentNodeMgr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/14392/trunk/SequoiaDB/engine/include/omagentNodeMgr.hpp
+END
+pmdEDUEntryPoint.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/16738/trunk/SequoiaDB/engine/include/pmdEDUEntryPoint.hpp
+END
+clsUtil.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/clsUtil.hpp
+END
+pmdSessionBase.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16584/trunk/SequoiaDB/engine/include/pmdSessionBase.hpp
+END
+ossStackDump.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ossStackDump.hpp
+END
+pdTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/13912/trunk/SequoiaDB/engine/include/pdTrace.hpp
+END
+migCommon.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16689/trunk/SequoiaDB/engine/include/migCommon.hpp
+END
+ixmExtent.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ixmExtent.hpp
+END
+qgmMatcher.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmMatcher.hpp
+END
+qgmPlSort.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlSort.hpp
+END
+utilAccessData.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/utilAccessData.hpp
+END
+qgmPlNLJoin.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlNLJoin.hpp
+END
+ossNPipe.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16125/trunk/SequoiaDB/engine/include/ossNPipe.hpp
+END
+bpsTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/bpsTrace.hpp
+END
+netTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/netTrace.h
+END
+rtnCoordOperator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/rtnCoordOperator.hpp
+END
+migLobTool.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16299/trunk/SequoiaDB/engine/include/migLobTool.hpp
+END
+clsShardSession.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/15708/trunk/SequoiaDB/engine/include/clsShardSession.hpp
+END
+rtnSQLSum.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSQLSum.hpp
+END
+omagentDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16760/trunk/SequoiaDB/engine/include/omagentDef.hpp
+END
+clsSyncManager.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11977/trunk/SequoiaDB/engine/include/clsSyncManager.hpp
+END
+pmdProcessorBase.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/16521/trunk/SequoiaDB/engine/include/pmdProcessorBase.hpp
+END
+sptProperty.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/12739/trunk/SequoiaDB/engine/include/sptProperty.hpp
+END
+dpsDump.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/dpsDump.hpp
+END
+pmdAsyncHandler.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/14286/trunk/SequoiaDB/engine/include/pmdAsyncHandler.hpp
+END
+authTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/authTrace.h
+END
+clsSyncMinHeap.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/include/clsSyncMinHeap.hpp
+END
+spdFuncDownloader.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/spdFuncDownloader.hpp
+END
+rtnSQLAvg.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSQLAvg.hpp
+END
+barTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/barTrace.hpp
+END
+bps.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/11977/trunk/SequoiaDB/engine/include/bps.hpp
+END
+msg.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16447/trunk/SequoiaDB/engine/include/msg.h
+END
+dpsTransLockDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11886/trunk/SequoiaDB/engine/include/dpsTransLockDef.hpp
+END
+fmpController.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/fmpController.hpp
+END
+rtnLocalLobStream.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/15593/trunk/SequoiaDB/engine/include/rtnLocalLobStream.hpp
+END
+dmsCB.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/include/dmsCB.hpp
+END
+restAdaptor.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16615/trunk/SequoiaDB/engine/include/restAdaptor.hpp
+END
+utilBsongen.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/utilBsongen.hpp
+END
+dpsLogWrapper.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/include/dpsLogWrapper.hpp
+END
+optQgmStrategy.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/optQgmStrategy.hpp
+END
+clsCatalogAgent.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/15390/trunk/SequoiaDB/engine/include/clsCatalogAgent.hpp
+END
+mthMatcher.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16365/trunk/SequoiaDB/engine/include/mthMatcher.hpp
+END
+utilTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/utilTrace.hpp
+END
+dmsTmpBlkUnit.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/dmsTmpBlkUnit.hpp
+END
+ossShMem.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ossShMem.hpp
+END
+omagentMgr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16573/trunk/SequoiaDB/engine/include/omagentMgr.hpp
+END
+rtnLob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/15255/trunk/SequoiaDB/engine/include/rtnLob.hpp
+END
+rtnCoordAggregate.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/rtnCoordAggregate.hpp
+END
+fmpDef.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/14248/trunk/SequoiaDB/engine/include/fmpDef.h
+END
+netFrame.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16521/trunk/SequoiaDB/engine/include/netFrame.hpp
+END
+pmdStartup.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/12391/trunk/SequoiaDB/engine/include/pmdStartup.hpp
+END
+ossMem.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ossMem.hpp
+END
+rtn.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16500/trunk/SequoiaDB/engine/include/rtn.hpp
+END
+oss.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16179/trunk/SequoiaDB/engine/include/oss.h
+END
+dmsLobDirectBuffer.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/16179/trunk/SequoiaDB/engine/include/dmsLobDirectBuffer.hpp
+END
+optQgmCommStrategy.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/optQgmCommStrategy.hpp
+END
+dpsOp2Record.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/15593/trunk/SequoiaDB/engine/include/dpsOp2Record.hpp
+END
+dpsMessageBlock.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/13524/trunk/SequoiaDB/engine/include/dpsMessageBlock.hpp
+END
+rtnSQLLast.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSQLLast.hpp
+END
+catalogueCB.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/12930/trunk/SequoiaDB/engine/include/catalogueCB.hpp
+END
+msgReplicator.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/15307/trunk/SequoiaDB/engine/include/msgReplicator.hpp
+END
+sqlDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16625/trunk/SequoiaDB/engine/include/sqlDef.hpp
+END
+catCommon.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/14920/trunk/SequoiaDB/engine/include/catCommon.hpp
+END
+ossPath.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/ossPath.h
+END
+optTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/optTrace.h
+END
+rtnCommandDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/15331/trunk/SequoiaDB/engine/include/rtnCommandDef.hpp
+END
+dmsReorgUnit.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/dmsReorgUnit.hpp
+END
+utilLinenoiseWrapper.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/utilLinenoiseWrapper.hpp
+END
+netEventHandler.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/14693/trunk/SequoiaDB/engine/include/netEventHandler.hpp
+END
+msg.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/msg.hpp
+END
+qgmOptiSort.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmOptiSort.hpp
+END
+ossProc.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16125/trunk/SequoiaDB/engine/include/ossProc.hpp
+END
+aggrSort.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/aggrSort.hpp
+END
+sdbInterface.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/16608/trunk/SequoiaDB/engine/include/sdbInterface.hpp
+END
+pmdEnv.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/14573/trunk/SequoiaDB/engine/include/pmdEnv.hpp
+END
+qgmOptiNLJoin.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmOptiNLJoin.hpp
+END
+msgMessage.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/15627/trunk/SequoiaDB/engine/include/msgMessage.hpp
+END
+dmsLobDirectOutBuffer.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/16179/trunk/SequoiaDB/engine/include/dmsLobDirectOutBuffer.hpp
+END
+clientTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/clientTrace.hpp
+END
+clsVSSilence.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/clsVSSilence.hpp
+END
+catCatalogManager.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/16456/trunk/SequoiaDB/engine/include/catCatalogManager.hpp
+END
+pmdTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/pmdTrace.h
+END
+dmsStorageLobData.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/16217/trunk/SequoiaDB/engine/include/dmsStorageLobData.hpp
+END
+rtnSQLFunc.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSQLFunc.hpp
+END
+dmsLobDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16039/trunk/SequoiaDB/engine/include/dmsLobDef.hpp
+END
+qgmHashTable.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmHashTable.hpp
+END
+pmdOptionsMgr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16608/trunk/SequoiaDB/engine/include/pmdOptionsMgr.hpp
+END
+rtnCoordLobStream.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/15693/trunk/SequoiaDB/engine/include/rtnCoordLobStream.hpp
+END
+pmdDaemon.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/15365/trunk/SequoiaDB/engine/include/pmdDaemon.hpp
+END
+rtnCoordAuthBase.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnCoordAuthBase.hpp
+END
+aggrProject.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/aggrProject.hpp
+END
+rtnCoordInterrupt.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/rtnCoordInterrupt.hpp
+END
+sptConvertorHelper.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/15107/trunk/SequoiaDB/engine/include/sptConvertorHelper.hpp
+END
+monTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/monTrace.hpp
+END
+pmdMemPool.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/14060/trunk/SequoiaDB/engine/include/pmdMemPool.hpp
+END
+migLoad.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/12032/trunk/SequoiaDB/engine/include/migLoad.hpp
+END
+ossSocket.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/15420/trunk/SequoiaDB/engine/include/ossSocket.hpp
+END
+migExport.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16742/trunk/SequoiaDB/engine/include/migExport.hpp
+END
+pmdWinService.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/pmdWinService.hpp
+END
+sptFuncMap.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11759/trunk/SequoiaDB/engine/include/sptFuncMap.hpp
+END
+rtnTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/rtnTrace.h
+END
+ossTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/ossTrace.h
+END
+clsCleanupJob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/15307/trunk/SequoiaDB/engine/include/clsCleanupJob.hpp
+END
+netRouteAgent.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16447/trunk/SequoiaDB/engine/include/netRouteAgent.hpp
+END
+clsReplayer.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/15593/trunk/SequoiaDB/engine/include/clsReplayer.hpp
+END
+rtnLobWindow.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/15593/trunk/SequoiaDB/engine/include/rtnLobWindow.hpp
+END
+utilPath.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/utilPath.hpp
+END
+netMsgHandler.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/13856/trunk/SequoiaDB/engine/include/netMsgHandler.hpp
+END
+utilPipe.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/utilPipe.hpp
+END
+ossAtomicBase.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ossAtomicBase.hpp
+END
+clientTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/clientTrace.h
+END
+clsVSPrimary.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/clsVSPrimary.hpp
+END
+omagentSession.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/14388/trunk/SequoiaDB/engine/include/omagentSession.hpp
+END
+aggrTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/aggrTrace.hpp
+END
+sptApi.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/15142/trunk/SequoiaDB/engine/include/sptApi.hpp
+END
+clsTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/clsTrace.hpp
+END
+rtnCoordTransaction.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/rtnCoordTransaction.hpp
+END
+sptInvokeDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11747/trunk/SequoiaDB/engine/include/sptInvokeDef.hpp
+END
+mthCommon.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/mthCommon.hpp
+END
+qgmPlMthMatcherFilter.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlMthMatcherFilter.hpp
+END
+dpsDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/15352/trunk/SequoiaDB/engine/include/dpsDef.hpp
+END
+msgAuth.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/msgAuth.hpp
+END
+omagentTask.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16389/trunk/SequoiaDB/engine/include/omagentTask.hpp
+END
+toolsTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/toolsTrace.h
+END
+clsTimerHandler.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/14058/trunk/SequoiaDB/engine/include/clsTimerHandler.hpp
+END
+qgmPtrTable.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPtrTable.hpp
+END
+ossCmdRunner.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/16714/trunk/SequoiaDB/engine/include/ossCmdRunner.hpp
+END
+qgmHintDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmHintDef.hpp
+END
+rtnSQLMin.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSQLMin.hpp
+END
+core.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/core.h
+END
+restDefine.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16614/trunk/SequoiaDB/engine/include/restDefine.hpp
+END
+mthSelector.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/mthSelector.hpp
+END
+rtnSQLMax.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSQLMax.hpp
+END
+spdSession.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/spdSession.hpp
+END
+spdCoordDownloader.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/spdCoordDownloader.hpp
+END
+utilTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/utilTrace.h
+END
+restTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/restTrace.hpp
+END
+monDMS.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16020/trunk/SequoiaDB/engine/include/monDMS.hpp
+END
+clsCatalogCaller.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/clsCatalogCaller.hpp
+END
+qgmPlDelete.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlDelete.hpp
+END
+utilNodeOpr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/15515/trunk/SequoiaDB/engine/include/utilNodeOpr.hpp
+END
+clsTask.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/clsTask.hpp
+END
+clsVoteMachine.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/clsVoteMachine.hpp
+END
+spdTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/spdTrace.hpp
+END
+dmsStorageLob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16020/trunk/SequoiaDB/engine/include/dmsStorageLob.hpp
+END
+dpsTransLockBucket.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11886/trunk/SequoiaDB/engine/include/dpsTransLockBucket.hpp
+END
+authCB.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/13824/trunk/SequoiaDB/engine/include/authCB.hpp
+END
+rtnInternalSorting.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnInternalSorting.hpp
+END
+pmdObjBase.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/14060/trunk/SequoiaDB/engine/include/pmdObjBase.hpp
+END
+sdbOptionMgr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/sdbOptionMgr.hpp
+END
+sptConvertor.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/14459/trunk/SequoiaDB/engine/include/sptConvertor.hpp
+END
+rtnCB.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/11977/trunk/SequoiaDB/engine/include/rtnCB.hpp
+END
+catNodeManager.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16759/trunk/SequoiaDB/engine/include/catNodeManager.hpp
+END
+rtnCoordDelete.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/rtnCoordDelete.hpp
+END
+dmsTempCB.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/dmsTempCB.hpp
+END
+ossLatch.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/14660/trunk/SequoiaDB/engine/include/ossLatch.hpp
+END
+qgmOptiSelect.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmOptiSelect.hpp
+END
+ossVer.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/ossVer.h
+END
+pmdAsyncSession.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/16521/trunk/SequoiaDB/engine/include/pmdAsyncSession.hpp
+END
+catSplit.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/catSplit.hpp
+END
+sptTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16612/trunk/SequoiaDB/engine/include/sptTrace.hpp
+END
+clsFSSrcSession.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/16097/trunk/SequoiaDB/engine/include/clsFSSrcSession.hpp
+END
+monEDU.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/monEDU.hpp
+END
+qgmPlAggregation.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/13163/trunk/SequoiaDB/engine/include/qgmPlAggregation.hpp
+END
+ossTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16661/trunk/SequoiaDB/engine/include/ossTypes.h
+END
+omagentCommand.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16760/trunk/SequoiaDB/engine/include/omagentCommand.hpp
+END
+qgmBuilder.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmBuilder.hpp
+END
+rtnSQLCount.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSQLCount.hpp
+END
+sqlUtil.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/sqlUtil.hpp
+END
+rtnSQLBuildObj.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSQLBuildObj.hpp
+END
+dmsSMEMgr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/dmsSMEMgr.hpp
+END
+pmdTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/pmdTrace.hpp
+END
+bpsTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/bpsTrace.h
+END
+pd.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/sequoiadb/!svn/ver/15183/trunk/SequoiaDB/engine/include/pd.hpp
+END
+qgmTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/qgmTrace.hpp
+END
+utilSdb.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/12251/trunk/SequoiaDB/engine/include/utilSdb.hpp
+END
+dmsDump.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/12196/trunk/SequoiaDB/engine/include/dmsDump.hpp
+END
+ossDynamicLoad.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ossDynamicLoad.hpp
+END
+rtnDataSet.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16500/trunk/SequoiaDB/engine/include/rtnDataSet.hpp
+END
+sqlTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/sqlTrace.h
+END
+clsCatalogMatcher.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/clsCatalogMatcher.hpp
+END
+rtnContextSort.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/13000/trunk/SequoiaDB/engine/include/rtnContextSort.hpp
+END
+authTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/authTrace.hpp
+END
+qgmPlReturn.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlReturn.hpp
+END
+msgCatalog.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/msgCatalog.hpp
+END
+barTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/barTrace.h
+END
+qgmPlUpdate.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlUpdate.hpp
+END
+rtnSQLPush.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSQLPush.hpp
+END
+aggrMatcher.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/aggrMatcher.hpp
+END
+sptTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/sptTrace.h
+END
+dpsLogRecord.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/include/dpsLogRecord.hpp
+END
+qgmPlSplitBy.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlSplitBy.hpp
+END
+sptSshSession.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/15137/trunk/SequoiaDB/engine/include/sptSshSession.hpp
+END
+ixmInsertRequest.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ixmInsertRequest.hpp
+END
+ossIO.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16217/trunk/SequoiaDB/engine/include/ossIO.hpp
+END
+rtnCoordUpdate.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/rtnCoordUpdate.hpp
+END
+aggrGroup.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/aggrGroup.hpp
+END
+utilParam.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/15515/trunk/SequoiaDB/engine/include/utilParam.hpp
+END
+ixmIndexKey.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ixmIndexKey.hpp
+END
+ossRWMutex.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ossRWMutex.hpp
+END
+qgmConditionNode.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/12954/trunk/SequoiaDB/engine/include/qgmConditionNode.hpp
+END
+clsVSSecondary.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/clsVSSecondary.hpp
+END
+qgmOptiDelete.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmOptiDelete.hpp
+END
+qgmDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmDef.hpp
+END
+ossMem.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/15980/trunk/SequoiaDB/engine/include/ossMem.h
+END
+sptUsrSystem.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/15286/trunk/SequoiaDB/engine/include/sptUsrSystem.hpp
+END
+dpsTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/dpsTrace.hpp
+END
+utilStr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16447/trunk/SequoiaDB/engine/include/utilStr.hpp
+END
+dpsLogDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/12604/trunk/SequoiaDB/engine/include/dpsLogDef.hpp
+END
+sptReturnVal.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/12739/trunk/SequoiaDB/engine/include/sptReturnVal.hpp
+END
+dmsExtent.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/dmsExtent.hpp
+END
+sqlTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/sqlTrace.hpp
+END
+qgmPlCommand.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlCommand.hpp
+END
+aggrLimit.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/aggrLimit.hpp
+END
+toolsTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/toolsTrace.hpp
+END
+pmdRestSession.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16644/trunk/SequoiaDB/engine/include/pmdRestSession.hpp
+END
+omMsgEventHandler.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/13737/trunk/SequoiaDB/engine/include/omMsgEventHandler.hpp
+END
+pdTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/pdTrace.h
+END
+clsVoteStatus.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/clsVoteStatus.hpp
+END
+rtnSortTuple.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnSortTuple.hpp
+END
+pmdCB.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/pmdCB.hpp
+END
+omagentJob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16389/trunk/SequoiaDB/engine/include/omagentJob.hpp
+END
+dpsLogPage.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/13471/trunk/SequoiaDB/engine/include/dpsLogPage.hpp
+END
+netTimer.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/netTimer.hpp
+END
+qgmOptiAggregation.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmOptiAggregation.hpp
+END
+sptConvertor2.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/12604/trunk/SequoiaDB/engine/include/sptConvertor2.hpp
+END
+migTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/migTrace.hpp
+END
+http_parser.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/http_parser.hpp
+END
+restTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/restTrace.h
+END
+dpsLogFileMgr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/12837/trunk/SequoiaDB/engine/include/dpsLogFileMgr.hpp
+END
+ossUtil.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16690/trunk/SequoiaDB/engine/include/ossUtil.hpp
+END
+rtnCommand.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/15441/trunk/SequoiaDB/engine/include/rtnCommand.hpp
+END
+sptGlobalFunc.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/15101/trunk/SequoiaDB/engine/include/sptGlobalFunc.hpp
+END
+sptInvoker.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/15122/trunk/SequoiaDB/engine/include/sptInvoker.hpp
+END
+dpsTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/dpsTrace.h
+END
+pmdExternClient.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/16521/trunk/SequoiaDB/engine/include/pmdExternClient.hpp
+END
+dpsTransLock.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/11886/trunk/SequoiaDB/engine/include/dpsTransLock.hpp
+END
+ixmTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/ixmTrace.hpp
+END
+ossErr.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/16593/trunk/SequoiaDB/engine/include/ossErr.h
+END
+sptCommon.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/sptCommon.hpp
+END
+qgmOptiUpdate.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmOptiUpdate.hpp
+END
+sptBsonobj.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/15102/trunk/SequoiaDB/engine/include/sptBsonobj.hpp
+END
+rtnRemoteExec.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11819/trunk/SequoiaDB/engine/include/rtnRemoteExec.hpp
+END
+rtnCoordAuthCrt.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/rtnCoordAuthCrt.hpp
+END
+barBkupLogger.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16091/trunk/SequoiaDB/engine/include/barBkupLogger.hpp
+END
+clsFSDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/15593/trunk/SequoiaDB/engine/include/clsFSDef.hpp
+END
+omagentHelper.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/14086/trunk/SequoiaDB/engine/include/omagentHelper.hpp
+END
+dmsScanner.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/dmsScanner.hpp
+END
+msgCatalogDef.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/16690/trunk/SequoiaDB/engine/include/msgCatalogDef.h
+END
+ossAtomic.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ossAtomic.hpp
+END
+omManagerJob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/15985/trunk/SequoiaDB/engine/include/omManagerJob.hpp
+END
+rtnContextListLob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/15331/trunk/SequoiaDB/engine/include/rtnContextListLob.hpp
+END
+fmpDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/fmpDef.hpp
+END
+dmsTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/dmsTrace.hpp
+END
+dmsStorageJob.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/dmsStorageJob.hpp
+END
+qgmPlHashJoin.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmPlHashJoin.hpp
+END
+netRoute.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16447/trunk/SequoiaDB/engine/include/netRoute.hpp
+END
+msgDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/msgDef.hpp
+END
+dpsTransLockUnit.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/sequoiadb/!svn/ver/11886/trunk/SequoiaDB/engine/include/dpsTransLockUnit.hpp
+END
+ossHdfs.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/ossHdfs.hpp
+END
+qgmOptiCommand.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/include/qgmOptiCommand.hpp
+END
+rtnCoordQuery.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/rtnCoordQuery.hpp
+END
+omagentMsgDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16555/trunk/SequoiaDB/engine/include/omagentMsgDef.hpp
+END
+catMainController.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/16456/trunk/SequoiaDB/engine/include/catMainController.hpp
+END
+dpsMergeBlock.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/11977/trunk/SequoiaDB/engine/include/dpsMergeBlock.hpp
+END
+optTrace.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/optTrace.hpp
+END
+ossPath.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/ossPath.hpp
+END
+pmdController.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/sequoiadb/!svn/ver/16578/trunk/SequoiaDB/engine/include/pmdController.hpp
+END
+pmdSession.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/16738/trunk/SequoiaDB/engine/include/pmdSession.hpp
+END
+pmdEDUMgr.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16625/trunk/SequoiaDB/engine/include/pmdEDUMgr.hpp
+END
+rtnLobDataPool.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16176/trunk/SequoiaDB/engine/include/rtnLobDataPool.hpp
+END
+omagentNodeCmd.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/16577/trunk/SequoiaDB/engine/include/omagentNodeCmd.hpp
+END
+rtnPredicate.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/sequoiadb/!svn/ver/12314/trunk/SequoiaDB/engine/include/rtnPredicate.hpp
+END
+catDef.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/catDef.hpp
+END
+core.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/sequoiadb/!svn/ver/16414/trunk/SequoiaDB/engine/include/core.hpp
+END

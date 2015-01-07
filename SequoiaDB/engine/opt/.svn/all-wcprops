@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/sequoiadb/!svn/ver/16365/trunk/SequoiaDB/engine/opt
+END
+optAccessPlan.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/sequoiadb/!svn/ver/16365/trunk/SequoiaDB/engine/opt/optAccessPlan.cpp
+END
+optQgmSpecStrategy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/opt/optQgmSpecStrategy.cpp
+END
+optQgmOptimizer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/opt/optQgmOptimizer.cpp
+END
+optQgmStrategy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/sequoiadb/!svn/ver/11730/trunk/SequoiaDB/engine/opt/optQgmStrategy.cpp
+END

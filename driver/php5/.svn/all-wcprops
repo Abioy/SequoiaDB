@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/sequoiadb/!svn/ver/16539/trunk/driver/php5
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/14153/trunk/driver/php5/SConscript
+END
+SConstruct
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/14771/trunk/driver/php5/SConstruct
+END
+php_ver_win.list
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/14729/trunk/driver/php5/php_ver_win.list
+END
+php_ver_linux.list
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/sequoiadb/!svn/ver/16539/trunk/driver/php5/php_ver_linux.list
+END
+php_ver.list
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/sequoiadb/!svn/ver/14623/trunk/driver/php5/php_ver.list
+END

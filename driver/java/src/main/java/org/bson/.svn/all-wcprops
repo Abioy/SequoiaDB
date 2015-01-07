@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/sequoiadb/!svn/ver/14682/trunk/driver/java/src/main/java/org/bson
+END
+NewBSONDecoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/10067/trunk/driver/java/src/main/java/org/bson/NewBSONDecoder.java
+END
+BSONEncoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/org/bson/BSONEncoder.java
+END
+BSON.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/10055/trunk/driver/java/src/main/java/org/bson/BSON.java
+END
+Transformer.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/org/bson/Transformer.java
+END
+BasicBSONEncoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/10067/trunk/driver/java/src/main/java/org/bson/BasicBSONEncoder.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/org/bson/package.html
+END
+BSONCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/org/bson/BSONCallback.java
+END
+BasicBSONCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/10067/trunk/driver/java/src/main/java/org/bson/BasicBSONCallback.java
+END
+BSONException.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/org/bson/BSONException.java
+END
+BSONLazyDecoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/org/bson/BSONLazyDecoder.java
+END
+BSONDecoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/org/bson/BSONDecoder.java
+END
+BSONObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/org/bson/BSONObject.java
+END
+BasicBSONDecoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/org/bson/BasicBSONDecoder.java
+END
+BasicBSONObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/11882/trunk/driver/java/src/main/java/org/bson/BasicBSONObject.java
+END
+EmptyBSONCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/9949/trunk/driver/java/src/main/java/org/bson/EmptyBSONCallback.java
+END

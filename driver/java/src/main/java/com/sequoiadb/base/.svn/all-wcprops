@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/sequoiadb/!svn/ver/16654/trunk/driver/java/src/main/java/com/sequoiadb/base
+END
+DBCollection.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/16654/trunk/driver/java/src/main/java/com/sequoiadb/base/DBCollection.java
+END
+DBLob.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/sequoiadb/!svn/ver/16654/trunk/driver/java/src/main/java/com/sequoiadb/base/DBLob.java
+END
+DBCursor.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/sequoiadb/!svn/ver/16654/trunk/driver/java/src/main/java/com/sequoiadb/base/DBCursor.java
+END
+Node.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/sequoiadb/!svn/ver/16654/trunk/driver/java/src/main/java/com/sequoiadb/base/Node.java
+END
+ReplicaNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/16654/trunk/driver/java/src/main/java/com/sequoiadb/base/ReplicaNode.java
+END
+SequoiadbOption.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/12833/trunk/driver/java/src/main/java/com/sequoiadb/base/SequoiadbOption.java
+END
+CollectionSpace.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/16654/trunk/driver/java/src/main/java/com/sequoiadb/base/CollectionSpace.java
+END
+Domain.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/sequoiadb/!svn/ver/16205/trunk/driver/java/src/main/java/com/sequoiadb/base/Domain.java
+END
+SequoiadbDatasource.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/16621/trunk/driver/java/src/main/java/com/sequoiadb/base/SequoiadbDatasource.java
+END
+SequoiadbConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/sequoiadb/!svn/ver/16654/trunk/driver/java/src/main/java/com/sequoiadb/base/SequoiadbConstants.java
+END
+DBQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/sequoiadb/!svn/ver/15715/trunk/driver/java/src/main/java/com/sequoiadb/base/DBQuery.java
+END
+ReplicaGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/sequoiadb/!svn/ver/16654/trunk/driver/java/src/main/java/com/sequoiadb/base/ReplicaGroup.java
+END
+Sequoiadb.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/sequoiadb/!svn/ver/16654/trunk/driver/java/src/main/java/com/sequoiadb/base/Sequoiadb.java
+END
+SDBMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/15526/trunk/driver/java/src/main/java/com/sequoiadb/base/SDBMessage.java
+END

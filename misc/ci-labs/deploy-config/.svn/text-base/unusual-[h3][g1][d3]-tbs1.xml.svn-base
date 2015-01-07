@@ -1,0 +1,143 @@
+<!--@param ${STAF.PATH}: The path where is staf binary directory-->
+<!--@param ${ant.sdb.tasks.path}:  The path where sdb's ant tasks jar files -->
+<!--@param ${install.path}: The path where install sequoiadb -->
+<!--@param ${deploy.file.fullname}: The file full path where deploy file name for test -->
+<!--@param ${deploy.path}: The path where deploy direcotry before tar -->
+<!--@param ${test.reports.path}: The path where test reports directory. -->
+<!--@param ${WORKSPACE}: where the working space is it-->
+<!--@param ${properties.dir} : where the ci.test.properties file is it -->
+
+<project name="deploy" default="test">
+		<property name="properties.dir" value="${basedir}/../ci.test.properties" />
+		<property file="${properties.dir}" />
+
+	<target name="deploy" depends="">
+		<echo message="Begin install software and test files to ${test.machine1}" />
+		<hostinfo prefix="host" />
+	
+		<parallel>
+			<ant antfile="deploy-software-in-host.xml" dir="." inheritAll="false">
+			   <property name="install.package.fullname" value="${install.package.fullname}" />
+			   <property name="deploy.host.name" value="${test.machine.no1.basic}" />
+			   <property name="coord.service.port" value="${coord.service.port}" />
+			   <property name="is.standalone.mode" value="false" />
+			   <property name="is.coord.master" value="true"/>
+			   <property name="catalog.addrs" value="${test.machine.no1.data}:30003,${test.machine.no2.data}:30003,${test.machine.no3.data}:30003" />
+		  </ant>
+		  <ant antfile="deploy-software-in-host.xml" dir="." inheritAll="false">
+			   <property name="install.package.fullname" value="${install.package.fullname}" />
+			   <property name="deploy.host.name" value="${test.machine.no2.basic}" />
+			   <property name="coord.service.port" value="${coord.service.port}" />
+			   <property name="is.standalone.mode" value="false" />
+			   <property name="is.coord.master" value="false"/>
+			   <property name="catalog.addrs" value="${test.machine.no1.data}:30003,${test.machine.no2.data}:30003,${test.machine.no3.data}:30003" />
+		  </ant>
+		  <ant antfile="deploy-software-in-host.xml" dir="." inheritAll="false">
+			   <property name="install.package.fullname" value="${install.package.fullname}" />
+			   <property name="deploy.host.name" value="${test.machine.no3.basic}" />
+			   <property name="coord.service.port" value="${coord.service.port}" />
+			   <property name="is.standalone.mode" value="false" />
+			   <property name="is.coord.master" value="false"/>
+			   <property name="catalog.addrs" value="${test.machine.no1.data}:30003,${test.machine.no2.data}:30003,${test.machine.no3.data}:30003" />
+		  </ant>
+		</parallel>
+
+		<sdbdeploy host="${test.machine.no1.basic}" coordport="50000">
+			<catagroup name="cata1">
+				<node host="${test.machine.no1.data}" baseport="30000" dbpath="${install.path}/sequoiadb/database/cata/30000">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no2.data}" baseport="30000" dbpath="${install.path}/sequoiadb/database/cata/30000">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no3.data}" baseport="30000" dbpath="${install.path}/sequoiadb/database/cata/30000">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+			</catagroup>
+		</sdbdeploy>
+
+		<sdbdeploy host="${test.machine.no1.basic}" coordport="50000">
+			<datagroup name="group1">
+				<node host="${test.machine.no1.data}" baseport="21100" dbpath="${install.path}/sequoiadb/database/data/21100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no2.data}" baseport="21100" dbpath="${install.path}/sequoiadb/database/data/21100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+				<node host="${test.machine.no3.data}" baseport="21100" dbpath="${install.path}/sequoiadb/database/data/21100">
+					<confitem name="diaglevel" value="5" />
+					<confitem name="transactionon" value="true" />
+					<confitem name="sharingbreak" value="20000" />
+				</node>
+			</datagroup>
+		</sdbdeploy>
+	</target>
+
+	<target name="test" depends="">
+		<parallel>
+			<ant antfile="deploy-test-in-host.xml" dir="." inheritAll="false">
+				<property name="deploy.file.fullname" value="${deploy.file.fullname}" />
+				<property name="deploy.host.name" value="${test.machine.no1.basic}" />
+			</ant>
+			<ant antfile="deploy-test-in-host.xml" dir="." inheritAll="false">
+				<property name="deploy.file.fullname" value="${deploy.file.fullname}" />
+				<property name="deploy.host.name" value="${test.machine.no2.basic}" />
+			</ant>
+			<ant antfile="deploy-test-in-host.xml" dir="." inheritAll="false">
+				<property name="deploy.file.fullname" value="${deploy.file.fullname}" />
+				<property name="deploy.host.name" value="${test.machine.no3.basic}" />
+			</ant>
+		</parallel>
+		
+		<basename property="antFileName" file="${ant.file}" suffix=".xml" />
+		<property name="test-type-list" value="unusual" />
+		<for list="${test-type-list}" param="test-type">
+			<sequential>
+				<ant antfile="${WORKSPACE}/sequoiadb/misc/ci/test-type.xml" dir="." inheritAll="false">
+					<property name="test.machine.deploy.path" value="${test.machine.deploy.path}" />
+					<property name="install.path" value="${install.path}" />
+					<property name="deploy.case.fullname" value="${deploy.case.fullname}" />
+					<property name="test.reports.path" value="${test.reports.path}" />
+					<!--property name="test.machine.no1.basic" value="${test.machine.no1.basic}" />
+					<property name="test.machine.no2.basic" value="${test.machine.no2.basic}" />
+					<property name="test.machine.no3.basic" value="${test.machine.no3.basic}" />
+					<property name="test.machine.no4.basic" value="${test.machine.no4.basic}" /-->
+					<property name="test-type" value="@{test-type}" />
+					<property name="antFileName" value="${antFileName}" />
+				</ant>
+			</sequential>
+			
+		</for>
+		
+		
+		<mkdir dir="${WORKSPACE}/${host.NAME}-copy-log/${antFileName}" />
+		<sdbCopyAndTar fileHostName="${test.machine.no1.basic}" saveHostName="${host.NAME}" diaglogPath="${install.path}/sequoiadb/database" savePath="${WORKSPACE}/${host.NAME}-copy-log/${antFileName}" />
+		<sdbCopyAndTar fileHostName="${test.machine.no2.basic}" saveHostName="${host.NAME}" diaglogPath="${install.path}/sequoiadb/database" savePath="${WORKSPACE}/${host.NAME}-copy-log/${antFileName}" />
+		<sdbCopyAndTar fileHostName="${test.machine.no3.basic}" saveHostName="${host.NAME}" diaglogPath="${install.path}/sequoiadb/database" savePath="${WORKSPACE}/${host.NAME}-copy-log/${antFileName}" />
+		
+		
+		
+		<!--sdbtest host="${test.machine.no1}" testscript="${test.machine.deploy.path}/deploy/exec-basic-testcases.xml" remotereports="${test.machine.deploy.path}/deploy/hlt/js_testcases/reports" masterreports="${test.reports.path}" timeout="30m">
+			<param name="testcase.path" value="${test.machine.deploy.path}/deploy/hlt/js_testcases/" />
+			<param name="install.path" value="${install.path}" />
+			<param name="antTask.jar.path" value="${test.machine.deploy.path}/deploy/ant-sdbtasks" />
+		</sdbtest-->
+		
+		<!--echo message="... test ant-testcases ..." />
+    
+		<sdbtest host="${test.machine.no2}" testscript="${test.machine.deploy.path}/deploy/exec-ant-testcases.xml" remotereports="${test.machine.deploy.path}/deploy/hlt/ant_testcases/reports" masterreports="${test.reports.path}" timeout="30m">
+			<param name="testcase.path" value="${test.machine.deploy.path}/deploy/hlt/ant_testcases/" />
+			<param name="install.path" value="${install.path}" />
+		</sdbtest>
+				
+		<echo message="... test ant-testcases is over ..." /-->
+	</target>
+
+</project>

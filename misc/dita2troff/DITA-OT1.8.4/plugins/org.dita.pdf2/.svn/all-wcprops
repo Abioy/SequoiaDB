@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.pdf2
+END
+build_fop.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.pdf2/build_fop.xml
+END
+build_template.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.pdf2/build_template.xml
+END
+buildPackage.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.pdf2/buildPackage.xml
+END
+build_xep.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.pdf2/build_xep.xml
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.pdf2/README.txt
+END
+build_axf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.pdf2/build_axf.xml
+END
+integrator.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.pdf2/integrator.xml
+END
+plugin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.pdf2/plugin.xml
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/sequoiadb/!svn/ver/11467/trunk/misc/dita2troff/DITA-OT1.8.4/plugins/org.dita.pdf2/build.xml
+END

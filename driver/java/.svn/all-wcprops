@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/sequoiadb/!svn/ver/16659/trunk/driver/java
+END
+MANIFEST.MF
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/9949/trunk/driver/java/MANIFEST.MF
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/sequoiadb/!svn/ver/9949/trunk/driver/java/SConscript
+END
+SConstruct
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/sequoiadb/!svn/ver/11026/trunk/driver/java/SConstruct
+END
+build_driver.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/sequoiadb/!svn/ver/16659/trunk/driver/java/build_driver.xml
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/sequoiadb/!svn/ver/9949/trunk/driver/java/pom.xml
+END
